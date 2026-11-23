@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-277: Three halves of the largest factor
-Replace n by the integer part of (3P(n) + 1)/2. Every tested start falls into the loop 3 → 5 → 8 → 3. Prove all do.
-Informal statement: Prove every orbit of $n\mapsto\lfloor(3P(n)+1)/2\rfloor$ on $n\ge2$ enters $(3,5,8)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-277. Cycles of the map (as observed numerically): (3, 5, 8).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N277
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := (3 * P n + 1) / 2
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {3, 5, 8}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N277

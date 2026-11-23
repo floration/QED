@@ -1,10 +1,8 @@
 import Mathlib
-/-! N-501: 5n+1 largest-factor convergence
-Prove every orbit of the 5n+1 largest-factor map ends in a loop.
-Informal statement: For $f_5(n)=n/2$ (even), $P(5n+1)$ (odd), prove every orbit is eventually periodic.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-501. The map `n ↦ n/2` (n even), `n ↦ P(5n+1)` (n odd). `Claim`: every orbit from `n ≥ 1` is eventually periodic. -/
 namespace OpenProblems.N501
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := if Even n then n / 2 else P (5 * n + 1)
+def Claim : Prop := ∀ n : ℕ, 1 ≤ n → ∃ k m : ℕ, 0 < m ∧ f^[k + m] n = f^[k] n
 end OpenProblems.N501

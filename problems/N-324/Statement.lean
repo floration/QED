@@ -1,10 +1,13 @@
 import Mathlib
-/-! N-324: Mixed divisor-sum map
-Add the sum of distinct prime factors of n to the largest prime factor of n + 1. Tested starts reach 14, 21, or loops through 5, 10, 31 or 82. Prove these are the only fates.
-Informal statement: For $f(n)=\mathrm{sopf}(n)+P(n+1)$, prove every orbit reaches $\{14\},\{21\},(5,8),(10,18,24),(31,33)$ or $(82,126,139,146)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-324. Cycles of the map (as observed numerically): (5, 8); (10, 18, 24); (14); (21); (31, 33); (82, 126, 139, 146).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N324
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+/-- sum of the distinct prime factors -/
+def sopf (n : ℕ) : ℕ := n.primeFactors.sum id
+def f (n : ℕ) : ℕ := sopf n + P (n+1)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {5, 8, 10, 14, 18, 21, 24, 31, 33, 82, 126, 139, 146}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N324

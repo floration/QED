@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-271: The {5, 8} funnel
-Replace n by the sum of the largest prime factors of n and n + 1. Every start tested falls into the loop 5 → 8 → 5. Prove all do.
-Informal statement: Let $f(n)=P(n)+P(n+1)$ (with $P(1)=1$). Prove every orbit of $f$ on $n\ge2$ enters the cycle $\{5,8\}$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-271. Cycles of the map (as observed numerically): (5, 8).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N271
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := P n + P (n+1)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {5, 8}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N271

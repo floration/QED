@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-323: Sum of prime divisors of neighbours
-Add the sum of the distinct prime factors of n to that of n + 1. Tested starts reach 33 or loops through 10, 17, 30 or 107. Prove there is nothing else.
-Informal statement: For $f(n)=\mathrm{sopf}(n)+\mathrm{sopf}(n+1)$, prove every orbit reaches $\{33\}$, $(10,18,24)$, $(17,22,36,42,55,25,20)$, $(30,41,53,58,90)$ or $(107,112,122)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-323. Cycles of the map (as observed numerically): (10, 18, 24); (17, 22, 36, 42, 55, 25, 20); (30, 41, 53, 58, 90); (33); (107, 112, 122).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N323
-def Claim : Prop := sorry
+/-- sum of the distinct prime factors -/
+def sopf (n : ℕ) : ℕ := n.primeFactors.sum id
+def f (n : ℕ) : ℕ := sopf n + sopf (n+1)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {10, 17, 18, 20, 22, 24, 25, 30, 33, 36, 41, 42, 53, 55, 58, 90, 107, 112, 122}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N323

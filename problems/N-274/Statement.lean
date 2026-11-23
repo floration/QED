@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-274: Doubling minus one
-Replace n by twice its largest prime factor minus one. Every tested start ends in 5 ↔ 9 or in the loop 37 → 73 → 145 → 57 → 37. Prove there is nothing else.
-Informal statement: Prove every orbit of $n\mapsto 2P(n)-1$ on $n\ge2$ enters $\{5,9\}$ or $(37,73,145,57)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-274. Cycles of the map (as observed numerically): (5, 9); (37, 73, 145, 57).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N274
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := 2 * P n - 1
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {5, 9, 37, 57, 73, 145}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N274
