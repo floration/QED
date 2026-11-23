@@ -1,10 +1,13 @@
 import Mathlib
-/-! N-322: Largest plus smallest neighbour factor
-Add the largest prime factor of n to the smallest prime factor of n + 1. Tested starts reach 5 → 7 → 9 or 22 → 34. Prove all do.
-Informal statement: For $f(n)=P(n)+p(n+1)$, with $p$ the least prime factor, prove every orbit with $n\ge3$ reaches $(5,7,9)$ or $(22,34)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-322. Cycles of the map (as observed numerically): (5, 7, 9); (22, 34).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N322
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+/-- least prime factor (`Nat.minFac`, so `p 1 = 1`) -/
+def p (n : ℕ) : ℕ := n.minFac
+def f (n : ℕ) : ℕ := P n + p (n+1)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {5, 7, 9, 22, 34}
+def Claim : Prop := ∀ n : ℕ, 3 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N322

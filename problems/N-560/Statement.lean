@@ -1,10 +1,9 @@
 import Mathlib
-/-! N-560: The 5p+4 nine-cycle
-For p ↦ largest prime factor of 5p + 4, every tested prime ends in one loop of nine primes through 11. Prove all do.
-Informal statement: Prove every orbit of $p\mapsto P(5p+4)$ on primes enters the cycle $(11,59,23,17,89,449,173,79,19)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-560. Cycles of `q ↦ P(5q+4)` on primes (as observed numerically): (11, 59, 23, 17, 89, 449, 173, 79, 19). -/
 namespace OpenProblems.N560
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def g (q : ℕ) : ℕ := P (5 * q + 4)
+def cycleSet : Finset ℕ := {11, 17, 19, 23, 59, 79, 89, 173, 449}
+def Claim : Prop := ∀ q : ℕ, q.Prime → ∃ k : ℕ, g^[k] q ∈ cycleSet
 end OpenProblems.N560

@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-327: The shift-6 prime map
-Map n to P(n) + P(n+6). Tested starts reach 6 or the loop 8 ↔ 9. Prove all do.
-Informal statement: For $f(n)=P(n)+P(n+6)$, prove every orbit with $n\ge3$ reaches $\{6\}$ or $(8,9)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-327. Cycles of the map (as observed numerically): (6); (8, 9).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N327
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := P n + P (n+6)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {6, 8, 9}
+def Claim : Prop := ∀ n : ℕ, 3 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N327

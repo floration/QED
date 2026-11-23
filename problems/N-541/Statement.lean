@@ -1,10 +1,9 @@
 import Mathlib
-/-! N-541: The 4p+1 funnel
-Map a prime p to the largest prime factor of 4p + 1. Every prime tested falls into one loop of eight primes. Prove all do.
-Informal statement: Prove every orbit of $p\mapsto P(4p+1)$ on primes enters the cycle $5\to7\to29\to13\to53\to71\to19\to11\to5$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-541. Cycles of `q ↦ P(4q+1)` on primes (as observed numerically): (5, 7, 29, 13, 53, 71, 19, 11). -/
 namespace OpenProblems.N541
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def g (q : ℕ) : ℕ := P (4 * q + 1)
+def cycleSet : Finset ℕ := {5, 7, 11, 13, 19, 29, 53, 71}
+def Claim : Prop := ∀ q : ℕ, q.Prime → ∃ k : ℕ, g^[k] q ∈ cycleSet
 end OpenProblems.N541

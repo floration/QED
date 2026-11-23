@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-314: Four fates of P(n)+P(n+1)+1
-Map n to P(n) + P(n+1) + 1. Tested starts reach the fixed point 9 or loops through 6, 19 or 61. Prove these are the only fates.
-Informal statement: For $f(n)=P(n)+P(n+1)+1$, prove every orbit reaches $\{9\}$, $(6,11,15,8)$, $(19,25)$ or the 4-cycle through $61$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-314. Cycles of the map (as observed numerically): (6, 11, 15, 8); (9); (19, 25); (61, 93, 79, 85).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N314
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := P n + P (n+1) + 1
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {6, 8, 9, 11, 15, 19, 25, 61, 79, 85, 93}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N314

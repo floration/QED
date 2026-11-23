@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-273: Doubling the largest factor
-Replace n by twice its largest prime factor plus one. Every tested start falls into one loop of eight numbers. Prove all do.
-Informal statement: Prove every orbit of $n\mapsto 2P(n)+1$ on $n\ge2$ enters the cycle $(7,15,11,23,47,95,39,27)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-273. Cycles of the map (as observed numerically): (7, 15, 11, 23, 47, 95, 39, 27).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N273
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := 2 * P n + 1
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {7, 11, 15, 23, 27, 39, 47, 95}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N273

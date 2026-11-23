@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-315: Triple factor map minus two
-Map n to P(n) + P(n+1) + P(n+2) − 2. Tested starts reach the fixed points 8 or 33, a 13-step loop through 20, or a 9-step loop through 177. Prove nothing else happens.
-Informal statement: For $f(n)=P(n)+P(n+1)+P(n+2)-2$, prove every orbit reaches $\{8\}$, $\{33\}$, the 13-cycle through $20$, or the 9-cycle through $177$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-315. Cycles of the map (as observed numerically): (8); (20, 21, 39, 57, 105, 165, 259, 77, 101, 219, 99, 115, 63); (33); (177, 325, 283, 371, 455, 487, 709, 857, 1727).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N315
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := P n + P (n+1) + P (n+2) - 2
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {8, 20, 21, 33, 39, 57, 63, 77, 99, 101, 105, 115, 165, 177, 219, 259, 283, 325, 371, 455, 487, 709, 857, 1727}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N315

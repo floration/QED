@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-312: The shift-3 prime map
-Add the largest prime factors of n and n + 3. Every tested start falls into 6, the loop 8 → 13 → 15, or the loop 10 → 18. Prove all do.
-Informal statement: For $f(n)=P(n)+P(n+3)$, prove every orbit with $n\ge3$ reaches $\{6\}$, $(8,13,15)$ or $(10,18)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-312. Cycles of the map (as observed numerically): (6); (8, 13, 15); (10, 18).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N312
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := P n + P (n+3)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {6, 8, 10, 13, 15, 18}
+def Claim : Prop := ∀ n : ℕ, 3 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N312

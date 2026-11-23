@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-272: Two loops for P(n)+P(n+2)
-Replace n by P(n) + P(n + 2). Every tested start ends in 7 → 10 → 8 → 7 or in 9 → 14 → 9. Prove there are no other outcomes.
-Informal statement: Prove every orbit of $n\mapsto P(n)+P(n+2)$ on $n\ge2$ enters $\{7,10,8\}$ or $\{9,14\}$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-272. Cycles of the map (as observed numerically): (7, 10, 8); (9, 14).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N272
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := P n + P (n+2)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {7, 8, 9, 10, 14}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N272

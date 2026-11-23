@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-483: Doubled prime map with a 1231 loop
-Map n to twice its largest prime factor plus the largest prime factor of n + 1. Starts below 150,000 reach either a five-step loop through 93 or a three-step loop through 1231. Prove there are no other fates.
-Informal statement: For $f(n)=2P(n)+P(n+1)$, prove every orbit reaches $(93,109,229,481,315)$ or $(1231,2473,6183)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-483. Cycles of the map (as observed numerically): (93, 109, 229, 481, 315); (1231, 2473, 6183).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N483
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := 2 * P n + P (n+1)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {93, 109, 229, 315, 481, 1231, 2473, 6183}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N483

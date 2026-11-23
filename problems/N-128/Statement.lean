@@ -1,10 +1,13 @@
 import Mathlib
-/-! N-128: Prime factor plus digit sum
-Add the largest prime factor of n to its digit sum. Every tested start ends in 6 → 9 → 12. Prove all do, which needs ruling out endless chains of primes p → p + digit sum.
-Informal statement: For $f(n)=P(n)+s_{10}(n)$, prove every orbit with $n\ge2$ reaches the cycle $(6,9,12)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-128. Cycles of the map (as observed numerically): (6, 9, 12).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N128
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+/-- decimal digit sum -/
+def s10 (n : ℕ) : ℕ := (Nat.digits 10 n).sum
+def f (n : ℕ) : ℕ := P n + s10 n
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {6, 9, 12}
+def Claim : Prop := ∀ n : ℕ, 2 ≤ n → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N128

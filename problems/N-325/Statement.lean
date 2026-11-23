@@ -1,10 +1,11 @@
 import Mathlib
-/-! N-325: Lopsided neighbour map
-Map n to P(n) + 2P(n+1). Except for the fixed point 8, every tested start from 3 upward falls into 23 → 29 → 39. Prove this for all starts.
-Informal statement: For $f(n)=P(n)+2P(n+1)$, prove every orbit with $n\ge3$, $n\ne8$, reaches $(23,29,39)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+/-! N-325. Cycles of the map (as observed numerically): (23, 29, 39).
+`Claim` says every orbit from the stated starting range eventually lands in one of these cycles. -/
 namespace OpenProblems.N325
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def f (n : ℕ) : ℕ := P n + 2 * P (n+1)
+/-- union of all the listed cycles -/
+def cycleSet : Finset ℕ := {23, 29, 39}
+def Claim : Prop := ∀ n : ℕ, 3 ≤ n → n ≠ 8 → ∃ k : ℕ, f^[k] n ∈ cycleSet
 end OpenProblems.N325
