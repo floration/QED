@@ -11,8 +11,13 @@ jobs:
         with: { fetch-depth: 0 }
       - id: files
         run: echo "list=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD | tr '\n' ' ')" >> $GITHUB_OUTPUT
-      - uses: leanprover/lean-action@v1
-        with: { build: false, use-mathlib-cache: true }
+      - name: Install Lean and Mathlib cache
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+          export PATH="$HOME/.elan/bin:$PATH"
+          lake update
+          lake exe cache get
       - name: Check solution
         env: { PR_AUTHOR: "${{ github.event.pull_request.user.login }}" }
         run: python3 scripts/check.py ${{ steps.files.outputs.list }}
