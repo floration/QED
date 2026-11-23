@@ -1,0 +1,8 @@
+{
+ "id": "N-078",
+ "title": "Tangent-sweep Keller maps",
+ "area": "Algebra",
+ "difficulty": 2.0,
+ "plain": "One 2026 counterexample to the Jacobian conjecture sweeps tangent lines of a curve. Find every counterexample built that way.",
+ "math": "Classify all polynomial maps $\\mathbb{C}^3\\to\\mathbb{C}^3$ with constant nonzero Jacobian arising from the tangent-sweep construction over plane curves."
+}

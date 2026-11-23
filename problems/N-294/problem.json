@@ -1,0 +1,8 @@
+{
+ "id": "N-294",
+ "title": "Square-sum orderings avoiding progressions",
+ "area": "Combinatorics",
+ "difficulty": 4.0,
+ "plain": "Line up 1 to N with neighbours summing to squares, and with no three equally spaced positions holding an arithmetic progression.",
+ "math": "Prove for all large $N$ there is a Hamiltonian path $v_1\\dots v_N$ of $S_N$ with no $i<j<k$, $j-i=k-j$, such that $v_i,v_j,v_k$ form an AP."
+}

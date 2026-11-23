@@ -1,0 +1,8 @@
+{
+ "id": "N-431",
+ "title": "Spectre billiards ergodic",
+ "area": "Dynamics",
+ "difficulty": 5.8,
+ "plain": "Billiards inside a spectre-shaped room with curved walls should be chaotic. Prove the billiard flow is ergodic.",
+ "math": "Prove the billiard flow in the spectre (with its circular-arc edges) is ergodic with respect to Liouville measure."
+}

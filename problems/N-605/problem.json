@@ -1,0 +1,8 @@
+{
+ "id": "N-605",
+ "title": "Gerver sofa and the circle",
+ "area": "Number theory",
+ "difficulty": 5.7,
+ "plain": "Show the area of Gerver's sofa is not a rational combination of π and 1.",
+ "math": "Prove $\\mu_G\\notin\\mathbb{Q}+\\mathbb{Q}\\pi$."
+}

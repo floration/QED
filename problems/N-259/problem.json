@@ -1,0 +1,8 @@
+{
+ "id": "N-259",
+ "title": "Seven-free primes with prime digit sum",
+ "area": "Number theory",
+ "difficulty": 2.6,
+ "plain": "Show infinitely many primes have no digit 7 and a digit sum that is itself prime.",
+ "math": "Prove infinitely many primes $p$ free of the decimal digit 7 with $s_{10}(p)$ prime."
+}

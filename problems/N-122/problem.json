@@ -1,0 +1,8 @@
+{
+ "id": "N-122",
+ "title": "Prime Golomb rulers",
+ "area": "Combinatorics",
+ "difficulty": 2.4,
+ "plain": "Find the shortest ruler with marks only at prime positions where all distances between marks are different.",
+ "math": "For each $n$, determine the minimal $L$ such that some set of $n$ primes in an interval of length $L$ has all pairwise differences distinct; find its asymptotics."
+}

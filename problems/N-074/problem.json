@@ -1,0 +1,8 @@
+{
+ "id": "N-074",
+ "title": "Coloring the spectre's distances",
+ "area": "Geometry",
+ "difficulty": 1.1,
+ "plain": "Take all corners of a spectre tiling and join two whenever they are exactly one edge-length apart. How many colors are needed?",
+ "math": "Determine the chromatic number of the unit-distance graph on the vertex set of a spectre tiling (unit = edge length)."
+}

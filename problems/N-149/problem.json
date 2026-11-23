@@ -1,0 +1,8 @@
+{
+ "id": "N-149",
+ "title": "Zigzag sofa",
+ "area": "Geometry",
+ "difficulty": 4.4,
+ "plain": "A hallway turns right, then left after distance d. Find the best sofa for every d.",
+ "math": "For each $d>0$, determine the optimal sofa for the width-1 corridor with two opposite right turns separated by $d$."
+}

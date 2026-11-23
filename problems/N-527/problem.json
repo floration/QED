@@ -1,0 +1,8 @@
+{
+ "id": "N-527",
+ "title": "Hat corona limit shape is not polygonal",
+ "area": "Geometry",
+ "difficulty": 3.0,
+ "plain": "Show the limiting shape of hat layers has a fractal outline.",
+ "math": "Prove the limit shape of scaled hat coronas has boundary of Hausdorff dimension $>1$."
+}

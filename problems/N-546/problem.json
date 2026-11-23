@@ -1,0 +1,8 @@
+{
+ "id": "N-546",
+ "title": "Hat Laplacian eigenvalue is transcendental",
+ "area": "Analysis",
+ "difficulty": 6.6,
+ "plain": "Show the lowest vibration frequency of a hat-shaped drum with clamped edges is transcendental.",
+ "math": "Prove the first Dirichlet eigenvalue $\\lambda_1$ of the hat polygon (unit kite side) is transcendental."
+}

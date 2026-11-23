@@ -1,0 +1,8 @@
+{
+ "id": "N-251",
+ "title": "Many loops for affine prime maps",
+ "area": "Dynamics",
+ "difficulty": 3.9,
+ "plain": "Show the number of separate loops of p ↦ largest prime factor of ap + 1 grows without bound as a grows.",
+ "math": "Let $N(a)$ be the number of periodic orbits of $p\\mapsto P(ap+1)$ on primes. Prove $\\limsup_{a\\to\\infty}N(a)=\\infty$."
+}

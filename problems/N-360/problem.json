@@ -1,0 +1,8 @@
+{
+ "id": "N-360",
+ "title": "Time-independent force",
+ "area": "Analysis",
+ "difficulty": 3.2,
+ "plain": "Make viscous fluid blow up with a push that never changes in time.",
+ "math": "Construct smooth compactly supported time-independent $f$ such that 3D Navier–Stokes from rest blows up in finite time."
+}

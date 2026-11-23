@@ -1,0 +1,8 @@
+{
+ "id": "N-121",
+ "title": "Prime Langford pairings",
+ "area": "Combinatorics",
+ "difficulty": 1.9,
+ "plain": "Arrange two copies each of 1 to n so the two copies of k sit exactly the k-th prime apart. For which n is this possible?",
+ "math": "Determine all $n$ for which $1,1,\\dots,n,n$ can be arranged so the two copies of $k$ are $p_k$ positions apart."
+}

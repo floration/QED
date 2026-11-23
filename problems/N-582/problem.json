@@ -1,0 +1,8 @@
+{
+ "id": "N-582",
+ "title": "Sofa for every corridor",
+ "area": "Geometry",
+ "difficulty": 4.6,
+ "plain": "Give one method that finds the best sofa for every hallway shape.",
+ "math": "Prove optimal sofas for piecewise-linear corridors are characterized by a finite system of ODEs on boundary arcs, and solve it in closed form for all right-angle corridors of width ratio $r$."
+}

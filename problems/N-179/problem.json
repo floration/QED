@@ -1,0 +1,8 @@
+{
+ "id": "N-179",
+ "title": "Wind-driven fire in 3D",
+ "area": "Combinatorics",
+ "difficulty": 2.8,
+ "plain": "In 3D, fire spreads in five of six directions because of wind. How many firefighters per turn are needed?",
+ "math": "On $\\mathbb{Z}^3$ with spread to all neighbours except $-e_1$, find the least per-turn budget containing a single fire."
+}

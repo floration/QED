@@ -1,0 +1,8 @@
+{
+ "id": "N-311",
+ "title": "Stopping time law for P(n)+P(n+1)",
+ "area": "Probability",
+ "difficulty": 6.0,
+ "plain": "For the map n ↦ P(n) + P(n+1), find the distribution of the number of steps to the {5, 8} loop.",
+ "math": "Prove the stopping time $\\sigma(n)$ of $f(n)=P(n)+P(n+1)$ satisfies $\\sigma(n)/\\log\\log n\\to c$ in density, and determine $c$."
+}

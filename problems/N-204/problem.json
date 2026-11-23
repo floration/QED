@@ -1,0 +1,8 @@
+{
+ "id": "N-204",
+ "title": "Hat treewidth",
+ "area": "Combinatorics",
+ "difficulty": 2.1,
+ "plain": "Find exactly how hard hat-tiled regions are to break into small pieces.",
+ "math": "Prove the treewidth of $n$-tile hat patches is $\\sim c\\sqrt n$ and compute $c$."
+}

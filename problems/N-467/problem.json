@@ -1,0 +1,8 @@
+{
+ "id": "N-467",
+ "title": "Progressions of Prime Nim losses",
+ "area": "Games",
+ "difficulty": 4.9,
+ "plain": "Show the losing positions of Prime Nim contain arbitrarily long arithmetic progressions.",
+ "math": "Prove $\\{n:G(n)=0\\}$ contains $k$-term arithmetic progressions for every $k$."
+}

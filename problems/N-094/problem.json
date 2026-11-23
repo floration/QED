@@ -1,0 +1,8 @@
+{
+ "id": "N-094",
+ "title": "Hat billiard counting",
+ "area": "Dynamics",
+ "difficulty": 3.1,
+ "plain": "Count the periodic bouncing paths inside a hat-shaped table up to a given length.",
+ "math": "For billiards in the hat polygon, prove $N(L)\\sim cL^2$ for periodic cylinder families and compute $c$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-608",
+ "title": "Irrational orbit sum",
+ "area": "Number theory",
+ "difficulty": 7.5,
+ "plain": "Add the reciprocals of the square-plus-one sequence starting from 2. Show the total is irrational.",
+ "math": "Prove $\\sum_{k\\ge0}1/Q^k(2)$ converges and is irrational."
+}

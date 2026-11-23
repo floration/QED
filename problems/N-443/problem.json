@@ -1,0 +1,8 @@
+{
+ "id": "N-443",
+ "title": "The spectre is not spectral",
+ "area": "Analysis",
+ "difficulty": 3.4,
+ "plain": "Show the spectre, a curved tile that cannot tile by translations, has no orthogonal basis of exponentials, as Fuglede's conjecture predicts.",
+ "math": "Prove there is no $\\Lambda\\subset\\mathbb{R}^2$ such that $\\{e^{2\\pi i\\lambda\\cdot x}\\}_{\\lambda\\in\\Lambda}$ is an orthogonal basis of $L^2$ of the spectre domain."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-131",
+ "title": "Clique minors in the prime-sum graph",
+ "area": "Combinatorics",
+ "difficulty": 6.0,
+ "plain": "Show the prime-sum graph on 1 to 2n has a complete minor of size about n over the square root of log n.",
+ "math": "Prove $h(\\Pi_{2n})=\\Theta(n/\\sqrt{\\log n})$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-233",
+ "title": "Graceful forests from caterpillar seeds",
+ "area": "Combinatorics",
+ "difficulty": 2.8,
+ "plain": "Show forests made of large caterpillars plus one arbitrary tree are graceful-forest labelable.",
+ "math": "Prove every forest $T\\cup C_1\\cup\\dots\\cup C_k$ with $T$ any tree and $C_i$ caterpillars each of size $\\ge|T|$ admits a bijection $V\\to\\{0,\\dots,m+k\\}$ with distinct edge differences."
+}

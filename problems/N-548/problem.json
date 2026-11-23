@@ -1,0 +1,8 @@
+{
+ "id": "N-548",
+ "title": "Affine prime maps all settle",
+ "area": "Dynamics",
+ "difficulty": 6.2,
+ "plain": "Fix whole numbers a and b. Send a prime p to the largest prime factor of ap + b. Every case tested falls into a loop. Prove this always happens.",
+ "math": "Prove that for all fixed integers $a\\ge2$, $b\\ge1$, every orbit of $p\\mapsto P(ap+b)$ on primes is eventually periodic."
+}

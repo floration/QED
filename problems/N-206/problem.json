@@ -1,0 +1,8 @@
+{
+ "id": "N-206",
+ "title": "Four-arc sofa",
+ "area": "Geometry",
+ "difficulty": 2.0,
+ "plain": "Find the best sofa whose outline uses at most four circular arcs and straight pieces.",
+ "math": "Maximize area over admissible sofas whose boundary consists of at most four circular arcs plus segments."
+}

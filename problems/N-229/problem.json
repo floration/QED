@@ -1,0 +1,8 @@
+{
+ "id": "N-229",
+ "title": "Isoperimetric profile of the spectre",
+ "area": "Geometry",
+ "difficulty": 3.0,
+ "plain": "Among all clusters of n spectre tiles, find the smallest possible perimeter, asymptotically, with the exact constant.",
+ "math": "Prove $\\min\\{|\\partial S|:S$ a union of $n$ tiles in a spectre tiling$\\}\\sim c\\sqrt n$ and determine $c$."
+}

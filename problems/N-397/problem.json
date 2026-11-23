@@ -1,0 +1,8 @@
+{
+ "id": "N-397",
+ "title": "Keller maps with integer fibers",
+ "area": "Algebra",
+ "difficulty": 3.6,
+ "plain": "Show no Jacobian-conjecture counterexample with integer coefficients is injective on integer points but not invertible.",
+ "math": "Prove every Keller map $F\\in\\mathbb{Z}[x,y,z]^3$ injective on $\\mathbb{Z}^3$ is a polynomial automorphism of $\\mathbb{C}^3$."
+}

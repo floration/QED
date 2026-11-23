@@ -1,0 +1,8 @@
+{
+ "id": "N-409",
+ "title": "Square-sum clique minors",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "plain": "Find the largest complete graph that can be formed by contracting parts of the square-sum graph.",
+ "math": "Determine the order of growth of the Hadwiger number $h(S_N)$."
+}

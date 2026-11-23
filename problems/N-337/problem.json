@@ -1,0 +1,8 @@
+{
+ "id": "N-337",
+ "title": "Prime-sum Kayles",
+ "area": "Games",
+ "difficulty": 4.0,
+ "plain": "Same game on the prime-sum graph: take numbers so that no two taken numbers sum to a prime. Decide who wins.",
+ "math": "Determine the outcome of the independent-set game on the prime-sum graph on $[N]$ for all large $N$."
+}

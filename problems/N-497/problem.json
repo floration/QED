@@ -1,0 +1,8 @@
+{
+ "id": "N-497",
+ "title": "Largest factor of p² + p + 1 small",
+ "area": "Number theory",
+ "difficulty": 3.5,
+ "plain": "Show infinitely many primes p have P(p² + p + 1) < p.",
+ "math": "Prove $\\#\\{p\\le x:P(p^2+p+1)<p\\}\\gg\\pi(x)$."
+}

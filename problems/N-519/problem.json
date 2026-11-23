@@ -1,0 +1,8 @@
+{
+ "id": "N-519",
+ "title": "Kissing number of the spectre",
+ "area": "Geometry",
+ "difficulty": 0.8,
+ "plain": "How many spectres can touch one central spectre without overlapping?",
+ "math": "Determine the kissing number of the spectre polygon under rigid motions (reflections allowed)."
+}

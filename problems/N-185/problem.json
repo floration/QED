@@ -1,0 +1,8 @@
+{
+ "id": "N-185",
+ "title": "Fire spotting threshold",
+ "area": "Probability",
+ "difficulty": 2.9,
+ "plain": "Embers jump ahead of a fire. Find the jump probability where firefighting becomes hopeless.",
+ "math": "On $\\mathbb{Z}^2$, a burning cell also ignites a uniformly random cell at distance $\\le r$ with probability $q$. Find $q^*(r,k)$ beyond which $k$ protections per turn fail a.s."
+}

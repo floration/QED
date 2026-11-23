@@ -1,0 +1,8 @@
+{
+ "id": "N-287",
+ "title": "Prime Nim with Pythagorean primes",
+ "area": "Games",
+ "difficulty": 4.0,
+ "plain": "In a variant of Prime Nim you may only remove 2 or a prime that is 1 mod 4. Show the losing positions have density zero.",
+ "math": "For the subtraction game with move set $\\{2\\}\\cup\\{p\\equiv1\\ (4)\\}$, prove the P-positions have natural density 0."
+}

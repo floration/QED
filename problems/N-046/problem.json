@@ -1,0 +1,8 @@
+{
+ "id": "N-046",
+ "title": "Optimal origami base",
+ "area": "Geometry",
+ "difficulty": 2.1,
+ "plain": "Folders design animal shapes by packing circles on paper. Find the smallest paper needed for every stick figure with six legs or fewer.",
+ "math": "For every weighted tree with $\\le6$ leaves, determine the minimum square side admitting a uniaxial base (optimal circle–river packing), with certificates."
+}

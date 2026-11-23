@@ -1,0 +1,8 @@
+{
+ "id": "N-068",
+ "title": "No prism sofa",
+ "area": "Geometry",
+ "difficulty": 1.9,
+ "plain": "Show the best 3D sofa is genuinely three-dimensional, not just a flat shape extruded upward.",
+ "math": "Prove no optimal solid for the $1\\times1$ square corridor is of the form $A\\times[0,1]$."
+}

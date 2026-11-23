@@ -1,0 +1,8 @@
+{
+ "id": "N-424",
+ "title": "Sofa constant digits",
+ "area": "Number theory",
+ "difficulty": 6.0,
+ "plain": "Show the digits of Gerver's sofa area do not end in a repeating pattern in base 2 either, and give an explicit irrationality measure bound.",
+ "math": "Prove $\\mu_G$ is irrational with irrationality measure $\\le 100$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-436",
+ "title": "Seven-free Gaussian primes",
+ "area": "Number theory",
+ "difficulty": 3.2,
+ "plain": "Show infinitely many primes a² + b² have both a and b free of the digit 7.",
+ "math": "Prove infinitely many primes $a^2+b^2$ with $a,b$ positive integers free of the decimal digit 7."
+}

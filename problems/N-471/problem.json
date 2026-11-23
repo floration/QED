@@ -1,0 +1,8 @@
+{
+ "id": "N-471",
+ "title": "Two long loops",
+ "area": "Dynamics",
+ "difficulty": 5.4,
+ "plain": "Replace n by P(3n + 1) + P(n). Every tested start ends in one of two long loops, through 46 or through 80. Prove there are no others.",
+ "math": "Prove every orbit of $n\\mapsto P(3n+1)+P(n)$ on $n\\ge2$ enters the 9-cycle through 46 or the 7-cycle through 80."
+}

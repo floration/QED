@@ -1,0 +1,8 @@
+{
+ "id": "N-464",
+ "title": "Quasi-independence of square-plus-one steps",
+ "area": "Number theory",
+ "difficulty": 5.9,
+ "plain": "Show the largest prime factors of n² + 1 and (n + 1)² + 1 are nearly independent in size.",
+ "math": "Prove $\\#\\{n\\le x: P(n^2+1)<P((n+1)^2+1)\\}\\sim x/2$."
+}

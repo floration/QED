@@ -1,0 +1,8 @@
+{
+ "id": "N-390",
+ "title": "Hat tiling Lee–Yang zeros",
+ "area": "Physics",
+ "difficulty": 4.5,
+ "plain": "For magnets on a hat tiling, show the complex zeros of the partition function pinch the real axis at exactly one point.",
+ "math": "Prove the Lee–Yang zeros of the ferromagnetic Ising model on growing hat patches accumulate on the positive real temperature axis only at $\\beta_c$."
+}

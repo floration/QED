@@ -1,0 +1,8 @@
+{
+ "id": "N-178",
+ "title": "Delayed fire on hexagons",
+ "area": "Combinatorics",
+ "difficulty": 1.5,
+ "plain": "On a honeycomb grid, firefighters arrive one turn late. Find how many per turn are needed.",
+ "math": "On the hexagonal lattice with 3-neighbour spread and one-turn protection delay, find the least per-turn budget containing a single fire."
+}

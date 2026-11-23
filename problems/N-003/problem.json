@@ -1,0 +1,8 @@
+{
+ "id": "N-003",
+ "title": "Lonely runner with one fast runner",
+ "area": "Number theory",
+ "difficulty": 1.0,
+ "plain": "Runners have speeds 1, 2, 3 and some larger speed m. Work out exactly how lonely a stationary runner is guaranteed to get, depending on m.",
+ "math": "Compute $\\delta(m)=\\sup_t\\min(\\|t\\|,\\|2t\\|,\\|3t\\|,\\|mt\\|)$ in closed form for all integers $m\\ge4$."
+}

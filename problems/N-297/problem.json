@@ -1,0 +1,8 @@
+{
+ "id": "N-297",
+ "title": "Stopping times of the doubling map",
+ "area": "Dynamics",
+ "difficulty": 5.6,
+ "plain": "For n ↦ 2P(n) + 1, find the typical number of steps to reach its eight-number loop.",
+ "math": "For $h(n)=2P(n)+1$, prove the number of steps to enter the 8-cycle is $\\sim c\\log\\log n$ for almost all $n$ and find $c$."
+}

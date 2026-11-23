@@ -1,0 +1,8 @@
+{
+ "id": "N-218",
+ "title": "Rotor walks on the spectre",
+ "area": "Probability",
+ "difficulty": 5.0,
+ "plain": "A rotor walk on the spectre tiling should stay within bounded distance of a random walk's expected behaviour. Prove the discrepancy is bounded.",
+ "math": "For rotor-router aggregation on the spectre graph with $n$ particles, prove the cluster differs from a disc of area $n$ by $O(\\log n)$ in Hausdorff distance."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-576",
+ "title": "Infinite cube-sum paths",
+ "area": "Combinatorics",
+ "difficulty": 4.0,
+ "plain": "Colour the integers with two colours. Show there is an infinite one-coloured chain where neighbours sum to cubes.",
+ "math": "Prove every 2-colouring of $\\mathbb{N}$ admits $a_1<a_2<\\cdots$ of one colour with $a_i+a_{i+1}$ a perfect cube for all $i$."
+}

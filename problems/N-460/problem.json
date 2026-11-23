@@ -1,0 +1,8 @@
+{
+ "id": "N-460",
+ "title": "Prime cycles of all lengths",
+ "area": "Dynamics",
+ "difficulty": 3.8,
+ "plain": "Show that for every length L, some map p ↦ largest prime factor of ap + b has a loop of exactly length L.",
+ "math": "Prove that for every $L\\ge1$ there are $a,b\\ge1$ such that $p\\mapsto P(ap+b)$ has a periodic orbit of exact length $L$."
+}

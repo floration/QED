@@ -1,0 +1,8 @@
+{
+ "id": "N-429",
+ "title": "Lonely runner gap for the first n primes",
+ "area": "Number theory",
+ "difficulty": 4.4,
+ "plain": "For the first n primes as speeds, find the actual loneliness gap asymptotically.",
+ "math": "Determine the asymptotics of $\\delta_n=\\sup_t\\min_{i\\le n}\\|tp_i\\|$ as $n\\to\\infty$."
+}

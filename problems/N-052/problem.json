@@ -1,0 +1,8 @@
+{
+ "id": "N-052",
+ "title": "Equal-area triangles in the hat",
+ "area": "Geometry",
+ "difficulty": 2.0,
+ "plain": "Cut the hat tile into triangles of equal area. Which numbers of triangles are possible?",
+ "math": "Determine the set of $n$ for which the hat polygon admits a dissection into $n$ triangles of equal area."
+}

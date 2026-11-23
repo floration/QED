@@ -1,0 +1,8 @@
+{
+ "id": "N-569",
+ "title": "Hat Hofstadter gaps all open",
+ "area": "Physics",
+ "difficulty": 7.3,
+ "plain": "Show every gap predicted by the gap-labelling theorem actually opens in the hat tiling's electronic spectrum.",
+ "math": "Prove the dry ten-Martini property for the vertex adjacency operator of the hat tiling: every gap label in the $K_0$-group of the hull corresponds to an open gap."
+}

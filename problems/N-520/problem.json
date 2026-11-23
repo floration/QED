@@ -1,0 +1,8 @@
+{
+ "id": "N-520",
+ "title": "Graceful trees up to 50 vertices in Lean",
+ "area": "Formal proof",
+ "difficulty": 3.9,
+ "plain": "Give a computer-checked proof that every tree with up to 50 vertices is graceful.",
+ "math": "Formalize in Lean 4 that all trees on $\\le50$ vertices admit graceful labelings."
+}

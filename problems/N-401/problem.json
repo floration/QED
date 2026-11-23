@@ -1,0 +1,8 @@
+{
+ "id": "N-401",
+ "title": "Hat mixing time",
+ "area": "Probability",
+ "difficulty": 3.9,
+ "plain": "Randomly flip local patches of a hat tiling. Show it mixes in polynomial time.",
+ "math": "For local-move Glauber dynamics on hat tilings of an $L\\times L$ region, prove mixing time $L^{O(1)}$."
+}

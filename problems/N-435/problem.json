@@ -1,0 +1,8 @@
+{
+ "id": "N-435",
+ "title": "Long progressions of seven-free primes",
+ "area": "Number theory",
+ "difficulty": 4.3,
+ "plain": "Show the seven-free primes contain arbitrarily long arithmetic progressions.",
+ "math": "Prove for every $k$ there are $k$-term arithmetic progressions consisting of primes with no decimal digit 7."
+}

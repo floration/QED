@@ -1,0 +1,8 @@
+{
+ "id": "N-041",
+ "title": "Hat patch complexity",
+ "area": "Geometry",
+ "difficulty": 2.9,
+ "plain": "Count the distinct round patches of radius r in hat tilings. Find the exact constant in their growth.",
+ "math": "Let $P(r)$ count radius-$r$ patches over the hat tiling hull. Prove $P(r)\\sim C r^2$ and compute $C$."
+}

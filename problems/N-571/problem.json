@@ -1,0 +1,8 @@
+{
+ "id": "N-571",
+ "title": "Spectre drum eigenvalue is transcendental",
+ "area": "Analysis",
+ "difficulty": 9.1,
+ "plain": "Show the lowest frequency of a drum shaped like the curved spectre tile is transcendental.",
+ "math": "Prove the first Dirichlet eigenvalue of the spectre domain is transcendental."
+}

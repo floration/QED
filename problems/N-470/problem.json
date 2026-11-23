@@ -1,0 +1,8 @@
+{
+ "id": "N-470",
+ "title": "Density of Grundy value one in Prime Nim",
+ "area": "Games",
+ "difficulty": 5.9,
+ "plain": "Show the pile sizes with Grundy value exactly 1 in Prime Nim have a definite density, and that it is positive.",
+ "math": "For the prime subtraction game, prove $\\lim_x\\frac1x\\#\\{n\\le x:G(n)=1\\}$ exists and is positive."
+}

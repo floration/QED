@@ -1,0 +1,8 @@
+{
+ "id": "N-200",
+ "title": "Cube-sum connectivity",
+ "area": "Combinatorics",
+ "difficulty": 1.6,
+ "plain": "Join numbers that add to a perfect cube. Show everything links up once N is large.",
+ "math": "Prove $C_N$ ($a\\sim b\\iff a+b$ is a cube) is connected for all sufficiently large $N$."
+}

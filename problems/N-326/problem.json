@@ -1,0 +1,8 @@
+{
+ "id": "N-326",
+ "title": "The parity-switch prime map",
+ "area": "Dynamics",
+ "difficulty": 5.2,
+ "plain": "For even n add P(n) and P(n+1); for odd n add P(n) and P(n−1). Every tested start falls into one nine-step loop through 5. Prove all do.",
+ "math": "For $f(n)=P(n)+P(n+(-1)^n)$, prove every orbit with $n\\ge3$ reaches $(5,7,10,16,19,22,34,24,8)$."
+}

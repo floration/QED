@@ -1,0 +1,8 @@
+{
+ "id": "N-324",
+ "title": "Mixed divisor-sum map",
+ "area": "Dynamics",
+ "difficulty": 5.2,
+ "plain": "Add the sum of distinct prime factors of n to the largest prime factor of n + 1. Tested starts reach 14, 21, or loops through 5, 10, 31 or 82. Prove these are the only fates.",
+ "math": "For $f(n)=\\mathrm{sopf}(n)+P(n+1)$, prove every orbit reaches $\\{14\\},\\{21\\},(5,8),(10,18,24),(31,33)$ or $(82,126,139,146)$."
+}

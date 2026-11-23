@@ -1,0 +1,8 @@
+{
+ "id": "N-589",
+ "title": "Spectre gap labelling",
+ "area": "Physics",
+ "difficulty": 5.1,
+ "plain": "Show every allowed energy gap of the spectre tiling actually opens.",
+ "math": "Prove the dry ten-Martini property for the adjacency operator on the spectre tiling."
+}

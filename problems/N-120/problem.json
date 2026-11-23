@@ -1,0 +1,8 @@
+{
+ "id": "N-120",
+ "title": "Spot fires",
+ "area": "Probability",
+ "difficulty": 2.5,
+ "plain": "Fires throw embers ahead at random. Find the exact spreading speed.",
+ "math": "For a growth model where each burning site ignites a site at i.i.d. heavy-tailed displacement at rate 1, compute the asymptotic speed or growth exponent explicitly."
+}

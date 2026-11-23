@@ -1,0 +1,8 @@
+{
+ "id": "N-421",
+ "title": "Prime cubes with one shift",
+ "area": "Number theory",
+ "difficulty": 4.5,
+ "plain": "Show infinitely many quadruples of primes satisfy x³ + y³ = z³ + w³ + 1.",
+ "math": "Prove infinitely many prime solutions $(x,y,z,w)$ of $x^3+y^3=z^3+w^3+1$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-238",
+ "title": "Lost in a hat-shaped forest",
+ "area": "Geometry",
+ "difficulty": 3.8,
+ "plain": "You are lost in a forest shaped like a hat, position and orientation unknown. Find the shortest path guaranteed to get you out.",
+ "math": "Determine Bellman's escape length for the hat polygon: the least length of a curve such that every congruent placement of it inside the hat meets the boundary."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-256",
+ "title": "Seven-free square-sum chains",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "plain": "Take only the numbers up to N with no digit 7. Show they can be lined up so neighbours always sum to perfect squares, for large N.",
+ "math": "Let $A_N=\\{n\\le N: 7\\notin n\\}$. Prove $S_N[A_N]$ has a Hamiltonian path for all sufficiently large $N$."
+}

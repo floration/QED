@@ -1,0 +1,8 @@
+{
+ "id": "N-587",
+ "title": "Keller maps classification",
+ "area": "Algebra",
+ "difficulty": 6.1,
+ "plain": "List every Jacobian-conjecture counterexample in 3D, up to symmetry.",
+ "math": "Classify all non-invertible Keller maps $\\mathbb{C}^3\\to\\mathbb{C}^3$ up to composition with polynomial automorphisms."
+}

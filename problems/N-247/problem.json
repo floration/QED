@@ -1,0 +1,8 @@
+{
+ "id": "N-247",
+ "title": "Largest factor of the midpoint",
+ "area": "Number theory",
+ "difficulty": 3.6,
+ "plain": "For consecutive primes p < q, look at the largest prime factor of (p + q)/2. Show it exceeds p^0.5 for a positive fraction.",
+ "math": "Prove $\\#\\{n\\le x: P(\\tfrac{p_n+p_{n+1}}2)>p_n^{1/2}\\}\\gg \\pi(x)$."
+}

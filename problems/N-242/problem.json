@@ -1,0 +1,8 @@
+{
+ "id": "N-242",
+ "title": "Seven-free primes as an additive basis",
+ "area": "Number theory",
+ "difficulty": 2.4,
+ "plain": "Show every large number is a sum of a bounded number of seven-free primes.",
+ "math": "Prove there is $k$ such that every sufficiently large integer of suitable parity is a sum of at most $k$ primes with no decimal digit 7, and give an explicit $k$."
+}

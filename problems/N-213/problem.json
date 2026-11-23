@@ -1,0 +1,8 @@
+{
+ "id": "N-213",
+ "title": "Smooth shifted primes in two bases",
+ "area": "Number theory",
+ "difficulty": 3.5,
+ "plain": "Find infinitely many primes p for which p − 1 has only small prime factors and p has no digit 7.",
+ "math": "Prove infinitely many 7-free primes $p$ with $P(p-1)\\le p^{0.3}$."
+}

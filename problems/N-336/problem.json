@@ -1,0 +1,8 @@
+{
+ "id": "N-336",
+ "title": "Largest-factor subtraction game",
+ "area": "Games",
+ "difficulty": 4.8,
+ "plain": "From pile n you may remove P(n) stones or any prime smaller than P(n). Characterise the losing positions.",
+ "math": "For moves $n\\to n-q$, $q\\in\\mathbb{P}$, $q\\le P(n)$, prove the P-positions have density zero and determine whether they are infinite."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-171",
+ "title": "Cube-sum colors",
+ "area": "Combinatorics",
+ "difficulty": 3.0,
+ "plain": "Join numbers that add up to a perfect cube. Show a fixed number of colors always suffices.",
+ "math": "For $C_N$ with $a\\sim b\\iff a+b$ a cube, prove $\\sup_N\\chi(C_N)<\\infty$ and find it."
+}

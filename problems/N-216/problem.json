@@ -1,0 +1,8 @@
+{
+ "id": "N-216",
+ "title": "Midpoint map as a random walk",
+ "area": "Dynamics",
+ "difficulty": 4.6,
+ "plain": "Show that, for a random large start, the logarithm of the midpoint-prime orbit moves like a Gaussian random walk.",
+ "math": "Prove that for $n$ uniform in $[x,2x]$, the distribution of $\\log m^{k}(n)-\\log n$ for $k=\\lfloor\\log x\\rfloor$ converges after normalization to a Gaussian."
+}

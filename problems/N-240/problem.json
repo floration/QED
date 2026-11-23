@@ -1,0 +1,8 @@
+{
+ "id": "N-240",
+ "title": "Counting square-sum chains",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "plain": "Count the ways to line up 1 to N with neighbours summing to squares. Find the leading growth.",
+ "math": "Let $h(N)$ be the number of Hamiltonian paths of $S_N$. Prove $\\log h(N)=(\\tfrac12+o(1))N\\log N$."
+}

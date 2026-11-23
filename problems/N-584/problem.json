@@ -1,0 +1,8 @@
+{
+ "id": "N-584",
+ "title": "Hyperoperation at rank 2.5 is transcendental",
+ "area": "Algebra",
+ "difficulty": 2.2,
+ "plain": "Show 2 combined with 3 at \"rank 2.5\" in the natural hyperoperation family is transcendental.",
+ "math": "For the unique natural family $a[s]b$, prove $2[2.5]3$ is transcendental."
+}

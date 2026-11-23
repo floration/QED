@@ -1,0 +1,8 @@
+{
+ "id": "N-015",
+ "title": "Delayed firefighters",
+ "area": "Combinatorics",
+ "difficulty": 1.9,
+ "plain": "Fire spreads in four directions, but a firefighter assigned now only takes effect a turn later. How many per turn are needed?",
+ "math": "On $\\mathbb{Z}^2$ with 4-neighbour spread, cells chosen at turn $t$ become protected at turn $t+1$. Find the least per-turn number that contains a single fire."
+}

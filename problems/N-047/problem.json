@@ -1,0 +1,8 @@
+{
+ "id": "N-047",
+ "title": "Keller maps with few terms",
+ "area": "Algebra",
+ "difficulty": 2.9,
+ "plain": "Find a Jacobian-conjecture counterexample using as few polynomial terms as possible.",
+ "math": "Minimize the total number of monomials of $F:\\mathbb{C}^3\\to\\mathbb{C}^3$ with $\\det DF\\in\\mathbb{C}^\\times$ and $F$ not injective; prove minimality."
+}

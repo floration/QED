@@ -1,0 +1,8 @@
+{
+ "id": "N-450",
+ "title": "Missing digits in two bases",
+ "area": "Number theory",
+ "difficulty": 3.2,
+ "plain": "Show infinitely many primes have no digit 9 in base 10 and no digit 10 in base 11 at the same time.",
+ "math": "Prove infinitely many primes whose base-10 expansion avoids the digit 9 and whose base-11 expansion avoids the digit 10."
+}

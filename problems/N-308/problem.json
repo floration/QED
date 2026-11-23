@@ -1,0 +1,8 @@
+{
+ "id": "N-308",
+ "title": "Hitting probability for 2P(n)+1 random variant",
+ "area": "Probability",
+ "difficulty": 6.0,
+ "plain": "With probability one half use 2P(n) + 1 and otherwise 2P(n) − 1. Show the walk visits 5 infinitely often.",
+ "math": "For $X_{t+1}=2P(X_t)\\pm1$ with fair signs, prove $X_t=5$ infinitely often almost surely."
+}

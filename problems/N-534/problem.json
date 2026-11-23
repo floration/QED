@@ -1,0 +1,8 @@
+{
+ "id": "N-534",
+ "title": "Squared rectangles with prime sides",
+ "area": "Combinatorics",
+ "difficulty": 1.3,
+ "plain": "Find the smallest perfect squared rectangle whose squares all have prime side lengths.",
+ "math": "Determine the minimal order of a perfect squared rectangle with every component side prime."
+}

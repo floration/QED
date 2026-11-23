@@ -1,0 +1,8 @@
+{
+ "id": "N-537",
+ "title": "Keller maps in dimension 3 of degree 5",
+ "area": "Algebra",
+ "difficulty": 3.5,
+ "plain": "Show no Jacobian-conjecture counterexample exists in 3D with degree exactly 5 and rational coefficients.",
+ "math": "Prove every Keller map $F\\in\\mathbb{Q}[x,y,z]^3$ with $\\deg F=5$ is invertible."
+}

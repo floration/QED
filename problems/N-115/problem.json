@@ -1,0 +1,8 @@
+{
+ "id": "N-115",
+ "title": "Leaky firefighting",
+ "area": "Probability",
+ "difficulty": 3.1,
+ "plain": "Fire spreads to each neighbour only with probability p. Find the largest p at which one firefighter per turn wins.",
+ "math": "On $\\mathbb{Z}^2$ with each burning–unburnt edge transmitting independently with probability $p$, find $p^*$ such that one protection per turn contains the fire a.s. iff $p<p^*$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-394",
+ "title": "Sofa with a rotating door",
+ "area": "Geometry",
+ "difficulty": 2.9,
+ "plain": "A door at the corner swings shut as you move. Find the largest shape that still gets through.",
+ "math": "Determine the maximal area of a set passing the width-1 right-angled corridor while the region $\\{x>1,y>1\\}$ moves by a prescribed rotating half-line barrier."
+}

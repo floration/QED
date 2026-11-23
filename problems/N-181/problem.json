@@ -1,0 +1,8 @@
+{
+ "id": "N-181",
+ "title": "Hyperbolic lonely runners",
+ "area": "Dynamics",
+ "difficulty": 3.0,
+ "plain": "Runners move along closed paths on a hyperbolic surface. Show one eventually gets far from all others.",
+ "math": "For geodesic flows on a closed hyperbolic surface along $n$ distinct primitive closed geodesics, prove a uniform separation time exists, with optimal bound."
+}

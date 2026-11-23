@@ -1,0 +1,8 @@
+{
+ "id": "N-224",
+ "title": "Prime Nim game graph",
+ "area": "Games",
+ "difficulty": 4.9,
+ "plain": "Prime Nim has losing positions with a hidden mod-structure. Show the losing positions are equidistributed in residue classes mod 3.",
+ "math": "Prove $\\#\\{n\\le x:G(n)=0,\\ n\\equiv a\\ (3)\\}\\sim\\frac13\\#\\{n\\le x:G(n)=0\\}$ for each $a$."
+}

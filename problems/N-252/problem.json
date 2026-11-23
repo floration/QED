@@ -1,0 +1,8 @@
+{
+ "id": "N-252",
+ "title": "Snort on square sums",
+ "area": "Games",
+ "difficulty": 4.0,
+ "plain": "Two players colour numbers up to N, one red and one blue. Neither may colour a number summing to a square with one of the opponent's colour. The player who cannot move loses. Decide who wins for large N.",
+ "math": "Determine the outcome of the partizan game Snort on $S_N$ for all sufficiently large $N$."
+}

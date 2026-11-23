@@ -1,0 +1,8 @@
+{
+ "id": "N-253",
+ "title": "Maker–Breaker square-sum triangles",
+ "area": "Games",
+ "difficulty": 2.0,
+ "plain": "Maker and Breaker alternately claim numbers. Maker wins by owning three numbers whose pairwise sums are all squares. Decide who wins on 1 to N for large N.",
+ "math": "Determine the winner of the Maker–Breaker game on $[N]$ whose winning sets are the triangles of $S_N$, for all sufficiently large $N$."
+}

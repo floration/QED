@@ -1,0 +1,8 @@
+{
+ "id": "N-116",
+ "title": "Hat isoperimetry",
+ "area": "Combinatorics",
+ "difficulty": 2.5,
+ "plain": "Among groups of n hat tiles, how short can the boundary be? Find the exact constant.",
+ "math": "For the hat adjacency graph, prove $\\min_{|A|=n}|\\partial A|\\sim c\\sqrt n$ and compute $c$."
+}

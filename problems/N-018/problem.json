@@ -1,0 +1,8 @@
+{
+ "id": "N-018",
+ "title": "Mod-3 Collatz map",
+ "area": "Dynamics",
+ "difficulty": 3.3,
+ "plain": "Divide by 3 when you can; otherwise double and add or subtract 1. Find all loops below a billion.",
+ "math": "Let $h(n)=n/3$ if $3\\mid n$, $2n+1$ if $n\\equiv1$, $2n-1$ if $n\\equiv2 \\pmod 3$. Classify all cycles of $h$ meeting $[1,10^9]$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-037",
+ "title": "Packing seven-pointed stars",
+ "area": "Geometry",
+ "difficulty": 4.1,
+ "plain": "Find the densest way to pack identical seven-pointed stars in the plane.",
+ "math": "Determine the maximal packing density of congruent copies of the regular star polygon $\\{7/2\\}$."
+}

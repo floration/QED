@@ -1,0 +1,8 @@
+{
+ "id": "N-065",
+ "title": "Prime pancakes",
+ "area": "Computation",
+ "difficulty": 4.0,
+ "plain": "Sort pancakes by flipping only a prime number at a time. Find the worst-case number of flips asymptotically.",
+ "math": "With prefix reversals of prime length, determine $\\lim_n d(n)/n$ for the worst-case sorting distance $d(n)$."
+}

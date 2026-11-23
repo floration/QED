@@ -1,0 +1,8 @@
+{
+ "id": "N-526",
+ "title": "Polykite growth is irrational",
+ "area": "Combinatorics",
+ "difficulty": 4.7,
+ "plain": "Show the growth rate of polykite counts is an irrational number.",
+ "math": "Prove $\\lambda=\\lim k_n^{1/n}$ for polykites is irrational."
+}

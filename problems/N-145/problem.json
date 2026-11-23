@@ -1,0 +1,8 @@
+{
+ "id": "N-145",
+ "title": "3-SAT at density 4",
+ "area": "Computation",
+ "difficulty": 4.1,
+ "plain": "Give a fast algorithm that solves almost all random 3-SAT puzzles up to clause density 4.",
+ "math": "Give a polynomial-time algorithm finding satisfying assignments of random 3-SAT with density $4.0$ with probability $1-o(1)$."
+}

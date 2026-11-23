@@ -1,0 +1,8 @@
+{
+ "id": "N-402",
+ "title": "Tetris on a cylinder",
+ "area": "Games",
+ "difficulty": 1.6,
+ "plain": "When the board wraps left to right, can a player survive forever against any piece sequence?",
+ "math": "Decide whether a player can survive indefinitely in a width-10 cylindrical Tetris well against adversarial piece sequences with 1-piece preview."
+}

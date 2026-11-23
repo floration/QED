@@ -1,0 +1,8 @@
+{
+ "id": "N-509",
+ "title": "Keller maps are invertible over Q in dimension 3, degree ≤ 4",
+ "area": "Algebra",
+ "difficulty": 3.5,
+ "plain": "Show no Jacobian-conjecture counterexample exists in 3D up to degree 4 with rational coefficients.",
+ "math": "Prove every Keller map $F\\in\\mathbb{Q}[x,y,z]^3$ with $\\deg F\\le4$ is invertible."
+}

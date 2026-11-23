@@ -1,0 +1,8 @@
+{
+ "id": "N-226",
+ "title": "The angel on the hat",
+ "area": "Games",
+ "difficulty": 3.0,
+ "plain": "An angel moves up to k tiles per turn on a hat tiling; a devil deletes one tile per turn. Find the least k for which the angel escapes forever.",
+ "math": "Determine the least $k$ such that the angel of power $k$ (moves to any tile within graph distance $k$) wins against the devil on every hat tiling's adjacency graph."
+}

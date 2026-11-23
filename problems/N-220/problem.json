@@ -1,0 +1,8 @@
+{
+ "id": "N-220",
+ "title": "Square-sum labelling of caterpillars",
+ "area": "Combinatorics",
+ "difficulty": 3.3,
+ "plain": "Label the vertices of a tree with 1 to n so that every edge sums to a perfect square. Show every caterpillar of maximum degree 3 can be done, once it is large.",
+ "math": "Prove every caterpillar with $n\\ge n_0$ vertices and maximum degree $\\le3$ admits a bijection $V\\to[n]$ with $\\ell(u)+\\ell(v)$ a square for every edge $uv$."
+}

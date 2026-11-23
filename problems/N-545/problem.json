@@ -1,0 +1,8 @@
+{
+ "id": "N-545",
+ "title": "Sandpile identity on hats",
+ "area": "Probability",
+ "difficulty": 5.1,
+ "plain": "The abelian sandpile on a large hat-tiled region has an identity element that looks like a fractal picture. Show it has a scaling limit.",
+ "math": "Prove the sandpile identity on hat-tiled $L$-balls, rescaled by $L$, converges weakly (as a height-density measure) and that the limit is not rotationally invariant."
+}

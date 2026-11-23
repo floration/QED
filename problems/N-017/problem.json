@@ -1,0 +1,8 @@
+{
+ "id": "N-017",
+ "title": "Fire on a cylinder",
+ "area": "Combinatorics",
+ "difficulty": 1.6,
+ "plain": "A fire burns on a grid wrapped into an infinite tube of width n. How many firefighters per turn stop it?",
+ "math": "On $C_n\\times\\mathbb{Z}$ with 4-neighbour spread, find the least $k(n)$ that always contains a single fire, for every $n$."
+}

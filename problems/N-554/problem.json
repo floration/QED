@@ -1,0 +1,8 @@
+{
+ "id": "N-554",
+ "title": "Square-plus-one orbits rarely loop",
+ "area": "Dynamics",
+ "difficulty": 6.5,
+ "plain": "Show almost every starting number's square-plus-one sequence never repeats.",
+ "math": "Prove the set of $n$ whose orbit under $Q(n)=P(n^2+1)$ is eventually periodic has natural density 0."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-393",
+ "title": "Largest-factor cycles",
+ "area": "Dynamics",
+ "difficulty": 4.7,
+ "plain": "Find every loop of the largest-factor Collatz map.",
+ "math": "Prove every periodic orbit of $f(n)=n/2$ (even), $P(3n+1)$ (odd) lies in an explicit finite list, and give it."
+}

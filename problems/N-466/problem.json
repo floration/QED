@@ -1,0 +1,8 @@
+{
+ "id": "N-466",
+ "title": "Square losses in Prime Nim",
+ "area": "Games",
+ "difficulty": 6.0,
+ "plain": "Many perfect squares (1, 9, 25, 49, 100, 121, …) are losing Prime Nim positions. Show there are infinitely many.",
+ "math": "Prove infinitely many perfect squares $k^2$ satisfy $G(k^2)=0$ in the prime subtraction game."
+}

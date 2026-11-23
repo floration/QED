@@ -1,0 +1,8 @@
+{
+ "id": "N-283",
+ "title": "Prime plus two seven-free squares",
+ "area": "Number theory",
+ "difficulty": 3.8,
+ "plain": "Show every large number is a prime plus a sum of two squares whose bases have no digit 7.",
+ "math": "Prove every sufficiently large $n$ is $p+a^2+b^2$ with $p$ prime and $a,b$ free of the decimal digit 7."
+}

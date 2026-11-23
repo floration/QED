@@ -1,0 +1,8 @@
+{
+ "id": "N-164",
+ "title": "Big factors of p² + p + 1",
+ "area": "Number theory",
+ "difficulty": 3.2,
+ "plain": "For primes p, show p² + p + 1 often has a very large prime factor.",
+ "math": "Prove $P(p^2+p+1)>p^{1.5}$ for infinitely many primes $p$."
+}

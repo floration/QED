@@ -1,0 +1,8 @@
+{
+ "id": "N-512",
+ "title": "Spectre is a quasicrystal ground state",
+ "area": "Physics",
+ "difficulty": 3.4,
+ "plain": "Find a finite-range pair potential whose only zero-temperature arrangement is the spectre tiling.",
+ "math": "Construct a finite-range rotation-invariant pair potential for which every ground state is a spectre tiling, and prove it."
+}

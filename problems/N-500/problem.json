@@ -1,0 +1,8 @@
+{
+ "id": "N-500",
+ "title": "Smallest-factor Collatz for all n",
+ "area": "Dynamics",
+ "difficulty": 4.1,
+ "plain": "Prove every start reaches 1 under the smallest-odd-factor Collatz map.",
+ "math": "Prove $g^k(n)=1$ for some $k$, for every $n\\ge1$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-232",
+ "title": "Kissing numbers of polykite families",
+ "area": "Geometry",
+ "difficulty": 2.9,
+ "plain": "Show the hat's family of shapes has a kissing number that jumps at exactly one parameter value.",
+ "math": "For Tile$(a,b)$, $a,b>0$, let $k(a,b)$ be the kissing number (congruent copies, reflections allowed). Prove $k$ is piecewise constant with finitely many jumps and find them."
+}

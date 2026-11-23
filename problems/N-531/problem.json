@@ -1,0 +1,8 @@
+{
+ "id": "N-531",
+ "title": "Seven-free Carmichael numbers",
+ "area": "Number theory",
+ "difficulty": 3.6,
+ "plain": "Show infinitely many Carmichael numbers have no digit 7.",
+ "math": "Prove there are infinitely many Carmichael numbers with no digit 7 in base 10."
+}

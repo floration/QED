@@ -1,0 +1,8 @@
+{
+ "id": "N-027",
+ "title": "Hyperbolic sofa, flat limit",
+ "area": "Geometry",
+ "difficulty": 3.1,
+ "plain": "As curvature fades to zero, the best hyperbolic sofa should approach Gerver's sofa. Find how fast.",
+ "math": "Let $A(\\kappa)$ be the optimal sofa area in curvature $-\\kappa$. Prove $A(\\kappa)=2.2195\\ldots+c\\kappa+o(\\kappa)$ and compute $c$."
+}

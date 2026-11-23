@@ -1,0 +1,8 @@
+{
+ "id": "N-270",
+ "title": "Hot spots on Gerver's sofa",
+ "area": "Analysis",
+ "difficulty": 4.9,
+ "plain": "Heat an insulated plate shaped like Gerver's sofa. Decide whether the hottest point eventually sits on the boundary.",
+ "math": "Decide whether every second Neumann eigenfunction of Gerver's sofa attains its maximum and minimum only on the boundary."
+}

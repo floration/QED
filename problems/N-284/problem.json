@@ -1,0 +1,8 @@
+{
+ "id": "N-284",
+ "title": "Linnik–Gallagher with seven-free primes",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "plain": "Show every large even number is a seven-free prime plus a bounded number of powers of two.",
+ "math": "Prove there is $K$ such that every sufficiently large even $n$ is $p+2^{a_1}+\\dots+2^{a_k}$ with $k\\le K$ and $p$ a 7-free prime."
+}

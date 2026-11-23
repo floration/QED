@@ -1,0 +1,8 @@
+{
+ "id": "N-280",
+ "title": "Primes with equal binary and ternary digit sums",
+ "area": "Number theory",
+ "difficulty": 4.8,
+ "plain": "Show infinitely many primes have the same digit sum in base 2 as in base 3.",
+ "math": "Prove infinitely many primes $p$ with $s_2(p)=s_3(p)$."
+}

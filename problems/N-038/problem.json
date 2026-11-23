@@ -1,0 +1,8 @@
+{
+ "id": "N-038",
+ "title": "Square in a snowflake",
+ "area": "Geometry",
+ "difficulty": 1.0,
+ "plain": "Find the largest square whose four corners lie on the Koch snowflake.",
+ "math": "Prove the Koch snowflake inscribes a square, and determine the maximal side length of an inscribed square."
+}

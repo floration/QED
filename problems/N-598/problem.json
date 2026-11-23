@@ -1,0 +1,8 @@
+{
+ "id": "N-598",
+ "title": "Hat Ising free energy",
+ "area": "Physics",
+ "difficulty": 3.2,
+ "plain": "Find the exact free energy of magnets on a hat tiling at the critical point.",
+ "math": "Compute $f(\\beta_c)$ for the Ising model on the hat graph in closed form."
+}

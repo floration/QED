@@ -1,0 +1,8 @@
+{
+ "id": "N-085",
+ "title": "Benford orbits",
+ "area": "Dynamics",
+ "difficulty": 2.7,
+ "plain": "The leading digits of largest-factor Collatz orbits should follow Benford's law.",
+ "math": "Prove that for almost all $n$ the leading digits of $(f^k(n))_{k\\le T(n)}$ satisfy Benford's law as $n\\to\\infty$."
+}

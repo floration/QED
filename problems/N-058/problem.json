@@ -1,0 +1,8 @@
+{
+ "id": "N-058",
+ "title": "Five colors for square sums",
+ "area": "Combinatorics",
+ "difficulty": 1.1,
+ "plain": "Square-sum graphs need four colors eventually. Do they eventually need five?",
+ "math": "Decide whether $\\chi(S_N)\\ge5$ for all sufficiently large $N$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-556",
+ "title": "Gerver sofa algebraic independence of its angles",
+ "area": "Number theory",
+ "difficulty": 7.0,
+ "plain": "Gerver's sofa is built from two special angles. Show they are algebraically independent over the rationals.",
+ "math": "Prove the two transcendental switching angles $\\varphi\\approx0.0392$ and $\\theta\\approx0.6813$ in Gerver's construction are algebraically independent over $\\mathbb{Q}$."
+}

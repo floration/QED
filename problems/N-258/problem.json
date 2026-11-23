@@ -1,0 +1,8 @@
+{
+ "id": "N-258",
+ "title": "Max-cut of the square-sum graph",
+ "area": "Combinatorics",
+ "difficulty": 3.9,
+ "plain": "Split the numbers up to N into two groups to cut as many square-sum pairs as possible. Find how far above one half you can get.",
+ "math": "Prove $\\mathrm{MaxCut}(S_N)=\\big(\\tfrac12+(c+o(1))N^{-1/4}\\big)e(S_N)$ and determine $c$."
+}

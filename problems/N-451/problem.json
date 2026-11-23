@@ -1,0 +1,8 @@
+{
+ "id": "N-451",
+ "title": "The last even loss in Prime Nim",
+ "area": "Games",
+ "difficulty": 6.6,
+ "plain": "In Prime Nim almost every losing pile size is odd. The only even ones found are 0, 10, 34, 100 and 310. Prove there are no more.",
+ "math": "For the subtraction game with prime moves, prove $\\{n \\text{ even}: G(n)=0\\}=\\{0,10,34,100,310\\}$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-217",
+ "title": "Internal DLA on hats",
+ "area": "Probability",
+ "difficulty": 2.5,
+ "plain": "Release walkers one at a time from a hat tile; each stops at the first unoccupied tile. Show the occupied cluster becomes a round disc.",
+ "math": "For internal DLA on the hat adjacency graph with $n$ particles, prove the cluster rescaled by $\\sqrt n$ converges to a Euclidean disc (with tile centres as positions)."
+}

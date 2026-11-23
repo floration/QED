@@ -1,0 +1,8 @@
+{
+ "id": "N-055",
+ "title": "Integer sofa",
+ "area": "Geometry",
+ "difficulty": 1.4,
+ "plain": "With the hallway scaled to width 10, what is the biggest polygon with whole-number corners that turns the corner?",
+ "math": "Maximize area over lattice polygons admissible in the width-10 right-angled corridor."
+}

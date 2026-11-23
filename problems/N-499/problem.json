@@ -1,0 +1,8 @@
+{
+ "id": "N-499",
+ "title": "Largest-factor Collatz for all n",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "Prove every start reaches a loop under the largest-factor Collatz map.",
+ "math": "Prove every orbit of $f(n)=n/2$ (even), $P(3n+1)$ (odd) is eventually periodic."
+}

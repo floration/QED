@@ -1,0 +1,8 @@
+{
+ "id": "N-560",
+ "title": "The 5p+4 nine-cycle",
+ "area": "Dynamics",
+ "difficulty": 7.6,
+ "plain": "For p ↦ largest prime factor of 5p + 4, every tested prime ends in one loop of nine primes through 11. Prove all do.",
+ "math": "Prove every orbit of $p\\mapsto P(5p+4)$ on primes enters the cycle $(11,59,23,17,89,449,173,79,19)$."
+}

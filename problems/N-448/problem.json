@@ -1,0 +1,8 @@
+{
+ "id": "N-448",
+ "title": "Few periodic points of square-plus-one",
+ "area": "Dynamics",
+ "difficulty": 4.6,
+ "plain": "Count the numbers up to X that lie on a loop of the square-plus-one map. Show there are very few.",
+ "math": "Prove $\\#\\{n\\le X: Q^k(n)=n\\text{ for some }k\\ge1\\}=X^{o(1)}$, where $Q(n)=P(n^2+1)$."
+}

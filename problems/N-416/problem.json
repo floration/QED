@@ -1,0 +1,8 @@
+{
+ "id": "N-416",
+ "title": "Potts transition on hats",
+ "area": "Physics",
+ "difficulty": 5.5,
+ "plain": "Show the q-state Potts model on the hat tiling has a discontinuous transition for large q, and a continuous one for q = 2.",
+ "math": "Prove the $q$-state Potts model on the hat graph has a first-order transition for all $q\\ge q_0$ and a continuous one for $q=2$; find the least such $q_0$."
+}

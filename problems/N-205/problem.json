@@ -1,0 +1,8 @@
+{
+ "id": "N-205",
+ "title": "Hat contact process",
+ "area": "Probability",
+ "difficulty": 3.8,
+ "plain": "An infection spreads between neighbouring hat tiles and heals at random. Bound the critical infection rate tightly.",
+ "math": "For the contact process on the hat graph, prove $\\lambda_c$ lies in an explicit interval of relative width $\\le 2\\%$."
+}

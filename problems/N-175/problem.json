@@ -1,0 +1,8 @@
+{
+ "id": "N-175",
+ "title": "Emirp sieve",
+ "area": "Number theory",
+ "difficulty": 2.6,
+ "plain": "Show infinitely many primes have reversals with no small prime factors.",
+ "math": "Prove infinitely many primes $p$ have $\\operatorname{rev}(p)$ with all prime factors $>p^{0.1}$."
+}

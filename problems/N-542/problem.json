@@ -1,0 +1,8 @@
+{
+ "id": "N-542",
+ "title": "Three loops for 2p+3",
+ "area": "Dynamics",
+ "difficulty": 7.0,
+ "plain": "Under p ↦ largest prime factor of 2p + 3, every tested prime ends in one of three loops. Prove there are no others.",
+ "math": "Prove every orbit of $p\\mapsto P(2p+3)$ on primes enters one of the cycles $\\{3\\}$, $\\{5,13,29,61\\}$, $\\{43,89,181,73,149\\}$."
+}

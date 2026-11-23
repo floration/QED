@@ -1,0 +1,8 @@
+{
+ "id": "N-583",
+ "title": "Prime Nim is periodic in base 2",
+ "area": "Games",
+ "difficulty": 3.4,
+ "plain": "Show the Grundy values of Prime Nim follow a pattern that a finite machine reads off the binary digits, or prove none exists.",
+ "math": "Decide whether the Grundy function of Prime Nim is $2$-automatic."
+}

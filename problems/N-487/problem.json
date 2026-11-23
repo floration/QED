@@ -1,0 +1,8 @@
+{
+ "id": "N-487",
+ "title": "Primes on circles centred at the origin",
+ "area": "Number theory",
+ "difficulty": 5.5,
+ "plain": "Find the largest number of prime points (p, q) lying on a single circle centred at the origin with radius up to R.",
+ "math": "Determine the order of $\\max_{n\\le R^2}\\#\\{(p,q)\\in\\mathbb{P}^2:p^2+q^2=n\\}$."
+}

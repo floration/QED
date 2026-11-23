@@ -1,0 +1,8 @@
+{
+ "id": "N-193",
+ "title": "Seven-free almost-Sophie-Germain",
+ "area": "Number theory",
+ "difficulty": 2.7,
+ "plain": "Show infinitely many primes p avoid the digit 7 and have 2p + 1 with few prime factors.",
+ "math": "Prove infinitely many 7-free primes $p$ have $\\Omega(2p+1)\\le3$."
+}

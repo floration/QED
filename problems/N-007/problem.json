@@ -1,0 +1,8 @@
+{
+ "id": "N-007",
+ "title": "Lean golf is NP-hard",
+ "area": "Computation",
+ "difficulty": 1.3,
+ "plain": "Show that finding the shortest proof using only a few basic Lean tactics is computationally hard.",
+ "math": "Prove NP-hardness of: given a Lean 4 goal and $k$ in unary, is there a proof using only intro, apply, exact, rfl with at most $k$ steps?"
+}

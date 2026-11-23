@@ -1,0 +1,8 @@
+{
+ "id": "N-100",
+ "title": "Hat electrons",
+ "area": "Physics",
+ "difficulty": 4.0,
+ "plain": "An electron hopping on a hat tiling should have an unusual, fractal energy spectrum.",
+ "math": "Prove the tight-binding Hamiltonian on the hat adjacency graph has purely singular continuous spectrum on a set of full measure in the hull."
+}

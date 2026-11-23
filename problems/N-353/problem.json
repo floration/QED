@@ -1,0 +1,8 @@
+{
+ "id": "N-353",
+ "title": "Doubly smooth neighbours",
+ "area": "Number theory",
+ "difficulty": 4.2,
+ "plain": "Find infinitely many primes whose two neighbours have only small prime factors.",
+ "math": "Prove infinitely many primes $p$ with $P(p-1),P(p+1)\\le p^{0.1}$."
+}

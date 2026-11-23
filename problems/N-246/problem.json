@@ -1,0 +1,8 @@
+{
+ "id": "N-246",
+ "title": "Seven-free Chen primes in progressions",
+ "area": "Number theory",
+ "difficulty": 3.5,
+ "plain": "Show infinitely many seven-free primes p in every allowable residue class have p + 2 with at most three prime factors.",
+ "math": "For each $q$ and admissible $a$, prove infinitely many 7-free primes $p\\equiv a\\ (q)$ with $\\Omega(p+2)\\le3$."
+}

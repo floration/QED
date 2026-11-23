@@ -1,0 +1,8 @@
+{
+ "id": "N-547",
+ "title": "Hearing the hat",
+ "area": "Analysis",
+ "difficulty": 5.5,
+ "plain": "Show no other polygon has exactly the same vibration frequencies as the hat.",
+ "math": "Prove the hat polygon is Dirichlet-spectrally determined among all simply connected polygons."
+}

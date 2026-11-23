@@ -1,0 +1,8 @@
+{
+ "id": "N-165",
+ "title": "Isoperimetric sofa",
+ "area": "Geometry",
+ "difficulty": 3.5,
+ "plain": "Among sofas with a fixed perimeter, find the one with largest area that turns the corner.",
+ "math": "For each $L$, maximize area over corridor-admissible sets of perimeter $\\le L$."
+}

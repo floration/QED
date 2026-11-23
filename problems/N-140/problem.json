@@ -1,0 +1,8 @@
+{
+ "id": "N-140",
+ "title": "Explicit Navier–Stokes blow-up",
+ "area": "Analysis",
+ "difficulty": 2.7,
+ "plain": "Write down a forced Navier–Stokes blow-up as an explicit formula instead of a computer-assisted construction.",
+ "math": "Give closed-form smooth $u_0,f$ on $\\mathbb{R}^3$ for which the Navier–Stokes solution blows up in finite time."
+}

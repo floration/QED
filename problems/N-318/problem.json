@@ -1,0 +1,8 @@
+{
+ "id": "N-318",
+ "title": "Sums of a square and a seven-free prime",
+ "area": "Number theory",
+ "difficulty": 3.4,
+ "plain": "Show almost every number is a square plus a prime with no 7 in its decimal digits.",
+ "math": "Prove the set of $n$ not of the form $m^2+p$ with $p$ prime and $7\\notin p$ has density zero."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-423",
+ "title": "Sidon sets of hat tiles",
+ "area": "Combinatorics",
+ "difficulty": 2.3,
+ "plain": "Pick hat tiles so all pairwise displacement vectors are distinct. How many can fit in a region of n tiles?",
+ "math": "Determine the asymptotics of the maximum size of $A\\subseteq B_L$ (hat-tiled $L$-ball, tile centres) with all differences $a-a'$, $a\\ne a'$, distinct."
+}

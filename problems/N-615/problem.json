@@ -1,0 +1,8 @@
+{
+ "id": "N-615",
+ "title": "Optimal 3D origami",
+ "area": "Geometry",
+ "difficulty": 3.3,
+ "plain": "For every 3D shape, find the smallest sheet of paper that folds into it.",
+ "math": "Give a characterization, with an algorithm, of the minimal-area square that folds into any given polyhedral surface."
+}

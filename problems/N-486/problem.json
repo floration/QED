@@ -1,0 +1,8 @@
+{
+ "id": "N-486",
+ "title": "Growth rate of square-sum Hamiltonian cycles",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "plain": "Find the exponential growth rate of the number of ways to arrange 1 to N in a circle with neighbours summing to squares.",
+ "math": "Determine $\\lim_N\\frac{\\log H(N)}{N\\log N}$ where $H(N)$ counts Hamiltonian cycles of $S_N$, and prove the limit exists."
+}

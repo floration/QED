@@ -1,0 +1,8 @@
+{
+ "id": "N-275",
+ "title": "Three consecutive largest factors",
+ "area": "Dynamics",
+ "difficulty": 5.2,
+ "plain": "Replace n by P(n) + P(n + 1) + P(n + 2). Every tested start reaches the fixed point 14 or the loop 77 → 103 → 123 → 77. Prove it.",
+ "math": "Prove every orbit of $n\\mapsto P(n)+P(n+1)+P(n+2)$ on $n\\ge2$ enters $\\{14\\}$ or $(77,103,123)$."
+}

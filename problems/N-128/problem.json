@@ -1,0 +1,8 @@
+{
+ "id": "N-128",
+ "title": "Prime factor plus digit sum",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "Add the largest prime factor of n to its digit sum. Every tested start ends in 6 → 9 → 12. Prove all do, which needs ruling out endless chains of primes p → p + digit sum.",
+ "math": "For $f(n)=P(n)+s_{10}(n)$, prove every orbit with $n\\ge2$ reaches the cycle $(6,9,12)$."
+}

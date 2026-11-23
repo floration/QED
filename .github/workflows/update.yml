@@ -1,0 +1,25 @@
+name: update-site-data
+on:
+  push: { branches: [main] }
+  issues: { types: [opened, reopened, closed, labeled] }
+  issue_comment: { types: [created] }
+  schedule: [ { cron: "17 6 * * *" } ]   # daily claim expiry sweep
+  workflow_dispatch:
+permissions: { contents: write, issues: write, pages: write, id-token: write }
+concurrency: { group: update, cancel-in-progress: false }
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - run: python3 scripts/update.py
+      - run: python3 scripts/claims.py
+        env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+      - run: |
+          git config user.name "open-problems-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data && (git diff --cached --quiet || (git commit -m "Update solutions, claims, leaderboard [skip ci]" && git push))
+      - run: mkdir -p _site && cp -r site/* _site/ && cp -r data _site/data
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+      - uses: actions/deploy-pages@v4

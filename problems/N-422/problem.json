@@ -1,0 +1,8 @@
+{
+ "id": "N-422",
+ "title": "Prime points on a quartic threefold",
+ "area": "Number theory",
+ "difficulty": 6.9,
+ "plain": "Count prime solutions of x⁴ + y⁴ + z⁴ = w⁴ + 2 up to size X, and find the asymptotic.",
+ "math": "Find the asymptotic number of prime 4-tuples $\\le X$ with $x^4+y^4+z^4=w^4+2$, or prove there are finitely many."
+}

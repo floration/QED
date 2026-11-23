@@ -1,0 +1,8 @@
+{
+ "id": "N-363",
+ "title": "Prime-speed lonely runners",
+ "area": "Number theory",
+ "difficulty": 4.1,
+ "plain": "Prove the lonely runner conjecture when every speed is a prime number.",
+ "math": "For distinct primes $p_1,\\dots,p_n$, prove $\\sup_t\\min_i\\|tp_i\\|\\ge\\frac1{n+1}$."
+}

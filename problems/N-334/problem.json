@@ -1,0 +1,8 @@
+{
+ "id": "N-334",
+ "title": "The P(n)+P(n+2)−1 map",
+ "area": "Dynamics",
+ "difficulty": 5.2,
+ "plain": "Map n to P(n) + P(n+2) − 1. Tested starts reach 4 or loops of length 18, 11 and 4. Prove these are all.",
+ "math": "For $f(n)=P(n)+P(n+2)-1$, prove every orbit reaches $\\{4\\}$, the 18-cycle through $23$, the 11-cycle through $7$, or $(223,227,455,469)$."
+}

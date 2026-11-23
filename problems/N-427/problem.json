@@ -1,0 +1,8 @@
+{
+ "id": "N-427",
+ "title": "Blow-up near a wall",
+ "area": "Analysis",
+ "difficulty": 3.9,
+ "plain": "Show the 2026 forced blow-up mechanism also works in a half-space with no-slip wall, with the singularity on the wall.",
+ "math": "Construct smooth compactly supported $f$ such that Navier–Stokes in $\\mathbb{R}^3_+$ with no-slip, from rest, blows up in finite time at a boundary point."
+}

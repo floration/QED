@@ -1,0 +1,8 @@
+{
+ "id": "N-187",
+ "title": "Sofa with a pillar",
+ "area": "Geometry",
+ "difficulty": 3.5,
+ "plain": "A thin pillar stands in the corner of the hallway. Find the best sofa that gets around it.",
+ "math": "Determine the optimal sofa for the width-1 corridor with a point obstacle at $(1/2,1/2)$ from the outer corner."
+}

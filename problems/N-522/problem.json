@@ -1,0 +1,8 @@
+{
+ "id": "N-522",
+ "title": "Squared squares with consecutive primes",
+ "area": "Combinatorics",
+ "difficulty": 2.3,
+ "plain": "Find a perfect squared square whose square sides are consecutive primes.",
+ "math": "Find or rule out a perfect squared square whose component sides are $p_k,p_{k+1},\\dots,p_{k+r}$ for some $k,r$."
+}

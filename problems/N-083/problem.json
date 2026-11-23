@@ -1,0 +1,8 @@
+{
+ "id": "N-083",
+ "title": "Go on a torus",
+ "area": "Games",
+ "difficulty": 2.9,
+ "plain": "Go on a 7 × 7 board that wraps around. What komi makes the game fair?",
+ "math": "Determine the perfect-play score of Go on $\\mathbb{Z}_7^2$ (area scoring, positional superko)."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-285",
+ "title": "Turán density of a twisted triple system",
+ "area": "Combinatorics",
+ "difficulty": 4.0,
+ "plain": "Find the largest density of a 3-uniform hypergraph that avoids a specific six-vertex configuration of six triples.",
+ "math": "Determine $\\pi(F)$ for $F=\\{123,124,345,346,561,562\\}$."
+}

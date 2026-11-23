@@ -1,0 +1,8 @@
+{
+ "id": "N-478",
+ "title": "Infinite monochromatic square-sum paths",
+ "area": "Combinatorics",
+ "difficulty": 2.8,
+ "plain": "Colour the positive integers red and blue. Show there is always an infinite increasing sequence of one colour in which every two consecutive terms sum to a perfect square.",
+ "math": "Prove every 2-colouring of $\\mathbb{N}$ admits $a_1<a_2<\\cdots$ of one colour with $a_i+a_{i+1}$ a perfect square for all $i$."
+}

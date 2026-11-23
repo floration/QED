@@ -1,0 +1,8 @@
+{
+ "id": "N-398",
+ "title": "Fire on a random hat patch",
+ "area": "Probability",
+ "difficulty": 3.0,
+ "plain": "Remove each hat tile with some probability. Find the exact point where a fire can no longer burn forever.",
+ "math": "Prove the site-percolation threshold of the hat tiling exists as a single sharp value and bound it within $10^{-4}$."
+}

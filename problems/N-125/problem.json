@@ -1,0 +1,8 @@
+{
+ "id": "N-125",
+ "title": "Roth for seven-free numbers",
+ "area": "Combinatorics",
+ "difficulty": 3.2,
+ "plain": "Show every subset of the seven-free numbers that keeps a fixed fraction of them contains three in arithmetic progression.",
+ "math": "Prove for every $\\delta>0$ and large $N$, every $A\\subseteq\\{n\\le N:7\\notin n\\}$ with $|A|\\ge\\delta\\#\\{n\\le N:7\\notin n\\}$ contains a nontrivial 3-term AP."
+}

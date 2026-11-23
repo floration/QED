@@ -1,0 +1,8 @@
+{
+ "id": "N-059",
+ "title": "Hamiltonian induced subgraphs of S_N",
+ "area": "Computation",
+ "difficulty": 2.6,
+ "plain": "Show deciding whether a given set of numbers can be lined up so neighbours sum to squares is NP-complete.",
+ "math": "Prove NP-completeness of: given $A\\subset\\mathbb{N}$ (in binary), decide whether $S_\\infty[A]$ has a Hamiltonian path."
+}

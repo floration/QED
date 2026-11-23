@@ -1,0 +1,8 @@
+{
+ "id": "N-356",
+ "title": "Polykite structure theorem",
+ "area": "Geometry",
+ "difficulty": 2.8,
+ "plain": "Classify every shape of up to 20 kites: tiles periodically, tiles only aperiodically, or fails within a few layers.",
+ "math": "Prove each polykite with $\\le20$ kites either tiles periodically, tiles only aperiodically, or has Heesch number $\\le10$."
+}

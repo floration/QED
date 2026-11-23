@@ -1,0 +1,8 @@
+{
+ "id": "N-005",
+ "title": "Fewest burned cells",
+ "area": "Combinatorics",
+ "difficulty": 1.9,
+ "plain": "In the wind-driven fire (spreading only east, north and south), with the fewest firefighters that can trap it, what is the least area that must burn?",
+ "math": "For the minimal $k$ in the east/north/south fire on $\\mathbb{Z}^2$, find $\\min |B_\\infty|$ over all protection strategies."
+}

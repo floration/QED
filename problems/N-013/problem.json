@@ -1,0 +1,8 @@
+{
+ "id": "N-013",
+ "title": "Anti-knight Sudoku",
+ "area": "Games",
+ "difficulty": 1.0,
+ "plain": "In this Sudoku, equal digits may not sit a knight's move apart. What is the fewest clues for a unique solution?",
+ "math": "Determine the minimum number of givens in a uniquely solvable $9\\times9$ Sudoku with the extra anti-knight constraint."
+}

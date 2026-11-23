@@ -1,0 +1,8 @@
+{
+ "id": "N-211",
+ "title": "The 4p+1 funnel, almost always",
+ "area": "Dynamics",
+ "difficulty": 6.0,
+ "plain": "Show almost every prime falls into the eight-prime loop of the 4p + 1 map.",
+ "math": "Prove the set of primes whose $p\\mapsto P(4p+1)$ orbit enters the 8-cycle has relative density 1 among primes."
+}

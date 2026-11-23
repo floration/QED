@@ -1,0 +1,8 @@
+{
+ "id": "N-026",
+ "title": "Seven-free Egyptian fractions",
+ "area": "Number theory",
+ "difficulty": 1.4,
+ "plain": "Write every fraction as a sum of distinct unit fractions whose denominators never contain the digit 7.",
+ "math": "Prove every $q\\in\\mathbb{Q}\\cap(0,1)$ is $\\sum_{d\\in D}1/d$ for a finite set $D$ of distinct integers with no decimal digit 7."
+}

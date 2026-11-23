@@ -1,0 +1,8 @@
+{
+ "id": "N-596",
+ "title": "Polykite complete classification",
+ "area": "Geometry",
+ "difficulty": 4.6,
+ "plain": "For every polykite, decide whether it tiles, and if so how.",
+ "math": "Give an algorithm deciding, for any single polykite, whether it tiles the plane, and prove it correct."
+}

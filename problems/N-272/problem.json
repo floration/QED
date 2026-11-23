@@ -1,0 +1,8 @@
+{
+ "id": "N-272",
+ "title": "Two loops for P(n)+P(n+2)",
+ "area": "Dynamics",
+ "difficulty": 5.2,
+ "plain": "Replace n by P(n) + P(n + 2). Every tested start ends in 7 → 10 → 8 → 7 or in 9 → 14 → 9. Prove there are no other outcomes.",
+ "math": "Prove every orbit of $n\\mapsto P(n)+P(n+2)$ on $n\\ge2$ enters $\\{7,10,8\\}$ or $\\{9,14\\}$."
+}

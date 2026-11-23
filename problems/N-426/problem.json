@@ -1,0 +1,8 @@
+{
+ "id": "N-426",
+ "title": "Hat Hofstadter at golden flux",
+ "area": "Physics",
+ "difficulty": 6.0,
+ "plain": "Thread a magnetic flux through each hat tile equal to the golden ratio. Show the resulting energy spectrum is a zero-measure Cantor set.",
+ "math": "For the magnetic tight-binding Hamiltonian on the hat graph with flux $\\phi=(\\sqrt5-1)/2$ per kite, prove $\\sigma(H)$ is a Cantor set of Lebesgue measure zero."
+}

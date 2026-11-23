@@ -1,0 +1,8 @@
+{
+ "id": "N-172",
+ "title": "Hat dominating sets",
+ "area": "Combinatorics",
+ "difficulty": 2.5,
+ "plain": "Find the smallest fraction of hat tiles that touch every other tile.",
+ "math": "Compute the asymptotic domination density of the hat adjacency graph."
+}

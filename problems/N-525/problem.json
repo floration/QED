@@ -1,0 +1,8 @@
+{
+ "id": "N-525",
+ "title": "Integer Keller collisions",
+ "area": "Algebra",
+ "difficulty": 3.6,
+ "plain": "Show any Jacobian-conjecture counterexample must send two different integer points to the same place.",
+ "math": "Prove every non-invertible Keller map in $\\mathbb{Z}[x_1,\\dots,x_n]^n$ is non-injective on $\\mathbb{Z}^n$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-358",
+ "title": "Sparse Keller maps",
+ "area": "Algebra",
+ "difficulty": 2.9,
+ "plain": "List every Jacobian-conjecture counterexample in 3D built from at most 12 monomials in total, up to symmetry.",
+ "math": "Classify all non-invertible Keller maps $\\mathbb{C}^3\\to\\mathbb{C}^3$ whose three components together have at most 12 monomials, up to affine changes of coordinates."
+}

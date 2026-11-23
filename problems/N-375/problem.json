@@ -1,0 +1,8 @@
+{
+ "id": "N-375",
+ "title": "Nodal domains of the hat drum",
+ "area": "Analysis",
+ "difficulty": 5.0,
+ "plain": "Count the regions a hat-shaped drum splits into when vibrating at high frequencies.",
+ "math": "For Dirichlet eigenfunctions on the hat polygon, prove $\\limsup N(\\varphi_k)/k=c<1$ and compute $c$."
+}

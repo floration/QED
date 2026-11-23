@@ -1,0 +1,8 @@
+{
+ "id": "N-580",
+ "title": "SOF Collatz is undecidable in general",
+ "area": "Logic",
+ "difficulty": 3.7,
+ "plain": "Show some natural family of smallest-factor Collatz maps has an undecidable reach-1 question.",
+ "math": "Prove the problem \"given $a,b$, does every orbit of $n\\mapsto n/2$ or $\\mathrm{spf}(an+b)$ reach 1?\" is undecidable."
+}

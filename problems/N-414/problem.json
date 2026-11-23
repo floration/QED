@@ -1,0 +1,8 @@
+{
+ "id": "N-414",
+ "title": "4p+1 maximal climbs",
+ "area": "Dynamics",
+ "difficulty": 4.5,
+ "plain": "Show the 4p + 1 prime map can climb arbitrarily high above its starting point before falling into its loop.",
+ "math": "Prove $\\sup_p \\max_k P_4^k(p)/p=\\infty$, where $P_4(p)=P(4p+1)$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-152",
+ "title": "Hat opaque set",
+ "area": "Geometry",
+ "difficulty": 3.7,
+ "plain": "Find the shortest set of walls that blocks every straight line through the hat tile.",
+ "math": "Determine the minimal total length of an opaque set for the hat polygon."
+}

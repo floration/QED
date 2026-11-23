@@ -1,0 +1,8 @@
+{
+ "id": "N-575",
+ "title": "Bounded orbits for polynomial prime maps",
+ "area": "Logic",
+ "difficulty": 7.0,
+ "plain": "Given a polynomial f, can an algorithm decide whether the orbit of 2 under n ↦ P(f(n)) stays bounded?",
+ "math": "Prove or disprove: $\\{f\\in\\mathbb{Z}[x]:\\text{the orbit of }2\\text{ under }n\\mapsto P(|f(n)|)\\text{ is bounded}\\}$ is decidable."
+}

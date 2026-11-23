@@ -1,0 +1,8 @@
+{
+ "id": "N-183",
+ "title": "Pipe-bend sofa, exact",
+ "area": "Geometry",
+ "difficulty": 3.6,
+ "plain": "Find and prove the optimal solid for a round pipe with a right-angle bend.",
+ "math": "Determine the maximal volume and an optimizer for the diameter-1 circular pipe with a right-angle bend."
+}

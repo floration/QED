@@ -1,0 +1,8 @@
+{
+ "id": "N-475",
+ "title": "Prime continued fractions",
+ "area": "Number theory",
+ "difficulty": 8.4,
+ "plain": "Consider real numbers whose continued fraction terms are all prime. Show the fractal dimension of this set is transcendental.",
+ "math": "Let $E=\\{x\\in(0,1): \\text{all partial quotients of }x\\text{ are prime}\\}$. Prove $\\dim_H E$ is transcendental."
+}

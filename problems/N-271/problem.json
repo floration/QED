@@ -1,0 +1,8 @@
+{
+ "id": "N-271",
+ "title": "The {5, 8} funnel",
+ "area": "Dynamics",
+ "difficulty": 5.3,
+ "plain": "Replace n by the sum of the largest prime factors of n and n + 1. Every start tested falls into the loop 5 → 8 → 5. Prove all do.",
+ "math": "Let $f(n)=P(n)+P(n+1)$ (with $P(1)=1$). Prove every orbit of $f$ on $n\\ge2$ enters the cycle $\\{5,8\\}$."
+}

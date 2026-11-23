@@ -1,0 +1,8 @@
+{
+ "id": "N-119",
+ "title": "Fire whirls",
+ "area": "Physics",
+ "difficulty": 2.2,
+ "plain": "Show the equations of buoyant flow allow a rotating column of fire that travels steadily.",
+ "math": "Prove existence of a smooth traveling swirling solution of the 3D Boussinesq equations with a localized heat source."
+}

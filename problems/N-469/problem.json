@@ -1,0 +1,8 @@
+{
+ "id": "N-469",
+ "title": "Increasing square-plus-one factors",
+ "area": "Number theory",
+ "difficulty": 5.9,
+ "plain": "Among the largest prime factors of n² + 1 for n up to N, find the longest strictly increasing subsequence.",
+ "math": "Determine $\\theta$ with $L(N)=N^{\\theta+o(1)}$, where $L(N)$ is the longest strictly increasing subsequence of $(P(n^2+1))_{n\\le N}$."
+}

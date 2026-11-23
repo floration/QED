@@ -1,0 +1,8 @@
+{
+ "id": "N-089",
+ "title": "Fire on a random planet",
+ "area": "Probability",
+ "difficulty": 3.4,
+ "plain": "Fire spreads on a random planar map. Find how fast firefighting budgets must grow.",
+ "math": "On the uniform infinite planar triangulation, determine the minimal growth exponent $a$ such that budgets $k_t=t^{a}$ contain a fire almost surely."
+}

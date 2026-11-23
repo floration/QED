@@ -1,0 +1,8 @@
+{
+ "id": "N-244",
+ "title": "Spectre electrical resistance",
+ "area": "Probability",
+ "difficulty": 4.0,
+ "plain": "Find the exact asymptotic electrical resistance between two far-apart spectre tiles, with unit resistors on edges.",
+ "math": "Prove $R(o,x)=\\kappa\\log|x|+O(1)$ on spectre tilings and compute $\\kappa$ in closed form."
+}

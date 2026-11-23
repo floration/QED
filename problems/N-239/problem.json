@@ -1,0 +1,8 @@
+{
+ "id": "N-239",
+ "title": "Waring with seven-free cubes",
+ "area": "Number theory",
+ "difficulty": 7.5,
+ "plain": "Find the fewest cubes of seven-free numbers needed to write every large number, and prove it.",
+ "math": "Determine the least $s$ such that every sufficiently large integer is a sum of $s$ cubes of positive 7-free integers."
+}

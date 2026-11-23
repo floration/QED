@@ -1,0 +1,8 @@
+{
+ "id": "N-370",
+ "title": "Toroidal Othello",
+ "area": "Games",
+ "difficulty": 1.5,
+ "plain": "Who wins Othello on an 8 × 8 board that wraps around?",
+ "math": "Weakly solve Othello on $\\mathbb{Z}_8^2$ with standard initial position."
+}

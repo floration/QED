@@ -1,0 +1,8 @@
+{
+ "id": "N-366",
+ "title": "Hyperoperation Goodstein",
+ "area": "Logic",
+ "difficulty": 1.1,
+ "plain": "A Goodstein-style sequence using hyperoperations always ends, but ordinary arithmetic cannot prove it.",
+ "math": "Define base-change on hereditary hyperoperation normal forms; prove the sequences terminate and termination is unprovable in PA."
+}

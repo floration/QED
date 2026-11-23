@@ -1,0 +1,8 @@
+{
+ "id": "N-057",
+ "title": "Toroidal Sudoku",
+ "area": "Games",
+ "difficulty": 1.9,
+ "plain": "Sudoku where the 3 × 3 boxes wrap around the board's edges. What is the fewest clues for a unique solution?",
+ "math": "For the $9\\times9$ Sudoku variant whose box regions are a fixed partition into wrapped $3\\times3$ blocks on $\\mathbb{Z}_9^2$, find the minimum number of givens."
+}

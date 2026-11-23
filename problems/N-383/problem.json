@@ -1,0 +1,8 @@
+{
+ "id": "N-383",
+ "title": "Unattained hyperbolic sofa",
+ "area": "Geometry",
+ "difficulty": 2.4,
+ "plain": "In strongly curved hyperbolic space the best sofa might not exist. Show when the maximum is never reached.",
+ "math": "Find $\\kappa_0$ such that for curvature $-\\kappa<-\\kappa_0$ the hyperbolic sofa supremum is not attained."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-588",
+ "title": "Hat aperiodicity in Lean, minimal",
+ "area": "Formal proof",
+ "difficulty": 1.5,
+ "plain": "Give a computer-checked proof that the hat tiles only aperiodically, in under 2000 lines.",
+ "math": "Produce a Lean 4 proof of the hat's aperiodicity of at most 2000 lines using only Mathlib."
+}

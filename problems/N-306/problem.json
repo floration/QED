@@ -1,0 +1,8 @@
+{
+ "id": "N-306",
+ "title": "Random greedy square-sum path",
+ "area": "Probability",
+ "difficulty": 4.5,
+ "plain": "Build a path through 1 to N by always stepping to a random unused neighbour summing to a square. Find the expected length.",
+ "math": "Determine $\\lim_N\\mathbb{E}[L_N]/N$ for the random greedy path in $S_N$ started at a uniform vertex."
+}

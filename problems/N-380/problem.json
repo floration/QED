@@ -1,0 +1,8 @@
+{
+ "id": "N-380",
+ "title": "Shrink to fit",
+ "area": "Geometry",
+ "difficulty": 1.5,
+ "plain": "Find the largest size such that every convex shape no wider than that, measured end to end, gets around the corner.",
+ "math": "Find the largest $d$ such that every planar convex body of diameter $\\le d$ is admissible in the width-1 right-angled corridor."
+}

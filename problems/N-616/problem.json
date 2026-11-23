@@ -1,0 +1,8 @@
+{
+ "id": "N-616",
+ "title": "Prime Nim Grundy values are unbounded in density",
+ "area": "Games",
+ "difficulty": 3.6,
+ "plain": "Show each Grundy value of Prime Nim appears with a precise positive density, and compute them all.",
+ "math": "Prove $d_k=\\lim\\frac1x\\#\\{n\\le x: G(n)=k\\}$ exists for every $k$ and give a formula."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-504",
+ "title": "Gerver constant is transcendental",
+ "area": "Geometry",
+ "difficulty": 6.1,
+ "plain": "Show the area of Gerver's sofa is not a root of any polynomial with integer coefficients.",
+ "math": "Prove $\\mu_G\\approx2.2195$ is transcendental."
+}

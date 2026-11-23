@@ -1,0 +1,8 @@
+{
+ "id": "N-321",
+ "title": "Twin width of square-sum graphs",
+ "area": "Combinatorics",
+ "difficulty": 3.0,
+ "plain": "Show the square-sum graphs do not have bounded twin-width.",
+ "math": "Prove $\\sup_N\\mathrm{tww}(S_N)=\\infty$."
+}

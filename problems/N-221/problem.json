@@ -1,0 +1,8 @@
+{
+ "id": "N-221",
+ "title": "The square-sum avoidance game",
+ "area": "Games",
+ "difficulty": 4.0,
+ "plain": "Players take turns choosing unused numbers from 1 to N. Whoever picks a number summing to a square with any already-chosen number loses. Decide the winner for all large N.",
+ "math": "Determine the outcome class of the avoidance game on $S_N$ (normal play, a move creating an $S_N$-edge inside the chosen set loses) for all sufficiently large $N$."
+}

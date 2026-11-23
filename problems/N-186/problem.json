@@ -1,0 +1,8 @@
+{
+ "id": "N-186",
+ "title": "Smoke-free corridor",
+ "area": "Analysis",
+ "difficulty": 2.9,
+ "plain": "Show a corridor's smoke clears in a predictable time when air flows through it.",
+ "math": "For advection–diffusion in a periodic corridor with Stokes flow, find the sharp exponential decay rate of a passive scalar in terms of geometry."
+}

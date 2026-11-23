@@ -1,0 +1,8 @@
+{
+ "id": "N-472",
+ "title": "Neighbours' largest factors",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "Replace n by P(n − 1) + P(n + 1). Every tested start ends at 5 or in one of three loops, of lengths 11, 18 and 4. Prove there is nothing else.",
+ "math": "Prove every orbit of $n\\mapsto P(n-1)+P(n+1)$ on $n\\ge3$ enters $\\{5\\}$, the 11-cycle through 8, the 18-cycle through 24, or $(224,228,456,470)$."
+}

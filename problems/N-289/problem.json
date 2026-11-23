@@ -1,0 +1,8 @@
+{
+ "id": "N-289",
+ "title": "The Hamiltonicity game on square sums",
+ "area": "Games",
+ "difficulty": 4.0,
+ "plain": "Maker and Breaker alternately claim edges of the square-sum graph. Maker wants a path through every number. Show Maker wins for large N.",
+ "math": "Prove Maker wins the Maker–Breaker Hamiltonicity game on $S_N$ for all sufficiently large $N$."
+}

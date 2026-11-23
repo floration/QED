@@ -1,0 +1,8 @@
+{
+ "id": "N-599",
+ "title": "Spectre dimers are critical",
+ "area": "Physics",
+ "difficulty": 3.6,
+ "plain": "Show random pairings of spectre tiles have long-range correlations, like the square grid.",
+ "math": "Prove dimer correlations on the spectre tiling decay as a power law with exponent 2."
+}

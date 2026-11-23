@@ -1,0 +1,8 @@
+{
+ "id": "N-102",
+ "title": "Emirps, almost",
+ "area": "Number theory",
+ "difficulty": 3.1,
+ "plain": "Show infinitely many primes have a reversal with at most three prime factors.",
+ "math": "Prove $\\#\\{p\\le x: \\Omega(\\operatorname{rev}(p))\\le3\\}\\to\\infty$."
+}

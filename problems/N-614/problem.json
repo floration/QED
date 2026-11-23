@@ -1,0 +1,8 @@
+{
+ "id": "N-614",
+ "title": "Square-sum Ramsey numbers",
+ "area": "Combinatorics",
+ "difficulty": 3.4,
+ "plain": "Find the exact point at which every 2-coloring of 1 to N contains a same-colored square-sum clique of size 4.",
+ "math": "Determine $\\min\\{N: \\text{every 2-coloring of }[N]\\text{ has a monochromatic }K_4\\text{ in }S_N\\}$, or prove none exists."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-496",
+ "title": "Apollonian seven-free curvatures",
+ "area": "Number theory",
+ "difficulty": 3.5,
+ "plain": "In the Apollonian packing (−1, 2, 2, 3), show infinitely many circles have curvature with no digit 7, and count them.",
+ "math": "Prove $\\#\\{k\\le X:k\\in\\mathcal{K},7\\notin k\\}=X^{\\log_{10}9+o(1)}$ for the $(-1,2,2,3)$ packing."
+}

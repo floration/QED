@@ -1,0 +1,8 @@
+{
+ "id": "N-578",
+ "title": "Continued fraction of the P-constant",
+ "area": "Number theory",
+ "difficulty": 8.0,
+ "plain": "Show the constant formed by largest prime factors as continued fraction digits is transcendental.",
+ "math": "Prove $[0;P(2),P(3),P(4),\\dots]$ is transcendental."
+}

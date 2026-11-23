@@ -1,0 +1,8 @@
+{
+ "id": "N-092",
+ "title": "Quoridor",
+ "area": "Games",
+ "difficulty": 3.9,
+ "plain": "Who wins the board game Quoridor with perfect play?",
+ "math": "Weakly solve two-player Quoridor on the $9\\times9$ board with 10 walls each."
+}

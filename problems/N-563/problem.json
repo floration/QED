@@ -1,0 +1,8 @@
+{
+ "id": "N-563",
+ "title": "Hat percolation is conformally invariant",
+ "area": "Probability",
+ "difficulty": 7.8,
+ "plain": "Show critical percolation on the hat tiling's tiles has crossing probabilities given by Cardy's formula.",
+ "math": "For critical site percolation on hat tiles, prove crossing probabilities of conformal rectangles converge to Cardy's formula as the mesh $\\to0$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-355",
+ "title": "Ambidextrous 3D sofa",
+ "area": "Geometry",
+ "difficulty": 3.6,
+ "plain": "Find the largest solid that can turn either left or right at the end of a square pipe.",
+ "math": "Maximize volume over solids admissible for both the left and right turns of the $1\\times1$ corridor."
+}

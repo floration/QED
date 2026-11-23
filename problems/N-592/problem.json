@@ -1,0 +1,8 @@
+{
+ "id": "N-592",
+ "title": "7×7 Othello",
+ "area": "Games",
+ "difficulty": 2.4,
+ "plain": "Who wins Othello on an odd 7×7 board with a fixed off-centre start?",
+ "math": "Strongly solve Othello on a $7\\times7$ board from the standard initial cross shifted to the corner-adjacent center."
+}

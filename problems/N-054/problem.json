@@ -1,0 +1,8 @@
+{
+ "id": "N-054",
+ "title": "Prime squared square",
+ "area": "Combinatorics",
+ "difficulty": 1.0,
+ "plain": "Tile a square with smaller squares, all different sizes, every side a prime number. Find one or show none exists.",
+ "math": "Find a perfect squared square whose component squares all have prime side lengths, or prove none exists."
+}

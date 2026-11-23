@@ -1,0 +1,8 @@
+{
+ "id": "N-585",
+ "title": "Square-sum chromatic number",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "plain": "Find exactly how many colors the infinite square-sum graph needs.",
+ "math": "Determine $\\chi(S_\\infty)$ exactly."
+}

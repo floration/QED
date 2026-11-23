@@ -1,0 +1,8 @@
+{
+ "id": "N-167",
+ "title": "Cops on square sums",
+ "area": "Games",
+ "difficulty": 2.9,
+ "plain": "How many cops catch a robber moving along square-sum links?",
+ "math": "Determine $c(S_N)$, the cop number of the square-sum graph, for all large $N$."
+}

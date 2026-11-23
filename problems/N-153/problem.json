@@ -1,0 +1,8 @@
+{
+ "id": "N-153",
+ "title": "Hat spectrum is a Cantor set",
+ "area": "Physics",
+ "difficulty": 4.5,
+ "plain": "Show the energy levels of a particle hopping on a hat tiling form a dust of measure zero.",
+ "math": "Prove the spectrum of the adjacency operator on the hat graph is a Cantor set of Lebesgue measure zero."
+}

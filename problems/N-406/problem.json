@@ -1,0 +1,8 @@
+{
+ "id": "N-406",
+ "title": "Irrational prime weights",
+ "area": "Number theory",
+ "difficulty": 4.2,
+ "plain": "Add up 1/(p·2^p) over all primes p. Show the total is irrational.",
+ "math": "Prove $\\sum_{p}\\frac{1}{p\\,2^{p}}$ is irrational."
+}

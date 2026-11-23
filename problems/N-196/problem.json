@@ -1,0 +1,8 @@
+{
+ "id": "N-196",
+ "title": "Self-similar fire",
+ "area": "Analysis",
+ "difficulty": 4.5,
+ "plain": "Show a fire spreading with random fuel forms a shape that grows at a fixed limiting speed in every direction.",
+ "math": "For first-passage percolation on the hat graph with i.i.d. exponential weights, prove the limit shape exists and is not a polygon."
+}

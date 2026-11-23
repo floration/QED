@@ -1,0 +1,8 @@
+{
+ "id": "N-088",
+ "title": "Car-like sofa",
+ "area": "Geometry",
+ "difficulty": 3.9,
+ "plain": "The sofa moves like a car: forward only, with limited steering. Find the biggest that makes the corner.",
+ "math": "Maximize area over shapes whose motion is a forward Dubins path with turning radius $\\ge1$ through the width-1 right-angled corridor."
+}

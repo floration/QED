@@ -1,0 +1,8 @@
+{
+ "id": "N-461",
+ "title": "Spectre hard hexagons",
+ "area": "Physics",
+ "difficulty": 7.4,
+ "plain": "Show the hard-core gas on the spectre tiling has exactly one phase transition, at a single sharp activity.",
+ "math": "Prove the hard-core model on the spectre adjacency graph has a unique critical activity $\\lambda_c$ with uniqueness for $\\lambda<\\lambda_c$ and non-uniqueness for $\\lambda>\\lambda_c$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-485",
+ "title": "Largest prime factor of n^n + 1",
+ "area": "Number theory",
+ "difficulty": 4.8,
+ "plain": "Show P(n^n + 1) / n tends to infinity.",
+ "math": "Prove $P(n^n+1)/n\\to\\infty$."
+}

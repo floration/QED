@@ -1,0 +1,8 @@
+{
+ "id": "N-075",
+ "title": "Isospectral polykites",
+ "area": "Analysis",
+ "difficulty": 1.0,
+ "plain": "Two different drums can sound the same. Find two different shapes made of kites that do.",
+ "math": "Find two non-congruent polykites whose Dirichlet Laplacians have identical spectra."
+}

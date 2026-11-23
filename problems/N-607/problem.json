@@ -1,0 +1,8 @@
+{
+ "id": "N-607",
+ "title": "Gerver's constant is not a period",
+ "area": "Number theory",
+ "difficulty": 8.7,
+ "plain": "Show the area of Gerver's sofa cannot be written as an integral of an algebraic function over an algebraic region.",
+ "math": "Prove $\\mu_G\\approx2.2195$ is not a Kontsevich–Zagier period."
+}

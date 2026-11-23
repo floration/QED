@@ -1,0 +1,8 @@
+{
+ "id": "N-601",
+ "title": "Seven-free primes have a bounded gap",
+ "area": "Number theory",
+ "difficulty": 3.6,
+ "plain": "Show infinitely many pairs of seven-free primes lie within a fixed distance of each other.",
+ "math": "Prove $\\liminf(q_{n+1}-q_n)<\\infty$ where $q_n$ enumerates the 7-free primes."
+}

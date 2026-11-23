@@ -1,0 +1,8 @@
+{
+ "id": "N-077",
+ "title": "Closed-form Euler blow-up",
+ "area": "Analysis",
+ "difficulty": 5.1,
+ "plain": "Give smooth starting data for frictionless 3D fluid, written as an explicit formula, that blows up.",
+ "math": "Find closed-form smooth finite-energy $u_0$ on $\\mathbb{R}^3$ whose unforced Euler solution blows up in finite time."
+}

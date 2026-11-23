@@ -1,0 +1,8 @@
+{
+ "id": "N-441",
+ "title": "Four-term square-sum chains in primes",
+ "area": "Number theory",
+ "difficulty": 3.2,
+ "plain": "Find infinitely many chains of four primes where each neighbouring pair sums to a square.",
+ "math": "Prove infinitely many 4-tuples of primes $p_1,p_2,p_3,p_4$ with $p_i+p_{i+1}$ a square for $i=1,2,3$."
+}

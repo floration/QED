@@ -1,0 +1,8 @@
+{
+ "id": "N-511",
+ "title": "Hat ground state",
+ "area": "Physics",
+ "difficulty": 3.1,
+ "plain": "Find the arrangement of hat tiles that minimises a natural energy, and show it is the aperiodic tiling.",
+ "math": "Prove the hat tiling is the unique (up to isometry) ground state of a finite-range two-body potential on hat-shaped particles in the plane."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-371",
+ "title": "Infinitely many prime squared squares",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "plain": "Show there are infinitely many perfect squared squares whose pieces all have prime sides.",
+ "math": "Prove infinitely many perfect squared squares with all component sides prime."
+}

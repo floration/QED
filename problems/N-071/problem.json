@@ -1,0 +1,8 @@
+{
+ "id": "N-071",
+ "title": "Square-sum spectral gap",
+ "area": "Combinatorics",
+ "difficulty": 2.6,
+ "plain": "Find how well connected the square-sum graph is, through its eigenvalues.",
+ "math": "Determine the asymptotics of $\\lambda_1(S_N)-\\lambda_2(S_N)$ for the adjacency spectrum."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-103",
+ "title": "Smallest-factor Collatz, almost always",
+ "area": "Dynamics",
+ "difficulty": 3.2,
+ "plain": "For the smallest-odd-factor Collatz map, almost every start reaches 1.",
+ "math": "Prove $g^k(n)=1$ for some $k$, for a density-1 set of $n$."
+}

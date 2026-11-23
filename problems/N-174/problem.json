@@ -1,0 +1,8 @@
+{
+ "id": "N-174",
+ "title": "Doubled-twin constant",
+ "area": "Number theory",
+ "difficulty": 3.3,
+ "plain": "Assuming deep but standard conjectures, find the exact count of doubled twins up to x.",
+ "math": "Assuming the Elliott–Halberstam conjecture, prove a lower bound $\\gg x/(\\log x)^4$ for doubled twins with $p$ and one other form prime."
+}

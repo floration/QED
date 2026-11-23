@@ -1,0 +1,8 @@
+{
+ "id": "N-286",
+ "title": "Square-sum 4-cycle factors",
+ "area": "Combinatorics",
+ "difficulty": 2.8,
+ "plain": "Split 1 to N into groups of four arranged in a cycle, so each pair of neighbours in a cycle sums to a square.",
+ "math": "Prove $S_N$ has a $C_4$-factor for all sufficiently large $N\\equiv0\\pmod4$."
+}

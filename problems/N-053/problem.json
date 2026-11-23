@@ -1,0 +1,8 @@
+{
+ "id": "N-053",
+ "title": "Fire on the Sierpinski graph",
+ "area": "Combinatorics",
+ "difficulty": 1.1,
+ "plain": "With one firefighter per turn on the Sierpinski triangle graph, what fraction must burn as the graph gets bigger?",
+ "math": "On the level-$n$ Sierpinski gasket graph with a fire at a corner and one protected vertex per turn, find $\\lim_n \\min |B|/|V|$."
+}

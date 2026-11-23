@@ -1,0 +1,8 @@
+{
+ "id": "N-564",
+ "title": "Critical Ising on the hat is SLE(3)",
+ "area": "Physics",
+ "difficulty": 7.3,
+ "plain": "Show the interface in the critical Ising model on a hat tiling converges to the random curve SLE(3), even though the graph is not isoradial.",
+ "math": "For the critical Ising model on the hat graph with Dobrushin boundary conditions, prove the interface converges to chordal SLE$_3$."
+}

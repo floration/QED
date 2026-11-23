@@ -1,0 +1,8 @@
+{
+ "id": "N-008",
+ "title": "Obtuse sofa",
+ "area": "Geometry",
+ "difficulty": 1.5,
+ "plain": "The corridor turns 120° instead of 90°. Find a sofa and a matching upper bound within 1%.",
+ "math": "For a width-1 corridor with turn angle $2\\pi/3$, find $A$ with an admissible sofa of area $A$ and a proof that the optimum is $<1.01A$."
+}

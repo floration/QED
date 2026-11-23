@@ -1,0 +1,8 @@
+{
+ "id": "N-160",
+ "title": "Integer-bijective Keller map",
+ "area": "Algebra",
+ "difficulty": 2.9,
+ "plain": "Find a polynomial map with Jacobian 1 that shuffles integer points perfectly but has no polynomial inverse.",
+ "math": "Find $F\\in\\mathbb{Z}[x]^n$, $\\det DF\\equiv1$, inducing a bijection of $\\mathbb{Z}^n$ but not a polynomial automorphism."
+}

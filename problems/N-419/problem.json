@@ -1,0 +1,8 @@
+{
+ "id": "N-419",
+ "title": "Hat tilings of convex regions",
+ "area": "Geometry",
+ "difficulty": 2.3,
+ "plain": "Show no convex polygon can be tiled exactly by hats.",
+ "math": "Prove no convex polygon is a finite union of interior-disjoint congruent hats (reflections allowed), or exhibit one."
+}

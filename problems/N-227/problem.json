@@ -1,0 +1,8 @@
+{
+ "id": "N-227",
+ "title": "Square-sum paths with chosen ends",
+ "area": "Combinatorics",
+ "difficulty": 3.0,
+ "plain": "Show you can line up 1 to N with neighbours summing to squares, starting and ending at almost any two numbers you choose.",
+ "math": "Prove $S_N$ contains a Hamiltonian path whose endpoints can be prescribed arbitrarily among vertices of degree $\\ge3$, for all large $N$."
+}

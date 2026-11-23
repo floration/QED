@@ -1,0 +1,8 @@
+{
+ "id": "N-458",
+ "title": "Digit-restricted Liouville",
+ "area": "Number theory",
+ "difficulty": 3.9,
+ "plain": "Show the Liouville function has no bias on seven-free numbers in short intervals.",
+ "math": "Prove $\\sum_{x<n\\le x+H,\\ 7\\notin n}\\lambda(n)=o(\\#\\{x<n\\le x+H:7\\notin n\\})$ for almost all $x\\le X$, with $H=X^{0.1}$."
+}

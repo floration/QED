@@ -1,0 +1,8 @@
+{
+ "id": "N-048",
+ "title": "Billiards in the sofa",
+ "area": "Dynamics",
+ "difficulty": 0.9,
+ "plain": "A ball bounces inside Gerver's sofa shape. Find its shortest closed bouncing path.",
+ "math": "Determine the minimal-length periodic billiard trajectory in Gerver's sofa and prove minimality."
+}

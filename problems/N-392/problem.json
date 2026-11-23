@@ -1,0 +1,8 @@
+{
+ "id": "N-392",
+ "title": "Doubled-twin sieve upper bound",
+ "area": "Number theory",
+ "difficulty": 4.1,
+ "plain": "Bound the number of doubled-twin quadruples up to x by the predicted count times at most 3.",
+ "math": "Prove $\\#\\{p\\le x: p,p+2,2p+1,2p+3\\text{ prime}\\}\\le(3+o(1))\\,\\mathfrak{S}x/\\log^4x$, with $\\mathfrak S$ the singular series."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-156",
+ "title": "Prime Nim is not simple",
+ "area": "Computation",
+ "difficulty": 4.0,
+ "plain": "Show Prime Nim losing positions cannot be detected by shallow constant-depth circuits.",
+ "math": "Prove the indicator of P-positions of the prime subtraction game (in binary) is not in $\\mathsf{AC}^0$."
+}

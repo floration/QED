@@ -1,0 +1,8 @@
+{
+ "id": "N-407",
+ "title": "Prime-indexed seven-free primes",
+ "area": "Number theory",
+ "difficulty": 6.3,
+ "plain": "List the primes in order. Show infinitely many seven-free primes sit at a prime position in that list.",
+ "math": "Prove infinitely many primes $p_q$ with $q$ prime and $p_q$ free of the decimal digit 7."
+}

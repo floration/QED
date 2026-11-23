@@ -1,0 +1,8 @@
+{
+ "id": "N-222",
+ "title": "Greedy independent sets in square sums",
+ "area": "Combinatorics",
+ "difficulty": 4.3,
+ "plain": "Pick random numbers up to N one by one, skipping any that sum to a square with something already picked. How many do you end with?",
+ "math": "Determine the asymptotic size of the random greedy independent set in $S_N$, in probability."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-357",
+ "title": "Hard-hat transition",
+ "area": "Physics",
+ "difficulty": 3.4,
+ "plain": "Show the gas of non-overlapping hats freezes abruptly at some density.",
+ "math": "Prove the hard-hat lattice gas has a first-order phase transition in the activity."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-400",
+ "title": "Seven-free Goldbach",
+ "area": "Number theory",
+ "difficulty": 3.1,
+ "plain": "Show almost every even number is a sum of two primes that have no digit 7.",
+ "math": "Prove all but $o(x)$ even $n\\le x$ are sums of two 7-free primes."
+}

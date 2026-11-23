@@ -1,0 +1,8 @@
+{
+ "id": "N-412",
+ "title": "Seven-free Carmichael quotients",
+ "area": "Number theory",
+ "difficulty": 4.8,
+ "plain": "Show infinitely many Carmichael numbers n have n − 1 seven-free.",
+ "math": "Prove infinitely many Carmichael numbers $n$ such that $n-1$ has no decimal digit 7."
+}

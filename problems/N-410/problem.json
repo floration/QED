@@ -1,0 +1,8 @@
+{
+ "id": "N-410",
+ "title": "Prime-sum Hamiltonian count",
+ "area": "Combinatorics",
+ "difficulty": 2.6,
+ "plain": "Count the ways to arrange 1 to 2n in a circle so neighbours sum to primes. Find the growth rate.",
+ "math": "Let $H_n$ count Hamiltonian cycles of the prime-sum graph on $[2n]$. Prove $\\log H_n=(1+o(1))\\,c\\,n\\log n$ and find $c$."
+}

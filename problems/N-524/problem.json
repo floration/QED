@@ -1,0 +1,8 @@
+{
+ "id": "N-524",
+ "title": "Prime Nim with two piles",
+ "area": "Games",
+ "difficulty": 3.6,
+ "plain": "Give an exact rule for who wins two-pile Prime Nim (remove a prime from one pile).",
+ "math": "Characterize $\\{(a,b): G(a)\\oplus G(b)=0\\}$ via a formula for the Grundy function $G$ of Prime Nim."
+}

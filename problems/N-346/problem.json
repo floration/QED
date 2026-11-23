@@ -1,0 +1,8 @@
+{
+ "id": "N-346",
+ "title": "Cube-sum paths",
+ "area": "Combinatorics",
+ "difficulty": 2.6,
+ "plain": "Arrange 1 to N in a line so neighbours add to perfect cubes, for every large N.",
+ "math": "Prove $C_N$ has a Hamiltonian path for all sufficiently large $N$."
+}

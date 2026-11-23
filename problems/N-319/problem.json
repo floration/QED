@@ -1,0 +1,8 @@
+{
+ "id": "N-319",
+ "title": "Seven-free factorial-like products",
+ "area": "Number theory",
+ "difficulty": 7.0,
+ "plain": "Show n! + 1 contains the digit 7 for all large n.",
+ "math": "Prove $7\\in n!+1$ (decimal) for all sufficiently large $n$."
+}

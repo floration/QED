@@ -1,0 +1,8 @@
+{
+ "id": "N-514",
+ "title": "Optimal sofa is not algebraic anywhere",
+ "area": "Geometry",
+ "difficulty": 4.5,
+ "plain": "Show the optimal sofa for a 60° turn has an outline that no polynomial equation describes.",
+ "math": "Prove the boundary of the optimal sofa for the $60^\\circ$ corridor contains no arc of any algebraic curve."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-063",
+ "title": "Hyperbolic square peg",
+ "area": "Geometry",
+ "difficulty": 4.7,
+ "plain": "Every closed curve in the hyperbolic plane should pass through the corners of some hyperbolic square.",
+ "math": "Prove every Jordan curve in $\\mathbb{H}^2$ contains the four vertices of a regular hyperbolic quadrilateral."
+}

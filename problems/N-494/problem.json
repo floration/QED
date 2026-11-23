@@ -1,0 +1,8 @@
+{
+ "id": "N-494",
+ "title": "Seven-free Markov numbers",
+ "area": "Number theory",
+ "difficulty": 8.8,
+ "plain": "Show infinitely many Markov numbers have no digit 7.",
+ "math": "Prove infinitely many Markov numbers $m$ satisfy $7\\notin m$ (decimal)."
+}

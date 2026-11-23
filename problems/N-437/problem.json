@@ -1,0 +1,8 @@
+{
+ "id": "N-437",
+ "title": "Linnik for seven-free primes",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "plain": "Show the smallest seven-free prime in an arithmetic progression is at most a fixed power of the modulus.",
+ "math": "Prove there is $C$ such that for every $q$ and $(a,q)=1$ (with $10\\nmid q$-compatibility conditions) there is a 7-free prime $p\\equiv a\\ (q)$, $p\\le q^C$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-036",
+ "title": "Kissing hats",
+ "area": "Geometry",
+ "difficulty": 0.8,
+ "plain": "How many copies of the hat tile can touch one hat without overlapping?",
+ "math": "Determine the maximum number of interior-disjoint congruent copies of the hat polykite, reflections allowed, each meeting a fixed hat."
+}

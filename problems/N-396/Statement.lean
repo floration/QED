@@ -1,0 +1,10 @@
+import Mathlib
+/-! N-396: Graceful forests with one big tree
+A forest with c trees and m edges is graceful-forest labelled if its vertices get the labels 0 to m + c − 1 with all edge differences distinct. Show this works whenever there are at least two trees and one of them holds more than half the edges.
+Informal statement: Prove every forest with $m$ edges and $c\ge2$ components, one of which has more than $m/2$ edges, has a bijection $V\to\{0,\dots,m+c-1\}$ with all $|\ell(u)-\ell(v)|$, $uv\in E$, distinct.
+STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
+(open a PR touching only this file, labelled `statement`). Solutions are accepted only
+after the statement PR is merged. -/
+namespace OpenProblems.N396
+def Claim : Prop := sorry
+end OpenProblems.N396

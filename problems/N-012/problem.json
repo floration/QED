@@ -1,0 +1,8 @@
+{
+ "id": "N-012",
+ "title": "Shuffle with a cut",
+ "area": "Combinatorics",
+ "difficulty": 1.8,
+ "plain": "Do a perfect shuffle, then cut k cards from top to bottom, and repeat. How many repetitions bring the deck back?",
+ "math": "For the permutation $c_k\\circ\\sigma_{\\text{out}}$ on $2n$ cards, determine its order as a function of $n$ and $k$."
+}

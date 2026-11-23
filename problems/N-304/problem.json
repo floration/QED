@@ -1,0 +1,8 @@
+{
+ "id": "N-304",
+ "title": "Uniform spanning tree of the square-sum graph",
+ "area": "Probability",
+ "difficulty": 3.8,
+ "plain": "Show a uniformly random spanning tree of the square-sum graph has diameter of order a fixed power of N, and find the exponent.",
+ "math": "For $T$ a uniform spanning tree of the giant component of $S_N$, prove $\\mathrm{diam}(T)=N^{\\alpha+o(1)}$ in probability and determine $\\alpha$."
+}

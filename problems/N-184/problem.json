@@ -1,0 +1,8 @@
+{
+ "id": "N-184",
+ "title": "Random-turn Prime Nim",
+ "area": "Games",
+ "difficulty": 1.6,
+ "plain": "In Prime Nim where a coin flip decides who moves, find the exact winning chance from a pile of n.",
+ "math": "For random-turn play of the prime subtraction game, compute $\\lim_n$ of the value from pile $n$, if it exists."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-087",
+ "title": "T-junction sofa",
+ "area": "Geometry",
+ "difficulty": 3.1,
+ "plain": "A sofa comes up the stem of a T and must be able to leave by either arm. Find the biggest one.",
+ "math": "Maximize area over sets admissible from the stem to each arm (separately) of a width-1 T-junction."
+}

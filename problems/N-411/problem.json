@@ -1,0 +1,8 @@
+{
+ "id": "N-411",
+ "title": "Turán density with a twist",
+ "area": "Combinatorics",
+ "difficulty": 3.8,
+ "plain": "Same question for a seven-vertex configuration of five triples arranged around a central triple.",
+ "math": "Determine $\\pi(F)$ for $F=\\{123,145,256,347,567\\}$."
+}

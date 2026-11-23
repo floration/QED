@@ -1,0 +1,8 @@
+{
+ "id": "N-249",
+ "title": "Polykite growth: one more digit",
+ "area": "Combinatorics",
+ "difficulty": 3.1,
+ "plain": "Pin the exponential growth rate of n-kite shapes to within one percent, rigorously.",
+ "math": "Prove explicit bounds $a\\le\\lambda\\le b$ with $b/a\\le1.01$ for the polykite growth constant $\\lambda=\\lim k_n^{1/n}$."
+}

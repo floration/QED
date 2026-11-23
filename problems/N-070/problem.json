@@ -1,0 +1,8 @@
+{
+ "id": "N-070",
+ "title": "Square-sum cliques",
+ "area": "Combinatorics",
+ "difficulty": 4.7,
+ "plain": "How many numbers can pairwise add up to perfect squares? Decide if there is a limit.",
+ "math": "Decide whether $\\omega(S_N)$ is bounded, i.e., whether there exist arbitrarily large sets of distinct positive integers with all pairwise sums square."
+}

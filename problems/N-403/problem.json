@@ -1,0 +1,8 @@
+{
+ "id": "N-403",
+ "title": "Sofa in curved space with a corner",
+ "area": "Geometry",
+ "difficulty": 2.4,
+ "plain": "On a cone-shaped surface the hallway corner is the cone point. Find the best sofa.",
+ "math": "For the width-1 corridor on a flat cone of angle $\\alpha$ with the inner corner at the apex, find the optimal sofa area as a function of $\\alpha$."
+}

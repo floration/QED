@@ -1,0 +1,8 @@
+{
+ "id": "N-098",
+ "title": "Kepler, compressed",
+ "area": "Formal proof",
+ "difficulty": 2.4,
+ "plain": "Make the computer-checked proof of the densest sphere packing far shorter.",
+ "math": "Give a Lean 4 proof of the Kepler conjecture in under 100,000 lines."
+}

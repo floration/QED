@@ -1,0 +1,8 @@
+{
+ "id": "N-030",
+ "title": "Two-tree graceful forests",
+ "area": "Combinatorics",
+ "difficulty": 0.9,
+ "plain": "Check the distinct-difference labeling for every forest of two small trees.",
+ "math": "Prove that every forest of two trees with at most 25 vertices each has a bijection $V\\to\\{0,\\dots,m+1\\}$ with distinct edge differences."
+}

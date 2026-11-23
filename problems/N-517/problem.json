@@ -1,0 +1,8 @@
+{
+ "id": "N-517",
+ "title": "Prime necklaces for all n",
+ "area": "Combinatorics",
+ "difficulty": 4.6,
+ "plain": "Arrange 1 to 2n in a circle so every two neighbours sum to a prime, and so do every two numbers three apart.",
+ "math": "Prove for all large $n$ a cyclic arrangement of $[2n]$ with $\\pi_i+\\pi_{i+1}$ and $\\pi_i+\\pi_{i+3}$ prime for all $i$."
+}

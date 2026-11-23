@@ -1,0 +1,8 @@
+{
+ "id": "N-126",
+ "title": "Hexagonal Lebesgue covering",
+ "area": "Geometry",
+ "difficulty": 6.3,
+ "plain": "Find the smallest convex shape that can cover every set of diameter 1, if covering is by translation only, not rotation.",
+ "math": "Determine $\\min\\{\\mathrm{area}(K):K$ convex, every set of diameter $1$ has a translate inside $K\\}$, and prove the minimiser is unique."
+}

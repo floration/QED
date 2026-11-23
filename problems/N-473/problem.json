@@ -1,0 +1,8 @@
+{
+ "id": "N-473",
+ "title": "Gerver's constant has unbounded partial quotients",
+ "area": "Number theory",
+ "difficulty": 8.5,
+ "plain": "Show the continued fraction of Gerver's sofa area contains arbitrarily large terms.",
+ "math": "Prove the continued fraction expansion of $\\mu_G\\approx2.2195$ has unbounded partial quotients."
+}

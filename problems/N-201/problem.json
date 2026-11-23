@@ -1,0 +1,8 @@
+{
+ "id": "N-201",
+ "title": "Keller maps over finite fields",
+ "area": "Algebra",
+ "difficulty": 2.4,
+ "plain": "Count the polynomial maps of three variables over a finite field with constant Jacobian that happen to be bijections.",
+ "math": "For $F\\in\\mathbb{F}_p[x,y,z]^3$ of degree $\\le3$ with $\\det DF\\in\\mathbb{F}_p^\\times$, find the asymptotic proportion inducing bijections of $\\mathbb{F}_p^3$ as $p\\to\\infty$."
+}

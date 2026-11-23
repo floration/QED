@@ -1,0 +1,8 @@
+{
+ "id": "N-597",
+ "title": "Gerver sofa is not periodic in its digits",
+ "area": "Number theory",
+ "difficulty": 7.0,
+ "plain": "Show the digits of Gerver's sofa area never fall into a repeating pattern in any base, and are not \"too well\" approximable.",
+ "math": "Prove the irrationality measure of $\\mu_G$ equals 2."
+}

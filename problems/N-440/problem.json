@@ -1,0 +1,8 @@
+{
+ "id": "N-440",
+ "title": "Hat tiling heat kernel constant",
+ "area": "Probability",
+ "difficulty": 5.3,
+ "plain": "For a random walk on a hat tiling, find the exact constant in the return probability.",
+ "math": "Prove $p_{2n}(o,o)\\sim\\frac{c(o)}{n}$ on the hat graph and show $\\frac1{|B_R|}\\sum_{o\\in B_R}c(o)\\to c$ with $c=\\frac{\\bar d}{2\\pi\\sqrt{\\det\\Sigma}}$, computing $\\Sigma$ in closed form."
+}

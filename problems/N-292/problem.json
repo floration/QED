@@ -1,0 +1,8 @@
+{
+ "id": "N-292",
+ "title": "Prime-sum graph and perfect codes",
+ "area": "Combinatorics",
+ "difficulty": 3.2,
+ "plain": "Decide for which n the prime-sum graph on 1 to 2n has a set of vertices that dominates every vertex exactly once.",
+ "math": "Determine all $n$ for which the prime-sum graph on $[2n]$ has a perfect code (efficient dominating set)."
+}

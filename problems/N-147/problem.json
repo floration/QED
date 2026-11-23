@@ -1,0 +1,8 @@
+{
+ "id": "N-147",
+ "title": "Largest-factor Collatz stopping time",
+ "area": "Dynamics",
+ "difficulty": 4.6,
+ "plain": "How many steps does the largest-factor Collatz map take, on average, to reach 1?",
+ "math": "Prove $\\frac1x\\sum_{n\\le x}T(n)\\sim c\\log x$ for the stopping time $T$ of $f$, and compute $c$."
+}

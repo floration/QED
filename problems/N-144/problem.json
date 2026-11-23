@@ -1,0 +1,8 @@
+{
+ "id": "N-144",
+ "title": "Kakeya discs",
+ "area": "Geometry",
+ "difficulty": 4.1,
+ "plain": "What is the least volume needed to turn a flat disc to every orientation?",
+ "math": "Determine $\\inf$ volume of sets in $\\mathbb{R}^3$ containing a unit disc in every orientation (positive by Marstrand), with an extremizer."
+}

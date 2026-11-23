@@ -1,0 +1,8 @@
+{
+ "id": "N-344",
+ "title": "Hat Ising universality",
+ "area": "Physics",
+ "difficulty": 3.7,
+ "plain": "Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid.",
+ "math": "Prove the hat-graph Ising model has critical exponents $\\beta=1/8$, $\\gamma=7/4$, $\\nu=1$."
+}

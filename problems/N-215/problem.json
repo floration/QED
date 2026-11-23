@@ -1,0 +1,8 @@
+{
+ "id": "N-215",
+ "title": "Odd-cycle-free square sums",
+ "area": "Combinatorics",
+ "difficulty": 2.9,
+ "plain": "How many numbers up to N can you keep so the square-sum graph on them has no odd cycle?",
+ "math": "Determine $\\max\\{|A|:A\\subseteq[N],\\ S_N[A]\\text{ bipartite}\\}/N$ asymptotically."
+}

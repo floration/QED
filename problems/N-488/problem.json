@@ -1,0 +1,8 @@
+{
+ "id": "N-488",
+ "title": "Thue–Morse of P(n) and P(n+1)",
+ "area": "Number theory",
+ "difficulty": 5.6,
+ "plain": "Show the Thue–Morse values at P(n) and P(n+1) are uncorrelated.",
+ "math": "Prove $\\sum_{n\\le x}(-1)^{s_2(P(n))+s_2(P(n+1))}=o(x)$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-262",
+ "title": "Node Kayles on square sums",
+ "area": "Games",
+ "difficulty": 6.4,
+ "plain": "Players alternately pick an unused number up to N that does not sum to a square with any picked number. Last to move wins. Decide the winner for large N.",
+ "math": "Determine the outcome of Node Kayles on $S_N$ for all sufficiently large $N$."
+}

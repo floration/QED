@@ -1,0 +1,8 @@
+{
+ "id": "N-136",
+ "title": "Perfect Minesweeper",
+ "area": "Probability",
+ "difficulty": 3.9,
+ "plain": "What is the exact chance that perfect play wins expert Minesweeper?",
+ "math": "Compute $\\sup_\\sigma\\Pr(\\text{win})$ for $30\\times16$ with 99 uniform mines and a safe first click."
+}

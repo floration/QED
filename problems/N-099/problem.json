@@ -1,0 +1,8 @@
+{
+ "id": "N-099",
+ "title": "Fast Prime Nim",
+ "area": "Computation",
+ "difficulty": 2.8,
+ "plain": "Compute Prime Nim values up to a trillion.",
+ "math": "Give an algorithm computing $G(n)$ for all $n\\le10^{12}$ in time $o(N^{1.5})$ and run it."
+}

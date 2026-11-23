@@ -1,0 +1,8 @@
+{
+ "id": "N-278",
+ "title": "Three pairs",
+ "area": "Dynamics",
+ "difficulty": 5.3,
+ "plain": "Replace n by P(n) + P(2n + 1). Every tested start ends in one of three two-step loops: 13 ↔ 16, 30 ↔ 66, 36 ↔ 76. Prove it.",
+ "math": "Prove every orbit of $n\\mapsto P(n)+P(2n+1)$ on $n\\ge2$ enters $\\{13,16\\}$, $\\{30,66\\}$ or $\\{36,76\\}$."
+}

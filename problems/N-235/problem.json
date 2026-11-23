@@ -1,0 +1,8 @@
+{
+ "id": "N-235",
+ "title": "Spectre chromatic number of distances",
+ "area": "Geometry",
+ "difficulty": 6.7,
+ "plain": "Colour points of the plane so no two points at a distance equal to a spectre edge length or diagonal share a colour. Find the colours needed.",
+ "math": "Let $D$ be the set of distances between vertices of the spectre polygon. Determine $\\chi(\\mathbb{R}^2;D)$."
+}

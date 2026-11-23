@@ -1,0 +1,8 @@
+{
+ "id": "N-444",
+ "title": "First appearances in Prime Nim",
+ "area": "Games",
+ "difficulty": 3.8,
+ "plain": "The smallest pile with Grundy value k in Prime Nim grows extremely fast. Show it grows at least exponentially in k.",
+ "math": "Let $a(k)=\\min\\{n:G(n)=k\\}$ for the prime subtraction game. Prove $a(k)\\ge e^{ck}$ for some $c>0$ and all $k$ for which $a(k)$ exists."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-155",
+ "title": "Forced SQG blow-up",
+ "area": "Analysis",
+ "difficulty": 2.6,
+ "plain": "Copy the 2026 forced Navier–Stokes blow-up for the surface quasi-geostrophic equation.",
+ "math": "Construct smooth compactly supported $f$ such that forced SQG on $\\mathbb{R}^2$ from rest blows up in finite time."
+}

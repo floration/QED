@@ -1,0 +1,8 @@
+{
+ "id": "N-362",
+ "title": "Square-sum pancyclicity",
+ "area": "Combinatorics",
+ "difficulty": 3.0,
+ "plain": "Show the square-sum graph has cycles of every possible length.",
+ "math": "Prove $S_N$ is pancyclic on its 2-connected core for all large $N$."
+}

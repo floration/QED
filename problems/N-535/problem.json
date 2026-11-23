@@ -1,0 +1,8 @@
+{
+ "id": "N-535",
+ "title": "Firefighter on the hat tiling",
+ "area": "Combinatorics",
+ "difficulty": 3.4,
+ "plain": "Find the exact average number of firefighters per turn needed to contain any fire on a hat tiling.",
+ "math": "Determine $\\inf\\{f: f\\text{ firefighters per turn (averaged) contain every finite fire on the hat graph}\\}$."
+}

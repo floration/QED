@@ -1,0 +1,8 @@
+{
+ "id": "N-264",
+ "title": "The 7p+4 funnel, almost always",
+ "area": "Dynamics",
+ "difficulty": 6.6,
+ "plain": "Show almost every prime eventually falls into the 12-cycle of the 7p + 4 map.",
+ "math": "Prove the primes whose $p\\mapsto P(7p+4)$ orbit enters its 12-cycle have relative density 1."
+}

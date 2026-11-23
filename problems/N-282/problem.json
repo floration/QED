@@ -1,0 +1,8 @@
+{
+ "id": "N-282",
+ "title": "Smooth p²+1",
+ "area": "Number theory",
+ "difficulty": 4.2,
+ "plain": "Show infinitely many primes p have p² + 1 built only from primes below √p.",
+ "math": "Prove infinitely many primes $p$ with $P(p^2+1)<p^{1/2}$."
+}

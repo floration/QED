@@ -1,0 +1,8 @@
+{
+ "id": "N-010",
+ "title": "Smallest-odd-factor Collatz",
+ "area": "Dynamics",
+ "difficulty": 0.8,
+ "plain": "Halve even numbers; send an odd number to the smallest odd prime dividing 3n + 1. Find every cycle that occurs below a billion.",
+ "math": "Let $g(n)=n/2$ ($n$ even) and $g(n)=q(3n+1)$ ($n$ odd), $q$ the least odd prime factor ($1$ if none). Classify all cycles of $g$ meeting $[1,10^9]$."
+}

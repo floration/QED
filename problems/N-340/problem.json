@@ -1,0 +1,8 @@
+{
+ "id": "N-340",
+ "title": "Random square-sum transpositions mixing",
+ "area": "Probability",
+ "difficulty": 5.5,
+ "plain": "Shuffle 1 to N by swapping a random pair that sums to a square. Find the mixing time and show cutoff.",
+ "math": "For the random walk on $S_N$ (symmetric group) driven by uniform $T$-transpositions, $T$ as above, prove cutoff and determine its location."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-420",
+ "title": "Lattice gauge on the hat",
+ "area": "Physics",
+ "difficulty": 4.5,
+ "plain": "Show the Z/2 lattice gauge theory on a hat-tiled surface times a line has a deconfinement transition.",
+ "math": "For $\\mathbb{Z}_2$ lattice gauge theory on the 3D cell complex $\\mathrm{hat}\\times\\mathbb{Z}$, prove the Wilson loop changes from area law to perimeter law at a single critical coupling."
+}

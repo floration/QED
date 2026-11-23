@@ -1,0 +1,8 @@
+{
+ "id": "N-495",
+ "title": "Apollonian packing with prime curvatures",
+ "area": "Number theory",
+ "difficulty": 5.0,
+ "plain": "In the integral Apollonian packing with curvatures (−1, 2, 2, 3), show every large prime is the largest prime factor of some circle's curvature.",
+ "math": "For the $(-1,2,2,3)$ Apollonian packing with curvature multiset $\\mathcal{K}$, prove $\\{P(k):k\\in\\mathcal{K}\\}$ contains all sufficiently large primes."
+}

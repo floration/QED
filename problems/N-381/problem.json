@@ -1,0 +1,8 @@
+{
+ "id": "N-381",
+ "title": "Symmetric sofa",
+ "area": "Geometry",
+ "difficulty": 2.0,
+ "plain": "Find the best sofa that is symmetric under a half-turn.",
+ "math": "Maximize area over centrally symmetric sets admissible in the width-1 right-angled corridor."
+}

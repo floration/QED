@@ -1,0 +1,8 @@
+{
+ "id": "N-349",
+ "title": "Counting Prime Nim losses",
+ "area": "Games",
+ "difficulty": 3.6,
+ "plain": "Show the losing positions of Prime Nim thin out at a precise power rate.",
+ "math": "Prove $|L\\cap[1,x]|=x^{\\alpha+o(1)}$ for some $\\alpha$ and compute it."
+}

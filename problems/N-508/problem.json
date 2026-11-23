@@ -1,0 +1,8 @@
+{
+ "id": "N-508",
+ "title": "Two colors for square sums, avoiding triangles",
+ "area": "Combinatorics",
+ "difficulty": 3.4,
+ "plain": "Show every way to 2-color 1 to N, for large N, makes three same-colored numbers whose pairwise sums are all squares.",
+ "math": "Prove for large $N$ every 2-coloring of $[N]$ has a monochromatic triangle in $S_N$."
+}

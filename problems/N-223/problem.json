@@ -1,0 +1,8 @@
+{
+ "id": "N-223",
+ "title": "Hamiltonian cycles in hat patches",
+ "area": "Combinatorics",
+ "difficulty": 4.4,
+ "plain": "Count closed tours visiting every tile of a large hat-tiled region once. Find the exponential growth rate per tile.",
+ "math": "For hat-tiled $L$-balls with $n$ tiles, prove $(\\#\\text{Hamiltonian cycles})^{1/n}\\to\\beta$ and determine $\\beta$ to 3 digits rigorously."
+}

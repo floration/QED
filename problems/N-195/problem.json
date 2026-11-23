@@ -1,0 +1,8 @@
+{
+ "id": "N-195",
+ "title": "Twin hats",
+ "area": "Geometry",
+ "difficulty": 1.4,
+ "plain": "Find a pair of different tiles that can each tile the plane only together, aperiodically, with a matching rule nobody has found yet.",
+ "math": "Find two polykites $A,B$ with $\\le 6$ kites each, neither tiling alone, that together tile $\\mathbb{R}^2$ only aperiodically."
+}

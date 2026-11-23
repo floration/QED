@@ -1,0 +1,8 @@
+{
+ "id": "N-293",
+ "title": "Extremal square-sum subgraphs",
+ "area": "Combinatorics",
+ "difficulty": 3.6,
+ "plain": "Find the largest number of edges in a subgraph of the square-sum graph with no 4-cycle.",
+ "math": "Determine the order of magnitude of $\\mathrm{ex}(S_N,C_4)$, the maximum number of edges of a $C_4$-free subgraph of $S_N$."
+}

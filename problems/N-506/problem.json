@@ -1,0 +1,8 @@
+{
+ "id": "N-506",
+ "title": "Hat dimer heights",
+ "area": "Physics",
+ "difficulty": 3.6,
+ "plain": "Random pairings of neighbouring hat tiles have a \"height\" landscape. Show it looks like the standard random surface at large scales.",
+ "math": "Prove the height function of uniform dimer covers of growing hat patches converges to a multiple of the Gaussian free field, and compute the multiple."
+}

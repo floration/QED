@@ -1,0 +1,8 @@
+{
+ "id": "N-594",
+ "title": "Firefighter on Z³",
+ "area": "Combinatorics",
+ "difficulty": 2.5,
+ "plain": "How many firefighters per turn are needed to contain a fire in 3D, as a precise growth rate?",
+ "math": "Determine $\\lim_{t\\to\\infty}f(t)/t$ for the minimal firefighters needed to contain fire on $\\mathbb{Z}^3$ by time $t$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-492",
+ "title": "Largest-factor tribonacci",
+ "area": "Dynamics",
+ "difficulty": 5.3,
+ "plain": "Repeatedly add the largest prime factors of the last three terms. Show the sequence is always eventually periodic.",
+ "math": "For $a_{n+3}=P(a_{n+2})+P(a_{n+1})+P(a_n)$, prove eventual periodicity for every start in $\\mathbb{N}_{\\ge2}^3$."
+}

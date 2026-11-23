@@ -1,0 +1,8 @@
+{
+ "id": "N-459",
+ "title": "Square-plus-one orbits avoid small primes",
+ "area": "Dynamics",
+ "difficulty": 3.7,
+ "plain": "Show that infinitely many starting numbers have square-plus-one sequences that never fall below their start.",
+ "math": "Prove infinitely many $n$ with $Q^k(n)\\ge n$ for all $k\\ge1$."
+}

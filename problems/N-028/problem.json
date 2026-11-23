@@ -1,0 +1,8 @@
+{
+ "id": "N-028",
+ "title": "Penrose firefighter",
+ "area": "Combinatorics",
+ "difficulty": 2.1,
+ "plain": "Fire spreads along a Penrose tiling's edges. How many firefighters per turn can trap any fire?",
+ "math": "On the vertex graph of a Penrose rhomb tiling, find the least $k$ such that protecting $k$ vertices per turn contains a fire from any single vertex."
+}

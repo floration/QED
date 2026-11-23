@@ -1,0 +1,8 @@
+{
+ "id": "N-132",
+ "title": "Optimal square-sum circle gaps",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "plain": "Among all arrangements of 1 to N in a circle where neighbours sum to squares, minimise the largest difference between neighbours. Find the order of the minimum.",
+ "math": "Determine the order of $\\min_{C}\\max_{i}|v_{i+1}-v_i|$ over Hamiltonian cycles $C$ of $S_N$."
+}

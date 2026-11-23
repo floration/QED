@@ -1,0 +1,8 @@
+{
+ "id": "N-009",
+ "title": "Graceful spider forests",
+ "area": "Combinatorics",
+ "difficulty": 2.8,
+ "plain": "Spiders are trees with one central branching vertex. Show forests of spiders have the distinct-difference labeling.",
+ "math": "For any forest of spiders with $m$ edges and $c$ components, find a bijection $V\\to\\{0,\\dots,m+c-1\\}$ with distinct edge differences."
+}

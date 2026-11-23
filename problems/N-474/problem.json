@@ -1,0 +1,8 @@
+{
+ "id": "N-474",
+ "title": "Every binary block in Gerver's constant",
+ "area": "Number theory",
+ "difficulty": 8.8,
+ "plain": "Show every finite string of 0s and 1s appears somewhere in the binary expansion of Gerver's sofa area.",
+ "math": "Prove the binary expansion of $\\mu_G$ is disjunctive (contains every finite word)."
+}

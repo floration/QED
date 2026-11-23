@@ -1,0 +1,8 @@
+{
+ "id": "N-031",
+ "title": "Shortest proof that √2 is irrational",
+ "area": "Formal proof",
+ "difficulty": 2.0,
+ "plain": "Find the shortest possible Lean proof that the square root of 2 is irrational, and prove nothing shorter works.",
+ "math": "Over Lean 4 core tactics on top of Mathlib's definitions, find the minimal tactic-step proof of `Irrational (Real.sqrt 2)` and certify minimality."
+}

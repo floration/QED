@@ -1,0 +1,8 @@
+{
+ "id": "N-533",
+ "title": "Sofa through a revolving corridor",
+ "area": "Geometry",
+ "difficulty": 2.9,
+ "plain": "The hallway itself slowly rotates while you push the sofa. Find the largest sofa that still makes it.",
+ "math": "For the width-1 L-corridor rotating at angular speed $\\omega$ relative to a sofa moving at unit speed, find the optimal area as a function of $\\omega$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-104",
+ "title": "Hat random walk diffusivity",
+ "area": "Probability",
+ "difficulty": 2.5,
+ "plain": "A random walk across hat tiles should look like ordinary Brownian motion from far away. Find its exact spreading rate.",
+ "math": "Prove the simple random walk on the hat adjacency graph satisfies an invariance principle with isotropic covariance $\\sigma^2 I$, and compute $\\sigma^2$."
+}

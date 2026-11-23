@@ -1,0 +1,8 @@
+{
+ "id": "N-539",
+ "title": "Hyperbolic Hex",
+ "area": "Games",
+ "difficulty": 3.8,
+ "plain": "On a board tiled by heptagons in hyperbolic space, find an explicit first-player win for Hex-like connection.",
+ "math": "On the $(7,3)$ tiling with a disk of radius $r$ split into four boundary arcs, give an explicit winning strategy for the first player for all $r$."
+}

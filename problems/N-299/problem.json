@@ -1,0 +1,8 @@
+{
+ "id": "N-299",
+ "title": "Isospectral monotiles",
+ "area": "Geometry",
+ "difficulty": 6.5,
+ "plain": "Find two different aperiodic monotiles that sound the same as drums.",
+ "math": "Construct two non-congruent aperiodic monotiles with identical Dirichlet spectra, or prove none exist."
+}

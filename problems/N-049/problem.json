@@ -1,0 +1,8 @@
+{
+ "id": "N-049",
+ "title": "Fewest KenKen cages",
+ "area": "Games",
+ "difficulty": 1.4,
+ "plain": "What is the fewest cages for a uniquely solvable 6 × 6 KenKen puzzle?",
+ "math": "Minimize the number of cages in a $6\\times6$ KenKen (cage targets with $+,-,\\times,\\div$) having a unique Latin-square solution."
+}

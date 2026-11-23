@@ -1,0 +1,8 @@
+{
+ "id": "N-237",
+ "title": "The hat is not spectral",
+ "area": "Analysis",
+ "difficulty": 3.0,
+ "plain": "Fuglede's conjecture predicts that a shape that cannot tile by translations has no orthogonal basis of exponentials. Prove this for the hat.",
+ "math": "Prove there is no $\\Lambda\\subset\\mathbb{R}^2$ with $\\{e^{2\\pi i\\lambda\\cdot x}\\}_{\\lambda\\in\\Lambda}$ an orthogonal basis of $L^2(\\text{hat})$."
+}

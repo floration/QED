@@ -1,0 +1,8 @@
+{
+ "id": "N-043",
+ "title": "Percolation on the hat tiling",
+ "area": "Probability",
+ "difficulty": 2.0,
+ "plain": "Each hat tile is open at random with probability p. Find where an infinite open cluster first appears.",
+ "math": "For site percolation on the hat adjacency graph, prove $0.6<p_c<0.7$ (or the correct interval) with rigorous bounds."
+}

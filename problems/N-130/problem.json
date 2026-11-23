@@ -1,0 +1,8 @@
+{
+ "id": "N-130",
+ "title": "Treewidth of the prime-sum graph",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "plain": "Find the treewidth of the prime-sum graph on 1 to 2n asymptotically.",
+ "math": "Prove $\\mathrm{tw}(\\Pi_{2n})\\sim c\\,n$ for the prime-sum graph and determine $c$."
+}

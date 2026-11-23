@@ -1,0 +1,8 @@
+{
+ "id": "N-101",
+ "title": "Hat dimers",
+ "area": "Physics",
+ "difficulty": 4.1,
+ "plain": "Cover a hat tiling with dominoes joining neighbouring tiles. Count the coverings exactly per tile.",
+ "math": "Compute the dimer entropy per vertex of the hat adjacency graph in closed form."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-159",
+ "title": "Prime Nim is not automatic",
+ "area": "Logic",
+ "difficulty": 3.0,
+ "plain": "No finite machine reading digits can recognize Prime Nim losing positions.",
+ "math": "Prove the P-position set is not $k$-automatic for any base $k\\ge2$."
+}

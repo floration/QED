@@ -1,0 +1,8 @@
+{
+ "id": "N-230",
+ "title": "Gerver sofa contact points",
+ "area": "Geometry",
+ "difficulty": 1.9,
+ "plain": "Prove Gerver's sofa touches the corridor walls in exactly the pattern Gerver described at every moment of its optimal motion, and that the motion is unique.",
+ "math": "Prove the optimal motion of Gerver's sofa through the unit corridor is unique up to time reparametrization."
+}

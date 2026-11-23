@@ -1,0 +1,8 @@
+{
+ "id": "N-373",
+ "title": "Reverse-square cycles",
+ "area": "Dynamics",
+ "difficulty": 2.4,
+ "plain": "Square and reverse the digits, repeatedly. Show there are infinitely many different loops.",
+ "math": "Prove $R(n)=\\operatorname{rev}(n^2)$ has infinitely many distinct cycles."
+}

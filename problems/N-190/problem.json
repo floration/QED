@@ -1,0 +1,8 @@
+{
+ "id": "N-190",
+ "title": "Kissing spectres",
+ "area": "Geometry",
+ "difficulty": 1.3,
+ "plain": "How many spectre tiles can touch one spectre without overlapping?",
+ "math": "Determine the maximal number of interior-disjoint congruent spectres meeting a fixed one."
+}

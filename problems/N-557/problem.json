@@ -1,0 +1,8 @@
+{
+ "id": "N-557",
+ "title": "Square-plus-one orbit mod 3",
+ "area": "Dynamics",
+ "difficulty": 6.7,
+ "plain": "Show the square-plus-one sequence starting at 2 lands on primes of both kinds mod 3 infinitely often.",
+ "math": "Prove $Q^k(2)\\equiv1\\pmod 3$ and $Q^k(2)\\equiv2\\pmod 3$ each hold for infinitely many $k$."
+}

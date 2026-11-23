@@ -1,0 +1,8 @@
+{
+ "id": "N-604",
+ "title": "Hat-tiling site percolation is irrational",
+ "area": "Probability",
+ "difficulty": 6.1,
+ "plain": "The critical probability for percolation on the hat tiling is about 0.5442. Prove it is irrational.",
+ "math": "Prove $p_c^{\\mathrm{site}}$ of the hat-tiling dual graph is irrational."
+}

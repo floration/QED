@@ -1,0 +1,8 @@
+{
+ "id": "N-502",
+ "title": "Prime Nim closed form",
+ "area": "Games",
+ "difficulty": 4.1,
+ "plain": "Find an exact rule for the Prime Nim losing positions that works for every pile size.",
+ "math": "Give a closed-form characterization of $\\{n: G(n)=0\\}$ in Prime Nim checkable in $O(\\log n)$ arithmetic operations, with proof."
+}

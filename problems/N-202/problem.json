@@ -1,0 +1,8 @@
+{
+ "id": "N-202",
+ "title": "Unit-distance barrier",
+ "area": "Geometry",
+ "difficulty": 2.1,
+ "plain": "Show the 2026 number-field method for many equal distances can never reach exponent 1.1.",
+ "math": "Prove every construction of the Alon–Bloom–Gowers–…–Sawin type (lattices from number fields of bounded class-field degree) gives $u(n)\\le n^{1.1}$."
+}

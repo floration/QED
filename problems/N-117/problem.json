@@ -1,0 +1,8 @@
+{
+ "id": "N-117",
+ "title": "Undecidable polykite tiling",
+ "area": "Logic",
+ "difficulty": 1.9,
+ "plain": "For sets of five shapes made of kites, deciding whether they tile the plane is unsolvable by any algorithm.",
+ "math": "Prove that tileability of $\\mathbb{R}^2$ by finite sets of at most 5 polykites is undecidable."
+}

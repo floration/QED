@@ -1,0 +1,8 @@
+{
+ "id": "N-169",
+ "title": "Random walks on square sums",
+ "area": "Probability",
+ "difficulty": 2.9,
+ "plain": "How long does a random walk on the square-sum graph take to forget its starting point?",
+ "math": "Determine the mixing time of simple random walk on the giant component of $S_N$ up to constants."
+}

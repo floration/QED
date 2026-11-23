@@ -1,0 +1,8 @@
+{
+ "id": "N-257",
+ "title": "Long loops for affine prime maps",
+ "area": "Dynamics",
+ "difficulty": 3.0,
+ "plain": "As a and b vary, the loops of p ↦ largest prime factor of ap + b get longer and longer. Prove loop lengths are unbounded.",
+ "math": "Prove $\\sup_{a,b}\\max\\{\\text{length of a cycle of } p\\mapsto P(ap+b)\\}=\\infty$."
+}

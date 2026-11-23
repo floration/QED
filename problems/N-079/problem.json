@@ -1,0 +1,8 @@
+{
+ "id": "N-079",
+ "title": "Two-to-one Keller maps",
+ "area": "Algebra",
+ "difficulty": 2.3,
+ "plain": "Known Jacobian counterexamples cover most points three or more times. Is there one covering most points exactly twice?",
+ "math": "Decide whether some $F:\\mathbb{C}^3\\to\\mathbb{C}^3$ with $\\det DF\\in\\mathbb{C}^\\times$ has generic fiber size exactly 2."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-574",
+ "title": "An irrational sum over largest factors",
+ "area": "Number theory",
+ "difficulty": 8.0,
+ "plain": "Add 1/(n·P(n)) over all n ≥ 2. Show the total is irrational.",
+ "math": "Prove $\\sum_{n\\ge2}\\frac{1}{n\\,P(n)}$ is irrational."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-208",
+ "title": "Seven-free primes in short intervals",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "plain": "Show seven-free primes appear in every reasonably short interval.",
+ "math": "Prove $[x,x+x^{0.6}]$ contains a prime with no digit 7 for all large $x$."
+}

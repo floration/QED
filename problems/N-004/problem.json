@@ -1,0 +1,8 @@
+{
+ "id": "N-004",
+ "title": "Hardest Rush Hour",
+ "area": "Games",
+ "difficulty": 1.4,
+ "plain": "Find the 7 × 7 Rush Hour traffic-jam puzzle that takes the most moves to solve.",
+ "math": "Over all solvable $7\\times7$ Rush Hour configurations, determine $\\max$ of the minimum solution length, with a certificate."
+}

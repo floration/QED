@@ -1,0 +1,8 @@
+{
+ "id": "N-072",
+ "title": "Seven-free primes in progressions",
+ "area": "Number theory",
+ "difficulty": 1.8,
+ "plain": "Primes avoiding the digit 7 should be evenly spread among remainder classes.",
+ "math": "Prove primes without decimal digit 7 are equidistributed in residue classes mod $q$ for all $q\\le(\\log x)^A$."
+}

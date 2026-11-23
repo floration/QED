@@ -1,0 +1,8 @@
+{
+ "id": "N-300",
+ "title": "Rotation-proof lattice-point-poor shapes",
+ "area": "Geometry",
+ "difficulty": 6.5,
+ "plain": "Find the shape in the plane with given area that contains the fewest integer lattice points after any rotation, asymptotically.",
+ "math": "Determine the convex $K$ of area $A$ minimising $\\sup_{\\theta}\\#(\\rho_\\theta K\\cap\\mathbb{Z}^2)$, asymptotically as $A\\to\\infty$, to second-order term."
+}

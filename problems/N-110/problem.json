@@ -1,0 +1,8 @@
+{
+ "id": "N-110",
+ "title": "Sudoku transversals",
+ "area": "Combinatorics",
+ "difficulty": 3.4,
+ "plain": "In every completed big Sudoku, find a set of cells with one in each row, each column and each symbol.",
+ "math": "Prove every $n^2\\times n^2$ Sudoku grid, viewed as a Latin square, has a transversal."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-365",
+ "title": "Gomoku on hats",
+ "area": "Games",
+ "difficulty": 3.0,
+ "plain": "Prove the first player wins five-in-a-row on an infinite board of hat tiles.",
+ "math": "Prove the first player has a winning strategy in the 5-in-a-row game on the hat adjacency graph (rows = geodesic paths)."
+}

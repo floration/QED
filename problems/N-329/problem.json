@@ -1,0 +1,8 @@
+{
+ "id": "N-329",
+ "title": "Density of the basin of 22 ↔ 34",
+ "area": "Dynamics",
+ "difficulty": 6.3,
+ "plain": "For n ↦ P(n) + p(n+1), about 6% of tested starts reach the 22 ↔ 34 loop. Show the fraction has a limit and it is positive.",
+ "math": "For $f(n)=P(n)+p(n+1)$, prove $\\lim_{x}\\frac1x\\#\\{n\\le x:\\text{orbit reaches }(22,34)\\}$ exists and is positive."
+}

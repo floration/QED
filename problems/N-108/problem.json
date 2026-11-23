@@ -1,0 +1,8 @@
+{
+ "id": "N-108",
+ "title": "Firefighters on the front line",
+ "area": "Combinatorics",
+ "difficulty": 1.8,
+ "plain": "Firefighters may only protect cells touching the fire. How many per turn are needed now?",
+ "math": "On $\\mathbb{Z}^2$ with protected cells required to be 4-adjacent to the burned set, find the least per-turn number containing a single fire."
+}

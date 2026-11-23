@@ -1,0 +1,8 @@
+{
+ "id": "N-477",
+ "title": "Large prime factors of 2^n + 3^n",
+ "area": "Number theory",
+ "difficulty": 6.3,
+ "plain": "Show the largest prime factor of 2^n + 3^n grows faster than n².",
+ "math": "Prove $P(2^n+3^n)/n^2\\to\\infty$."
+}

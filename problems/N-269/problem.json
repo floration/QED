@@ -1,0 +1,8 @@
+{
+ "id": "N-269",
+ "title": "Seven-free primes with a large shifted factor",
+ "area": "Number theory",
+ "difficulty": 6.3,
+ "plain": "Show a positive fraction of seven-free primes p have p − 1 with a prime factor bigger than p^0.6.",
+ "math": "Prove $\\#\\{p\\le x: p\\ \\text{7-free},\\ P(p-1)>p^{0.6}\\}\\gg\\pi_7(x)$."
+}

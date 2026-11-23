@@ -1,0 +1,8 @@
+{
+ "id": "N-296",
+ "title": "Primes in the {5,8} funnel's tree",
+ "area": "Dynamics",
+ "difficulty": 6.0,
+ "plain": "Look at which starting numbers reach 5 versus 8 first under n ↦ P(n) + P(n+1). Show both happen for a positive fraction of starts.",
+ "math": "For $f(n)=P(n)+P(n+1)$, prove both $\\{n:$ the orbit first meets the cycle at $5\\}$ and $\\{n:$ first at $8\\}$ have positive lower density."
+}

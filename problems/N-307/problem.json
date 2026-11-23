@@ -1,0 +1,8 @@
+{
+ "id": "N-307",
+ "title": "Ising with prime couplings",
+ "area": "Probability",
+ "difficulty": 4.5,
+ "plain": "On the integer line, couple spins i and j with strength 1 if i − j is prime. Decide whether there is a phase transition.",
+ "math": "For the 1D Ising model with $J_{ij}=\\mathbf 1[|i-j|\\in\\mathbb{P}]\\,|i-j|^{-2}$, prove a phase transition at finite $\\beta_c$ and determine whether the magnetization jumps."
+}

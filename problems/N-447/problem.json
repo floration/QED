@@ -1,0 +1,8 @@
+{
+ "id": "N-447",
+ "title": "Weyl remainder for the hat drum",
+ "area": "Analysis",
+ "difficulty": 5.0,
+ "plain": "Count the vibration frequencies of a hat-shaped drum below a threshold. Find the true size of the error after the two leading terms.",
+ "math": "For the Dirichlet Laplacian on the hat polygon, prove $N(\\lambda)=\\frac{|\\Omega|}{4\\pi}\\lambda-\\frac{|\\partial\\Omega|}{4\\pi}\\sqrt\\lambda+O(\\lambda^{\\theta})$ and determine the optimal $\\theta$."
+}

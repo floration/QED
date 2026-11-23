@@ -1,0 +1,8 @@
+{
+ "id": "N-014",
+ "title": "Sofa angle monotonicity",
+ "area": "Geometry",
+ "difficulty": 2.6,
+ "plain": "As a hallway's turn gets sharper, the best sofa should get smaller. Prove it between 60° and 90°.",
+ "math": "Let $A(\\theta)$ be the maximal sofa area for a width-1 corridor turning by $\\theta$. Prove $A$ is decreasing on $[\\pi/3,\\pi/2]$."
+}

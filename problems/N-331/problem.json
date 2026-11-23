@@ -1,0 +1,8 @@
+{
+ "id": "N-331",
+ "title": "Square-sum matchings count",
+ "area": "Combinatorics",
+ "difficulty": 3.6,
+ "plain": "Count the ways to pair up 1 to N into pairs summing to squares. Find the exponential growth.",
+ "math": "Determine $\\lim_N\\frac{\\log m(N)}{N}$ (or the right normalisation) for the number $m(N)$ of perfect matchings of $S_N$, $N$ even."
+}

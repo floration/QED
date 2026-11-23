@@ -1,0 +1,8 @@
+{
+ "id": "N-593",
+ "title": "Hat random walk return",
+ "area": "Probability",
+ "difficulty": 3.4,
+ "plain": "Find the exact probability that a random walk on hat tiles returns to its start within n steps, asymptotically.",
+ "math": "Prove $p_{2n}(o,o)\\sim c/n$ on the hat graph and compute $c$ exactly."
+}

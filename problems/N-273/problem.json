@@ -1,0 +1,8 @@
+{
+ "id": "N-273",
+ "title": "Doubling the largest factor",
+ "area": "Dynamics",
+ "difficulty": 5.4,
+ "plain": "Replace n by twice its largest prime factor plus one. Every tested start falls into one loop of eight numbers. Prove all do.",
+ "math": "Prove every orbit of $n\\mapsto 2P(n)+1$ on $n\\ge2$ enters the cycle $(7,15,11,23,47,95,39,27)$."
+}

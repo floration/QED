@@ -1,0 +1,8 @@
+{
+ "id": "N-082",
+ "title": "Hex on hats",
+ "area": "Games",
+ "difficulty": 1.3,
+ "plain": "Play Hex on a board made of hat tiles. Can games end in a draw, and who wins on a small board?",
+ "math": "For Hex on hat-tiled rhombus boards, decide whether draws are possible, and solve side length 5."
+}

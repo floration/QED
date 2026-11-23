@@ -1,0 +1,8 @@
+{
+ "id": "N-188",
+ "title": "Exotic shuffles",
+ "area": "Algebra",
+ "difficulty": 1.2,
+ "plain": "For which deck sizes do the three-pile shuffles generate every possible arrangement?",
+ "math": "Determine all $n$ for which the six 3-pile shuffles generate $S_{3n}$ or $A_{3n}$."
+}

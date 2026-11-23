@@ -1,0 +1,8 @@
+{
+ "id": "N-476",
+ "title": "Five squares of seven-free primes",
+ "area": "Number theory",
+ "difficulty": 5.0,
+ "plain": "Show every large number of the right residue is a sum of five squares of primes without the digit 7.",
+ "math": "Prove every sufficiently large $n\\equiv5\\pmod{24}$ is $p_1^2+\\dots+p_5^2$ with all $p_i$ prime and free of the decimal digit 7."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-566",
+ "title": "Hat Neumann eigenvalue is transcendental",
+ "area": "Analysis",
+ "difficulty": 8.8,
+ "plain": "Show the first nonzero frequency of an insulated hat-shaped membrane is transcendental.",
+ "math": "Prove the first nonzero Neumann eigenvalue $\\mu_2$ of the hat polygon (unit kite side) is transcendental."
+}

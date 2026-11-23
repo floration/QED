@@ -1,0 +1,8 @@
+{
+ "id": "N-343",
+ "title": "Sofa for every angle",
+ "area": "Geometry",
+ "difficulty": 4.1,
+ "plain": "Find the optimal sofa for a hallway turning by any angle, not just 90°.",
+ "math": "For every $\\theta\\in(0,\\pi)$, determine the optimal sofa for the width-1 corridor turning by $\\theta$."
+}

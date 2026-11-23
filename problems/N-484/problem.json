@@ -1,0 +1,8 @@
+{
+ "id": "N-484",
+ "title": "Largest prime factor of 2^n + n",
+ "area": "Number theory",
+ "difficulty": 7.5,
+ "plain": "Show the largest prime factor of 2^n + n tends to infinity faster than any fixed multiple of n.",
+ "math": "Prove $P(2^n+n)/n\\to\\infty$."
+}

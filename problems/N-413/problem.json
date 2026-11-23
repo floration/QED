@@ -1,0 +1,8 @@
+{
+ "id": "N-413",
+ "title": "Lonely runners with square speeds",
+ "area": "Number theory",
+ "difficulty": 4.6,
+ "plain": "Prove the lonely runner conjecture when all speeds are perfect squares.",
+ "math": "For distinct positive integers $a_1,\\dots,a_n$, prove $\\sup_t\\min_i\\|ta_i^2\\|\\ge\\frac1{n+1}$."
+}

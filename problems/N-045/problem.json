@@ -1,0 +1,8 @@
+{
+ "id": "N-045",
+ "title": "Independent prime-gap formalization",
+ "area": "Formal proof",
+ "difficulty": 3.8,
+ "plain": "Check the 2026 record that prime gaps of at most 186 occur forever, with a fresh computer proof written independently.",
+ "math": "Give an independent Lean 4 proof of $\\liminf_{n}(p_{n+1}-p_n)\\le186$."
+}

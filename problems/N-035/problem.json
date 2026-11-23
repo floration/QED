@@ -1,0 +1,8 @@
+{
+ "id": "N-035",
+ "title": "Hyperbolic firefighter budgets",
+ "area": "Combinatorics",
+ "difficulty": 2.5,
+ "plain": "In a hyperbolic tiling, fire spreads exponentially, so no fixed crew stops it. How fast must the crew grow?",
+ "math": "On the $\\{7,3\\}$ tiling graph, find the minimal growth of budgets $k_t$ (firefighters at turn $t$) that contains any single fire."
+}

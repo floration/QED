@@ -1,0 +1,8 @@
+{
+ "id": "N-529",
+ "title": "SOF Collatz with 5n + 1",
+ "area": "Dynamics",
+ "difficulty": 4.1,
+ "plain": "Use the smallest odd factor of 5n + 1 instead of 3n + 1. Show every start ends in a loop.",
+ "math": "Prove every orbit of $n\\mapsto n/2$ (even), $\\mathrm{spf}_{\\text{odd}}(5n+1)$ (odd) is eventually periodic."
+}

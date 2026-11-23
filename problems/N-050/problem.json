@@ -1,0 +1,8 @@
+{
+ "id": "N-050",
+ "title": "S and Z Tetris",
+ "area": "Games",
+ "difficulty": 2.3,
+ "plain": "If only the S and Z pieces ever come, how many lines can you clear before losing on a 10-wide board?",
+ "math": "On a $10\\times20$ Tetris well with an adversarial sequence from $\\{S,Z\\}$, determine the maximum number of lines the player can guarantee."
+}

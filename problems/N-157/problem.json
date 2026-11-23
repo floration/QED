@@ -1,0 +1,8 @@
+{
+ "id": "N-157",
+ "title": "Lean golf is hard to approximate",
+ "area": "Computation",
+ "difficulty": 1.1,
+ "plain": "Not only is the shortest basic-tactic proof hard to find; even a roughly short one is.",
+ "math": "Prove intro/apply/exact/rfl proof minimization admits no constant-factor approximation unless P = NP."
+}

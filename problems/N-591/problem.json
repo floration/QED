@@ -1,0 +1,8 @@
+{
+ "id": "N-591",
+ "title": "Toroidal Go 9×9",
+ "area": "Games",
+ "difficulty": 4.4,
+ "plain": "Who wins Go on a 9×9 board that wraps around in both directions?",
+ "math": "Weakly solve Go on $\\mathbb{Z}_9^2$ with area scoring and komi $0$."
+}

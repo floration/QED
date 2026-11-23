@@ -1,0 +1,8 @@
+{
+ "id": "N-268",
+ "title": "Square-sum triangle-free density",
+ "area": "Combinatorics",
+ "difficulty": 5.8,
+ "plain": "Find the largest fraction of 1 to N you can keep with no three numbers whose pairwise sums are all perfect squares.",
+ "math": "Determine $\\lim_{N}\\frac1N\\max\\{|A|:A\\subseteq[N],\\ A\\text{ contains no triangle of }S_N\\}$."
+}

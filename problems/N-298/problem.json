@@ -1,0 +1,8 @@
+{
+ "id": "N-298",
+ "title": "Distance sets of the spectre tiling",
+ "area": "Geometry",
+ "difficulty": 3.5,
+ "plain": "Find how many distinct distances occur between tile centres of the spectre tiling within radius R.",
+ "math": "Determine the order of growth of $\\#\\{|x-y|:x,y\\in\\Lambda_{\\mathrm{sp}},|x|,|y|\\le R\\}$."
+}

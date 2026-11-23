@@ -1,0 +1,8 @@
+{
+ "id": "N-093",
+ "title": "Prime-frequency synchrony",
+ "area": "Dynamics",
+ "difficulty": 2.1,
+ "plain": "Oscillators with frequencies set by logarithms of primes eventually synchronize when coupled strongly enough. Find the threshold.",
+ "math": "For the Kuramoto model with $\\omega_i=\\log p_i$, prove a sharp synchronization threshold $K_c(N)$ and its asymptotics."
+}

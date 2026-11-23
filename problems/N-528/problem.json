@@ -1,0 +1,8 @@
+{
+ "id": "N-528",
+ "title": "LF-Collatz stopping time distribution",
+ "area": "Dynamics",
+ "difficulty": 2.7,
+ "plain": "Find the exact distribution of how long the largest-factor Collatz map takes to settle.",
+ "math": "Prove $T_f(n)/\\log n$ converges in distribution on $[1,x]$ and identify the limit law."
+}

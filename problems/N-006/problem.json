@@ -1,0 +1,8 @@
+{
+ "id": "N-006",
+ "title": "Infinite Prime Nim losses",
+ "area": "Games",
+ "difficulty": 3.4,
+ "plain": "Prime Nim has infinitely many losing pile sizes (a known theorem, since primes have arbitrarily large gaps). Show they are rare.",
+ "math": "Let $L=\\{n: G(n)=0\\}$ for the subtraction game with prime moves ($|L|=\\infty$ is known). Prove $L$ has natural density $0$."
+}

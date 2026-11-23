@@ -1,0 +1,8 @@
+{
+ "id": "N-168",
+ "title": "Random hat parking",
+ "area": "Probability",
+ "difficulty": 6.0,
+ "plain": "Drop hat tiles at random without overlap until no more fit. What fraction gets covered?",
+ "math": "Compute the jamming density of random sequential adsorption of hats (random rotations from the kite grid) in the plane."
+}

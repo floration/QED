@@ -1,0 +1,8 @@
+{
+ "id": "N-541",
+ "title": "The 4p+1 funnel",
+ "area": "Dynamics",
+ "difficulty": 6.2,
+ "plain": "Map a prime p to the largest prime factor of 4p + 1. Every prime tested falls into one loop of eight primes. Prove all do.",
+ "math": "Prove every orbit of $p\\mapsto P(4p+1)$ on primes enters the cycle $5\\to7\\to29\\to13\\to53\\to71\\to19\\to11\\to5$."
+}

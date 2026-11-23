@@ -1,0 +1,8 @@
+{
+ "id": "N-317",
+ "title": "Tileability by the spectre is undecidable for regions with holes",
+ "area": "Logic",
+ "difficulty": 3.0,
+ "plain": "Show deciding whether a finite region with holes can be tiled by spectres is NP-complete.",
+ "math": "Prove NP-completeness of: given a finite polygonal region $R$ (with holes), decide whether $R$ is tileable by copies of the spectre."
+}

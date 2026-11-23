@@ -1,0 +1,8 @@
+{
+ "id": "N-577",
+ "title": "Self-avoiding walk on the hat tiling scaling",
+ "area": "Probability",
+ "difficulty": 8.7,
+ "plain": "Show long self-avoiding walks on the hat tiling spread out like distance n^{3/4}, the same as on the square grid.",
+ "math": "Prove $\\mathbb{E}|\\omega_n|^2=n^{3/2+o(1)}$ for uniform $n$-step SAWs on the hat-tiling edge graph."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-032",
+ "title": "Pipe-bend sofa",
+ "area": "Geometry",
+ "difficulty": 4.6,
+ "plain": "A round pipe of diameter 1 bends at a right angle. What is the biggest solid that fits around the bend?",
+ "math": "Maximize volume over rigid-motion-admissible solids in the union of two half-cylinders of diameter 1 meeting at a right angle."
+}

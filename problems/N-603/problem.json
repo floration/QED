@@ -1,0 +1,8 @@
+{
+ "id": "N-603",
+ "title": "Partition numbers contain a 7",
+ "area": "Number theory",
+ "difficulty": 7.2,
+ "plain": "Show that from some point on, every partition number has a 7 among its digits.",
+ "math": "Prove there is $N$ such that the decimal expansion of $p(n)$ contains the digit 7 for all $n\\ge N$."
+}

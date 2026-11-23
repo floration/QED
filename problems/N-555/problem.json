@@ -1,0 +1,8 @@
+{
+ "id": "N-555",
+ "title": "Square-sum chains in primes",
+ "area": "Number theory",
+ "difficulty": 3.2,
+ "plain": "Show there are arbitrarily long chains of primes where neighbours sum to squares.",
+ "math": "Prove for every $k$ there are primes $p_1,\\dots,p_k$ with $p_i+p_{i+1}$ a perfect square for all $i<k$."
+}

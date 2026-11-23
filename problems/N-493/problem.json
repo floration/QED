@@ -1,0 +1,8 @@
+{
+ "id": "N-493",
+ "title": "Largest prime factor of Markov numbers",
+ "area": "Number theory",
+ "difficulty": 5.8,
+ "plain": "Show the largest prime factor of Markov numbers tends to infinity.",
+ "math": "Prove $P(m)\\to\\infty$ as $m$ runs through Markov numbers."
+}

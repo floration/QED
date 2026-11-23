@@ -1,0 +1,8 @@
+{
+ "id": "N-391",
+ "title": "Square-sum expansion",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "plain": "Show the square-sum graph (on its large connected piece) is a good expander.",
+ "math": "Prove the giant component of $S_N$ has spectral gap at least $(\\log N)^{-C}$."
+}

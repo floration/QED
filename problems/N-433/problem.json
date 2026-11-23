@@ -1,0 +1,8 @@
+{
+ "id": "N-433",
+ "title": "Seven-free values of n²+1",
+ "area": "Number theory",
+ "difficulty": 5.9,
+ "plain": "Show infinitely many n make n² + 1 a prime with no digit 7, or at least a product of two such primes.",
+ "math": "Prove infinitely many $n$ with $n^2+1=q_1q_2$, $q_i$ primes free of the digit 7."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-558",
+ "title": "Seven-free Friedlander–Iwaniec primes",
+ "area": "Number theory",
+ "difficulty": 4.2,
+ "plain": "Show infinitely many primes of the form x² + y⁴ have no digit 7.",
+ "math": "Prove infinitely many primes $x^2+y^4$ free of the decimal digit 7."
+}

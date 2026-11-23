@@ -1,0 +1,8 @@
+{
+ "id": "N-503",
+ "title": "Cube-sum Hamiltonian cycles",
+ "area": "Combinatorics",
+ "difficulty": 2.1,
+ "plain": "Arrange 1 to N in a circle so neighbours add to perfect cubes, for all large N.",
+ "math": "Prove $C_N$ is Hamiltonian for all sufficiently large $N$."
+}

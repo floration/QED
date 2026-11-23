@@ -1,0 +1,8 @@
+{
+ "id": "N-022",
+ "title": "Blank jigsaw",
+ "area": "Combinatorics",
+ "difficulty": 2.0,
+ "plain": "A jigsaw with no picture can only be solved from piece shapes. How few edge shapes force a unique solution?",
+ "math": "Find the asymptotics in $n$ of the least number of edge types such that some $n\\times n$ jigsaw has exactly one assembly (up to rotation of the whole)."
+}

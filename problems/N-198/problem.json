@@ -1,0 +1,8 @@
+{
+ "id": "N-198",
+ "title": "Wythoff Prime Nim",
+ "area": "Games",
+ "difficulty": 3.0,
+ "plain": "With two piles, remove a prime from one pile or the same prime from both. Describe the losing positions.",
+ "math": "Characterize the P-positions of the two-pile game with moves $(a,b)\\to(a-p,b),(a,b-p),(a-p,b-p)$, $p$ prime."
+}

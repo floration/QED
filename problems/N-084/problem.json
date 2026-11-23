@@ -1,0 +1,8 @@
+{
+ "id": "N-084",
+ "title": "Worst-case Battleship",
+ "area": "Games",
+ "difficulty": 1.4,
+ "plain": "What is the fewest shots that always sinks the standard fleet on a 10 × 10 board?",
+ "math": "Compute the minimax number of shots to sink ships of lengths 5,4,3,3,2 on $10\\times10$ against an adversary who may move ships consistently with past answers."
+}

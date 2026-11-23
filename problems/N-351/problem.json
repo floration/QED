@@ -1,0 +1,8 @@
+{
+ "id": "N-351",
+ "title": "Primes a² + b⁴ with prime inputs",
+ "area": "Number theory",
+ "difficulty": 4.2,
+ "plain": "Show infinitely many primes are a square of a prime plus a fourth power of a prime.",
+ "math": "Prove infinitely many primes of the form $p^2+q^4$ with $p,q$ prime."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-073",
+ "title": "Largest-factor Collatz heights",
+ "area": "Dynamics",
+ "difficulty": 3.7,
+ "plain": "For almost every start, the largest-factor Collatz orbit never climbs past a fixed power of where it started.",
+ "math": "Prove there is $C$ with $\\max_k f^k(n)\\le n^C$ for a density-1 set of $n$."
+}

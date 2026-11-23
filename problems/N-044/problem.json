@@ -1,0 +1,8 @@
+{
+ "id": "N-044",
+ "title": "Self-avoiding walks on the hat tiling",
+ "area": "Probability",
+ "difficulty": 2.4,
+ "plain": "Count paths across hat tiles that never revisit a tile, and show their growth rate is new.",
+ "math": "Prove the connective constant $\\mu_{\\text{hat}}$ exists for the hat adjacency graph and $\\mu_{\\text{hat}}\\ne\\sqrt{2+\\sqrt2}$."
+}

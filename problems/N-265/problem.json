@@ -1,0 +1,8 @@
+{
+ "id": "N-265",
+ "title": "Prime Nim on Gaussian integers",
+ "area": "Games",
+ "difficulty": 4.8,
+ "plain": "Play Prime Nim with Gaussian integers: subtract a Gaussian prime staying in the first quadrant. Show losing positions have density zero.",
+ "math": "For positions $a+bi$ with $a,b\\ge0$ and moves $z\\mapsto z-\\pi$ with $\\pi$ a Gaussian prime and the result in the closed first quadrant, prove the P-positions have density 0."
+}

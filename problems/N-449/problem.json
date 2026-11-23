@@ -1,0 +1,8 @@
+{
+ "id": "N-449",
+ "title": "Finitely many loops for affine prime maps",
+ "area": "Dynamics",
+ "difficulty": 4.7,
+ "plain": "For fixed a and b, show the prime map p ↦ largest prime factor of ap + b has only finitely many loops.",
+ "math": "Prove that for all integers $a\\ge2$, $b\\ge1$, the map $p\\mapsto P(ap+b)$ on primes has finitely many periodic orbits."
+}

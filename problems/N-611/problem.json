@@ -1,0 +1,8 @@
+{
+ "id": "N-611",
+ "title": "Prime Nim complexity",
+ "area": "Computation",
+ "difficulty": 7.2,
+ "plain": "Decide exactly how hard it is to tell if a Prime Nim pile is losing: show it can't be done fast without unproven assumptions.",
+ "math": "Prove, unconditionally, that deciding $G(n)=0$ in Prime Nim requires time $(\\log n)^{\\omega(1)}$."
+}

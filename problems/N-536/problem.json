@@ -1,0 +1,8 @@
+{
+ "id": "N-536",
+ "title": "Spectre Rupert",
+ "area": "Geometry",
+ "difficulty": 0.9,
+ "plain": "Extrude a spectre into a prism. Can a copy pass through a hole in itself?",
+ "math": "Decide whether the right prism over the spectre of height 1 has the Rupert property."
+}

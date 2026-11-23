@@ -1,0 +1,8 @@
+{
+ "id": "N-158",
+ "title": "Navier–Stokes blow-up in Isabelle",
+ "area": "Formal proof",
+ "difficulty": 2.1,
+ "plain": "Re-check the 2026 Navier–Stokes blow-up in a completely different proof assistant.",
+ "math": "Formalize in Isabelle/HOL the existence of a smooth forced finite-time blow-up of 3D Navier–Stokes."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-162",
+ "title": "5n+1 largest-factor cycles",
+ "area": "Dynamics",
+ "difficulty": 4.7,
+ "plain": "Use 5n + 1 instead of 3n + 1 in the largest-factor map. Show it has only finitely many loops.",
+ "math": "For $f_5(n)=n/2$ (even), $P(5n+1)$ (odd), prove $f_5$ has finitely many cycles."
+}

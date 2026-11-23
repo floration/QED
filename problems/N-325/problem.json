@@ -1,0 +1,8 @@
+{
+ "id": "N-325",
+ "title": "Lopsided neighbour map",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "Map n to P(n) + 2P(n+1). Except for the fixed point 8, every tested start from 3 upward falls into 23 → 29 → 39. Prove this for all starts.",
+ "math": "For $f(n)=P(n)+2P(n+1)$, prove every orbit with $n\\ge3$, $n\\ne8$, reaches $(23,29,39)$."
+}

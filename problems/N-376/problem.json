@@ -1,0 +1,8 @@
+{
+ "id": "N-376",
+ "title": "Hat billiard scarring",
+ "area": "Analysis",
+ "difficulty": 3.6,
+ "plain": "Show high-frequency waves in a hat-shaped room do not spread out evenly.",
+ "math": "Prove quantum unique ergodicity fails for the hat polygon: some subsequence of eigenfunctions has a non-uniform limit measure."
+}

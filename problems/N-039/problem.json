@@ -1,0 +1,8 @@
+{
+ "id": "N-039",
+ "title": "Formalize 3D Kakeya",
+ "area": "Formal proof",
+ "difficulty": 2.9,
+ "plain": "Turn the 2025 proof of the three-dimensional Kakeya conjecture into a compact computer-checked proof.",
+ "math": "Produce a Lean 4 formalization of the Wang–Zahl theorem ($\\dim_H K=3$ for Kakeya $K\\subset\\mathbb{R}^3$) in under 50,000 lines beyond Mathlib."
+}

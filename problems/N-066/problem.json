@@ -1,0 +1,8 @@
+{
+ "id": "N-066",
+ "title": "Seven-free three primes",
+ "area": "Number theory",
+ "difficulty": 1.7,
+ "plain": "Every large odd number should be a sum of three primes that never use the digit 7.",
+ "math": "Prove every sufficiently large odd $N$ is $p_1+p_2+p_3$ with each $p_i$ prime and free of the decimal digit 7."
+}

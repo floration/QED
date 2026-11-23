@@ -1,0 +1,8 @@
+{
+ "id": "N-207",
+ "title": "Hat drum's first mode",
+ "area": "Analysis",
+ "difficulty": 2.6,
+ "plain": "Strike a hat-shaped drum. Show its lowest tone vibrates with a single peak.",
+ "math": "Prove the first Dirichlet eigenfunction of the hat polygon has exactly one interior critical point."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-150",
+ "title": "Spiral staircase",
+ "area": "Geometry",
+ "difficulty": 2.5,
+ "plain": "What is the biggest convex box-like object that can be carried up a given spiral staircase?",
+ "math": "Maximize volume over convex bodies admissible in a helical tube of square cross-section $1$, radius $2$, pitch $3$."
+}

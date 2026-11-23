@@ -1,0 +1,8 @@
+{
+ "id": "N-434",
+ "title": "Prime Nim values stay small",
+ "area": "Games",
+ "difficulty": 4.9,
+ "plain": "Prime Nim's Grundy values grow incredibly slowly. Show they are at most a constant times log n.",
+ "math": "For the subtraction game with prime moves, prove $G(n)=O(\\log n)$."
+}

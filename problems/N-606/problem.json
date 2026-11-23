@@ -1,0 +1,8 @@
+{
+ "id": "N-606",
+ "title": "Irrationality of the hat percolation threshold, bond",
+ "area": "Probability",
+ "difficulty": 6.1,
+ "plain": "The bond-percolation threshold on the hat tiling's edges is about 0.7982. Prove it is irrational.",
+ "math": "Prove $p_c^{\\mathrm{bond}}$ for the hat tiling's edge graph is irrational."
+}

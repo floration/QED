@@ -1,0 +1,8 @@
+{
+ "id": "N-316",
+ "title": "Formal verification depth of RH",
+ "area": "Logic",
+ "difficulty": 3.8,
+ "plain": "The Riemann hypothesis now has a Lean proof. Show it cannot be proved in a weak arithmetic like I-Sigma-1 plus exponentiation, or show it can.",
+ "math": "Decide whether RH (as a $\\Pi^0_1$ sentence) is provable in $\\mathrm{I}\\Sigma_1$, or in $\\mathrm{EFA}$."
+}

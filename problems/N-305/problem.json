@@ -1,0 +1,8 @@
+{
+ "id": "N-305",
+ "title": "Percolation threshold of the square-sum graph",
+ "area": "Probability",
+ "difficulty": 3.5,
+ "plain": "Keep each edge of the square-sum graph with probability p. Find the exact threshold for a giant component as N grows.",
+ "math": "For bond percolation on $S_N$ with $p=c/\\sqrt N$, determine $c^*$ such that a component of size $\\Theta(N)$ appears w.h.p. iff $c>c^*$."
+}

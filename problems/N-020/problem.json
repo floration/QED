@@ -1,0 +1,8 @@
+{
+ "id": "N-020",
+ "title": "Real-rank hyperoperations",
+ "area": "Algebra",
+ "difficulty": 2.8,
+ "plain": "Addition, multiplication and exponentiation are ranks 1, 2, 3 of one ladder. Find natural rules that fix a unique operation at every real rank in between.",
+ "math": "Find axioms (analytic in $s$, $a[s{+}1](b{+}1)=a[s](a[s{+}1]b)$, agreement with $+,\\times,\\uparrow$ at $s=1,2,3$) that determine $a[s]b$ uniquely for real $s\\in[1,3]$, and prove uniqueness."
+}

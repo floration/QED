@@ -1,0 +1,8 @@
+{
+ "id": "N-274",
+ "title": "Doubling minus one",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "Replace n by twice its largest prime factor minus one. Every tested start ends in 5 ↔ 9 or in the loop 37 → 73 → 145 → 57 → 37. Prove there is nothing else.",
+ "math": "Prove every orbit of $n\\mapsto 2P(n)-1$ on $n\\ge2$ enters $\\{5,9\\}$ or $(37,73,145,57)$."
+}

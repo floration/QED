@@ -1,0 +1,8 @@
+{
+ "id": "N-570",
+ "title": "Gerver sofa eigenvalue is transcendental",
+ "area": "Analysis",
+ "difficulty": 8.9,
+ "plain": "Show the lowest vibration frequency of a drum shaped like Gerver's sofa is transcendental.",
+ "math": "Prove the first Dirichlet eigenvalue of Gerver's sofa is transcendental."
+}

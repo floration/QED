@@ -1,0 +1,8 @@
+{
+ "id": "N-127",
+ "title": "Random sequential prime-sum packing",
+ "area": "Probability",
+ "difficulty": 2.8,
+ "plain": "Add random numbers from 1 to N one at a time, keeping a number only if it forms no prime sum with any kept number. Find the final density.",
+ "math": "Determine $\\lim_N\\mathbb{E}|A_N|/N$ for the random sequential independent set of the prime-sum graph on $[N]$."
+}

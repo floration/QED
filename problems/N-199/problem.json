@@ -1,0 +1,8 @@
+{
+ "id": "N-199",
+ "title": "Smallest-factor Collatz stopping time",
+ "area": "Dynamics",
+ "difficulty": 4.5,
+ "plain": "How many steps does the smallest-odd-factor Collatz map take to reach 1, on average?",
+ "math": "Determine the asymptotic order of $\\frac1x\\sum_{n\\le x}T_g(n)$ for the stopping time of $g$."
+}

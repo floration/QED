@@ -1,0 +1,8 @@
+{
+ "id": "N-543",
+ "title": "Spectre self-avoiding walks",
+ "area": "Probability",
+ "difficulty": 8.0,
+ "plain": "Find the exponential growth rate of non-self-intersecting walks on the spectre tiling, and show it is the same for every spectre tiling.",
+ "math": "Prove the connective constant $\\mu$ of the spectre adjacency graph exists, is the same for all spectre tilings, and is not algebraic of degree $\\le2$."
+}

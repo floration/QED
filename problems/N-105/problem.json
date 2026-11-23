@@ -1,0 +1,8 @@
+{
+ "id": "N-105",
+ "title": "Shuffle-sorting",
+ "area": "Combinatorics",
+ "difficulty": 1.6,
+ "plain": "Using any of the six 3-pile perfect shuffles each time, how many shuffles reach any reachable arrangement in the worst case?",
+ "math": "Determine the diameter of the Cayley graph of the 3-pile shuffle group on $3n$ cards, asymptotically in $n$."
+}

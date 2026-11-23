@@ -1,0 +1,8 @@
+{
+ "id": "N-612",
+ "title": "LF-Collatz loops classified forever",
+ "area": "Dynamics",
+ "difficulty": 5.2,
+ "plain": "Show every largest-factor Collatz-type map for every odd multiplier has only finitely many loops, with a uniform recipe.",
+ "math": "For every odd $a\\ge3$, prove $f_a(n)=n/2$ (even), $P(an+1)$ (odd) has finitely many cycles, with an explicit bound in $a$."
+}

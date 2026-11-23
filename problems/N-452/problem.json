@@ -1,0 +1,8 @@
+{
+ "id": "N-452",
+ "title": "Largest factor of n²+1 mod 8",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "plain": "The largest prime factor of n² + 1 is always 1 or 5 mod 8 (or 2). Show both happen equally often.",
+ "math": "Prove $\\#\\{n\\le x: P(n^2+1)\\equiv1\\ (8)\\}\\sim\\#\\{n\\le x:P(n^2+1)\\equiv5\\ (8)\\}\\sim x/2$."
+}

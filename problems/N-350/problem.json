@@ -1,0 +1,8 @@
+{
+ "id": "N-350",
+ "title": "Prime Nim in polylog time",
+ "area": "Computation",
+ "difficulty": 4.0,
+ "plain": "Decide whether a Prime Nim pile is losing in time polynomial in its number of digits.",
+ "math": "Give an algorithm deciding $G(n)=0$ in time $(\\log n)^{O(1)}$, or prove none exists under a standard assumption."
+}

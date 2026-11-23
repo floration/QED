@@ -1,0 +1,8 @@
+{
+ "id": "N-042",
+ "title": "Random walk on the hat tiling",
+ "area": "Probability",
+ "difficulty": 3.4,
+ "plain": "A random walker steps between neighbouring hat tiles. How likely is it to be back home after n steps?",
+ "math": "For simple random walk on the hat adjacency graph, prove $p_{2n}(o,o)\\sim c/n$ and compute $c$."
+}

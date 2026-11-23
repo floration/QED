@@ -1,0 +1,8 @@
+{
+ "id": "N-091",
+ "title": "Sudoku resolution bounds",
+ "area": "Computation",
+ "difficulty": 1.6,
+ "plain": "Proving a large broken Sudoku has no solution should require long logical proofs.",
+ "math": "Prove resolution refutations of unsatisfiable $n^2\\times n^2$ Sudoku instances require size $2^{n^{\\Omega(1)}}$ for some explicit family."
+}

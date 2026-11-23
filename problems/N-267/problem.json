@@ -1,0 +1,8 @@
+{
+ "id": "N-267",
+ "title": "Turning a hat by 60 degrees",
+ "area": "Geometry",
+ "difficulty": 5.4,
+ "plain": "Rotate a hat tile continuously by 60° inside a region of least possible area. Find that area.",
+ "math": "Determine $\\inf\\{|E|: E\\subset\\mathbb{R}^2$ contains the trace of a continuous rigid motion carrying the unit hat to its rotation by $60^\\circ$ about a point$\\}$, and whether it is attained."
+}

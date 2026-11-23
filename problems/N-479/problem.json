@@ -1,0 +1,8 @@
+{
+ "id": "N-479",
+ "title": "Is Prime Nim's losing set definable?",
+ "area": "Logic",
+ "difficulty": 6.2,
+ "plain": "Add the set of Prime Nim losing positions to the arithmetic of addition. Is the resulting theory decidable?",
+ "math": "Decide whether the first-order theory of $(\\mathbb{N},+,L)$ is decidable, where $L=\\{n:G(n)=0\\}$ for the prime subtraction game."
+}

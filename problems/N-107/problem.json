@@ -1,0 +1,8 @@
+{
+ "id": "N-107",
+ "title": "Hinged sofa",
+ "area": "Geometry",
+ "difficulty": 3.9,
+ "plain": "A sofa made of two rigid halves joined by a hinge. What total area can turn the corner?",
+ "math": "Maximize $|A|+|B|$ for planar sets $A,B$ joined at a common point, moving with relative rotation allowed, through the width-1 right-angled corridor."
+}

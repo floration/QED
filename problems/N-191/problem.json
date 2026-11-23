@@ -1,0 +1,8 @@
+{
+ "id": "N-191",
+ "title": "Spectre percolation",
+ "area": "Probability",
+ "difficulty": 4.5,
+ "plain": "Show percolation on the spectre tiling and the hat tiling have different thresholds.",
+ "math": "Prove $p_c^{\\text{site}}(\\text{spectre})\\ne p_c^{\\text{site}}(\\text{hat})$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-214",
+ "title": "Square-sum connectivity",
+ "area": "Combinatorics",
+ "difficulty": 3.3,
+ "plain": "Show the square-sum graph cannot be split by removing fewer vertices than its smallest degree.",
+ "math": "Prove $\\kappa(S_N)=\\delta(S_N)$ for all large $N$."
+}

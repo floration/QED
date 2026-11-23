@@ -1,0 +1,8 @@
+{
+ "id": "N-523",
+ "title": "Spectral gap of the spectre",
+ "area": "Analysis",
+ "difficulty": 4.5,
+ "plain": "Find the exact gaps in the energy levels of an electron moving on a spectre tiling.",
+ "math": "Prove the spectrum of the adjacency operator on the spectre tiling has gaps labelled by an explicit $K$-theory group, with every label open."
+}

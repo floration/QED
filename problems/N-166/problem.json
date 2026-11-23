@@ -1,0 +1,8 @@
+{
+ "id": "N-166",
+ "title": "Kayles on square sums",
+ "area": "Games",
+ "difficulty": 4.0,
+ "plain": "Players take turns claiming numbers, never next to a claimed one in the square-sum graph. Who wins?",
+ "math": "Determine the node-Kayles outcome on $S_N$ for all $N$."
+}

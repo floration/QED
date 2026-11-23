@@ -1,0 +1,8 @@
+{
+ "id": "N-573",
+ "title": "Conformal radius of Gerver's sofa",
+ "area": "Analysis",
+ "difficulty": 8.3,
+ "plain": "Map a disc conformally onto Gerver's sofa, sending the centre to the sofa's centroid. Show the scale factor is transcendental.",
+ "math": "Prove the conformal radius of Gerver's sofa at its centroid is transcendental."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-124",
+ "title": "Sidon sets of seven-free numbers",
+ "area": "Combinatorics",
+ "difficulty": 3.6,
+ "plain": "Find the largest subset of the seven-free numbers up to N with all pairwise sums distinct, up to a constant factor.",
+ "math": "Determine the order of magnitude of $\\max\\{|A|:A\\subseteq\\{n\\le N:7\\notin n\\},\\ A\\text{ Sidon}\\}$."
+}

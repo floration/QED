@@ -1,0 +1,8 @@
+{
+ "id": "N-112",
+ "title": "The sofa's boundary is not algebraic",
+ "area": "Geometry",
+ "difficulty": 1.7,
+ "plain": "Gerver's sofa is bounded by 18 curve pieces. Show some of them are not polynomial curves.",
+ "math": "Prove at least one boundary arc of Gerver's sofa is not contained in any algebraic curve."
+}

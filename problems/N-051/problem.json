@@ -1,0 +1,8 @@
+{
+ "id": "N-051",
+ "title": "The 2048 ceiling",
+ "area": "Probability",
+ "difficulty": 2.8,
+ "plain": "Show that even perfect play almost never reaches the theoretical top tile in 2048.",
+ "math": "Prove $\\Pr(\\text{reach }131072)<10^{-6}$ for every strategy on the $4\\times4$ board with standard random spawns."
+}

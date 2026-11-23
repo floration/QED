@@ -1,0 +1,8 @@
+{
+ "id": "N-565",
+ "title": "Hat packing density is irrational",
+ "area": "Geometry",
+ "difficulty": 6.3,
+ "plain": "The densest packing of hats without reflections leaves gaps. Show the best density is an irrational number.",
+ "math": "Prove the maximal packing density of congruent hats under orientation-preserving isometries is irrational."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-320",
+ "title": "Seven-free square sums of two squares",
+ "area": "Number theory",
+ "difficulty": 3.5,
+ "plain": "Show every large seven-free number that is a sum of two squares is a sum of two seven-free squares.",
+ "math": "Prove for all large $n$ with $7\\notin n$ and $n=a^2+b^2$ solvable, there are $a,b$ with $7\\notin a^2$, $7\\notin b^2$, $n=a^2+b^2$, or show the exceptional set is infinite."
+}

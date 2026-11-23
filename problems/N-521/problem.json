@@ -1,0 +1,8 @@
+{
+ "id": "N-521",
+ "title": "Yang–Mills on hats",
+ "area": "Physics",
+ "difficulty": 5.7,
+ "plain": "Lattice gauge theory placed on a hat tiling should still have a mass gap at strong coupling and at weak coupling.",
+ "math": "Prove the $SU(2)$ lattice gauge theory on the 3D product of the hat complex and $\\mathbb{Z}$ has a mass gap for all couplings."
+}

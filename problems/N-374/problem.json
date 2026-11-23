@@ -1,0 +1,8 @@
+{
+ "id": "N-374",
+ "title": "Chen with no sevens",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "plain": "Show infinitely many seven-free primes p have p + 2 a product of at most two seven-free primes.",
+ "math": "Prove infinitely many 7-free primes $p$ with $p+2=q_1q_2$ or $q_1$, all $q_i$ prime and 7-free."
+}

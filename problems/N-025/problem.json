@@ -1,0 +1,8 @@
+{
+ "id": "N-025",
+ "title": "Prime Nim, misère",
+ "area": "Games",
+ "difficulty": 2.5,
+ "plain": "In Prime Nim where the last mover loses instead of wins, do the losing positions differ from normal play only finitely often?",
+ "math": "Compare the P-positions of the prime subtraction game in normal and misère play; decide whether their symmetric difference is finite."
+}

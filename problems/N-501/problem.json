@@ -1,0 +1,8 @@
+{
+ "id": "N-501",
+ "title": "5n+1 largest-factor convergence",
+ "area": "Dynamics",
+ "difficulty": 3.7,
+ "plain": "Prove every orbit of the 5n+1 largest-factor map ends in a loop.",
+ "math": "For $f_5(n)=n/2$ (even), $P(5n+1)$ (odd), prove every orbit is eventually periodic."
+}

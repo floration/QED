@@ -1,0 +1,8 @@
+{
+ "id": "N-342",
+ "title": "SOF Collatz orbits are bounded",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "For the smallest-odd-factor Collatz map, show no orbit runs off to infinity.",
+ "math": "Prove $\\sup_k g^k(n)<\\infty$ for every $n$."
+}

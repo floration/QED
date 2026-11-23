@@ -1,0 +1,8 @@
+{
+ "id": "N-236",
+ "title": "Chromatic number of prime-difference plus square-sum",
+ "area": "Combinatorics",
+ "difficulty": 2.9,
+ "plain": "Join two numbers if their sum is a square or their difference is prime. Find the colours needed for all positive integers.",
+ "math": "Determine $\\chi(G)$ for $G$ on $\\mathbb{N}$ with $a\\sim b$ iff $a+b$ is a square or $|a-b|$ is prime."
+}

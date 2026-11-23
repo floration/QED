@@ -1,0 +1,8 @@
+{
+ "id": "N-481",
+ "title": "Prime-digit continued fractions in arithmetic progressions",
+ "area": "Number theory",
+ "difficulty": 3.3,
+ "plain": "Show there are infinitely many quadratic irrationals all of whose continued fraction digits are prime, in each real quadratic field.",
+ "math": "Prove for every real quadratic field $K$ there are infinitely many $\\alpha\\in K$ with purely periodic continued fraction expansion having all partial quotients prime."
+}

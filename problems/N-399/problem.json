@@ -1,0 +1,8 @@
+{
+ "id": "N-399",
+ "title": "Emirp twins",
+ "area": "Number theory",
+ "difficulty": 4.4,
+ "plain": "Show infinitely many twin-prime pairs exist where both reverse to primes, assuming only standard sieve bounds plus one level-of-distribution hypothesis.",
+ "math": "Assuming Elliott–Halberstam, prove infinitely many $p$ with $p,p+2,\\operatorname{rev}(p),\\operatorname{rev}(p+2)$ prime among bounded gaps of tuples $(p,p+h)$, $h\\le H$ explicit."
+}

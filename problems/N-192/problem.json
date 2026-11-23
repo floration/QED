@@ -1,0 +1,8 @@
+{
+ "id": "N-192",
+ "title": "Hat Ising bounds",
+ "area": "Physics",
+ "difficulty": 1.5,
+ "plain": "Pin down the critical temperature of magnets on a hat tiling to within one percent.",
+ "math": "Prove two-sided bounds on $T_c$ for the hat-graph Ising model with ratio $\\le1.01$."
+}

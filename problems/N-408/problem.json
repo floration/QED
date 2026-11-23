@@ -1,0 +1,8 @@
+{
+ "id": "N-408",
+ "title": "Square-sum edge-Hamiltonian",
+ "area": "Combinatorics",
+ "difficulty": 2.5,
+ "plain": "Show every edge of the square-sum graph lies on a loop through all of 1 to N, for large N.",
+ "math": "Prove that for all large $N$, every edge of $S_N$ lies on a Hamiltonian cycle of $S_N$."
+}

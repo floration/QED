@@ -1,0 +1,8 @@
+{
+ "id": "N-359",
+ "title": "Analytic hyperoperations",
+ "area": "Algebra",
+ "difficulty": 3.3,
+ "plain": "Build one smooth family of operations from addition up through exponentiation that is analytic in all inputs.",
+ "math": "Construct $a[s]b$, real-analytic in $(s,a,b)$ for $s\\in[1,3]$, $a>1$, $b>0$, satisfying the recursion law and matching $+,\\times,\\uparrow$."
+}

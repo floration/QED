@@ -1,0 +1,8 @@
+{
+ "id": "N-338",
+ "title": "Large girth subgraphs of S_N",
+ "area": "Combinatorics",
+ "difficulty": 4.0,
+ "plain": "Find the most edges a subgraph of the square-sum graph can have with no cycle shorter than 6.",
+ "math": "Determine the order of $\\mathrm{ex}(S_N,\\{C_3,C_4,C_5\\})$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-361",
+ "title": "Stable blow-up",
+ "area": "Analysis",
+ "difficulty": 2.2,
+ "plain": "Show the 2026 Navier–Stokes blow-up still happens after any tiny change to the setup.",
+ "math": "Prove the 2026 forced blow-up is stable under small smooth perturbations of $(u_0,f)$ in a suitable topology."
+}

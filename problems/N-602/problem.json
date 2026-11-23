@@ -1,0 +1,8 @@
+{
+ "id": "N-602",
+ "title": "Square-plus-one merging",
+ "area": "Dynamics",
+ "difficulty": 7.6,
+ "plain": "Many square-plus-one sequences run into the one starting at 2. Decide whether every sequence eventually does, apart from those caught in loops.",
+ "math": "Decide whether every $n\\ge2$ whose $Q$-orbit is not eventually periodic satisfies $Q^a(n)=Q^b(2)$ for some $a,b$."
+}

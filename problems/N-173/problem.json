@@ -1,0 +1,8 @@
+{
+ "id": "N-173",
+ "title": "Spectre vs hat dimers",
+ "area": "Physics",
+ "difficulty": 3.4,
+ "plain": "Show the spectre tiling and the hat tiling have different domino-covering entropies.",
+ "math": "Prove the dimer entropies per vertex of the spectre and hat adjacency graphs differ."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-276",
+ "title": "P(n)+P(n+1)−1",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "Replace n by P(n) + P(n + 1) − 1. Every tested start ends in one of three loops. Prove these are the only ones.",
+ "math": "Prove every orbit of $n\\mapsto P(n)+P(n+1)-1$ on $n\\ge2$ enters $(4,6,9,7,8)$, $(17,19,23,25)$ or $(167,173,201)$."
+}

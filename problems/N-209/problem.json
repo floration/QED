@@ -1,0 +1,8 @@
+{
+ "id": "N-209",
+ "title": "Three-pile shuffle cutoff",
+ "area": "Probability",
+ "difficulty": 3.3,
+ "plain": "Random three-pile shuffles mix a deck suddenly, after a precise number of shuffles. Find it.",
+ "math": "For random compositions of uniformly chosen 3-pile shuffles on $3n$ cards, prove total-variation cutoff at $c\\log n$ and find $c$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-345",
+ "title": "Finite simple groups in Lean",
+ "area": "Formal proof",
+ "difficulty": 2.6,
+ "plain": "Turn the classification of finite simple groups into one computer-checked proof.",
+ "math": "Formalize the classification of finite simple groups in Lean 4."
+}

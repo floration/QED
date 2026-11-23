@@ -1,0 +1,8 @@
+{
+ "id": "N-367",
+ "title": "Unique 3D sofa",
+ "area": "Geometry",
+ "difficulty": 4.1,
+ "plain": "Show the best solid for a square pipe is unique up to moving it.",
+ "math": "Prove the optimizer for the $1\\times1$ square corridor is unique up to rigid motion."
+}

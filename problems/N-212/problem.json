@@ -1,0 +1,8 @@
+{
+ "id": "N-212",
+ "title": "Largest factor of consecutive-prime products",
+ "area": "Number theory",
+ "difficulty": 4.2,
+ "plain": "Show that p_n·p_(n+1) + 1 has a prime factor much bigger than p_(n+1), infinitely often.",
+ "math": "Prove $P(p_np_{n+1}+1)>p_{n+1}^{1.5}$ for infinitely many $n$."
+}

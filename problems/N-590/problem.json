@@ -1,0 +1,8 @@
+{
+ "id": "N-590",
+ "title": "Chess on the hat board",
+ "area": "Games",
+ "difficulty": 4.4,
+ "plain": "Solve a chess-like game on a hat-tiled board with 10 pieces per side.",
+ "math": "Weakly solve the game with standard chess move semantics translated to the hat graph on a fixed 64-tile patch."
+}

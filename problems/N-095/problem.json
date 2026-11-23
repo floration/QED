@@ -1,0 +1,8 @@
+{
+ "id": "N-095",
+ "title": "Kakeya for hats",
+ "area": "Geometry",
+ "difficulty": 3.4,
+ "plain": "What is the smallest region in which you can rotate a hat tile through every orientation?",
+ "math": "Determine $\\inf$ area of sets containing a translate of every rotation of the hat polygon."
+}

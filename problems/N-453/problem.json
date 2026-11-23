@@ -1,0 +1,8 @@
+{
+ "id": "N-453",
+ "title": "Largest factor of shifted primes mod 4",
+ "area": "Number theory",
+ "difficulty": 4.4,
+ "plain": "For primes p, look at the largest prime factor of p − 1. Show it is 1 mod 4 exactly half the time.",
+ "math": "Prove $\\#\\{p\\le x: P(p-1)\\equiv1\\ (4)\\}\\sim\\tfrac12\\pi(x)$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-034",
+ "title": "Toroidal Hex",
+ "area": "Games",
+ "difficulty": 2.1,
+ "plain": "Hex on a doughnut: the board wraps around, and you win with a chain that loops the long way. Who wins on 7 × 7?",
+ "math": "On the $7\\times7$ Hex board with opposite sides identified, a player wins with a non-contractible chain of their colour; determine the winner and whether draws occur."
+}

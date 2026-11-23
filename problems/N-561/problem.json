@@ -1,0 +1,8 @@
+{
+ "id": "N-561",
+ "title": "Escaping p²+p+1",
+ "area": "Dynamics",
+ "difficulty": 7.1,
+ "plain": "Start at 2 and repeatedly take the largest prime factor of p² + p + 1. Show the sequence grows without bound.",
+ "math": "Prove the orbit of $2$ under $p\\mapsto P(p^2+p+1)$ is unbounded."
+}

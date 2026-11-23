@@ -1,0 +1,8 @@
+{
+ "id": "N-581",
+ "title": "Gerver constant is normal",
+ "area": "Number theory",
+ "difficulty": 8.2,
+ "plain": "Show the digits of Gerver's sofa area appear with equal frequency in base 10.",
+ "math": "Prove $\\mu_G$ is normal in base 10."
+}

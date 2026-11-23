@@ -1,0 +1,8 @@
+{
+ "id": "N-482",
+ "title": "Ising model on the spectre tiling",
+ "area": "Probability",
+ "difficulty": 7.5,
+ "plain": "Find the exact critical temperature of the Ising model on the spectre tiling graph, and prove the interfaces converge to SLE(3).",
+ "math": "For the nearest-neighbour Ising model on the spectre-tiling vertex graph, determine $\\beta_c$ and prove critical interfaces converge to $\\mathrm{SLE}_3$."
+}

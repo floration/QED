@@ -1,0 +1,8 @@
+{
+ "id": "N-417",
+ "title": "Prime-sum labelling of balanced trees",
+ "area": "Combinatorics",
+ "difficulty": 3.9,
+ "plain": "Label a tree with 1 to n so every edge sums to a prime. Parity forces the two sides of the tree to be balanced. Show balance is enough, for large n.",
+ "math": "Prove every tree on $n\\ge n_0$ vertices whose bipartition classes have sizes $\\lceil n/2\\rceil,\\lfloor n/2\\rfloor$ admits a bijection $V\\to[n]$ with all edge sums prime."
+}

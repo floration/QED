@@ -1,0 +1,8 @@
+{
+ "id": "N-090",
+ "title": "Random lonely runners",
+ "area": "Probability",
+ "difficulty": 1.2,
+ "plain": "With random speeds, runners get noticeably lonelier than the conjecture promises.",
+ "math": "For i.i.d. uniform speeds in $[1,N]$, $N\\gg n^3$, prove the loneliness gap exceeds $\\frac1{n+1}+c\\frac{\\log n}{n^2}$ with probability $\\to1$."
+}

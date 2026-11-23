@@ -1,0 +1,8 @@
+{
+ "id": "N-562",
+ "title": "Exponential growth of square-plus-one orbits",
+ "area": "Dynamics",
+ "difficulty": 8.1,
+ "plain": "Show square-plus-one sequences, when they don't loop, grow at a steady exponential rate in the number of digits.",
+ "math": "Prove that for almost every $n$ (density 1), $\\lim_{k}\\frac1k\\log\\log Q^k(n)$ exists and equals a constant $\\gamma>0$; identify $\\gamma$."
+}

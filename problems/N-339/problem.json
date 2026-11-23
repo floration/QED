@@ -1,0 +1,8 @@
+{
+ "id": "N-339",
+ "title": "Spanning-tree entropy of the spectre tiling",
+ "area": "Probability",
+ "difficulty": 7.8,
+ "plain": "Find the growth rate of the number of spanning trees of large spectre-tiling patches, and show it is not a rational multiple of Catalan's constant.",
+ "math": "Prove $\\lim\\frac{\\log\\tau(G_R)}{|V(G_R)|}=h$ exists for spectre patches and $h/G\\notin\\mathbb{Q}$, $G$ Catalan's constant."
+}

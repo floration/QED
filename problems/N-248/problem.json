@@ -1,0 +1,8 @@
+{
+ "id": "N-248",
+ "title": "Prime-sum Hamiltonian cycles through every edge",
+ "area": "Combinatorics",
+ "difficulty": 3.2,
+ "plain": "Show every edge of the prime-sum graph on 1 to 2n lies on a full prime circle.",
+ "math": "Prove for all large $n$ every edge of the prime-sum graph on $[2n]$ lies on a Hamiltonian cycle."
+}

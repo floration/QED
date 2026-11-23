@@ -1,0 +1,8 @@
+{
+ "id": "N-518",
+ "title": "Packing hats",
+ "area": "Geometry",
+ "difficulty": 3.0,
+ "plain": "Find the densest way to pack hat shapes when they are not allowed to tile.",
+ "math": "Determine the maximal packing density of translates and rotations of the hat with reflections forbidden."
+}

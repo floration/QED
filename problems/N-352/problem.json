@@ -1,0 +1,8 @@
+{
+ "id": "N-352",
+ "title": "Primes x² + y³ with prime inputs",
+ "area": "Number theory",
+ "difficulty": 3.7,
+ "plain": "Show infinitely many primes are a square of a prime plus a cube of a prime.",
+ "math": "Prove infinitely many primes of the form $p^2+q^3$ with $p,q$ prime."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-388",
+ "title": "Prime-graceful forests",
+ "area": "Combinatorics",
+ "difficulty": 1.7,
+ "plain": "Label any forest so the edge differences are exactly the first m primes.",
+ "math": "Prove every forest with $m$ edges has an injective $\\ell:V\\to\\mathbb{Z}_{\\ge0}$ whose edge differences are $\\{p_1,\\dots,p_m\\}$."
+}

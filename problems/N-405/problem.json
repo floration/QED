@@ -1,0 +1,8 @@
+{
+ "id": "N-405",
+ "title": "Squares of seven-free primes",
+ "area": "Number theory",
+ "difficulty": 5.9,
+ "plain": "Show infinitely many primes have no digit 7 in themselves or in their squares.",
+ "math": "Prove infinitely many primes $p$ with neither $p$ nor $p^2$ containing the decimal digit 7."
+}

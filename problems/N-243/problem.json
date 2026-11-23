@@ -1,0 +1,8 @@
+{
+ "id": "N-243",
+ "title": "Discrete sofa",
+ "area": "Geometry",
+ "difficulty": 4.3,
+ "plain": "Slide and rotate a polyomino by unit steps and quarter turns around the corner of a corridor k cells wide. Find the largest area possible, asymptotically.",
+ "math": "Let $D(k)$ be the maximal number of cells of a polyomino that can pass the width-$k$ L-shaped corridor of $\\mathbb{Z}^2$ by unit translations and $90^\\circ$ rotations about lattice points (staying inside at all times). Prove $D(k)\\sim ck^2$ and find $c$."
+}

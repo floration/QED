@@ -1,0 +1,8 @@
+{
+ "id": "N-617",
+ "title": "Lorenz dimension is irrational",
+ "area": "Dynamics",
+ "difficulty": 9.2,
+ "plain": "Show the Hausdorff dimension of the classic Lorenz attractor is irrational.",
+ "math": "For $\\sigma=10,\\beta=8/3,\\rho=28$, prove $\\dim_H(\\mathcal{A})\\notin\\mathbb{Q}$."
+}

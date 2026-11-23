@@ -1,0 +1,8 @@
+{
+ "id": "N-302",
+ "title": "Equal-area hat dissection",
+ "area": "Geometry",
+ "difficulty": 5.0,
+ "plain": "Find the fewest pieces needed to cut a hat tile into pieces that reassemble into a square.",
+ "math": "Determine the minimal number of polygonal pieces in a scissors-congruence of the unit-edge hat polygon to a square of equal area."
+}

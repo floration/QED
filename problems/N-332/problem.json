@@ -1,0 +1,8 @@
+{
+ "id": "N-332",
+ "title": "Two small factors and one large",
+ "area": "Dynamics",
+ "difficulty": 5.2,
+ "plain": "Add the smallest prime factors of n and n + 1 to the largest prime factor of n + 2. Every tested start falls into one seven-step loop through 16. Prove all do.",
+ "math": "For $f(n)=p(n)+p(n+1)+P(n+2)$, prove every orbit with $n\\ge2$ reaches $(16,22,28,36,58,66,86)$."
+}

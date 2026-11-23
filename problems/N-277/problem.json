@@ -1,0 +1,8 @@
+{
+ "id": "N-277",
+ "title": "Three halves of the largest factor",
+ "area": "Dynamics",
+ "difficulty": 5.3,
+ "plain": "Replace n by the integer part of (3P(n) + 1)/2. Every tested start falls into the loop 3 → 5 → 8 → 3. Prove all do.",
+ "math": "Prove every orbit of $n\\mapsto\\lfloor(3P(n)+1)/2\\rfloor$ on $n\\ge2$ enters $(3,5,8)$."
+}

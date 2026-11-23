@@ -1,0 +1,8 @@
+{
+ "id": "N-143",
+ "title": "Rounded corners",
+ "area": "Geometry",
+ "difficulty": 4.1,
+ "plain": "The inside corner of the hallway is rounded. Find the best sofa for every rounding radius.",
+ "math": "For each $\\rho\\ge0$, determine the optimal sofa for the width-1 corridor whose inner corner is a quarter-circle of radius $\\rho$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-384",
+ "title": "Squares on a sphere",
+ "area": "Geometry",
+ "difficulty": 4.2,
+ "plain": "Every closed curve on a sphere should pass through the corners of a spherical square.",
+ "math": "Prove every Jordan curve on $S^2$ inscribes a spherical quadrilateral with equal sides and equal angles."
+}

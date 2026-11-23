@@ -1,0 +1,8 @@
+{
+ "id": "N-379",
+ "title": "Palindromic Carmichael numbers",
+ "area": "Number theory",
+ "difficulty": 4.2,
+ "plain": "Show infinitely many Carmichael numbers read the same backwards.",
+ "math": "Prove there are infinitely many Carmichael numbers that are decimal palindromes."
+}

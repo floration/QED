@@ -1,0 +1,8 @@
+{
+ "id": "N-323",
+ "title": "Sum of prime divisors of neighbours",
+ "area": "Dynamics",
+ "difficulty": 5.3,
+ "plain": "Add the sum of the distinct prime factors of n to that of n + 1. Tested starts reach 33 or loops through 10, 17, 30 or 107. Prove there is nothing else.",
+ "math": "For $f(n)=\\mathrm{sopf}(n)+\\mathrm{sopf}(n+1)$, prove every orbit reaches $\\{33\\}$, $(10,18,24)$, $(17,22,36,42,55,25,20)$, $(30,41,53,58,90)$ or $(107,112,122)$."
+}

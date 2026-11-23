@@ -1,0 +1,8 @@
+{
+ "id": "N-480",
+ "title": "Packing density of Gerver's sofa",
+ "area": "Geometry",
+ "difficulty": 8.5,
+ "plain": "Find the densest way to pack copies of Gerver's sofa shape in the plane, and show the density is not a rational multiple of an algebraic number.",
+ "math": "Let $\\delta_G$ be the translative-and-rotational packing density of Gerver's sofa. Prove $\\delta_G\\notin\\overline{\\mathbb{Q}}$."
+}

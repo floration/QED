@@ -1,0 +1,8 @@
+{
+ "id": "N-210",
+ "title": "Hat corona limit",
+ "area": "Geometry",
+ "difficulty": 2.0,
+ "plain": "Surround a hat by layers of hats again and again. The growing blob approaches a fixed shape. Find it.",
+ "math": "Prove the scaled $k$-th coronas of a hat converge in Hausdorff distance and identify the limit shape."
+}

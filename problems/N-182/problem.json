@@ -1,0 +1,8 @@
+{
+ "id": "N-182",
+ "title": "Hex on hat boards, large",
+ "area": "Games",
+ "difficulty": 2.4,
+ "plain": "Solve Hex on hat-tiled boards of side 9.",
+ "math": "Determine the winner of Hex on the hat-tiled rhombus board of side 9, with an explicit strategy."
+}

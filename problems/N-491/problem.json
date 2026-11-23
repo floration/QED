@@ -1,0 +1,8 @@
+{
+ "id": "N-491",
+ "title": "Peak height of the 2n+3 map",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "For n ↦ P(2n+3) + P(n), show the highest point an orbit reaches is at most a fixed power of its start.",
+ "math": "Prove there is $A$ with $\\max_k f^{k}(n)\\le n^{A}$ for all $n\\ge3$, $f(n)=P(2n+3)+P(n)$."
+}

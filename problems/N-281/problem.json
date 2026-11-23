@@ -1,0 +1,8 @@
+{
+ "id": "N-281",
+ "title": "A mixed Fermat equation",
+ "area": "Number theory",
+ "difficulty": 7.0,
+ "plain": "Show the equation x² + y⁴ = z⁷ + 7 has only finitely many integer solutions.",
+ "math": "Prove $x^2+y^4=z^7+7$ has finitely many solutions in integers."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-067",
+ "title": "Spherical sofa",
+ "area": "Geometry",
+ "difficulty": 3.5,
+ "plain": "Find the biggest shape that turns a right-angled corner in a width-1 hallway drawn on a large sphere.",
+ "math": "On the sphere of radius 10, determine the maximal area of a set admissible in the width-1 right-angled geodesic corridor."
+}

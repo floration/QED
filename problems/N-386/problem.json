@@ -1,0 +1,8 @@
+{
+ "id": "N-386",
+ "title": "One firefighter on hats",
+ "area": "Combinatorics",
+ "difficulty": 1.0,
+ "plain": "Can a single firefighter per turn contain every fire on a hat tiling?",
+ "math": "Decide whether one protected vertex per turn contains any single-vertex fire on the hat graph."
+}

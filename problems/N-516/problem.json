@@ -1,0 +1,8 @@
+{
+ "id": "N-516",
+ "title": "3-pile shuffle mixing constant",
+ "area": "Probability",
+ "difficulty": 1.8,
+ "plain": "Find the exact cutoff constant for riffle-style 3-pile shuffles, in closed form.",
+ "math": "For random 3-pile shuffles on $3n$ cards, prove cutoff at $c\\log n$ with $c$ in closed form and window $O(1)$."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "N-291",
+ "title": "Kneser graphs of square sums",
+ "area": "Combinatorics",
+ "difficulty": 3.0,
+ "plain": "Take all k-element sets of numbers up to N that contain no square-sum pair, and join two if they are disjoint. Find the chromatic number.",
+ "math": "Determine $\\chi$ of the Kneser-type graph on independent $k$-sets of $S_N$ (adjacency = disjointness) for fixed $k$ and large $N$."
+}

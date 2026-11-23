@@ -1,0 +1,8 @@
+{
+ "id": "N-303",
+ "title": "Cheeger constant of the sofa",
+ "area": "Geometry",
+ "difficulty": 8.5,
+ "plain": "Find the Cheeger constant of Gerver's sofa and show it is transcendental.",
+ "math": "Prove $h(G)=\\inf_{E\\subseteq G}\\mathrm{Per}(E)/|E|$ for Gerver's sofa is transcendental."
+}

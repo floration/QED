@@ -1,0 +1,8 @@
+{
+ "id": "N-024",
+ "title": "Small Keller maps in 3D",
+ "area": "Algebra",
+ "difficulty": 3.6,
+ "plain": "The 2026 counterexamples to the Jacobian conjecture have fairly high degree. Is there one of degree 5 or less?",
+ "math": "Decide whether some $F:\\mathbb{C}^3\\to\\mathbb{C}^3$ with $\\deg F\\le5$ and $\\det DF\\in\\mathbb{C}^\\times$ has no polynomial inverse."
+}

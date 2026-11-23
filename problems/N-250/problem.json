@@ -1,0 +1,8 @@
+{
+ "id": "N-250",
+ "title": "Midpoint-prime orbit lengths",
+ "area": "Dynamics",
+ "difficulty": 3.9,
+ "plain": "Find the average number of steps the midpoint-prime map takes to reach 1, on a logarithmic scale.",
+ "math": "For the midpoint-prime map $m$, prove $\\frac1x\\sum_{n\\le x}\\frac{T_m(n)}{\\log n}\\to c$ and compute $c$, where $T_m(n)=\\min\\{k:m^k(n)=1\\}$."
+}

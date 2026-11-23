@@ -1,0 +1,8 @@
+{
+ "id": "N-011",
+ "title": "Narrowing doorway sofa",
+ "area": "Geometry",
+ "difficulty": 3.1,
+ "plain": "A width-1 hallway turns a right angle and then narrows to width 0.8. Find the biggest sofa that gets through.",
+ "math": "Maximize the area of a connected planar set movable from arm $\\mathbb{R}_{<0}\\times[0,1]$ into arm $[0,0.8]\\times\\mathbb{R}_{>1}$."
+}

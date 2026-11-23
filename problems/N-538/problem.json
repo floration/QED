@@ -1,0 +1,8 @@
+{
+ "id": "N-538",
+ "title": "Three-pile shuffle orders equal",
+ "area": "Algebra",
+ "difficulty": 3.9,
+ "plain": "Show the three-pile shuffle and the two-pile shuffle on the same deck size have equal order infinitely often.",
+ "math": "Prove $\\operatorname{ord}(\\sigma^{(3)}_{6n})=\\operatorname{ord}(\\sigma^{(2)}_{6n})$ for infinitely many $n$."
+}
