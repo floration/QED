@@ -1,0 +1,1466 @@
+[
+{
+"id": "N-359",
+"title": "Analytic hyperoperations",
+"area": "Algebra",
+"W": "Build one smooth family of operations from addition up through exponentiation that is analytic in all inputs.",
+"M": "Construct $a[s]b$, real-analytic in $(s,a,b)$ for $s\\in[1,3]$, $a>1$, $b>0$, satisfying the recursion law and matching $+,\\times,\\uparrow$.",
+"adv": 3.3,
+"similar": [
+"N-020 (0.33) Real-rank hyperoperations: Addition, multiplication and exponentiation are ranks 1, 2, 3 of one ladder. Find natural rules that fix a unique operation at every real ra",
+"N-510 (0.27) Real-rank hyperoperation uniqueness: Prove there is exactly one natural way to fill in the operations between addition, multiplication and powers."
+]
+},
+{
+"id": "N-525",
+"title": "Integer Keller collisions",
+"area": "Algebra",
+"W": "Show any Jacobian-conjecture counterexample must send two different integer points to the same place.",
+"M": "Prove every non-invertible Keller map in $\\mathbb{Z}[x_1,\\dots,x_n]^n$ is non-injective on $\\mathbb{Z}^n$.",
+"adv": 3.6,
+"similar": [
+"N-397 (0.50) Keller maps with integer fibers: Show no Jacobian-conjecture counterexample with integer coefficients is injective on integer points but not invertible.",
+"N-439 (0.33) Keller monodromy is everything: Show every symmetric group appears as the hidden symmetry group of the fibres of some 3D Jacobian-conjecture counterexample.",
+"N-587 (0.30) Keller maps classification: List every Jacobian-conjecture counterexample in 3D, up to symmetry.",
+"N-509 (0.30) Keller maps are invertible over Q in dimension 3, degree ≤ 4: Show no Jacobian-conjecture counterexample exists in 3D up to degree 4 with rational coefficients.",
+"N-553 (0.29) Minimal degree of a Jacobian counterexample: The 2026 counterexamples have degree 7. Find the smallest degree any 3D counterexample can have.",
+"N-537 (0.29) Keller maps in dimension 3 of degree 5: Show no Jacobian-conjecture counterexample exists in 3D with degree exactly 5 and rational coefficients."
+]
+},
+{
+"id": "N-201",
+"title": "Keller maps over finite fields",
+"area": "Algebra",
+"W": "Count the polynomial maps of three variables over a finite field with constant Jacobian that happen to be bijections.",
+"M": "For $F\\in\\mathbb{F}_p[x,y,z]^3$ of degree $\\le3$ with $\\det DF\\in\\mathbb{F}_p^\\times$, find the asymptotic proportion inducing bijections of $\\mathbb{F}_p^3$ as $p\\to\\infty$.",
+"adv": 2.4,
+"similar": [
+"N-180 (0.42) Keller maps of degree 4: Show that every 3D polynomial map of degree at most 4 with constant Jacobian has a polynomial inverse.",
+"N-047 (0.32) Keller maps with few terms: Find a Jacobian-conjecture counterexample using as few polynomial terms as possible.",
+"N-024 (0.29) Small Keller maps in 3D: The 2026 counterexamples to the Jacobian conjecture have fairly high degree. Is there one of degree 5 or less?",
+"N-079 (0.28) Two-to-one Keller maps: Known Jacobian counterexamples cover most points three or more times. Is there one covering most points exactly twice?",
+"N-160 (0.27) Integer-bijective Keller map: Find a polynomial map with Jacobian 1 that shuffles integer points perfectly but has no polynomial inverse.",
+"N-078 (0.25) Tangent-sweep Keller maps: One 2026 counterexample to the Jacobian conjecture sweeps tangent lines of a curve. Find every counterexample built that way."
+]
+},
+{
+"id": "N-510",
+"title": "Real-rank hyperoperation uniqueness",
+"area": "Algebra",
+"W": "Prove there is exactly one natural way to fill in the operations between addition, multiplication and powers.",
+"M": "Prove uniqueness of an analytic family $a[s]b$ on $s\\in[1,3]$ under the recursion law plus a log-convexity condition in $s$, and existence.",
+"adv": 2.5,
+"similar": [
+"N-020 (0.42) Real-rank hyperoperations: Addition, multiplication and exponentiation are ranks 1, 2, 3 of one ladder. Find natural rules that fix a unique operation at every real ra",
+"N-395 (0.40) Hyperoperation fixed points: In any natural real-rank hyperoperation family, show the rank at which 2 ∘ 2 stops being 4 is not a whole number.",
+"N-359 (0.27) Analytic hyperoperations: Build one smooth family of operations from addition up through exponentiation that is analytic in all inputs."
+]
+},
+{
+"id": "N-538",
+"title": "Three-pile shuffle orders equal",
+"area": "Algebra",
+"W": "Show the three-pile shuffle and the two-pile shuffle on the same deck size have equal order infinitely often.",
+"M": "Prove $\\operatorname{ord}(\\sigma^{(3)}_{6n})=\\operatorname{ord}(\\sigma^{(2)}_{6n})$ for infinitely many $n$.",
+"adv": 3.9,
+"similar": [
+"N-029 (0.33) Three-pile shuffle group: Using the six ways to stack three piles in a perfect shuffle, which rearrangements of the deck can you reach?",
+"N-209 (0.30) Three-pile shuffle cutoff: Random three-pile shuffles mix a deck suddenly, after a precise number of shuffles. Find it."
+]
+},
+{
+"id": "N-454",
+"title": "Conformal radius of the hat",
+"area": "Analysis",
+"W": "Map a disc conformally onto the hat so the centre goes to the hat's centroid. Show the scale factor is transcendental.",
+"M": "Prove the conformal radius of the hat polygon at its centroid is transcendental.",
+"adv": 8.0,
+"similar": [
+"N-573 (0.82) Conformal radius of Gerver's sofa: Map a disc conformally onto Gerver's sofa, sending the centre to the sofa's centroid. Show the scale factor is transcendental."
+]
+},
+{
+"id": "N-369",
+"title": "Fluid in a box blows up",
+"area": "Analysis",
+"W": "Show viscous fluid in a closed box with sticky walls can blow up under a smooth push.",
+"M": "Construct smooth $f$ such that 3D Navier–Stokes with no-slip in the unit cube blows up in finite time.",
+"adv": 3.1,
+"similar": [
+"N-360 (0.53) Time-independent force: Make viscous fluid blow up with a push that never changes in time.",
+"N-427 (0.45) Blow-up near a wall: Show the 2026 forced blow-up mechanism also works in a half-space with no-slip wall, with the singularity on the wall.",
+"N-076 (0.44) Distant-force blow-up: The 2026 Navier–Stokes blow-up pushed fluid right where it broke. Make it break with a push kept far away.",
+"N-155 (0.38) Forced SQG blow-up: Copy the 2026 forced Navier–Stokes blow-up for the surface quasi-geostrophic equation.",
+"N-158 (0.35) Navier–Stokes blow-up in Isabelle: Re-check the 2026 Navier–Stokes blow-up in a completely different proof assistant.",
+"N-077 (0.35) Closed-form Euler blow-up: Give smooth starting data for frictionless 3D fluid, written as an explicit formula, that blows up."
+]
+},
+{
+"id": "N-207",
+"title": "Hat drum's first mode",
+"area": "Analysis",
+"W": "Strike a hat-shaped drum. Show its lowest tone vibrates with a single peak.",
+"M": "Prove the first Dirichlet eigenfunction of the hat polygon has exactly one interior critical point.",
+"adv": 2.6,
+"similar": [
+"N-375 (0.39) Nodal domains of the hat drum: Count the regions a hat-shaped drum splits into when vibrating at high frequencies.",
+"N-546 (0.33) Hat Laplacian eigenvalue is transcendental: Show the lowest vibration frequency of a hat-shaped drum with clamped edges is transcendental.",
+"N-261 (0.31) Simple spectrum of the hat: Show no two vibration frequencies of the hat-shaped drum coincide.",
+"N-547 (0.27) Hearing the hat: Show no other polygon has exactly the same vibration frequencies as the hat."
+]
+},
+{
+"id": "N-418",
+"title": "Hyperdissipative forced blow-up",
+"area": "Analysis",
+"W": "Fluids with extra strong viscosity never blow up above a known threshold. Show forced blow-up still happens just below it.",
+"M": "For $\\partial_tu+(u\\cdot\\nabla)u+\\nabla p=-(-\\Delta)^{\\alpha}u+f$ on $\\mathbb{R}^3$, construct smooth compactly supported $f$ giving finite-time blow-up from rest for every $\\alpha<5/4$.",
+"adv": 3.1,
+"similar": [
+"N-155 (0.47) Forced SQG blow-up: Copy the 2026 forced Navier–Stokes blow-up for the surface quasi-geostrophic equation.",
+"N-427 (0.40) Blow-up near a wall: Show the 2026 forced blow-up mechanism also works in a half-space with no-slip wall, with the singularity on the wall.",
+"N-361 (0.38) Stable blow-up: Show the 2026 Navier–Stokes blow-up still happens after any tiny change to the setup.",
+"N-360 (0.34) Time-independent force: Make viscous fluid blow up with a push that never changes in time.",
+"N-076 (0.32) Distant-force blow-up: The 2026 Navier–Stokes blow-up pushed fluid right where it broke. Make it break with a push kept far away.",
+"N-158 (0.28) Navier–Stokes blow-up in Isabelle: Re-check the 2026 Navier–Stokes blow-up in a completely different proof assistant."
+]
+},
+{
+"id": "X-045",
+"title": "Non-arithmetic tones of the cube",
+"area": "Analysis",
+"W": "Many vibration frequencies of a cube's surface come from the square torus and are rational multiples of π². Show some frequency is not.",
+"M": "Let $S$ be the flat unit-cube surface. Prove that some eigenvalue of the Laplacian on $S$ is not a rational multiple of $\\pi^2$.",
+"adv": null,
+"similar": [
+"X-029 (0.39) L⁴ Strichartz on a cube: On a flat square torus the L⁴ Strichartz estimate holds with only ε loss of derivatives. Prove the same on the surface of a cube, where corn",
+"X-048 (0.27) Frozen vortices for Kuramoto on a cube: Identical Kuramoto oscillators on the grid of a cube surface tend to synchronize. Show that for large grids a stable state that is not synch"
+]
+},
+{
+"id": "N-523",
+"title": "Spectral gap of the spectre",
+"area": "Analysis",
+"W": "Find the exact gaps in the energy levels of an electron moving on a spectre tiling.",
+"M": "Prove the spectrum of the adjacency operator on the spectre tiling has gaps labelled by an explicit $K$-theory group, with every label open.",
+"adv": 4.5,
+"similar": [
+"N-589 (0.40) Spectre gap labelling: Show every allowed energy gap of the spectre tiling actually opens.",
+"N-153 (0.33) Hat spectrum is a Cantor set: Show the energy levels of a particle hopping on a hat tiling form a dust of measure zero.",
+"N-569 (0.29) Hat Hofstadter gaps all open: Show every gap predicted by the gap-labelling theorem actually opens in the hat tiling's electronic spectrum."
+]
+},
+{
+"id": "N-237",
+"title": "The hat is not spectral",
+"area": "Analysis",
+"W": "Fuglede's conjecture predicts that a shape that cannot tile by translations has no orthogonal basis of exponentials. Prove this for the hat.",
+"M": "Prove there is no $\\Lambda\\subset\\mathbb{R}^2$ with $\\{e^{2\\pi i\\lambda\\cdot x}\\}_{\\lambda\\in\\Lambda}$ an orthogonal basis of $L^2(\\text{hat})$.",
+"adv": 3.0,
+"similar": [
+"N-443 (0.81) The spectre is not spectral: Show the spectre, a curved tile that cannot tile by translations, has no orthogonal basis of exponentials, as Fuglede's conjecture predicts."
+]
+},
+{
+"id": "N-447",
+"title": "Weyl remainder for the hat drum",
+"area": "Analysis",
+"W": "Count the vibration frequencies of a hat-shaped drum below a threshold. Find the true size of the error after the two leading terms.",
+"M": "For the Dirichlet Laplacian on the hat polygon, prove $N(\\lambda)=\\frac{|\\Omega|}{4\\pi}\\lambda-\\frac{|\\partial\\Omega|}{4\\pi}\\sqrt\\lambda+O(\\lambda^{\\theta})$ and determine the optimal $\\theta$.",
+"adv": 5.0,
+"similar": [
+"N-375 (0.44) Nodal domains of the hat drum: Count the regions a hat-shaped drum splits into when vibrating at high frequencies.",
+"N-261 (0.35) Simple spectrum of the hat: Show no two vibration frequencies of the hat-shaped drum coincide."
+]
+},
+{
+"id": "N-033",
+"title": "Counting 16 × 16 Sudoku",
+"area": "Combinatorics",
+"W": "Count the essentially different 16 × 16 Sudoku grids, ignoring symmetries, to three significant figures.",
+"M": "Determine the automorphism group $\\Gamma$ of the $16\\times16$ Sudoku constraint structure and estimate $|\\text{grids}/\\Gamma|$ to 3 significant figures.",
+"adv": 2.3,
+"similar": [
+"N-595 (0.32) Sudoku count asymptotics: Count n²×n² Sudoku grids exactly, to leading order.",
+"N-194 (0.32) Sudoku symmetry breaking: Show that most big Sudoku grids have no symmetry at all."
+]
+},
+{
+"id": "N-586",
+"title": "Cube-sum independence",
+"area": "Combinatorics",
+"W": "Find the largest set of numbers up to N where no two add to a cube.",
+"M": "Determine $\\alpha(C_N)$ asymptotically, with second-order term.",
+"adv": 2.9,
+"similar": []
+},
+{
+"id": "N-005",
+"title": "Fewest burned cells",
+"area": "Combinatorics",
+"W": "In the wind-driven fire (spreading only east, north and south), with the fewest firefighters that can trap it, what is the least area that must burn?",
+"M": "For the minimal $k$ in the east/north/south fire on $\\mathbb{Z}^2$, find $\\min |B_\\infty|$ over all protection strategies.",
+"adv": 1.9,
+"similar": [
+"N-001 (0.46) Wind-driven fire: On a grid, fire spreads each turn only east, north and south (the wind blocks westward spread). How few firefighters per turn can always tra"
+]
+},
+{
+"id": "N-058",
+"title": "Five colors for square sums",
+"area": "Combinatorics",
+"W": "Square-sum graphs need four colors eventually. Do they eventually need five?",
+"M": "Decide whether $\\chi(S_N)\\ge5$ for all sufficiently large $N$.",
+"adv": 1.1,
+"similar": []
+},
+{
+"id": "N-133",
+"title": "Hadwiger's true constant",
+"area": "Combinatorics",
+"W": "If graphs needing many colors need not contain a full complete-graph minor, find how large a complete minor they must contain.",
+"M": "Find $c^*=\\liminf_{t}\\min\\{h(G)/t:\\chi(G)\\ge t\\}$, where $h$ is the Hadwiger number.",
+"adv": 6.1,
+"similar": [
+"N-409 (0.25) Square-sum clique minors: Find the largest complete graph that can be formed by contracting parts of the square-sum graph."
+]
+},
+{
+"id": "N-576",
+"title": "Infinite cube-sum paths",
+"area": "Combinatorics",
+"W": "Colour the integers with two colours. Show there is an infinite one-coloured chain where neighbours sum to cubes.",
+"M": "Prove every 2-colouring of $\\mathbb{N}$ admits $a_1<a_2<\\cdots$ of one colour with $a_i+a_{i+1}$ a perfect cube for all $i$.",
+"adv": 4.0,
+"similar": [
+"N-478 (0.66) Infinite monochromatic square-sum paths: Colour the positive integers red and blue. Show there is always an infinite increasing sequence of one colour in which every two consecutive",
+"N-438 (0.36) Monochromatic square-sum triangles, many colours: Colour the positive integers with any finite number of colours. Show there are always three numbers of one colour whose pairwise sums are al",
+"N-228 (0.27) Square-sum Ramsey of paths: Two-colour the numbers 1 to N. Show some colour contains a chain of length L where neighbours sum to squares, with L growing like a power of"
+]
+},
+{
+"id": "N-135",
+"title": "Minimal four-color proof",
+"area": "Combinatorics",
+"W": "The four color theorem's proof checks a big list of map configurations. Find the smallest list that works.",
+"M": "Determine the minimum size of an unavoidable set of reducible configurations for planar triangulations, with proof of minimality.",
+"adv": 5.1,
+"similar": [
+"N-097 (0.37) Four colors, compressed: Make the computer-checked four color theorem much shorter."
+]
+},
+{
+"id": "N-028",
+"title": "Penrose firefighter",
+"area": "Combinatorics",
+"W": "Fire spreads along a Penrose tiling's edges. How many firefighters per turn can trap any fire?",
+"M": "On the vertex graph of a Penrose rhomb tiling, find the least $k$ such that protecting $k$ vertices per turn contains a fire from any single vertex.",
+"adv": 2.1,
+"similar": [
+"N-386 (0.47) One firefighter on hats: Can a single firefighter per turn contain every fire on a hat tiling?",
+"N-535 (0.41) Firefighter on the hat tiling: Find the exact average number of firefighters per turn needed to contain any fire on a hat tiling.",
+"N-015 (0.33) Delayed firefighters: Fire spreads in four directions, but a firefighter assigned now only takes effect a turn later. How many per turn are needed?",
+"N-179 (0.32) Wind-driven fire in 3D: In 3D, fire spreads in five of six directions because of wind. How many firefighters per turn are needed?",
+"N-001 (0.32) Wind-driven fire: On a grid, fire spreads each turn only east, north and south (the wind blocks westward spread). How few firefighters per turn can always tra",
+"N-178 (0.31) Delayed fire on hexagons: On a honeycomb grid, firefighters arrive one turn late. Find how many per turn are needed."
+]
+},
+{
+"id": "N-122",
+"title": "Prime Golomb rulers",
+"area": "Combinatorics",
+"W": "Find the shortest ruler with marks only at prime positions where all distances between marks are different.",
+"M": "For each $n$, determine the minimal $L$ such that some set of $n$ primes in an interval of length $L$ has all pairwise differences distinct; find its asymptotics.",
+"adv": 2.4,
+"similar": []
+},
+{
+"id": "N-410",
+"title": "Prime-sum Hamiltonian count",
+"area": "Combinatorics",
+"W": "Count the ways to arrange 1 to 2n in a circle so neighbours sum to primes. Find the growth rate.",
+"M": "Let $H_n$ count Hamiltonian cycles of the prime-sum graph on $[2n]$. Prove $\\log H_n=(1+o(1))\\,c\\,n\\log n$ and find $c$.",
+"adv": 2.6,
+"similar": [
+"N-486 (0.40) Growth rate of square-sum Hamiltonian cycles: Find the exponential growth rate of the number of ways to arrange 1 to N in a circle with neighbours summing to squares.",
+"N-248 (0.36) Prime-sum Hamiltonian cycles through every edge: Show every edge of the prime-sum graph on 1 to 2n lies on a full prime circle.",
+"N-503 (0.32) Cube-sum Hamiltonian cycles: Arrange 1 to N in a circle so neighbours add to perfect cubes, for all large N.",
+"N-130 (0.29) Treewidth of the prime-sum graph: Find the treewidth of the prime-sum graph on 1 to 2n asymptotically.",
+"N-240 (0.29) Counting square-sum chains: Count the ways to line up 1 to N with neighbours summing to squares. Find the leading growth.",
+"N-295 (0.29) Prime-sum graph is Hamiltonian-connected: Show you can line up 1 to 2n with neighbours summing to primes, starting with any odd number and ending with any even one."
+]
+},
+{
+"id": "N-086",
+"title": "Random graceful forests",
+"area": "Combinatorics",
+"W": "Almost every random forest has the distinct-edge-difference labeling.",
+"M": "For a uniform random forest with $m$ edges and $c\\sim\\alpha m$ components, prove the graceful-forest labeling exists with probability $\\to1$.",
+"adv": 3.0,
+"similar": [
+"N-009 (0.46) Graceful spider forests: Spiders are trees with one central branching vertex. Show forests of spiders have the distinct-difference labeling.",
+"N-030 (0.36) Two-tree graceful forests: Check the distinct-difference labeling for every forest of two small trees.",
+"N-396 (0.32) Graceful forests with one big tree: A forest with c trees and m edges is graceful-forest labelled if its vertices get the labels 0 to m + c − 1 with all edge differences distin",
+"N-233 (0.27) Graceful forests from caterpillar seeds: Show forests made of large caterpillars plus one arbitrary tree are graceful-forest labelable.",
+"N-388 (0.27) Prime-graceful forests: Label any forest so the edge differences are exactly the first m primes."
+]
+},
+{
+"id": "N-423",
+"title": "Sidon sets of hat tiles",
+"area": "Combinatorics",
+"W": "Pick hat tiles so all pairwise displacement vectors are distinct. How many can fit in a region of n tiles?",
+"M": "Determine the asymptotics of the maximum size of $A\\subseteq B_L$ (hat-tiled $L$-ball, tile centres) with all differences $a-a'$, $a\\ne a'$, distinct.",
+"adv": 2.3,
+"similar": []
+},
+{
+"id": "N-614",
+"title": "Square-sum Ramsey numbers",
+"area": "Combinatorics",
+"W": "Find the exact point at which every 2-coloring of 1 to N contains a same-colored square-sum clique of size 4.",
+"M": "Determine $\\min\\{N: \\text{every 2-coloring of }[N]\\text{ has a monochromatic }K_4\\text{ in }S_N\\}$, or prove none exists.",
+"adv": 3.4,
+"similar": [
+"N-508 (0.31) Two colors for square sums, avoiding triangles: Show every way to 2-color 1 to N, for large N, makes three same-colored numbers whose pairwise sums are all squares."
+]
+},
+{
+"id": "N-061",
+"title": "Square-sum coloring",
+"area": "Combinatorics",
+"W": "Join numbers that add up to a perfect square. Does the number of colors needed stay bounded forever?",
+"M": "Decide whether $\\sup_N \\chi(S_N)<\\infty$.",
+"adv": 4.1,
+"similar": [
+"N-171 (0.49) Cube-sum colors: Join numbers that add up to a perfect cube. Show a fixed number of colors always suffices."
+]
+},
+{
+"id": "N-263",
+"title": "Square-sum ordering with bounded displacement",
+"area": "Combinatorics",
+"W": "Order all positive integers so neighbours always sum to squares, and no number moves more than a fixed distance from its natural place.",
+"M": "Decide whether there is a bijection $\\pi:\\mathbb{N}\\to\\mathbb{N}$ with $\\pi(i)+\\pi(i+1)$ always a square and $\\sup_i|\\pi(i)-i|/\\sqrt i<\\infty$.",
+"adv": 2.5,
+"similar": [
+"N-387 (0.44) Prime and square neighbours: Order all positive integers so neighbours add to a prime and numbers two apart add to a square."
+]
+},
+{
+"id": "N-534",
+"title": "Squared rectangles with prime sides",
+"area": "Combinatorics",
+"W": "Find the smallest perfect squared rectangle whose squares all have prime side lengths.",
+"M": "Determine the minimal order of a perfect squared rectangle with every component side prime.",
+"adv": 1.3,
+"similar": [
+"N-054 (0.52) Prime squared square: Tile a square with smaller squares, all different sizes, every side a prime number. Find one or show none exists.",
+"N-371 (0.45) Infinitely many prime squared squares: Show there are infinitely many perfect squared squares whose pieces all have prime sides.",
+"N-522 (0.32) Squared squares with consecutive primes: Find a perfect squared square whose square sides are consecutive primes."
+]
+},
+{
+"id": "N-130",
+"title": "Treewidth of the prime-sum graph",
+"area": "Combinatorics",
+"W": "Find the treewidth of the prime-sum graph on 1 to 2n asymptotically.",
+"M": "Prove $\\mathrm{tw}(\\Pi_{2n})\\sim c\\,n$ for the prime-sum graph and determine $c$.",
+"adv": 4.5,
+"similar": [
+"N-292 (0.45) Prime-sum graph and perfect codes: Decide for which n the prime-sum graph on 1 to 2n has a set of vertices that dominates every vertex exactly once.",
+"N-131 (0.43) Clique minors in the prime-sum graph: Show the prime-sum graph on 1 to 2n has a complete minor of size about n over the square root of log n.",
+"N-248 (0.38) Prime-sum Hamiltonian cycles through every edge: Show every edge of the prime-sum graph on 1 to 2n lies on a full prime circle.",
+"N-310 (0.32) Sharp threshold for prime-sum Hamiltonicity: Keep each edge of the prime-sum graph with probability p. Find the threshold for a Hamiltonian cycle.",
+"N-337 (0.32) Prime-sum Kayles: Same game on the prime-sum graph: take numbers so that no two taken numbers sum to a prime. Decide who wins.",
+"N-410 (0.29) Prime-sum Hamiltonian count: Count the ways to arrange 1 to 2n in a circle so neighbours sum to primes. Find the growth rate."
+]
+},
+{
+"id": "N-030",
+"title": "Two-tree graceful forests",
+"area": "Combinatorics",
+"W": "Check the distinct-difference labeling for every forest of two small trees.",
+"M": "Prove that every forest of two trees with at most 25 vertices each has a bijection $V\\to\\{0,\\dots,m+1\\}$ with distinct edge differences.",
+"adv": 0.9,
+"similar": [
+"N-009 (0.59) Graceful spider forests: Spiders are trees with one central branching vertex. Show forests of spiders have the distinct-difference labeling.",
+"N-233 (0.42) Graceful forests from caterpillar seeds: Show forests made of large caterpillars plus one arbitrary tree are graceful-forest labelable.",
+"N-396 (0.38) Graceful forests with one big tree: A forest with c trees and m edges is graceful-forest labelled if its vertices get the labels 0 to m + c − 1 with all edge differences distin",
+"N-086 (0.36) Random graceful forests: Almost every random forest has the distinct-edge-difference labeling.",
+"N-388 (0.28) Prime-graceful forests: Label any forest so the edge differences are exactly the first m primes."
+]
+},
+{
+"id": "N-007",
+"title": "Lean golf is NP-hard",
+"area": "Computation",
+"W": "Show that finding the shortest proof using only a few basic Lean tactics is computationally hard.",
+"M": "Prove NP-hardness of: given a Lean 4 goal and $k$ in unary, is there a proof using only intro, apply, exact, rfl with at most $k$ steps?",
+"adv": 1.3,
+"similar": [
+"N-157 (0.52) Lean golf is hard to approximate: Not only is the shortest basic-tactic proof hard to find; even a roughly short one is.",
+"N-019 (0.40) Voice leading is NP-hard: Moving n voices through a chord progression with the least total motion while avoiding parallel fifths should be computationally hard."
+]
+},
+{
+"id": "N-065",
+"title": "Prime pancakes",
+"area": "Computation",
+"W": "Sort pancakes by flipping only a prime number at a time. Find the worst-case number of flips asymptotically.",
+"M": "With prefix reversals of prime length, determine $\\lim_n d(n)/n$ for the worst-case sorting distance $d(n)$.",
+"adv": 4.0,
+"similar": [
+"N-105 (0.30) Shuffle-sorting: Using any of the six 3-pile perfect shuffles each time, how many shuffles reach any reachable arrangement in the worst case?"
+]
+},
+{
+"id": "N-548",
+"title": "Affine prime maps all settle",
+"area": "Dynamics",
+"W": "Fix whole numbers a and b. Send a prime p to the largest prime factor of ap + b. Every case tested falls into a loop. Prove this always happens.",
+"M": "Prove that for all fixed integers $a\\ge2$, $b\\ge1$, every orbit of $p\\mapsto P(ap+b)$ on primes is eventually periodic.",
+"adv": 6.2,
+"similar": [
+"N-449 (0.44) Finitely many loops for affine prime maps: For fixed a and b, show the prime map p ↦ largest prime factor of ap + b has only finitely many loops.",
+"N-541 (0.34) The 4p+1 funnel: Map a prime p to the largest prime factor of 4p + 1. Every prime tested falls into one loop of eight primes. Prove all do.",
+"N-251 (0.34) Many loops for affine prime maps: Show the number of separate loops of p ↦ largest prime factor of ap + 1 grows without bound as a grows.",
+"N-460 (0.33) Prime cycles of all lengths: Show that for every length L, some map p ↦ largest prime factor of ap + b has a loop of exactly length L.",
+"N-257 (0.33) Long loops for affine prime maps: As a and b vary, the loops of p ↦ largest prime factor of ap + b get longer and longer. Prove loop lengths are unbounded.",
+"N-271 (0.26) The {5, 8} funnel: Replace n by the sum of the largest prime factors of n and n + 1. Every start tested falls into the loop 5 → 8 → 5. Prove all do."
+]
+},
+{
+"id": "X-014",
+"title": "Chaotic billiards in a superellipse",
+"area": "Dynamics",
+"W": "The billiard table x⁴+y⁴ ≤ 1 is smooth and convex but has four flat points, so it has no caustics. Show a positive fraction of its phase space is chaotic.",
+"M": "Let $\\Phi$ be the billiard map of $\\{x^4+y^4\\le1\\}$ with its invariant Liouville measure $\\nu$. Prove that the metric entropy $h_\\nu(\\Phi)$ is positive.",
+"adv": null,
+"similar": [
+"N-431 (0.25) Spectre billiards ergodic: Billiards inside a spectre-shaped room with curved walls should be chaotic. Prove the billiard flow is ergodic."
+]
+},
+{
+"id": "X-016",
+"title": "Ergodicity of the regular tetrahedron billiard",
+"area": "Dynamics",
+"W": "The regular tetrahedron does not tile space, so its billiard cannot be unfolded into a straight-line flow on a torus. Is a billiard ball in it ergodic?",
+"M": "Prove or disprove that the billiard flow in a regular tetrahedron in $\\mathbb R^3$ is ergodic with respect to Liouville measure on the unit tangent bundle.",
+"adv": null,
+"similar": [
+"N-431 (0.45) Spectre billiards ergodic: Billiards inside a spectre-shaped room with curved walls should be chaotic. Prove the billiard flow is ergodic.",
+"X-003 (0.33) Knotted billiards in a regular tetrahedron: A billiard ball bouncing periodically inside a regular tetrahedron traces a closed polygon. Show that infinitely many different knot types a"
+]
+},
+{
+"id": "N-449",
+"title": "Finitely many loops for affine prime maps",
+"area": "Dynamics",
+"W": "For fixed a and b, show the prime map p ↦ largest prime factor of ap + b has only finitely many loops.",
+"M": "Prove that for all integers $a\\ge2$, $b\\ge1$, the map $p\\mapsto P(ap+b)$ on primes has finitely many periodic orbits.",
+"adv": 4.7,
+"similar": [
+"N-251 (0.44) Many loops for affine prime maps: Show the number of separate loops of p ↦ largest prime factor of ap + 1 grows without bound as a grows.",
+"N-548 (0.44) Affine prime maps all settle: Fix whole numbers a and b. Send a prime p to the largest prime factor of ap + b. Every case tested falls into a loop. Prove this always happ",
+"N-540 (0.38) Few loops for square-plus-one: The square-plus-one map has a loop: 89 goes to 233 and back. Show there are only finitely many loops.",
+"N-460 (0.36) Prime cycles of all lengths: Show that for every length L, some map p ↦ largest prime factor of ap + b has a loop of exactly length L.",
+"N-257 (0.35) Long loops for affine prime maps: As a and b vary, the loops of p ↦ largest prime factor of ap + b get longer and longer. Prove loop lengths are unbounded.",
+"N-612 (0.33) LF-Collatz loops classified forever: Show every largest-factor Collatz-type map for every odd multiplier has only finitely many loops, with a uniform recipe."
+]
+},
+{
+"id": "X-005",
+"title": "Integrability of the egg-crate torus",
+"area": "Dynamics",
+"W": "Take the surface z = ε sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.",
+"M": "For $\\varepsilon>0$ let $g_\\varepsilon$ be the metric on $\\mathbb R^2/(2\\pi\\mathbb Z)^2$ induced by the graph $z=\\varepsilon\\sin x\\sin y$ in $\\mathbb R^3$. Prove that for every $\\varepsilon>0$ the geodesic flow of $g_\\varepsilon$ has no real-analytic first integral on $T^*\\mathbb T^2\\setminus 0$ that is functionally independent of the Hamiltonian.",
+"adv": null,
+"similar": [
+"X-034 (0.33) Four vortices on a square torus: Three point vortices on a flat torus are integrable. Show four identical ones are not.",
+"X-029 (0.32) L⁴ Strichartz on a cube: On a flat square torus the L⁴ Strichartz estimate holds with only ε loss of derivatives. Prove the same on the surface of a cube, where corn"
+]
+},
+{
+"id": "N-147",
+"title": "Largest-factor Collatz stopping time",
+"area": "Dynamics",
+"W": "How many steps does the largest-factor Collatz map take, on average, to reach 1?",
+"M": "Prove $\\frac1x\\sum_{n\\le x}T(n)\\sim c\\log x$ for the stopping time $T$ of $f$, and compute $c$.",
+"adv": 4.6,
+"similar": [
+"N-199 (0.76) Smallest-factor Collatz stopping time: How many steps does the smallest-odd-factor Collatz map take to reach 1, on average?",
+"N-528 (0.35) LF-Collatz stopping time distribution: Find the exact distribution of how long the largest-factor Collatz map takes to settle.",
+"N-311 (0.28) Stopping time law for P(n)+P(n+1): For the map n ↦ P(n) + P(n+1), find the distribution of the number of steps to the {5, 8} loop.",
+"N-499 (0.26) Largest-factor Collatz for all n: Prove every start reaches a loop under the largest-factor Collatz map.",
+"N-250 (0.25) Midpoint-prime orbit lengths: Find the average number of steps the midpoint-prime map takes to reach 1, on a logarithmic scale."
+]
+},
+{
+"id": "N-197",
+"title": "Lorenz attractor dimension",
+"area": "Dynamics",
+"W": "Pin down the fractal dimension of the classic Lorenz attractor to two decimals, rigorously.",
+"M": "For $\\sigma=10,\\beta=8/3,\\rho=28$, prove $2.06\\le\\dim_H\\mathcal{A}\\le2.07$.",
+"adv": 3.8,
+"similar": [
+"N-617 (0.68) Lorenz dimension is irrational: Show the Hausdorff dimension of the classic Lorenz attractor is irrational."
+]
+},
+{
+"id": "N-018",
+"title": "Mod-3 Collatz map",
+"area": "Dynamics",
+"W": "Divide by 3 when you can; otherwise double and add or subtract 1. Find all loops below a billion.",
+"M": "Let $h(n)=n/3$ if $3\\mid n$, $2n+1$ if $n\\equiv1$, $2n-1$ if $n\\equiv2 \\pmod 3$. Classify all cycles of $h$ meeting $[1,10^9]$.",
+"adv": 3.3,
+"similar": [
+"N-010 (0.41) Smallest-odd-factor Collatz: Halve even numbers; send an odd number to the smallest odd prime dividing 3n + 1. Find every cycle that occurs below a billion."
+]
+},
+{
+"id": "N-460",
+"title": "Prime cycles of all lengths",
+"area": "Dynamics",
+"W": "Show that for every length L, some map p ↦ largest prime factor of ap + b has a loop of exactly length L.",
+"M": "Prove that for every $L\\ge1$ there are $a,b\\ge1$ such that $p\\mapsto P(ap+b)$ has a periodic orbit of exact length $L$.",
+"adv": 3.8,
+"similar": [
+"N-449 (0.36) Finitely many loops for affine prime maps: For fixed a and b, show the prime map p ↦ largest prime factor of ap + b has only finitely many loops.",
+"N-548 (0.33) Affine prime maps all settle: Fix whole numbers a and b. Send a prime p to the largest prime factor of ap + b. Every case tested falls into a loop. Prove this always happ",
+"N-257 (0.29) Long loops for affine prime maps: As a and b vary, the loops of p ↦ largest prime factor of ap + b get longer and longer. Prove loop lengths are unbounded."
+]
+},
+{
+"id": "N-529",
+"title": "SOF Collatz with 5n + 1",
+"area": "Dynamics",
+"W": "Use the smallest odd factor of 5n + 1 instead of 3n + 1. Show every start ends in a loop.",
+"M": "Prove every orbit of $n\\mapsto n/2$ (even), $\\mathrm{spf}_{\\text{odd}}(5n+1)$ (odd) is eventually periodic.",
+"adv": 4.1,
+"similar": [
+"N-501 (0.46) 5n+1 largest-factor convergence: Prove every orbit of the 5n+1 largest-factor map ends in a loop.",
+"N-499 (0.35) Largest-factor Collatz for all n: Prove every start reaches a loop under the largest-factor Collatz map.",
+"N-162 (0.33) 5n+1 largest-factor cycles: Use 5n + 1 instead of 3n + 1 in the largest-factor map. Show it has only finitely many loops.",
+"N-551 (0.31) Undecidable prime-factor maps: Show no algorithm can decide, given a and b, whether every orbit of n ↦ n/2 (even) or the largest prime factor of an + b (odd) eventually lo",
+"N-342 (0.27) SOF Collatz orbits are bounded: For the smallest-odd-factor Collatz map, show no orbit runs off to infinity.",
+"N-580 (0.27) SOF Collatz is undecidable in general: Show some natural family of smallest-factor Collatz maps has an undecidable reach-1 question."
+]
+},
+{
+"id": "N-602",
+"title": "Square-plus-one merging",
+"area": "Dynamics",
+"W": "Many square-plus-one sequences run into the one starting at 2. Decide whether every sequence eventually does, apart from those caught in loops.",
+"M": "Decide whether every $n\\ge2$ whose $Q$-orbit is not eventually periodic satisfies $Q^a(n)=Q^b(2)$ for some $a,b$.",
+"adv": 7.6,
+"similar": [
+"N-572 (0.43) Is eventual periodicity of square-plus-one decidable?: Is there an algorithm that decides, for any n, whether its square-plus-one sequence eventually loops?",
+"N-554 (0.39) Square-plus-one orbits rarely loop: Show almost every starting number's square-plus-one sequence never repeats.",
+"N-557 (0.29) Square-plus-one orbit mod 3: Show the square-plus-one sequence starting at 2 lands on primes of both kinds mod 3 infinitely often.",
+"N-459 (0.26) Square-plus-one orbits avoid small primes: Show that infinitely many starting numbers have square-plus-one sequences that never fall below their start."
+]
+},
+{
+"id": "N-490",
+"title": "The 2n+3 map",
+"area": "Dynamics",
+"W": "Map n to P(2n + 3) + P(n). Orbits can climb past seven million before falling, yet every tested start ends in loops through 6, 9 or 50. Prove all do.",
+"M": "For $f(n)=P(2n+3)+P(n)$, prove every orbit reaches $(6,8,21,12)$, $(9,10,28,66,16)$ or $(50,108,76)$.",
+"adv": 5.3,
+"similar": [
+"N-278 (0.33) Three pairs: Replace n by P(n) + P(2n + 1). Every tested start ends in one of three two-step loops: 13 ↔ 16, 30 ↔ 66, 36 ↔ 76. Prove it.",
+"N-327 (0.26) The shift-6 prime map: Map n to P(n) + P(n+6). Tested starts reach 6 or the loop 8 ↔ 9. Prove all do.",
+"N-332 (0.26) Two small factors and one large: Add the smallest prime factors of n and n + 1 to the largest prime factor of n + 2. Every tested start falls into one seven-step loop throug"
+]
+},
+{
+"id": "N-264",
+"title": "The 7p+4 funnel, almost always",
+"area": "Dynamics",
+"W": "Show almost every prime eventually falls into the 12-cycle of the 7p + 4 map.",
+"M": "Prove the primes whose $p\\mapsto P(7p+4)$ orbit enters its 12-cycle have relative density 1.",
+"adv": 6.6,
+"similar": [
+"N-211 (0.52) The 4p+1 funnel, almost always: Show almost every prime falls into the eight-prime loop of the 4p + 1 map.",
+"N-549 (0.35) The 7p+4 dozen: Under p ↦ largest prime factor of 7p + 4, every tested prime ends in one loop of length 12. Prove all do."
+]
+},
+{
+"id": "N-327",
+"title": "The shift-6 prime map",
+"area": "Dynamics",
+"W": "Map n to P(n) + P(n+6). Tested starts reach 6 or the loop 8 ↔ 9. Prove all do.",
+"M": "For $f(n)=P(n)+P(n+6)$, prove every orbit with $n\\ge3$ reaches $\\{6\\}$ or $(8,9)$.",
+"adv": 5.2,
+"similar": [
+"N-313 (0.55) Neighbour factors plus one: Map n to P(n − 1) + P(n + 1) + 1. Tested starts reach 8 → 11 → 9 or 10 → 15. Prove all do.",
+"N-312 (0.53) The shift-3 prime map: Add the largest prime factors of n and n + 3. Every tested start falls into 6, the loop 8 → 13 → 15, or the loop 10 → 18. Prove all do.",
+"N-322 (0.45) Largest plus smallest neighbour factor: Add the largest prime factor of n to the smallest prime factor of n + 1. Tested starts reach 5 → 7 → 9 or 22 → 34. Prove all do.",
+"N-334 (0.36) The P(n)+P(n+2)−1 map: Map n to P(n) + P(n+2) − 1. Tested starts reach 4 or loops of length 18, 11 and 4. Prove these are all.",
+"N-326 (0.36) The parity-switch prime map: For even n add P(n) and P(n+1); for odd n add P(n) and P(n−1). Every tested start falls into one nine-step loop through 5. Prove all do.",
+"N-333 (0.34) The P(n)+P(n+2)+1 map: Map n to P(n) + P(n+2) + 1. Tested starts reach 6, 8, or loops through 9 (12 steps), 19 or 37. Prove these are all."
+]
+},
+{
+"id": "N-315",
+"title": "Triple factor map minus two",
+"area": "Dynamics",
+"W": "Map n to P(n) + P(n+1) + P(n+2) − 2. Tested starts reach the fixed points 8 or 33, a 13-step loop through 20, or a 9-step loop through 177. Prove nothing else happens.",
+"M": "For $f(n)=P(n)+P(n+1)+P(n+2)-2$, prove every orbit reaches $\\{8\\}$, $\\{33\\}$, the 13-cycle through $20$, or the 9-cycle through $177$.",
+"adv": 5.3,
+"similar": [
+"N-314 (0.38) Four fates of P(n)+P(n+1)+1: Map n to P(n) + P(n+1) + 1. Tested starts reach the fixed point 9 or loops through 6, 19 or 61. Prove these are the only fates.",
+"N-483 (0.38) Doubled prime map with a 1231 loop: Map n to twice its largest prime factor plus the largest prime factor of n + 1. Starts below 150,000 reach either a five-step loop through 9",
+"N-334 (0.35) The P(n)+P(n+2)−1 map: Map n to P(n) + P(n+2) − 1. Tested starts reach 4 or loops of length 18, 11 and 4. Prove these are all.",
+"N-333 (0.34) The P(n)+P(n+2)+1 map: Map n to P(n) + P(n+2) + 1. Tested starts reach 6, 8, or loops through 9 (12 steps), 19 or 37. Prove these are all.",
+"N-327 (0.31) The shift-6 prime map: Map n to P(n) + P(n+6). Tested starts reach 6 or the loop 8 ↔ 9. Prove all do.",
+"N-323 (0.28) Sum of prime divisors of neighbours: Add the sum of the distinct prime factors of n to that of n + 1. Tested starts reach 33 or loops through 10, 17, 30 or 107. Prove there is n"
+]
+},
+{
+"id": "N-335",
+"title": "Unbounded excursions in prime maps",
+"area": "Dynamics",
+"W": "For n ↦ P(n) + P(n+1), show some orbits climb above their starting value by any factor you like.",
+"M": "Prove $\\sup_n\\max_k f^k(n)/n=\\infty$ for $f(n)=P(n)+P(n+1)$.",
+"adv": 5.5,
+"similar": [
+"N-348 (0.32) Largest-factor climbs: Show infinitely many starts climb above their own square before falling."
+]
+},
+{
+"id": "N-097",
+"title": "Four colors, compressed",
+"area": "Formal proof",
+"W": "Make the computer-checked four color theorem much shorter.",
+"M": "Give a Lean 4 proof of the four color theorem in under 20,000 lines beyond Mathlib.",
+"adv": 2.2,
+"similar": [
+"N-098 (0.57) Kepler, compressed: Make the computer-checked proof of the densest sphere packing far shorter.",
+"N-135 (0.37) Minimal four-color proof: The four color theorem's proof checks a big list of map configurations. Find the smallest list that works.",
+"N-039 (0.37) Formalize 3D Kakeya: Turn the 2025 proof of the three-dimensional Kakeya conjecture into a compact computer-checked proof.",
+"N-064 (0.36) FLT, compressed: Fermat's Last Theorem has a huge computer formalization effort. Do it in far fewer lines.",
+"N-138 (0.36) Short Riemann: Shrink the 2026 machine-checked Riemann proof drastically.",
+"N-588 (0.29) Hat aperiodicity in Lean, minimal: Give a computer-checked proof that the hat tiles only aperiodically, in under 2000 lines."
+]
+},
+{
+"id": "N-138",
+"title": "Short Riemann",
+"area": "Formal proof",
+"W": "Shrink the 2026 machine-checked Riemann proof drastically.",
+"M": "Give a Lean 4 proof of `RiemannHypothesis` in at most 10,000 lines beyond Mathlib.",
+"adv": 5.3,
+"similar": [
+"N-137 (0.51) Readable Riemann: The 2026 Riemann proof is a giant machine-checked archive. Write a proof people can read.",
+"N-064 (0.46) FLT, compressed: Fermat's Last Theorem has a huge computer formalization effort. Do it in far fewer lines.",
+"N-097 (0.36) Four colors, compressed: Make the computer-checked four color theorem much shorter.",
+"N-098 (0.35) Kepler, compressed: Make the computer-checked proof of the densest sphere packing far shorter.",
+"N-039 (0.33) Formalize 3D Kakeya: Turn the 2025 proof of the three-dimensional Kakeya conjecture into a compact computer-checked proof.",
+"N-111 (0.32) Effective Riemann constants: Extract explicit, usable prime-counting error bounds from the 2026 Riemann proof."
+]
+},
+{
+"id": "N-590",
+"title": "Chess on the hat board",
+"area": "Games",
+"W": "Solve a chess-like game on a hat-tiled board with 10 pieces per side.",
+"M": "Weakly solve the game with standard chess move semantics translated to the hat graph on a fixed 64-tile patch.",
+"adv": 4.4,
+"similar": [
+"N-092 (0.36) Quoridor: Who wins the board game Quoridor with perfect play?",
+"N-069 (0.34) Blokus Duo: Who wins two-player Blokus with perfect play?",
+"N-182 (0.32) Hex on hat boards, large: Solve Hex on hat-tiled boards of side 9."
+]
+},
+{
+"id": "N-083",
+"title": "Go on a torus",
+"area": "Games",
+"W": "Go on a 7 × 7 board that wraps around. What komi makes the game fair?",
+"M": "Determine the perfect-play score of Go on $\\mathbb{Z}_7^2$ (area scoring, positional superko).",
+"adv": 2.9,
+"similar": [
+"N-591 (0.67) Toroidal Go 9×9: Who wins Go on a 9×9 board that wraps around in both directions?"
+]
+},
+{
+"id": "N-006",
+"title": "Infinite Prime Nim losses",
+"area": "Games",
+"W": "Prime Nim has infinitely many losing pile sizes (a known theorem, since primes have arbitrarily large gaps). Show they are rare.",
+"M": "Let $L=\\{n: G(n)=0\\}$ for the subtraction game with prime moves ($|L|=\\infty$ is known). Prove $L$ has natural density $0$.",
+"adv": 3.4,
+"similar": [
+"N-434 (0.36) Prime Nim values stay small: Prime Nim's Grundy values grow incredibly slowly. Show they are at most a constant times log n.",
+"N-451 (0.30) The last even loss in Prime Nim: In Prime Nim almost every losing pile size is odd. The only even ones found are 0, 10, 34, 100 and 310. Prove there are no more.",
+"N-287 (0.29) Prime Nim with Pythagorean primes: In a variant of Prime Nim you may only remove 2 or a prime that is 1 mod 4. Show the losing positions have density zero.",
+"N-465 (0.28) Prime Nim's mod-3 bias: Losing pile sizes in Prime Nim are about three times as likely to be 1 mod 3 as 0 mod 3. Find the exact limiting proportions.",
+"N-466 (0.27) Square losses in Prime Nim: Many perfect squares (1, 9, 25, 49, 100, 121, …) are losing Prime Nim positions. Show there are infinitely many."
+]
+},
+{
+"id": "N-616",
+"title": "Prime Nim Grundy values are unbounded in density",
+"area": "Games",
+"W": "Show each Grundy value of Prime Nim appears with a precise positive density, and compute them all.",
+"M": "Prove $d_k=\\lim\\frac1x\\#\\{n\\le x: G(n)=k\\}$ exists for every $k$ and give a formula.",
+"adv": 3.6,
+"similar": [
+"N-470 (0.43) Density of Grundy value one in Prime Nim: Show the pile sizes with Grundy value exactly 1 in Prime Nim have a definite density, and that it is positive.",
+"N-583 (0.27) Prime Nim is periodic in base 2: Show the Grundy values of Prime Nim follow a pattern that a finite machine reads off the binary digits, or prove none exists.",
+"N-434 (0.26) Prime Nim values stay small: Prime Nim's Grundy values grow incredibly slowly. Show they are at most a constant times log n."
+]
+},
+{
+"id": "N-287",
+"title": "Prime Nim with Pythagorean primes",
+"area": "Games",
+"W": "In a variant of Prime Nim you may only remove 2 or a prime that is 1 mod 4. Show the losing positions have density zero.",
+"M": "For the subtraction game with move set $\\{2\\}\\cup\\{p\\equiv1\\ (4)\\}$, prove the P-positions have natural density 0.",
+"adv": 4.0,
+"similar": [
+"N-265 (0.45) Prime Nim on Gaussian integers: Play Prime Nim with Gaussian integers: subtract a Gaussian prime staying in the first quadrant. Show losing positions have density zero.",
+"N-336 (0.44) Largest-factor subtraction game: From pile n you may remove P(n) stones or any prime smaller than P(n). Characterise the losing positions.",
+"N-532 (0.36) Prime Nim with prime-power moves: Allow subtracting any prime power. Find exactly which piles lose.",
+"N-288 (0.34) Partizan Prime Nim: Left may remove a prime that is 1 mod 4, Right a prime that is 3 mod 4, from one pile. Describe the game values.",
+"N-006 (0.29) Infinite Prime Nim losses: Prime Nim has infinitely many losing pile sizes (a known theorem, since primes have arbitrarily large gaps). Show they are rare.",
+"N-224 (0.28) Prime Nim game graph: Prime Nim has losing positions with a hidden mod-structure. Show the losing positions are equidistributed in residue classes mod 3."
+]
+},
+{
+"id": "N-467",
+"title": "Progressions of Prime Nim losses",
+"area": "Games",
+"W": "Show the losing positions of Prime Nim contain arbitrarily long arithmetic progressions.",
+"M": "Prove $\\{n:G(n)=0\\}$ contains $k$-term arithmetic progressions for every $k$.",
+"adv": 4.9,
+"similar": [
+"N-435 (0.57) Long progressions of seven-free primes: Show the seven-free primes contain arbitrarily long arithmetic progressions.",
+"N-349 (0.41) Counting Prime Nim losses: Show the losing positions of Prime Nim thin out at a precise power rate."
+]
+},
+{
+"id": "N-466",
+"title": "Square losses in Prime Nim",
+"area": "Games",
+"W": "Many perfect squares (1, 9, 25, 49, 100, 121, …) are losing Prime Nim positions. Show there are infinitely many.",
+"M": "Prove infinitely many perfect squares $k^2$ satisfy $G(k^2)=0$ in the prime subtraction game.",
+"adv": 6.0,
+"similar": [
+"N-371 (0.39) Infinitely many prime squared squares: Show there are infinitely many perfect squared squares whose pieces all have prime sides.",
+"N-129 (0.34) Square subtraction with prime piles: In the game where you subtract a square, show infinitely many prime pile sizes are losing positions.",
+"N-156 (0.31) Prime Nim is not simple: Show Prime Nim losing positions cannot be detected by shallow constant-depth circuits.",
+"N-451 (0.29) The last even loss in Prime Nim: In Prime Nim almost every losing pile size is odd. The only even ones found are 0, 10, 34, 100 and 310. Prove there are no more.",
+"N-465 (0.27) Prime Nim's mod-3 bias: Losing pile sizes in Prime Nim are about three times as likely to be 1 mod 3 as 0 mod 3. Find the exact limiting proportions.",
+"N-142 (0.27) Unbounded Prime Nim: Do the Prime Nim values grow without limit?"
+]
+},
+{
+"id": "N-221",
+"title": "The square-sum avoidance game",
+"area": "Games",
+"W": "Players take turns choosing unused numbers from 1 to N. Whoever picks a number summing to a square with any already-chosen number loses. Decide the winner for all large N.",
+"M": "Determine the outcome class of the avoidance game on $S_N$ (normal play, a move creating an $S_N$-edge inside the chosen set loses) for all sufficiently large $N$.",
+"adv": 4.0,
+"similar": [
+"N-262 (0.44) Node Kayles on square sums: Players alternately pick an unused number up to N that does not sum to a square with any picked number. Last to move wins. Decide the winner",
+"N-252 (0.42) Snort on square sums: Two players colour numbers up to N, one red and one blue. Neither may colour a number summing to a square with one of the opponent's colour.",
+"N-166 (0.29) Kayles on square sums: Players take turns claiming numbers, never next to a claimed one in the square-sum graph. Who wins?",
+"N-337 (0.25) Prime-sum Kayles: Same game on the prime-sum graph: take numbers so that no two taken numbers sum to a prime. Decide who wins."
+]
+},
+{
+"id": "N-084",
+"title": "Worst-case Battleship",
+"area": "Games",
+"W": "What is the fewest shots that always sinks the standard fleet on a 10 × 10 board?",
+"M": "Compute the minimax number of shots to sink ships of lengths 5,4,3,3,2 on $10\\times10$ against an adversary who may move ships consistently with past answers.",
+"adv": 1.4,
+"similar": []
+},
+{
+"id": "X-011",
+"title": "Capacities of the 4D superball",
+"area": "Geometry",
+"W": "Viterbo's conjecture that all symplectic capacities agree on convex bodies is false in general. Do they agree on the 4D ball x⁴+y⁴+z⁴+w⁴ ≤ 1?",
+"M": "Let $U=\\{x_1^4+y_1^4+x_2^4+y_2^4\\le1\\}\\subset(\\mathbb R^4,\\omega_0)$. Decide whether the Gromov width of $U$ equals its Ekeland–Hofer–Zehnder capacity (the minimal action of a closed characteristic on $\\partial U$).",
+"adv": null,
+"similar": [
+"X-015 (0.30) Free-boundary disks in a superball: In a round ball the only free-boundary minimal disks are flat. In the superball x⁴+y⁴+z⁴ ≤ 1, is there one that is not a flat slice?"
+]
+},
+{
+"id": "N-243",
+"title": "Discrete sofa",
+"area": "Geometry",
+"W": "Slide and rotate a polyomino by unit steps and quarter turns around the corner of a corridor k cells wide. Find the largest area possible, asymptotically.",
+"M": "Let $D(k)$ be the maximal number of cells of a polyomino that can pass the width-$k$ L-shaped corridor of $\\mathbb{Z}^2$ by unit translations and $90^\\circ$ rotations about lattice points (staying inside at all times). Prove $D(k)\\sim ck^2$ and find $c$.",
+"adv": 4.3,
+"similar": []
+},
+{
+"id": "N-151",
+"title": "Geodesic squares on surfaces",
+"area": "Geometry",
+"W": "Every smooth closed curve on a convex surface should pass through the corners of a square made of shortest paths.",
+"M": "Prove every smooth simple closed curve on a smooth convex surface inscribes a geodesic quadrilateral with equal sides and equal diagonals.",
+"adv": 3.0,
+"similar": [
+"N-384 (0.64) Squares on a sphere: Every closed curve on a sphere should pass through the corners of a spherical square.",
+"N-063 (0.34) Hyperbolic square peg: Every closed curve in the hyperbolic plane should pass through the corners of some hyperbolic square."
+]
+},
+{
+"id": "N-565",
+"title": "Hat packing density is irrational",
+"area": "Geometry",
+"W": "The densest packing of hats without reflections leaves gaps. Show the best density is an irrational number.",
+"M": "Prove the maximal packing density of congruent hats under orientation-preserving isometries is irrational.",
+"adv": 6.3,
+"similar": [
+"N-037 (0.38) Packing seven-pointed stars: Find the densest way to pack identical seven-pointed stars in the plane.",
+"N-518 (0.36) Packing hats: Find the densest way to pack hat shapes when they are not allowed to tile.",
+"N-480 (0.31) Packing density of Gerver's sofa: Find the densest way to pack copies of Gerver's sofa shape in the plane, and show the density is not a rational multiple of an algebraic num",
+"N-526 (0.29) Polykite growth is irrational: Show the growth rate of polykite counts is an irrational number."
+]
+},
+{
+"id": "N-107",
+"title": "Hinged sofa",
+"area": "Geometry",
+"W": "A sofa made of two rigid halves joined by a hinge. What total area can turn the corner?",
+"M": "Maximize $|A|+|B|$ for planar sets $A,B$ joined at a common point, moving with relative rotation allowed, through the width-1 right-angled corridor.",
+"adv": 3.9,
+"similar": [
+"N-088 (0.36) Car-like sofa: The sofa moves like a car: forward only, with limited steering. Find the biggest that makes the corner.",
+"N-382 (0.32) Convex sofa: Find the best convex sofa.",
+"N-381 (0.31) Symmetric sofa: Find the best sofa that is symmetric under a half-turn.",
+"N-062 (0.30) Hyperbolic sofa: Find the largest sofa that can turn a right-angled corner in a hallway of width 1 in the hyperbolic plane, and prove it is best.",
+"N-055 (0.29) Integer sofa: With the hallway scaled to width 10, what is the biggest polygon with whole-number corners that turns the corner?",
+"N-394 (0.27) Sofa with a rotating door: A door at the corner swings shut as you move. Find the largest shape that still gets through."
+]
+},
+{
+"id": "N-055",
+"title": "Integer sofa",
+"area": "Geometry",
+"W": "With the hallway scaled to width 10, what is the biggest polygon with whole-number corners that turns the corner?",
+"M": "Maximize area over lattice polygons admissible in the width-10 right-angled corridor.",
+"adv": 1.4,
+"similar": [
+"N-088 (0.40) Car-like sofa: The sofa moves like a car: forward only, with limited steering. Find the biggest that makes the corner.",
+"N-382 (0.40) Convex sofa: Find the best convex sofa.",
+"N-067 (0.37) Spherical sofa: Find the biggest shape that turns a right-angled corner in a width-1 hallway drawn on a large sphere.",
+"N-381 (0.37) Symmetric sofa: Find the best sofa that is symmetric under a half-turn.",
+"N-165 (0.31) Isoperimetric sofa: Among sofas with a fixed perimeter, find the one with largest area that turns the corner.",
+"N-062 (0.31) Hyperbolic sofa: Find the largest sofa that can turn a right-angled corner in a hallway of width 1 in the hyperbolic plane, and prove it is best."
+]
+},
+{
+"id": "N-036",
+"title": "Kissing hats",
+"area": "Geometry",
+"W": "How many copies of the hat tile can touch one hat without overlapping?",
+"M": "Determine the maximum number of interior-disjoint congruent copies of the hat polykite, reflections allowed, each meeting a fixed hat.",
+"adv": 0.8,
+"similar": [
+"N-190 (0.58) Kissing spectres: How many spectre tiles can touch one spectre without overlapping?",
+"N-519 (0.44) Kissing number of the spectre: How many spectres can touch one central spectre without overlapping?",
+"N-419 (0.31) Hat tilings of convex regions: Show no convex polygon can be tiled exactly by hats.",
+"N-232 (0.30) Kissing numbers of polykite families: Show the hat's family of shapes has a kissing number that jumps at exactly one parameter value."
+]
+},
+{
+"id": "N-011",
+"title": "Narrowing doorway sofa",
+"area": "Geometry",
+"W": "A width-1 hallway turns a right angle and then narrows to width 0.8. Find the biggest sofa that gets through.",
+"M": "Maximize the area of a connected planar set movable from arm $\\mathbb{R}_{<0}\\times[0,1]$ into arm $[0,0.8]\\times\\mathbb{R}_{>1}$.",
+"adv": 3.1,
+"similar": [
+"N-087 (0.33) T-junction sofa: A sofa comes up the stem of a T and must be able to leave by either arm. Find the biggest one.",
+"N-067 (0.29) Spherical sofa: Find the biggest shape that turns a right-angled corner in a width-1 hallway drawn on a large sphere.",
+"N-149 (0.27) Zigzag sofa: A hallway turns right, then left after distance d. Find the best sofa for every d."
+]
+},
+{
+"id": "N-600",
+"title": "Origami with a bounded number of layers",
+"area": "Geometry",
+"W": "Find the best origami base for any tree when no point may have more than 4 layers of paper.",
+"M": "Give an algorithm for the minimal square paper for uniaxial bases of metric trees with layer count at most 4, with proof of optimality.",
+"adv": 2.4,
+"similar": [
+"N-615 (0.31) Optimal 3D origami: For every 3D shape, find the smallest sheet of paper that folds into it.",
+"N-046 (0.29) Optimal origami base: Folders design animal shapes by packing circles on paper. Find the smallest paper needed for every stick figure with six legs or fewer."
+]
+},
+{
+"id": "N-056",
+"title": "Polyhedral sofa",
+"area": "Geometry",
+"W": "The best 3D sofa is curved. What is the best one with at most 12 flat corners?",
+"M": "Maximize volume over convex polyhedra with $\\le12$ vertices admissible in the $1\\times1$ square corridor.",
+"adv": 2.8,
+"similar": [
+"N-068 (0.37) No prism sofa: Show the best 3D sofa is genuinely three-dimensional, not just a flat shape extruded upward.",
+"N-382 (0.35) Convex sofa: Find the best convex sofa.",
+"N-150 (0.32) Spiral staircase: What is the biggest convex box-like object that can be carried up a given spiral staircase?",
+"N-355 (0.28) Ambidextrous 3D sofa: Find the largest solid that can turn either left or right at the end of a square pipe.",
+"N-367 (0.27) Unique 3D sofa: Show the best solid for a square pipe is unique up to moving it."
+]
+},
+{
+"id": "N-380",
+"title": "Shrink to fit",
+"area": "Geometry",
+"W": "Find the largest size such that every convex shape no wider than that, measured end to end, gets around the corner.",
+"M": "Find the largest $d$ such that every planar convex body of diameter $\\le d$ is admissible in the width-1 right-angled corridor.",
+"adv": 1.5,
+"similar": [
+"N-382 (0.38) Convex sofa: Find the best convex sofa.",
+"N-062 (0.29) Hyperbolic sofa: Find the largest sofa that can turn a right-angled corner in a hallway of width 1 in the hyperbolic plane, and prove it is best.",
+"N-394 (0.28) Sofa with a rotating door: A door at the corner swings shut as you move. Find the largest shape that still gets through.",
+"N-381 (0.28) Symmetric sofa: Find the best sofa that is symmetric under a half-turn.",
+"N-067 (0.27) Spherical sofa: Find the biggest shape that turns a right-angled corner in a width-1 hallway drawn on a large sphere."
+]
+},
+{
+"id": "N-403",
+"title": "Sofa in curved space with a corner",
+"area": "Geometry",
+"W": "On a cone-shaped surface the hallway corner is the cone point. Find the best sofa.",
+"M": "For the width-1 corridor on a flat cone of angle $\\alpha$ with the inner corner at the apex, find the optimal sofa area as a function of $\\alpha$.",
+"adv": 2.4,
+"similar": [
+"N-143 (0.46) Rounded corners: The inside corner of the hallway is rounded. Find the best sofa for every rounding radius.",
+"N-187 (0.39) Sofa with a pillar: A thin pillar stands in the corner of the hallway. Find the best sofa that gets around it.",
+"N-533 (0.33) Sofa through a revolving corridor: The hallway itself slowly rotates while you push the sofa. Find the largest sofa that still makes it.",
+"N-343 (0.29) Sofa for every angle: Find the optimal sofa for a hallway turning by any angle, not just 90°.",
+"N-149 (0.28) Zigzag sofa: A hallway turns right, then left after distance d. Find the best sofa for every d.",
+"N-513 (0.26) Sofa beyond Gerver in 3 dimensions of turning: A 2D hallway that turns 90° twice in a row (an S-bend): find the best sofa."
+]
+},
+{
+"id": "N-235",
+"title": "Spectre chromatic number of distances",
+"area": "Geometry",
+"W": "Colour points of the plane so no two points at a distance equal to a spectre edge length or diagonal share a colour. Find the colours needed.",
+"M": "Let $D$ be the set of distances between vertices of the spectre polygon. Determine $\\chi(\\mathbb{R}^2;D)$.",
+"adv": 6.7,
+"similar": [
+"N-074 (0.31) Coloring the spectre's distances: Take all corners of a spectre tiling and join two whenever they are exactly one edge-length apart. How many colors are needed?"
+]
+},
+{
+"id": "N-087",
+"title": "T-junction sofa",
+"area": "Geometry",
+"W": "A sofa comes up the stem of a T and must be able to leave by either arm. Find the biggest one.",
+"M": "Maximize area over sets admissible from the stem to each arm (separately) of a width-1 T-junction.",
+"adv": 3.1,
+"similar": [
+"N-382 (0.34) Convex sofa: Find the best convex sofa.",
+"N-011 (0.33) Narrowing doorway sofa: A width-1 hallway turns a right angle and then narrows to width 0.8. Find the biggest sofa that gets through.",
+"N-381 (0.31) Symmetric sofa: Find the best sofa that is symmetric under a half-turn.",
+"N-165 (0.25) Isoperimetric sofa: Among sofas with a fixed perimeter, find the one with largest area that turns the corner."
+]
+},
+{
+"id": "N-428",
+"title": "Unit distances in three dimensions after 2026",
+"area": "Geometry",
+"W": "The 2026 number-field idea beat Erdős in the plane. Adapt it to unit distances among points on a sphere in 3D.",
+"M": "Prove there are $n$-point sets on the unit sphere $S^2$ with $\\ge n^{1+c}$ pairs at distance $1$, for some $c>0$ and infinitely many $n$.",
+"adv": 3.1,
+"similar": [
+"N-202 (0.29) Unit-distance barrier: Show the 2026 number-field method for many equal distances can never reach exponent 1.1."
+]
+},
+{
+"id": "N-479",
+"title": "Is Prime Nim's losing set definable?",
+"area": "Logic",
+"W": "Add the set of Prime Nim losing positions to the arithmetic of addition. Is the resulting theory decidable?",
+"M": "Decide whether the first-order theory of $(\\mathbb{N},+,L)$ is decidable, where $L=\\{n:G(n)=0\\}$ for the prime subtraction game.",
+"adv": 6.2,
+"similar": [
+"N-156 (0.37) Prime Nim is not simple: Show Prime Nim losing positions cannot be detected by shallow constant-depth circuits.",
+"N-142 (0.29) Unbounded Prime Nim: Do the Prime Nim values grow without limit?",
+"N-025 (0.28) Prime Nim, misère: In Prime Nim where the last mover loses instead of wins, do the losing positions differ from normal play only finitely often?",
+"N-502 (0.28) Prime Nim closed form: Find an exact rule for the Prime Nim losing positions that works for every pile size.",
+"N-159 (0.27) Prime Nim is not automatic: No finite machine reading digits can recognize Prime Nim losing positions."
+]
+},
+{
+"id": "N-579",
+"title": "Undecidability of Prime Nim variants",
+"area": "Logic",
+"W": "Show there is no algorithm that takes a polynomial f and decides whether the subtraction game with moves {f(p) : p prime} has eventually periodic Grundy values.",
+"M": "Prove $\\{f\\in\\mathbb{Z}[x]:\\text{Grundy sequence of the game with move set }f(\\mathbb{P})\\cap\\mathbb{N}\\text{ is eventually periodic}\\}$ is undecidable, or decidable.",
+"adv": 7.0,
+"similar": [
+"N-572 (0.32) Is eventual periodicity of square-plus-one decidable?: Is there an algorithm that decides, for any n, whether its square-plus-one sequence eventually loops?",
+"N-532 (0.29) Prime Nim with prime-power moves: Allow subtracting any prime power. Find exactly which piles lose.",
+"N-434 (0.27) Prime Nim values stay small: Prime Nim's Grundy values grow incredibly slowly. Show they are at most a constant times log n.",
+"N-551 (0.26) Undecidable prime-factor maps: Show no algorithm can decide, given a and b, whether every orbit of n ↦ n/2 (even) or the largest prime factor of an + b (odd) eventually lo"
+]
+},
+{
+"id": "N-495",
+"title": "Apollonian packing with prime curvatures",
+"area": "Number theory",
+"W": "In the integral Apollonian packing with curvatures (−1, 2, 2, 3), show every large prime is the largest prime factor of some circle's curvature.",
+"M": "For the $(-1,2,2,3)$ Apollonian packing with curvature multiset $\\mathcal{K}$, prove $\\{P(k):k\\in\\mathcal{K}\\}$ contains all sufficiently large primes.",
+"adv": 5.0,
+"similar": [
+"N-496 (0.50) Apollonian seven-free curvatures: In the Apollonian packing (−1, 2, 2, 3), show infinitely many circles have curvature with no digit 7, and count them."
+]
+},
+{
+"id": "N-498",
+"title": "Consecutive largest factors both 3 mod 4",
+"area": "Number theory",
+"W": "Show P(n) and P(n+1) are both 3 mod 4 for a quarter of all n.",
+"M": "Prove $\\#\\{n\\le x:P(n)\\equiv P(n+1)\\equiv3\\ (4)\\}\\sim x/4$.",
+"adv": 5.6,
+"similar": [
+"N-279 (0.29) Last digits of consecutive largest factors: Look at the last digits of P(n) and P(n + 1). Show the 16 possible pairs of last digits from {1, 3, 7, 9} occur equally often."
+]
+},
+{
+"id": "N-392",
+"title": "Doubled-twin sieve upper bound",
+"area": "Number theory",
+"W": "Bound the number of doubled-twin quadruples up to x by the predicted count times at most 3.",
+"M": "Prove $\\#\\{p\\le x: p,p+2,2p+1,2p+3\\text{ prime}\\}\\le(3+o(1))\\,\\mathfrak{S}x/\\log^4x$, with $\\mathfrak S$ the singular series.",
+"adv": 4.1,
+"similar": [
+"N-174 (0.34) Doubled-twin constant: Assuming deep but standard conjectures, find the exact count of doubled twins up to x."
+]
+},
+{
+"id": "N-474",
+"title": "Every binary block in Gerver's constant",
+"area": "Number theory",
+"W": "Show every finite string of 0s and 1s appears somewhere in the binary expansion of Gerver's sofa area.",
+"M": "Prove the binary expansion of $\\mu_G$ is disjunctive (contains every finite word).",
+"adv": 8.8,
+"similar": [
+"N-473 (0.32) Gerver's constant has unbounded partial quotients: Show the continued fraction of Gerver's sofa area contains arbitrarily large terms.",
+"N-581 (0.27) Gerver constant is normal: Show the digits of Gerver's sofa area appear with equal frequency in base 10."
+]
+},
+{
+"id": "N-597",
+"title": "Gerver sofa is not periodic in its digits",
+"area": "Number theory",
+"W": "Show the digits of Gerver's sofa area never fall into a repeating pattern in any base, and are not \"too well\" approximable.",
+"M": "Prove the irrationality measure of $\\mu_G$ equals 2.",
+"adv": 7.0,
+"similar": [
+"N-424 (0.52) Sofa constant digits: Show the digits of Gerver's sofa area do not end in a repeating pattern in base 2 either, and give an explicit irrationality measure bound.",
+"N-581 (0.31) Gerver constant is normal: Show the digits of Gerver's sofa area appear with equal frequency in base 10.",
+"N-605 (0.28) Gerver sofa and the circle: Show the area of Gerver's sofa is not a rational combination of π and 1.",
+"N-112 (0.27) The sofa's boundary is not algebraic: Gerver's sofa is bounded by 18 curve pieces. Show some of them are not polynomial curves."
+]
+},
+{
+"id": "N-404",
+"title": "Joint digit sums of primes",
+"area": "Number theory",
+"W": "Show infinitely many primes have a prime digit sum in base 2 and in base 10 at the same time.",
+"M": "Prove infinitely many primes $p$ have $s_2(p)$ and $s_{10}(p)$ both prime.",
+"adv": 4.0,
+"similar": [
+"N-280 (0.66) Primes with equal binary and ternary digit sums: Show infinitely many primes have the same digit sum in base 2 as in base 3.",
+"N-450 (0.54) Missing digits in two bases: Show infinitely many primes have no digit 9 in base 10 and no digit 10 in base 11 at the same time.",
+"N-259 (0.45) Seven-free primes with prime digit sum: Show infinitely many primes have no digit 7 and a digit sum that is itself prime.",
+"N-372 (0.40) Divisor-balanced primes: Show infinitely many primes p have p − 1 and p + 1 with the same number of divisors.",
+"N-282 (0.33) Smooth p²+1: Show infinitely many primes p have p² + 1 built only from primes below √p.",
+"N-405 (0.32) Squares of seven-free primes: Show infinitely many primes have no digit 7 in themselves or in their squares."
+]
+},
+{
+"id": "N-247",
+"title": "Largest factor of the midpoint",
+"area": "Number theory",
+"W": "For consecutive primes p < q, look at the largest prime factor of (p + q)/2. Show it exceeds p^0.5 for a positive fraction.",
+"M": "Prove $\\#\\{n\\le x: P(\\tfrac{p_n+p_{n+1}}2)>p_n^{1/2}\\}\\gg \\pi(x)$.",
+"adv": 3.6,
+"similar": [
+"N-453 (0.43) Largest factor of shifted primes mod 4: For primes p, look at the largest prime factor of p − 1. Show it is 1 mod 4 exactly half the time.",
+"N-462 (0.40) Largest factor ratio of consecutive primes: For consecutive primes p < q, compare the largest prime factors of p − 1 and q − 1. Show each is larger half the time.",
+"N-212 (0.32) Largest factor of consecutive-prime products: Show that p_n·p_(n+1) + 1 has a prime factor much bigger than p_(n+1), infinitely often.",
+"N-497 (0.31) Largest factor of p² + p + 1 small: Show infinitely many primes p have P(p² + p + 1) < p.",
+"N-484 (0.26) Largest prime factor of 2^n + n: Show the largest prime factor of 2^n + n tends to infinity faster than any fixed multiple of n."
+]
+},
+{
+"id": "N-437",
+"title": "Linnik for seven-free primes",
+"area": "Number theory",
+"W": "Show the smallest seven-free prime in an arithmetic progression is at most a fixed power of the modulus.",
+"M": "Prove there is $C$ such that for every $q$ and $(a,q)=1$ (with $10\\nmid q$-compatibility conditions) there is a 7-free prime $p\\equiv a\\ (q)$, $p\\le q^C$.",
+"adv": 4.0,
+"similar": [
+"N-284 (0.40) Linnik–Gallagher with seven-free primes: Show every large even number is a seven-free prime plus a bounded number of powers of two.",
+"N-491 (0.30) Peak height of the 2n+3 map: For n ↦ P(2n+3) + P(n), show the highest point an orbit reaches is at most a fixed power of its start.",
+"N-242 (0.27) Seven-free primes as an additive basis: Show every large number is a sum of a bounded number of seven-free primes.",
+"N-468 (0.27) Bombieri–Vinogradov for seven-free primes in base 10: Show seven-free primes are well distributed in arithmetic progressions on average over moduli up to x^θ, for some θ > 0, in base 10."
+]
+},
+{
+"id": "N-413",
+"title": "Lonely runners with square speeds",
+"area": "Number theory",
+"W": "Prove the lonely runner conjecture when all speeds are perfect squares.",
+"M": "For distinct positive integers $a_1,\\dots,a_n$, prove $\\sup_t\\min_i\\|ta_i^2\\|\\ge\\frac1{n+1}$.",
+"adv": 4.6,
+"similar": [
+"N-176 (0.61) Lonely runner, bounded speeds: Prove the lonely runner conjecture whenever all speeds are at most 10 times the number of runners.",
+"N-363 (0.55) Prime-speed lonely runners: Prove the lonely runner conjecture when every speed is a prime number.",
+"N-090 (0.30) Random lonely runners: With random speeds, runners get noticeably lonelier than the conjecture promises.",
+"N-003 (0.27) Lonely runner with one fast runner: Runners have speeds 1, 2, 3 and some larger speed m. Work out exactly how lonely a stationary runner is guaranteed to get, depending on m."
+]
+},
+{
+"id": "N-341",
+"title": "Prime Markov triples",
+"area": "Number theory",
+"W": "Show only finitely many Markov triples consist of three primes, or infinitely many.",
+"M": "Decide whether infinitely many solutions of $x^2+y^2+z^2=3xyz$ have $x,y,z$ all prime.",
+"adv": 7.5,
+"similar": [
+"N-494 (0.36) Seven-free Markov numbers: Show infinitely many Markov numbers have no digit 7.",
+"N-281 (0.30) A mixed Fermat equation: Show the equation x² + y⁴ = z⁷ + 7 has only finitely many integer solutions.",
+"N-260 (0.28) The 89–233 basin: The square-plus-one map has the loop 89 ↔ 233. Each prime has only finitely many direct predecessors, so the question is whether the tree of",
+"N-421 (0.28) Prime cubes with one shift: Show infinitely many quadruples of primes satisfy x³ + y³ = z³ + w³ + 1."
+]
+},
+{
+"id": "N-481",
+"title": "Prime-digit continued fractions in arithmetic progressions",
+"area": "Number theory",
+"W": "Show there are infinitely many quadratic irrationals all of whose continued fraction digits are prime, in each real quadratic field.",
+"M": "Prove for every real quadratic field $K$ there are infinitely many $\\alpha\\in K$ with purely periodic continued fraction expansion having all partial quotients prime.",
+"adv": 3.3,
+"similar": [
+"N-475 (0.38) Prime continued fractions: Consider real numbers whose continued fraction terms are all prime. Show the fractal dimension of this set is transcendental.",
+"N-473 (0.31) Gerver's constant has unbounded partial quotients: Show the continued fraction of Gerver's sofa area contains arbitrarily large terms.",
+"N-578 (0.27) Continued fraction of the P-constant: Show the constant formed by largest prime factors as continued fraction digits is transcendental."
+]
+},
+{
+"id": "N-352",
+"title": "Primes x² + y³ with prime inputs",
+"area": "Number theory",
+"W": "Show infinitely many primes are a square of a prime plus a cube of a prime.",
+"M": "Prove infinitely many primes of the form $p^2+q^3$ with $p,q$ prime.",
+"adv": 3.7,
+"similar": [
+"N-351 (0.88) Primes a² + b⁴ with prime inputs: Show infinitely many primes are a square of a prime plus a fourth power of a prime.",
+"N-558 (0.41) Seven-free Friedlander–Iwaniec primes: Show infinitely many primes of the form x² + y⁴ have no digit 7.",
+"N-241 (0.37) Seven-free Beatty primes: Show infinitely many primes of the form ⌊n√2⌋ contain no digit 7.",
+"N-463 (0.36) Seven-free primes in Piatetski-Shapiro sequences: Show infinitely many primes of the form ⌊n^1.1⌋ have no digit 7.",
+"N-129 (0.33) Square subtraction with prime piles: In the game where you subtract a square, show infinitely many prime pile sizes are losing positions.",
+"N-259 (0.32) Seven-free primes with prime digit sum: Show infinitely many primes have no digit 7 and a digit sum that is itself prime."
+]
+},
+{
+"id": "N-246",
+"title": "Seven-free Chen primes in progressions",
+"area": "Number theory",
+"W": "Show infinitely many seven-free primes p in every allowable residue class have p + 2 with at most three prime factors.",
+"M": "For each $q$ and admissible $a$, prove infinitely many 7-free primes $p\\equiv a\\ (q)$ with $\\Omega(p+2)\\le3$.",
+"adv": 3.5,
+"similar": [
+"N-374 (0.51) Chen with no sevens: Show infinitely many seven-free primes p have p + 2 a product of at most two seven-free primes.",
+"N-193 (0.47) Seven-free almost-Sophie-Germain: Show infinitely many primes p avoid the digit 7 and have 2p + 1 with few prime factors.",
+"N-407 (0.46) Prime-indexed seven-free primes: List the primes in order. Show infinitely many seven-free primes sit at a prime position in that list.",
+"N-102 (0.44) Emirps, almost: Show infinitely many primes have a reversal with at most three prime factors.",
+"N-463 (0.36) Seven-free primes in Piatetski-Shapiro sequences: Show infinitely many primes of the form ⌊n^1.1⌋ have no digit 7.",
+"N-208 (0.32) Seven-free primes in short intervals: Show seven-free primes appear in every reasonably short interval."
+]
+},
+{
+"id": "N-193",
+"title": "Seven-free almost-Sophie-Germain",
+"area": "Number theory",
+"W": "Show infinitely many primes p avoid the digit 7 and have 2p + 1 with few prime factors.",
+"M": "Prove infinitely many 7-free primes $p$ have $\\Omega(2p+1)\\le3$.",
+"adv": 2.7,
+"similar": [
+"N-246 (0.47) Seven-free Chen primes in progressions: Show infinitely many seven-free primes p in every allowable residue class have p + 2 with at most three prime factors.",
+"N-175 (0.46) Emirp sieve: Show infinitely many primes have reversals with no small prime factors.",
+"N-102 (0.45) Emirps, almost: Show infinitely many primes have a reversal with at most three prime factors.",
+"N-374 (0.44) Chen with no sevens: Show infinitely many seven-free primes p have p + 2 a product of at most two seven-free primes.",
+"N-259 (0.42) Seven-free primes with prime digit sum: Show infinitely many primes have no digit 7 and a digit sum that is itself prime.",
+"N-436 (0.41) Seven-free Gaussian primes: Show infinitely many primes a² + b² have both a and b free of the digit 7."
+]
+},
+{
+"id": "N-208",
+"title": "Seven-free primes in short intervals",
+"area": "Number theory",
+"W": "Show seven-free primes appear in every reasonably short interval.",
+"M": "Prove $[x,x+x^{0.6}]$ contains a prime with no digit 7 for all large $x$.",
+"adv": 4.0,
+"similar": [
+"N-319 (0.34) Seven-free factorial-like products: Show n! + 1 contains the digit 7 for all large n.",
+"N-407 (0.33) Prime-indexed seven-free primes: List the primes in order. Show infinitely many seven-free primes sit at a prime position in that list.",
+"N-246 (0.32) Seven-free Chen primes in progressions: Show infinitely many seven-free primes p in every allowable residue class have p + 2 with at most three prime factors.",
+"N-374 (0.31) Chen with no sevens: Show infinitely many seven-free primes p have p + 2 a product of at most two seven-free primes.",
+"N-458 (0.29) Digit-restricted Liouville: Show the Liouville function has no bias on seven-free numbers in short intervals.",
+"N-463 (0.29) Seven-free primes in Piatetski-Shapiro sequences: Show infinitely many primes of the form ⌊n^1.1⌋ have no digit 7."
+]
+},
+{
+"id": "N-433",
+"title": "Seven-free values of n²+1",
+"area": "Number theory",
+"W": "Show infinitely many n make n² + 1 a prime with no digit 7, or at least a product of two such primes.",
+"M": "Prove infinitely many $n$ with $n^2+1=q_1q_2$, $q_i$ primes free of the digit 7.",
+"adv": 5.9,
+"similar": [
+"N-374 (0.53) Chen with no sevens: Show infinitely many seven-free primes p have p + 2 a product of at most two seven-free primes.",
+"N-558 (0.42) Seven-free Friedlander–Iwaniec primes: Show infinitely many primes of the form x² + y⁴ have no digit 7.",
+"N-436 (0.38) Seven-free Gaussian primes: Show infinitely many primes a² + b² have both a and b free of the digit 7.",
+"N-463 (0.37) Seven-free primes in Piatetski-Shapiro sequences: Show infinitely many primes of the form ⌊n^1.1⌋ have no digit 7.",
+"N-259 (0.37) Seven-free primes with prime digit sum: Show infinitely many primes have no digit 7 and a digit sum that is itself prime.",
+"N-241 (0.36) Seven-free Beatty primes: Show infinitely many primes of the form ⌊n√2⌋ contain no digit 7."
+]
+},
+{
+"id": "N-405",
+"title": "Squares of seven-free primes",
+"area": "Number theory",
+"W": "Show infinitely many primes have no digit 7 in themselves or in their squares.",
+"M": "Prove infinitely many primes $p$ with neither $p$ nor $p^2$ containing the decimal digit 7.",
+"adv": 5.9,
+"similar": [
+"N-558 (0.54) Seven-free Friedlander–Iwaniec primes: Show infinitely many primes of the form x² + y⁴ have no digit 7.",
+"N-463 (0.53) Seven-free primes in Piatetski-Shapiro sequences: Show infinitely many primes of the form ⌊n^1.1⌋ have no digit 7.",
+"N-259 (0.49) Seven-free primes with prime digit sum: Show infinitely many primes have no digit 7 and a digit sum that is itself prime.",
+"N-436 (0.48) Seven-free Gaussian primes: Show infinitely many primes a² + b² have both a and b free of the digit 7.",
+"N-241 (0.47) Seven-free Beatty primes: Show infinitely many primes of the form ⌊n√2⌋ contain no digit 7.",
+"N-407 (0.44) Prime-indexed seven-free primes: List the primes in order. Show infinitely many seven-free primes sit at a prime position in that list."
+]
+},
+{
+"id": "N-141",
+"title": "Two of four",
+"area": "Number theory",
+"W": "Show infinitely many primes p have at least one more prime among p + 2, 2p + 1, 2p + 3.",
+"M": "Prove infinitely many primes $p$ have at least one of $p+2,\\,2p+1,\\,2p+3$ prime.",
+"adv": 4.2,
+"similar": [
+"N-193 (0.37) Seven-free almost-Sophie-Germain: Show infinitely many primes p avoid the digit 7 and have 2p + 1 with few prime factors.",
+"N-282 (0.31) Smooth p²+1: Show infinitely many primes p have p² + 1 built only from primes below √p.",
+"N-530 (0.31) Three of four: Show infinitely often at least three of the four doubled-twin numbers are prime at once.",
+"N-372 (0.31) Divisor-balanced primes: Show infinitely many primes p have p − 1 and p + 1 with the same number of divisors.",
+"N-175 (0.30) Emirp sieve: Show infinitely many primes have reversals with no small prime factors.",
+"N-404 (0.26) Joint digit sums of primes: Show infinitely many primes have a prime digit sum in base 2 and in base 10 at the same time."
+]
+},
+{
+"id": "X-022",
+"title": "KdV with a cosine coefficient",
+"area": "PDE",
+"W": "Put a cos x in front of the cubic term of modified KdV on the circle. Energy survives but the L² norm no longer does. Can solutions blow up?",
+"M": "Consider $u_t+u_{xxx}+(\\cos(x)\\,u^3)_x=0$ on $\\mathbb T=\\mathbb R/2\\pi\\mathbb Z$, which conserves $\\int u$ and $\\int(\\tfrac12u_x^2-\\tfrac14\\cos(x)u^4)$ but not $\\int u^2$. Decide whether every $u_0\\in C^\\infty(\\mathbb T)$ yields a global smooth solution.",
+"adv": null,
+"similar": [
+"X-024 (0.48) Burgers with degenerate critical dissipation: Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off at one point of the circle. Do shocks form there?",
+"X-023 (0.32) Heat with a cosine reaction: In u_t = u_xx + cos(x)u², the reaction averages to zero, but a second-order effect looks like +u³, the borderline Fujita case. Does every po",
+"X-019 (0.30) Euler with reversed stretching: Flip the sign of the vortex-stretching term in the 3D Euler equations, keeping the usual Biot–Savart law. Do smooth solutions stay smooth fo",
+"X-028 (0.29) Quintic Szegő growth: The cubic Szegő equation on the circle is integrable and its solutions' high Sobolev norms can grow without bound. Decide what the quintic v",
+"X-017 (0.27) Riesz-transform Schrödinger equation: Couple a 2D Schrödinger wave to the Riesz transform of its own density. Mass is conserved but there is no energy. Do smooth solutions live f"
+]
+},
+{
+"id": "X-017",
+"title": "Riesz-transform Schrödinger equation",
+"area": "PDE",
+"W": "Couple a 2D Schrödinger wave to the Riesz transform of its own density. Mass is conserved but there is no energy. Do smooth solutions live forever?",
+"M": "Consider $i u_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb R\\times\\mathbb R^2$, where $\\widehat{R_1 f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. Decide whether every $u_0\\in H^1(\\mathbb R^2)$ gives a global solution in $C(\\mathbb R,H^1)$.",
+"adv": null,
+"similar": [
+"X-019 (0.30) Euler with reversed stretching: Flip the sign of the vortex-stretching term in the 3D Euler equations, keeping the usual Biot–Savart law. Do smooth solutions stay smooth fo",
+"X-021 (0.30) Minimal-mass blow-up with reflection: In the 2D Schrödinger equation where each point feels the density at its mirror point, blow-up needs at least the ground-state mass. Classif",
+"X-022 (0.27) KdV with a cosine coefficient: Put a cos x in front of the cubic term of modified KdV on the circle. Energy survives but the L² norm no longer does. Can solutions blow up?",
+"X-024 (0.26) Burgers with degenerate critical dissipation: Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off at one point of the circle. Do shocks form there?"
+]
+},
+{
+"id": "N-415",
+"title": "Antiferromagnetic hats",
+"area": "Physics",
+"W": "Colour hat tiles up or down to minimise same-colour neighbours. The hat graph has odd cycles, so some frustration is unavoidable. Compute the ground-state entropy exactly.",
+"M": "For the antiferromagnetic Ising model on the hat graph, prove the zero-temperature entropy per tile exists, is positive, and compute it in closed form.",
+"adv": 6.5,
+"similar": [
+"N-101 (0.34) Hat dimers: Cover a hat tiling with dominoes joining neighbouring tiles. Count the coverings exactly per tile.",
+"N-598 (0.29) Hat Ising free energy: Find the exact free energy of magnets on a hat tiling at the critical point.",
+"N-505 (0.28) Hat Ising critical temperature: Find the exact critical temperature for magnets on a hat tiling."
+]
+},
+{
+"id": "N-426",
+"title": "Hat Hofstadter at golden flux",
+"area": "Physics",
+"W": "Thread a magnetic flux through each hat tile equal to the golden ratio. Show the resulting energy spectrum is a zero-measure Cantor set.",
+"M": "For the magnetic tight-binding Hamiltonian on the hat graph with flux $\\phi=(\\sqrt5-1)/2$ per kite, prove $\\sigma(H)$ is a Cantor set of Lebesgue measure zero.",
+"adv": 6.0,
+"similar": [
+"N-153 (0.49) Hat spectrum is a Cantor set: Show the energy levels of a particle hopping on a hat tiling form a dust of measure zero.",
+"X-038 (0.39) Kagome Hofstadter butterfly: The Harper model on the square lattice has a Cantor spectrum for every irrational flux. Prove the same for electrons hopping on the kagome l",
+"N-100 (0.30) Hat electrons: An electron hopping on a hat tiling should have an unusual, fractal energy spectrum."
+]
+},
+{
+"id": "N-344",
+"title": "Hat Ising universality",
+"area": "Physics",
+"W": "Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid.",
+"M": "Prove the hat-graph Ising model has critical exponents $\\beta=1/8$, $\\gamma=7/4$, $\\nu=1$.",
+"adv": 3.7,
+"similar": [
+"N-598 (0.45) Hat Ising free energy: Find the exact free energy of magnets on a hat tiling at the critical point.",
+"N-425 (0.41) Hat Ising critical line: Ising models on a hat tiling and its dual should be exactly related at their critical points. Prove the duality relation holds rigorously.",
+"N-505 (0.38) Hat Ising critical temperature: Find the exact critical temperature for magnets on a hat tiling.",
+"N-192 (0.38) Hat Ising bounds: Pin down the critical temperature of magnets on a hat tiling to within one percent.",
+"N-442 (0.31) Hat quasicrystal Ising universality, bond-disordered: Randomly weaken some bonds in the hat Ising model. Show the critical behaviour still matches the clean 2D Ising class up to logs.",
+"N-567 (0.30) Critical hat Ising temperature is irrational: Show the critical temperature of the Ising model on a hat tiling is not a rational multiple of the coupling."
+]
+},
+{
+"id": "N-153",
+"title": "Hat spectrum is a Cantor set",
+"area": "Physics",
+"W": "Show the energy levels of a particle hopping on a hat tiling form a dust of measure zero.",
+"M": "Prove the spectrum of the adjacency operator on the hat graph is a Cantor set of Lebesgue measure zero.",
+"adv": 4.5,
+"similar": [
+"N-426 (0.49) Hat Hofstadter at golden flux: Thread a magnetic flux through each hat tile equal to the golden ratio. Show the resulting energy spectrum is a zero-measure Cantor set.",
+"N-523 (0.33) Spectral gap of the spectre: Find the exact gaps in the energy levels of an electron moving on a spectre tiling.",
+"N-100 (0.28) Hat electrons: An electron hopping on a hat tiling should have an unusual, fractal energy spectrum."
+]
+},
+{
+"id": "N-461",
+"title": "Spectre hard hexagons",
+"area": "Physics",
+"W": "Show the hard-core gas on the spectre tiling has exactly one phase transition, at a single sharp activity.",
+"M": "Prove the hard-core model on the spectre adjacency graph has a unique critical activity $\\lambda_c$ with uniqueness for $\\lambda<\\lambda_c$ and non-uniqueness for $\\lambda>\\lambda_c$.",
+"adv": 7.4,
+"similar": [
+"N-245 (0.47) Hard-core on the hat: Place particles on hat tiles with no two neighbours both occupied. Show the gas freezes into an ordered state at high density.",
+"N-357 (0.34) Hard-hat transition: Show the gas of non-overlapping hats freezes abruptly at some density."
+]
+},
+{
+"id": "N-398",
+"title": "Fire on a random hat patch",
+"area": "Probability",
+"W": "Remove each hat tile with some probability. Find the exact point where a fire can no longer burn forever.",
+"M": "Prove the site-percolation threshold of the hat tiling exists as a single sharp value and bound it within $10^{-4}$.",
+"adv": 3.0,
+"similar": [
+"N-043 (0.30) Percolation on the hat tiling: Each hat tile is open at random with probability p. Find where an infinite open cluster first appears."
+]
+},
+{
+"id": "N-430",
+"title": "Hat dominoes freeze",
+"area": "Probability",
+"W": "Random domino-style pairings of hat tiles inside a large region with a fixed boundary develop a frozen outer zone. Find the shape of the boundary between frozen and random regions.",
+"M": "For uniform perfect matchings of the hat graph on regions $L\\cdot\\Omega$, prove an arctic curve exists and identify it for $\\Omega$ a regular hexagon.",
+"adv": 5.8,
+"similar": []
+},
+{
+"id": "N-604",
+"title": "Hat-tiling site percolation is irrational",
+"area": "Probability",
+"W": "The critical probability for percolation on the hat tiling is about 0.5442. Prove it is irrational.",
+"M": "Prove $p_c^{\\mathrm{site}}$ of the hat-tiling dual graph is irrational.",
+"adv": 6.1,
+"similar": [
+"N-606 (0.59) Irrationality of the hat percolation threshold, bond: The bond-percolation threshold on the hat tiling's edges is about 0.7982. Prove it is irrational.",
+"N-191 (0.41) Spectre percolation: Show percolation on the spectre tiling and the hat tiling have different thresholds.",
+"N-563 (0.39) Hat percolation is conformally invariant: Show critical percolation on the hat tiling's tiles has crossing probabilities given by Cardy's formula.",
+"N-043 (0.38) Percolation on the hat tiling: Each hat tile is open at random with probability p. Find where an infinite open cluster first appears.",
+"N-609 (0.36) Hat SAW connective constant is irrational: Show the growth constant of self-avoiding walks on the hat tiling's neighbour graph is irrational.",
+"N-567 (0.28) Critical hat Ising temperature is irrational: Show the critical temperature of the Ising model on a hat tiling is not a rational multiple of the coupling."
+]
+},
+{
+"id": "N-307",
+"title": "Ising with prime couplings",
+"area": "Probability",
+"W": "On the integer line, couple spins i and j with strength 1 if i − j is prime. Decide whether there is a phase transition.",
+"M": "For the 1D Ising model with $J_{ij}=\\mathbf 1[|i-j|\\in\\mathbb{P}]\\,|i-j|^{-2}$, prove a phase transition at finite $\\beta_c$ and determine whether the magnetization jumps.",
+"adv": 4.5,
+"similar": []
+},
+{
+"id": "N-309",
+"title": "Random digit deletion",
+"area": "Probability",
+"W": "Repeatedly delete a random decimal digit of a number until it is prime or has one digit. Find the probability of ending at a prime from a typical large start.",
+"M": "For uniform $n\\le x$ and random single-digit deletions, prove $\\Pr(\\text{the process meets a prime})\\to c$ and determine whether $c<1$.",
+"adv": 4.0,
+"similar": []
+},
+{
+"id": "N-340",
+"title": "Random square-sum transpositions mixing",
+"area": "Probability",
+"W": "Shuffle 1 to N by swapping a random pair that sums to a square. Find the mixing time and show cutoff.",
+"M": "For the random walk on $S_N$ (symmetric group) driven by uniform $T$-transpositions, $T$ as above, prove cutoff and determine its location.",
+"adv": 5.5,
+"similar": [
+"N-169 (0.35) Random walks on square sums: How long does a random walk on the square-sum graph take to forget its starting point?",
+"N-306 (0.27) Random greedy square-sum path: Build a path through 1 to N by always stepping to a random unused neighbour summing to a square. Find the expected length."
+]
+},
+{
+"id": "N-044",
+"title": "Self-avoiding walks on the hat tiling",
+"area": "Probability",
+"W": "Count paths across hat tiles that never revisit a tile, and show their growth rate is new.",
+"M": "Prove the connective constant $\\mu_{\\text{hat}}$ exists for the hat adjacency graph and $\\mu_{\\text{hat}}\\ne\\sqrt{2+\\sqrt2}$.",
+"adv": 2.4,
+"similar": [
+"N-609 (0.45) Hat SAW connective constant is irrational: Show the growth constant of self-avoiding walks on the hat tiling's neighbour graph is irrational.",
+"N-543 (0.35) Spectre self-avoiding walks: Find the exponential growth rate of non-self-intersecting walks on the spectre tiling, and show it is the same for every spectre tiling.",
+"N-577 (0.33) Self-avoiding walk on the hat tiling scaling: Show long self-avoiding walks on the hat tiling spread out like distance n^{3/4}, the same as on the square grid.",
+"N-191 (0.25) Spectre percolation: Show percolation on the spectre tiling and the hat tiling have different thresholds."
+]
+},
+{
+"id": "N-120",
+"title": "Spot fires",
+"area": "Probability",
+"W": "Fires throw embers ahead at random. Find the exact spreading speed.",
+"M": "For a growth model where each burning site ignites a site at i.i.d. heavy-tailed displacement at rate 1, compute the asymptotic speed or growth exponent explicitly.",
+"adv": 2.5,
+"similar": []
+},
+{
+"id": "N-304",
+"title": "Uniform spanning tree of the square-sum graph",
+"area": "Probability",
+"W": "Show a uniformly random spanning tree of the square-sum graph has diameter of order a fixed power of N, and find the exponent.",
+"M": "For $T$ a uniform spanning tree of the giant component of $S_N$, prove $\\mathrm{diam}(T)=N^{\\alpha+o(1)}$ in probability and determine $\\alpha$.",
+"adv": 3.8,
+"similar": [
+"N-391 (0.30) Square-sum expansion: Show the square-sum graph (on its large connected piece) is a good expander.",
+"N-456 (0.29) Spanning trees inside the square-sum graph: Show every tree of maximum degree 3 on N vertices fits inside the square-sum graph on 1 to N.",
+"N-305 (0.26) Percolation threshold of the square-sum graph: Keep each edge of the square-sum graph with probability p. Find the exact threshold for a giant component as N grows."
+]
+}
+]
