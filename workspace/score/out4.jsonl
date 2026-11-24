@@ -1,0 +1,111 @@
+{"id":"N-395","novelty":5,"importance":3,"value":4,"repeat_of":null,"family":"hyperop","note":"Depends on undefined 'unique analytic family'; vague target set, modest interest."}
+{"id":"N-537","novelty":3,"importance":4,"value":4,"repeat_of":"N-509","family":"keller","note":"Degree-5 bump of the degree-4 Keller invertibility problem."}
+{"id":"N-553","novelty":6,"importance":6,"value":7,"repeat_of":null,"family":"keller","note":"Natural extremal question about Jacobian counterexamples; subsumes degree-by-degree variants."}
+{"id":"N-078","novelty":6,"importance":4,"value":5,"repeat_of":null,"family":"keller","note":"Classifying one construction family; concrete but narrow."}
+{"id":"N-077","novelty":6,"importance":7,"value":7,"repeat_of":null,"family":"fluid-blowup","note":"Explicit smooth finite-energy Euler blow-up is a deep, natural goal."}
+{"id":"X-042","novelty":7,"importance":4,"value":6,"repeat_of":null,"family":"jacobi-spectral","note":"Clean aperiodic analogue of known periodic modulation phase transitions."}
+{"id":"N-566","novelty":2,"importance":3,"value":2,"repeat_of":"N-546","family":"hat-spectral","note":"Neumann clone of hat Dirichlet transcendence; gimmick shape, hopeless."}
+{"id":"N-270","novelty":3,"importance":3,"value":3,"repeat_of":"N-219","family":"sofa","note":"Hot spots template applied to sofa shape; same as hat version."}
+{"id":"X-046","novelty":7,"importance":5,"value":6,"repeat_of":null,"family":"other","note":"Generic simplicity of spectrum on explicit symmetric surface; natural, hard."}
+{"id":"N-154","novelty":6,"importance":5,"value":6,"repeat_of":null,"family":"fluid-blowup","note":"Quantitative scaling of minimal blow-up forcing; meaningful but murky setup."}
+{"id":"N-361","novelty":5,"importance":5,"value":5,"repeat_of":null,"family":"fluid-blowup","note":"Stability of the forced NS blow-up; natural follow-up, topology unspecified."}
+{"id":"X-037","novelty":7,"importance":5,"value":6,"repeat_of":null,"family":"jacobi-spectral","note":"Localization for explicit multi-frequency potential; concrete, beyond a.e. results."}
+{"id":"N-131","novelty":4,"importance":3,"value":4,"repeat_of":null,"family":"square-sum","note":"Hadwiger number of prime-sum graph; routine graph-parameter template."}
+{"id":"N-171","novelty":3,"importance":3,"value":4,"repeat_of":"N-061","family":"square-sum","note":"Cube swap of square-sum chromatic boundedness question."}
+{"id":"N-015","novelty":5,"importance":3,"value":5,"repeat_of":null,"family":"firefighter","note":"Clean delayed-response firefighter variant on the grid."}
+{"id":"N-535","novelty":2,"importance":2,"value":3,"repeat_of":"N-386","family":"hat-firefighter","note":"Firefighter on the hat tiling; gimmick, overlaps one-firefighter version."}
+{"id":"N-222","novelty":6,"importance":3,"value":5,"repeat_of":null,"family":"square-sum","note":"Random greedy process on arithmetic graph; reasonable probabilistic question."}
+{"id":"N-204","novelty":3,"importance":1,"value":2,"repeat_of":null,"family":"hat-graph","note":"Treewidth constant depends on patch shape; ill-posed and gimmicky."}
+{"id":"N-338","novelty":2,"importance":2,"value":3,"repeat_of":"N-293","family":"square-sum","note":"Girth-6 variant of C4-free extremal square-sum subgraph."}
+{"id":"N-132","novelty":5,"importance":2,"value":4,"repeat_of":null,"family":"square-sum","note":"Bandwidth-type parameter of square-sum Hamiltonian cycles; isolated."}
+{"id":"N-526","novelty":4,"importance":2,"value":3,"repeat_of":null,"family":"hat-polykite","note":"Irrationality of animal growth constant; hopeless with no known method, gimmick lattice."}
+{"id":"N-054","novelty":4,"importance":1,"value":3,"repeat_of":null,"family":"other","note":"Recreational search problem; likely settled by computer, little mathematical content."}
+{"id":"N-417","novelty":6,"importance":4,"value":6,"repeat_of":null,"family":"square-sum","note":"Natural parity-sharp prime-sum tree labelling; Goldbach-flavored, well motivated."}
+{"id":"N-012","novelty":5,"importance":2,"value":4,"repeat_of":null,"family":"other","note":"Order of shuffle-plus-cut permutation; tidy but likely elementary or known."}
+{"id":"N-456","novelty":5,"importance":3,"value":5,"repeat_of":null,"family":"square-sum","note":"Spanning bounded-degree trees in square-sum graph; strengthens Hamiltonicity results."}
+{"id":"N-409","novelty":4,"importance":2,"value":4,"repeat_of":null,"family":"square-sum","note":"Hadwiger number of square-sum graph; standard parameter template."}
+{"id":"N-220","novelty":3,"importance":2,"value":4,"repeat_of":"N-456","family":"square-sum","note":"Caterpillar special case of max-degree-3 spanning tree problem."}
+{"id":"N-071","novelty":3,"importance":3,"value":4,"repeat_of":"N-391","family":"square-sum","note":"Spectral-gap restatement of square-sum expansion question."}
+{"id":"N-110","novelty":7,"importance":5,"value":7,"repeat_of":null,"family":"latin-square","note":"Ryser-type transversal question for Sudoku Latin squares; natural and crisp."}
+{"id":"N-508","novelty":3,"importance":4,"value":5,"repeat_of":"N-438","family":"square-sum","note":"Two-colour case of the finite-colouring monochromatic square-sum triangle problem."}
+{"id":"N-099","novelty":3,"importance":1,"value":2,"repeat_of":null,"family":"prime-nim","note":"Pure computation task for a gimmick game; little mathematical payoff."}
+{"id":"N-350","novelty":3,"importance":3,"value":4,"repeat_of":"N-611","family":"prime-nim","note":"Same complexity question as Prime Nim hardness problem."}
+{"id":"N-501","novelty":2,"importance":3,"value":3,"repeat_of":"N-499","family":"P-map","note":"5n+1 swap of largest-factor Collatz convergence."}
+{"id":"X-035","novelty":7,"importance":5,"value":7,"repeat_of":null,"family":"other","note":"Chaos at all energies for a classical system; precise, natural, hard."}
+{"id":"N-273","novelty":3,"importance":3,"value":3,"repeat_of":null,"family":"P-map","note":"Arbitrary P-map global convergence; one representative of a cloned template."}
+{"id":"N-540","novelty":5,"importance":4,"value":5,"repeat_of":null,"family":"P-map","note":"Cycles of P(n^2+1); ties to studied largest factor of n^2+1."}
+{"id":"N-094","novelty":3,"importance":2,"value":3,"repeat_of":null,"family":"hat-billiard","note":"Rational-polygon counting for hat; quadratic growth known, constant is computation."}
+{"id":"N-499","novelty":4,"importance":3,"value":4,"repeat_of":null,"family":"P-map","note":"Base largest-factor Collatz convergence; keep as family representative."}
+{"id":"N-257","novelty":3,"importance":2,"value":3,"repeat_of":"N-460","family":"P-map","note":"Weaker form of every-length-cycle problem for affine prime maps."}
+{"id":"N-250","novelty":4,"importance":2,"value":3,"repeat_of":null,"family":"P-map","note":"Average stopping time for an ad hoc map; constant has no wider meaning."}
+{"id":"N-276","novelty":2,"importance":2,"value":2,"repeat_of":"N-271","family":"P-map","note":"Shifted clone of the P(n)+P(n+1) funnel problem."}
+{"id":"N-373","novelty":5,"importance":1,"value":3,"repeat_of":null,"family":"digit","note":"Base-10 digit-reversal gimmick; probably constructive, little depth."}
+{"id":"N-010","novelty":3,"importance":1,"value":2,"repeat_of":null,"family":"P-map","note":"Computational cycle census for smallest-odd-factor Collatz variant."}
+{"id":"N-297","novelty":2,"importance":2,"value":2,"repeat_of":"N-254","family":"P-map","note":"Same log log stopping-time law as the 4p+1 loop version."}
+{"id":"N-560","novelty":2,"importance":2,"value":2,"repeat_of":"N-541","family":"P-map","note":"Affine P-map single-cycle convergence with different constants."}
+{"id":"N-326","novelty":2,"importance":2,"value":2,"repeat_of":"N-271","family":"P-map","note":"Ad hoc parity-switched neighbour-factor sum map; template clone."}
+{"id":"N-542","novelty":2,"importance":2,"value":2,"repeat_of":"N-548","family":"P-map","note":"Instance of general affine prime map settling question."}
+{"id":"N-332","novelty":1,"importance":2,"value":2,"repeat_of":"N-322","family":"P-map","note":"Arbitrary mix of smallest/largest prime factors; pure template clone."}
+{"id":"N-039","novelty":5,"importance":4,"value":5,"repeat_of":null,"family":"formalization","note":"Useful formalization target; line bound arbitrary, not a math question."}
+{"id":"N-098","novelty":3,"importance":3,"value":3,"repeat_of":null,"family":"formalization","note":"Port Flyspeck to Lean compactly; engineering task, 'compressed' template."}
+{"id":"N-013","novelty":4,"importance":1,"value":3,"repeat_of":null,"family":"sudoku","note":"Minimum-clue count for a Sudoku variant; computational, recreational."}
+{"id":"N-049","novelty":4,"importance":1,"value":3,"repeat_of":null,"family":"sudoku","note":"Fewest KenKen cages; finite search, recreational interest only."}
+{"id":"N-082","novelty":2,"importance":1,"value":2,"repeat_of":null,"family":"hat-games","note":"Hex on hat boards; gimmick mash-up, finite computation."}
+{"id":"N-262","novelty":2,"importance":2,"value":3,"repeat_of":"N-166","family":"square-sum","note":"Same Node Kayles game on square-sum graph as N-166."}
+{"id":"N-265","novelty":4,"importance":2,"value":3,"repeat_of":null,"family":"prime-nim","note":"Gaussian lift of Prime Nim; density claim plausible but isolated."}
+{"id":"N-025","novelty":4,"importance":2,"value":3,"repeat_of":null,"family":"prime-nim","note":"Misere Prime Nim comparison; standard CGT variant of gimmick game."}
+{"id":"N-252","novelty":3,"importance":2,"value":3,"repeat_of":null,"family":"square-sum","note":"Snort on square-sum graph; another game-on-S_N template."}
+{"id":"N-226","novelty":3,"importance":2,"value":3,"repeat_of":null,"family":"hat-games","note":"Angel problem transplanted to hat graph; gimmick, little new content."}
+{"id":"N-057","novelty":2,"importance":1,"value":2,"repeat_of":"N-013","family":"sudoku","note":"Another Sudoku-variant minimum-clue count; same template."}
+{"id":"N-016","novelty":5,"importance":4,"value":5,"repeat_of":null,"family":"hat-tiling","note":"Census of small aperiodic polykite monotiles; concrete, informative for monotile theory."}
+{"id":"N-382","novelty":5,"importance":3,"value":5,"repeat_of":null,"family":"sofa","note":"Convex-restricted moving sofa; natural, cleanest of the sofa variants."}
+{"id":"N-206","novelty":3,"importance":1,"value":2,"repeat_of":null,"family":"sofa","note":"Artificial shape-class restriction of sofa problem; no reason to exist."}
+{"id":"N-527","novelty":3,"importance":2,"value":3,"repeat_of":"N-210","family":"hat-tiling","note":"Corollary-style refinement of hat corona limit; may well be false."}
+{"id":"N-126","novelty":6,"importance":4,"value":6,"repeat_of":null,"family":"covering","note":"Translation-only Lebesgue universal cover; classical flavour, well posed."}
+{"id":"N-063","novelty":5,"importance":4,"value":5,"repeat_of":null,"family":"square-peg","note":"Square peg in hyperbolic plane; natural geometric transfer of famous problem."}
+{"id":"N-144","novelty":6,"importance":3,"value":5,"repeat_of":null,"family":"kakeya","note":"Extremal volume for disc Kakeya sets; well posed, decent motivation."}
+{"id":"N-238","novelty":3,"importance":1,"value":2,"repeat_of":null,"family":"hat-geometry","note":"Bellman forest problem for hat polygon; arbitrary shape gimmick."}
+{"id":"N-046","novelty":6,"importance":2,"value":4,"repeat_of":null,"family":"origami","note":"Exact optimal circle-river packings for small trees; applied, finite."}
+{"id":"N-032","novelty":2,"importance":2,"value":3,"repeat_of":"N-183","family":"sofa","note":"Same round-pipe-bend sofa as N-183."}
+{"id":"N-143","novelty":3,"importance":2,"value":3,"repeat_of":null,"family":"sofa","note":"Rounded-corner sofa family; parametrised variant of a solved problem."}
+{"id":"N-343","novelty":5,"importance":3,"value":5,"repeat_of":null,"family":"sofa","note":"General-angle moving sofa; the natural generalisation after Gerver's optimality."}
+{"id":"N-394","novelty":3,"importance":1,"value":2,"repeat_of":null,"family":"sofa","note":"Rotating-door sofa; contrived corridor mechanics, overlaps revolving-corridor variant."}
+{"id":"N-384","novelty":5,"importance":4,"value":5,"repeat_of":null,"family":"square-peg","note":"Spherical square peg for Jordan curves; natural, overlaps surfaces version."}
+{"id":"N-383","novelty":4,"importance":2,"value":3,"repeat_of":null,"family":"sofa","note":"Non-attainment in hyperbolic sofa; mildly interesting existence twist."}
+{"id":"N-316","novelty":6,"importance":5,"value":6,"repeat_of":null,"family":"logic","note":"Reverse-math strength of RH; genuine proof-theory question, well posed."}
+{"id":"N-580","novelty":3,"importance":3,"value":4,"repeat_of":"N-551","family":"P-map","note":"Smallest-factor twin of undecidability of largest-factor Collatz families."}
+{"id":"N-347","novelty":5,"importance":4,"value":5,"repeat_of":null,"family":"prime-patterns","note":"Prescribed residue patterns of consecutive primes; tied to Maynard-type methods."}
+{"id":"N-389","novelty":3,"importance":2,"value":3,"repeat_of":null,"family":"digit","note":"Digit-condition mash-up on Carmichael numbers; gimmick."}
+{"id":"N-372","novelty":5,"importance":3,"value":5,"repeat_of":null,"family":"other","note":"Prime analogue of Heath-Brown d(n)=d(n+1); natural, sieve-hard."}
+{"id":"N-399","novelty":3,"importance":1,"value":2,"repeat_of":null,"family":"digit","note":"Emirp twins under EH; muddled statement, base-10 gimmick."}
+{"id":"N-556","novelty":3,"importance":2,"value":2,"repeat_of":null,"family":"sofa","note":"Algebraic independence of ad hoc Gerver angles; hopeless and isolated."}
+{"id":"N-608","novelty":3,"importance":1,"value":2,"repeat_of":null,"family":"P-map","note":"Irrationality of orbit-reciprocal sum; arbitrary constant, convergence not even clear."}
+{"id":"N-497","novelty":4,"importance":4,"value":5,"repeat_of":null,"family":"smooth-values","note":"Smooth values of p^2+p+1 at primes; genuine analytic number theory."}
+{"id":"N-485","novelty":4,"importance":4,"value":5,"repeat_of":null,"family":"largest-factor","note":"Stewart-type growth of P(n^n+1); classical-flavoured and natural."}
+{"id":"N-176","novelty":5,"importance":4,"value":5,"repeat_of":null,"family":"lonely-runner","note":"Lonely runner in a bounded-speed regime; meaningful partial case."}
+{"id":"N-379","novelty":3,"importance":2,"value":3,"repeat_of":null,"family":"digit","note":"Palindromic Carmichael numbers; digit gimmick but the most natural of its cluster."}
+{"id":"N-283","novelty":2,"importance":2,"value":2,"repeat_of":null,"family":"seven-free","note":"Seven-free decoration of a prime plus two squares problem."}
+{"id":"N-487","novelty":6,"importance":4,"value":5,"repeat_of":null,"family":"other","note":"Max prime representations p^2+q^2=n; natural extremal question."}
+{"id":"N-531","novelty":2,"importance":2,"value":2,"repeat_of":"N-379","family":"seven-free","note":"Seven-free swap of digit-restricted Carmichael template."}
+{"id":"N-400","novelty":3,"importance":3,"value":3,"repeat_of":null,"family":"seven-free","note":"Exceptional-set Goldbach with Maynard digit-free primes; family representative."}
+{"id":"N-463","novelty":1,"importance":2,"value":2,"repeat_of":"N-241","family":"seven-free","note":"Seven-free primes in thin sequence; Beatty clone with exponent swapped."}
+{"id":"N-446","novelty":4,"importance":4,"value":5,"repeat_of":null,"family":"seven-free","note":"Missing-digit squares; natural polynomial extension of Maynard, genuinely hard."}
+{"id":"N-255","novelty":5,"importance":3,"value":4,"repeat_of":null,"family":"largest-factor","note":"Collisions of P(n^2+1); reasonable distribution question."}
+{"id":"N-488","novelty":5,"importance":4,"value":4,"repeat_of":null,"family":"P-map","note":"Mauduit-Rivat style correlation along P(n),P(n+1); mash-up but has teeth."}
+{"id":"X-019","novelty":7,"importance":5,"value":6,"repeat_of":null,"family":"fluid-model","note":"Sign-flipped stretching Euler model; clean test of stretching's role."}
+{"id":"X-025","novelty":8,"importance":4,"value":6,"repeat_of":null,"family":"other","note":"Bernstein/Jorgens analogue for permanent Hessian; fresh, crisp."}
+{"id":"N-610","novelty":5,"importance":6,"value":6,"repeat_of":null,"family":"fluid-blowup","note":"Decaying-force NS blow-up; meaningful step toward unforced blow-up."}
+{"id":"N-245","novelty":3,"importance":3,"value":3,"repeat_of":null,"family":"hat-statmech","note":"Hard-core transition on hat graph; template mash-up."}
+{"id":"N-505","novelty":2,"importance":3,"value":3,"repeat_of":null,"family":"hat-statmech","note":"Closed-form hat Ising beta_c; likely no closed form, one of many clones."}
+{"id":"N-511","novelty":4,"importance":4,"value":5,"repeat_of":null,"family":"hat-tiling","note":"Monotile as unique ground state of pair potential; real quasicrystal physics."}
+{"id":"N-599","novelty":3,"importance":2,"value":3,"repeat_of":null,"family":"hat-statmech","note":"Dimer criticality on spectre graph; dubious for non-bipartite graph, gimmick."}
+{"id":"N-521","novelty":2,"importance":3,"value":2,"repeat_of":null,"family":"hat-statmech","note":"Mass gap at all couplings on hat x Z; Millennium-hard in costume."}
+{"id":"N-609","novelty":2,"importance":2,"value":2,"repeat_of":null,"family":"hat-statmech","note":"Irrationality of hat SAW constant; hopeless, template 'X on hat irrational'."}
+{"id":"N-593","novelty":1,"importance":1,"value":2,"repeat_of":"N-440","family":"hat-statmech","note":"Same hat return-probability constant as heat kernel problem."}
+{"id":"N-482","novelty":2,"importance":5,"value":4,"repeat_of":"N-564","family":"hat-statmech","note":"Spectre copy of critical Ising SLE3 universality on aperiodic tiling."}
+{"id":"N-136","novelty":5,"importance":1,"value":3,"repeat_of":null,"family":"games","note":"Exact optimal Minesweeper win rate; infeasible computation, recreational."}
+{"id":"N-114","novelty":5,"importance":3,"value":4,"repeat_of":null,"family":"hat-tiling","note":"Exponential rarity of tiling polykites; natural, analogous to polyomino question."}
+{"id":"N-545","novelty":4,"importance":3,"value":4,"repeat_of":null,"family":"hat-statmech","note":"Sandpile identity scaling limit on hats; real phenomenon, gimmick lattice."}
+{"id":"N-191","novelty":3,"importance":2,"value":3,"repeat_of":null,"family":"hat-statmech","note":"Distinguishing two percolation thresholds; low payoff template."}
+{"id":"N-051","novelty":5,"importance":1,"value":3,"repeat_of":null,"family":"games","note":"Probability bound for 2048 top tile; recreational, maybe tractable."}
+{"id":"X-002","novelty":7,"importance":4,"value":6,"repeat_of":null,"family":"knots","note":"Lorenz knots from Thue-Morse; concrete hyperbolic volume growth question."}

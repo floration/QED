@@ -1,0 +1,16 @@
+You are scoring open math problems in a public collection (~665 problems) to find weak ones and repeats. Do NOT try to solve them.
+Input: /home/claude/score/chunk{C}.json — each item has id, title, area, W (plain words), M (math), adv (difficulty 0–10 if known), and "similar": the most textually similar problems elsewhere in the collection (id, similarity, title, words).
+
+Known over-represented families in the collection: hat/spectre tilings (~109 mentions), Gerver's sofa (~53), largest-prime-factor maps P(n) (~66), square-sum graphs (~53), "seven-free" digit problems (~41), Prime Nim (~29). Be tough on template clones within these families.
+
+For EACH item give integer scores 0–10:
+- novelty: is the QUESTION genuinely new? Low if it is a cosmetic variant of another problem in the collection (same template, different constant/shape/shift), a known problem in disguise, or a gimmick mash-up ("X but for 7-free numbers", "Y on the hat tiling") with no new mathematical content. High if it asks something nobody seems to have asked that has its own reason to exist.
+- importance: if solved, how much would it matter to mathematics? Consider connections, methods it would force, consequences. Gimmicky or isolated questions score low even if hard. Anchors: Collatz-like global convergence for one arbitrary new map ≈ 3; a natural transcendence question for a famous new constant ≈ 6; universality of Ising on aperiodic tilings ≈ 6; a problem whose solution would require a breakthrough method with wide use ≈ 8+.
+- value: overall worth KEEPING in the collection (interest to a strong solver × clarity × distinctness). This is the main sort key.
+Also give:
+- repeat_of: the id of a problem in "similar" that this one is essentially a variant of (same idea, minor change), or null. When two are variants, mark only the weaker one (keep the more natural/important one unmarked).
+- family: short tag (e.g. "P-map", "hat-spectral", "sofa", "square-sum", "seven-free", "prime-nim", "keller", "other").
+- note: ≤15 words justification.
+
+SAVE INCREMENTALLY: after scoring every 10 items, append them as JSON lines (one object per line: {"id","novelty","importance","value","repeat_of","family","note"}) to /home/claude/score/out{C}.jsonl. Never hold more than 10 unsaved. If the file already has lines (you are resuming), skip ids already present.
+Finish with a one-line summary: count, mean value, number of repeat_of marks.
