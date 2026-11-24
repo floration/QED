@@ -1,0 +1,182 @@
+[
+ {
+  "title": "Thue–Morse Lorenz knots",
+  "r": 3.4,
+  "flag": "ok",
+  "why": "Linear volume growth needs lower bounds beyond twist-number upper bounds for Lorenz braids; hyperbolicity of specific Lorenz families is delicate."
+ },
+ {
+  "title": "Chaos in the symmetric ABC flow",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Chaos only numerical; Ziglin-type nonintegrability exists but rigorous positive entropy likely needs computer-assisted horseshoe."
+ },
+ {
+  "title": "Integrability of the egg-crate torus",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Finite Fourier spectrum defeats Poincare/Kozlov resonance arguments; claim for every epsilon, including large, has no available method."
+ },
+ {
+  "title": "How nearly can tetrahedra close up",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Exact exponent is a random/pigeonhole heuristic; proving it needs optimal Diophantine/spectral-gap results (Sarnak-type) open even in SU(2)."
+ },
+ {
+  "title": "Sup norms on the Fermat quartic",
+  "r": 2.4,
+  "flag": "ok",
+  "why": "Sogge-Zelditch (analytic surfaces) reduce maximal growth to a point where all geodesics loop back at common time; ruling that out is concrete."
+ },
+ {
+  "title": "Capacities of the 4D superball",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Non-toric, not a small perturbation of the ball; strong Viterbo only known near ball and for special classes."
+ },
+ {
+  "title": "Charge on a Fermat conductor",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "No explicit density; locating exact global extrema of equilibrium charge on a non-ellipsoid has essentially no tools."
+ },
+ {
+  "title": "Free-boundary disks in a superball",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Equivariant min-max (e.g. Z3 about diagonal; plane x+y+z=0 is not free-boundary) plausibly gives one, but disk/embeddedness control is hard."
+ },
+ {
+  "title": "Riesz-transform Schrödinger equation",
+  "r": 4.2,
+  "flag": "ok",
+  "why": "2D mass-critical with skew nonlocal term, no coercive energy; large-data H^1 global existence lacks a priori bounds."
+ },
+ {
+  "title": "Euler with reversed stretching",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Regularity analogue of 3D Euler on T^3 with sign-flipped stretching; no known structure making it easier."
+ },
+ {
+  "title": "Reflected Lane–Emden in five dimensions",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "h=u(x)-u(-x) is harmonic with bounded spherical L1 means, so constant and odd, hence 0; then Gidas-Spruck forbids u^2 in R^5."
+ },
+ {
+  "title": "KdV with a cosine coefficient",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Energy not coercive without L2 control and L2 not conserved; global well-posedness for this mKdV variant is open-looking."
+ },
+ {
+  "title": "Burgers with degenerate critical dissipation",
+  "r": 3.8,
+  "flag": "ok",
+  "why": "Degenerate critical dissipation at one point; neither Kiselev-Nazarov-Volberg modulus nor shock constructions directly apply."
+ },
+ {
+  "title": "Permanent–Ampère equation",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Elliptic but not concave, Hessian may be unbounded; Nirenberg's 2D Liouville needs bounded Hessian, Jorgens tricks need MA structure."
+ },
+ {
+  "title": "Mirror-competition KPP",
+  "r": 0.8,
+  "flag": "easy",
+  "why": "w=u(x)-u(-x) solves w_t=w_xx+w exactly, so w=e^t G_t*w0 with w0 odd nonzero; sup w grows like e^t/poly(t), and u>=w."
+ },
+ {
+  "title": "Keller–Segel on the cube",
+  "r": 1.8,
+  "flag": "easy",
+  "why": "Troyanov's singular Moser-Trudinger constant 8pi(3/4)=6pi gives global existence; localized virial at a cone point gives blow-up. Standard."
+ },
+ {
+  "title": "Lane–Emden with a shift",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Shift breaks Kelvin transform and Gidas-Spruck structure; p=2 exceeds Serrin exponent 5/3 so test-function methods fail. Plausibly no solutions."
+ },
+ {
+  "title": "Damped waves on a cube",
+  "r": 2.5,
+  "flag": "ill-posed",
+  "why": "Decay rate depends on how a vanishes near the top-face edges (order-of-vanishing results of Kleinhenz, Sun), which is unspecified."
+ },
+ {
+  "title": "Scattering on the cube corner",
+  "r": 3.8,
+  "flag": "ok",
+  "why": "Requires redoing Dodson's mass-critical scattering on a scale-invariant cone without translation symmetry; Strichartz on cones known."
+ },
+ {
+  "title": "Thue–Morse quantum walk",
+  "r": 2.8,
+  "flag": "ok",
+  "why": "Substitution-coin walks studied via transfer-matrix power-law bounds (Damanik-Fillman-Ong); TM trace-map/bounded energies make full exponent plausible."
+ },
+ {
+  "title": "Three-body mean-field rotors",
+  "r": 2.0,
+  "flag": "easy",
+  "why": "Invariant plane theta1=theta2 gives pendulum solution; Morales-Ramis normal variational equation computation is routine."
+ },
+ {
+  "title": "Four vortices on a square torus",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Ziglin proved nonintegrability of 4 vortices in plane; torus version with Weierstrass Green function plausibly similar but not done."
+ },
+ {
+  "title": "Chaos in the double pendulum at every energy",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Small energies need exponentially small splitting near elliptic point; high energies near-integrable free rotors. Every energy is far out of reach."
+ },
+ {
+  "title": "Two-frequency localization",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Bourgain-Goldstein multi-frequency localization only for a.e. frequency and coupling above unspecified threshold; specific sqrt2,sqrt3 and lambda=10 open."
+ },
+ {
+  "title": "Spikes at the squares",
+  "r": 4.3,
+  "flag": "ok",
+  "why": "Gaps 2m+1 make block phases quadratic in m (skew-shift-like cocycle); deterministic localization for such kicks is open-hard."
+ },
+ {
+  "title": "Jacobi matrix of primes",
+  "r": 3.8,
+  "flag": "ok",
+  "why": "Prime gaps unbounded, so Dombrowski's difference conditions and Janas-Naboko bounded-variation criteria fail; genuinely open."
+ },
+ {
+  "title": "Quartic oscillator ground state",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Irrationality of a specific non-explicit spectral constant; no methods exist (like irrationality of generic analytic constants)."
+ },
+ {
+  "title": "Chirp potential threshold",
+  "r": 2.0,
+  "flag": "easy",
+  "why": "V=W' with W~-lambda cos(x^2)/(2x); ground-state transform yields effective -lambda^2/(8x^2), Kneser threshold 1/4 gives sqrt2; standard."
+ },
+ {
+  "title": "Multiplicities on the Fermat quartic",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Absence of accidental degeneracy for one specific metric; generic simplicity (Uhlenbeck) gives nothing for explicit surfaces."
+ },
+ {
+  "title": "Frozen vortices for Kuramoto on a cube",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Construct pinned vortex/antivortex or phase-locked state with all edge differences below pi/2; plausible, needs explicit construction."
+ }
+]
