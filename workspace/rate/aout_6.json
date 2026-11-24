@@ -1,0 +1,182 @@
+[
+ {
+  "title": "Period-doubling torus bundles",
+  "r": 2.2,
+  "flag": "ok",
+  "why": "Plausible via Gueritaud layered triangulation with exponentially decaying local influence; substitutive structure should give the limit. Moderate."
+ },
+ {
+  "title": "Knotted billiards in a regular tetrahedron",
+  "r": 3.2,
+  "flag": "ok",
+  "why": "Billiard knots known for cube (Lissajous, Jones-Przytycki) and cylinders; regular tetrahedron reflection group infinite, unfolding unavailable. Not found in literature."
+ },
+ {
+  "title": "Knotted Reeb orbits of a superball",
+  "r": 0.8,
+  "flag": "easy",
+  "why": "H=h(x1,y1)+h(x2,y2) is separable, hence integrable; frequency ratio sweeps (0,inf), so resonant tori carry torus-knot orbits T(2,3) etc."
+ },
+ {
+  "title": "Simple closed geodesics on the Fermat quartic",
+  "r": 4.2,
+  "flag": "ok",
+  "why": "Hard. Likely a tenth symmetric geodesic exists invariant under the order-6 rotoreflection about (1,1,1), so 'these nine are all' probably fails."
+ },
+ {
+  "title": "Outer billiards around a superellipse",
+  "r": 3.6,
+  "flag": "ok",
+  "why": "Moser/Douady KAM boundedness needs positive curvature; flat points break twist. Analytic but degenerate case appears open."
+ },
+ {
+  "title": "Rupert superballs",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Large p follows by perturbing the cube's strict fit; p near 2 (nearly round) is the hard part. No literature found."
+ },
+ {
+  "title": "Drum tones of superellipses",
+  "r": 2.9,
+  "flag": "ok",
+  "why": "Faber-Krahn gives the minimum at p=2; strict monotonicity on [2,inf) for this family seems open, plausible with domain-variation estimates."
+ },
+ {
+  "title": "Chaotic billiards in a superellipse",
+  "r": 7.2,
+  "flag": "ok",
+  "why": "Positive metric entropy for any concrete smooth convex billiard is a notorious open problem (standard-map entropy type). Extremely hard."
+ },
+ {
+  "title": "Ergodicity of the regular tetrahedron billiard",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Ergodicity of specific polyhedral billiards is wide open even in 2D irrational polygons; essentially no tools in 3D."
+ },
+ {
+  "title": "Shifted Fujita equation",
+  "r": 2.2,
+  "flag": "ok",
+  "why": "Shift negligible at diffusive scale sqrt(t); critical Fujita (p=2, n=2) blow-up arguments with Harnack comparisons should adapt."
+ },
+ {
+  "title": "Strauss exponent for an oscillating source",
+  "r": 3.2,
+  "flag": "ok",
+  "why": "Oscillating cos t along light-cone characteristics yields cancellation in John iteration; threshold likely changes. Genuine open question."
+ },
+ {
+  "title": "Minimal-mass blow-up with reflection",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Cauchy-Schwarz gives the same GN threshold; Merle-type minimal-mass classification should adapt, equality forcing symmetry about origin."
+ },
+ {
+  "title": "Heat with a cosine reaction",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Homogenization gives effective U_t=U_xx+U^3, critical 1D Fujita; rigorous control of the oscillating term is nontrivial."
+ },
+ {
+  "title": "Difference Burgers, negative side",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "v=-u>=0 preserved; sup v nonincreasing by max principle; Holder gives d/dt||v||_p^p<=-diffusion, Nash/Moser iteration gives decay to 0."
+ },
+ {
+  "title": "Burgers with lattice viscosity",
+  "r": 0.5,
+  "flag": "false",
+  "why": "q=u_x obeys q'<=-q^2-2q+2 sup q0+ along characteristics (sup q bounded); steep small-oscillation data blow up, so no such c."
+ },
+ {
+  "title": "Laplacian equal to the gradient product",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Equation scale invariant; Ladyzhenskaya-Uraltseva interior gradient bound for bounded solutions with natural growth gives |grad u(0)|<=C/R, so constant."
+ },
+ {
+  "title": "Critical NLS mass on the cube",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Cone angle 3pi/2 threshold plausible via apex symmetrization; blow-up for every m>3/4 on compact singular surface lacks virial, hard."
+ },
+ {
+  "title": "Quintic Szegő growth",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Unbounded Sobolev growth for a nonintegrable Hamiltonian PDE is Bourgain-type hard; H^{1/2} controlled by conservation laws only."
+ },
+ {
+  "title": "L⁴ Strichartz on a cube",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Epsilon-loss L4 Strichartz relies on torus arithmetic; cube surface has diffractive non-arithmetic spectrum. Very hard."
+ },
+ {
+  "title": "XZ next-nearest spin chain",
+  "r": 1.5,
+  "flag": "known",
+  "why": "Translation plus on-site projective Z2xZ2 (X,Z) symmetry: LSM theorem (Ogata-Tasaki 2019) excludes unique gapped ground state, so gap closes."
+ },
+ {
+  "title": "Paley spin glass",
+  "r": 3.6,
+  "flag": "ok",
+  "why": "Asks whether Boolean vectors concentrate Fourier mass on residue frequencies; well-posed, novel, numerics suggest maybe not sharp."
+ },
+ {
+  "title": "Two vortices on a cube",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Positive entropy for a concrete 4D Hamiltonian; possible via near-collision averaging or computer-assisted horseshoe, but nontrivial."
+ },
+ {
+  "title": "Dimers on a cube surface",
+  "r": 0.5,
+  "flag": "false",
+  "why": "For even n the bipartite classes differ by 2 (e.g. n=2: 14 vs 12), so M_n=0 and log M_n undefined. Odd-n version is reasonable."
+ },
+ {
+  "title": "Ising spin at a cube corner",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "CFT exponent 7/24 checks (apex 1/6 plus Jacobian); discrete complex analysis on conical surfaces makes it plausible but open."
+ },
+ {
+  "title": "Kagome Hofstadter butterfly",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Cantor spectrum proved for graphene and Lieb lattice magnetic Laplacians; kagome only has Chambers formula (Helffer et al.). Similar methods likely."
+ },
+ {
+  "title": "Spikes at the primes",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Deterministic sparse prime barriers; random analogue gives localization, but proof needs strong pseudorandomness of primes. Very hard."
+ },
+ {
+  "title": "Fibonacci-modulated growing Jacobi matrix",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "b=0 two-step transfer matrices nearly diagonal; answer hinges on odd/even discrepancy of Fibonacci word (log growth). Tractable but open."
+ },
+ {
+  "title": "Hearing tetrahedra",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Triangles known (Durso, Grieser-Maronna); heat invariants insufficient for tetrahedra, need wave-trace/diffractive orbits. Open."
+ },
+ {
+  "title": "Non-arithmetic tones of the cube",
+  "r": 4.8,
+  "flag": "ok",
+  "why": "Cube is not a torus orbifold quotient (cone angle 3pi/2), so diffractive eigenvalues exist, but proving irrationality over pi^2 is hard."
+ },
+ {
+  "title": "Infinite knots in the ABC flow",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Knotted streamlines known for some Beltrami flows (Enciso-Peralta-Salas); for the specific A=B=C=1 ABC flow needs computer-assisted horseshoe."
+ }
+]
