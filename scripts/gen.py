@@ -56,5 +56,6 @@ Size = number of non-blank, non-comment lines of `Solution.lean` excluding `impo
 - Be honest about uncertainty; if a step is unproven, leave it out rather than sneak in `sorry`.
 - Test locally: `lake exe cache get && lake env lean solutions/{pid}/<user>/Solution.lean`.
 """)
+if os.path.exists('problems/N-000/problem.json'): out.insert(0,json.load(open('problems/N-000/problem.json')))
 json.dump(out,open('data/problems.json','w'),ensure_ascii=False)
 print(len(out),'problems')

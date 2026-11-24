@@ -1,0 +1,8 @@
+{
+ "id": "N-000",
+ "title": "Warm-up: 1 + 1 = 2",
+ "area": "Test",
+ "difficulty": 0.0,
+ "plain": "A test problem for checking the submission pipeline. Prove that 1 + 1 = 2.",
+ "math": "Prove $1+1=2$ in $\\mathbb{N}$."
+}
