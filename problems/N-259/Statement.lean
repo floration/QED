@@ -1,10 +1,12 @@
 import Mathlib
+open Filter Topology
 /-! N-259: Seven-free primes with prime digit sum
-Show infinitely many primes have no digit 7 and a digit sum that is itself prime.
-Informal statement: Prove infinitely many primes $p$ free of the decimal digit 7 with $s_{10}(p)$ prime.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many primes $p$ free of the decimal digit 7 with $s_{10}(p)$ prime. -/
 namespace OpenProblems.N259
-def Claim : Prop := sorry
+/-- no decimal digit 7 -/
+def SevenFree (n : ℕ) : Prop := 7 ∉ Nat.digits 10 n
+/-- digit sum in base `b` -/
+def ds (b n : ℕ) : ℕ := (Nat.digits b n).sum
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ SevenFree p ∧ (ds 10 p).Prime}
 end OpenProblems.N259

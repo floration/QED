@@ -1,10 +1,9 @@
 import Mathlib
+open Filter Topology
 /-! N-603: Partition numbers contain a 7
-Show that from some point on, every partition number has a 7 among its digits.
-Informal statement: Prove there is $N$ such that the decimal expansion of $p(n)$ contains the digit 7 for all $n\ge N$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove there is $N$ such that the decimal expansion of $p(n)$ contains the digit 7 for all $n\ge N$. -/
 namespace OpenProblems.N603
-def Claim : Prop := sorry
+
+def Claim : Prop :=
+  ∃ N : ℕ, ∀ n ≥ N, 7 ∈ Nat.digits 10 (Fintype.card (Nat.Partition n))
 end OpenProblems.N603

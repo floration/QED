@@ -1,10 +1,9 @@
 import Mathlib
+open Filter Topology
 /-! N-281: A mixed Fermat equation
-Show the equation x² + y⁴ = z⁷ + 7 has only finitely many integer solutions.
-Informal statement: Prove $x^2+y^4=z^7+7$ has finitely many solutions in integers.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove $x^2+y^4=z^7+7$ has finitely many solutions in integers. -/
 namespace OpenProblems.N281
-def Claim : Prop := sorry
+
+def Claim : Prop :=
+  Set.Finite {t : ℤ × ℤ × ℤ | t.1 ^ 2 + t.2.1 ^ 4 = t.2.2 ^ 7 + 7}
 end OpenProblems.N281

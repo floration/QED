@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-484: Largest prime factor of 2^n + n
-Show the largest prime factor of 2^n + n tends to infinity faster than any fixed multiple of n.
-Informal statement: Prove $P(2^n+n)/n\to\infty$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove $P(2^n+n)/n\to\infty$. -/
 namespace OpenProblems.N484
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def Claim : Prop :=
+  Tendsto (fun n : ℕ => (P (2 ^ n + n) : ℝ) / n) atTop atTop
 end OpenProblems.N484

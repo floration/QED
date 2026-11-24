@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-404: Joint digit sums of primes
-Show infinitely many primes have a prime digit sum in base 2 and in base 10 at the same time.
-Informal statement: Prove infinitely many primes $p$ have $s_2(p)$ and $s_{10}(p)$ both prime.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many primes $p$ have $s_2(p)$ and $s_{10}(p)$ both prime. -/
 namespace OpenProblems.N404
-def Claim : Prop := sorry
+/-- digit sum in base `b` -/
+def ds (b n : ℕ) : ℕ := (Nat.digits b n).sum
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ (ds 2 p).Prime ∧ (ds 10 p).Prime}
 end OpenProblems.N404

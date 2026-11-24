@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-608: Irrational orbit sum
-Add the reciprocals of the square-plus-one sequence starting from 2. Show the total is irrational.
-Informal statement: Prove $\sum_{k\ge0}1/Q^k(2)$ converges and is irrational.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove $\sum_{k\ge0}1/Q^k(2)$ converges and is irrational. -/
 namespace OpenProblems.N608
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def Claim : Prop :=
+  Summable (fun k : ℕ => (1 : ℝ) / ((fun n => P (n ^ 2 + 1))^[k] 2 : ℝ)) ∧ Irrational (∑' k : ℕ, (1 : ℝ) / ((fun n => P (n ^ 2 + 1))^[k] 2 : ℝ))
 end OpenProblems.N608

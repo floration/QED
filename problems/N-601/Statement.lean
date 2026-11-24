@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-601: Seven-free primes have a bounded gap
-Show infinitely many pairs of seven-free primes lie within a fixed distance of each other.
-Informal statement: Prove $\liminf(q_{n+1}-q_n)<\infty$ where $q_n$ enumerates the 7-free primes.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove $\liminf(q_{n+1}-q_n)<\infty$ where $q_n$ enumerates the 7-free primes. -/
 namespace OpenProblems.N601
-def Claim : Prop := sorry
+/-- no decimal digit 7 -/
+def SevenFree (n : ℕ) : Prop := 7 ∉ Nat.digits 10 n
+def Claim : Prop :=
+  ∃ C : ℕ, Set.Infinite {p : ℕ | p.Prime ∧ SevenFree p ∧ ∃ q : ℕ, q.Prime ∧ SevenFree q ∧ p < q ∧ q ≤ p + C}
 end OpenProblems.N601

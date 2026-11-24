@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-066: Seven-free three primes
-Every large odd number should be a sum of three primes that never use the digit 7.
-Informal statement: Prove every sufficiently large odd $N$ is $p_1+p_2+p_3$ with each $p_i$ prime and free of the decimal digit 7.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove every sufficiently large odd $N$ is $p_1+p_2+p_3$ with each $p_i$ prime and free of the decimal digit 7. -/
 namespace OpenProblems.N066
-def Claim : Prop := sorry
+/-- no decimal digit 7 -/
+def SevenFree (n : ℕ) : Prop := 7 ∉ Nat.digits 10 n
+def Claim : Prop :=
+  ∃ N₀ : ℕ, ∀ N ≥ N₀, Odd N → ∃ p₁ p₂ p₃ : ℕ, p₁.Prime ∧ p₂.Prime ∧ p₃.Prime ∧ SevenFree p₁ ∧ SevenFree p₂ ∧ SevenFree p₃ ∧ p₁ + p₂ + p₃ = N
 end OpenProblems.N066

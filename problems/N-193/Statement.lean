@@ -1,10 +1,12 @@
 import Mathlib
+open Filter Topology
 /-! N-193: Seven-free almost-Sophie-Germain
-Show infinitely many primes p avoid the digit 7 and have 2p + 1 with few prime factors.
-Informal statement: Prove infinitely many 7-free primes $p$ have $\Omega(2p+1)\le3$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many 7-free primes $p$ have $\Omega(2p+1)\le3$. -/
 namespace OpenProblems.N193
-def Claim : Prop := sorry
+/-- no decimal digit 7 -/
+def SevenFree (n : ℕ) : Prop := 7 ∉ Nat.digits 10 n
+/-- number of prime factors with multiplicity -/
+def Ω (n : ℕ) : ℕ := n.primeFactorsList.length
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ SevenFree p ∧ Ω (2 * p + 1) ≤ 3}
 end OpenProblems.N193

@@ -1,10 +1,12 @@
 import Mathlib
+open Filter Topology
 /-! N-279: Last digits of consecutive largest factors
-Look at the last digits of P(n) and P(n + 1). Show the 16 possible pairs of last digits from {1, 3, 7, 9} occur equally often.
-Informal statement: Prove $\#\{n\le x: P(n)\equiv a,\ P(n+1)\equiv b\ (10)\}\sim\frac{x}{16}$ for all $a,b\in\{1,3,7,9\}$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove $\#\{n\le x: P(n)\equiv a,\ P(n+1)\equiv b\ (10)\}\sim\frac{x}{16}$ for all $a,b\in\{1,3,7,9\}$. -/
 namespace OpenProblems.N279
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+/-- `#{n ≤ x : S n}` -/
+noncomputable def count (S : ℕ → Prop) (x : ℕ) : ℕ := Nat.card {n : ℕ // n ≤ x ∧ S n}
+def Claim : Prop :=
+  ∀ a ∈ ({1, 3, 7, 9} : Finset ℕ), ∀ b ∈ ({1, 3, 7, 9} : Finset ℕ), Tendsto (fun x : ℕ => (count (fun n => P n % 10 = a ∧ P (n + 1) % 10 = b) x : ℝ) / x) atTop (𝓝 (1 / 16))
 end OpenProblems.N279
