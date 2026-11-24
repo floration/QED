@@ -1,0 +1,67 @@
+## The shift-3 prime map | 6 | Dynamics
+W: Add the largest prime factors of n and n + 3. Every tested start falls into 6, the loop 8 → 13 → 15, or the loop 10 → 18. Prove all do.
+M: For $f(n)=P(n)+P(n+3)$, prove every orbit with $n\ge3$ reaches $\{6\}$, $(8,13,15)$ or $(10,18)$.
+
+## Doubled prime map with a 1231 loop | 7 | Dynamics
+W: Map n to twice its largest prime factor plus the largest prime factor of n + 1. Starts below 150,000 reach either a five-step loop through 93 or a three-step loop through 1231. Prove there are no other fates.
+M: For $f(n)=2P(n)+P(n+1)$, prove every orbit reaches $(93,109,229,481,315)$ or $(1231,2473,6183)$.
+
+## Prime factor plus digit sum | 5 | Dynamics
+W: Add the largest prime factor of n to its digit sum. Every tested start ends in 6 → 9 → 12. Prove all do, which needs ruling out endless chains of primes p → p + digit sum.
+M: For $f(n)=P(n)+s_{10}(n)$, prove every orbit with $n\ge2$ reaches the cycle $(6,9,12)$.
+
+## Neighbour factors plus one | 6 | Dynamics
+W: Map n to P(n − 1) + P(n + 1) + 1. Tested starts reach 8 → 11 → 9 or 10 → 15. Prove all do.
+M: For $f(n)=P(n-1)+P(n+1)+1$, prove every orbit with $n\ge3$ reaches $(8,11,9)$ or $(10,15)$.
+
+## Four fates of P(n)+P(n+1)+1 | 6 | Dynamics
+W: Map n to P(n) + P(n+1) + 1. Tested starts reach the fixed point 9 or loops through 6, 19 or 61. Prove these are the only fates.
+M: For $f(n)=P(n)+P(n+1)+1$, prove every orbit reaches $\{9\}$, $(6,11,15,8)$, $(19,25)$ or the 4-cycle through $61$.
+
+## Triple factor map minus two | 6 | Dynamics
+W: Map n to P(n) + P(n+1) + P(n+2) − 2. Tested starts reach the fixed points 8 or 33, a 13-step loop through 20, or a 9-step loop through 177. Prove nothing else happens.
+M: For $f(n)=P(n)+P(n+1)+P(n+2)-2$, prove every orbit reaches $\{8\}$, $\{33\}$, the 13-cycle through $20$, or the 9-cycle through $177$.
+
+## Formal verification depth of RH | 6 | Logic
+W: The Riemann hypothesis now has a Lean proof. Show it cannot be proved in a weak arithmetic like I-Sigma-1 plus exponentiation, or show it can.
+M: Decide whether RH (as a $\Pi^0_1$ sentence) is provable in $\mathrm{I}\Sigma_1$, or in $\mathrm{EFA}$.
+
+## Tileability by the spectre is undecidable for regions with holes | 6 | Logic
+W: Show deciding whether a finite region with holes can be tiled by spectres is NP-complete.
+M: Prove NP-completeness of: given a finite polygonal region $R$ (with holes), decide whether $R$ is tileable by copies of the spectre.
+
+## Square subtraction with prime piles | 5 | Games
+W: In the game where you subtract a square, show infinitely many prime pile sizes are losing positions.
+M: Prove infinitely many primes are P-positions of the subtract-a-square game.
+
+## Sums of a square and a seven-free prime | 6 | Number theory
+W: Show almost every number is a square plus a prime with no 7 in its decimal digits.
+M: Prove the set of $n$ not of the form $m^2+p$ with $p$ prime and $7\notin p$ has density zero.
+
+## Seven-free factorial-like products | 6 | Number theory
+W: Show n! + 1 contains the digit 7 for all large n.
+M: Prove $7\in n!+1$ (decimal) for all sufficiently large $n$.
+
+## Seven-free square sums of two squares | 6 | Number theory
+W: Show every large seven-free number that is a sum of two squares is a sum of two seven-free squares.
+M: Prove for all large $n$ with $7\notin n$ and $n=a^2+b^2$ solvable, there are $a,b$ with $7\notin a^2$, $7\notin b^2$, $n=a^2+b^2$, or show the exceptional set is infinite.
+
+## Largest prime factor of 2^n + n | 7 | Number theory
+W: Show the largest prime factor of 2^n + n tends to infinity faster than any fixed multiple of n.
+M: Prove $P(2^n+n)/n\to\infty$.
+
+## Largest prime factor of n^n + 1 | 7 | Number theory
+W: Show P(n^n + 1) / n tends to infinity.
+M: Prove $P(n^n+1)/n\to\infty$.
+
+## Twin width of square-sum graphs | 6 | Combinatorics
+W: Show the square-sum graphs do not have bounded twin-width.
+M: Prove $\sup_N\mathrm{tww}(S_N)=\infty$.
+
+## Treewidth of the prime-sum graph | 5 | Combinatorics
+W: Find the treewidth of the prime-sum graph on 1 to 2n asymptotically.
+M: Prove $\mathrm{tw}(\Pi_{2n})\sim c\,n$ for the prime-sum graph and determine $c$.
+
+## Clique minors in the prime-sum graph | 5 | Combinatorics
+W: Show the prime-sum graph on 1 to 2n has a complete minor of size about n over the square root of log n.
+M: Prove $h(\Pi_{2n})=\Theta(n/\sqrt{\log n})$.

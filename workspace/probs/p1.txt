@@ -1,0 +1,231 @@
+## Wind-driven fire | 2 | Combinatorics
+W: On a grid, fire spreads each turn only east, north and south (the wind blocks westward spread). How few firefighters per turn can always trap a single burning cell?
+M: On $\mathbb{Z}^2$, burning cells ignite neighbours at offsets $(1,0),(0,\pm1)$ each turn; $k$ unburnt cells are protected per turn. Find the least $k$ that always yields a finite burned set.
+
+## Beat the prism | 2 | Geometry
+W: Gerver's sofa, lifted to one unit tall, can turn a corner in a square pipe. Find a 3D shape with more volume that can still make the turn.
+M: In the corridor $([0,1]\times\mathbb{R}\cup\mathbb{R}\times[0,1])\times[0,1]$ turning about the $z$-axis, find a rigid motion-admissible solid of volume $>2.2195\ldots$.
+
+## Lonely runner with one fast runner | 2 | Number theory
+W: Runners have speeds 1, 2, 3 and some larger speed m. Work out exactly how lonely a stationary runner is guaranteed to get, depending on m.
+M: Compute $\delta(m)=\sup_t\min(\|t\|,\|2t\|,\|3t\|,\|mt\|)$ in closed form for all integers $m\ge4$.
+
+## Hardest Rush Hour | 3 | Games
+W: Find the 7 × 7 Rush Hour traffic-jam puzzle that takes the most moves to solve.
+M: Over all solvable $7\times7$ Rush Hour configurations, determine $\max$ of the minimum solution length, with a certificate.
+
+## Fewest burned cells | 3 | Combinatorics
+W: In the wind-driven fire (spreading only east, north and south), with the fewest firefighters that can trap it, what is the least area that must burn?
+M: For the minimal $k$ in the east/north/south fire on $\mathbb{Z}^2$, find $\min |B_\infty|$ over all protection strategies.
+
+## Infinite Prime Nim losses | 3 | Games
+W: Prime Nim has infinitely many losing pile sizes (a known theorem, since primes have arbitrarily large gaps). Show they are rare.
+M: Let $L=\{n: G(n)=0\}$ for the subtraction game with prime moves ($|L|=\infty$ is known). Prove $L$ has natural density $0$.
+
+## Lean golf is NP-hard | 3 | Computation
+W: Show that finding the shortest proof using only a few basic Lean tactics is computationally hard.
+M: Prove NP-hardness of: given a Lean 4 goal and $k$ in unary, is there a proof using only intro, apply, exact, rfl with at most $k$ steps?
+
+## Obtuse sofa | 3 | Geometry
+W: The corridor turns 120° instead of 90°. Find a sofa and a matching upper bound within 1%.
+M: For a width-1 corridor with turn angle $2\pi/3$, find $A$ with an admissible sofa of area $A$ and a proof that the optimum is $<1.01A$.
+
+## Graceful spider forests | 3 | Combinatorics
+W: Spiders are trees with one central branching vertex. Show forests of spiders have the distinct-difference labeling.
+M: For any forest of spiders with $m$ edges and $c$ components, find a bijection $V\to\{0,\dots,m+c-1\}$ with distinct edge differences.
+
+## Smallest-odd-factor Collatz | 3 | Dynamics
+W: Halve even numbers; send an odd number to the smallest odd prime dividing 3n + 1. Find every cycle that occurs below a billion.
+M: Let $g(n)=n/2$ ($n$ even) and $g(n)=q(3n+1)$ ($n$ odd), $q$ the least odd prime factor ($1$ if none). Classify all cycles of $g$ meeting $[1,10^9]$.
+
+## Narrowing doorway sofa | 3 | Geometry
+W: A width-1 hallway turns a right angle and then narrows to width 0.8. Find the biggest sofa that gets through.
+M: Maximize the area of a connected planar set movable from arm $\mathbb{R}_{<0}\times[0,1]$ into arm $[0,0.8]\times\mathbb{R}_{>1}$.
+
+## Shuffle with a cut | 3 | Combinatorics
+W: Do a perfect shuffle, then cut k cards from top to bottom, and repeat. How many repetitions bring the deck back?
+M: For the permutation $c_k\circ\sigma_{\text{out}}$ on $2n$ cards, determine its order as a function of $n$ and $k$.
+
+## Anti-knight Sudoku | 3 | Games
+W: In this Sudoku, equal digits may not sit a knight's move apart. What is the fewest clues for a unique solution?
+M: Determine the minimum number of givens in a uniquely solvable $9\times9$ Sudoku with the extra anti-knight constraint.
+
+## Sofa angle monotonicity | 3 | Geometry
+W: As a hallway's turn gets sharper, the best sofa should get smaller. Prove it between 60° and 90°.
+M: Let $A(\theta)$ be the maximal sofa area for a width-1 corridor turning by $\theta$. Prove $A$ is decreasing on $[\pi/3,\pi/2]$.
+
+## Delayed firefighters | 3 | Combinatorics
+W: Fire spreads in four directions, but a firefighter assigned now only takes effect a turn later. How many per turn are needed?
+M: On $\mathbb{Z}^2$ with 4-neighbour spread, cells chosen at turn $t$ become protected at turn $t+1$. Find the least per-turn number that contains a single fire.
+
+## Aperiodic polykite census | 3 | Geometry
+W: The "hat" is made of 8 kites and tiles the plane only non-periodically. Find every such shape made of at most 12 kites.
+M: Enumerate all polykites with $\le12$ kites (from the $\{6,3\}$ kite grid) that tile $\mathbb{R}^2$ but admit no periodic tiling.
+
+## Fire on a cylinder | 3 | Combinatorics
+W: A fire burns on a grid wrapped into an infinite tube of width n. How many firefighters per turn stop it?
+M: On $C_n\times\mathbb{Z}$ with 4-neighbour spread, find the least $k(n)$ that always contains a single fire, for every $n$.
+
+## Mod-3 Collatz map | 3 | Dynamics
+W: Divide by 3 when you can; otherwise double and add or subtract 1. Find all loops below a billion.
+M: Let $h(n)=n/3$ if $3\mid n$, $2n+1$ if $n\equiv1$, $2n-1$ if $n\equiv2 \pmod 3$. Classify all cycles of $h$ meeting $[1,10^9]$.
+
+## Voice leading is NP-hard | 4 | Computation
+W: Moving n voices through a chord progression with the least total motion while avoiding parallel fifths should be computationally hard.
+M: Show NP-hardness of minimizing $\sum_t\sum_i |x_{t+1,i}-x_{t,i}|$ over voicings of a given chord sequence with $n$ voices, subject to no parallel perfect fifths.
+
+## Real-rank hyperoperations | 4 | Algebra
+W: Addition, multiplication and exponentiation are ranks 1, 2, 3 of one ladder. Find natural rules that fix a unique operation at every real rank in between.
+M: Find axioms (analytic in $s$, $a[s{+}1](b{+}1)=a[s](a[s{+}1]b)$, agreement with $+,\times,\uparrow$ at $s=1,2,3$) that determine $a[s]b$ uniquely for real $s\in[1,3]$, and prove uniqueness.
+
+## Adversarial 2048 | 4 | Games
+W: An opponent places every new tile in 2048 as unhelpfully as possible. What is the biggest tile you can still guarantee?
+M: On the $4\times4$ board where an adversary chooses each spawn's position and value in $\{2,4\}$, determine the largest tile the player can force.
+
+## Blank jigsaw | 4 | Combinatorics
+W: A jigsaw with no picture can only be solved from piece shapes. How few edge shapes force a unique solution?
+M: Find the asymptotics in $n$ of the least number of edge types such that some $n\times n$ jigsaw has exactly one assembly (up to rotation of the whole).
+
+## Quarter-tone all-interval rows | 4 | Combinatorics
+W: Count the tone rows in 24-note tuning that use every interval exactly once.
+M: Count permutations of $\mathbb{Z}_{24}$ whose successive differences are all distinct nonzero residues, and find their growth rate for $\mathbb{Z}_{2m}$.
+
+## Small Keller maps in 3D | 4 | Algebra
+W: The 2026 counterexamples to the Jacobian conjecture have fairly high degree. Is there one of degree 5 or less?
+M: Decide whether some $F:\mathbb{C}^3\to\mathbb{C}^3$ with $\deg F\le5$ and $\det DF\in\mathbb{C}^\times$ has no polynomial inverse.
+
+## Prime Nim, misère | 4 | Games
+W: In Prime Nim where the last mover loses instead of wins, do the losing positions differ from normal play only finitely often?
+M: Compare the P-positions of the prime subtraction game in normal and misère play; decide whether their symmetric difference is finite.
+
+## Seven-free Egyptian fractions | 4 | Number theory
+W: Write every fraction as a sum of distinct unit fractions whose denominators never contain the digit 7.
+M: Prove every $q\in\mathbb{Q}\cap(0,1)$ is $\sum_{d\in D}1/d$ for a finite set $D$ of distinct integers with no decimal digit 7.
+
+## Hyperbolic sofa, flat limit | 4 | Geometry
+W: As curvature fades to zero, the best hyperbolic sofa should approach Gerver's sofa. Find how fast.
+M: Let $A(\kappa)$ be the optimal sofa area in curvature $-\kappa$. Prove $A(\kappa)=2.2195\ldots+c\kappa+o(\kappa)$ and compute $c$.
+
+## Penrose firefighter | 4 | Combinatorics
+W: Fire spreads along a Penrose tiling's edges. How many firefighters per turn can trap any fire?
+M: On the vertex graph of a Penrose rhomb tiling, find the least $k$ such that protecting $k$ vertices per turn contains a fire from any single vertex.
+
+## Three-pile shuffle group | 4 | Algebra
+W: Using the six ways to stack three piles in a perfect shuffle, which rearrangements of the deck can you reach?
+M: Determine the subgroup of $S_{3n}$ generated by the six 3-pile perfect shuffles (all pile orders), for every $n$.
+
+## Two-tree graceful forests | 4 | Combinatorics
+W: Check the distinct-difference labeling for every forest of two small trees.
+M: Prove that every forest of two trees with at most 25 vertices each has a bijection $V\to\{0,\dots,m+1\}$ with distinct edge differences.
+
+## Shortest proof that √2 is irrational | 4 | Formal proof
+W: Find the shortest possible Lean proof that the square root of 2 is irrational, and prove nothing shorter works.
+M: Over Lean 4 core tactics on top of Mathlib's definitions, find the minimal tactic-step proof of `Irrational (Real.sqrt 2)` and certify minimality.
+
+## Pipe-bend sofa | 4 | Geometry
+W: A round pipe of diameter 1 bends at a right angle. What is the biggest solid that fits around the bend?
+M: Maximize volume over rigid-motion-admissible solids in the union of two half-cylinders of diameter 1 meeting at a right angle.
+
+## Counting 16 × 16 Sudoku | 4 | Combinatorics
+W: Count the essentially different 16 × 16 Sudoku grids, ignoring symmetries, to three significant figures.
+M: Determine the automorphism group $\Gamma$ of the $16\times16$ Sudoku constraint structure and estimate $|\text{grids}/\Gamma|$ to 3 significant figures.
+
+## Toroidal Hex | 4 | Games
+W: Hex on a doughnut: the board wraps around, and you win with a chain that loops the long way. Who wins on 7 × 7?
+M: On the $7\times7$ Hex board with opposite sides identified, a player wins with a non-contractible chain of their colour; determine the winner and whether draws occur.
+
+## Hyperbolic firefighter budgets | 4 | Combinatorics
+W: In a hyperbolic tiling, fire spreads exponentially, so no fixed crew stops it. How fast must the crew grow?
+M: On the $\{7,3\}$ tiling graph, find the minimal growth of budgets $k_t$ (firefighters at turn $t$) that contains any single fire.
+
+## Kissing hats | 4 | Geometry
+W: How many copies of the hat tile can touch one hat without overlapping?
+M: Determine the maximum number of interior-disjoint congruent copies of the hat polykite, reflections allowed, each meeting a fixed hat.
+
+## Packing seven-pointed stars | 4 | Geometry
+W: Find the densest way to pack identical seven-pointed stars in the plane.
+M: Determine the maximal packing density of congruent copies of the regular star polygon $\{7/2\}$.
+
+## Square in a snowflake | 4 | Geometry
+W: Find the largest square whose four corners lie on the Koch snowflake.
+M: Prove the Koch snowflake inscribes a square, and determine the maximal side length of an inscribed square.
+
+## Formalize 3D Kakeya | 4 | Formal proof
+W: Turn the 2025 proof of the three-dimensional Kakeya conjecture into a compact computer-checked proof.
+M: Produce a Lean 4 formalization of the Wang–Zahl theorem ($\dim_H K=3$ for Kakeya $K\subset\mathbb{R}^3$) in under 50,000 lines beyond Mathlib.
+
+## Formalize the sofa | 4 | Formal proof
+W: Turn Baek's proof that Gerver's sofa is optimal into a computer-checked proof.
+M: Formalize in Lean 4 the statement and proof that the moving sofa constant equals the area of Gerver's sofa.
+
+## Hat patch complexity | 4 | Geometry
+W: Count the distinct round patches of radius r in hat tilings. Find the exact constant in their growth.
+M: Let $P(r)$ count radius-$r$ patches over the hat tiling hull. Prove $P(r)\sim C r^2$ and compute $C$.
+
+## Random walk on the hat tiling | 4 | Probability
+W: A random walker steps between neighbouring hat tiles. How likely is it to be back home after n steps?
+M: For simple random walk on the hat adjacency graph, prove $p_{2n}(o,o)\sim c/n$ and compute $c$.
+
+## Percolation on the hat tiling | 4 | Probability
+W: Each hat tile is open at random with probability p. Find where an infinite open cluster first appears.
+M: For site percolation on the hat adjacency graph, prove $0.6<p_c<0.7$ (or the correct interval) with rigorous bounds.
+
+## Self-avoiding walks on the hat tiling | 4 | Probability
+W: Count paths across hat tiles that never revisit a tile, and show their growth rate is new.
+M: Prove the connective constant $\mu_{\text{hat}}$ exists for the hat adjacency graph and $\mu_{\text{hat}}\ne\sqrt{2+\sqrt2}$.
+
+## Independent prime-gap formalization | 4 | Formal proof
+W: Check the 2026 record that prime gaps of at most 186 occur forever, with a fresh computer proof written independently.
+M: Give an independent Lean 4 proof of $\liminf_{n}(p_{n+1}-p_n)\le186$.
+
+## Optimal origami base | 4 | Geometry
+W: Folders design animal shapes by packing circles on paper. Find the smallest paper needed for every stick figure with six legs or fewer.
+M: For every weighted tree with $\le6$ leaves, determine the minimum square side admitting a uniaxial base (optimal circle–river packing), with certificates.
+
+## Keller maps with few terms | 4 | Algebra
+W: Find a Jacobian-conjecture counterexample using as few polynomial terms as possible.
+M: Minimize the total number of monomials of $F:\mathbb{C}^3\to\mathbb{C}^3$ with $\det DF\in\mathbb{C}^\times$ and $F$ not injective; prove minimality.
+
+## Billiards in the sofa | 4 | Dynamics
+W: A ball bounces inside Gerver's sofa shape. Find its shortest closed bouncing path.
+M: Determine the minimal-length periodic billiard trajectory in Gerver's sofa and prove minimality.
+
+## Fewest KenKen cages | 4 | Games
+W: What is the fewest cages for a uniquely solvable 6 × 6 KenKen puzzle?
+M: Minimize the number of cages in a $6\times6$ KenKen (cage targets with $+,-,\times,\div$) having a unique Latin-square solution.
+
+## S and Z Tetris | 4 | Games
+W: If only the S and Z pieces ever come, how many lines can you clear before losing on a 10-wide board?
+M: On a $10\times20$ Tetris well with an adversarial sequence from $\{S,Z\}$, determine the maximum number of lines the player can guarantee.
+
+## The 2048 ceiling | 4 | Probability
+W: Show that even perfect play almost never reaches the theoretical top tile in 2048.
+M: Prove $\Pr(\text{reach }131072)<10^{-6}$ for every strategy on the $4\times4$ board with standard random spawns.
+
+## Equal-area triangles in the hat | 4 | Geometry
+W: Cut the hat tile into triangles of equal area. Which numbers of triangles are possible?
+M: Determine the set of $n$ for which the hat polygon admits a dissection into $n$ triangles of equal area.
+
+## Fire on the Sierpinski graph | 4 | Combinatorics
+W: With one firefighter per turn on the Sierpinski triangle graph, what fraction must burn as the graph gets bigger?
+M: On the level-$n$ Sierpinski gasket graph with a fire at a corner and one protected vertex per turn, find $\lim_n \min |B|/|V|$.
+
+## Prime squared square | 4 | Combinatorics
+W: Tile a square with smaller squares, all different sizes, every side a prime number. Find one or show none exists.
+M: Find a perfect squared square whose component squares all have prime side lengths, or prove none exists.
+
+## Integer sofa | 4 | Geometry
+W: With the hallway scaled to width 10, what is the biggest polygon with whole-number corners that turns the corner?
+M: Maximize area over lattice polygons admissible in the width-10 right-angled corridor.
+
+## Polyhedral sofa | 4 | Geometry
+W: The best 3D sofa is curved. What is the best one with at most 12 flat corners?
+M: Maximize volume over convex polyhedra with $\le12$ vertices admissible in the $1\times1$ square corridor.
+
+## Toroidal Sudoku | 4 | Games
+W: Sudoku where the 3 × 3 boxes wrap around the board's edges. What is the fewest clues for a unique solution?
+M: For the $9\times9$ Sudoku variant whose box regions are a fixed partition into wrapped $3\times3$ blocks on $\mathbb{Z}_9^2$, find the minimum number of givens.
+
+## Five colors for square sums | 4 | Combinatorics
+W: Square-sum graphs need four colors eventually. Do they eventually need five?
+M: Decide whether $\chi(S_N)\ge5$ for all sufficiently large $N$.

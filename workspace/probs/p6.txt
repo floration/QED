@@ -1,0 +1,68 @@
+## SOF Collatz with 5n + 1 | 8 | Dynamics
+W: Use the smallest odd factor of 5n + 1 instead of 3n + 1. Show every start ends in a loop.
+M: Prove every orbit of $n\mapsto n/2$ (even), $\mathrm{spf}_{\text{odd}}(5n+1)$ (odd) is eventually periodic.
+
+## Three of four | 8 | Number theory
+W: Show infinitely often at least three of the four doubled-twin numbers are prime at once.
+M: Prove there are infinitely many $n$ such that at least three of $n,n+2,2n+1,2n+3$ are prime.
+
+## Seven-free Carmichael numbers | 8 | Number theory
+W: Show infinitely many Carmichael numbers have no digit 7.
+M: Prove there are infinitely many Carmichael numbers with no digit 7 in base 10.
+
+## Prime Nim with prime-power moves | 8 | Games
+W: Allow subtracting any prime power. Find exactly which piles lose.
+M: Characterize the P-positions of the subtraction game with move set $\{p^k: p\text{ prime},k\ge1\}$.
+
+## Sofa through a revolving corridor | 8 | Geometry
+W: The hallway itself slowly rotates while you push the sofa. Find the largest sofa that still makes it.
+M: For the width-1 L-corridor rotating at angular speed $\omega$ relative to a sofa moving at unit speed, find the optimal area as a function of $\omega$.
+
+## Squared rectangles with prime sides | 8 | Combinatorics
+W: Find the smallest perfect squared rectangle whose squares all have prime side lengths.
+M: Determine the minimal order of a perfect squared rectangle with every component side prime.
+
+## Firefighter on the hat tiling | 8 | Combinatorics
+W: Find the exact average number of firefighters per turn needed to contain any fire on a hat tiling.
+M: Determine $\inf\{f: f\text{ firefighters per turn (averaged) contain every finite fire on the hat graph}\}$.
+
+## Spectre Rupert | 8 | Geometry
+W: Extrude a spectre into a prism. Can a copy pass through a hole in itself?
+M: Decide whether the right prism over the spectre of height 1 has the Rupert property.
+
+## Keller maps in dimension 3 of degree 5 | 8 | Algebra
+W: Show no Jacobian-conjecture counterexample exists in 3D with degree exactly 5 and rational coefficients.
+M: Prove every Keller map $F\in\mathbb{Q}[x,y,z]^3$ with $\deg F=5$ is invertible.
+
+## Three-pile shuffle orders equal | 8 | Algebra
+W: Show the three-pile shuffle and the two-pile shuffle on the same deck size have equal order infinitely often.
+M: Prove $\operatorname{ord}(\sigma^{(3)}_{6n})=\operatorname{ord}(\sigma^{(2)}_{6n})$ for infinitely many $n$.
+
+## Hyperbolic Hex | 8 | Games
+W: On a board tiled by heptagons in hyperbolic space, find an explicit first-player win for Hex-like connection.
+M: On the $(7,3)$ tiling with a disk of radius $r$ split into four boundary arcs, give an explicit winning strategy for the first player for all $r$.
+
+## Gerver sofa is not periodic in its digits | 9 | Number theory
+W: Show the digits of Gerver's sofa area never fall into a repeating pattern in any base, and are not "too well" approximable.
+M: Prove the irrationality measure of $\mu_G$ equals 2.
+
+## Hat Ising free energy | 9 | Physics
+W: Find the exact free energy of magnets on a hat tiling at the critical point.
+M: Compute $f(\beta_c)$ for the Ising model on the hat graph in closed form.
+
+## Spectre dimers are critical | 9 | Physics
+W: Show random pairings of spectre tiles have long-range correlations, like the square grid.
+M: Prove dimer correlations on the spectre tiling decay as a power law with exponent 2.
+
+## Origami with a bounded number of layers | 9 | Geometry
+W: Find the best origami base for any tree when no point may have more than 4 layers of paper.
+M: Give an algorithm for the minimal square paper for uniaxial bases of metric trees with layer count at most 4, with proof of optimality.
+
+## Seven-free primes have a bounded gap | 9 | Number theory
+W: Show infinitely many pairs of seven-free primes lie within a fixed distance of each other.
+M: Prove $\liminf(q_{n+1}-q_n)<\infty$ where $q_n$ enumerates the 7-free primes.
+
+## Prime Nim Grundy values are unbounded in density | 10 | Games
+W: Show each Grundy value of Prime Nim appears with a precise positive density, and compute them all.
+M: Prove $d_k=\lim\frac1x\#\{n\le x: G(n)=k\}$ exists for every $k$ and give a formula.
+

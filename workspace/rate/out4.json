@@ -1,0 +1,602 @@
+[
+ {
+  "id": "N-085",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Rigorous p_c bounds on aperiodic graph; computer-assisted methods exist"
+ },
+ {
+  "id": "N-456",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Explicit Hex strategies unknown even on small Euclidean boards"
+ },
+ {
+  "id": "N-263",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Bounded-degree Jacobian in dim 3; may clash with 2026 counterexample"
+ },
+ {
+  "id": "N-453",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Prisms over polygons are typically Rupert; finite computation"
+ },
+ {
+  "id": "N-494",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "rev(n^2) keeps ~2x digits; orbits diverge except trivial cases"
+ },
+ {
+  "id": "N-312",
+  "r": 5.0,
+  "flag": "famous-equiv",
+  "why": "Universal boundedness of Collatz-type map; Collatz-hard"
+ },
+ {
+  "id": "N-148",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Constrained sofa variant; sofa itself took 60 years"
+ },
+ {
+  "id": "N-230",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Large formalization effort, not new mathematics"
+ },
+ {
+  "id": "N-374",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Likely greedy back-and-forth construction works"
+ },
+ {
+  "id": "N-176",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Sofa variant with extra freedom; hard optimality proof"
+ },
+ {
+  "id": "N-254",
+  "r": 0.5,
+  "flag": "false",
+  "why": "Tree-like patches with three arms have no Hamiltonian path"
+ },
+ {
+  "id": "N-269",
+  "r": 0.5,
+  "flag": "known",
+  "why": "Besicovitch constructions localize; dimension 2 as in plane Kakeya"
+ },
+ {
+  "id": "N-422",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Optimal 60-degree sofa not even known"
+ },
+ {
+  "id": "N-295",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Rigorous Hausdorff dimension of Lorenz attractor far beyond current tools"
+ },
+ {
+  "id": "N-042",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Counting argument gives n log n/log n-ish bound, far exceeding"
+ },
+ {
+  "id": "N-125",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Siegel-Walfisz extension of Maynard's restricted-digit primes"
+ },
+ {
+  "id": "N-400",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Contains segments in all directions, so dimension 2 by Davies"
+ },
+ {
+  "id": "N-358",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Prime analog of Heath-Brown d(n)=d(n+1); sieve parity issues"
+ },
+ {
+  "id": "N-447",
+  "r": 2.0,
+  "flag": "false",
+  "why": "Arbitrary identity almost surely false; needs rigorous beta_c bounds"
+ },
+ {
+  "id": "N-407",
+  "r": 5.0,
+  "flag": "famous-equiv",
+  "why": "Prime 4-tuple conjecture; at least twin-prime hard"
+ },
+ {
+  "id": "N-128",
+  "r": 0.5,
+  "flag": "known",
+  "why": "Pintz: bounded gaps adjacent to arbitrarily large gaps"
+ },
+ {
+  "id": "N-154",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Finite-N Kuramoto locking threshold has explicit characterization"
+ },
+ {
+  "id": "N-186",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Plausible via local obstructions; nontrivial counting"
+ },
+ {
+  "id": "N-233",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Depends on integral counterexamples; Z-bijectivity strong constraint"
+ },
+ {
+  "id": "N-465",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Prime Nim Grundy sequence poorly understood"
+ },
+ {
+  "id": "N-239",
+  "r": 4.5,
+  "flag": "famous-equiv",
+  "why": "Cycle finiteness for Collatz-type map"
+ },
+ {
+  "id": "N-161",
+  "r": 0.3,
+  "flag": "false",
+  "why": "Union of separated Wulff shapes never exactly convex"
+ },
+ {
+  "id": "N-398",
+  "r": 0.5,
+  "flag": "ill-posed",
+  "why": "Infinite graph allows infinite play; vertex-transitive anyway"
+ },
+ {
+  "id": "N-219",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Specific shape optimization; optimality proof moderately hard"
+ },
+ {
+  "id": "N-273",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "New firefighting model; thresholds rarely exact"
+ },
+ {
+  "id": "N-349",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Kiselev-Sverak adaptation to nonconvex corners is delicate"
+ },
+ {
+  "id": "N-255",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Exact density on aperiodic graph; LP plus substitution"
+ },
+ {
+  "id": "N-106",
+  "r": 1.0,
+  "flag": "computation",
+  "why": "Monotone in N; one SAT certificate suffices if true"
+ },
+ {
+  "id": "N-317",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Sparse cube-sum graph; Hamiltonicity needs constructive scheme"
+ },
+ {
+  "id": "N-475",
+  "r": 4.5,
+  "flag": "computation",
+  "why": "Solving chess-sized game; infeasible brute force"
+ },
+ {
+  "id": "N-289",
+  "r": 1.5,
+  "flag": "ill-posed",
+  "why": "Subgraph choice unspecified; vague"
+ },
+ {
+  "id": "N-033",
+  "r": 1.0,
+  "flag": "ill-posed",
+  "why": "No characterization expected; listing is trivial computation"
+ },
+ {
+  "id": "N-365",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Carmichael numbers in sparse digit-defined sets very hard"
+ },
+ {
+  "id": "N-281",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Finite geometric packing computation"
+ },
+ {
+  "id": "N-050",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Finite adversarial game search"
+ },
+ {
+  "id": "N-191",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Ramsey multiplicity known for very few graphs"
+ },
+ {
+  "id": "N-097",
+  "r": 2.5,
+  "flag": "computation",
+  "why": "Finite game; Burgiel shows S/Z forces loss"
+ },
+ {
+  "id": "N-328",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Friedlander-Iwaniec with both inputs prime"
+ },
+ {
+  "id": "N-452",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Analog of open Z^2 fractional firefighter threshold"
+ },
+ {
+  "id": "N-298",
+  "r": 4.5,
+  "flag": "famous-equiv",
+  "why": "Requires controlling all Collatz-type orbits"
+ },
+ {
+  "id": "N-053",
+  "r": 0.1,
+  "flag": "easy",
+  "why": "f(n)<n unless (3n+1)/2 prime; density zero exceptions"
+ },
+ {
+  "id": "N-093",
+  "r": 1.0,
+  "flag": "ill-posed",
+  "why": "Provable constancy undecidable; completeness notion vague"
+ },
+ {
+  "id": "N-350",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Adapting 2026 blow-up to no-slip bounded domain"
+ },
+ {
+  "id": "N-418",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Rigorous aperiodic ground states via potentials is hard"
+ },
+ {
+  "id": "N-287",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Chen-type sieve within Maynard digit-restricted primes"
+ },
+ {
+  "id": "N-158",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Engineering compression of existing formal proof"
+ },
+ {
+  "id": "N-293",
+  "r": 0.5,
+  "flag": "computation",
+  "why": "Small finite constraint search; somewhat vague"
+ },
+ {
+  "id": "N-061",
+  "r": 0.2,
+  "flag": "false",
+  "why": "S_N has ~N^1.5 edges, so genus is ~N^1.5 not N"
+ },
+ {
+  "id": "N-277",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Strip tilings are paths in finite graph; periodic exists"
+ },
+ {
+  "id": "N-074",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Few remaining cases; Noperthedron-style computer proofs"
+ },
+ {
+  "id": "N-481",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Single-tile tiling decidability in plane is major open"
+ },
+ {
+  "id": "N-149",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Firefighting on UIPT; new random geometry problem"
+ },
+ {
+  "id": "N-069",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Encode Steiner system S(5,8,24) or Golay code constraints"
+ },
+ {
+  "id": "N-440",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Corona limits for hat substitution; claim may be false"
+ },
+ {
+  "id": "N-286",
+  "r": 2.5,
+  "flag": "ill-posed",
+  "why": "Density in reducible variety; component structure unclear"
+ },
+ {
+  "id": "N-024",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Generalizes partially open graceful spider problem"
+ },
+ {
+  "id": "N-114",
+  "r": 5.5,
+  "flag": "famous-equiv",
+  "why": "Requires proving Unique Games Conjecture"
+ },
+ {
+  "id": "N-026",
+  "r": 1.5,
+  "flag": "known",
+  "why": "Triangular lattice firefighting largely settled"
+ },
+ {
+  "id": "N-204",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Depends on size of 2026 counterexample; small ones unlikely known"
+ },
+ {
+  "id": "N-300",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Lang-Weil/Chebotarev style counting"
+ },
+ {
+  "id": "N-296",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Min degree ~sqrt N; greedy embedding works"
+ },
+ {
+  "id": "N-032",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Monotonicity perhaps via containment argument; nontrivial"
+ },
+ {
+  "id": "N-489",
+  "r": 5.0,
+  "flag": "famous-equiv",
+  "why": "Collatz-type cycle finiteness for all a"
+ },
+ {
+  "id": "N-322",
+  "r": 3.0,
+  "flag": "false",
+  "why": "Forced Leray-Hopf non-uniqueness known; likely fails"
+ },
+ {
+  "id": "N-323",
+  "r": 3.0,
+  "flag": "ill-posed",
+  "why": "Undefined premise; QCD construction not given"
+ },
+ {
+  "id": "N-115",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Massive formalization; Buzzard project ongoing"
+ },
+ {
+  "id": "N-064",
+  "r": 0.5,
+  "flag": "computation",
+  "why": "Finite patch check settles colourability"
+ },
+ {
+  "id": "N-290",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Finite search plus aperiodicity proof"
+ },
+ {
+  "id": "N-424",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Pile-shuffle cutoff analysis, standard techniques"
+ },
+ {
+  "id": "N-031",
+  "r": 1.0,
+  "flag": "computation",
+  "why": "Finite McGuire-style exhaustive search"
+ },
+ {
+  "id": "N-218",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Two-turn sofa harder than Gerver"
+ },
+ {
+  "id": "N-283",
+  "r": 0.3,
+  "flag": "computation",
+  "why": "Small finite search"
+ },
+ {
+  "id": "N-047",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Routine NP-hardness reduction"
+ },
+ {
+  "id": "N-124",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Exponential sums over squares; moderate"
+ },
+ {
+  "id": "N-036",
+  "r": 0.5,
+  "flag": "computation",
+  "why": "Finite exact enumeration"
+ },
+ {
+  "id": "N-215",
+  "r": 1.5,
+  "flag": "known",
+  "why": "Follows from AGP/Wright-style Carmichael constructions"
+ },
+ {
+  "id": "N-223",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "2D aperiodic spectra unknown even for Penrose"
+ },
+ {
+  "id": "N-045",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Orbits diverge; excluding large cycles needs Baker-type bounds"
+ },
+ {
+  "id": "N-020",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Prime-difference-free set; density questions open"
+ },
+ {
+  "id": "N-110",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Bounded chromatic number of square-sum graph open"
+ },
+ {
+  "id": "N-260",
+  "r": 4.5,
+  "flag": "famous-equiv",
+  "why": "Multidimensional lonely runner; contains open LRC flavor"
+ },
+ {
+  "id": "N-466",
+  "r": 2.0,
+  "flag": "ill-posed",
+  "why": "No canonical real-rank hyperoperation exists"
+ },
+ {
+  "id": "N-030",
+  "r": 0.1,
+  "flag": "known",
+  "why": "Hamiltonian paths in S_N known for N>=25"
+ },
+ {
+  "id": "N-299",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Connectivity via chaining cubes; likely elementary"
+ },
+ {
+  "id": "N-188",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "New firefighting model; exact thresholds hard"
+ },
+ {
+  "id": "N-049",
+  "r": 3.0,
+  "flag": "ill-posed",
+  "why": "Find axioms is open-ended; tetration non-uniqueness"
+ },
+ {
+  "id": "N-275",
+  "r": 0.8,
+  "flag": "computation",
+  "why": "Finite SAT search"
+ },
+ {
+  "id": "N-421",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Same as zigzag sofa; harder than Gerver"
+ },
+ {
+  "id": "N-038",
+  "r": 0.3,
+  "flag": "computation",
+  "why": "Finite enumeration"
+ },
+ {
+  "id": "N-025",
+  "r": 1.0,
+  "flag": "computation",
+  "why": "Contracting map; finite search with certification"
+ },
+ {
+  "id": "N-334",
+  "r": 3.0,
+  "flag": "computation",
+  "why": "Huge finite classification; Heesch bound claim may fail"
+ },
+ {
+  "id": "N-203",
+  "r": 5.5,
+  "flag": "famous-equiv",
+  "why": "Requires proving Riemann hypothesis"
+ },
+ {
+  "id": "N-078",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Reflection symmetry gives inscribed square; max side computable"
+ },
+ {
+  "id": "N-486",
+  "r": 2.5,
+  "flag": "ill-posed",
+  "why": "Vague optimality target; related NP-hardness known"
+ },
+ {
+  "id": "N-166",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Peierls and high-temperature expansion on planar bounded-degree graph"
+ }
+]

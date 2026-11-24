@@ -1,0 +1,256 @@
+## Hadwiger's true constant | 6 | Combinatorics
+W: If graphs needing many colors need not contain a full complete-graph minor, find how large a complete minor they must contain.
+M: Find $c^*=\liminf_{t}\min\{h(G)/t:\chi(G)\ge t\}$, where $h$ is the Hadwiger number.
+
+## Icosahedral monotile | 6 | Geometry
+W: Find a single 3D tile that fills space and forces five-fold, icosahedral symmetry in every tiling.
+M: Find $T\subset\mathbb{R}^3$ tiling space such that every tiling by $T$ has icosahedral symmetry in its hull, or prove none exists.
+
+## Minimal four-color proof | 6 | Combinatorics
+W: The four color theorem's proof checks a big list of map configurations. Find the smallest list that works.
+M: Determine the minimum size of an unavoidable set of reducible configurations for planar triangulations, with proof of minimality.
+
+## Perfect Minesweeper | 6 | Probability
+W: What is the exact chance that perfect play wins expert Minesweeper?
+M: Compute $\sup_\sigma\Pr(\text{win})$ for $30\times16$ with 99 uniform mines and a safe first click.
+
+## Readable Riemann | 6 | Number theory
+W: The 2026 Riemann proof is a giant machine-checked archive. Write a proof people can read.
+M: Give a proof of the Riemann hypothesis of at most 100 pages acceptable to expert referees.
+
+## Short Riemann | 6 | Formal proof
+W: Shrink the 2026 machine-checked Riemann proof drastically.
+M: Give a Lean 4 proof of `RiemannHypothesis` in at most 10,000 lines beyond Mathlib.
+
+## Small Hadwiger counterexample | 6 | Combinatorics
+W: The claimed counterexamples to Hadwiger's conjecture are astronomically large. Find one under a million vertices.
+M: Find $G$ with $|V(G)|<10^6$ and $h(G)<\chi(G)$, or prove every counterexample is larger.
+
+## Explicit Navier–Stokes blow-up | 6 | Analysis
+W: Write down a forced Navier–Stokes blow-up as an explicit formula instead of a computer-assisted construction.
+M: Give closed-form smooth $u_0,f$ on $\mathbb{R}^3$ for which the Navier–Stokes solution blows up in finite time.
+
+## Two of four | 6 | Number theory
+W: Show infinitely many primes p have at least one more prime among p + 2, 2p + 1, 2p + 3.
+M: Prove infinitely many primes $p$ have at least one of $p+2,\,2p+1,\,2p+3$ prime.
+
+## Unbounded Prime Nim | 6 | Games
+W: Do the Prime Nim values grow without limit?
+M: Decide whether $\sup_n G(n)=\infty$ for the prime subtraction game.
+
+## Rounded corners | 6 | Geometry
+W: The inside corner of the hallway is rounded. Find the best sofa for every rounding radius.
+M: For each $\rho\ge0$, determine the optimal sofa for the width-1 corridor whose inner corner is a quarter-circle of radius $\rho$.
+
+## Kakeya discs | 6 | Geometry
+W: What is the least volume needed to turn a flat disc to every orientation?
+M: Determine $\inf$ volume of sets in $\mathbb{R}^3$ containing a unit disc in every orientation (positive by Marstrand), with an extremizer.
+
+## 3-SAT at density 4 | 6 | Computation
+W: Give a fast algorithm that solves almost all random 3-SAT puzzles up to clause density 4.
+M: Give a polynomial-time algorithm finding satisfying assignments of random 3-SAT with density $4.0$ with probability $1-o(1)$.
+
+## Prime ladders | 6 | Number theory
+W: Change one digit at a time, staying prime. Show any two k-digit primes are linked by at most k + 1 steps.
+M: In the graph on $k$-digit primes joined when differing in one decimal digit, prove $\operatorname{diam}\le k+1$ for all $k$.
+
+## Largest-factor Collatz stopping time | 6 | Dynamics
+W: How many steps does the largest-factor Collatz map take, on average, to reach 1?
+M: Prove $\frac1x\sum_{n\le x}T(n)\sim c\log x$ for the stopping time $T$ of $f$, and compute $c$.
+
+## Ringel for forests | 6 | Combinatorics
+W: Split a complete graph on 2m + 1 vertices into identical copies of any given forest with m edges.
+M: Prove $K_{2m+1}$ decomposes into $2m+1$ copies of any forest with $m$ edges.
+
+## Zigzag sofa | 6 | Geometry
+W: A hallway turns right, then left after distance d. Find the best sofa for every d.
+M: For each $d>0$, determine the optimal sofa for the width-1 corridor with two opposite right turns separated by $d$.
+
+## Spiral staircase | 6 | Geometry
+W: What is the biggest convex box-like object that can be carried up a given spiral staircase?
+M: Maximize volume over convex bodies admissible in a helical tube of square cross-section $1$, radius $2$, pitch $3$.
+
+## Geodesic squares on surfaces | 6 | Geometry
+W: Every smooth closed curve on a convex surface should pass through the corners of a square made of shortest paths.
+M: Prove every smooth simple closed curve on a smooth convex surface inscribes a geodesic quadrilateral with equal sides and equal diagonals.
+
+## Hat opaque set | 6 | Geometry
+W: Find the shortest set of walls that blocks every straight line through the hat tile.
+M: Determine the minimal total length of an opaque set for the hat polygon.
+
+## Hat spectrum is a Cantor set | 6 | Physics
+W: Show the energy levels of a particle hopping on a hat tiling form a dust of measure zero.
+M: Prove the spectrum of the adjacency operator on the hat graph is a Cantor set of Lebesgue measure zero.
+
+## Smallest force for blow-up | 6 | Analysis
+W: How weak can the push be and still make viscous fluid blow up?
+M: Find the optimal exponent $a$ with $\inf\{\|f\|_{L^\infty}: \text{NS from rest blows up}\}\asymp \nu^{a}$.
+
+## Forced SQG blow-up | 6 | Analysis
+W: Copy the 2026 forced Navier–Stokes blow-up for the surface quasi-geostrophic equation.
+M: Construct smooth compactly supported $f$ such that forced SQG on $\mathbb{R}^2$ from rest blows up in finite time.
+
+## Prime Nim is not simple | 6 | Computation
+W: Show Prime Nim losing positions cannot be detected by shallow constant-depth circuits.
+M: Prove the indicator of P-positions of the prime subtraction game (in binary) is not in $\mathsf{AC}^0$.
+
+## Lean golf is hard to approximate | 6 | Computation
+W: Not only is the shortest basic-tactic proof hard to find; even a roughly short one is.
+M: Prove intro/apply/exact/rfl proof minimization admits no constant-factor approximation unless P = NP.
+
+## Navier–Stokes blow-up in Isabelle | 6 | Formal proof
+W: Re-check the 2026 Navier–Stokes blow-up in a completely different proof assistant.
+M: Formalize in Isabelle/HOL the existence of a smooth forced finite-time blow-up of 3D Navier–Stokes.
+
+## Prime Nim is not automatic | 6 | Logic
+W: No finite machine reading digits can recognize Prime Nim losing positions.
+M: Prove the P-position set is not $k$-automatic for any base $k\ge2$.
+
+## Integer-bijective Keller map | 6 | Algebra
+W: Find a polynomial map with Jacobian 1 that shuffles integer points perfectly but has no polynomial inverse.
+M: Find $F\in\mathbb{Z}[x]^n$, $\det DF\equiv1$, inducing a bijection of $\mathbb{Z}^n$ but not a polynomial automorphism.
+
+## Firebreak with wind | 6 | Analysis
+W: How long must a firebreak be to save a round town from a wind-driven fire?
+M: For front speed $a+b\cos\theta$ and a disc town at distance $D$, find the minimal length of a curve built at speed $\sigma$ that protects the town.
+
+## 5n+1 largest-factor cycles | 6 | Dynamics
+W: Use 5n + 1 instead of 3n + 1 in the largest-factor map. Show it has only finitely many loops.
+M: For $f_5(n)=n/2$ (even), $P(5n+1)$ (odd), prove $f_5$ has finitely many cycles.
+
+## Twin-free stretches | 6 | Number theory
+W: Find long stretches full of primes but containing no twin primes.
+M: Prove there are intervals $[x,x+(\log x)^{1.1}]$ with $\ge(\log x)^{0.05}$ primes but no twin pair, for infinitely many $x$.
+
+## Big factors of p² + p + 1 | 6 | Number theory
+W: For primes p, show p² + p + 1 often has a very large prime factor.
+M: Prove $P(p^2+p+1)>p^{1.5}$ for infinitely many primes $p$.
+
+## Isoperimetric sofa | 6 | Geometry
+W: Among sofas with a fixed perimeter, find the one with largest area that turns the corner.
+M: For each $L$, maximize area over corridor-admissible sets of perimeter $\le L$.
+
+## Kayles on square sums | 6 | Games
+W: Players take turns claiming numbers, never next to a claimed one in the square-sum graph. Who wins?
+M: Determine the node-Kayles outcome on $S_N$ for all $N$.
+
+## Cops on square sums | 6 | Games
+W: How many cops catch a robber moving along square-sum links?
+M: Determine $c(S_N)$, the cop number of the square-sum graph, for all large $N$.
+
+## Random hat parking | 6 | Probability
+W: Drop hat tiles at random without overlap until no more fit. What fraction gets covered?
+M: Compute the jamming density of random sequential adsorption of hats (random rotations from the kite grid) in the plane.
+
+## Random walks on square sums | 6 | Probability
+W: How long does a random walk on the square-sum graph take to forget its starting point?
+M: Determine the mixing time of simple random walk on the giant component of $S_N$ up to constants.
+
+## Sudoku completions are log-normal | 6 | Probability
+W: Erase half a random Sudoku. The number of ways to refill it should follow a log-normal law.
+M: For a random $9\times9$ grid with a uniformly random half of cells erased, prove $\log(\#\text{completions})$ is asymptotically normal under the natural $n^2\times n^2$ scaling.
+
+## Cube-sum colors | 6 | Combinatorics
+W: Join numbers that add up to a perfect cube. Show a fixed number of colors always suffices.
+M: For $C_N$ with $a\sim b\iff a+b$ a cube, prove $\sup_N\chi(C_N)<\infty$ and find it.
+
+## Hat dominating sets | 6 | Combinatorics
+W: Find the smallest fraction of hat tiles that touch every other tile.
+M: Compute the asymptotic domination density of the hat adjacency graph.
+
+## Spectre vs hat dimers | 6 | Physics
+W: Show the spectre tiling and the hat tiling have different domino-covering entropies.
+M: Prove the dimer entropies per vertex of the spectre and hat adjacency graphs differ.
+
+## Doubled-twin constant | 6 | Number theory
+W: Assuming deep but standard conjectures, find the exact count of doubled twins up to x.
+M: Assuming the Elliott–Halberstam conjecture, prove a lower bound $\gg x/(\log x)^4$ for doubled twins with $p$ and one other form prime.
+
+## Emirp sieve | 6 | Number theory
+W: Show infinitely many primes have reversals with no small prime factors.
+M: Prove infinitely many primes $p$ have $\operatorname{rev}(p)$ with all prime factors $>p^{0.1}$.
+
+## Lonely runner, bounded speeds | 6 | Number theory
+W: Prove the lonely runner conjecture whenever all speeds are at most 10 times the number of runners.
+M: Prove $\sup_t\min_i\|tv_i\|\ge\frac1{n+1}$ for all distinct $v_i\le10n$.
+
+## Lonely runners in 3D | 6 | Number theory
+W: Runners move in three dimensions on a cube that wraps around. Find the guaranteed loneliness.
+M: For $n$ pairwise independent $v_i\in\mathbb{Z}^3$, find the optimal $\delta_n$ with $\sup_t\min_i\|tv_i\|_{\mathbb{T}^3,\infty}\ge\delta_n$.
+
+## Delayed fire on hexagons | 6 | Combinatorics
+W: On a honeycomb grid, firefighters arrive one turn late. Find how many per turn are needed.
+M: On the hexagonal lattice with 3-neighbour spread and one-turn protection delay, find the least per-turn budget containing a single fire.
+
+## Wind-driven fire in 3D | 6 | Combinatorics
+W: In 3D, fire spreads in five of six directions because of wind. How many firefighters per turn are needed?
+M: On $\mathbb{Z}^3$ with spread to all neighbours except $-e_1$, find the least per-turn budget containing a single fire.
+
+## Keller maps of degree 4 | 6 | Algebra
+W: Show that every 3D polynomial map of degree at most 4 with constant Jacobian has a polynomial inverse.
+M: Prove $F:\mathbb{C}^3\to\mathbb{C}^3$, $\deg F\le4$, $\det DF\in\mathbb{C}^\times$ implies $F$ is an automorphism.
+
+## Hyperbolic lonely runners | 6 | Dynamics
+W: Runners move along closed paths on a hyperbolic surface. Show one eventually gets far from all others.
+M: For geodesic flows on a closed hyperbolic surface along $n$ distinct primitive closed geodesics, prove a uniform separation time exists, with optimal bound.
+
+## Hex on hat boards, large | 6 | Games
+W: Solve Hex on hat-tiled boards of side 9.
+M: Determine the winner of Hex on the hat-tiled rhombus board of side 9, with an explicit strategy.
+
+## Pipe-bend sofa, exact | 6 | Geometry
+W: Find and prove the optimal solid for a round pipe with a right-angle bend.
+M: Determine the maximal volume and an optimizer for the diameter-1 circular pipe with a right-angle bend.
+
+## Random-turn Prime Nim | 6 | Games
+W: In Prime Nim where a coin flip decides who moves, find the exact winning chance from a pile of n.
+M: For random-turn play of the prime subtraction game, compute $\lim_n$ of the value from pile $n$, if it exists.
+
+## Fire spotting threshold | 6 | Probability
+W: Embers jump ahead of a fire. Find the jump probability where firefighting becomes hopeless.
+M: On $\mathbb{Z}^2$, a burning cell also ignites a uniformly random cell at distance $\le r$ with probability $q$. Find $q^*(r,k)$ beyond which $k$ protections per turn fail a.s.
+
+## Smoke-free corridor | 6 | Analysis
+W: Show a corridor's smoke clears in a predictable time when air flows through it.
+M: For advection–diffusion in a periodic corridor with Stokes flow, find the sharp exponential decay rate of a passive scalar in terms of geometry.
+
+## Sofa with a pillar | 6 | Geometry
+W: A thin pillar stands in the corner of the hallway. Find the best sofa that gets around it.
+M: Determine the optimal sofa for the width-1 corridor with a point obstacle at $(1/2,1/2)$ from the outer corner.
+
+## Exotic shuffles | 6 | Algebra
+W: For which deck sizes do the three-pile shuffles generate every possible arrangement?
+M: Determine all $n$ for which the six 3-pile shuffles generate $S_{3n}$ or $A_{3n}$.
+
+## Sofa stability | 6 | Geometry
+W: Show that any sofa nearly as big as Gerver's must look nearly like Gerver's.
+M: Prove a quantitative stability bound: $A(S)\ge A_G-\varepsilon$ implies $d_H(S,G)\le C\varepsilon^{\alpha}$ up to rigid motion.
+
+## Kissing spectres | 6 | Geometry
+W: How many spectre tiles can touch one spectre without overlapping?
+M: Determine the maximal number of interior-disjoint congruent spectres meeting a fixed one.
+
+## Spectre percolation | 6 | Probability
+W: Show percolation on the spectre tiling and the hat tiling have different thresholds.
+M: Prove $p_c^{\text{site}}(\text{spectre})\ne p_c^{\text{site}}(\text{hat})$.
+
+## Hat Ising bounds | 6 | Physics
+W: Pin down the critical temperature of magnets on a hat tiling to within one percent.
+M: Prove two-sided bounds on $T_c$ for the hat-graph Ising model with ratio $\le1.01$.
+
+## Seven-free almost-Sophie-Germain | 6 | Number theory
+W: Show infinitely many primes p avoid the digit 7 and have 2p + 1 with few prime factors.
+M: Prove infinitely many 7-free primes $p$ have $\Omega(2p+1)\le3$.
+
+## Sudoku symmetry breaking | 6 | Combinatorics
+W: Show that most big Sudoku grids have no symmetry at all.
+M: Prove the proportion of $n^2\times n^2$ Sudoku grids with nontrivial automorphism tends to 0.
+
+## Twin hats | 6 | Geometry
+W: Find a pair of different tiles that can each tile the plane only together, aperiodically, with a matching rule nobody has found yet.
+M: Find two polykites $A,B$ with $\le 6$ kites each, neither tiling alone, that together tile $\mathbb{R}^2$ only aperiodically.
+
+## Self-similar fire | 6 | Analysis
+W: Show a fire spreading with random fuel forms a shape that grows at a fixed limiting speed in every direction.
+M: For first-passage percolation on the hat graph with i.i.d. exponential weights, prove the limit shape exists and is not a polygon.
+

@@ -1,0 +1,178 @@
+<body>
+<style>
+.scale{grid-template-columns:repeat(var(--bins,10),1fr)}
+.seg{display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden}
+.seg button{font:inherit; font-size:13px; border:0; background:var(--surface); color:var(--ink); padding:8px 12px; cursor:pointer; min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--accent); color:#fff}
+.badge{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; line-height:1.05; font-size:16px}
+.badge small{font-size:9.5px; font-weight:500; opacity:.85}
+.alt{font-family:var(--mono); font-size:11.5px; color:var(--muted)}
+.lit{font-size:13px; border-radius:8px; padding:6px 10px; margin:6px 0 0; border-left:3px solid var(--line)}
+.lit b{font-weight:650}
+.lit.solved{border-color:#bf3349; background:color-mix(in srgb,#bf3349 10%,transparent)}
+.lit.known{border-color:#c08a12; background:color-mix(in srgb,#c08a12 10%,transparent)}
+.lit.prior{border-color:var(--accent); background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.lit a{color:var(--accent)}
+.adv{font-size:12.5px; color:var(--muted); margin:4px 0 0}
+.adv .fl{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; border:1px solid var(--line); border-radius:4px; padding:0 4px; margin-right:4px}
+.card>*:not(.badge){grid-column:2}
+.rowlab{font-size:12px; color:var(--muted); margin:0 0 6px; font-family:var(--mono); letter-spacing:.04em; text-transform:uppercase}
+</style>
+<div class="wrap">
+  <h1>617 Open Problems</h1>
+  <p class="sub">New mathematical problems for anyone to try. Each was checked against the literature and rated twice: once by its author, and once by independent raters who judged difficulty without trying to solve it.</p>
+  <details class="how">
+    <summary>Ratings, literature tags, and how to share a solution</summary>
+    <ul>
+      <li><b>Scale.</b> 0: trivial. 1: graduate coursework. 5: the current edge of mathematics. 10: likely never solved, even by vastly greater intelligence.</li>
+      <li><b>Two ratings.</b> The author's rating (whole numbers 1–10, designed as a bell curve around 6) and an adversarial rating (0.0–10.0) from separate AI raters. They never saw the author's ratings, were told to be skeptical, and didn't try to solve anything. Their flags mark problems they think are easy, a finite computation, ill-posed, or equivalent to a famous problem. Switch which rating drives the histogram, the colours and the sort with the toggle.</li>
+      <li><b>Expansion, 23 Nov 2026.</b> 117 new problems added after a strict adversarial audit (63 of 180 drafts rejected as duplicate, false, easy, known, ill-posed or famous-equivalent); new problems average 5.2 on the calibrated scale.</li><li><b>Revision, 23 Nov 2026.</b> I replaced 218 problems because they were false, already solved, already known, a famous open problem in disguise, trivial, or vague. Every replacement went through a blind adversarial rating, and replacements flagged as flawed were themselves replaced, over several rounds.</li>
+      <li><b>Literature tags</b> come from a web search on 23 Nov 2026. <i>Already solved</i>: the answer is in print. <i>Known problem</i>: the literature already poses this question or something very close. <i>Prior work</i>: the problem is new, but there is directly relevant work to start from. Untagged problems turned up nothing close. That is evidence, not proof.</li>
+      <li>Each problem has a plain-words note and a precise math statement. If they seem to disagree, the math statement is the official one. Cite a problem by its ID, such as <span class="meta">N-217</span>.</li>
+      <li>Objects defined just for this list: LF-Collatz: <i>f(n)=n/2</i> for even n, otherwise the largest prime factor of 3n+1. SOF Collatz: the same with the smallest odd prime factor. Mod-3 map: n/3, 2n+1 or 2n−1 by n mod 3. R(n): reverse the digits of n². Prime Nim: take a prime number of stones. S<sub>N</sub>, C<sub>N</sub>: numbers up to N joined when their sum is a square or a cube. Doubled twins: p, p+2, 2p+1, 2p+3 all prime. "Seven-free": no digit 7 in base 10. Disproving a problem counts as solving it.</li>
+    </ul>
+  </details>
+  <div class="controls">
+    <span class="rowlab" style="margin:0">Rating</span>
+    <div class="seg" role="group" aria-label="Which rating">
+      <button type="button" data-m="adv" id="mAdv">Adversarial 0.0–10.0</button>
+      <button type="button" data-m="orig" id="mOrig">Author 1–10</button>
+    </div>
+  </div>
+  <div class="scale" id="hist" role="group" aria-label="Filter by difficulty"></div>
+  <div class="legend"><span id="lg0">0 · trivial</span><span>5 · edge of current math</span><span>10 · likely never</span></div>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search titles, notes, math…" aria-label="Search problems">
+    <select id="sort" aria-label="Sort">
+      <option value="id">Sort: ID</option>
+      <option value="easy">Easiest first</option>
+      <option value="hard">Hardest first</option>
+      <option value="gap">Biggest rating disagreement</option>
+      <option value="az">A–Z</option>
+      <option value="rand">Shuffle</option>
+    </select>
+    <button class="chip" id="theme" type="button" aria-label="Toggle dark mode">◐</button>
+  </div>
+  <p class="rowlab">Literature</p>
+  <div class="chips" id="lits" role="group" aria-label="Filter by literature status"></div>
+  <p class="rowlab">Rater flag</p>
+  <div class="chips" id="flags" role="group" aria-label="Filter by rater flag"></div>
+  <p class="rowlab">Area</p>
+  <div class="chips" id="areas" role="group" aria-label="Filter by area"></div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <div id="list"></div>
+  <button class="more" id="more" type="button">Show more</button>
+  <p class="foot">Problems written by Claude, November 2026. Literature search 23 Nov 2026. Ratings are judgment calls, not measurements.</p>
+</div>
+<script>
+// row: [id,title,orig,area,words,math,lit|null,adv|null]  lit=[status,note,url]  adv=[r,flag,why]
+const D=/*DATA*/[];
+const HEAT=["#2b8a8a","#2f9e6f","#5a9e2f","#8f8f12","#c08a12","#d9701c","#d4502a","#bf3349","#9c2b6b","#6a2a8f","#4b2470"];
+const HAS_ADV=D.some(r=>r[7]);
+const AREAS=[...new Set(D.map(r=>r[3]))].sort((a,b)=>D.filter(r=>r[3]===b).length-D.filter(r=>r[3]===a).length);
+const LITS=[["","All"],["none","No prior work found"],["prior","Prior work"],["known","Known problem"],["solved","Already solved"]];
+const FLAGS=[["","All"],["ok","No flag"],["famous-equiv","Famous-problem-hard"],["computation","Finite computation"],["easy","Looks easy"],["ill-posed","Ill-posed"],["known","Known"],["false","Likely false"]];
+const flagOf=x=>x[7]?x[7][1]:"ok";
+const st={flag:"",q:"",bin:null,area:null,lit:"",sort:"id",shown:40,order:null,mode:HAS_ADV?"adv":"orig"};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const val=x=>st.mode==="adv"&&x[7]?x[7][0]:x[2];
+const bin=x=>st.mode==="adv"?Math.min(10,Math.floor(val(x))):x[2]-1;
+const binLabel=i=>st.mode==="adv"?(i===10?"10":i+"–"+(i+1)):String(i+1);
+const color=x=>st.mode==="adv"?HEAT[Math.min(10,Math.floor(val(x)))]:HEAT[x[2]-1];
+const litOf=x=>x[6]?x[6][0]:"none";
+
+function mathHTML(s){
+  return s.split(/(\$[^$]+\$)/g).map(p=>{
+    if(p.length>1&&p[0]==="$"&&p.at(-1)==="$"){
+      const tex=p.slice(1,-1);
+      if(window.katex){try{return katex.renderToString(tex,{throwOnError:false})}catch(e){}}
+      return '<code>'+esc(tex)+'</code>';
+    }
+    return esc(p);
+  }).join("");
+}
+function drawMode(){
+  $("mAdv").setAttribute("aria-pressed",st.mode==="adv"); $("mOrig").setAttribute("aria-pressed",st.mode==="orig");
+  $("mAdv").disabled=!HAS_ADV;
+  $("lg0").textContent=st.mode==="adv"?"0 · trivial":"1 · grad coursework";
+}
+function drawHist(){
+  const nb=st.mode==="adv"?11:10; $("hist").style.setProperty("--bins",nb);
+  const c=Array(nb).fill(0); D.forEach(r=>c[bin(r)]++); const mx=Math.max(...c,1);
+  $("hist").innerHTML=c.map((n,i)=>`<button class="bar" type="button" data-b="${i}" aria-pressed="${st.bin===i}" aria-label="Difficulty ${binLabel(i)}: ${n} problems"><span class="n">${n}</span><span class="col"><span class="fill" style="height:${n/mx*100}%;background:${HEAT[st.mode==="adv"?i:i]}"></span></span><span class="r" style="color:${HEAT[i]}">${st.mode==="adv"?i:i+1}</span></button>`).join("");
+}
+function drawChips(){
+  const cnt=k=>k?D.filter(x=>litOf(x)===k).length:D.length;
+  $("lits").innerHTML=LITS.map(([k,l])=>`<button class="chip" type="button" data-l="${k}" aria-pressed="${st.lit===k}">${l} · ${cnt(k)}</button>`).join("");
+  const fc=k=>k?D.filter(x=>flagOf(x)===k).length:D.length;
+  $("flags").innerHTML=FLAGS.map(([k,l])=>`<button class="chip" type="button" data-f="${k}" aria-pressed="${st.flag===k}">${l} · ${fc(k)}</button>`).join("");
+  $("areas").innerHTML=[`<button class="chip" type="button" data-a="" aria-pressed="${!st.area}">All areas</button>`].concat(AREAS.map(a=>`<button class="chip" type="button" data-a="${esc(a)}" aria-pressed="${st.area===a}">${esc(a)}</button>`)).join("");
+}
+function filtered(){
+  const q=st.q.toLowerCase();
+  let r=D.filter(x=>(st.bin===null||bin(x)===st.bin)&&(!st.area||x[3]===st.area)&&(!st.lit||litOf(x)===st.lit)&&(!st.flag||flagOf(x)===st.flag)&&(!q||(x[0]+" "+x[1]+" "+x[4]+" "+x[5]).toLowerCase().includes(q)));
+  const gap=x=>x[7]?Math.abs(x[7][0]-x[2]):0;
+  if(st.sort==="easy") r.sort((a,b)=>val(a)-val(b)||a[0].localeCompare(b[0]));
+  if(st.sort==="hard") r.sort((a,b)=>val(b)-val(a)||a[0].localeCompare(b[0]));
+  if(st.sort==="gap") r.sort((a,b)=>gap(b)-gap(a));
+  if(st.sort==="az") r.sort((a,b)=>a[1].localeCompare(b[1]));
+  if(st.sort==="rand"){ if(!st.order){st.order=new Map(D.map(x=>[x[0],Math.random()]))} r.sort((a,b)=>st.order.get(a[0])-st.order.get(b[0])); }
+  return r;
+}
+function card(x){
+  const v=val(x), main=st.mode==="adv"&&x[7]?v.toFixed(1):String(x[2]);
+  const other=x[7]?(st.mode==="adv"?`author ${x[2]}`:`adversarial ${x[7][0].toFixed(1)}`):"";
+  const lit=x[6]?`<p class="lit ${x[6][0]}"><b>${{solved:"Already solved",known:"Known problem",prior:"Prior work"}[x[6][0]]}.</b> ${esc(x[6][1])}${x[6][2]?` <a href="${esc(x[6][2])}" target="_blank" rel="noopener">Source</a>`:""}</p>`:"";
+  const adv=x[7]&&(x[7][1]!=="ok"||x[7][2])?`<p class="adv">${x[7][1]!=="ok"?`<span class="fl">${esc(x[7][1])}</span>`:""}Rater: ${esc(x[7][2]||"")}</p>`:"";
+  return `<article class="card" id="${x[0]}"><div class="badge" style="background:${color(x)}" aria-label="Difficulty ${main}">${main}<small>${st.mode==="adv"?"adv":"auth"}</small></div>
+  <div class="top"><h2 class="title">${esc(x[1])}</h2><span class="meta">${x[0]} · ${esc(x[3])}${other?` · <span class="alt">${other}</span>`:""}</span></div>
+  <p class="w"><span class="lab">In words</span>${esc(x[4])}</p>
+  <div class="m"><span class="lab">Math</span>${mathHTML(x[5])}</div>
+  ${lit}${adv}
+  <div class="acts"><button type="button" data-copy="${x[0]}">Copy statement</button><button type="button" data-link="${x[0]}">Copy link</button></div></article>`;
+}
+function render(){
+  const r=filtered();
+  $("count").textContent=`${r.length} problem${r.length===1?"":"s"}`+(st.bin!==null?` at ${st.mode==="adv"?"adversarial":"author"} difficulty ${binLabel(st.bin)}`:"")+(st.area?` in ${st.area}`:"");
+  $("list").innerHTML=r.slice(0,st.shown).map(card).join("");
+  $("more").style.display=r.length>st.shown?"block":"none";
+  $("more").textContent=`Show more (${Math.max(0,r.length-st.shown)} left)`;
+}
+function rerender(){st.shown=40; drawMode(); drawHist(); drawChips(); render();}
+
+document.querySelector(".seg").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b||b.disabled)return; st.mode=b.dataset.m; st.bin=null; rerender();});
+$("hist").addEventListener("click",e=>{const b=e.target.closest(".bar"); if(!b)return; const i=+b.dataset.b; st.bin=st.bin===i?null:i; rerender();});
+$("areas").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return; st.area=b.dataset.a||null; rerender();});
+$("flags").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return; st.flag=b.dataset.f; rerender();});
+$("lits").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return; st.lit=b.dataset.l; rerender();});
+$("q").addEventListener("input",e=>{st.q=e.target.value; st.shown=40; render();});
+$("sort").addEventListener("change",e=>{st.sort=e.target.value; st.order=null; st.shown=40; render();});
+$("more").addEventListener("click",()=>{st.shown+=60; render();});
+$("theme").addEventListener("click",()=>{const d=document.documentElement; const dark=d.dataset.theme?d.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches; d.dataset.theme=dark?"light":"dark";});
+
+function copy(t,btn,label){
+  const done=()=>{const o=btn.textContent; btn.textContent=label; setTimeout(()=>btn.textContent=o,1400)};
+  try{navigator.clipboard.writeText(t).then(done,()=>fallback())}catch(e){fallback()}
+  function fallback(){const ta=document.createElement("textarea"); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand("copy")}catch(e){} ta.remove(); done();}
+}
+$("list").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  const id=b.dataset.copy||b.dataset.link; const x=D.find(r=>r[0]===id); if(!x)return;
+  if(b.dataset.copy) copy(`${x[0]} — ${x[1]} (author ${x[2]}${x[7]?`, adversarial ${x[7][0].toFixed(1)}`:""}, ${x[3]})\n${x[4]}\n${x[5]}`,b,"Copied");
+  else { const u=location.href.split("#")[0]+"#"+id; copy(u,b,"Link copied"); history.replaceState(null,"","#"+id); }
+});
+function goHash(){
+  const id=decodeURIComponent(location.hash.slice(1)); const x=D.find(r=>r[0]===id); if(!x)return;
+  st.bin=null; st.area=null; st.lit=""; st.flag=""; st.q=""; $("q").value=""; st.sort="id"; $("sort").value="id";
+  drawMode(); drawHist(); drawChips(); st.shown=Math.max(40,D.indexOf(x)+10); render();
+  const el=document.getElementById(id); if(el){el.classList.add("hl"); el.scrollIntoView({block:"start"});}
+}
+window.addEventListener("hashchange",goHash);
+rerender();
+const waitK=setInterval(()=>{if(window.katex){clearInterval(waitK); render(); if(location.hash)goHash();}},100);
+setTimeout(()=>clearInterval(waitK),15000);
+if(location.hash) goHash();
+</script>
+</body>
+</html>

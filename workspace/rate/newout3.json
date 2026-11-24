@@ -1,0 +1,290 @@
+[
+ {
+  "title": "The last even loss in Prime Nim",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Goldbach-like additive control of self-referential P-set; no known tools"
+ },
+ {
+  "title": "The 3p+4 seven-cycle",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Collatz-type global convergence for prime-factor map; verified only numerically"
+ },
+ {
+  "title": "The 5p+4 nine-cycle",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Collatz-type global convergence; same obstruction as 3p+4 case"
+ },
+ {
+  "title": "Escaping p²+p+1",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Single-orbit unboundedness of iterated P; Collatz-like, hopeless currently"
+ },
+ {
+  "title": "Exponential growth of square-plus-one orbits",
+  "r": 8.0,
+  "flag": "ok",
+  "why": "Iterated largest-prime-factor growth law a.e.; far beyond current methods"
+ },
+ {
+  "title": "Recursive basins of square-plus-one",
+  "r": 0.2,
+  "flag": "easy",
+  "why": "Preimages finite via n^2+1=2^a5^b; set is {1,2,3,7}: recursive"
+ },
+ {
+  "title": "Irrational orbit sum",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Needs orbit growth (open) plus irrationality of erratic sum"
+ },
+ {
+  "title": "Largest factor of n²+1 mod 8",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Equidistribution of P(n^2+1) in classes; plausible with Dartyge-type methods"
+ },
+ {
+  "title": "Largest factor of shifted primes mod 4",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "P(p-1) in residue classes; needs strong shifted-prime factor distribution"
+ },
+ {
+  "title": "Hat percolation is conformally invariant",
+  "r": 8.0,
+  "flag": "ok",
+  "why": "Cardy for aperiodic tiling; critical point and Smirnov-type tools absent"
+ },
+ {
+  "title": "Critical Ising on the hat is SLE(3)",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Ising SLE3 on non-isoradial aperiodic graph; beyond Chelkak-Smirnov frameworks"
+ },
+ {
+  "title": "Hat packing density is irrational",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Exact packing density unknown; irrationality needs determining it"
+ },
+ {
+  "title": "Lorenz dimension is irrational",
+  "r": 9.0,
+  "flag": "ok",
+  "why": "Hausdorff dimension of Lorenz attractor irrational: no conceivable approach"
+ },
+ {
+  "title": "Hat Neumann eigenvalue is transcendental",
+  "r": 9.0,
+  "flag": "ok",
+  "why": "Transcendence of polygon Neumann eigenvalue; no techniques exist"
+ },
+ {
+  "title": "Simple spectrum of the hat",
+  "r": 8.0,
+  "flag": "ok",
+  "why": "All-eigenvalue simplicity for specific asymmetric polygon; only generic results"
+ },
+ {
+  "title": "Conformal radius of the hat",
+  "r": 8.0,
+  "flag": "ok",
+  "why": "Transcendence of Schwarz-Christoffel-derived constant; no tools"
+ },
+ {
+  "title": "Spanning trees inside the prime-sum graph",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Absorption/blow-up plus prime equidistribution; local mod obstructions seem benign"
+ },
+ {
+  "title": "Spanning trees inside the square-sum graph",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Contains Hamiltonian path of square-sum graph, itself delicate/open"
+ },
+ {
+  "title": "Triangle factors of square sums",
+  "r": 0.0,
+  "flag": "false",
+  "why": "Mod 4: n≡1 needs two ≡0 partners; class sizes N/4 each"
+ },
+ {
+  "title": "AKLT on the hat",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "AKLT gap with spin-2 vertices open even on square lattice"
+ },
+ {
+  "title": "Node Kayles on square sums",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Node Kayles outcome for infinite family of irregular graphs; chaotic"
+ },
+ {
+  "title": "Square-sum ordering with bounded displacement",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Neighbours k^2-i near i exist; greedy/explicit construction likely works"
+ },
+ {
+  "title": "Digit-restricted Liouville",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Trivial for small H (intervals almost always empty); MR for digit sets"
+ },
+ {
+  "title": "Square-plus-one orbits avoid small primes",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Needs infinitely many orbits never dropping below start; moderately hard"
+ },
+ {
+  "title": "Prime cycles of all lengths",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Free a,b help, but forcing primality of all cycle terms is hard"
+ },
+ {
+  "title": "Hat SAW connective constant is irrational",
+  "r": 8.0,
+  "flag": "ok",
+  "why": "Irrationality of connective constant open even for square lattice"
+ },
+ {
+  "title": "Critical hat Ising temperature is irrational",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Critical temperature of aperiodic Ising unknown; irrationality hopeless"
+ },
+ {
+  "title": "Spectre hard hexagons",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Hard-core threshold uniqueness open even on Z^2"
+ },
+ {
+  "title": "The 7p+4 funnel, almost always",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Almost-all convergence like Tao Collatz but stronger (reaching cycle)"
+ },
+ {
+  "title": "Largest factor ratio of consecutive primes",
+  "r": 5.5,
+  "flag": "ok",
+  "why": "Consecutive-prime correlation of P(p-1); Erdős-Turán type, natural density"
+ },
+ {
+  "title": "Seven-free primes in Piatetski-Shapiro sequences",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Combine Maynard digit-free primes with Piatetski-Shapiro exponent sums"
+ },
+ {
+  "title": "Square-sum Ramsey with many colours",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Monochromatic edge known (Khalfalah-Szemeredi); K4 version open"
+ },
+ {
+  "title": "Square-sum independence in short intervals",
+  "r": 0.1,
+  "flag": "ill-posed",
+  "why": "At most one square in range; ratio oscillates, limit fails to exist"
+ },
+ {
+  "title": "The 4p+1 map is not periodic mod 3",
+  "r": 1.5,
+  "flag": "easy",
+  "why": "Primes q with large P(4q+1) in any classes force constant entry"
+ },
+ {
+  "title": "Hat Hofstadter gaps all open",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Dry ten Martini in 2D aperiodic; plausibly false, gaps overlap"
+ },
+ {
+  "title": "Hat billiard Veech property",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Rational polygon unfolding; Veech check is a flatsurf computation"
+ },
+ {
+  "title": "Gerver sofa eigenvalue is transcendental",
+  "r": 9.0,
+  "flag": "ok",
+  "why": "Transcendence of eigenvalue of curved domain; no techniques"
+ },
+ {
+  "title": "Quasi-independence of square-plus-one steps",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Analog of Erdős-Turán P(n)<P(n+1); natural density open even there"
+ },
+ {
+  "title": "Prime Nim on Gaussian integers",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "2D prime subtraction game structure; no tools for P-set density"
+ },
+ {
+  "title": "Prime Nim's mod-3 bias",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Existence of densities for chaotic Grundy function; no structure known"
+ },
+ {
+  "title": "Square losses in Prime Nim",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Needs control of P-set on squares; P-set structure unknown"
+ },
+ {
+  "title": "Progressions of Prime Nim losses",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Needs positive density of P-set (open) or structure; Szemeredi then"
+ },
+ {
+  "title": "Cube-sum triangle factors",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Cubes mod 7 are 0,±1: LP shows no fractional triangle factor"
+ },
+ {
+  "title": "Bombieri–Vinogradov for seven-free primes in base 10",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Maynard's base-10 method plausibly extends to small level"
+ },
+ {
+  "title": "Codes avoiding square distances",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Exact rate; Frankl-Rodl-type single-distance constants unknown"
+ },
+ {
+  "title": "Increasing square-plus-one factors",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Conjecturally theta=1 via primes n^2+1; needs near-Landau input"
+ },
+ {
+  "title": "Turning a hat by 60 degrees",
+  "r": 5.5,
+  "flag": "ok",
+  "why": "Fat-body rotation area minimisation; sofa-type variational problem"
+ },
+ {
+  "title": "Density of Grundy value one in Prime Nim",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Density existence for chaotic Grundy values; no structural theory"
+ }
+]

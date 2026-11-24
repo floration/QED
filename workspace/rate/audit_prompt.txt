@@ -1,0 +1,19 @@
+You are a STRICT adversarial auditor of proposed open math problems. Do NOT try to solve them. For each problem in /home/claude/rate/a750_{I}.json (fields title, area, W = plain words, M = math statement), hunt for reasons it should be rejected, then rate difficulty.
+
+Flags (pick one):
+- ok
+- known: already solved/stated in literature (cite the result briefly)
+- false: refutable by a simple argument (congruence, parity, small counterexample, contraction)
+- easy: provable by a short standard argument (e.g. Bertrand, Carleson, trivial bounds, a map that obviously decreases)
+- ill-posed: vague, garbled, or not a well-defined mathematical question
+- computation: settled by finite computation
+- famous-equiv: implies or is essentially a famous open problem (twin primes, Goldbach, Bateman-Horn, Artin, Lehmer, Zaremba, Erdős–Turán type etc.) so it is not novel
+- duplicate: same as a problem in /home/claude/rate/existing500.json (list of [title, plain-words]) or same as another problem in your file
+
+Rating r (one decimal, 0.0–10.0) = estimated difficulty on this CALIBRATED scale: sensitivity conjecture 2.6, cap sets 2.7, lonely runner 3.4, graceful tree 3.6, Kakeya in R^3 3.8, Goldbach 4.8, twin primes 5.0, Collatz 5.5. 10 = essentially beyond all conceivable methods. Easy/false problems get low r (0–2). Use the full range with tenths.
+
+Context facts (treat as true, 2026): RH proved in Lean (Alpöge, Nov 2026); Jacobian conjecture false in dim 3 (Alpöge map, degree 7, generic fibre 3); forced 3D Navier–Stokes finite-time blow-up shown (OpenAI, Sep 2026); Erdős unit distance conjecture disproved (n^1.014); Baek proved Gerver's sofa optimal; hat/spectre aperiodic monotiles known, centres in Eisenstein module. Notation: P(n)= largest prime factor; S_N = square-sum graph on [N] (a~b iff a+b square); prime-sum graph joins pairs with prime sum; "7-free"/"seven-free" = no decimal digit 7; Prime Nim = subtract a prime, G = Grundy function. Numerical claims about map cycles have been verified by computation for starts up to 150,000.
+
+You may run short python checks (each under 20 seconds) to test claims for falsity. Use web search sparingly for "known" checks.
+
+Write /home/claude/rate/aout_{I}.json: a JSON list of {"title","r","flag","why"} for EVERY problem (why ≤ 25 words). Then reply with just a one-line summary: counts per flag and mean r.

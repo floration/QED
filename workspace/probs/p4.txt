@@ -1,0 +1,247 @@
+## Lorenz attractor dimension | 6 | Dynamics
+W: Pin down the fractal dimension of the classic Lorenz attractor to two decimals, rigorously.
+M: For $\sigma=10,\beta=8/3,\rho=28$, prove $2.06\le\dim_H\mathcal{A}\le2.07$.
+
+## Wythoff Prime Nim | 6 | Games
+W: With two piles, remove a prime from one pile or the same prime from both. Describe the losing positions.
+M: Characterize the P-positions of the two-pile game with moves $(a,b)\to(a-p,b),(a,b-p),(a-p,b-p)$, $p$ prime.
+
+## Smallest-factor Collatz stopping time | 6 | Dynamics
+W: How many steps does the smallest-odd-factor Collatz map take to reach 1, on average?
+M: Determine the asymptotic order of $\frac1x\sum_{n\le x}T_g(n)$ for the stopping time of $g$.
+
+## Cube-sum connectivity | 6 | Combinatorics
+W: Join numbers that add to a perfect cube. Show everything links up once N is large.
+M: Prove $C_N$ ($a\sim b\iff a+b$ is a cube) is connected for all sufficiently large $N$.
+
+## Keller maps over finite fields | 6 | Algebra
+W: Count the polynomial maps of three variables over a finite field with constant Jacobian that happen to be bijections.
+M: For $F\in\mathbb{F}_p[x,y,z]^3$ of degree $\le3$ with $\det DF\in\mathbb{F}_p^\times$, find the asymptotic proportion inducing bijections of $\mathbb{F}_p^3$ as $p\to\infty$.
+
+## Unit-distance barrier | 6 | Geometry
+W: Show the 2026 number-field method for many equal distances can never reach exponent 1.1.
+M: Prove every construction of the Alon–Bloom–Gowers–…–Sawin type (lattices from number fields of bounded class-field degree) gives $u(n)\le n^{1.1}$.
+
+## Polykite growth constant | 6 | Combinatorics
+W: Count shapes made of n kites. Find the exponential growth rate to three digits.
+M: Let $k_n$ count polykites with $n$ kites up to congruence. Prove $k_n^{1/n}\to\lambda$ and compute $\lambda$ to 3 digits.
+
+## Hat treewidth | 6 | Combinatorics
+W: Find exactly how hard hat-tiled regions are to break into small pieces.
+M: Prove the treewidth of $n$-tile hat patches is $\sim c\sqrt n$ and compute $c$.
+
+## Hat contact process | 6 | Probability
+W: An infection spreads between neighbouring hat tiles and heals at random. Bound the critical infection rate tightly.
+M: For the contact process on the hat graph, prove $\lambda_c$ lies in an explicit interval of relative width $\le 2\%$.
+
+## Four-arc sofa | 6 | Geometry
+W: Find the best sofa whose outline uses at most four circular arcs and straight pieces.
+M: Maximize area over admissible sofas whose boundary consists of at most four circular arcs plus segments.
+
+## Hat drum's first mode | 6 | Analysis
+W: Strike a hat-shaped drum. Show its lowest tone vibrates with a single peak.
+M: Prove the first Dirichlet eigenfunction of the hat polygon has exactly one interior critical point.
+
+## Seven-free primes in short intervals | 6 | Number theory
+W: Show seven-free primes appear in every reasonably short interval.
+M: Prove $[x,x+x^{0.6}]$ contains a prime with no digit 7 for all large $x$.
+
+## Three-pile shuffle cutoff | 6 | Probability
+W: Random three-pile shuffles mix a deck suddenly, after a precise number of shuffles. Find it.
+M: For random compositions of uniformly chosen 3-pile shuffles on $3n$ cards, prove total-variation cutoff at $c\log n$ and find $c$.
+
+## Hat corona limit | 6 | Geometry
+W: Surround a hat by layers of hats again and again. The growing blob approaches a fixed shape. Find it.
+M: Prove the scaled $k$-th coronas of a hat converge in Hausdorff distance and identify the limit shape.
+
+## SOF Collatz orbits are bounded | 7 | Dynamics
+W: For the smallest-odd-factor Collatz map, show no orbit runs off to infinity.
+M: Prove $\sup_k g^k(n)<\infty$ for every $n$.
+
+## Sofa for every angle | 7 | Geometry
+W: Find the optimal sofa for a hallway turning by any angle, not just 90°.
+M: For every $\theta\in(0,\pi)$, determine the optimal sofa for the width-1 corridor turning by $\theta$.
+
+## Hat Ising universality | 7 | Physics
+W: Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid.
+M: Prove the hat-graph Ising model has critical exponents $\beta=1/8$, $\gamma=7/4$, $\nu=1$.
+
+## Finite simple groups in Lean | 7 | Formal proof
+W: Turn the classification of finite simple groups into one computer-checked proof.
+M: Formalize the classification of finite simple groups in Lean 4.
+
+## Cube-sum paths | 7 | Combinatorics
+W: Arrange 1 to N in a line so neighbours add to perfect cubes, for every large N.
+M: Prove $C_N$ has a Hamiltonian path for all sufficiently large $N$.
+
+## Alternating prime residues | 7 | Number theory
+W: Find ten consecutive primes whose remainders mod 4 alternate 1, 3, 1, 3, …, and infinitely many such runs.
+M: Prove infinitely many $n$ with $p_{n+i}\equiv 2+(-1)^{i}\pmod 4$ for $0\le i<10$.
+
+## Largest-factor climbs | 7 | Dynamics
+W: Show infinitely many starts climb above their own square before falling.
+M: Prove $\max_k f^k(n)>n^2$ for infinitely many $n$.
+
+## Counting Prime Nim losses | 7 | Games
+W: Show the losing positions of Prime Nim thin out at a precise power rate.
+M: Prove $|L\cap[1,x]|=x^{\alpha+o(1)}$ for some $\alpha$ and compute it.
+
+## Prime Nim in polylog time | 7 | Computation
+W: Decide whether a Prime Nim pile is losing in time polynomial in its number of digits.
+M: Give an algorithm deciding $G(n)=0$ in time $(\log n)^{O(1)}$, or prove none exists under a standard assumption.
+
+## Primes a² + b⁴ with prime inputs | 7 | Number theory
+W: Show infinitely many primes are a square of a prime plus a fourth power of a prime.
+M: Prove infinitely many primes of the form $p^2+q^4$ with $p,q$ prime.
+
+## Primes x² + y³ with prime inputs | 7 | Number theory
+W: Show infinitely many primes are a square of a prime plus a cube of a prime.
+M: Prove infinitely many primes of the form $p^2+q^3$ with $p,q$ prime.
+
+## Doubly smooth neighbours | 7 | Number theory
+W: Find infinitely many primes whose two neighbours have only small prime factors.
+M: Prove infinitely many primes $p$ with $P(p-1),P(p+1)\le p^{0.1}$.
+
+## High-dimensional sofa | 7 | Geometry
+W: How does the best sofa's volume grow in an n-dimensional corridor?
+M: Determine the asymptotics in $n$ of the optimal volume in the $n$-dimensional right-angled corridor of unit cross-section.
+
+## Ambidextrous 3D sofa | 7 | Geometry
+W: Find the largest solid that can turn either left or right at the end of a square pipe.
+M: Maximize volume over solids admissible for both the left and right turns of the $1\times1$ corridor.
+
+## Polykite structure theorem | 7 | Geometry
+W: Classify every shape of up to 20 kites: tiles periodically, tiles only aperiodically, or fails within a few layers.
+M: Prove each polykite with $\le20$ kites either tiles periodically, tiles only aperiodically, or has Heesch number $\le10$.
+
+## Hard-hat transition | 7 | Physics
+W: Show the gas of non-overlapping hats freezes abruptly at some density.
+M: Prove the hard-hat lattice gas has a first-order phase transition in the activity.
+
+## Sparse Keller maps | 7 | Algebra
+W: List every Jacobian-conjecture counterexample in 3D built from at most 12 monomials in total, up to symmetry.
+M: Classify all non-invertible Keller maps $\mathbb{C}^3\to\mathbb{C}^3$ whose three components together have at most 12 monomials, up to affine changes of coordinates.
+
+## Analytic hyperoperations | 7 | Algebra
+W: Build one smooth family of operations from addition up through exponentiation that is analytic in all inputs.
+M: Construct $a[s]b$, real-analytic in $(s,a,b)$ for $s\in[1,3]$, $a>1$, $b>0$, satisfying the recursion law and matching $+,\times,\uparrow$.
+
+## Time-independent force | 7 | Analysis
+W: Make viscous fluid blow up with a push that never changes in time.
+M: Construct smooth compactly supported time-independent $f$ such that 3D Navier–Stokes from rest blows up in finite time.
+
+## Stable blow-up | 7 | Analysis
+W: Show the 2026 Navier–Stokes blow-up still happens after any tiny change to the setup.
+M: Prove the 2026 forced blow-up is stable under small smooth perturbations of $(u_0,f)$ in a suitable topology.
+
+## Square-sum pancyclicity | 7 | Combinatorics
+W: Show the square-sum graph has cycles of every possible length.
+M: Prove $S_N$ is pancyclic on its 2-connected core for all large $N$.
+
+## Prime-speed lonely runners | 7 | Number theory
+W: Prove the lonely runner conjecture when every speed is a prime number.
+M: For distinct primes $p_1,\dots,p_n$, prove $\sup_t\min_i\|tp_i\|\ge\frac1{n+1}$.
+
+## Counting minimal Sudokus | 7 | Combinatorics
+W: How many uniquely solvable Sudokus with no removable clue exist, as the board grows?
+M: Find the asymptotics of the number of minimal uniquely solvable $n^2\times n^2$ puzzles.
+
+## Gomoku on hats | 7 | Games
+W: Prove the first player wins five-in-a-row on an infinite board of hat tiles.
+M: Prove the first player has a winning strategy in the 5-in-a-row game on the hat adjacency graph (rows = geodesic paths).
+
+## Hyperoperation Goodstein | 7 | Logic
+W: A Goodstein-style sequence using hyperoperations always ends, but ordinary arithmetic cannot prove it.
+M: Define base-change on hereditary hyperoperation normal forms; prove the sequences terminate and termination is unprovable in PA.
+
+## Unique 3D sofa | 7 | Geometry
+W: Show the best solid for a square pipe is unique up to moving it.
+M: Prove the optimizer for the $1\times1$ square corridor is unique up to rigid motion.
+
+## Vorticity growth in a hat | 7 | Analysis
+W: Fluid in a hat-shaped container should develop sharper and sharper swirls near its corners.
+M: For 2D Euler in the hat polygon, prove $\|\nabla\omega(t)\|_\infty$ grows double exponentially for some smooth initial data.
+
+## Fluid in a box blows up | 7 | Analysis
+W: Show viscous fluid in a closed box with sticky walls can blow up under a smooth push.
+M: Construct smooth $f$ such that 3D Navier–Stokes with no-slip in the unit cube blows up in finite time.
+
+## Toroidal Othello | 7 | Games
+W: Who wins Othello on an 8 × 8 board that wraps around?
+M: Weakly solve Othello on $\mathbb{Z}_8^2$ with standard initial position.
+
+## Infinitely many prime squared squares | 7 | Combinatorics
+W: Show there are infinitely many perfect squared squares whose pieces all have prime sides.
+M: Prove infinitely many perfect squared squares with all component sides prime.
+
+## Divisor-balanced primes | 7 | Number theory
+W: Show infinitely many primes p have p − 1 and p + 1 with the same number of divisors.
+M: Prove infinitely many primes $p$ with $d(p-1)=d(p+1)$.
+
+## Reverse-square cycles | 7 | Dynamics
+W: Square and reverse the digits, repeatedly. Show there are infinitely many different loops.
+M: Prove $R(n)=\operatorname{rev}(n^2)$ has infinitely many distinct cycles.
+
+## Chen with no sevens | 7 | Number theory
+W: Show infinitely many seven-free primes p have p + 2 a product of at most two seven-free primes.
+M: Prove infinitely many 7-free primes $p$ with $p+2=q_1q_2$ or $q_1$, all $q_i$ prime and 7-free.
+
+## Nodal domains of the hat drum | 7 | Analysis
+W: Count the regions a hat-shaped drum splits into when vibrating at high frequencies.
+M: For Dirichlet eigenfunctions on the hat polygon, prove $\limsup N(\varphi_k)/k=c<1$ and compute $c$.
+
+## Hat billiard scarring | 7 | Analysis
+W: Show high-frequency waves in a hat-shaped room do not spread out evenly.
+M: Prove quantum unique ergodicity fails for the hat polygon: some subsequence of eigenfunctions has a non-uniform limit measure.
+
+## Homogenized wildfire | 7 | Analysis
+W: Fire spreads through random patches of two fuel types. Show it has a definite average speed and compute it.
+M: For the eikonal equation with i.i.d. two-valued speed on a lattice, prove homogenization and give the effective speed in closed form.
+
+## Galois groups of Keller fibers | 7 | Algebra
+W: Find the symmetry group of the preimages of a point under the 2026 Keller maps.
+M: Compute the Galois group of the generic fiber of Gallagher's degree-$n$ Keller family for each $n\ge3$.
+
+## Palindromic Carmichael numbers | 7 | Number theory
+W: Show infinitely many Carmichael numbers read the same backwards.
+M: Prove there are infinitely many Carmichael numbers that are decimal palindromes.
+
+## Shrink to fit | 7 | Geometry
+W: Find the largest size such that every convex shape no wider than that, measured end to end, gets around the corner.
+M: Find the largest $d$ such that every planar convex body of diameter $\le d$ is admissible in the width-1 right-angled corridor.
+
+## Symmetric sofa | 7 | Geometry
+W: Find the best sofa that is symmetric under a half-turn.
+M: Maximize area over centrally symmetric sets admissible in the width-1 right-angled corridor.
+
+## Convex sofa | 7 | Geometry
+W: Find the best convex sofa.
+M: Maximize area over convex sets admissible in the width-1 right-angled corridor.
+
+## Unattained hyperbolic sofa | 7 | Geometry
+W: In strongly curved hyperbolic space the best sofa might not exist. Show when the maximum is never reached.
+M: Find $\kappa_0$ such that for curvature $-\kappa<-\kappa_0$ the hyperbolic sofa supremum is not attained.
+
+## Squares on a sphere | 7 | Geometry
+W: Every closed curve on a sphere should pass through the corners of a spherical square.
+M: Prove every Jordan curve on $S^2$ inscribes a spherical quadrilateral with equal sides and equal angles.
+
+## Cross-polytopes in 4D | 7 | Geometry
+W: Every 4D convex body should have the corners of a regular cross-polytope on its boundary.
+M: Prove every convex body in $\mathbb{R}^4$ has an inscribed regular cross-polytope.
+
+## One firefighter on hats | 7 | Combinatorics
+W: Can a single firefighter per turn contain every fire on a hat tiling?
+M: Decide whether one protected vertex per turn contains any single-vertex fire on the hat graph.
+
+## Prime and square neighbours | 7 | Combinatorics
+W: Order all positive integers so neighbours add to a prime and numbers two apart add to a square.
+M: Decide whether there is a bijection $\pi:\mathbb{N}\to\mathbb{N}$ with $\pi_i+\pi_{i+1}$ prime and $\pi_i+\pi_{i+2}$ square for all $i$.
+
+## Prime-graceful forests | 7 | Combinatorics
+W: Label any forest so the edge differences are exactly the first m primes.
+M: Prove every forest with $m$ edges has an injective $\ell:V\to\mathbb{Z}_{\ge0}$ whose edge differences are $\{p_1,\dots,p_m\}$.
+
+## Carmichael numbers with prime digit sum | 7 | Number theory
+W: Show infinitely many Carmichael numbers have a digit sum that is prime.
+M: Prove infinitely many Carmichael numbers $n$ with $s_{10}(n)$ prime.

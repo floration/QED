@@ -1,0 +1,44 @@
+## Two small factors and one large | 6 | Dynamics
+W: Add the smallest prime factors of n and n + 1 to the largest prime factor of n + 2. Every tested start falls into one seven-step loop through 16. Prove all do.
+M: For $f(n)=p(n)+p(n+1)+P(n+2)$, prove every orbit with $n\ge2$ reaches $(16,22,28,36,58,66,86)$.
+
+## Two large factors and one small | 7 | Dynamics
+W: Add P(n), P(n+1) and the smallest prime factor of n + 2. Tested starts reach 14, 33, or loops through 10, 42, 67, 97 or 3307. Prove these seven are the only fates.
+M: For $f(n)=P(n)+P(n+1)+p(n+2)$, prove every orbit reaches $\{14\},\{33\},(10,18,24),(42,52,68),(67,87,129,187),(97,107,219)$ or $(3307,4137,6405)$.
+
+## The 2n+3 map | 7 | Dynamics
+W: Map n to P(2n + 3) + P(n). Orbits can climb past seven million before falling, yet every tested start ends in loops through 6, 9 or 50. Prove all do.
+M: For $f(n)=P(2n+3)+P(n)$, prove every orbit reaches $(6,8,21,12)$, $(9,10,28,66,16)$ or $(50,108,76)$.
+
+## The P(n)+P(n+2)+1 map | 6 | Dynamics
+W: Map n to P(n) + P(n+2) + 1. Tested starts reach 6, 8, or loops through 9 (12 steps), 19 or 37. Prove these are all.
+M: For $f(n)=P(n)+P(n+2)+1$, prove every orbit reaches $\{6\},\{8\}$, the 12-cycle through $9$, $(19,27,33)$ or $(37,51,71,145)$.
+
+## The P(n)+P(n+2)−1 map | 6 | Dynamics
+W: Map n to P(n) + P(n+2) − 1. Tested starts reach 4 or loops of length 18, 11 and 4. Prove these are all.
+M: For $f(n)=P(n)+P(n+2)-1$, prove every orbit reaches $\{4\}$, the 18-cycle through $23$, the 11-cycle through $7$, or $(223,227,455,469)$.
+
+## Peak height of the 2n+3 map | 7 | Dynamics
+W: For n ↦ P(2n+3) + P(n), show the highest point an orbit reaches is at most a fixed power of its start.
+M: Prove there is $A$ with $\max_k f^{k}(n)\le n^{A}$ for all $n\ge3$, $f(n)=P(2n+3)+P(n)$.
+
+## Unbounded excursions in prime maps | 6 | Dynamics
+W: For n ↦ P(n) + P(n+1), show some orbits climb above their starting value by any factor you like.
+M: Prove $\sup_n\max_k f^k(n)/n=\infty$ for $f(n)=P(n)+P(n+1)$.
+
+## Largest-factor subtraction game | 6 | Games
+W: From pile n you may remove P(n) stones or any prime smaller than P(n). Characterise the losing positions.
+M: For moves $n\to n-q$, $q\in\mathbb{P}$, $q\le P(n)$, prove the P-positions have density zero and determine whether they are infinite.
+
+## Prime-sum Kayles | 6 | Games
+W: Same game on the prime-sum graph: take numbers so that no two taken numbers sum to a prime. Decide who wins.
+M: Determine the outcome of the independent-set game on the prime-sum graph on $[N]$ for all large $N$.
+
+## Undecidability of Prime Nim variants | 8 | Logic
+W: Show there is no algorithm that takes a polynomial f and decides whether the subtraction game with moves {f(p) : p prime} has eventually periodic Grundy values.
+M: Prove $\{f\in\mathbb{Z}[x]:\text{Grundy sequence of the game with move set }f(\mathbb{P})\cap\mathbb{N}\text{ is eventually periodic}\}$ is undecidable, or decidable.
+
+## Large girth subgraphs of S_N | 6 | Combinatorics
+W: Find the most edges a subgraph of the square-sum graph can have with no cycle shorter than 6.
+M: Determine the order of $\mathrm{ex}(S_N,\{C_3,C_4,C_5\})$.
+

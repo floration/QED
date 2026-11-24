@@ -1,0 +1,40 @@
+## Packing density of Gerver's sofa | 7 | Geometry
+W: Find the densest way to pack copies of Gerver's sofa shape in the plane, and show the density is not a rational multiple of an algebraic number.
+M: Let $\delta_G$ be the translative-and-rotational packing density of Gerver's sofa. Prove $\delta_G\notin\overline{\mathbb{Q}}$.
+
+## Distance sets of the spectre tiling | 6 | Geometry
+W: Find how many distinct distances occur between tile centres of the spectre tiling within radius R.
+M: Determine the order of growth of $\#\{|x-y|:x,y\in\Lambda_{\mathrm{sp}},|x|,|y|\le R\}$.
+
+## Unforced blow-up near the forced one | 9 | PDE
+W: Show the known forced Navier–Stokes blow-up can be made to work with forcing that decays to zero at the blow-up time.
+M: Prove there exist smooth $u_0$ and $f\in L^1_tL^2_x\cap C^\infty$ with $\|f(t)\|_{L^2}\to0$ as $t\to T^-$ such that the forced 3D NS solution blows up at $T$.
+
+## Isospectral monotiles | 6 | Geometry
+W: Find two different aperiodic monotiles that sound the same as drums.
+M: Construct two non-congruent aperiodic monotiles with identical Dirichlet spectra, or prove none exist.
+
+## Prime-digit continued fractions in arithmetic progressions | 7 | Number theory
+W: Show there are infinitely many quadratic irrationals all of whose continued fraction digits are prime, in each real quadratic field.
+M: Prove for every real quadratic field $K$ there are infinitely many $\alpha\in K$ with purely periodic continued fraction expansion having all partial quotients prime.
+
+## Rotation-proof lattice-point-poor shapes | 6 | Geometry
+W: Find the shape in the plane with given area that contains the fewest integer lattice points after any rotation, asymptotically.
+M: Determine the convex $K$ of area $A$ minimising $\sup_{\theta}\#(\rho_\theta K\cap\mathbb{Z}^2)$, asymptotically as $A\to\infty$, to second-order term.
+
+## Moser's worm in the sphere | 6 | Geometry
+W: Find the smallest area region on the unit sphere that can cover every curve of length 1 after a rotation.
+M: Determine $\inf\{\sigma(K):K\subset S^2$ covers every rectifiable curve of length $1$ up to $SO(3)\}$ to within $1\%$, and prove the infimum is attained by a set bounded by finitely many circular arcs or show it is not.
+
+## Hexagonal Lebesgue covering | 5 | Geometry
+W: Find the smallest convex shape that can cover every set of diameter 1, if covering is by translation only, not rotation.
+M: Determine $\min\{\mathrm{area}(K):K$ convex, every set of diameter $1$ has a translate inside $K\}$, and prove the minimiser is unique.
+
+## Equal-area hat dissection | 6 | Geometry
+W: Find the fewest pieces needed to cut a hat tile into pieces that reassemble into a square.
+M: Determine the minimal number of polygonal pieces in a scissors-congruence of the unit-edge hat polygon to a square of equal area.
+
+## Cheeger constant of the sofa | 6 | Geometry
+W: Find the Cheeger constant of Gerver's sofa and show it is transcendental.
+M: Prove $h(G)=\inf_{E\subseteq G}\mathrm{Per}(E)/|E|$ for Gerver's sofa is transcendental.
+

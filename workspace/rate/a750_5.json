@@ -1,0 +1,134 @@
+[
+{
+"title": "Sum of prime divisors of neighbours",
+"area": "Dynamics",
+"W": "Add the sum of the distinct prime factors of n to that of n + 1. Tested starts reach 33 or loops through 10, 17, 30 or 107. Prove there is nothing else.",
+"M": "For $f(n)=\\mathrm{sopf}(n)+\\mathrm{sopf}(n+1)$, prove every orbit reaches $\\{33\\}$, $(10,18,24)$, $(17,22,36,42,55,25,20)$, $(30,41,53,58,90)$ or $(107,112,122)$."
+},
+{
+"title": "Lopsided neighbour map",
+"area": "Dynamics",
+"W": "Map n to P(n) + 2P(n+1). Except for the fixed point 8, every tested start falls into 23 \u2192 29 \u2192 39. Prove this for all starts.",
+"M": "For $f(n)=P(n)+2P(n+1)$, prove every orbit not starting at $8$ reaches $(23,29,39)$."
+},
+{
+"title": "The shift-6 prime map",
+"area": "Dynamics",
+"W": "Map n to P(n) + P(n+6). Tested starts reach 6 or the loop 8 \u2194 9. Prove all do.",
+"M": "For $f(n)=P(n)+P(n+6)$, prove every orbit with $n\\ge3$ reaches $\\{6\\}$ or $(8,9)$."
+},
+{
+"title": "Density of the basin of 22 \u2194 34",
+"area": "Dynamics",
+"W": "For n \u21a6 P(n) + p(n+1), about 6% of tested starts reach the 22 \u2194 34 loop. Show the fraction has a limit and it is positive.",
+"M": "For $f(n)=P(n)+p(n+1)$, prove $\\lim_{x}\\frac1x\\#\\{n\\le x:\\text{orbit reaches }(22,34)\\}$ exists and is positive."
+},
+{
+"title": "Growth rate of square-sum Hamiltonian cycles",
+"area": "Combinatorics",
+"W": "Find the exponential growth rate of the number of ways to arrange 1 to N in a circle with neighbours summing to squares.",
+"M": "Determine $\\lim_N\\frac{\\log H(N)}{N\\log N}$ where $H(N)$ counts Hamiltonian cycles of $S_N$, and prove the limit exists."
+},
+{
+"title": "Prime-sum Hamiltonian cycle count",
+"area": "Combinatorics",
+"W": "Count the ways to arrange 1 to 2n in a circle with neighbours summing to primes. Find the growth.",
+"M": "Prove $\\log C(2n)\\sim 2n\\log n$ (or determine the correct leading term), where $C(2n)$ counts Hamiltonian cycles of the prime-sum graph on $[2n]$."
+},
+{
+"title": "Square-sum matchings count",
+"area": "Combinatorics",
+"W": "Count the ways to pair up 1 to N into pairs summing to squares. Find the exponential growth.",
+"M": "Determine $\\lim_N\\frac{\\log m(N)}{N}$ (or the right normalisation) for the number $m(N)$ of perfect matchings of $S_N$, $N$ even."
+},
+{
+"title": "Primes on circles centred at the origin",
+"area": "Number theory",
+"W": "Find the largest number of prime points (p, q) lying on a single circle centred at the origin with radius up to R.",
+"M": "Determine the order of $\\max_{n\\le R^2}\\#\\{(p,q)\\in\\mathbb{P}^2:p^2+q^2=n\\}$."
+},
+{
+"title": "Thue\u2013Morse of P(n) and P(n+1)",
+"area": "Number theory",
+"W": "Show the Thue\u2013Morse values at P(n) and P(n+1) are uncorrelated.",
+"M": "Prove $\\sum_{n\\le x}(-1)^{s_2(P(n))+s_2(P(n+1))}=o(x)$."
+},
+{
+"title": "Two large factors and one small",
+"area": "Dynamics",
+"W": "Add P(n), P(n+1) and the smallest prime factor of n + 2. Tested starts reach 14, 33, or loops through 10, 42, 67, 97 or 3307. Prove these seven are the only fates.",
+"M": "For $f(n)=P(n)+P(n+1)+p(n+2)$, prove every orbit reaches $\\{14\\},\\{33\\},(10,18,24),(42,52,68),(67,87,129,187),(97,107,219)$ or $(3307,4137,6405)$."
+},
+{
+"title": "The P(n)+P(n+2)+1 map",
+"area": "Dynamics",
+"W": "Map n to P(n) + P(n+2) + 1. Tested starts reach 6, 8, or loops through 9 (12 steps), 19 or 37. Prove these are all.",
+"M": "For $f(n)=P(n)+P(n+2)+1$, prove every orbit reaches $\\{6\\},\\{8\\}$, the 12-cycle through $9$, $(19,27,33)$ or $(37,51,71,145)$."
+},
+{
+"title": "Peak height of the 2n+3 map",
+"area": "Dynamics",
+"W": "For n \u21a6 P(2n+3) + P(n), show the highest point an orbit reaches is at most a fixed power of its start.",
+"M": "Prove there is $A$ with $\\max_k f^{k}(n)\\le n^{A}$ for all $n\\ge3$, $f(n)=P(2n+3)+P(n)$."
+},
+{
+"title": "Largest-factor subtraction game",
+"area": "Games",
+"W": "From pile n you may remove P(n) stones or any prime smaller than P(n). Characterise the losing positions.",
+"M": "For moves $n\\to n-q$, $q\\in\\mathbb{P}$, $q\\le P(n)$, prove the P-positions have density zero and determine whether they are infinite."
+},
+{
+"title": "Undecidability of Prime Nim variants",
+"area": "Logic",
+"W": "Show there is no algorithm that takes a polynomial f and decides whether the subtraction game with moves {f(p) : p prime} has eventually periodic Grundy values.",
+"M": "Prove $\\{f\\in\\mathbb{Z}[x]:\\text{Grundy sequence of the game with move set }f(\\mathbb{P})\\cap\\mathbb{N}\\text{ is eventually periodic}\\}$ is undecidable, or decidable."
+},
+{
+"title": "Spanning cube-sum paths",
+"area": "Combinatorics",
+"W": "Show the numbers 1 to N can be lined up so neighbours sum to perfect cubes, for infinitely many N.",
+"M": "Prove the cube-sum graph $C_N$ has a Hamiltonian path for infinitely many $N$."
+},
+{
+"title": "Sum-Euclid sequence",
+"area": "Number theory",
+"W": "Start with 2 and repeatedly append the largest prime factor of one plus the sum of all previous terms. Decide whether every prime eventually appears.",
+"M": "Let $r_1=2$, $r_{n+1}=P(1+r_1+\\cdots+r_n)$. Decide whether $\\{r_n\\}$ contains every prime."
+},
+{
+"title": "Random square-sum transpositions mixing",
+"area": "Probability",
+"W": "Shuffle 1 to N by swapping a random pair that sums to a square. Find the mixing time and show cutoff.",
+"M": "For the random walk on $S_N$ (symmetric group) driven by uniform $T$-transpositions, $T$ as above, prove cutoff and determine its location."
+},
+{
+"title": "Prime matrices generate SL2(Z)",
+"area": "Algebra",
+"W": "Show every integer 2 by 2 matrix of determinant 1 is a product of boundedly many matrices of determinant 1 whose entries are all prime.",
+"M": "Prove there is $k$ such that every $\\gamma\\in SL_2(\\mathbb{Z})$ is a product of at most $k$ elements of $SL_2(\\mathbb{Z})\\cap\\mathbb{P}^{2\\times2}$."
+},
+{
+"title": "Largest prime factor of Markov numbers",
+"area": "Number theory",
+"W": "Show the largest prime factor of Markov numbers tends to infinity.",
+"M": "Prove $P(m)\\to\\infty$ as $m$ runs through Markov numbers."
+},
+{
+"title": "Apollonian packing with prime curvatures",
+"area": "Number theory",
+"W": "In the integral Apollonian packing with curvatures (\u22121, 2, 2, 3), show every large prime is the largest prime factor of some circle's curvature.",
+"M": "For the $(-1,2,2,3)$ Apollonian packing with curvature multiset $\\mathcal{K}$, prove $\\{P(k):k\\in\\mathcal{K}\\}$ contains all sufficiently large primes."
+},
+{
+"title": "No-three-in-line in the prime grid",
+"area": "Combinatorics",
+"W": "Find the largest set of prime-pair points in an N by N box with no three on a line.",
+"M": "Determine the order of $\\max\\{|A|:A\\subseteq(\\mathbb{P}\\cap[1,N])^2,\\text{ no three collinear}\\}$."
+},
+{
+"title": "Consecutive largest factors both 3 mod 4",
+"area": "Number theory",
+"W": "Show P(n) and P(n+1) are both 3 mod 4 for a quarter of all n.",
+"M": "Prove $\\#\\{n\\le x:P(n)\\equiv P(n+1)\\equiv3\\ (4)\\}\\sim x/4$."
+}
+]

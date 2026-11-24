@@ -1,0 +1,99 @@
+## The hat is not spectral | 6 | Analysis
+W: Fuglede's conjecture predicts that a shape that cannot tile by translations has no orthogonal basis of exponentials. Prove this for the hat.
+M: Prove there is no $\Lambda\subset\mathbb{R}^2$ with $\{e^{2\pi i\lambda\cdot x}\}_{\lambda\in\Lambda}$ an orthogonal basis of $L^2(\text{hat})$.
+
+## Lost in a hat-shaped forest | 6 | Geometry
+W: You are lost in a forest shaped like a hat, position and orientation unknown. Find the shortest path guaranteed to get you out.
+M: Determine Bellman's escape length for the hat polygon: the least length of a curve such that every congruent placement of it inside the hat meets the boundary.
+
+## Waring with seven-free cubes | 6 | Number theory
+W: Find the fewest cubes of seven-free numbers needed to write every large number, and prove it.
+M: Determine the least $s$ such that every sufficiently large integer is a sum of $s$ cubes of positive 7-free integers.
+
+## Square-plus-one orbits rarely loop | 8 | Dynamics
+W: Show almost every starting number's square-plus-one sequence never repeats.
+M: Prove the set of $n$ whose orbit under $Q(n)=P(n^2+1)$ is eventually periodic has natural density 0.
+
+## Prime Nim values stay small | 7 | Games
+W: Prime Nim's Grundy values grow incredibly slowly. Show they are at most a constant times log n.
+M: For the subtraction game with prime moves, prove $G(n)=O(\log n)$.
+
+## Counting square-sum chains | 6 | Combinatorics
+W: Count the ways to line up 1 to N with neighbours summing to squares. Find the leading growth.
+M: Let $h(N)$ be the number of Hamiltonian paths of $S_N$. Prove $\log h(N)=(\tfrac12+o(1))N\log N$.
+
+## Seven-free Beatty primes | 6 | Number theory
+W: Show infinitely many primes of the form ⌊n√2⌋ contain no digit 7.
+M: Prove infinitely many primes $p=\lfloor n\sqrt2\rfloor$ with no decimal digit 7.
+
+## Long progressions of seven-free primes | 7 | Number theory
+W: Show the seven-free primes contain arbitrarily long arithmetic progressions.
+M: Prove for every $k$ there are $k$-term arithmetic progressions consisting of primes with no decimal digit 7.
+
+## Seven-free Gaussian primes | 7 | Number theory
+W: Show infinitely many primes a² + b² have both a and b free of the digit 7.
+M: Prove infinitely many primes $a^2+b^2$ with $a,b$ positive integers free of the decimal digit 7.
+
+## Linnik for seven-free primes | 7 | Number theory
+W: Show the smallest seven-free prime in an arithmetic progression is at most a fixed power of the modulus.
+M: Prove there is $C$ such that for every $q$ and $(a,q)=1$ (with $10\nmid q$-compatibility conditions) there is a 7-free prime $p\equiv a\ (q)$, $p\le q^C$.
+
+## Seven-free primes as an additive basis | 6 | Number theory
+W: Show every large number is a sum of a bounded number of seven-free primes.
+M: Prove there is $k$ such that every sufficiently large integer of suitable parity is a sum of at most $k$ primes with no decimal digit 7, and give an explicit $k$.
+
+## Monochromatic square-sum triangles, many colours | 7 | Combinatorics
+W: Colour the positive integers with any finite number of colours. Show there are always three numbers of one colour whose pairwise sums are all squares.
+M: Prove that for every $r$ and every $r$-colouring of $\mathbb{N}$ there are distinct $a,b,c$ of one colour with $a+b,a+c,b+c$ all perfect squares.
+
+## Keller monodromy is everything | 7 | Algebra
+W: Show every symmetric group appears as the hidden symmetry group of the fibres of some 3D Jacobian-conjecture counterexample.
+M: Prove that for each $n\ge3$ there is a non-invertible Keller map $\mathbb{C}^3\to\mathbb{C}^3$ of geometric degree $n$ whose generic monodromy group is $S_n$.
+
+## Discrete sofa | 6 | Geometry
+W: Slide and rotate a polyomino by unit steps and quarter turns around the corner of a corridor k cells wide. Find the largest area possible, asymptotically.
+M: Let $D(k)$ be the maximal number of cells of a polyomino that can pass the width-$k$ L-shaped corridor of $\mathbb{Z}^2$ by unit translations and $90^\circ$ rotations about lattice points (staying inside at all times). Prove $D(k)\sim ck^2$ and find $c$.
+
+## Hat tiling heat kernel constant | 7 | Probability
+W: For a random walk on a hat tiling, find the exact constant in the return probability.
+M: Prove $p_{2n}(o,o)\sim\frac{c(o)}{n}$ on the hat graph and show $\frac1{|B_R|}\sum_{o\in B_R}c(o)\to c$ with $c=\frac{\bar d}{2\pi\sqrt{\det\Sigma}}$, computing $\Sigma$ in closed form.
+
+## Spectre electrical resistance | 6 | Probability
+W: Find the exact asymptotic electrical resistance between two far-apart spectre tiles, with unit resistors on edges.
+M: Prove $R(o,x)=\kappa\log|x|+O(1)$ on spectre tilings and compute $\kappa$ in closed form.
+
+## Hard-core on the hat | 6 | Physics
+W: Place particles on hat tiles with no two neighbours both occupied. Show the gas freezes into an ordered state at high density.
+M: For the hard-core model on the hat graph, prove a phase transition: non-uniqueness of Gibbs measures for all activities $\lambda\ge\lambda_0$.
+
+## Seven-free Chen primes in progressions | 6 | Number theory
+W: Show infinitely many seven-free primes p in every allowable residue class have p + 2 with at most three prime factors.
+M: For each $q$ and admissible $a$, prove infinitely many 7-free primes $p\equiv a\ (q)$ with $\Omega(p+2)\le3$.
+
+## Largest factor of the midpoint | 6 | Number theory
+W: For consecutive primes p < q, look at the largest prime factor of (p + q)/2. Show it exceeds p^0.5 for a positive fraction.
+M: Prove $\#\{n\le x: P(\tfrac{p_n+p_{n+1}}2)>p_n^{1/2}\}\gg \pi(x)$.
+
+## Four-term square-sum chains in primes | 7 | Number theory
+W: Find infinitely many chains of four primes where each neighbouring pair sums to a square.
+M: Prove infinitely many 4-tuples of primes $p_1,p_2,p_3,p_4$ with $p_i+p_{i+1}$ a square for $i=1,2,3$.
+
+## Square-sum chains in primes | 8 | Number theory
+W: Show there are arbitrarily long chains of primes where neighbours sum to squares.
+M: Prove for every $k$ there are primes $p_1,\dots,p_k$ with $p_i+p_{i+1}$ a perfect square for all $i<k$.
+
+## Prime-sum Hamiltonian cycles through every edge | 6 | Combinatorics
+W: Show every edge of the prime-sum graph on 1 to 2n lies on a full prime circle.
+M: Prove for all large $n$ every edge of the prime-sum graph on $[2n]$ lies on a Hamiltonian cycle.
+
+## Hat quasicrystal Ising universality, bond-disordered | 7 | Physics
+W: Randomly weaken some bonds in the hat Ising model. Show the critical behaviour still matches the clean 2D Ising class up to logs.
+M: For the random-bond ferromagnetic Ising model on the hat graph with i.i.d. couplings in $[1,1+\varepsilon]$, prove the specific heat diverges at most as $\log\log|t|^{-1}$ near $T_c$ for small $\varepsilon$.
+
+## Polykite growth: one more digit | 6 | Combinatorics
+W: Pin the exponential growth rate of n-kite shapes to within one percent, rigorously.
+M: Prove explicit bounds $a\le\lambda\le b$ with $b/a\le1.01$ for the polykite growth constant $\lambda=\lim k_n^{1/n}$.
+
+## Gerver sofa algebraic independence of its angles | 8 | Number theory
+W: Gerver's sofa is built from two special angles. Show they are algebraically independent over the rationals.
+M: Prove the two transcendental switching angles $\varphi\approx0.0392$ and $\theta\approx0.6813$ in Gerver's construction are algebraically independent over $\mathbb{Q}$.

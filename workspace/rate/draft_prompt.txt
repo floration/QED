@@ -1,0 +1,22 @@
+You are drafting NEW, NOVEL, HARD open math problems for a public "open problems" collection. Domain for you: {DOMAIN}. Produce {K} problems.
+
+Hard requirements for every problem:
+- Genuinely open as far as you can tell, and NOT already in the literature. Do a quick web search on anything that smells familiar. Not solved, not a known conjecture restated, not a special case of a famous open problem (twin primes, Goldbach, Bateman–Horn, Artin, Lehmer, Zaremba, Littlewood, Erdős–Turán, Sárközy, Hadwiger–Nelson, crossing-number additivity, etc.) and not equivalent to one.
+- Not false: actively try to refute each draft (parity, congruences, small counterexamples, contraction arguments, quick python checks under 20 s each).
+- Not easy: if a standard argument (Bertrand, Dirichlet, Carleson, Vinogradov, Koukoulopoulos–Maynard, Mauduit–Rivat, trivial bounds, monotone decrease) settles it, discard it.
+- Not settled by a finite computation.
+- Well-posed and precise. No "..." or hedging inside statements.
+- Not a duplicate of, or close variant of, any problem in /home/claude/rate/all_titles.txt (title — plain words; read it ALL first; that collection is already saturated with: hat/spectre tilings, Gerver's sofa variants, square-sum graphs, Prime Nim, largest-prime-factor maps, seven-free digits, Keller/Jacobian maps, Navier–Stokes blow-up). Avoid those objects entirely unless the question is clearly different in kind.
+- Target difficulty: centred around 5 on this calibrated scale (sensitivity conjecture 2.6, cap sets 2.7, lonely runner 3.4, graceful tree 3.6, Goldbach 4.8, twin primes 5.0, Collatz 5.5; 10 = beyond all methods). Spread from about 3 to 9.
+- Any numerical claim (e.g. "every tested start reaches these cycles") must be verified by you with code you actually run (keep each run under 20 s), and the statement must say what was tested.
+- Prefer natural, crisp, surprising questions about concrete new objects; vary templates (do not make many problems from one template).
+
+Context facts (treat as true, late 2026): RH proved in Lean (Alpöge, Nov 2026); Jacobian conjecture false in dim 3; forced 3D Navier–Stokes blow-up exists; Erdős unit distance conjecture disproved (n^1.014); Gerver's sofa proved optimal (Baek).
+
+Output: write /home/claude/probs/{FILE} in exactly this format, one block per problem, nothing else:
+## Title | rating | Area
+W: plain-words statement, 1–3 sentences, no LaTeX
+M: precise math statement with $LaTeX$
+
+(rating = your honest integer 2–9 estimate on the scale above; Area one of: Number theory, Combinatorics, Geometry, Analysis, Probability, Dynamics, Algebra, Logic, Games, Topology, PDE, Computation)
+Then reply with one line: how many problems written.

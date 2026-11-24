@@ -1,0 +1,602 @@
+[
+ {
+  "id": "N-268",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "3D sofa variant; 2D took decades and Baek's long proof"
+ },
+ {
+  "id": "N-373",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Quadratic-growth planar graph; counting arguments like Z^2 likely settle it"
+ },
+ {
+  "id": "N-051",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Unique-assembly jigsaw bounds; partly studied, asymptotics plausible with constructions"
+ },
+ {
+  "id": "N-362",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "QUE failure for specific rational polygon; only generic results known"
+ },
+ {
+  "id": "N-368",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Convex-restricted sofa; smaller search space, Baek-style methods may apply"
+ },
+ {
+  "id": "N-390",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Sharpness feasible; rigorous 1e-4 bounds beyond even square lattice"
+ },
+ {
+  "id": "N-370",
+  "r": 3.5,
+  "flag": "famous-equiv",
+  "why": "Hadwiger open from t=7; depends on claimed counterexample size"
+ },
+ {
+  "id": "N-395",
+  "r": 0.0,
+  "flag": "false",
+  "why": "Shuffle order divides phi(3n-1), so at most linear in n"
+ },
+ {
+  "id": "N-411",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Aperiodic non-isoradial planar Ising; closed form likely nonexistent"
+ },
+ {
+  "id": "N-090",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Integer collision likely immediate from known Gallagher/Alp\u00f6ge family"
+ },
+ {
+  "id": "N-261",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Specific firefighter variant on hexagonal lattice; finite strategies plus bounds"
+ },
+ {
+  "id": "N-235",
+  "r": 1.0,
+  "flag": "ill-posed",
+  "why": "'Find axioms' giving uniqueness is trivially satisfiable; no canonical target"
+ },
+ {
+  "id": "N-471",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Full classification of non-invertible Keller maps likely wild"
+ },
+ {
+  "id": "N-089",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Monomial-count minimality needs hard lower bound over all maps"
+ },
+ {
+  "id": "N-155",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Exact quadratic asymptotic for specific non-Veech surface needs orbit closure"
+ },
+ {
+  "id": "N-280",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Quantitative stability after Baek's proof; technical but plausible"
+ },
+ {
+  "id": "N-236",
+  "r": 0.3,
+  "flag": "computation",
+  "why": "Costs decouple into i.i.d. pair minima; c_k is a finite expectation"
+ },
+ {
+  "id": "N-353",
+  "r": 1.0,
+  "flag": "computation",
+  "why": "7-bag infinite preview; known looping strategies, finite verification"
+ },
+ {
+  "id": "N-121",
+  "r": 4.5,
+  "flag": "famous-equiv",
+  "why": "n^1.02 would refute Erd\u0151s unit-distance n^{1+o(1)} conjecture"
+ },
+ {
+  "id": "N-072",
+  "r": 0.5,
+  "flag": "computation",
+  "why": "Connect Four variant solvable by standard solvers"
+ },
+ {
+  "id": "N-497",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Exact least ZFC-independence index, like BB; essentially unattainable"
+ },
+ {
+  "id": "N-482",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Irrationality measure of ad hoc constant; hopeless like pi's"
+ },
+ {
+  "id": "N-008",
+  "r": 0.2,
+  "flag": "known",
+  "why": "Standard Selberg/Brun sieve upper bound"
+ },
+ {
+  "id": "N-490",
+  "r": 6.0,
+  "flag": "ill-posed",
+  "why": "Fractional hyperoperation undefined; transcendence of such values hopeless"
+ },
+ {
+  "id": "N-397",
+  "r": 2.0,
+  "flag": "computation",
+  "why": "Ill-specified finite tiling search; definition dubious"
+ },
+ {
+  "id": "N-352",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Othello 8x8 weakly solved 2023; torus variant comparable compute"
+ },
+ {
+  "id": "N-369",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Hyperbolic sofa existence question; compactness analysis"
+ },
+ {
+  "id": "N-288",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Counting automorphism-fixed grids vs total; likely routine-ish"
+ },
+ {
+  "id": "N-059",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Perturbing Gerver optimality in curvature; needs extending Baek"
+ },
+ {
+  "id": "N-303",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Existence easy; rigorous 3 digits unknown even for polyominoes"
+ },
+ {
+  "id": "N-318",
+  "r": 4.5,
+  "flag": "famous-equiv",
+  "why": "Implies infinitely many Sophie Germain primes"
+ },
+ {
+  "id": "N-103",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Finite-candidate lattice optimization"
+ },
+ {
+  "id": "N-210",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Exact extremal value for Kakeya-type disc sets; no tools"
+ },
+ {
+  "id": "N-062",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Analog of Diaconis\u2013Graham\u2013Kantor; case analysis"
+ },
+ {
+  "id": "N-207",
+  "r": 4.0,
+  "flag": "famous-equiv",
+  "why": "Two primes among 4 linear forms; beyond Maynard\u2013Tao (needs ~50)"
+ },
+ {
+  "id": "N-459",
+  "r": 8.0,
+  "flag": "ok",
+  "why": "Normality of a specific constant; hopeless"
+ },
+ {
+  "id": "N-429",
+  "r": 5.5,
+  "flag": "famous-equiv",
+  "why": "3D lattice SU(2) mass gap all couplings open even on Z^3"
+ },
+ {
+  "id": "N-336",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Bounded-size classification; heavy but finite-ish algebra"
+ },
+ {
+  "id": "N-306",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Restricted-shape sofa optimization"
+ },
+ {
+  "id": "N-208",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Grundy unboundedness of prime subtraction; no structure known"
+ },
+ {
+  "id": "N-157",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "BB(5) already formally proven in Coq; Lean port is engineering"
+ },
+ {
+  "id": "N-327",
+  "r": 2.0,
+  "flag": "false",
+  "why": "3-SAT at 4.0 likely easy for algorithms; OGP claim likely false"
+ },
+ {
+  "id": "N-163",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Search for 46 or rank lower bound 47; lower bounds very hard"
+ },
+ {
+  "id": "N-401",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Sofa variant on cone; Baek-style methods"
+ },
+ {
+  "id": "N-129",
+  "r": 1.0,
+  "flag": "ok",
+  "why": "Chromatic number of bounded-degree specific graph; small value likely"
+ },
+ {
+  "id": "N-200",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Minimality over all unavoidable sets essentially intractable"
+ },
+ {
+  "id": "N-379",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Expansion of arithmetic graph; needs strong number theory"
+ },
+ {
+  "id": "N-137",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Firefighter on Z^2 with two fires; combinatorial"
+ },
+ {
+  "id": "N-058",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Graham-type Egyptian fraction theorem for digit-restricted set"
+ },
+ {
+  "id": "N-366",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Concrete geometric optimization in corridor"
+ },
+ {
+  "id": "N-092",
+  "r": 0.5,
+  "flag": "ill-posed",
+  "why": "Informal intent not formal; decision procedure undefined"
+ },
+ {
+  "id": "N-333",
+  "r": 3.5,
+  "flag": "famous-equiv",
+  "why": "Small contractible curves are planar: equivalent to square peg"
+ },
+ {
+  "id": "N-474",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Dry ten Martini for 2D aperiodic tiling; far beyond AMO"
+ },
+ {
+  "id": "N-325",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "P-position growth exponent of prime subtraction; no structure"
+ },
+ {
+  "id": "N-133",
+  "r": 5.0,
+  "flag": "famous-equiv",
+  "why": "Removing suspicious placeholder likely requires genuinely proving RH"
+ },
+ {
+  "id": "N-134",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Classification within a specific construction"
+ },
+ {
+  "id": "N-478",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Duplicate of N-084; exact c needs aperiodic homogenized diffusivity"
+ },
+ {
+  "id": "N-153",
+  "r": 4.0,
+  "flag": "computation",
+  "why": "Quoridor state space far beyond current solving"
+ },
+ {
+  "id": "N-391",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Emirp infinitude open; EH doesn't handle digit reversal; muddled"
+ },
+ {
+  "id": "N-076",
+  "r": 1.0,
+  "flag": "computation",
+  "why": "Finite geometric case check"
+ },
+ {
+  "id": "N-423",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Exact average-budget threshold open even for standard Z^2 fire"
+ },
+ {
+  "id": "N-433",
+  "r": 0.1,
+  "flag": "easy",
+  "why": "rev(n^2) never ends in 0 after one step; digits nearly double"
+ },
+ {
+  "id": "N-363",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Homogenization known; closed-form effective speed like FPP time constant"
+ },
+ {
+  "id": "N-083",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Exact complexity constant for aperiodic tiling; may not exist"
+ },
+ {
+  "id": "N-430",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Greedy root-down labeling with many available primes works"
+ },
+ {
+  "id": "N-136",
+  "r": 0.1,
+  "flag": "easy",
+  "why": "Fire dominated by standard fire, which 2 per turn contains"
+ },
+ {
+  "id": "N-399",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Burgiel-style S/Z adversary likely adapts to cylinder"
+ },
+ {
+  "id": "N-444",
+  "r": 4.5,
+  "flag": "famous-equiv",
+  "why": "Three primes among 4 linear forms; beyond bounded gaps"
+ },
+ {
+  "id": "N-455",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Equal multiplicative orders infinitely often; Artin-type, needs GRH"
+ },
+ {
+  "id": "N-044",
+  "r": 0.8,
+  "flag": "computation",
+  "why": "Finite Heesch computation as in Kaplan's work"
+ },
+ {
+  "id": "N-160",
+  "r": 1.5,
+  "flag": "ill-posed",
+  "why": "Inverse eikonal uniqueness; 'explicit conditions' vague"
+ },
+ {
+  "id": "N-248",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Kayles on unstructured graph family for all N; likely no pattern"
+ },
+ {
+  "id": "N-246",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Whole one-parameter family of constrained sofas"
+ },
+ {
+  "id": "N-426",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Exact packing density of nonconvex polygon"
+ },
+ {
+  "id": "N-250",
+  "r": 6.0,
+  "flag": "ill-posed",
+  "why": "RSA jamming densities have no closed form even for squares"
+ },
+ {
+  "id": "N-449",
+  "r": 3.0,
+  "flag": "ill-posed",
+  "why": "Invented ill-specified corridor motion; sofa-hard"
+ },
+ {
+  "id": "N-063",
+  "r": 1.0,
+  "flag": "computation",
+  "why": "Finite graceful-labeling search, within known computation range"
+ },
+ {
+  "id": "N-378",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Lee\u2013Yang zero accumulation on aperiodic lattice; very hard"
+ },
+ {
+  "id": "N-310",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Cutoff for few-generator walk on large group"
+ },
+ {
+  "id": "N-364",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Galois groups for explicit family; computable plus monodromy"
+ },
+ {
+  "id": "N-130",
+  "r": 1.0,
+  "flag": "ok",
+  "why": "Transplantation constructions likely realizable with kites"
+ },
+ {
+  "id": "N-077",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Exact packing density of nonconvex star; even heptagon open"
+ },
+ {
+  "id": "N-193",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Long-range growth exponents partially known"
+ },
+ {
+  "id": "N-468",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Second-order term for sparse arithmetic graph independence"
+ },
+ {
+  "id": "N-037",
+  "r": 0.8,
+  "flag": "easy",
+  "why": "Local smooth argument gives small inscribed triangles"
+ },
+ {
+  "id": "N-014",
+  "r": 1.0,
+  "flag": "ok",
+  "why": "Four-speed lonely runner; piecewise computation"
+ },
+ {
+  "id": "N-187",
+  "r": 1.0,
+  "flag": "ill-posed",
+  "why": "No free parameter, so 'threshold' undefined"
+ },
+ {
+  "id": "N-052",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Count for 24 computable; growth rate of sequencings open"
+ },
+ {
+  "id": "N-492",
+  "r": 1.0,
+  "flag": "false",
+  "why": "p\u22611 mod 10 forces 5|2p+3; claim false if count infinite"
+ },
+ {
+  "id": "N-331",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "High-dim sofa asymptotics; bounds loose"
+ },
+ {
+  "id": "N-291",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Non-polygonal limit shape open even on Z^2"
+ },
+ {
+  "id": "N-001",
+  "r": 0.0,
+  "flag": "known",
+  "why": "Classical shuffle fact; position map x->3x mod 3n-1"
+ },
+ {
+  "id": "N-446",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Digit-restricted Carmichael numbers; needs new AGP plus Maynard"
+ },
+ {
+  "id": "N-027",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Asymmetric-corridor sofa; open variant"
+ },
+ {
+  "id": "N-417",
+  "r": 2.5,
+  "flag": "ill-posed",
+  "why": "Bohr\u2013Mollerup analog; definitions vague"
+ },
+ {
+  "id": "N-057",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Mis\u00e8re vs normal for infinite subtraction set"
+ },
+ {
+  "id": "N-226",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Circuit lower bound for unstructured sequence"
+ },
+ {
+  "id": "N-107",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Needs polytime for all single polygons; tile-complexity open"
+ },
+ {
+  "id": "N-035",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Delayed firefighter on Z^2; specific combinatorics"
+ },
+ {
+  "id": "N-084",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Local limit on aperiodic graph; exact c via effective diffusivity"
+ }
+]

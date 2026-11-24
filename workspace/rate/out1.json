@@ -1,0 +1,602 @@
+[
+ {
+  "id": "N-099",
+  "r": 0.3,
+  "flag": "computation",
+  "why": "Width-3 lattice corridor bounds size; finite exhaustive search."
+ },
+ {
+  "id": "N-372",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Makeev-type inscription in R^4; topological methods stuck beyond R^3."
+ },
+ {
+  "id": "N-320",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "3D sofa variant; planar sofa took 60 years."
+ },
+ {
+  "id": "N-495",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Sparse arithmetic Ramsey; may need astronomically large N or impossible."
+ },
+ {
+  "id": "N-326",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Subtract-a-prime P-positions have no known structure; lower bound hopeless."
+ },
+ {
+  "id": "N-117",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Maynard restricted-digit primes plus circle method likely suffices."
+ },
+ {
+  "id": "N-413",
+  "r": 0.1,
+  "flag": "known",
+  "why": "Parity forces at most four speeds; LRC known for few runners."
+ },
+ {
+  "id": "N-259",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Bounded-speed lonely runner case still beyond current methods."
+ },
+ {
+  "id": "N-445",
+  "r": 6.0,
+  "flag": "famous-equiv",
+  "why": "Implies twin prime conjecture plus digit-reversal constraints."
+ },
+ {
+  "id": "N-101",
+  "r": 1.0,
+  "flag": "ok",
+  "why": "Finite self-similar graph firefighter; recursive analysis likely works."
+ },
+ {
+  "id": "N-367",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Symmetry restriction; Baek/Kallus-Romik methods may adapt."
+ },
+ {
+  "id": "N-138",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Connected-barrier firefighting on Z^2; related open rate questions."
+ },
+ {
+  "id": "N-068",
+  "r": 1.5,
+  "flag": "ill-posed",
+  "why": "Lean golf model vague; parameterized hardness reductions standard."
+ },
+ {
+  "id": "N-144",
+  "r": 0.5,
+  "flag": "false",
+  "why": "Degrees ~sqrt N give log H ~ N log N, not Theta(N)."
+ },
+ {
+  "id": "N-088",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Continuous-weight circle-river packing with certificates; heavy but finite-dim."
+ },
+ {
+  "id": "N-348",
+  "r": 1.5,
+  "flag": "ill-posed",
+  "why": "D-finiteness of parametric arc ill-defined; likely transcendence check."
+ },
+ {
+  "id": "N-151",
+  "r": 0.2,
+  "flag": "ill-posed",
+  "why": "Finite set; positive fraction trivial once one example exists."
+ },
+ {
+  "id": "N-220",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Strongly aperiodic chiral 3D monotile; spectre-style ideas may extend."
+ },
+ {
+  "id": "N-339",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Stability often comes with computer-assisted self-similar blow-up proofs."
+ },
+ {
+  "id": "N-419",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Pair potentials forcing aperiodic ground states barely understood."
+ },
+ {
+  "id": "N-080",
+  "r": 0.3,
+  "flag": "false",
+  "why": "Planarity bound is for finite graphs; infinite graph robber escapes."
+ },
+ {
+  "id": "N-404",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Collatz-like; needs ruling out unbounded prime chains."
+ },
+ {
+  "id": "N-019",
+  "r": 0.8,
+  "flag": "ok",
+  "why": "Slack labels for caterpillar forests; constructive labeling likely easy."
+ },
+ {
+  "id": "N-181",
+  "r": 0.8,
+  "flag": "computation",
+  "why": "Explicit map; computer algebra monodromy computation."
+ },
+ {
+  "id": "N-484",
+  "r": 3.0,
+  "flag": "ill-posed",
+  "why": "Aperiodic non-isoradial Ising; beta_c unknown, closed form unlikely."
+ },
+ {
+  "id": "N-396",
+  "r": 0.3,
+  "flag": "false",
+  "why": "Global flat-foldability NP-hard; finite local conditions cannot decide."
+ },
+ {
+  "id": "N-189",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Isoperimetric constant on aperiodic graph; Wulff-type but explicit c hard."
+ },
+ {
+  "id": "N-002",
+  "r": 0.0,
+  "flag": "computation",
+  "why": "Finite check below 10^6."
+ },
+ {
+  "id": "N-257",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Four forms under EH; Maynard needs five for two primes."
+ },
+ {
+  "id": "N-113",
+  "r": 1.0,
+  "flag": "ill-posed",
+  "why": "Monster min degree ~10^20; depends on symmetry definition."
+ },
+ {
+  "id": "N-005",
+  "r": 1.0,
+  "flag": "ok",
+  "why": "Directed fire spread; small k, standard firefighter arguments."
+ },
+ {
+  "id": "N-131",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Controllability-type argument atop existing blow-up construction."
+ },
+ {
+  "id": "N-172",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Shuffle groups well studied (Diaconis-Graham-Kantor); group may be small."
+ },
+ {
+  "id": "N-389",
+  "r": 0.1,
+  "flag": "false",
+  "why": "Average degree ~sqrt N forces lambda_1 >> N^{1/4}."
+ },
+ {
+  "id": "N-147",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Sofa-type optimization; Baek's method may extend but heavy."
+ },
+ {
+  "id": "N-142",
+  "r": 2.5,
+  "flag": "ill-posed",
+  "why": "Orbits very short; Benford for finite orbits ill-defined."
+ },
+ {
+  "id": "N-227",
+  "r": 1.0,
+  "flag": "ok",
+  "why": "Vague model; gap reductions standard."
+ },
+ {
+  "id": "N-118",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Curved sofa problem; at least as hard as planar sofa."
+ },
+ {
+  "id": "N-371",
+  "r": 4.0,
+  "flag": "famous-equiv",
+  "why": "Spherical analogue of square peg problem, open for Jordan curves."
+ },
+ {
+  "id": "N-016",
+  "r": 0.0,
+  "flag": "easy",
+  "why": "Count via gcd(k^d-1, kn-1) and Mobius inversion."
+ },
+ {
+  "id": "N-199",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Forcing icosahedral hull with one 3D tile; no technique known."
+ },
+ {
+  "id": "N-108",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Tied to open critical-set sizes of Latin squares."
+ },
+ {
+  "id": "N-140",
+  "r": 3.0,
+  "flag": "computation",
+  "why": "Finite but far beyond current Go solving (7x7 unsolved)."
+ },
+ {
+  "id": "N-476",
+  "r": 4.5,
+  "flag": "computation",
+  "why": "Finite but astronomically beyond any foreseeable search."
+ },
+ {
+  "id": "N-383",
+  "r": 0.8,
+  "flag": "easy",
+  "why": "Periodicity plus Dirichlet primes in progressions likely contradicts quickly."
+ },
+ {
+  "id": "N-311",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Corona limits for substitution/cut-and-project tilings partly studied."
+ },
+ {
+  "id": "N-245",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Beyond Merikoski-type exponents, and restricted to prime inputs."
+ },
+ {
+  "id": "N-321",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Hadwiger-Nelson variant; exact value comparable to plane chromatic number."
+ },
+ {
+  "id": "N-171",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Invariance principle routine; explicit sigma^2 on aperiodic graph hard."
+ },
+ {
+  "id": "N-314",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Ising universality beyond isoradial graphs is open."
+ },
+ {
+  "id": "N-173",
+  "r": 0.8,
+  "flag": "ok",
+  "why": "Gerbicz-style extension methods for square-sum paths likely adapt."
+ },
+ {
+  "id": "N-055",
+  "r": 0.8,
+  "flag": "easy",
+  "why": "Finite volume bound via standard slab/sofa arguments."
+ },
+ {
+  "id": "N-217",
+  "r": 0.1,
+  "flag": "easy",
+  "why": "Behrend set translates give x^{1-o(1)}; trivial up to x^{o(1)}."
+ },
+ {
+  "id": "N-337",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Analytic fractional-rank hyperoperation; tetration extension issues compound."
+ },
+ {
+  "id": "N-381",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Constant 3 for four-form upper sieve beats even twin prime records."
+ },
+ {
+  "id": "N-324",
+  "r": 5.0,
+  "flag": "famous-equiv",
+  "why": "Needs infinitely many arbitrarily long Cunningham-type prime chains."
+ },
+ {
+  "id": "N-346",
+  "r": 1.0,
+  "flag": "ok",
+  "why": "Goodstein variant; ordinal analysis routine."
+ },
+ {
+  "id": "N-004",
+  "r": 0.0,
+  "flag": "computation",
+  "why": "Finite table check up to 120."
+ },
+ {
+  "id": "N-006",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Numerical search; may be false if tilting cannot beat prism."
+ },
+ {
+  "id": "N-375",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Unrestricted label range gives much slack; greedy likely works."
+ },
+ {
+  "id": "N-162",
+  "r": 0.8,
+  "flag": "easy",
+  "why": "Presburger sets eventually periodic; same as non-periodicity of P-set."
+ },
+ {
+  "id": "N-141",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Finite adversarial search; large but feasible with effort."
+ },
+ {
+  "id": "N-393",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Ties to open Latin square critical-set asymptotics; c may be 0."
+ },
+ {
+  "id": "N-377",
+  "r": 0.0,
+  "flag": "false",
+  "why": "2n+-1 divisible by 3, so map contracts; orbits fall to cycles."
+ },
+ {
+  "id": "N-122",
+  "r": 0.5,
+  "flag": "false",
+  "why": "At rho=24.5 a strange attractor coexists with stable equilibria."
+ },
+ {
+  "id": "N-258",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Reversal of primes almost-prime; digit-sieve methods borderline."
+ },
+ {
+  "id": "N-436",
+  "r": 6.0,
+  "flag": "famous-equiv",
+  "why": "Stronger than binary Goldbach."
+ },
+ {
+  "id": "N-405",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "No known structure; closed form likely nonexistent, unprovable."
+ },
+ {
+  "id": "N-238",
+  "r": 0.0,
+  "flag": "false",
+  "why": "Digit count nearly doubles each step; almost all orbits diverge."
+ },
+ {
+  "id": "N-329",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Thin polynomial primes with prime inputs; beyond Heath-Brown-Li."
+ },
+ {
+  "id": "N-152",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Embed known resolution-hard formulas into Sudoku families."
+ },
+ {
+  "id": "N-039",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Circular token transport distance; elementary max computation."
+ },
+ {
+  "id": "N-222",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Opaque sets depend on convex hull; open even for square."
+ },
+ {
+  "id": "N-437",
+  "r": 1.5,
+  "flag": "ill-posed",
+  "why": "Vague Lean proof-length model; standard hardness of approximation."
+ },
+ {
+  "id": "N-270",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Random-turn recursion; limit likely 1/2 by averaging."
+ },
+ {
+  "id": "N-041",
+  "r": 1.5,
+  "flag": "ill-posed",
+  "why": "Free commutative monoid equality trivial; rewrite system unspecified."
+ },
+ {
+  "id": "N-192",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Constructive PDE existence with chosen source; perturbative methods."
+ },
+ {
+  "id": "N-232",
+  "r": 0.0,
+  "flag": "easy",
+  "why": "Extinction probability positive, so k=0 already works."
+ },
+ {
+  "id": "N-330",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Two-sided smoothness of shifted primes far beyond 0.2961 exponent."
+ },
+ {
+  "id": "N-102",
+  "r": 1.0,
+  "flag": "ok",
+  "why": "Parity/modular obstruction or bounded search likely settles."
+ },
+ {
+  "id": "N-023",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Kallus-Romik computer-assisted bounds adapt to obtuse corridor."
+ },
+ {
+  "id": "N-347",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Uniqueness requires identifying the unknown 3D optimizer."
+ },
+ {
+  "id": "N-278",
+  "r": 0.5,
+  "flag": "ill-posed",
+  "why": "Positivity trivial; estimate vague."
+ },
+ {
+  "id": "N-355",
+  "r": 0.2,
+  "flag": "known",
+  "why": "Lean Hadwiger counterexample already claimed Oct 2026."
+ },
+ {
+  "id": "N-046",
+  "r": 0.1,
+  "flag": "computation",
+  "why": "Finite search for N<=200."
+ },
+ {
+  "id": "N-196",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Sidon subsets of primes; constants open, prime gaps interfere."
+ },
+ {
+  "id": "N-228",
+  "r": 4.5,
+  "flag": "famous-equiv",
+  "why": "Hodge for all CM abelian varieties open; formalization needs proof."
+ },
+ {
+  "id": "N-183",
+  "r": 0.5,
+  "flag": "ill-posed",
+  "why": "No 2026 RH proof exists in given context."
+ },
+ {
+  "id": "N-100",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Monsky-type valuation arguments for specific polygon."
+ },
+ {
+  "id": "N-387",
+  "r": 0.0,
+  "flag": "false",
+  "why": "Forest with c>=2 has m+c>m+1 vertices; graceful impossible."
+ },
+ {
+  "id": "N-170",
+  "r": 3.0,
+  "flag": "ill-posed",
+  "why": "Undefined at powers of 2; reduces to all prime orbits terminating."
+ },
+ {
+  "id": "N-022",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Adapt Bern-Hayes NP-hardness reduction."
+ },
+ {
+  "id": "N-165",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Singular continuous spectrum open even for Penrose."
+ },
+ {
+  "id": "N-214",
+  "r": 0.5,
+  "flag": "known",
+  "why": "Drmota-Mauduit-Rivat local law for prime digit sums gives it."
+ },
+ {
+  "id": "N-168",
+  "r": 1.0,
+  "flag": "known",
+  "why": "Weighted/vector sieve with generous Omega<=10 bound."
+ },
+ {
+  "id": "N-123",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Diophantine; bounded only under Bombieri-Lang-type conjectures."
+ },
+ {
+  "id": "N-292",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Prime circle (Greenfield 1998) rotations give Latin squares."
+ },
+ {
+  "id": "N-241",
+  "r": 0.5,
+  "flag": "false",
+  "why": "Orbit lengths ~log log x, so c log x asymptotic wrong."
+ },
+ {
+  "id": "N-271",
+  "r": 0.0,
+  "flag": "false",
+  "why": "Two-tile patch: 1+2=3 not square."
+ },
+ {
+  "id": "N-479",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Feldheim-Hod-type growth known; exact constant open."
+ }
+]

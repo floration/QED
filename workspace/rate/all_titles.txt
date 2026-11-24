@@ -1,0 +1,617 @@
+Wind-driven fire — On a grid, fire spreads each turn only east, north and south (the wind blocks westward spr
+Beat the prism — Gerver's sofa, lifted to one unit tall, can turn a corner in a square pipe. Find a 3D shap
+Lonely runner with one fast runner — Runners have speeds 1, 2, 3 and some larger speed m. Work out exactly how lonely a station
+Hardest Rush Hour — Find the 7 × 7 Rush Hour traffic-jam puzzle that takes the most moves to solve.
+Fewest burned cells — In the wind-driven fire (spreading only east, north and south), with the fewest firefighte
+Infinite Prime Nim losses — Prime Nim has infinitely many losing pile sizes (a known theorem, since primes have arbitr
+Lean golf is NP-hard — Show that finding the shortest proof using only a few basic Lean tactics is computationall
+Obtuse sofa — The corridor turns 120° instead of 90°. Find a sofa and a matching upper bound within 1%.
+Graceful spider forests — Spiders are trees with one central branching vertex. Show forests of spiders have the dist
+Smallest-odd-factor Collatz — Halve even numbers; send an odd number to the smallest odd prime dividing 3n + 1. Find eve
+Narrowing doorway sofa — A width-1 hallway turns a right angle and then narrows to width 0.8. Find the biggest sofa
+Shuffle with a cut — Do a perfect shuffle, then cut k cards from top to bottom, and repeat. How many repetition
+Anti-knight Sudoku — In this Sudoku, equal digits may not sit a knight's move apart. What is the fewest clues f
+Sofa angle monotonicity — As a hallway's turn gets sharper, the best sofa should get smaller. Prove it between 60° a
+Delayed firefighters — Fire spreads in four directions, but a firefighter assigned now only takes effect a turn l
+Aperiodic polykite census — The "hat" is made of 8 kites and tiles the plane only non-periodically. Find every such sh
+Fire on a cylinder — A fire burns on a grid wrapped into an infinite tube of width n. How many firefighters per
+Mod-3 Collatz map — Divide by 3 when you can; otherwise double and add or subtract 1. Find all loops below a b
+Voice leading is NP-hard — Moving n voices through a chord progression with the least total motion while avoiding par
+Real-rank hyperoperations — Addition, multiplication and exponentiation are ranks 1, 2, 3 of one ladder. Find natural 
+Adversarial 2048 — An opponent places every new tile in 2048 as unhelpfully as possible. What is the biggest 
+Blank jigsaw — A jigsaw with no picture can only be solved from piece shapes. How few edge shapes force a
+Quarter-tone all-interval rows — Count the tone rows in 24-note tuning that use every interval exactly once.
+Small Keller maps in 3D — The 2026 counterexamples to the Jacobian conjecture have fairly high degree. Is there one 
+Prime Nim, misère — In Prime Nim where the last mover loses instead of wins, do the losing positions differ fr
+Seven-free Egyptian fractions — Write every fraction as a sum of distinct unit fractions whose denominators never contain 
+Hyperbolic sofa, flat limit — As curvature fades to zero, the best hyperbolic sofa should approach Gerver's sofa. Find h
+Penrose firefighter — Fire spreads along a Penrose tiling's edges. How many firefighters per turn can trap any f
+Three-pile shuffle group — Using the six ways to stack three piles in a perfect shuffle, which rearrangements of the 
+Two-tree graceful forests — Check the distinct-difference labeling for every forest of two small trees.
+Shortest proof that √2 is irrational — Find the shortest possible Lean proof that the square root of 2 is irrational, and prove n
+Pipe-bend sofa — A round pipe of diameter 1 bends at a right angle. What is the biggest solid that fits aro
+Counting 16 × 16 Sudoku — Count the essentially different 16 × 16 Sudoku grids, ignoring symmetries, to three signif
+Toroidal Hex — Hex on a doughnut: the board wraps around, and you win with a chain that loops the long wa
+Hyperbolic firefighter budgets — In a hyperbolic tiling, fire spreads exponentially, so no fixed crew stops it. How fast mu
+Kissing hats — How many copies of the hat tile can touch one hat without overlapping?
+Packing seven-pointed stars — Find the densest way to pack identical seven-pointed stars in the plane.
+Square in a snowflake — Find the largest square whose four corners lie on the Koch snowflake.
+Formalize 3D Kakeya — Turn the 2025 proof of the three-dimensional Kakeya conjecture into a compact computer-che
+Formalize the sofa — Turn Baek's proof that Gerver's sofa is optimal into a computer-checked proof.
+Hat patch complexity — Count the distinct round patches of radius r in hat tilings. Find the exact constant in th
+Random walk on the hat tiling — A random walker steps between neighbouring hat tiles. How likely is it to be back home aft
+Percolation on the hat tiling — Each hat tile is open at random with probability p. Find where an infinite open cluster fi
+Self-avoiding walks on the hat tiling — Count paths across hat tiles that never revisit a tile, and show their growth rate is new.
+Independent prime-gap formalization — Check the 2026 record that prime gaps of at most 186 occur forever, with a fresh computer 
+Optimal origami base — Folders design animal shapes by packing circles on paper. Find the smallest paper needed f
+Keller maps with few terms — Find a Jacobian-conjecture counterexample using as few polynomial terms as possible.
+Billiards in the sofa — A ball bounces inside Gerver's sofa shape. Find its shortest closed bouncing path.
+Fewest KenKen cages — What is the fewest cages for a uniquely solvable 6 × 6 KenKen puzzle?
+S and Z Tetris — If only the S and Z pieces ever come, how many lines can you clear before losing on a 10-w
+The 2048 ceiling — Show that even perfect play almost never reaches the theoretical top tile in 2048.
+Equal-area triangles in the hat — Cut the hat tile into triangles of equal area. Which numbers of triangles are possible?
+Fire on the Sierpinski graph — With one firefighter per turn on the Sierpinski triangle graph, what fraction must burn as
+Prime squared square — Tile a square with smaller squares, all different sizes, every side a prime number. Find o
+Integer sofa — With the hallway scaled to width 10, what is the biggest polygon with whole-number corners
+Polyhedral sofa — The best 3D sofa is curved. What is the best one with at most 12 flat corners?
+Toroidal Sudoku — Sudoku where the 3 × 3 boxes wrap around the board's edges. What is the fewest clues for a
+Five colors for square sums — Square-sum graphs need four colors eventually. Do they eventually need five?
+Hamiltonian induced subgraphs of S_N — Show deciding whether a given set of numbers can be lined up so neighbours sum to squares 
+Monotile assembly threshold — With one tile shape, deciding whether a region can be tiled is easy in some cases; with ma
+Square-sum coloring — Join numbers that add up to a perfect square. Does the number of colors needed stay bounde
+Hyperbolic sofa — Find the largest sofa that can turn a right-angled corner in a hallway of width 1 in the h
+Hyperbolic square peg — Every closed curve in the hyperbolic plane should pass through the corners of some hyperbo
+FLT, compressed — Fermat's Last Theorem has a huge computer formalization effort. Do it in far fewer lines.
+Prime pancakes — Sort pancakes by flipping only a prime number at a time. Find the worst-case number of fli
+Seven-free three primes — Every large odd number should be a sum of three primes that never use the digit 7.
+Spherical sofa — Find the biggest shape that turns a right-angled corner in a width-1 hallway drawn on a la
+No prism sofa — Show the best 3D sofa is genuinely three-dimensional, not just a flat shape extruded upwar
+Blokus Duo — Who wins two-player Blokus with perfect play?
+Square-sum cliques — How many numbers can pairwise add up to perfect squares? Decide if there is a limit.
+Square-sum spectral gap — Find how well connected the square-sum graph is, through its eigenvalues.
+Seven-free primes in progressions — Primes avoiding the digit 7 should be evenly spread among remainder classes.
+Largest-factor Collatz heights — For almost every start, the largest-factor Collatz orbit never climbs past a fixed power o
+Coloring the spectre's distances — Take all corners of a spectre tiling and join two whenever they are exactly one edge-lengt
+Isospectral polykites — Two different drums can sound the same. Find two different shapes made of kites that do.
+Distant-force blow-up — The 2026 Navier–Stokes blow-up pushed fluid right where it broke. Make it break with a pus
+Closed-form Euler blow-up — Give smooth starting data for frictionless 3D fluid, written as an explicit formula, that 
+Tangent-sweep Keller maps — One 2026 counterexample to the Jacobian conjecture sweeps tangent lines of a curve. Find e
+Two-to-one Keller maps — Known Jacobian counterexamples cover most points three or more times. Is there one coverin
+Two fires — Two fires start a distance d apart. How many firefighters per turn are needed, depending o
+Building a firebreak — Firefighters must build one connected wall, one cell per turn, each next to the last. Can 
+Hex on hats — Play Hex on a board made of hat tiles. Can games end in a draw, and who wins on a small bo
+Go on a torus — Go on a 7 × 7 board that wraps around. What komi makes the game fair?
+Worst-case Battleship — What is the fewest shots that always sinks the standard fleet on a 10 × 10 board?
+Benford orbits — The leading digits of largest-factor Collatz orbits should follow Benford's law.
+Random graceful forests — Almost every random forest has the distinct-edge-difference labeling.
+T-junction sofa — A sofa comes up the stem of a T and must be able to leave by either arm. Find the biggest 
+Car-like sofa — The sofa moves like a car: forward only, with limited steering. Find the biggest that make
+Fire on a random planet — Fire spreads on a random planar map. Find how fast firefighting budgets must grow.
+Random lonely runners — With random speeds, runners get noticeably lonelier than the conjecture promises.
+Sudoku resolution bounds — Proving a large broken Sudoku has no solution should require long logical proofs.
+Quoridor — Who wins the board game Quoridor with perfect play?
+Prime-frequency synchrony — Oscillators with frequencies set by logarithms of primes eventually synchronize when coupl
+Hat billiard counting — Count the periodic bouncing paths inside a hat-shaped table up to a given length.
+Kakeya for hats — What is the smallest region in which you can rotate a hat tile through every orientation?
+BB(5), compressed — The Busy Beaver value BB(5) was proved with a large computer proof. Make it small.
+Four colors, compressed — Make the computer-checked four color theorem much shorter.
+Kepler, compressed — Make the computer-checked proof of the densest sphere packing far shorter.
+Fast Prime Nim — Compute Prime Nim values up to a trillion.
+Hat electrons — An electron hopping on a hat tiling should have an unusual, fractal energy spectrum.
+Hat dimers — Cover a hat tiling with dominoes joining neighbouring tiles. Count the coverings exactly p
+Emirps, almost — Show infinitely many primes have a reversal with at most three prime factors.
+Smallest-factor Collatz, almost always — For the smallest-odd-factor Collatz map, almost every start reaches 1.
+Hat random walk diffusivity — A random walk across hat tiles should look like ordinary Brownian motion from far away. Fi
+Shuffle-sorting — Using any of the six 3-pile perfect shuffles each time, how many shuffles reach any reacha
+A four-dimensional einstein — Find one 4D shape that fills 4D space but only without repeating.
+Hinged sofa — A sofa made of two rigid halves joined by a hinge. What total area can turn the corner?
+Firefighters on the front line — Firefighters may only protect cells touching the fire. How many per turn are needed now?
+Fire on a random tree — On a tree where each node has three branches, fire jumps to two random branches per step. 
+Sudoku transversals — In every completed big Sudoku, find a set of cells with one in each row, each column and e
+Effective Riemann constants — Extract explicit, usable prime-counting error bounds from the 2026 Riemann proof.
+The sofa's boundary is not algebraic — Gerver's sofa is bounded by 18 curve pieces. Show some of them are not polynomial curves.
+Random Wang tiles — Pick n random tile types with colored edges. How likely are they to tile the plane?
+Random polykites — Show almost no shapes made of many kites can tile the plane.
+Leaky firefighting — Fire spreads to each neighbour only with probability p. Find the largest p at which one fi
+Hat isoperimetry — Among groups of n hat tiles, how short can the boundary be? Find the exact constant.
+Undecidable polykite tiling — For sets of five shapes made of kites, deciding whether they tile the plane is unsolvable 
+Petersen Ramsey multiplicity — In any two-coloring of a huge complete graph, how many single-color copies of the Petersen
+Fire whirls — Show the equations of buoyant flow allow a rotating column of fire that travels steadily.
+Spot fires — Fires throw embers ahead at random. Find the exact spreading speed.
+Prime Langford pairings — Arrange two copies each of 1 to n so the two copies of k sit exactly the k-th prime apart.
+Prime Golomb rulers — Find the shortest ruler with marks only at prime positions where all distances between mar
+Three large consecutive factors — Show infinitely many n have n, n + 1 and n + 2 each with a prime factor bigger than n^0.9.
+Sidon sets of seven-free numbers — Find the largest subset of the seven-free numbers up to N with all pairwise sums distinct,
+Roth for seven-free numbers — Show every subset of the seven-free numbers that keeps a fixed fraction of them contains t
+Hexagonal Lebesgue covering — Find the smallest convex shape that can cover every set of diameter 1, if covering is by t
+Random sequential prime-sum packing — Add random numbers from 1 to N one at a time, keeping a number only if it forms no prime s
+Prime factor plus digit sum — Add the largest prime factor of n to its digit sum. Every tested start ends in 6 → 9 → 12.
+Square subtraction with prime piles — In the game where you subtract a square, show infinitely many prime pile sizes are losing 
+Treewidth of the prime-sum graph — Find the treewidth of the prime-sum graph on 1 to 2n asymptotically.
+Clique minors in the prime-sum graph — Show the prime-sum graph on 1 to 2n has a complete minor of size about n over the square r
+Optimal square-sum circle gaps — Among all arrangements of 1 to N in a circle where neighbours sum to squares, minimise the
+Hadwiger's true constant — If graphs needing many colors need not contain a full complete-graph minor, find how large
+Icosahedral monotile — Find a single 3D tile that fills space and forces five-fold, icosahedral symmetry in every
+Minimal four-color proof — The four color theorem's proof checks a big list of map configurations. Find the smallest 
+Perfect Minesweeper — What is the exact chance that perfect play wins expert Minesweeper?
+Readable Riemann — The 2026 Riemann proof is a giant machine-checked archive. Write a proof people can read.
+Short Riemann — Shrink the 2026 machine-checked Riemann proof drastically.
+Small Hadwiger counterexample — The claimed counterexamples to Hadwiger's conjecture are astronomically large. Find one un
+Explicit Navier–Stokes blow-up — Write down a forced Navier–Stokes blow-up as an explicit formula instead of a computer-ass
+Two of four — Show infinitely many primes p have at least one more prime among p + 2, 2p + 1, 2p + 3.
+Unbounded Prime Nim — Do the Prime Nim values grow without limit?
+Rounded corners — The inside corner of the hallway is rounded. Find the best sofa for every rounding radius.
+Kakeya discs — What is the least volume needed to turn a flat disc to every orientation?
+3-SAT at density 4 — Give a fast algorithm that solves almost all random 3-SAT puzzles up to clause density 4.
+Prime ladders — Change one digit at a time, staying prime. Show any two k-digit primes are linked by at mo
+Largest-factor Collatz stopping time — How many steps does the largest-factor Collatz map take, on average, to reach 1?
+Ringel for forests — Split a complete graph on 2m + 1 vertices into identical copies of any given forest with m
+Zigzag sofa — A hallway turns right, then left after distance d. Find the best sofa for every d.
+Spiral staircase — What is the biggest convex box-like object that can be carried up a given spiral staircase
+Geodesic squares on surfaces — Every smooth closed curve on a convex surface should pass through the corners of a square 
+Hat opaque set — Find the shortest set of walls that blocks every straight line through the hat tile.
+Hat spectrum is a Cantor set — Show the energy levels of a particle hopping on a hat tiling form a dust of measure zero.
+Smallest force for blow-up — How weak can the push be and still make viscous fluid blow up?
+Forced SQG blow-up — Copy the 2026 forced Navier–Stokes blow-up for the surface quasi-geostrophic equation.
+Prime Nim is not simple — Show Prime Nim losing positions cannot be detected by shallow constant-depth circuits.
+Lean golf is hard to approximate — Not only is the shortest basic-tactic proof hard to find; even a roughly short one is.
+Navier–Stokes blow-up in Isabelle — Re-check the 2026 Navier–Stokes blow-up in a completely different proof assistant.
+Prime Nim is not automatic — No finite machine reading digits can recognize Prime Nim losing positions.
+Integer-bijective Keller map — Find a polynomial map with Jacobian 1 that shuffles integer points perfectly but has no po
+Firebreak with wind — How long must a firebreak be to save a round town from a wind-driven fire?
+5n+1 largest-factor cycles — Use 5n + 1 instead of 3n + 1 in the largest-factor map. Show it has only finitely many loo
+Twin-free stretches — Find long stretches full of primes but containing no twin primes.
+Big factors of p² + p + 1 — For primes p, show p² + p + 1 often has a very large prime factor.
+Isoperimetric sofa — Among sofas with a fixed perimeter, find the one with largest area that turns the corner.
+Kayles on square sums — Players take turns claiming numbers, never next to a claimed one in the square-sum graph. 
+Cops on square sums — How many cops catch a robber moving along square-sum links?
+Random hat parking — Drop hat tiles at random without overlap until no more fit. What fraction gets covered?
+Random walks on square sums — How long does a random walk on the square-sum graph take to forget its starting point?
+Sudoku completions are log-normal — Erase half a random Sudoku. The number of ways to refill it should follow a log-normal law
+Cube-sum colors — Join numbers that add up to a perfect cube. Show a fixed number of colors always suffices.
+Hat dominating sets — Find the smallest fraction of hat tiles that touch every other tile.
+Spectre vs hat dimers — Show the spectre tiling and the hat tiling have different domino-covering entropies.
+Doubled-twin constant — Assuming deep but standard conjectures, find the exact count of doubled twins up to x.
+Emirp sieve — Show infinitely many primes have reversals with no small prime factors.
+Lonely runner, bounded speeds — Prove the lonely runner conjecture whenever all speeds are at most 10 times the number of 
+Lonely runners in 3D — Runners move in three dimensions on a cube that wraps around. Find the guaranteed loneline
+Delayed fire on hexagons — On a honeycomb grid, firefighters arrive one turn late. Find how many per turn are needed.
+Wind-driven fire in 3D — In 3D, fire spreads in five of six directions because of wind. How many firefighters per t
+Keller maps of degree 4 — Show that every 3D polynomial map of degree at most 4 with constant Jacobian has a polynom
+Hyperbolic lonely runners — Runners move along closed paths on a hyperbolic surface. Show one eventually gets far from
+Hex on hat boards, large — Solve Hex on hat-tiled boards of side 9.
+Pipe-bend sofa, exact — Find and prove the optimal solid for a round pipe with a right-angle bend.
+Random-turn Prime Nim — In Prime Nim where a coin flip decides who moves, find the exact winning chance from a pil
+Fire spotting threshold — Embers jump ahead of a fire. Find the jump probability where firefighting becomes hopeless
+Smoke-free corridor — Show a corridor's smoke clears in a predictable time when air flows through it.
+Sofa with a pillar — A thin pillar stands in the corner of the hallway. Find the best sofa that gets around it.
+Exotic shuffles — For which deck sizes do the three-pile shuffles generate every possible arrangement?
+Sofa stability — Show that any sofa nearly as big as Gerver's must look nearly like Gerver's.
+Kissing spectres — How many spectre tiles can touch one spectre without overlapping?
+Spectre percolation — Show percolation on the spectre tiling and the hat tiling have different thresholds.
+Hat Ising bounds — Pin down the critical temperature of magnets on a hat tiling to within one percent.
+Seven-free almost-Sophie-Germain — Show infinitely many primes p avoid the digit 7 and have 2p + 1 with few prime factors.
+Sudoku symmetry breaking — Show that most big Sudoku grids have no symmetry at all.
+Twin hats — Find a pair of different tiles that can each tile the plane only together, aperiodically, 
+Self-similar fire — Show a fire spreading with random fuel forms a shape that grows at a fixed limiting speed 
+Lorenz attractor dimension — Pin down the fractal dimension of the classic Lorenz attractor to two decimals, rigorously
+Wythoff Prime Nim — With two piles, remove a prime from one pile or the same prime from both. Describe the los
+Smallest-factor Collatz stopping time — How many steps does the smallest-odd-factor Collatz map take to reach 1, on average?
+Cube-sum connectivity — Join numbers that add to a perfect cube. Show everything links up once N is large.
+Keller maps over finite fields — Count the polynomial maps of three variables over a finite field with constant Jacobian th
+Unit-distance barrier — Show the 2026 number-field method for many equal distances can never reach exponent 1.1.
+Polykite growth constant — Count shapes made of n kites. Find the exponential growth rate to three digits.
+Hat treewidth — Find exactly how hard hat-tiled regions are to break into small pieces.
+Hat contact process — An infection spreads between neighbouring hat tiles and heals at random. Bound the critica
+Four-arc sofa — Find the best sofa whose outline uses at most four circular arcs and straight pieces.
+Hat drum's first mode — Strike a hat-shaped drum. Show its lowest tone vibrates with a single peak.
+Seven-free primes in short intervals — Show seven-free primes appear in every reasonably short interval.
+Three-pile shuffle cutoff — Random three-pile shuffles mix a deck suddenly, after a precise number of shuffles. Find i
+Hat corona limit — Surround a hat by layers of hats again and again. The growing blob approaches a fixed shap
+The 4p+1 funnel, almost always — Show almost every prime falls into the eight-prime loop of the 4p + 1 map.
+Largest factor of consecutive-prime products — Show that p_n·p_(n+1) + 1 has a prime factor much bigger than p_(n+1), infinitely often.
+Smooth shifted primes in two bases — Find infinitely many primes p for which p − 1 has only small prime factors and p has no di
+Square-sum connectivity — Show the square-sum graph cannot be split by removing fewer vertices than its smallest deg
+Odd-cycle-free square sums — How many numbers up to N can you keep so the square-sum graph on them has no odd cycle?
+Midpoint map as a random walk — Show that, for a random large start, the logarithm of the midpoint-prime orbit moves like 
+Internal DLA on hats — Release walkers one at a time from a hat tile; each stops at the first unoccupied tile. Sh
+Rotor walks on the spectre — A rotor walk on the spectre tiling should stay within bounded distance of a random walk's 
+Hot spots on the hat — Heat a hat-shaped insulated plate. Decide whether the hottest point eventually sits on the
+Square-sum labelling of caterpillars — Label the vertices of a tree with 1 to n so that every edge sums to a perfect square. Show
+The square-sum avoidance game — Players take turns choosing unused numbers from 1 to N. Whoever picks a number summing to 
+Greedy independent sets in square sums — Pick random numbers up to N one by one, skipping any that sum to a square with something a
+Hamiltonian cycles in hat patches — Count closed tours visiting every tile of a large hat-tiled region once. Find the exponent
+Prime Nim game graph — Prime Nim has losing positions with a hidden mod-structure. Show the losing positions are 
+Affine prime maps, quantitative — Show that for the map p ↦ largest prime factor of 3p + 4, almost every prime reaches its l
+The angel on the hat — An angel moves up to k tiles per turn on a hat tiling; a devil deletes one tile per turn. 
+Square-sum paths with chosen ends — Show you can line up 1 to N with neighbours summing to squares, starting and ending at alm
+Square-sum Ramsey of paths — Two-colour the numbers 1 to N. Show some colour contains a chain of length L where neighbo
+Isoperimetric profile of the spectre — Among all clusters of n spectre tiles, find the smallest possible perimeter, asymptoticall
+Gerver sofa contact points — Prove Gerver's sofa touches the corridor walls in exactly the pattern Gerver described at 
+Spectre quantum walk spreading — A quantum particle hopping on the spectre tiling should spread at a rate strictly between 
+Kissing numbers of polykite families — Show the hat's family of shapes has a kissing number that jumps at exactly one parameter v
+Graceful forests from caterpillar seeds — Show forests made of large caterpillars plus one arbitrary tree are graceful-forest labela
+Hats in a torus — Hats tile the plane only non-periodically, so they cannot tile a flat torus. Find the smal
+Spectre chromatic number of distances — Colour points of the plane so no two points at a distance equal to a spectre edge length o
+Chromatic number of prime-difference plus square-sum — Join two numbers if their sum is a square or their difference is prime. Find the colours n
+The hat is not spectral — Fuglede's conjecture predicts that a shape that cannot tile by translations has no orthogo
+Lost in a hat-shaped forest — You are lost in a forest shaped like a hat, position and orientation unknown. Find the sho
+Waring with seven-free cubes — Find the fewest cubes of seven-free numbers needed to write every large number, and prove 
+Counting square-sum chains — Count the ways to line up 1 to N with neighbours summing to squares. Find the leading grow
+Seven-free Beatty primes — Show infinitely many primes of the form ⌊n√2⌋ contain no digit 7.
+Seven-free primes as an additive basis — Show every large number is a sum of a bounded number of seven-free primes.
+Discrete sofa — Slide and rotate a polyomino by unit steps and quarter turns around the corner of a corrid
+Spectre electrical resistance — Find the exact asymptotic electrical resistance between two far-apart spectre tiles, with 
+Hard-core on the hat — Place particles on hat tiles with no two neighbours both occupied. Show the gas freezes in
+Seven-free Chen primes in progressions — Show infinitely many seven-free primes p in every allowable residue class have p + 2 with 
+Largest factor of the midpoint — For consecutive primes p < q, look at the largest prime factor of (p + q)/2. Show it excee
+Prime-sum Hamiltonian cycles through every edge — Show every edge of the prime-sum graph on 1 to 2n lies on a full prime circle.
+Polykite growth: one more digit — Pin the exponential growth rate of n-kite shapes to within one percent, rigorously.
+Midpoint-prime orbit lengths — Find the average number of steps the midpoint-prime map takes to reach 1, on a logarithmic
+Many loops for affine prime maps — Show the number of separate loops of p ↦ largest prime factor of ap + 1 grows without boun
+Snort on square sums — Two players colour numbers up to N, one red and one blue. Neither may colour a number summ
+Maker–Breaker square-sum triangles — Maker and Breaker alternately claim numbers. Maker wins by owning three numbers whose pair
+Entering the 4p+1 loop — Show a typical prime enters the 4p + 1 map's eight-prime loop in about log log p steps.
+Square-plus-one collisions — Count pairs n ≠ m up to x for which n² + 1 and m² + 1 have the same largest prime factor.
+Seven-free square-sum chains — Take only the numbers up to N with no digit 7. Show they can be lined up so neighbours alw
+Long loops for affine prime maps — As a and b vary, the loops of p ↦ largest prime factor of ap + b get longer and longer. Pr
+Max-cut of the square-sum graph — Split the numbers up to N into two groups to cut as many square-sum pairs as possible. Fin
+Seven-free primes with prime digit sum — Show infinitely many primes have no digit 7 and a digit sum that is itself prime.
+The 89–233 basin — The square-plus-one map has the loop 89 ↔ 233. Each prime has only finitely many direct pr
+Simple spectrum of the hat — Show no two vibration frequencies of the hat-shaped drum coincide.
+Node Kayles on square sums — Players alternately pick an unused number up to N that does not sum to a square with any p
+Square-sum ordering with bounded displacement — Order all positive integers so neighbours always sum to squares, and no number moves more 
+The 7p+4 funnel, almost always — Show almost every prime eventually falls into the 12-cycle of the 7p + 4 map.
+Prime Nim on Gaussian integers — Play Prime Nim with Gaussian integers: subtract a Gaussian prime staying in the first quad
+Codes avoiding square distances — Find the largest set of binary strings of length n in which no two differ in a perfect-squ
+Turning a hat by 60 degrees — Rotate a hat tile continuously by 60° inside a region of least possible area. Find that ar
+Square-sum triangle-free density — Find the largest fraction of 1 to N you can keep with no three numbers whose pairwise sums
+Seven-free primes with a large shifted factor — Show a positive fraction of seven-free primes p have p − 1 with a prime factor bigger than
+Hot spots on Gerver's sofa — Heat an insulated plate shaped like Gerver's sofa. Decide whether the hottest point eventu
+The {5, 8} funnel — Replace n by the sum of the largest prime factors of n and n + 1. Every start tested falls
+Two loops for P(n)+P(n+2) — Replace n by P(n) + P(n + 2). Every tested start ends in 7 → 10 → 8 → 7 or in 9 → 14 → 9. 
+Doubling the largest factor — Replace n by twice its largest prime factor plus one. Every tested start falls into one lo
+Doubling minus one — Replace n by twice its largest prime factor minus one. Every tested start ends in 5 ↔ 9 or
+Three consecutive largest factors — Replace n by P(n) + P(n + 1) + P(n + 2). Every tested start reaches the fixed point 14 or 
+P(n)+P(n+1)−1 — Replace n by P(n) + P(n + 1) − 1. Every tested start ends in one of three loops. Prove the
+Three halves of the largest factor — Replace n by the integer part of (3P(n) + 1)/2. Every tested start falls into the loop 3 →
+Three pairs — Replace n by P(n) + P(2n + 1). Every tested start ends in one of three two-step loops: 13 
+Last digits of consecutive largest factors — Look at the last digits of P(n) and P(n + 1). Show the 16 possible pairs of last digits fr
+Primes with equal binary and ternary digit sums — Show infinitely many primes have the same digit sum in base 2 as in base 3.
+A mixed Fermat equation — Show the equation x² + y⁴ = z⁷ + 7 has only finitely many integer solutions.
+Smooth p²+1 — Show infinitely many primes p have p² + 1 built only from primes below √p.
+Prime plus two seven-free squares — Show every large number is a prime plus a sum of two squares whose bases have no digit 7.
+Linnik–Gallagher with seven-free primes — Show every large even number is a seven-free prime plus a bounded number of powers of two.
+Turán density of a twisted triple system — Find the largest density of a 3-uniform hypergraph that avoids a specific six-vertex confi
+Square-sum 4-cycle factors — Split 1 to N into groups of four arranged in a cycle, so each pair of neighbours in a cycl
+Prime Nim with Pythagorean primes — In a variant of Prime Nim you may only remove 2 or a prime that is 1 mod 4. Show the losin
+Partizan Prime Nim — Left may remove a prime that is 1 mod 4, Right a prime that is 3 mod 4, from one pile. Des
+The Hamiltonicity game on square sums — Maker and Breaker alternately claim edges of the square-sum graph. Maker wants a path thro
+Resolution lower bound for square-sum colouring — Show any resolution proof that a large square-sum graph cannot be properly coloured with t
+Kneser graphs of square sums — Take all k-element sets of numbers up to N that contain no square-sum pair, and join two i
+Prime-sum graph and perfect codes — Decide for which n the prime-sum graph on 1 to 2n has a set of vertices that dominates eve
+Extremal square-sum subgraphs — Find the largest number of edges in a subgraph of the square-sum graph with no 4-cycle.
+Square-sum orderings avoiding progressions — Line up 1 to N with neighbours summing to squares, and with no three equally spaced positi
+Prime-sum graph is Hamiltonian-connected — Show you can line up 1 to 2n with neighbours summing to primes, starting with any odd numb
+Primes in the {5,8} funnel's tree — Look at which starting numbers reach 5 versus 8 first under n ↦ P(n) + P(n+1). Show both h
+Stopping times of the doubling map — For n ↦ 2P(n) + 1, find the typical number of steps to reach its eight-number loop.
+Distance sets of the spectre tiling — Find how many distinct distances occur between tile centres of the spectre tiling within r
+Isospectral monotiles — Find two different aperiodic monotiles that sound the same as drums.
+Rotation-proof lattice-point-poor shapes — Find the shape in the plane with given area that contains the fewest integer lattice point
+Moser's worm in the sphere — Find the smallest area region on the unit sphere that can cover every curve of length 1 af
+Equal-area hat dissection — Find the fewest pieces needed to cut a hat tile into pieces that reassemble into a square.
+Cheeger constant of the sofa — Find the Cheeger constant of Gerver's sofa and show it is transcendental.
+Uniform spanning tree of the square-sum graph — Show a uniformly random spanning tree of the square-sum graph has diameter of order a fixe
+Percolation threshold of the square-sum graph — Keep each edge of the square-sum graph with probability p. Find the exact threshold for a 
+Random greedy square-sum path — Build a path through 1 to N by always stepping to a random unused neighbour summing to a s
+Ising with prime couplings — On the integer line, couple spins i and j with strength 1 if i − j is prime. Decide whethe
+Hitting probability for 2P(n)+1 random variant — With probability one half use 2P(n) + 1 and otherwise 2P(n) − 1. Show the walk visits 5 in
+Random digit deletion — Repeatedly delete a random decimal digit of a number until it is prime or has one digit. F
+Sharp threshold for prime-sum Hamiltonicity — Keep each edge of the prime-sum graph with probability p. Find the threshold for a Hamilto
+Stopping time law for P(n)+P(n+1) — For the map n ↦ P(n) + P(n+1), find the distribution of the number of steps to the {5, 8} 
+The shift-3 prime map — Add the largest prime factors of n and n + 3. Every tested start falls into 6, the loop 8 
+Neighbour factors plus one — Map n to P(n − 1) + P(n + 1) + 1. Tested starts reach 8 → 11 → 9 or 10 → 15. Prove all do.
+Four fates of P(n)+P(n+1)+1 — Map n to P(n) + P(n+1) + 1. Tested starts reach the fixed point 9 or loops through 6, 19 o
+Triple factor map minus two — Map n to P(n) + P(n+1) + P(n+2) − 2. Tested starts reach the fixed points 8 or 33, a 13-st
+Formal verification depth of RH — The Riemann hypothesis now has a Lean proof. Show it cannot be proved in a weak arithmetic
+Tileability by the spectre is undecidable for regions with holes — Show deciding whether a finite region with holes can be tiled by spectres is NP-complete.
+Sums of a square and a seven-free prime — Show almost every number is a square plus a prime with no 7 in its decimal digits.
+Seven-free factorial-like products — Show n! + 1 contains the digit 7 for all large n.
+Seven-free square sums of two squares — Show every large seven-free number that is a sum of two squares is a sum of two seven-free
+Twin width of square-sum graphs — Show the square-sum graphs do not have bounded twin-width.
+Largest plus smallest neighbour factor — Add the largest prime factor of n to the smallest prime factor of n + 1. Tested starts rea
+Sum of prime divisors of neighbours — Add the sum of the distinct prime factors of n to that of n + 1. Tested starts reach 33 or
+Mixed divisor-sum map — Add the sum of distinct prime factors of n to the largest prime factor of n + 1. Tested st
+Lopsided neighbour map — Map n to P(n) + 2P(n+1). Except for the fixed point 8, every tested start from 3 upward fa
+The parity-switch prime map — For even n add P(n) and P(n+1); for odd n add P(n) and P(n−1). Every tested start falls in
+The shift-6 prime map — Map n to P(n) + P(n+6). Tested starts reach 6 or the loop 8 ↔ 9. Prove all do.
+Factor plus next divisor-sum — Map n to P(n) plus the sum of distinct primes dividing n + 1. Every tested start falls int
+Density of the basin of 22 ↔ 34 — For n ↦ P(n) + p(n+1), about 6% of tested starts reach the 22 ↔ 34 loop. Show the fraction
+Permanent of the prime-sum matrix — Find the asymptotic count of perfect matchings between odd and even numbers up to 2n whose
+Square-sum matchings count — Count the ways to pair up 1 to N into pairs summing to squares. Find the exponential growt
+Two small factors and one large — Add the smallest prime factors of n and n + 1 to the largest prime factor of n + 2. Every 
+The P(n)+P(n+2)+1 map — Map n to P(n) + P(n+2) + 1. Tested starts reach 6, 8, or loops through 9 (12 steps), 19 or
+The P(n)+P(n+2)−1 map — Map n to P(n) + P(n+2) − 1. Tested starts reach 4 or loops of length 18, 11 and 4. Prove t
+Unbounded excursions in prime maps — For n ↦ P(n) + P(n+1), show some orbits climb above their starting value by any factor you
+Largest-factor subtraction game — From pile n you may remove P(n) stones or any prime smaller than P(n). Characterise the lo
+Prime-sum Kayles — Same game on the prime-sum graph: take numbers so that no two taken numbers sum to a prime
+Large girth subgraphs of S_N — Find the most edges a subgraph of the square-sum graph can have with no cycle shorter than
+Spanning-tree entropy of the spectre tiling — Find the growth rate of the number of spanning trees of large spectre-tiling patches, and 
+Random square-sum transpositions mixing — Shuffle 1 to N by swapping a random pair that sums to a square. Find the mixing time and s
+Prime Markov triples — Show only finitely many Markov triples consist of three primes, or infinitely many.
+SOF Collatz orbits are bounded — For the smallest-odd-factor Collatz map, show no orbit runs off to infinity.
+Sofa for every angle — Find the optimal sofa for a hallway turning by any angle, not just 90°.
+Hat Ising universality — Magnets on a hat tiling should behave at their critical point exactly like magnets on a sq
+Finite simple groups in Lean — Turn the classification of finite simple groups into one computer-checked proof.
+Cube-sum paths — Arrange 1 to N in a line so neighbours add to perfect cubes, for every large N.
+Alternating prime residues — Find ten consecutive primes whose remainders mod 4 alternate 1, 3, 1, 3, …, and infinitely
+Largest-factor climbs — Show infinitely many starts climb above their own square before falling.
+Counting Prime Nim losses — Show the losing positions of Prime Nim thin out at a precise power rate.
+Prime Nim in polylog time — Decide whether a Prime Nim pile is losing in time polynomial in its number of digits.
+Primes a² + b⁴ with prime inputs — Show infinitely many primes are a square of a prime plus a fourth power of a prime.
+Primes x² + y³ with prime inputs — Show infinitely many primes are a square of a prime plus a cube of a prime.
+Doubly smooth neighbours — Find infinitely many primes whose two neighbours have only small prime factors.
+High-dimensional sofa — How does the best sofa's volume grow in an n-dimensional corridor?
+Ambidextrous 3D sofa — Find the largest solid that can turn either left or right at the end of a square pipe.
+Polykite structure theorem — Classify every shape of up to 20 kites: tiles periodically, tiles only aperiodically, or f
+Hard-hat transition — Show the gas of non-overlapping hats freezes abruptly at some density.
+Sparse Keller maps — List every Jacobian-conjecture counterexample in 3D built from at most 12 monomials in tot
+Analytic hyperoperations — Build one smooth family of operations from addition up through exponentiation that is anal
+Time-independent force — Make viscous fluid blow up with a push that never changes in time.
+Stable blow-up — Show the 2026 Navier–Stokes blow-up still happens after any tiny change to the setup.
+Square-sum pancyclicity — Show the square-sum graph has cycles of every possible length.
+Prime-speed lonely runners — Prove the lonely runner conjecture when every speed is a prime number.
+Counting minimal Sudokus — How many uniquely solvable Sudokus with no removable clue exist, as the board grows?
+Gomoku on hats — Prove the first player wins five-in-a-row on an infinite board of hat tiles.
+Hyperoperation Goodstein — A Goodstein-style sequence using hyperoperations always ends, but ordinary arithmetic cann
+Unique 3D sofa — Show the best solid for a square pipe is unique up to moving it.
+Vorticity growth in a hat — Fluid in a hat-shaped container should develop sharper and sharper swirls near its corners
+Fluid in a box blows up — Show viscous fluid in a closed box with sticky walls can blow up under a smooth push.
+Toroidal Othello — Who wins Othello on an 8 × 8 board that wraps around?
+Infinitely many prime squared squares — Show there are infinitely many perfect squared squares whose pieces all have prime sides.
+Divisor-balanced primes — Show infinitely many primes p have p − 1 and p + 1 with the same number of divisors.
+Reverse-square cycles — Square and reverse the digits, repeatedly. Show there are infinitely many different loops.
+Chen with no sevens — Show infinitely many seven-free primes p have p + 2 a product of at most two seven-free pr
+Nodal domains of the hat drum — Count the regions a hat-shaped drum splits into when vibrating at high frequencies.
+Hat billiard scarring — Show high-frequency waves in a hat-shaped room do not spread out evenly.
+Homogenized wildfire — Fire spreads through random patches of two fuel types. Show it has a definite average spee
+Galois groups of Keller fibers — Find the symmetry group of the preimages of a point under the 2026 Keller maps.
+Palindromic Carmichael numbers — Show infinitely many Carmichael numbers read the same backwards.
+Shrink to fit — Find the largest size such that every convex shape no wider than that, measured end to end
+Symmetric sofa — Find the best sofa that is symmetric under a half-turn.
+Convex sofa — Find the best convex sofa.
+Unattained hyperbolic sofa — In strongly curved hyperbolic space the best sofa might not exist. Show when the maximum i
+Squares on a sphere — Every closed curve on a sphere should pass through the corners of a spherical square.
+Cross-polytopes in 4D — Every 4D convex body should have the corners of a regular cross-polytope on its boundary.
+One firefighter on hats — Can a single firefighter per turn contain every fire on a hat tiling?
+Prime and square neighbours — Order all positive integers so neighbours add to a prime and numbers two apart add to a sq
+Prime-graceful forests — Label any forest so the edge differences are exactly the first m primes.
+Carmichael numbers with prime digit sum — Show infinitely many Carmichael numbers have a digit sum that is prime.
+Hat tiling Lee–Yang zeros — For magnets on a hat tiling, show the complex zeros of the partition function pinch the re
+Square-sum expansion — Show the square-sum graph (on its large connected piece) is a good expander.
+Doubled-twin sieve upper bound — Bound the number of doubled-twin quadruples up to x by the predicted count times at most 3
+Largest-factor cycles — Find every loop of the largest-factor Collatz map.
+Sofa with a rotating door — A door at the corner swings shut as you move. Find the largest shape that still gets throu
+Hyperoperation fixed points — In any natural real-rank hyperoperation family, show the rank at which 2 ∘ 2 stops being 4
+Graceful forests with one big tree — A forest with c trees and m edges is graceful-forest labelled if its vertices get the labe
+Keller maps with integer fibers — Show no Jacobian-conjecture counterexample with integer coefficients is injective on integ
+Fire on a random hat patch — Remove each hat tile with some probability. Find the exact point where a fire can no longe
+Emirp twins — Show infinitely many twin-prime pairs exist where both reverse to primes, assuming only st
+Seven-free Goldbach — Show almost every even number is a sum of two primes that have no digit 7.
+Hat mixing time — Randomly flip local patches of a hat tiling. Show it mixes in polynomial time.
+Tetris on a cylinder — When the board wraps left to right, can a player survive forever against any piece sequenc
+Sofa in curved space with a corner — On a cone-shaped surface the hallway corner is the cone point. Find the best sofa.
+Joint digit sums of primes — Show infinitely many primes have a prime digit sum in base 2 and in base 10 at the same ti
+Squares of seven-free primes — Show infinitely many primes have no digit 7 in themselves or in their squares.
+Irrational prime weights — Add up 1/(p·2^p) over all primes p. Show the total is irrational.
+Prime-indexed seven-free primes — List the primes in order. Show infinitely many seven-free primes sit at a prime position i
+Square-sum edge-Hamiltonian — Show every edge of the square-sum graph lies on a loop through all of 1 to N, for large N.
+Square-sum clique minors — Find the largest complete graph that can be formed by contracting parts of the square-sum 
+Prime-sum Hamiltonian count — Count the ways to arrange 1 to 2n in a circle so neighbours sum to primes. Find the growth
+Turán density with a twist — Same question for a seven-vertex configuration of five triples arranged around a central t
+Seven-free Carmichael quotients — Show infinitely many Carmichael numbers n have n − 1 seven-free.
+Lonely runners with square speeds — Prove the lonely runner conjecture when all speeds are perfect squares.
+4p+1 maximal climbs — Show the 4p + 1 prime map can climb arbitrarily high above its starting point before falli
+Antiferromagnetic hats — Colour hat tiles up or down to minimise same-colour neighbours. The hat graph has odd cycl
+Potts transition on hats — Show the q-state Potts model on the hat tiling has a discontinuous transition for large q,
+Prime-sum labelling of balanced trees — Label a tree with 1 to n so every edge sums to a prime. Parity forces the two sides of the
+Hyperdissipative forced blow-up — Fluids with extra strong viscosity never blow up above a known threshold. Show forced blow
+Hat tilings of convex regions — Show no convex polygon can be tiled exactly by hats.
+Lattice gauge on the hat — Show the Z/2 lattice gauge theory on a hat-tiled surface times a line has a deconfinement 
+Prime cubes with one shift — Show infinitely many quadruples of primes satisfy x³ + y³ = z³ + w³ + 1.
+Prime points on a quartic threefold — Count prime solutions of x⁴ + y⁴ + z⁴ = w⁴ + 2 up to size X, and find the asymptotic.
+Sidon sets of hat tiles — Pick hat tiles so all pairwise displacement vectors are distinct. How many can fit in a re
+Sofa constant digits — Show the digits of Gerver's sofa area do not end in a repeating pattern in base 2 either, 
+Hat Ising critical line — Ising models on a hat tiling and its dual should be exactly related at their critical poin
+Hat Hofstadter at golden flux — Thread a magnetic flux through each hat tile equal to the golden ratio. Show the resulting
+Blow-up near a wall — Show the 2026 forced blow-up mechanism also works in a half-space with no-slip wall, with 
+Unit distances in three dimensions after 2026 — The 2026 number-field idea beat Erdős in the plane. Adapt it to unit distances among point
+Lonely runner gap for the first n primes — For the first n primes as speeds, find the actual loneliness gap asymptotically.
+Hat dominoes freeze — Random domino-style pairings of hat tiles inside a large region with a fixed boundary deve
+Spectre billiards ergodic — Billiards inside a spectre-shaped room with curved walls should be chaotic. Prove the bill
+Square Nim from both ends — Two piles; a move removes a square from one pile or the same square from both. Find the lo
+Seven-free values of n²+1 — Show infinitely many n make n² + 1 a prime with no digit 7, or at least a product of two s
+Prime Nim values stay small — Prime Nim's Grundy values grow incredibly slowly. Show they are at most a constant times l
+Long progressions of seven-free primes — Show the seven-free primes contain arbitrarily long arithmetic progressions.
+Seven-free Gaussian primes — Show infinitely many primes a² + b² have both a and b free of the digit 7.
+Linnik for seven-free primes — Show the smallest seven-free prime in an arithmetic progression is at most a fixed power o
+Monochromatic square-sum triangles, many colours — Colour the positive integers with any finite number of colours. Show there are always thre
+Keller monodromy is everything — Show every symmetric group appears as the hidden symmetry group of the fibres of some 3D J
+Hat tiling heat kernel constant — For a random walk on a hat tiling, find the exact constant in the return probability.
+Four-term square-sum chains in primes — Find infinitely many chains of four primes where each neighbouring pair sums to a square.
+Hat quasicrystal Ising universality, bond-disordered — Randomly weaken some bonds in the hat Ising model. Show the critical behaviour still match
+The spectre is not spectral — Show the spectre, a curved tile that cannot tile by translations, has no orthogonal basis 
+First appearances in Prime Nim — The smallest pile with Grundy value k in Prime Nim grows extremely fast. Show it grows at 
+Rational fibres of the Alpöge map — The 2026 Jacobian counterexample sends three rational points to one point. Show infinitely
+Seven-free squares — Count the numbers up to x whose square has no digit 7. Show the count matches the random-d
+Weyl remainder for the hat drum — Count the vibration frequencies of a hat-shaped drum below a threshold. Find the true size
+Few periodic points of square-plus-one — Count the numbers up to X that lie on a loop of the square-plus-one map. Show there are ve
+Finitely many loops for affine prime maps — For fixed a and b, show the prime map p ↦ largest prime factor of ap + b has only finitely
+Missing digits in two bases — Show infinitely many primes have no digit 9 in base 10 and no digit 10 in base 11 at the s
+The last even loss in Prime Nim — In Prime Nim almost every losing pile size is odd. The only even ones found are 0, 10, 34,
+Largest factor of n²+1 mod 8 — The largest prime factor of n² + 1 is always 1 or 5 mod 8 (or 2). Show both happen equally
+Largest factor of shifted primes mod 4 — For primes p, look at the largest prime factor of p − 1. Show it is 1 mod 4 exactly half t
+Conformal radius of the hat — Map a disc conformally onto the hat so the centre goes to the hat's centroid. Show the sca
+Spanning trees inside the prime-sum graph — Show every balanced tree of bounded degree on 2n vertices can be laid out on 1 to 2n so al
+Spanning trees inside the square-sum graph — Show every tree of maximum degree 3 on N vertices fits inside the square-sum graph on 1 to
+AKLT on the hat — Show the AKLT quantum spin model placed on a hat tiling has an energy gap above its ground
+Digit-restricted Liouville — Show the Liouville function has no bias on seven-free numbers in short intervals.
+Square-plus-one orbits avoid small primes — Show that infinitely many starting numbers have square-plus-one sequences that never fall 
+Prime cycles of all lengths — Show that for every length L, some map p ↦ largest prime factor of ap + b has a loop of ex
+Spectre hard hexagons — Show the hard-core gas on the spectre tiling has exactly one phase transition, at a single
+Largest factor ratio of consecutive primes — For consecutive primes p < q, compare the largest prime factors of p − 1 and q − 1. Show e
+Seven-free primes in Piatetski-Shapiro sequences — Show infinitely many primes of the form ⌊n^1.1⌋ have no digit 7.
+Quasi-independence of square-plus-one steps — Show the largest prime factors of n² + 1 and (n + 1)² + 1 are nearly independent in size.
+Prime Nim's mod-3 bias — Losing pile sizes in Prime Nim are about three times as likely to be 1 mod 3 as 0 mod 3. F
+Square losses in Prime Nim — Many perfect squares (1, 9, 25, 49, 100, 121, …) are losing Prime Nim positions. Show ther
+Progressions of Prime Nim losses — Show the losing positions of Prime Nim contain arbitrarily long arithmetic progressions.
+Bombieri–Vinogradov for seven-free primes in base 10 — Show seven-free primes are well distributed in arithmetic progressions on average over mod
+Increasing square-plus-one factors — Among the largest prime factors of n² + 1 for n up to N, find the longest strictly increas
+Density of Grundy value one in Prime Nim — Show the pile sizes with Grundy value exactly 1 in Prime Nim have a definite density, and 
+Two long loops — Replace n by P(3n + 1) + P(n). Every tested start ends in one of two long loops, through 4
+Neighbours' largest factors — Replace n by P(n − 1) + P(n + 1). Every tested start ends at 5 or in one of three loops, o
+Gerver's constant has unbounded partial quotients — Show the continued fraction of Gerver's sofa area contains arbitrarily large terms.
+Every binary block in Gerver's constant — Show every finite string of 0s and 1s appears somewhere in the binary expansion of Gerver'
+Prime continued fractions — Consider real numbers whose continued fraction terms are all prime. Show the fractal dimen
+Five squares of seven-free primes — Show every large number of the right residue is a sum of five squares of primes without th
+Large prime factors of 2^n + 3^n — Show the largest prime factor of 2^n + 3^n grows faster than n².
+Infinite monochromatic square-sum paths — Colour the positive integers red and blue. Show there is always an infinite increasing seq
+Is Prime Nim's losing set definable? — Add the set of Prime Nim losing positions to the arithmetic of addition. Is the resulting 
+Packing density of Gerver's sofa — Find the densest way to pack copies of Gerver's sofa shape in the plane, and show the dens
+Prime-digit continued fractions in arithmetic progressions — Show there are infinitely many quadratic irrationals all of whose continued fraction digit
+Ising model on the spectre tiling — Find the exact critical temperature of the Ising model on the spectre tiling graph, and pr
+Doubled prime map with a 1231 loop — Map n to twice its largest prime factor plus the largest prime factor of n + 1. Starts bel
+Largest prime factor of 2^n + n — Show the largest prime factor of 2^n + n tends to infinity faster than any fixed multiple 
+Largest prime factor of n^n + 1 — Show P(n^n + 1) / n tends to infinity.
+Growth rate of square-sum Hamiltonian cycles — Find the exponential growth rate of the number of ways to arrange 1 to N in a circle with 
+Primes on circles centred at the origin — Find the largest number of prime points (p, q) lying on a single circle centred at the ori
+Thue–Morse of P(n) and P(n+1) — Show the Thue–Morse values at P(n) and P(n+1) are uncorrelated.
+Two large factors and one small — Add P(n), P(n+1) and the smallest prime factor of n + 2. Tested starts reach 14, 33, or lo
+The 2n+3 map — Map n to P(2n + 3) + P(n). Orbits can climb past seven million before falling, yet every t
+Peak height of the 2n+3 map — For n ↦ P(2n+3) + P(n), show the highest point an orbit reaches is at most a fixed power o
+Largest-factor tribonacci — Repeatedly add the largest prime factors of the last three terms. Show the sequence is alw
+Largest prime factor of Markov numbers — Show the largest prime factor of Markov numbers tends to infinity.
+Seven-free Markov numbers — Show infinitely many Markov numbers have no digit 7.
+Apollonian packing with prime curvatures — In the integral Apollonian packing with curvatures (−1, 2, 2, 3), show every large prime i
+Apollonian seven-free curvatures — In the Apollonian packing (−1, 2, 2, 3), show infinitely many circles have curvature with 
+Largest factor of p² + p + 1 small — Show infinitely many primes p have P(p² + p + 1) < p.
+Consecutive largest factors both 3 mod 4 — Show P(n) and P(n+1) are both 3 mod 4 for a quarter of all n.
+Largest-factor Collatz for all n — Prove every start reaches a loop under the largest-factor Collatz map.
+Smallest-factor Collatz for all n — Prove every start reaches 1 under the smallest-odd-factor Collatz map.
+5n+1 largest-factor convergence — Prove every orbit of the 5n+1 largest-factor map ends in a loop.
+Prime Nim closed form — Find an exact rule for the Prime Nim losing positions that works for every pile size.
+Cube-sum Hamiltonian cycles — Arrange 1 to N in a circle so neighbours add to perfect cubes, for all large N.
+Gerver constant is transcendental — Show the area of Gerver's sofa is not a root of any polynomial with integer coefficients.
+Hat Ising critical temperature — Find the exact critical temperature for magnets on a hat tiling.
+Hat dimer heights — Random pairings of neighbouring hat tiles have a "height" landscape. Show it looks like th
+Three colors for cube sums — Can the positive integers be 3-colored so no two numbers of the same color add to a cube? 
+Two colors for square sums, avoiding triangles — Show every way to 2-color 1 to N, for large N, makes three same-colored numbers whose pair
+Keller maps are invertible over Q in dimension 3, degree ≤ 4 — Show no Jacobian-conjecture counterexample exists in 3D up to degree 4 with rational coeff
+Real-rank hyperoperation uniqueness — Prove there is exactly one natural way to fill in the operations between addition, multipl
+Hat ground state — Find the arrangement of hat tiles that minimises a natural energy, and show it is the aper
+Spectre is a quasicrystal ground state — Find a finite-range pair potential whose only zero-temperature arrangement is the spectre 
+Sofa beyond Gerver in 3 dimensions of turning — A 2D hallway that turns 90° twice in a row (an S-bend): find the best sofa.
+Optimal sofa is not algebraic anywhere — Show the optimal sofa for a 60° turn has an outline that no polynomial equation describes.
+Delayed fire on the grid — If the fire only spreads every other turn, find the smallest per-turn budget that always c
+3-pile shuffle mixing constant — Find the exact cutoff constant for riffle-style 3-pile shuffles, in closed form.
+Prime necklaces for all n — Arrange 1 to 2n in a circle so every two neighbours sum to a prime, and so do every two nu
+Packing hats — Find the densest way to pack hat shapes when they are not allowed to tile.
+Kissing number of the spectre — How many spectres can touch one central spectre without overlapping?
+Graceful trees up to 50 vertices in Lean — Give a computer-checked proof that every tree with up to 50 vertices is graceful.
+Yang–Mills on hats — Lattice gauge theory placed on a hat tiling should still have a mass gap at strong couplin
+Squared squares with consecutive primes — Find a perfect squared square whose square sides are consecutive primes.
+Spectral gap of the spectre — Find the exact gaps in the energy levels of an electron moving on a spectre tiling.
+Prime Nim with two piles — Give an exact rule for who wins two-pile Prime Nim (remove a prime from one pile).
+Integer Keller collisions — Show any Jacobian-conjecture counterexample must send two different integer points to the 
+Polykite growth is irrational — Show the growth rate of polykite counts is an irrational number.
+Hat corona limit shape is not polygonal — Show the limiting shape of hat layers has a fractal outline.
+LF-Collatz stopping time distribution — Find the exact distribution of how long the largest-factor Collatz map takes to settle.
+SOF Collatz with 5n + 1 — Use the smallest odd factor of 5n + 1 instead of 3n + 1. Show every start ends in a loop.
+Three of four — Show infinitely often at least three of the four doubled-twin numbers are prime at once.
+Seven-free Carmichael numbers — Show infinitely many Carmichael numbers have no digit 7.
+Prime Nim with prime-power moves — Allow subtracting any prime power. Find exactly which piles lose.
+Sofa through a revolving corridor — The hallway itself slowly rotates while you push the sofa. Find the largest sofa that stil
+Squared rectangles with prime sides — Find the smallest perfect squared rectangle whose squares all have prime side lengths.
+Firefighter on the hat tiling — Find the exact average number of firefighters per turn needed to contain any fire on a hat
+Spectre Rupert — Extrude a spectre into a prism. Can a copy pass through a hole in itself?
+Keller maps in dimension 3 of degree 5 — Show no Jacobian-conjecture counterexample exists in 3D with degree exactly 5 and rational
+Three-pile shuffle orders equal — Show the three-pile shuffle and the two-pile shuffle on the same deck size have equal orde
+Hyperbolic Hex — On a board tiled by heptagons in hyperbolic space, find an explicit first-player win for H
+Few loops for square-plus-one — The square-plus-one map has a loop: 89 goes to 233 and back. Show there are only finitely 
+The 4p+1 funnel — Map a prime p to the largest prime factor of 4p + 1. Every prime tested falls into one loo
+Three loops for 2p+3 — Under p ↦ largest prime factor of 2p + 3, every tested prime ends in one of three loops. P
+Spectre self-avoiding walks — Find the exponential growth rate of non-self-intersecting walks on the spectre tiling, and
+Strict convexity of hat first-passage — Give each hat-tile edge an independent random length. Prove the limiting ball of first-pas
+Sandpile identity on hats — The abelian sandpile on a large hat-tiled region has an identity element that looks like a
+Hat Laplacian eigenvalue is transcendental — Show the lowest vibration frequency of a hat-shaped drum with clamped edges is transcenden
+Hearing the hat — Show no other polygon has exactly the same vibration frequencies as the hat.
+Affine prime maps all settle — Fix whole numbers a and b. Send a prime p to the largest prime factor of ap + b. Every cas
+The 7p+4 dozen — Under p ↦ largest prime factor of 7p + 4, every tested prime ends in one loop of length 12
+Longest increasing run of prime gaps — Among the first N prime gaps, find the longest subsequence that strictly increases. Show i
+Undecidable prime-factor maps — Show no algorithm can decide, given a and b, whether every orbit of n ↦ n/2 (even) or the 
+Digit-restricted Chowla — Show μ(n)μ(n+1) has no bias on numbers n where neither n nor n+1 contains the digit 7.
+Minimal degree of a Jacobian counterexample — The 2026 counterexamples have degree 7. Find the smallest degree any 3D counterexample can
+Square-plus-one orbits rarely loop — Show almost every starting number's square-plus-one sequence never repeats.
+Square-sum chains in primes — Show there are arbitrarily long chains of primes where neighbours sum to squares.
+Gerver sofa algebraic independence of its angles — Gerver's sofa is built from two special angles. Show they are algebraically independent ov
+Square-plus-one orbit mod 3 — Show the square-plus-one sequence starting at 2 lands on primes of both kinds mod 3 infini
+Seven-free Friedlander–Iwaniec primes — Show infinitely many primes of the form x² + y⁴ have no digit 7.
+The 3p+4 seven-cycle — Send a prime p to the largest prime factor of 3p + 4. Every prime tested ends in the loop 
+The 5p+4 nine-cycle — For p ↦ largest prime factor of 5p + 4, every tested prime ends in one loop of nine primes
+Escaping p²+p+1 — Start at 2 and repeatedly take the largest prime factor of p² + p + 1. Show the sequence g
+Exponential growth of square-plus-one orbits — Show square-plus-one sequences, when they don't loop, grow at a steady exponential rate in
+Hat percolation is conformally invariant — Show critical percolation on the hat tiling's tiles has crossing probabilities given by Ca
+Critical Ising on the hat is SLE(3) — Show the interface in the critical Ising model on a hat tiling converges to the random cur
+Hat packing density is irrational — The densest packing of hats without reflections leaves gaps. Show the best density is an i
+Hat Neumann eigenvalue is transcendental — Show the first nonzero frequency of an insulated hat-shaped membrane is transcendental.
+Critical hat Ising temperature is irrational — Show the critical temperature of the Ising model on a hat tiling is not a rational multipl
+Square-sum Ramsey with many colours — Colour 1 to N with r colours. Show some colour contains four numbers whose six pairwise su
+Hat Hofstadter gaps all open — Show every gap predicted by the gap-labelling theorem actually opens in the hat tiling's e
+Gerver sofa eigenvalue is transcendental — Show the lowest vibration frequency of a drum shaped like Gerver's sofa is transcendental.
+Spectre drum eigenvalue is transcendental — Show the lowest frequency of a drum shaped like the curved spectre tile is transcendental.
+Is eventual periodicity of square-plus-one decidable? — Is there an algorithm that decides, for any n, whether its square-plus-one sequence eventu
+Conformal radius of Gerver's sofa — Map a disc conformally onto Gerver's sofa, sending the centre to the sofa's centroid. Show
+An irrational sum over largest factors — Add 1/(n·P(n)) over all n ≥ 2. Show the total is irrational.
+Bounded orbits for polynomial prime maps — Given a polynomial f, can an algorithm decide whether the orbit of 2 under n ↦ P(f(n)) sta
+Infinite cube-sum paths — Colour the integers with two colours. Show there is an infinite one-coloured chain where n
+Self-avoiding walk on the hat tiling scaling — Show long self-avoiding walks on the hat tiling spread out like distance n^{3/4}, the same
+Continued fraction of the P-constant — Show the constant formed by largest prime factors as continued fraction digits is transcen
+Undecidability of Prime Nim variants — Show there is no algorithm that takes a polynomial f and decides whether the subtraction g
+SOF Collatz is undecidable in general — Show some natural family of smallest-factor Collatz maps has an undecidable reach-1 questi
+Gerver constant is normal — Show the digits of Gerver's sofa area appear with equal frequency in base 10.
+Sofa for every corridor — Give one method that finds the best sofa for every hallway shape.
+Prime Nim is periodic in base 2 — Show the Grundy values of Prime Nim follow a pattern that a finite machine reads off the b
+Hyperoperation at rank 2.5 is transcendental — Show 2 combined with 3 at "rank 2.5" in the natural hyperoperation family is transcendenta
+Square-sum chromatic number — Find exactly how many colors the infinite square-sum graph needs.
+Cube-sum independence — Find the largest set of numbers up to N where no two add to a cube.
+Keller maps classification — List every Jacobian-conjecture counterexample in 3D, up to symmetry.
+Hat aperiodicity in Lean, minimal — Give a computer-checked proof that the hat tiles only aperiodically, in under 2000 lines.
+Spectre gap labelling — Show every allowed energy gap of the spectre tiling actually opens.
+Chess on the hat board — Solve a chess-like game on a hat-tiled board with 10 pieces per side.
+Toroidal Go 9×9 — Who wins Go on a 9×9 board that wraps around in both directions?
+7×7 Othello — Who wins Othello on an odd 7×7 board with a fixed off-centre start?
+Hat random walk return — Find the exact probability that a random walk on hat tiles returns to its start within n s
+Firefighter on Z³ — How many firefighters per turn are needed to contain a fire in 3D, as a precise growth rat
+Sudoku count asymptotics — Count n²×n² Sudoku grids exactly, to leading order.
+Polykite complete classification — For every polykite, decide whether it tiles, and if so how.
+Gerver sofa is not periodic in its digits — Show the digits of Gerver's sofa area never fall into a repeating pattern in any base, and
+Hat Ising free energy — Find the exact free energy of magnets on a hat tiling at the critical point.
+Spectre dimers are critical — Show random pairings of spectre tiles have long-range correlations, like the square grid.
+Origami with a bounded number of layers — Find the best origami base for any tree when no point may have more than 4 layers of paper
+Seven-free primes have a bounded gap — Show infinitely many pairs of seven-free primes lie within a fixed distance of each other.
+Square-plus-one merging — Many square-plus-one sequences run into the one starting at 2. Decide whether every sequen
+Partition numbers contain a 7 — Show that from some point on, every partition number has a 7 among its digits.
+Hat-tiling site percolation is irrational — The critical probability for percolation on the hat tiling is about 0.5442. Prove it is ir
+Gerver sofa and the circle — Show the area of Gerver's sofa is not a rational combination of π and 1.
+Irrationality of the hat percolation threshold, bond — The bond-percolation threshold on the hat tiling's edges is about 0.7982. Prove it is irra
+Gerver's constant is not a period — Show the area of Gerver's sofa cannot be written as an integral of an algebraic function o
+Irrational orbit sum — Add the reciprocals of the square-plus-one sequence starting from 2. Show the total is irr
+Hat SAW connective constant is irrational — Show the growth constant of self-avoiding walks on the hat tiling's neighbour graph is irr
+Unforced blow-up near the forced one — Show the known forced Navier–Stokes blow-up can be made to work with forcing that decays t
+Prime Nim complexity — Decide exactly how hard it is to tell if a Prime Nim pile is losing: show it can't be done
+LF-Collatz loops classified forever — Show every largest-factor Collatz-type map for every odd multiplier has only finitely many
+Hyperoperation transcendence — Show values of the natural hyperoperation at non-integer ranks are algebraically independe
+Square-sum Ramsey numbers — Find the exact point at which every 2-coloring of 1 to N contains a same-colored square-su
+Optimal 3D origami — For every 3D shape, find the smallest sheet of paper that folds into it.
+Prime Nim Grundy values are unbounded in density — Show each Grundy value of Prime Nim appears with a precise positive density, and compute t
+Lorenz dimension is irrational — Show the Hausdorff dimension of the classic Lorenz attractor is irrational.

@@ -1,0 +1,206 @@
+[
+{
+"title": "Two loops for P(n)+P(n+2)",
+"area": "Dynamics",
+"W": "Replace n by P(n) + P(n + 2). Every tested start ends in 7 \u2192 10 \u2192 8 \u2192 7 or in 9 \u2192 14 \u2192 9. Prove there are no other outcomes.",
+"M": "Prove every orbit of $n\\mapsto P(n)+P(n+2)$ on $n\\ge2$ enters $\\{7,10,8\\}$ or $\\{9,14\\}$."
+},
+{
+"title": "Three consecutive largest factors",
+"area": "Dynamics",
+"W": "Replace n by P(n) + P(n + 1) + P(n + 2). Every tested start reaches the fixed point 14 or the loop 77 \u2192 103 \u2192 123 \u2192 77. Prove it.",
+"M": "Prove every orbit of $n\\mapsto P(n)+P(n+1)+P(n+2)$ on $n\\ge2$ enters $\\{14\\}$ or $(77,103,123)$."
+},
+{
+"title": "Three pairs",
+"area": "Dynamics",
+"W": "Replace n by P(n) + P(2n + 1). Every tested start ends in one of three two-step loops: 13 \u2194 16, 30 \u2194 66, 36 \u2194 76. Prove it.",
+"M": "Prove every orbit of $n\\mapsto P(n)+P(2n+1)$ on $n\\ge2$ enters $\\{13,16\\}$, $\\{30,66\\}$ or $\\{36,76\\}$."
+},
+{
+"title": "Every binary block in Gerver's constant",
+"area": "Number theory",
+"W": "Show every finite string of 0s and 1s appears somewhere in the binary expansion of Gerver's sofa area.",
+"M": "Prove the binary expansion of $\\mu_G$ is disjunctive (contains every finite word)."
+},
+{
+"title": "An irrational sum over largest factors",
+"area": "Number theory",
+"W": "Add 1/(n\u00b7P(n)) over all n \u2265 2. Show the total is irrational.",
+"M": "Prove $\\sum_{n\\ge2}\\frac{1}{n\\,P(n)}$ is irrational."
+},
+{
+"title": "Smooth p\u00b2+1",
+"area": "Number theory",
+"W": "Show infinitely many primes p have p\u00b2 + 1 built only from primes below \u221ap.",
+"M": "Prove infinitely many primes $p$ with $P(p^2+1)<p^{1/2}$."
+},
+{
+"title": "Large prime factors of 2^n + 3^n",
+"area": "Number theory",
+"W": "Show the largest prime factor of 2^n + 3^n grows faster than n\u00b2.",
+"M": "Prove $P(2^n+3^n)/n^2\\to\\infty$."
+},
+{
+"title": "Sidon sets of seven-free numbers",
+"area": "Combinatorics",
+"W": "Find the largest subset of the seven-free numbers up to N with all pairwise sums distinct, up to a constant factor.",
+"M": "Determine the order of magnitude of $\\max\\{|A|:A\\subseteq\\{n\\le N:7\\notin n\\},\\ A\\text{ Sidon}\\}$."
+},
+{
+"title": "Prime Nim with Pythagorean primes",
+"area": "Games",
+"W": "In a variant of Prime Nim you may only remove 2 or a prime that is 1 mod 4. Show the losing positions have density zero.",
+"M": "For the subtraction game with move set $\\{2\\}\\cup\\{p\\equiv1\\ (4)\\}$, prove the P-positions have natural density 0."
+},
+{
+"title": "The Hamiltonicity game on square sums",
+"area": "Games",
+"W": "Maker and Breaker alternately claim edges of the square-sum graph. Maker wants a path through every number. Show Maker wins for large N.",
+"M": "Prove Maker wins the Maker\u2013Breaker Hamiltonicity game on $S_N$ for all sufficiently large $N$."
+},
+{
+"title": "Prime Nim is not automatic",
+"area": "Logic",
+"W": "Show no finite automaton reading the digits of n in any base can recognise the losing positions of Prime Nim.",
+"M": "Prove $\\{n:G(n)=0\\}$ is not $k$-automatic for any $k\\ge2$."
+},
+{
+"title": "Square-sum graph spectral gap",
+"area": "Combinatorics",
+"W": "Show the square-sum graph's random walk mixes in about log N steps.",
+"M": "Prove the normalized Laplacian of the giant component of $S_N$ has spectral gap $\\ge c>0$ for all large $N$."
+},
+{
+"title": "Infinite cube-sum paths",
+"area": "Combinatorics",
+"W": "Colour the integers with two colours. Show there is an infinite one-coloured chain where neighbours sum to cubes.",
+"M": "Prove every 2-colouring of $\\mathbb{N}$ admits $a_1<a_2<\\cdots$ of one colour with $a_i+a_{i+1}$ a perfect cube for all $i$."
+},
+{
+"title": "Erd\u0151s\u2013Gy\u00e1rf\u00e1s in square sums",
+"area": "Combinatorics",
+"W": "Show every subgraph of the square-sum graph where all degrees are at least 3 contains a cycle whose length is a power of two.",
+"M": "Prove every subgraph $H\\subseteq S_\\infty$ with $\\delta(H)\\ge3$ contains a cycle of length $2^k$ for some $k\\ge2$."
+},
+{
+"title": "Twin-prime-free sums",
+"area": "Combinatorics",
+"W": "How many numbers up to N can you keep so that no two of them sum to one member of a twin-prime pair?",
+"M": "Determine $\\lim_N\\frac1N\\max\\{|A|:A\\subseteq[N],\\ a+a'\\notin T\\ \\forall a\\ne a'\\in A\\}$, where $T=\\{p:p\\pm2\\text{ prime}\\}$."
+},
+{
+"title": "Stopping times of the doubling map",
+"area": "Dynamics",
+"W": "For n \u21a6 2P(n) + 1, find the typical number of steps to reach its eight-number loop.",
+"M": "For $h(n)=2P(n)+1$, prove the number of steps to enter the 8-cycle is $\\sim c\\log\\log n$ for almost all $n$ and find $c$."
+},
+{
+"title": "Lattice packing of the sofa",
+"area": "Geometry",
+"W": "Find the densest lattice packing of Gerver's sofa exactly, as a closed form in Gerver's constants.",
+"M": "Determine $\\delta_L(G)$ for Gerver's sofa $G$ in closed form over $\\mathbb{Q}(\\text{Gerver's algebraic parameters})$, and prove the optimal lattice is unique."
+},
+{
+"title": "Spectre Laplacian",
+"area": "Geometry",
+"W": "Take the spectre tile as a drum. Show the lowest frequency is a transcendental number.",
+"M": "Let $\\lambda_1$ be the first Dirichlet eigenvalue of the unit-edge spectre polygon. Prove $\\lambda_1\\notin\\overline{\\mathbb{Q}}$."
+},
+{
+"title": "Blow-up rate for the forced NS singularity",
+"area": "PDE",
+"W": "For the recent forced Navier\u2013Stokes blow-up, prove the exact rate at which the velocity grows near the blow-up time.",
+"M": "For the forced finite-time singularity of 3D NS, prove $\\|u(t)\\|_\\infty\\sim C(T-t)^{-1/2}$ and show the profile is asymptotically self-similar with a unique profile."
+},
+{
+"title": "Periodic billiards in the hat",
+"area": "Dynamics",
+"W": "Show the hat polygon has a periodic billiard path, and that the number of them grows quadratically in length.",
+"M": "Prove $N(L)\\sim cL^2$ for the number of cylinder families of periodic billiard trajectories of length $\\le L$ in the hat polygon, with $c>0$."
+},
+{
+"title": "Moser's worm in the sphere",
+"area": "Geometry",
+"W": "Find the smallest area region on the unit sphere that can cover every curve of length 1 after a rotation.",
+"M": "Determine $\\inf\\{\\sigma(K):K\\subset S^2$ covers every rectifiable curve of length $1$ up to $SO(3)\\}$ to within $1\\%$, and prove the infimum is attained by a set bounded by finitely many circular arcs or show it is not."
+},
+{
+"title": "Cheeger constant of the sofa",
+"area": "Geometry",
+"W": "Find the Cheeger constant of Gerver's sofa and show it is transcendental.",
+"M": "Prove $h(G)=\\inf_{E\\subseteq G}\\mathrm{Per}(E)/|E|$ for Gerver's sofa is transcendental."
+},
+{
+"title": "Dimers on the hat tiling",
+"area": "Probability",
+"W": "Count perfect matchings of large patches of the hat tiling's dual graph and find the entropy per tile.",
+"M": "Prove the dimer entropy per tile of the hat-tiling dual graph exists and compute it in closed form, or prove it is not a period."
+},
+{
+"title": "Random Prime Nim",
+"area": "Probability",
+"W": "Two players play Prime Nim but each move uses a random prime chosen by a coin. Find the probability the first player wins from a large pile.",
+"M": "In the game where a move $n\\mapsto n-p$ must use $p$ from a random set $R\\subseteq\\mathbb{P}$ ($p\\in R$ independently w.p. $1/2$), prove $\\Pr(\\text{N-position at }n)$ converges as $n\\to\\infty$ and determine its limit."
+},
+{
+"title": "Random sequential prime-sum packing",
+"area": "Probability",
+"W": "Add random numbers from 1 to N one at a time, keeping a number only if it forms no prime sum with any kept number. Find the final density.",
+"M": "Determine $\\lim_N\\mathbb{E}|A_N|/N$ for the random sequential independent set of the prime-sum graph on $[N]$."
+},
+{
+"title": "Glauber dynamics on hat tiling Potts",
+"area": "Probability",
+"W": "Show the 3-state Potts model on the hat tiling has a continuous phase transition at the self-dual point.",
+"M": "Prove the $q=3$ Potts model on the hat-tiling vertex graph has a continuous phase transition and that the critical point satisfies an explicit algebraic equation."
+},
+{
+"title": "Sharp threshold for prime-sum Hamiltonicity",
+"area": "Probability",
+"W": "Keep each edge of the prime-sum graph with probability p. Find the threshold for a Hamiltonian cycle.",
+"M": "For random subgraphs of the prime-sum graph on $[2n]$ with edge probability $p$, prove the Hamiltonicity threshold is $p^*=(1+o(1))\\frac{\\log^2 n}{n}$ times an explicit constant, and determine it."
+},
+{
+"title": "Prime factor plus digit sum",
+"area": "Dynamics",
+"W": "Add the largest prime factor of n to its digit sum. Every tested start ends in 6 \u2192 9 \u2192 12. Prove all do, which needs ruling out endless chains of primes p \u2192 p + digit sum.",
+"M": "For $f(n)=P(n)+s_{10}(n)$, prove every orbit with $n\\ge2$ reaches the cycle $(6,9,12)$."
+},
+{
+"title": "The field of Gerver's sofa",
+"area": "Number theory",
+"W": "Gerver's sofa is described by numbers in a specific algebraic number field. Determine the degree and Galois group of the field they generate.",
+"M": "Let $K$ be the field generated over $\\mathbb{Q}$ by $\\cos$ and $\\sin$ of Gerver's four angle parameters and the sofa area. Determine $[K:\\mathbb{Q}]$, or prove $K$ is not a number field."
+},
+{
+"title": "Formal verification depth of RH",
+"area": "Logic",
+"W": "The Riemann hypothesis now has a Lean proof. Show it cannot be proved in a weak arithmetic like I-Sigma-1 plus exponentiation, or show it can.",
+"M": "Decide whether RH (as a $\\Pi^0_1$ sentence) is provable in $\\mathrm{I}\\Sigma_1$, or in $\\mathrm{EFA}$."
+},
+{
+"title": "Square subtraction with prime piles",
+"area": "Games",
+"W": "In the game where you subtract a square, show infinitely many prime pile sizes are losing positions.",
+"M": "Prove infinitely many primes are P-positions of the subtract-a-square game."
+},
+{
+"title": "Seven-free factorial-like products",
+"area": "Number theory",
+"W": "Show n! + 1 contains the digit 7 for all large n.",
+"M": "Prove $7\\in n!+1$ (decimal) for all sufficiently large $n$."
+},
+{
+"title": "Largest prime factor of 2^n + n",
+"area": "Number theory",
+"W": "Show the largest prime factor of 2^n + n tends to infinity faster than any fixed multiple of n.",
+"M": "Prove $P(2^n+n)/n\\to\\infty$."
+},
+{
+"title": "Book thickness of the square-sum graph",
+"area": "Combinatorics",
+"W": "Show the square-sum graph on 1 to N can be drawn with vertices on a line and edges on a bounded number of pages without crossings.",
+"M": "Prove $\\sup_N\\mathrm{bt}(S_N)<\\infty$ for the book thickness, or that it is unbounded."
+}
+]

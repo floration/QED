@@ -1,0 +1,702 @@
+[
+{
+"id": "N-098",
+"title": "The 2048 ceiling",
+"area": "Probability",
+"words": "Show that even perfect play almost never reaches the theoretical top tile in 2048.",
+"math": "Prove $\\Pr(\\text{reach }131072)<10^{-6}$ for every strategy on the $4\\times4$ board with standard random spawns."
+},
+{
+"id": "N-409",
+"title": "Emirps are infinite",
+"area": "Number theory",
+"words": "Show infinitely many primes become a different prime when reversed.",
+"math": "Prove infinitely many primes $p$ with $\\operatorname{rev}(p)\\neq p$ prime."
+},
+{
+"id": "N-345",
+"title": "Gomoku on hats",
+"area": "Games",
+"words": "Prove the first player wins five-in-a-row on an infinite board of hat tiles.",
+"math": "Prove the first player has a winning strategy in the 5-in-a-row game on the hat adjacency graph (rows = geodesic paths)."
+},
+{
+"id": "N-247",
+"title": "Ladder in a corridor",
+"area": "Geometry",
+"words": "What is the smallest area of floor needed to move a ladder of length 1 around a corner?",
+"math": "Determine the minimal area of a region inside the width-$w$ right-angled corridor in which a unit segment can be moved from one arm to the other."
+},
+{
+"id": "N-054",
+"title": "Lopsided prime gaps",
+"area": "Number theory",
+"words": "Show there are infinitely many places where a prime gap is bigger than a power of the gap right before it.",
+"math": "Prove $p_{n+1}-p_n>(p_n-p_{n-1})^{1.01}$ for infinitely many $n$."
+},
+{
+"id": "N-202",
+"title": "Readable Riemann",
+"area": "Number theory",
+"words": "The 2026 Riemann proof is a giant machine-checked archive. Write a proof people can read.",
+"math": "Give a proof of the Riemann hypothesis of at most 100 pages acceptable to expert referees."
+},
+{
+"id": "N-205",
+"title": "Explicit Navier–Stokes blow-up",
+"area": "Analysis",
+"words": "Write down a forced Navier–Stokes blow-up as an explicit formula instead of a computer-assisted construction.",
+"math": "Give closed-form smooth $u_0,f$ on $\\mathbb{R}^3$ for which the Navier–Stokes solution blows up in finite time."
+},
+{
+"id": "N-351",
+"title": "XY model on hats",
+"area": "Physics",
+"words": "Rotating magnets on a hat tiling should show the Kosterlitz–Thouless transition.",
+"math": "Prove a BKT transition (power-law correlations at low $T$, exponential at high $T$) for the XY model on the hat graph."
+},
+{
+"id": "N-448",
+"title": "Prime Nim with prime-power moves",
+"area": "Games",
+"words": "Allow subtracting any prime power. Find exactly which piles lose.",
+"math": "Characterize the P-positions of the subtraction game with move set $\\{p^k: p\\text{ prime},k\\ge1\\}$."
+},
+{
+"id": "N-450",
+"title": "Hat-tiled Sudoku",
+"area": "Combinatorics",
+"words": "Fill a 49-tile hat patch with digits so every neighbourhood of seven touching tiles has all digits. Count the fillings.",
+"math": "Count proper \"hat Sudoku\" fillings of the canonical 49-tile cluster where each designated 7-tile block is a permutation of $\\{1..7\\}$."
+},
+{
+"id": "N-382",
+"title": "Largest-factor cycles",
+"area": "Dynamics",
+"words": "Find every loop of the largest-factor Collatz map.",
+"math": "Prove every periodic orbit of $f(n)=n/2$ (even), $P(3n+1)$ (odd) lies in an explicit finite list, and give it."
+},
+{
+"id": "N-028",
+"title": "Shuffle with a cut",
+"area": "Combinatorics",
+"words": "Do a perfect shuffle, then cut k cards from top to bottom, and repeat. How many repetitions bring the deck back?",
+"math": "For the permutation $c_k\\circ\\sigma_{\\text{out}}$ on $2n$ cards, determine its order as a function of $n$ and $k$."
+},
+{
+"id": "N-264",
+"title": "Hyperbolic lonely runners",
+"area": "Dynamics",
+"words": "Runners move along closed paths on a hyperbolic surface. Show one eventually gets far from all others.",
+"math": "For geodesic flows on a closed hyperbolic surface along $n$ distinct primitive closed geodesics, prove a uniform separation time exists, with optimal bound."
+},
+{
+"id": "N-065",
+"title": "Shortest proof that √2 is irrational",
+"area": "Formal proof",
+"words": "Find the shortest possible Lean proof that the square root of 2 is irrational, and prove nothing shorter works.",
+"math": "Over Lean 4 core tactics on top of Mathlib's definitions, find the minimal tactic-step proof of `Irrational (Real.sqrt 2)` and certify minimality."
+},
+{
+"id": "N-164",
+"title": "Fast Prime Nim",
+"area": "Computation",
+"words": "Compute Prime Nim values up to a trillion.",
+"math": "Give an algorithm computing $G(n)$ for all $n\\le10^{12}$ in time $o(N^{1.5})$ and run it."
+},
+{
+"id": "N-473",
+"title": "Hat aperiodicity in Lean, minimal",
+"area": "Formal proof",
+"words": "Give a computer-checked proof that the hat tiles only aperiodically, in under 2000 lines.",
+"math": "Produce a Lean 4 proof of the hat's aperiodicity of at most 2000 lines using only Mathlib."
+},
+{
+"id": "N-359",
+"title": "Reverse-square cycles",
+"area": "Dynamics",
+"words": "Square and reverse the digits, repeatedly. Show there are infinitely many different loops.",
+"math": "Prove $R(n)=\\operatorname{rev}(n^2)$ has infinitely many distinct cycles."
+},
+{
+"id": "N-190",
+"title": "Undecidable polykite tiling",
+"area": "Logic",
+"words": "For sets of five shapes made of kites, deciding whether they tile the plane is unsolvable by any algorithm.",
+"math": "Prove that tileability of $\\mathbb{R}^2$ by finite sets of at most 5 polykites is undecidable."
+},
+{
+"id": "N-274",
+"title": "Smoke-free corridor",
+"area": "Analysis",
+"words": "Show a corridor's smoke clears in a predictable time when air flows through it.",
+"math": "For advection–diffusion in a periodic corridor with Stokes flow, find the sharp exponential decay rate of a passive scalar in terms of geometry."
+},
+{
+"id": "N-402",
+"title": "Largest-factor Collatz for all n",
+"area": "Dynamics",
+"words": "Prove every start reaches a loop under the largest-factor Collatz map.",
+"math": "Prove every orbit of $f(n)=n/2$ (even), $P(3n+1)$ (odd) is eventually periodic."
+},
+{
+"id": "N-075",
+"title": "Hyperbolic firefighter budgets",
+"area": "Combinatorics",
+"words": "In a hyperbolic tiling, fire spreads exponentially, so no fixed crew stops it. How fast must the crew grow?",
+"math": "On the $\\{7,3\\}$ tiling graph, find the minimal growth of budgets $k_t$ (firefighters at turn $t$) that contains any single fire."
+},
+{
+"id": "N-003",
+"title": "Doubled-twin residues",
+"area": "Number theory",
+"words": "Call p a \"doubled twin\" if p and p + 2 are twin primes and their doubles plus one, 2p + 1 and 2p + 3, are twin primes too. Show such p must sit in specific residue classes.",
+"math": "If $p>7$ and $p,\\,p+2,\\,2p+1,\\,2p+3$ are all prime, prove $p\\equiv 29 \\pmod{30}$ and $p\\equiv 1,4,6 \\pmod 7$."
+},
+{
+"id": "N-145",
+"title": "Prime Nim growth",
+"area": "Games",
+"words": "Show the Prime Nim values grow, but slowly.",
+"math": "Prove $G(n)\\le Cn/\\log n$ for the Grundy function of the prime subtraction game."
+},
+{
+"id": "N-135",
+"title": "Two-to-one Keller maps",
+"area": "Algebra",
+"words": "Known Jacobian counterexamples cover most points three or more times. Is there one covering most points exactly twice?",
+"math": "Decide whether some $F:\\mathbb{C}^3\\to\\mathbb{C}^3$ with $\\det DF\\in\\mathbb{C}^\\times$ has generic fiber size exactly 2."
+},
+{
+"id": "N-094",
+"title": "Billiards in the sofa",
+"area": "Dynamics",
+"words": "A ball bounces inside Gerver's sofa shape. Find its shortest closed bouncing path.",
+"math": "Determine the minimal-length periodic billiard trajectory in Gerver's sofa and prove minimality."
+},
+{
+"id": "N-302",
+"title": "Unit-distance barrier",
+"area": "Geometry",
+"words": "Show the 2026 number-field method for many equal distances can never reach exponent 1.1.",
+"math": "Prove every construction of the Alon–Bloom–Gowers–…–Sawin type (lattices from number fields of bounded class-field degree) gives $u(n)\\le n^{1.1}$."
+},
+{
+"id": "N-249",
+"title": "Cops on square sums",
+"area": "Games",
+"words": "How many cops catch a robber moving along square-sum links?",
+"math": "Determine $c(S_N)$, the cop number of the square-sum graph, for all large $N$."
+},
+{
+"id": "N-007",
+"title": "Graceful path forests",
+"area": "Combinatorics",
+"words": "Label the vertices of a forest made of separate paths with distinct numbers so that the differences along edges are all different.",
+"math": "For a forest of paths with $m$ edges and $c$ components, find a bijection $\\ell:V\\to\\{0,\\dots,m+c-1\\}$ with all $|\\ell(u)-\\ell(v)|$, $uv\\in E$, distinct."
+},
+{
+"id": "N-120",
+"title": "Blokus Duo",
+"area": "Games",
+"words": "Who wins two-player Blokus with perfect play?",
+"math": "Weakly solve Blokus Duo on the $14\\times14$ board with standard starting points."
+},
+{
+"id": "N-335",
+"title": "Hard-hat transition",
+"area": "Physics",
+"words": "Show the gas of non-overlapping hats freezes abruptly at some density.",
+"math": "Prove the hard-hat lattice gas has a first-order phase transition in the activity."
+},
+{
+"id": "N-496",
+"title": "Optimal 3D origami",
+"area": "Geometry",
+"words": "For every 3D shape, find the smallest sheet of paper that folds into it.",
+"math": "Give a characterization, with an algorithm, of the minimal-area square that folds into any given polyhedral surface."
+},
+{
+"id": "N-091",
+"title": "Wang tile busy beaver",
+"area": "Computation",
+"words": "Using eight colored tile types that cannot tile the whole plane, how big a square can they still tile?",
+"math": "Over sets of 8 Wang tiles that do not tile $\\mathbb{Z}^2$, determine the maximum $n$ such that the $n\\times n$ square is tileable."
+},
+{
+"id": "N-043",
+"title": "Fire on a cylinder",
+"area": "Combinatorics",
+"words": "A fire burns on a grid wrapped into an infinite tube of width n. How many firefighters per turn stop it?",
+"math": "On $C_n\\times\\mathbb{Z}$ with 4-neighbour spread, find the least $k(n)$ that always contains a single fire, for every $n$."
+},
+{
+"id": "N-428",
+"title": "Graceful trees up to 50 vertices in Lean",
+"area": "Formal proof",
+"words": "Give a computer-checked proof that every tree with up to 50 vertices is graceful.",
+"math": "Formalize in Lean 4 that all trees on $\\le50$ vertices admit graceful labelings."
+},
+{
+"id": "N-119",
+"title": "No prism sofa",
+"area": "Geometry",
+"words": "Show the best 3D sofa is genuinely three-dimensional, not just a flat shape extruded upward.",
+"math": "Prove no optimal solid for the $1\\times1$ square corridor is of the form $A\\times[0,1]$."
+},
+{
+"id": "N-195",
+"title": "Prime Langford pairings",
+"area": "Combinatorics",
+"words": "Arrange two copies each of 1 to n so the two copies of k sit exactly the k-th prime apart. For which n is this possible?",
+"math": "Determine all $n$ for which $1,1,\\dots,n,n$ can be arranged so the two copies of $k$ are $p_k$ positions apart."
+},
+{
+"id": "N-184",
+"title": "The sofa's boundary is not algebraic",
+"area": "Geometry",
+"words": "Gerver's sofa is bounded by 18 curve pieces. Show some of them are not polynomial curves.",
+"math": "Prove at least one boundary arc of Gerver's sofa is not contained in any algebraic curve."
+},
+{
+"id": "N-213",
+"title": "Largest-factor Collatz stopping time",
+"area": "Dynamics",
+"words": "How many steps does the largest-factor Collatz map take, on average, to reach 1?",
+"math": "Prove $\\frac1x\\sum_{n\\le x}T(n)\\sim c\\log x$ for the stopping time $T$ of $f$, and compute $c$."
+},
+{
+"id": "N-438",
+"title": "Voice leading in 31-tone",
+"area": "Combinatorics",
+"words": "Find the shortest path through all chords of 31-tone equal temperament where each move changes one note by one step.",
+"math": "Determine the minimal Hamiltonian path length in the voice-leading graph of 4-note chords in $\\mathbb{Z}_{31}$."
+},
+{
+"id": "N-344",
+"title": "Counting minimal Sudokus",
+"area": "Combinatorics",
+"words": "How many uniquely solvable Sudokus with no removable clue exist, as the board grows?",
+"math": "Find the asymptotics of the number of minimal uniquely solvable $n^2\\times n^2$ puzzles."
+},
+{
+"id": "N-221",
+"title": "Geodesic squares on surfaces",
+"area": "Geometry",
+"words": "Every smooth closed curve on a convex surface should pass through the corners of a square made of shortest paths.",
+"math": "Prove every smooth simple closed curve on a smooth convex surface inscribes a geodesic quadrilateral with equal sides and equal diagonals."
+},
+{
+"id": "N-071",
+"title": "Toroidal Hex",
+"area": "Games",
+"words": "Hex on a doughnut: the board wraps around, and you win with a chain that loops the long way. Who wins on 7 × 7?",
+"math": "On the $7\\times7$ Hex board with opposite sides identified, a player wins with a non-contractible chain of their colour; determine the winner and whether draws occur."
+},
+{
+"id": "N-143",
+"title": "Hard hats",
+"area": "Physics",
+"words": "Hat-shaped particles that cannot overlap form a gas. Show it behaves simply when sparse.",
+"math": "For the hard-core lattice gas of hats on the hat tiling hull, prove uniqueness of the Gibbs measure at activity $z<z_0$ for explicit $z_0$."
+},
+{
+"id": "N-282",
+"title": "Voice-leading geodesics",
+"area": "Geometry",
+"words": "The space of chords is an orbifold. Find its shortest closed loops that pass through every chord type.",
+"math": "In the orbifold $\\mathbb{T}^3/S_3$ of 3-note chords, find the shortest closed geodesic meeting every $\\mathbb{Z}_{12}$-chord orbit."
+},
+{
+"id": "N-206",
+"title": "Certified plane coloring",
+"area": "Geometry",
+"words": "If the plane needs seven colors, a finite set of points proves it. Find the smallest such set and check it by computer.",
+"math": "If $\\chi(\\mathbb{R}^2)=7$, find a minimal 7-chromatic finite unit-distance graph and certify it in Lean."
+},
+{
+"id": "N-408",
+"title": "Seven-free twin primes",
+"area": "Number theory",
+"words": "Show there are infinitely many twin primes with no digit 7 in either.",
+"math": "Prove infinitely many $p$ with $p,p+2$ prime and both 7-free in base 10."
+},
+{
+"id": "N-086",
+"title": "Self-avoiding walks on the hat tiling",
+"area": "Probability",
+"words": "Count paths across hat tiles that never revisit a tile, and show their growth rate is new.",
+"math": "Prove the connective constant $\\mu_{\\text{hat}}$ exists for the hat adjacency graph and $\\mu_{\\text{hat}}\\ne\\sqrt{2+\\sqrt2}$."
+},
+{
+"id": "N-415",
+"title": "Two colors for square sums, avoiding triangles",
+"area": "Combinatorics",
+"words": "Show every way to 2-color 1 to N, for large N, makes three same-colored numbers whose pairwise sums are all squares.",
+"math": "Prove for large $N$ every 2-coloring of $[N]$ has a monochromatic triangle in $S_N$."
+},
+{
+"id": "N-384",
+"title": "Polykite tiling undecidability",
+"area": "Logic",
+"words": "Show there's no algorithm that decides whether a finite set of polykites tiles the plane.",
+"math": "Prove the tiling problem for finite sets of polykites (edges on the kite grid) is undecidable."
+},
+{
+"id": "N-201",
+"title": "Perfect Minesweeper",
+"area": "Probability",
+"words": "What is the exact chance that perfect play wins expert Minesweeper?",
+"math": "Compute $\\sup_\\sigma\\Pr(\\text{win})$ for $30\\times16$ with 99 uniform mines and a safe first click."
+},
+{
+"id": "N-464",
+"title": "3D Ising on the spectre stack",
+"area": "Physics",
+"words": "Stack spectre tilings in layers and find the critical temperature exactly.",
+"math": "Compute $\\beta_c$ for the Ising model on $\\text{spectre}\\times\\mathbb{Z}$."
+},
+{
+"id": "N-127",
+"title": "Largest-factor Collatz heights",
+"area": "Dynamics",
+"words": "For almost every start, the largest-factor Collatz orbit never climbs past a fixed power of where it started.",
+"math": "Prove there is $C$ with $\\max_k f^k(n)\\le n^C$ for a density-1 set of $n$."
+},
+{
+"id": "N-067",
+"title": "Prime necklace",
+"area": "Combinatorics",
+"words": "Arrange 1 to N in a circle so neighbours add to a prime, but numbers two apart add to a composite.",
+"math": "Prove that for all $N\\ge50$ there is a cyclic order of $\\{1,\\dots,N\\}$ with $x_i+x_{i+1}$ prime and $x_i+x_{i+2}$ composite for all $i$."
+},
+{
+"id": "N-420",
+"title": "Shuffle orders are unbounded below",
+"area": "Algebra",
+"words": "Show some three-pile shuffles take only a tiny number of repeats to return the deck, infinitely often.",
+"math": "Prove $\\operatorname{ord}(\\sigma_n)\\le n^{0.1}$ for infinitely many $n$."
+},
+{
+"id": "N-112",
+"title": "Hyperbolic square peg",
+"area": "Geometry",
+"words": "Every closed curve in the hyperbolic plane should pass through the corners of some hyperbolic square.",
+"math": "Prove every Jordan curve in $\\mathbb{H}^2$ contains the four vertices of a regular hyperbolic quadrilateral."
+},
+{
+"id": "N-435",
+"title": "Integer Keller collisions",
+"area": "Algebra",
+"words": "Show any Jacobian-conjecture counterexample must send two different integer points to the same place.",
+"math": "Prove every non-invertible Keller map in $\\mathbb{Z}[x_1,\\dots,x_n]^n$ is non-injective on $\\mathbb{Z}^n$."
+},
+{
+"id": "N-253",
+"title": "Cube-sum colors",
+"area": "Combinatorics",
+"words": "Join numbers that add up to a perfect cube. Show a fixed number of colors always suffices.",
+"math": "For $C_N$ with $a\\sim b\\iff a+b$ a cube, prove $\\sup_N\\chi(C_N)<\\infty$ and find it."
+},
+{
+"id": "N-060",
+"title": "Penrose firefighter",
+"area": "Combinatorics",
+"words": "Fire spreads along a Penrose tiling's edges. How many firefighters per turn can trap any fire?",
+"math": "On the vertex graph of a Penrose rhomb tiling, find the least $k$ such that protecting $k$ vertices per turn contains a fire from any single vertex."
+},
+{
+"id": "N-313",
+"title": "Sofa for every angle",
+"area": "Geometry",
+"words": "Find the optimal sofa for a hallway turning by any angle, not just 90°.",
+"math": "For every $\\theta\\in(0,\\pi)$, determine the optimal sofa for the width-1 corridor turning by $\\theta$."
+},
+{
+"id": "N-087",
+"title": "Independent prime-gap formalization",
+"area": "Formal proof",
+"words": "Check the 2026 record that prime gaps of at most 186 occur forever, with a fresh computer proof written independently.",
+"math": "Give an independent Lean 4 proof of $\\liminf_{n}(p_{n+1}-p_n)\\le186$."
+},
+{
+"id": "N-182",
+"title": "Effective Riemann constants",
+"area": "Number theory",
+"words": "Extract explicit, usable prime-counting error bounds from the 2026 Riemann proof.",
+"math": "From the 2026 Lean proof, extract and formally verify $|\\pi(x)-\\operatorname{li}(x)|\\le\\frac{1}{8\\pi}\\sqrt{x}\\log x$ for all $x\\ge2657$."
+},
+{
+"id": "N-237",
+"title": "Firebreak with wind",
+"area": "Analysis",
+"words": "How long must a firebreak be to save a round town from a wind-driven fire?",
+"math": "For front speed $a+b\\cos\\theta$ and a disc town at distance $D$, find the minimal length of a curve built at speed $\\sigma$ that protects the town."
+},
+{
+"id": "N-012",
+"title": "Funnel sofa",
+"area": "Geometry",
+"words": "The corridor narrows after the corner from width 1 to width 1/2. Find the best Hammersley-style sofa.",
+"math": "Over shapes of the form (quarter-disc, rectangle, quarter-disc) minus a half-disc, maximize area for turning from a width-1 arm into a width-$\\tfrac12$ arm."
+},
+{
+"id": "N-178",
+"title": "Firefighters on the front line",
+"area": "Combinatorics",
+"words": "Firefighters may only protect cells touching the fire. How many per turn are needed now?",
+"math": "On $\\mathbb{Z}^2$ with protected cells required to be 4-adjacent to the burned set, find the least per-turn number containing a single fire."
+},
+{
+"id": "N-394",
+"title": "Hat mixing time",
+"area": "Probability",
+"words": "Randomly flip local patches of a hat tiling. Show it mixes in polynomial time.",
+"math": "For local-move Glauber dynamics on hat tilings of an $L\\times L$ region, prove mixing time $L^{O(1)}$."
+},
+{
+"id": "N-198",
+"title": "Graceful forests",
+"area": "Combinatorics",
+"words": "Every forest should admit a labeling where all edge differences are distinct. For a single tree this is the graceful tree conjecture.",
+"math": "Prove every forest with $m$ edges and $c$ components has a bijection $V\\to\\{0,\\dots,m+c-1\\}$ with distinct edge differences."
+},
+{
+"id": "N-146",
+"title": "Random graceful forests",
+"area": "Combinatorics",
+"words": "Almost every random forest has the distinct-edge-difference labeling.",
+"math": "For a uniform random forest with $m$ edges and $c\\sim\\alpha m$ components, prove the graceful-forest labeling exists with probability $\\to1$."
+},
+{
+"id": "N-229",
+"title": "Poincaré in Lean",
+"area": "Formal proof",
+"words": "Turn Perelman's proof of the Poincaré conjecture into a computer-checked proof.",
+"math": "Formalize in Lean 4: every closed simply connected 3-manifold is homeomorphic to $S^3$."
+},
+{
+"id": "N-431",
+"title": "Squared squares with consecutive primes",
+"area": "Combinatorics",
+"words": "Find a perfect squared square whose square sides are consecutive primes.",
+"math": "Find or rule out a perfect squared square whose component sides are $p_k,p_{k+1},\\dots,p_{k+r}$ for some $k,r$."
+},
+{
+"id": "N-487",
+"title": "Seven-free primes have a bounded gap",
+"area": "Number theory",
+"words": "Show infinitely many pairs of seven-free primes lie within a fixed distance of each other.",
+"math": "Prove $\\liminf(q_{n+1}-q_n)<\\infty$ where $q_n$ enumerates the 7-free primes."
+},
+{
+"id": "N-332",
+"title": "Ambidextrous 3D sofa",
+"area": "Geometry",
+"words": "Find the largest solid that can turn either left or right at the end of a square pipe.",
+"math": "Maximize volume over solids admissible for both the left and right turns of the $1\\times1$ corridor."
+},
+{
+"id": "N-159",
+"title": "Kepler, compressed",
+"area": "Formal proof",
+"words": "Make the computer-checked proof of the densest sphere packing far shorter.",
+"math": "Give a Lean 4 proof of the Kepler conjecture in under 100,000 lines."
+},
+{
+"id": "N-360",
+"title": "Chen with no sevens",
+"area": "Number theory",
+"words": "Show infinitely many seven-free primes p have p + 2 a product of at most two seven-free primes.",
+"math": "Prove infinitely many 7-free primes $p$ with $p+2=q_1q_2$ or $q_1$, all $q_i$ prime and 7-free."
+},
+{
+"id": "N-467",
+"title": "Square-sum chromatic number",
+"area": "Combinatorics",
+"words": "Find exactly how many colors the infinite square-sum graph needs.",
+"math": "Determine $\\chi(S_\\infty)$ exactly."
+},
+{
+"id": "N-034",
+"title": "S-tetromino squares",
+"area": "Combinatorics",
+"words": "For which square sizes can you tile the square with S-shaped tetrominoes plus a single 1 × 1 piece?",
+"math": "Determine all $n$ for which an $n\\times n$ square admits a tiling by copies of the S-tetromino (rotations and reflections allowed) and one monomino."
+},
+{
+"id": "N-341",
+"title": "Square-sum pancyclicity",
+"area": "Combinatorics",
+"words": "Show the square-sum graph has cycles of every possible length.",
+"math": "Prove $S_N$ is pancyclic on its 2-connected core for all large $N$."
+},
+{
+"id": "N-357",
+"title": "Infinitely many prime squared squares",
+"area": "Combinatorics",
+"words": "Show there are infinitely many perfect squared squares whose pieces all have prime sides.",
+"math": "Prove infinitely many perfect squared squares with all component sides prime."
+},
+{
+"id": "N-243",
+"title": "Seven-free prime count",
+"area": "Number theory",
+"words": "Count primes avoiding the digit 7 with a much sharper error term.",
+"math": "Prove $\\#\\{p\\le x:\\ 7\\notin p\\}=\\kappa\\,\\#\\{n\\le x: 7\\notin n\\}/\\log x\\,(1+O(x^{-\\delta}))$ with explicit $\\delta>0$."
+},
+{
+"id": "N-139",
+"title": "Hex on hats",
+"area": "Games",
+"words": "Play Hex on a board made of hat tiles. Can games end in a draw, and who wins on a small board?",
+"math": "For Hex on hat-tiled rhombus boards, decide whether draws are possible, and solve side length 5."
+},
+{
+"id": "N-048",
+"title": "Smallest non-Rupert solid",
+"area": "Geometry",
+"words": "Some solids can pass a copy of themselves through a hole in themselves. Find the simplest convex solid that cannot.",
+"math": "Find the minimum number of vertices of a convex polyhedron $P$ without Rupert's property, and an extremal example."
+},
+{
+"id": "N-480",
+"title": "Sudoku count asymptotics",
+"area": "Combinatorics",
+"words": "Count n²×n² Sudoku grids exactly, to leading order.",
+"math": "Prove $\\#\\text{Sudoku}(n)=\\left(\\frac{(n^2)!^{2}}{n^{2n^2}e^{\\dots}}\\right)\\!(1+o(1))$ with an explicit leading term."
+},
+{
+"id": "N-234",
+"title": "Weyl algebra endomorphism",
+"area": "Algebra",
+"words": "The Jacobian counterexamples imply a non-surjective symmetry of a noncommutative algebra. Write one down.",
+"math": "Give an explicit non-surjective endomorphism of the Weyl algebra $A_2(\\mathbb{C})$."
+},
+{
+"id": "N-297",
+"title": "Wythoff Prime Nim",
+"area": "Games",
+"words": "With two piles, remove a prime from one pile or the same prime from both. Describe the losing positions.",
+"math": "Characterize the P-positions of the two-pile game with moves $(a,b)\\to(a-p,b),(a,b-p),(a-p,b-p)$, $p$ prime."
+},
+{
+"id": "N-432",
+"title": "Spectral gap of the spectre",
+"area": "Analysis",
+"words": "Find the exact gaps in the energy levels of an electron moving on a spectre tiling.",
+"math": "Prove the spectrum of the adjacency operator on the spectre tiling has gaps labelled by an explicit $K$-theory group, with every label open."
+},
+{
+"id": "N-305",
+"title": "Hat contact process",
+"area": "Probability",
+"words": "An infection spreads between neighbouring hat tiles and heals at random. Bound the critical infection rate tightly.",
+"math": "For the contact process on the hat graph, prove $\\lambda_c$ lies in an explicit interval of relative width $\\le 2\\%$."
+},
+{
+"id": "N-180",
+"title": "Sudoku transversals",
+"area": "Combinatorics",
+"words": "In every completed big Sudoku, find a set of cells with one in each row, each column and each symbol.",
+"math": "Prove every $n^2\\times n^2$ Sudoku grid, viewed as a Latin square, has a transversal."
+},
+{
+"id": "N-356",
+"title": "QCD in Lean",
+"area": "Formal proof",
+"words": "Check the 2026 rigorous construction of QCD with an independent computer proof.",
+"math": "Independently formalize the existence of 4D QCD satisfying the Osterwalder–Schrader axioms."
+},
+{
+"id": "N-175",
+"title": "A four-dimensional einstein",
+"area": "Geometry",
+"words": "Find one 4D shape that fills 4D space but only without repeating.",
+"math": "Find a connected tile $T\\subset\\mathbb{R}^4$ that tiles $\\mathbb{R}^4$ by isometries but admits no periodic tiling."
+},
+{
+"id": "N-427",
+"title": "Kissing number of the spectre",
+"area": "Geometry",
+"words": "How many spectres can touch one central spectre without overlapping?",
+"math": "Determine the kissing number of the spectre polygon under rigid motions (reflections allowed)."
+},
+{
+"id": "N-294",
+"title": "Pulsating fire fronts",
+"area": "Analysis",
+"words": "A fire spreads through a forest with regularly repeating fuel patches and steady wind. Show it moves at a well-defined average speed, and find the formula.",
+"math": "For $u_t=\\Delta u+w\\cdot\\nabla u+f(x,u)$ with $f$ periodic in $x$ and KPP type, prove existence of pulsating fronts in every direction and give a variational formula for $c^*(e,w)$."
+},
+{
+"id": "N-460",
+"title": "Doubled-twin asymptotic",
+"area": "Number theory",
+"words": "Count the doubled-twin quadruples up to x exactly, to leading order.",
+"math": "Prove $\\#\\{p\\le x: p,p+2,2p+1,2p+3\\text{ prime}\\}\\sim\\mathfrak{S}x/\\log^4x$."
+},
+{
+"id": "N-392",
+"title": "Seven-free Goldbach",
+"area": "Number theory",
+"words": "Show almost every even number is a sum of two primes that have no digit 7.",
+"math": "Prove all but $o(x)$ even $n\\le x$ are sums of two 7-free primes."
+},
+{
+"id": "N-040",
+"title": "Aperiodic polykite census",
+"area": "Geometry",
+"words": "The \"hat\" is made of 8 kites and tiles the plane only non-periodically. Find every such shape made of at most 12 kites.",
+"math": "Enumerate all polykites with $\\le12$ kites (from the $\\{6,3\\}$ kite grid) that tile $\\mathbb{R}^2$ but admit no periodic tiling."
+},
+{
+"id": "N-343",
+"title": "Seven-free Sophie Germain",
+"area": "Number theory",
+"words": "Show infinitely many primes p have 2p + 1 prime with no digit 7.",
+"math": "Prove infinitely many primes $p$ with $2p+1$ prime and free of digit 7."
+},
+{
+"id": "N-021",
+"title": "Lean golf is NP-hard",
+"area": "Computation",
+"words": "Show that finding the shortest proof using only a few basic Lean tactics is computationally hard.",
+"math": "Prove NP-hardness of: given a Lean 4 goal and $k$ in unary, is there a proof using only intro, apply, exact, rfl with at most $k$ steps?"
+},
+{
+"id": "N-216",
+"title": "Ringel for forests",
+"area": "Combinatorics",
+"words": "Split a complete graph on 2m + 1 vertices into identical copies of any given forest with m edges.",
+"math": "Prove $K_{2m+1}$ decomposes into $2m+1$ copies of any forest with $m$ edges."
+},
+{
+"id": "N-251",
+"title": "Random walks on square sums",
+"area": "Probability",
+"words": "How long does a random walk on the square-sum graph take to forget its starting point?",
+"math": "Determine the mixing time of simple random walk on the giant component of $S_N$ up to constants."
+},
+{
+"id": "N-498",
+"title": "Keller maps in every dimension",
+"area": "Algebra",
+"words": "Find the smallest dimension and degree where a Jacobian-conjecture counterexample exists, and list them all there.",
+"math": "Determine $\\min\\{(n,d)\\}$ (lexicographic) such that a non-invertible Keller map $\\mathbb{C}^n\\to\\mathbb{C}^n$ of degree $d$ exists, and classify those."
+},
+{
+"id": "N-410",
+"title": "Gerver constant is transcendental",
+"area": "Geometry",
+"words": "Show the area of Gerver's sofa is not a root of any polynomial with integer coefficients.",
+"math": "Prove $\\mu_G\\approx2.2195$ is transcendental."
+},
+{
+"id": "N-388",
+"title": "Keller maps with integer fibers",
+"area": "Algebra",
+"words": "Show no Jacobian-conjecture counterexample with integer coefficients is injective on integer points but not invertible.",
+"math": "Prove every Keller map $F\\in\\mathbb{Z}[x,y,z]^3$ injective on $\\mathbb{Z}^3$ is a polynomial automorphism of $\\mathbb{C}^3$."
+}
+]

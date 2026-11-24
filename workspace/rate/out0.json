@@ -1,0 +1,602 @@
+[
+ {
+  "id": "N-073",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Directions with even coords give 2-point lines; first player wins quickly"
+ },
+ {
+  "id": "N-225",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Adapt Sept 2026 forced NS blow-up machinery to SQG"
+ },
+ {
+  "id": "N-224",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Sharp scaling of minimal blow-up force; beyond existence result"
+ },
+ {
+  "id": "N-279",
+  "r": 1.0,
+  "flag": "computation",
+  "why": "Group generation via Jordan-type criteria; computer-checkable pattern"
+ },
+ {
+  "id": "N-211",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Beyond proven algorithmic thresholds (~3.52) for random 3-SAT"
+ },
+ {
+  "id": "N-477",
+  "r": 2.5,
+  "flag": "computation",
+  "why": "Strong solve of 7x7 Othello: huge but finite search"
+ },
+ {
+  "id": "N-491",
+  "r": 8.0,
+  "flag": "famous-equiv",
+  "why": "Implies pi,e algebraically independent; Schanuel-level open"
+ },
+ {
+  "id": "N-472",
+  "r": 5.5,
+  "flag": "famous-equiv",
+  "why": "Level beyond 1/2 is Elliott-Halberstam strength, plus digit restriction"
+ },
+ {
+  "id": "N-029",
+  "r": 0.2,
+  "flag": "easy",
+  "why": "Reduces to lonely runner with two runners, known 1/3"
+ },
+ {
+  "id": "N-104",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "3D polyhedral sofa optimization; messy, little theory"
+ },
+ {
+  "id": "N-403",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Collatz-type all-orbits statement; also ill-defined at powers of 2"
+ },
+ {
+  "id": "N-132",
+  "r": 5.0,
+  "flag": "famous-equiv",
+  "why": "Smooth finite-energy R^3 Euler blow-up is major open problem"
+ },
+ {
+  "id": "N-266",
+  "r": 0.5,
+  "flag": "ill-posed",
+  "why": "Word not unique; finding some word is poly via Schreier-Sims"
+ },
+ {
+  "id": "N-493",
+  "r": 8.0,
+  "flag": "famous-equiv",
+  "why": "Exact 3D Ising exponents; universality makes it 3D Ising"
+ },
+ {
+  "id": "N-285",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Planar Ising; rigorous 1% bounds via finite-patch computation"
+ },
+ {
+  "id": "N-434",
+  "r": 3.5,
+  "flag": "ill-posed",
+  "why": "Two-pile is just G(a)=G(b); formula for G likely nonexistent"
+ },
+ {
+  "id": "N-096",
+  "r": 0.7,
+  "flag": "computation",
+  "why": "Monte Carlo plus SAT uniqueness checks"
+ },
+ {
+  "id": "N-469",
+  "r": 7.0,
+  "flag": "false",
+  "why": "Uniaxial tree packing is NP-hard (Demaine et al.); needs P=NP"
+ },
+ {
+  "id": "N-169",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Sieve improvement on reversible-prime almost-prime results"
+ },
+ {
+  "id": "N-412",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "GFF for aperiodic dimers; Kenyon methods need periodicity"
+ },
+ {
+  "id": "N-416",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Low-degree 3D Jacobian case; open, heavy algebra, maybe false"
+ },
+ {
+  "id": "N-309",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Combines short-interval primes with Maynard digit restriction; sparse set"
+ },
+ {
+  "id": "N-454",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Degree-5 3D Keller case; open, possibly false given counterexamples"
+ },
+ {
+  "id": "N-319",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Prescribed mixed residue patterns of consecutive primes are open"
+ },
+ {
+  "id": "N-439",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Irrationality of lattice-animal growth constants is untouched"
+ },
+ {
+  "id": "N-425",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Strengthens open prime-circle conjecture"
+ },
+ {
+  "id": "N-070",
+  "r": 2.5,
+  "flag": "computation",
+  "why": "Group easy; 3 sig figs rigorous count is hard computation"
+ },
+ {
+  "id": "N-414",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Infinite cube-sum graph 3-colorability; little technique"
+ },
+ {
+  "id": "N-354",
+  "r": 7.0,
+  "flag": "famous-equiv",
+  "why": "Zero-free Re s>7/8 is unproven quasi-RH"
+ },
+ {
+  "id": "N-342",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Special case of lonely runner conjecture"
+ },
+ {
+  "id": "N-197",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Exact Hadwiger ratio; even c*>0 is far open"
+ },
+ {
+  "id": "N-308",
+  "r": 0.0,
+  "flag": "false",
+  "why": "N distinct prime sums <2N impossible since pi(2N)<N"
+ },
+ {
+  "id": "N-386",
+  "r": 2.0,
+  "flag": "ill-posed",
+  "why": "No established canonical analytic log-convex hyperoperation family"
+ },
+ {
+  "id": "N-240",
+  "r": 0.2,
+  "flag": "easy",
+  "why": "P(7n+1)<n except density-zero n; even steps halve"
+ },
+ {
+  "id": "N-265",
+  "r": 2.5,
+  "flag": "computation",
+  "why": "Strategy stealing gives winner; explicit strategy is big search"
+ },
+ {
+  "id": "N-109",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Latin upper bound 2; matching lower via entropy/absorption methods"
+ },
+ {
+  "id": "N-167",
+  "r": 4.0,
+  "flag": "ill-posed",
+  "why": "Closed form for aperiodic dimer entropy unlikely to exist"
+ },
+ {
+  "id": "N-177",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Take start of a Shiu run of equal residues"
+ },
+ {
+  "id": "N-156",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Exact minimal rotation-universal area for nonconvex polygon"
+ },
+ {
+  "id": "N-174",
+  "r": 0.2,
+  "flag": "known",
+  "why": "Margulis-Mozes 1998 convex aperiodic hyperbolic tiles"
+ },
+ {
+  "id": "N-082",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Long formalization of Baek's proof; no new math"
+ },
+ {
+  "id": "N-483",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Dense prime-sum graph has huge clique minors (Kostochka-Thomason)"
+ },
+ {
+  "id": "N-276",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Variant sofa optimization; Baek-style methods may adapt"
+ },
+ {
+  "id": "N-056",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Low-degree 3D Keller decision; open, depends on counterexample degree"
+ },
+ {
+  "id": "N-011",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Upper bound via Latin squares; lower via product constructions"
+ },
+ {
+  "id": "N-081",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Formalizing long Wang-Zahl proof with line budget"
+ },
+ {
+  "id": "N-340",
+  "r": 5.0,
+  "flag": "ill-posed",
+  "why": "Hypothetical construction; uniqueness of QFT limits is deep"
+ },
+ {
+  "id": "N-443",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Collatz-type eventual periodicity for all orbits"
+ },
+ {
+  "id": "N-380",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Substitution/cut-and-project methods likely give pure point"
+ },
+ {
+  "id": "N-015",
+  "r": 0.8,
+  "flag": "computation",
+  "why": "Finite SAT search for 4-chromatic square-sum graph"
+ },
+ {
+  "id": "N-488",
+  "r": 7.0,
+  "flag": "famous-equiv",
+  "why": "Unconditional superpolynomial lower bound for explicit problem"
+ },
+ {
+  "id": "N-095",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Finite search over KenKen cage structures"
+ },
+ {
+  "id": "N-017",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Exhaustive retrograde search, larger than solved 6x6"
+ },
+ {
+  "id": "N-307",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Nonconvex domain; computer-assisted eigenfunction analysis"
+ },
+ {
+  "id": "N-461",
+  "r": 5.5,
+  "flag": "famous-equiv",
+  "why": "Binary prime problem like twin primes; parity barrier"
+ },
+ {
+  "id": "N-252",
+  "r": 3.0,
+  "flag": "ill-posed",
+  "why": "Vague scaling for a fixed 9x9 object"
+ },
+ {
+  "id": "N-441",
+  "r": 2.5,
+  "flag": "ill-posed",
+  "why": "Steps ~loglog n so limit is degenerate; statement mis-scaled"
+ },
+ {
+  "id": "N-185",
+  "r": 1.5,
+  "flag": "ok",
+  "why": "Prob ->1 via self-matching tiles; asymptotic correction work"
+ },
+ {
+  "id": "N-244",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Maynard handles one missing digit; two digits beyond method"
+ },
+ {
+  "id": "N-500",
+  "r": 0.1,
+  "flag": "false",
+  "why": "Non-divisible step lands on multiple of b; orbits decrease"
+ },
+ {
+  "id": "N-499",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Grundy densities of prime subtraction game; little structure"
+ },
+ {
+  "id": "N-262",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Firefighter on Z^3 variants largely open"
+ },
+ {
+  "id": "N-315",
+  "r": 6.0,
+  "flag": "famous-equiv",
+  "why": "Essentially Yang-Mills mass gap"
+ },
+ {
+  "id": "N-272",
+  "r": 1.0,
+  "flag": "known",
+  "why": "Follows from known TRS termination undecidability (Dauchet)"
+ },
+ {
+  "id": "N-406",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Analogue of proven square-sum Hamiltonicity"
+ },
+ {
+  "id": "N-470",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Busy-beaver-type exact value; likely infeasible"
+ },
+ {
+  "id": "N-457",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Small finite graph; closed form routine"
+ },
+ {
+  "id": "N-231",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Non-automaticity of game P-positions; needs structure of G"
+ },
+ {
+  "id": "N-010",
+  "r": 0.2,
+  "flag": "easy",
+  "why": "(1,2,3) pairwise coprime attains 1/4, so c=0"
+ },
+ {
+  "id": "N-267",
+  "r": 1.0,
+  "flag": "ill-posed",
+  "why": "Undefined labeling; injective forest version impossible"
+ },
+ {
+  "id": "N-209",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Family of Gerver-type problems; Baek methods hard to adapt"
+ },
+ {
+  "id": "N-376",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Combine AGP Carmichael construction with digit-sum prime results"
+ },
+ {
+  "id": "N-179",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Random-tree firefighter; branching process analysis"
+ },
+ {
+  "id": "N-385",
+  "r": 3.0,
+  "flag": "ill-posed",
+  "why": "Barrier motion unspecified; novel sofa variant"
+ },
+ {
+  "id": "N-018",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Directed firefighter optimization on Z^2"
+ },
+ {
+  "id": "N-361",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Exact Pleijel-type constant unknown for any nontrivial domain"
+ },
+ {
+  "id": "N-338",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Extend 2026 forced blow-up to stationary forcing"
+ },
+ {
+  "id": "N-442",
+  "r": 0.1,
+  "flag": "easy",
+  "why": "Two steps give (2n+-1)/3<n; only cycle 1-3"
+ },
+ {
+  "id": "N-256",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Strict entropy inequality for aperiodic dimers; delicate numerics"
+ },
+ {
+  "id": "N-462",
+  "r": 0.0,
+  "flag": "false",
+  "why": "Forest with c>1 components has m+c>m+1 vertices"
+ },
+ {
+  "id": "N-105",
+  "r": 2.0,
+  "flag": "computation",
+  "why": "Minimum-givens search like 17-clue Sudoku computation"
+ },
+ {
+  "id": "N-304",
+  "r": 2.0,
+  "flag": "ill-posed",
+  "why": "Constant depends on patch shape"
+ },
+ {
+  "id": "N-111",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Hyperbolic sofa; harder than Euclidean which took decades"
+ },
+ {
+  "id": "N-458",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Undecidability needs encoding into nonlinear spf maps"
+ },
+ {
+  "id": "N-194",
+  "r": 0.0,
+  "flag": "false",
+  "why": "Trivial counterexample: interpolate through multiplication at s=2.5"
+ },
+ {
+  "id": "N-301",
+  "r": 0.2,
+  "flag": "known",
+  "why": "Box pleating is hard (Akitaya et al. 2016)"
+ },
+ {
+  "id": "N-126",
+  "r": 1.0,
+  "flag": "known",
+  "why": "Standard upper-bound sieve; essentially known for reversible primes"
+ },
+ {
+  "id": "N-463",
+  "r": 4.5,
+  "flag": "ill-posed",
+  "why": "Overbroad; closed form for all corridors unlikely"
+ },
+ {
+  "id": "N-066",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "3D sofa variant; essentially no tools"
+ },
+ {
+  "id": "N-316",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Enormous formalization effort, no new math needed"
+ },
+ {
+  "id": "N-485",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Aperiodic dimer correlations; Kasteleyn asymptotics hard"
+ },
+ {
+  "id": "N-079",
+  "r": 0.5,
+  "flag": "computation",
+  "why": "Monte Carlo with uniqueness solver"
+ },
+ {
+  "id": "N-116",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Even ordinary pancake constant unknown"
+ },
+ {
+  "id": "N-212",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Needs primes in very sparse digit patterns for all k"
+ },
+ {
+  "id": "N-009",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Explicit hyperbolic area computation"
+ },
+ {
+  "id": "N-451",
+  "r": 1.5,
+  "flag": "computation",
+  "why": "Finite search over squared rectangles"
+ },
+ {
+  "id": "N-284",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Strict inequality of p_c for unrelated aperiodic graphs"
+ },
+ {
+  "id": "N-242",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Maier matrix gives counts; excluding twins is the obstacle"
+ },
+ {
+  "id": "N-150",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Random speeds give gap ~log n/n by first/second moment"
+ },
+ {
+  "id": "N-013",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Explicit construction for star forests"
+ }
+]

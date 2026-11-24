@@ -1,0 +1,8 @@
+[
+{"title":"Prime-square-sum Hamiltonian cycles","r":0.0,"flag":"false","why":"p>=5 gives a+b≡1 mod 24: 12 classes, only 5 bridging edges, never Hamiltonian."},
+{"title":"Spectre drum eigenvalue is transcendental","r":9.0,"flag":"ok","why":"No transcendence tools for eigenvalues of non-separable domains; hopeless."},
+{"title":"Square-sum triangle-free density","r":6.0,"flag":"ok","why":"Bound below 1 is easy by counting; finding exact constant plausibly hard."},
+{"title":"Is eventual periodicity of square-plus-one decidable?","r":8.5,"flag":"ok","why":"Collatz-type orbit question; status of the orbits themselves unknown."},
+{"title":"Seven-free primes with a large shifted factor","r":6.5,"flag":"ok","why":"Exponent 0.6 needs level beyond 1/2 for digit-restricted primes."},
+{"title":"Codes with prime distances","r":0.5,"flag":"easy","why":"Parity forces same-parity distance 2; answer exactly 2n, weight-5 center construction."}
+]

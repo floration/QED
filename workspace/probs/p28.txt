@@ -1,0 +1,239 @@
+## Period-doubling torus bundles | 4 | Topology
+W: Build a once-punctured torus bundle by reading the period-doubling word as a product of the two basic shear matrices. Show its hyperbolic volume per letter settles to a limit as the word grows.
+M: Let $W_n\in\{a,b\}^{2^n}$ be the length-$2^n$ prefix of the fixed point of $a\mapsto ab,\ b\mapsto aa$, let $\phi_n$ be $W_n$ with $a\mapsto R=\begin{pmatrix}1&1\\0&1\end{pmatrix}$, $b\mapsto L=\begin{pmatrix}1&0\\1&1\end{pmatrix}$, and let $M_n$ be the (hyperbolic) once-punctured torus bundle with monodromy $\phi_n$. Prove that $\lim_{n\to\infty}\mathrm{vol}(M_n)/2^n$ exists.
+
+## Thue–Morse Lorenz knots | 6 | Topology
+W: Turn the first 2^n letters of the Thue–Morse word into a periodic orbit of the Lorenz template. Show these knots are eventually hyperbolic and their volume grows proportionally to the word length.
+M: Let $K_n$ be the Lorenz knot whose Lorenz word is the length-$2^n$ Thue–Morse prefix $t_0\cdots t_{2^n-1}$ with $0\mapsto x$, $1\mapsto y$ (this word is primitive). Prove that $S^3\setminus K_n$ is hyperbolic for all sufficiently large $n$ and that $\lim_{n\to\infty}\mathrm{vol}(S^3\setminus K_n)/2^n$ exists and is positive.
+
+## Knotted billiards in a regular tetrahedron | 6 | Topology
+W: A billiard ball bouncing periodically inside a regular tetrahedron traces a closed polygon. Show that infinitely many different knot types arise this way.
+M: Call a periodic billiard trajectory in a regular tetrahedron $T\subset\mathbb R^3$ admissible if it avoids edges and vertices and is an embedded closed polygon. Prove that the set of knot types of admissible periodic trajectories is infinite.
+
+## Chaos in the symmetric ABC flow | 4 | Dynamics
+W: The ABC flow with all three coefficients equal to 1 is a classical steady solution of the Euler equations on the 3-torus. Prove it is genuinely chaotic.
+M: Prove that the flow of $\dot x=\sin z+\cos y,\ \dot y=\sin x+\cos z,\ \dot z=\sin y+\cos x$ on $\mathbb T^3$ has positive topological entropy.
+
+## Knotted Reeb orbits of a superball | 5 | Topology
+W: The boundary of the 4D ball x⁴+y⁴+z⁴+w⁴ ≤ 1 carries a natural Reeb flow from the standard symplectic structure. Does some closed orbit form a nontrivial knot?
+M: Let $U=\{x_1^4+y_1^4+x_2^4+y_2^4\le1\}\subset(\mathbb R^4,dx_1\wedge dy_1+dx_2\wedge dy_2)$ and let $R$ be the Reeb field of $\lambda=\tfrac12\sum(x_i\,dy_i-y_i\,dx_i)$ on $\partial U\cong S^3$. Decide whether $R$ has a periodic orbit that is a nontrivial knot in $\partial U$.
+
+## Integrability of the egg-crate torus | 6 | Dynamics
+W: Take the surface z = ε sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.
+M: For $\varepsilon>0$ let $g_\varepsilon$ be the metric on $\mathbb R^2/(2\pi\mathbb Z)^2$ induced by the graph $z=\varepsilon\sin x\sin y$ in $\mathbb R^3$. Prove that for every $\varepsilon>0$ the geodesic flow of $g_\varepsilon$ has no real-analytic first integral on $T^*\mathbb T^2\setminus 0$ that is functionally independent of the Hamiltonian.
+
+## Simple closed geodesics on the Fermat quartic | 6 | Geometry
+W: On the surface x⁴+y⁴+z⁴ = 1 the nine symmetry planes cut out nine simple closed geodesics. Are there only finitely many simple closed geodesics altogether?
+M: Let $S=\{x^4+y^4+z^4=1\}$ with the metric induced from $\mathbb R^3$. The planes $x=0,y=0,z=0,x=\pm y,y=\pm z,x=\pm z$ meet $S$ in simple closed geodesics. Decide whether $S$ has finitely many simple closed geodesics (as unparametrized curves), and if so whether these nine are all of them.
+
+## How nearly can tetrahedra close up | 6 | Geometry
+W: A chain of regular tetrahedra glued face to face can never close exactly. Find the exact exponential rate at which the best near-closure improves with chain length.
+M: For a regular tetrahedron $T_0$, a chain of length $n$ is $T_0,\dots,T_n$ with $T_{k+1}$ the reflection of $T_k$ in a face not shared with $T_{k-1}$. Let $g(n)$ be the minimum over chains of the Hausdorff distance between $T_n$ and $T_0$ (always positive). Prove that $\lim_{n\to\infty}\frac1n\log g(n)=-\frac{\log 3}{6}$.
+
+## Outer billiards around a superellipse | 5 | Dynamics
+W: Outer billiards around a smooth convex shape with positive curvature has only bounded orbits. Decide whether this survives for x⁴+y⁴ ≤ 1, whose curvature vanishes at four points.
+M: Let $K=\{x^4+y^4\le1\}$ and let $T:\mathbb R^2\setminus K\to\mathbb R^2\setminus K$ be the outer billiard map ($T(p)$ is the reflection of $p$ in the point where the right-hand tangent line from $p$ touches $\partial K$). Decide whether every $T$-orbit is bounded.
+
+## Sup norms on the Fermat quartic | 4 | Analysis
+W: On a sphere, some eigenfunctions pile up at the poles as much as possible. Show this cannot happen on the surface x⁴+y⁴+z⁴ = 1.
+M: Let $S=\{x^4+y^4+z^4=1\}$ with the induced metric and $\Delta\varphi=-\lambda\varphi$, $\|\varphi\|_{L^2(S)}=1$. Prove that $\|\varphi\|_{L^\infty(S)}=o(\lambda^{1/4})$ as $\lambda\to\infty$.
+
+## Rupert superballs | 5 | Geometry
+W: The cube can pass through a hole drilled in a copy of itself; the round ball cannot. Show every superball between them, |x|^p+|y|^p+|z|^p ≤ 1 with p > 2, can.
+M: Let $B_p=\{|x|^p+|y|^p+|z|^p\le1\}$. Prove that for every $p\in(2,\infty)$ there are orthogonal projections $\pi_1,\pi_2$ onto planes and a rigid motion $\rho$ of the plane with $\rho(\pi_1(B_p))\subset\operatorname{int}\pi_2(B_p)$.
+
+## Capacities of the 4D superball | 6 | Geometry
+W: Viterbo's conjecture that all symplectic capacities agree on convex bodies is false in general. Do they agree on the 4D ball x⁴+y⁴+z⁴+w⁴ ≤ 1?
+M: Let $U=\{x_1^4+y_1^4+x_2^4+y_2^4\le1\}\subset(\mathbb R^4,\omega_0)$. Decide whether the Gromov width of $U$ equals its Ekeland–Hofer–Zehnder capacity (the minimal action of a closed characteristic on $\partial U$).
+
+## Drum tones of superellipses | 3 | Analysis
+W: Among regions x^p + y^p ≤ r of unit area, the circle (p = 2) has the lowest tone and the square (p = ∞) is back up high. Show the tone rises steadily as p goes from 2 to infinity.
+M: Let $D_p=\{|x|^p+|y|^p\le r_p^p\}$ with $r_p$ chosen so $|D_p|=1$, and let $\lambda_1(p)$ be its first Dirichlet eigenvalue. Prove $\lambda_1$ is strictly increasing on $[2,\infty)$.
+
+## Charge on a Fermat conductor | 5 | Analysis
+W: Put a unit of electric charge on a perfectly conducting body x⁴+y⁴+z⁴ ≤ 1. Show the surface charge is thinnest at the six flat points and thickest at the eight diagonal points.
+M: Let $\mu$ be the Newtonian equilibrium measure of $K=\{x^4+y^4+z^4\le1\}$, with density $\rho$ with respect to surface area on $\partial K$. Prove that $\rho$ attains its minimum exactly at $(\pm1,0,0),(0,\pm1,0),(0,0,\pm1)$ and its maximum exactly at $3^{-1/4}(\pm1,\pm1,\pm1)$.
+
+## Chaotic billiards in a superellipse | 8 | Dynamics
+W: The billiard table x⁴+y⁴ ≤ 1 is smooth and convex but has four flat points, so it has no caustics. Show a positive fraction of its phase space is chaotic.
+M: Let $\Phi$ be the billiard map of $\{x^4+y^4\le1\}$ with its invariant Liouville measure $\nu$. Prove that the metric entropy $h_\nu(\Phi)$ is positive.
+
+## Free-boundary disks in a superball | 6 | Geometry
+W: In a round ball the only free-boundary minimal disks are flat. In the superball x⁴+y⁴+z⁴ ≤ 1, is there one that is not a flat slice?
+M: Let $B=\{x^4+y^4+z^4\le1\}$. Decide whether there is an embedded minimal disk $\Sigma\subset B$ with $\partial\Sigma\subset\partial B$ meeting $\partial B$ orthogonally that is not contained in a plane.
+
+## Ergodicity of the regular tetrahedron billiard | 8 | Dynamics
+W: The regular tetrahedron does not tile space, so its billiard cannot be unfolded into a straight-line flow on a torus. Is a billiard ball in it ergodic?
+M: Prove or disprove that the billiard flow in a regular tetrahedron in $\mathbb R^3$ is ergodic with respect to Liouville measure on the unit tangent bundle.
+
+## Riesz-transform Schrödinger equation | 6 | PDE
+W: Couple a 2D Schrödinger wave to the Riesz transform of its own density. Mass is conserved but there is no energy. Do smooth solutions live forever?
+M: Consider $i u_t+\Delta u=u\,R_1(|u|^2)$ on $\mathbb R\times\mathbb R^2$, where $\widehat{R_1 f}(\xi)=-i\frac{\xi_1}{|\xi|}\hat f(\xi)$. Decide whether every $u_0\in H^1(\mathbb R^2)$ gives a global solution in $C(\mathbb R,H^1)$.
+
+## Shifted Fujita equation | 4 | PDE
+W: In the plane, every positive solution of u_t = Δu + u² blows up. Does this survive when the square is replaced by the product of values one unit to the left and right?
+M: Let $e=(1,0)$. Prove or disprove: every solution of $u_t=\Delta u+u(x-e,t)\,u(x+e,t)$ on $\mathbb R^2$ with $0\le u_0\in C_c(\mathbb R^2)$, $u_0\not\equiv0$, blows up in finite time.
+
+## Euler with reversed stretching | 7 | PDE
+W: Flip the sign of the vortex-stretching term in the 3D Euler equations, keeping the usual Biot–Savart law. Do smooth solutions stay smooth forever?
+M: Consider $\omega_t+(u\cdot\nabla)\omega=-S\omega$ on $\mathbb T^3$, where $u=\nabla\times(-\Delta)^{-1}\omega$ and $S=\tfrac12(\nabla u+\nabla u^{T})$. Decide whether every $\omega_0\in C^\infty(\mathbb T^3)$ with mean zero yields a global smooth solution.
+
+## Strauss exponent for an oscillating source | 5 | PDE
+W: The wave equation with source |u|^p in 3D has small-data global existence exactly above the Strauss exponent 1+√2. Find the threshold when the source is multiplied by cos t.
+M: For $u_{tt}-\Delta u=\cos(t)\,|u|^p$ on $\mathbb R^{1+3}$ with data $\varepsilon(f,g)$, $f,g\in C_c^\infty$, determine $p_c$ such that for $p>p_c$ solutions are global for all small $\varepsilon$, and for $1<p<p_c$ some data blow up for all small $\varepsilon$; decide whether $p_c=1+\sqrt2$.
+
+## Reflected Lane–Emden in five dimensions | 5 | PDE
+W: −Δu = u² has no positive solutions in R⁵. Replace u² by u(x)u(−x). Positive solutions are ruled out in dimensions up to 4 and exist from 6 on; decide dimension 5.
+M: Decide whether there is a positive $u\in C^2(\mathbb R^5)$ with $-\Delta u(x)=u(x)\,u(-x)$ for all $x$.
+
+## Minimal-mass blow-up with reflection | 4 | PDE
+W: In the 2D Schrödinger equation where each point feels the density at its mirror point, blow-up needs at least the ground-state mass. Classify the solutions that blow up with exactly that mass.
+M: For $i u_t+\Delta u+|u(-x,t)|^2u=0$ on $\mathbb R^2$ with $\|u_0\|_{L^2}=\|Q\|_{L^2}$ ($Q$ the cubic ground state), prove that every $H^1$ solution blowing up in finite time equals, up to phase and scaling, the pseudo-conformal transform of $Q$ centred at the origin.
+
+## KdV with a cosine coefficient | 6 | PDE
+W: Put a cos x in front of the cubic term of modified KdV on the circle. Energy survives but the L² norm no longer does. Can solutions blow up?
+M: Consider $u_t+u_{xxx}+(\cos(x)\,u^3)_x=0$ on $\mathbb T=\mathbb R/2\pi\mathbb Z$, which conserves $\int u$ and $\int(\tfrac12u_x^2-\tfrac14\cos(x)u^4)$ but not $\int u^2$. Decide whether every $u_0\in C^\infty(\mathbb T)$ yields a global smooth solution.
+
+## Heat with a cosine reaction | 5 | PDE
+W: In u_t = u_xx + cos(x)u², the reaction averages to zero, but a second-order effect looks like +u³, the borderline Fujita case. Does every positive start blow up?
+M: Prove or disprove: for every $0\le u_0\in C_c(\mathbb R)$, $u_0\not\equiv0$, the solution of $u_t=u_{xx}+\cos(x)\,u^2$ on $\mathbb R$ blows up in finite time.
+
+## Burgers with degenerate critical dissipation | 5 | PDE
+W: Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off at one point of the circle. Do shocks form there?
+M: Let $a(x)=1-\cos x$ and consider $u_t+uu_x+\Lambda^{1/2}\big(a\,\Lambda^{1/2}u\big)=0$ on $\mathbb T$, $\Lambda=(-\partial_x^2)^{1/2}$. Decide whether every $u_0\in C^\infty(\mathbb T)$ yields a global smooth solution.
+
+## Difference Burgers, negative side | 5 | PDE
+W: In u_t = u_xx + u(x)² − u(x−1)², mass flows rightward. Big positive bumps blow up in simulations, while big negative bumps flatten out. Prove negative data always survive.
+M: For $u_t=u_{xx}+u(x,t)^2-u(x-1,t)^2$ on $\mathbb R$, show that every $u_0\in C_c^\infty(\mathbb R)$ with $u_0\le0$ gives a global solution with $\|u(t)\|_\infty\to0$. (Finite-difference runs with $u_0=-Ae^{-x^2}$, $A\in\{5,20,100,400\}$, up to $t=3$ or $5$ stayed bounded with $\sup|u|$ decreasing; $u_0=+5e^{-x^2}$ blew up near $t=0.39$.)
+
+## Permanent–Ampère equation | 5 | PDE
+W: Monge–Ampère sets the Hessian determinant to 1, and Jörgens showed its entire convex solutions are quadratics. Swap the determinant for the permanent.
+M: Let $u\in C^4(\mathbb R^2)$ satisfy $u_{xx}u_{yy}+u_{xy}^2=1$, $u_{xx}>0$, $2u_{xy}^2<1$ everywhere (ellipticity). Prove or disprove that $u$ is a quadratic polynomial.
+
+## Burgers with lattice viscosity | 3 | PDE
+W: Replace the viscosity in Burgers' equation by the bounded discrete Laplacian with step 1. Large jumps can steepen into shocks. Show small-amplitude data never do.
+M: For $u_t+uu_x=u(x+1,t)-2u(x,t)+u(x-1,t)$ on $\mathbb R$, prove there is $c>0$ such that every $u_0\in C^\infty$ with $u_0'\in L^\infty$ and $\sup u_0-\inf u_0<c$ gives a global solution with $u_x$ bounded on every finite time interval.
+
+## Mirror-competition KPP | 4 | PDE
+W: In u_t = u_xx + u(1 − u(−x)), each point competes with its mirror image. Even data behave like ordinary KPP, but the state u ≡ 1 is unstable to odd perturbations. Show any asymmetry eventually explodes.
+M: For $u_t=u_{xx}+u(x,t)\,(1-u(-x,t))$ on $\mathbb R$ with $0\le u_0\in C_c(\mathbb R)$ not even (solutions are global, $0\le u\le e^t\|u_0\|_\infty$), prove $\sup_x u(x,t)\to\infty$ as $t\to\infty$.
+
+## Laplacian equal to the gradient product | 4 | PDE
+W: Find all bounded functions on the plane whose Laplacian equals the product of their two partial derivatives.
+M: Prove or disprove: every bounded $u\in C^2(\mathbb R^2)$ with $\Delta u=u_xu_y$ is constant.
+
+## Keller–Segel on the cube | 4 | PDE
+W: On smooth surfaces chemotactic collapse needs mass 8π. The 3π/2 cone points at the corners of a cube surface should lower this to 6π.
+M: On the flat unit-cube surface $S$ (area $6$), consider $\rho_t=\Delta\rho-\nabla\cdot(\rho\nabla c)$, $-\Delta c=\rho-\frac{M}{6}$, $\int_S\rho=M$. Prove that solutions with $0\le\rho_0\in C^\infty$ are global if $M<6\pi$, and that for every $M>6\pi$ some smooth data blow up in finite time.
+
+## Critical NLS mass on the cube | 5 | PDE
+W: Focusing cubic Schrödinger blow-up in 2D needs the ground-state mass. On a cube surface the corners should lower the threshold to three quarters of it.
+M: On the flat unit-cube surface $S$, consider $iu_t+\Delta u+|u|^2u=0$. Prove: $H^1$ data with $\|u_0\|_2^2<\tfrac34\|Q\|_{L^2(\mathbb R^2)}^2$ give global solutions, and for every $m>\tfrac34\|Q\|_2^2$ there is $H^1$ data of mass $m$ blowing up in finite time.
+
+## Lane–Emden with a shift | 5 | PDE
+W: Replace u² in the five-dimensional Lane–Emden equation by the square of u at a shifted point. Are there still no positive solutions?
+M: Let $e\in\mathbb R^5$, $e\ne0$. Decide whether there is a positive $u\in C^2(\mathbb R^5)$ with $-\Delta u(x)=u(x+e)^2$ for all $x$.
+
+## Quintic Szegő growth | 6 | PDE
+W: The cubic Szegő equation on the circle is integrable and its solutions' high Sobolev norms can grow without bound. Decide what the quintic version does.
+M: For $iu_t=\Pi(|u|^4u)$ on $L^2_+(\mathbb T)$ ($\Pi$ the Szegő projector), decide whether there is $u_0\in C^\infty\cap L^2_+$ with $\limsup_{t\to\infty}\|u(t)\|_{H^s}=\infty$ for some $s>\tfrac12$.
+
+## Damped waves on a cube | 6 | PDE
+W: Damp waves on a cube surface only on one face. Belt geodesics miss that face, so energy decays only polynomially. Find the exact rate.
+M: On the flat unit-cube surface $S$ let $a\in C^\infty(S)$, $0\le a\le1$, equal 1 on a closed sub-square of the top face and 0 outside the top face, and solve $u_{tt}-\Delta u+a u_t=0$. Find the largest $\alpha$ with $E(t)^{1/2}\le Ct^{-\alpha}\|(u_0,u_1)\|_{H^2\times H^1}$ for all data.
+
+## L⁴ Strichartz on a cube | 6 | PDE
+W: On a flat square torus the L⁴ Strichartz estimate holds with only ε loss of derivatives. Prove the same on the surface of a cube, where corners diffract waves.
+M: Let $S$ be the flat unit-cube surface. Prove that for every $\varepsilon>0$, $\|e^{it\Delta}f\|_{L^4([0,1]\times S)}\le C_\varepsilon\|f\|_{H^\varepsilon(S)}$.
+
+## Scattering on the cube corner | 6 | PDE
+W: Defocusing cubic Schrödinger in the plane scatters for all finite-mass data. Show the same on the surface of an infinite cube corner.
+M: Let $\mathcal C$ be the flat cone of angle $3\pi/2$ (boundary of an octant). Prove that every $u_0\in L^2(\mathcal C)$ gives a global solution of $iu_t+\Delta u=|u|^2u$ that scatters in $L^2$ as $t\to\pm\infty$.
+
+## XZ next-nearest spin chain | 6 | Analysis
+W: The spin chain with neighbouring XX coupling and next-nearest ZZ coupling is not a free-fermion model. Numerically its gap closes like 1/N. Prove the gap closes.
+M: On the ring $\mathbb Z/N$ let $H_N=\sum_i(X_iX_{i+1}+Z_iZ_{i+2})$. For $N\equiv0\pmod4$ let $\Delta_N=E_1-E_0$. Prove $\Delta_N\to0$. (Exact diagonalization gives $\Delta_N=0.641,0.384,0.269,0.205$ for $N=8,12,16,20$, with $N\Delta_N$ decreasing from $5.13$ to $4.09$; for $N\equiv2\pmod4$ the ground state is doubly degenerate.)
+
+## Thue–Morse quantum walk | 5 | Analysis
+W: A quantum walker on the line uses a Hadamard coin or a rotation coin according to the Thue–Morse sequence. Decide whether it spreads at full ballistic speed.
+M: On $\ell^2(\mathbb Z)\otimes\mathbb C^2$ let $U=S\,C$, where $S$ shifts the up and down components by $+1$ and $-1$, and $C_n=H$ if $t_{|n|}=0$, $C_n=\begin{pmatrix}\cos\frac\pi3&\sin\frac\pi3\\-\sin\frac\pi3&\cos\frac\pi3\end{pmatrix}$ if $t_{|n|}=1$. For $\psi_0=\delta_0\otimes e_1$ decide whether $\limsup_{T\to\infty}\frac{\log\sum_n|n|^2\|(U^T\psi_0)(n)\|^2}{2\log T}=1$.
+
+## Paley spin glass | 6 | Combinatorics
+W: Spins on F_p interact through Legendre symbols of their differences. The spectral bound caps the ground-state energy at one half times p^{3/2}, and local search gets to about 0.46. Is the bound sharp?
+M: For primes $p\equiv1\pmod4$ let $E_p=\max_{\sigma\in\{\pm1\}^{\mathbb F_p}}\sum_{i<j}\left(\frac{j-i}{p}\right)\sigma_i\sigma_j\le\frac12p^{3/2}$. Decide whether $E_p/p^{3/2}\to\frac12$. (Greedy local search from 30 random starts gave ratios $0.461,0.461,0.461,0.456$ for $p=101,197,401,797$.)
+
+## Three-body mean-field rotors | 4 | Dynamics
+W: Three rotors on a circle attract each other with a cosine potential. After removing total momentum, show this two-degree-of-freedom system is not integrable.
+M: Let $H=\tfrac12(p_1^2+p_2^2+p_3^2)+\sum_{i<j}(1-\cos(\theta_i-\theta_j))$ on $T^*\mathbb T^3$. Prove that the reduction by $\sum p_i$ has no meromorphic first integral independent of $H$ on generic energy levels.
+
+## Two vortices on a cube | 6 | Dynamics
+W: Two identical point vortices on the surface of a cube have no symmetry to make them integrable. Show their motion is chaotic.
+M: Let $G$ be the Green function of the flat unit-cube surface $S$ and $R$ its Robin function. Show the Hamiltonian $H(z_1,z_2)=G(z_1,z_2)+\tfrac12(R(z_1)+R(z_2))$ on $S\times S\setminus\Delta$, with symplectic form $dA_1+dA_2$, has an energy level on which the flow has positive topological entropy.
+
+## Four vortices on a square torus | 5 | Dynamics
+W: Three point vortices on a flat torus are integrable. Show four identical ones are not.
+M: Let $H=-\sum_{i<j}G(z_i-z_j)$, with $G$ the Green function of $\mathbb C/(\mathbb Z+i\mathbb Z)$, for four unit vortices. Prove that after reduction by the translation symmetry the system has no real-analytic first integral independent of $H$.
+
+## Dimers on a cube surface | 6 | Combinatorics
+W: Count domino coverings of the grid on a cube surface with n × n squares per face. Pin down the logarithmic correction that the eight corners contribute.
+M: Let $M_n$ be the number of perfect matchings of the graph formed by the vertices and edges of the $n\times n$ subdivision of each face of a cube ($6n^2+2$ vertices). Prove $\log M_n=\frac{6G}{\pi}n^2+\kappa\log n+O(1)$, with $G$ Catalan's constant, for an explicit $\kappa$, and find $\kappa$.
+
+## Chaos in the double pendulum at every energy | 6 | Dynamics
+W: The planar double pendulum with equal masses and arms is chaotic at moderate energies. Prove it is chaotic at every energy above the rest state, however small.
+M: Let $H$ be the Hamiltonian of the planar double pendulum with $m_1=m_2=\ell_1=\ell_2=g=1$, with minimum $E_0$. Prove that for every $E>E_0$ the flow on $\{H=E\}$ has positive topological entropy.
+
+## Ising spin at a cube corner | 6 | Probability
+W: Glue three quarter-planes of the square grid into the surface of an infinite cube corner and run the critical Ising model. Prove the corner spin decorrelates with the exponent 7/24 that conformal field theory predicts.
+M: Let $\Gamma$ be the union of the three quadrant grids $\mathbb Z_{\ge0}^2$ on the faces of the octant boundary, glued along the axes, with apex $o$. For the critical nearest-neighbour Ising model on $\Gamma$ prove $\langle\sigma_o\sigma_x\rangle\asymp|x|^{-7/24}$ as $|x|\to\infty$.
+
+## Two-frequency localization | 6 | Analysis
+W: Use a potential that is the sum of two cosines with frequencies √2 and √3, and take strong coupling. Prove electrons localize for these specific frequencies, not just for almost every frequency pair.
+M: Let $(H_\theta\psi)(n)=\psi(n+1)+\psi(n-1)+10\big(\cos2\pi(n\sqrt2+\theta_1)+\cos2\pi(n\sqrt3+\theta_2)\big)\psi(n)$. Prove that for Lebesgue-a.e. $\theta\in\mathbb T^2$, $H_\theta$ has pure point spectrum with exponentially decaying eigenfunctions.
+
+## Kagome Hofstadter butterfly | 6 | Analysis
+W: The Harper model on the square lattice has a Cantor spectrum for every irrational flux. Prove the same for electrons hopping on the kagome lattice.
+M: Let $H_\alpha$ be the nearest-neighbour magnetic Laplacian on the kagome lattice for a uniform magnetic field with flux $2\pi\alpha$ through each unit cell. Prove that $\sigma(H_\alpha)$ is a Cantor set for every irrational $\alpha$.
+
+## Spikes at the squares | 7 | Analysis
+W: Put a fixed bump at every perfect square on the half-line lattice. The spectrum has no absolutely continuous part. Prove the states are localized inside the free band.
+M: Let $H=\Delta+\lambda\mathbf 1_{\{m^2:m\ge1\}}$ on $\ell^2(\mathbb N)$, $\lambda\ne0$. Prove that the spectral measure of $\delta_1$ restricted to $(-2,2)$ is pure point.
+
+## Spikes at the primes | 9 | Analysis
+W: Put a fixed bump at every prime on the half-line lattice. Prove the electron is localized at energies inside the free band, as it would be if the primes were random.
+M: Let $H=\Delta+\lambda\mathbf 1_{\mathbb P}$ on $\ell^2(\mathbb N)$, $\lambda\ne0$. Prove that $H$ has pure point spectrum in $(-2,2)$.
+
+## Jacobi matrix of primes | 6 | Analysis
+W: Use the primes as the off-diagonal entries of a Jacobi matrix. Known criteria for absolutely continuous spectrum just fail because prime gaps fluctuate. Decide the spectral type.
+M: Let $J$ be the Jacobi matrix on $\ell^2(\mathbb N)$ with $a_n=p_n$ (the $n$-th prime) and $b_n=0$, which is self-adjoint since $\sum1/p_n=\infty$. Decide whether the spectrum of $J$ is purely absolutely continuous on $\mathbb R$.
+
+## Fibonacci-modulated growing Jacobi matrix | 6 | Analysis
+W: Off-diagonal weights grow like √n but are doubled wherever the Fibonacci word has a 1. Periodic modulations give spectral phase transitions. Decide what this aperiodic one gives.
+M: Let $f\in\{0,1\}^{\mathbb N}$ be the Fibonacci word and $J$ the Jacobi matrix with $a_n=\sqrt n\,(1+f_n)$, $b_n=0$. Determine the spectral type of $J$; in particular decide whether $J$ has absolutely continuous spectrum.
+
+## Quartic oscillator ground state | 8 | Analysis
+W: The lowest energy of the quartic oscillator, −d²/dx² + x⁴, is about 1.0603620905. Show it is irrational.
+M: Let $E_0=\min\sigma\big(-\frac{d^2}{dx^2}+x^4\big)$ on $L^2(\mathbb R)$. Prove $E_0\notin\mathbb Q$.
+
+## Hearing tetrahedra | 6 | Analysis
+W: Triangles can be heard: their Dirichlet spectrum determines them. Show the same holds for tetrahedra.
+M: Prove that two tetrahedra in $\mathbb R^3$ with the same Dirichlet Laplacian spectrum are congruent.
+
+## Chirp potential threshold | 3 | Analysis
+W: The potential λ sin(x²) oscillates faster and faster, so it acts like −λ²/(8x²) at long range. Prove that infinitely many bound states appear exactly when λ exceeds √2.
+M: Let $H_\lambda=-\frac{d^2}{dx^2}+\lambda\sin(x^2)$ on $L^2(\mathbb R)$. Prove that $H_\lambda$ has finitely many negative eigenvalues if $|\lambda|<\sqrt2$ and infinitely many if $|\lambda|>\sqrt2$, and decide the case $|\lambda|=\sqrt2$.
+
+## Non-arithmetic tones of the cube | 7 | Analysis
+W: Many vibration frequencies of a cube's surface come from the square torus and are rational multiples of π². Show some frequency is not.
+M: Let $S$ be the flat unit-cube surface. Prove that some eigenvalue of the Laplacian on $S$ is not a rational multiple of $\pi^2$.
+
+## Multiplicities on the Fermat quartic | 7 | Analysis
+W: The surface x⁴+y⁴+z⁴ = 1 has the symmetries of a cube. Show its Laplace eigenvalues never repeat more than symmetry forces, except perhaps finitely often.
+M: Let $S=\{x^4+y^4+z^4=1\}$ with the induced metric. Prove that all but finitely many Laplace eigenvalues of $S$ have multiplicity at most $3$.
+
+## Infinite knots in the ABC flow | 7 | Topology
+W: Steady Euler flows can carry knotted streamlines. Show the symmetric ABC flow has closed streamlines tied in infinitely many different knots.
+M: Prove that the flow of $\dot x=\sin z+\cos y,\ \dot y=\sin x+\cos z,\ \dot z=\sin y+\cos x$ on $\mathbb T^3$ has null-homotopic periodic orbits lying in embedded balls and realizing infinitely many distinct knot types.
+
+## Frozen vortices for Kuramoto on a cube | 4 | Dynamics
+W: Identical Kuramoto oscillators on the grid of a cube surface tend to synchronize. Show that for large grids a stable state that is not synchronized also exists.
+M: Let $Q_n$ be the vertex–edge graph of the $n\times n$ subdivided cube surface and $\dot\theta_i=\sum_{j\sim i}\sin(\theta_j-\theta_i)$. Prove that for all large $n$ there is a linearly stable equilibrium that is not of the form $\theta_i\equiv c$.

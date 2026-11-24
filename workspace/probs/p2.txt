@@ -1,0 +1,251 @@
+## Monotile assembly threshold | 5 | Computation
+W: With one tile shape, deciding whether a region can be tiled is easy in some cases; with many shapes it is hard. Find the smallest number of shapes where it becomes hard.
+M: Find the least $t$ such that some fixed set of $t$ polygons makes "does this finite region admit an exact tiling?" NP-complete, and prove all sets of fewer polygons give polynomial-time problems.
+
+## Square-sum coloring | 5 | Combinatorics
+W: Join numbers that add up to a perfect square. Does the number of colors needed stay bounded forever?
+M: Decide whether $\sup_N \chi(S_N)<\infty$.
+
+## Hyperbolic sofa | 5 | Geometry
+W: Find the largest sofa that can turn a right-angled corner in a hallway of width 1 in the hyperbolic plane, and prove it is best.
+M: Determine $\sup\{\operatorname{area}(S)\}$ over sets $S\subset\mathbb{H}^2$ admissible in the width-1 right-angled corridor, and an optimizer.
+
+## Hyperbolic square peg | 5 | Geometry
+W: Every closed curve in the hyperbolic plane should pass through the corners of some hyperbolic square.
+M: Prove every Jordan curve in $\mathbb{H}^2$ contains the four vertices of a regular hyperbolic quadrilateral.
+
+## FLT, compressed | 5 | Formal proof
+W: Fermat's Last Theorem has a huge computer formalization effort. Do it in far fewer lines.
+M: Give a Lean 4 proof of $x^n+y^n=z^n\Rightarrow xyz=0$ for $n\ge3$ using at most $10^5$ lines beyond current Mathlib.
+
+## Prime pancakes | 5 | Computation
+W: Sort pancakes by flipping only a prime number at a time. Find the worst-case number of flips asymptotically.
+M: With prefix reversals of prime length, determine $\lim_n d(n)/n$ for the worst-case sorting distance $d(n)$.
+
+## Seven-free three primes | 5 | Number theory
+W: Every large odd number should be a sum of three primes that never use the digit 7.
+M: Prove every sufficiently large odd $N$ is $p_1+p_2+p_3$ with each $p_i$ prime and free of the decimal digit 7.
+
+## Spherical sofa | 5 | Geometry
+W: Find the biggest shape that turns a right-angled corner in a width-1 hallway drawn on a large sphere.
+M: On the sphere of radius 10, determine the maximal area of a set admissible in the width-1 right-angled geodesic corridor.
+
+## No prism sofa | 5 | Geometry
+W: Show the best 3D sofa is genuinely three-dimensional, not just a flat shape extruded upward.
+M: Prove no optimal solid for the $1\times1$ square corridor is of the form $A\times[0,1]$.
+
+## Blokus Duo | 5 | Games
+W: Who wins two-player Blokus with perfect play?
+M: Weakly solve Blokus Duo on the $14\times14$ board with standard starting points.
+
+## Square-sum cliques | 5 | Combinatorics
+W: How many numbers can pairwise add up to perfect squares? Decide if there is a limit.
+M: Decide whether $\omega(S_N)$ is bounded, i.e., whether there exist arbitrarily large sets of distinct positive integers with all pairwise sums square.
+
+## Square-sum spectral gap | 5 | Combinatorics
+W: Find how well connected the square-sum graph is, through its eigenvalues.
+M: Determine the asymptotics of $\lambda_1(S_N)-\lambda_2(S_N)$ for the adjacency spectrum.
+
+## Seven-free primes in progressions | 5 | Number theory
+W: Primes avoiding the digit 7 should be evenly spread among remainder classes.
+M: Prove primes without decimal digit 7 are equidistributed in residue classes mod $q$ for all $q\le(\log x)^A$.
+
+## Largest-factor Collatz heights | 5 | Dynamics
+W: For almost every start, the largest-factor Collatz orbit never climbs past a fixed power of where it started.
+M: Prove there is $C$ with $\max_k f^k(n)\le n^C$ for a density-1 set of $n$.
+
+## Coloring the spectre's distances | 5 | Geometry
+W: Take all corners of a spectre tiling and join two whenever they are exactly one edge-length apart. How many colors are needed?
+M: Determine the chromatic number of the unit-distance graph on the vertex set of a spectre tiling (unit = edge length).
+
+## Isospectral polykites | 5 | Analysis
+W: Two different drums can sound the same. Find two different shapes made of kites that do.
+M: Find two non-congruent polykites whose Dirichlet Laplacians have identical spectra.
+
+## Distant-force blow-up | 5 | Analysis
+W: The 2026 Navier–Stokes blow-up pushed fluid right where it broke. Make it break with a push kept far away.
+M: Construct smooth compactly supported $f$ with $\operatorname{supp} f\cap B(x_*,1)=\emptyset$ such that 3D Navier–Stokes from rest blows up at $x_*$ in finite time.
+
+## Closed-form Euler blow-up | 5 | Analysis
+W: Give smooth starting data for frictionless 3D fluid, written as an explicit formula, that blows up.
+M: Find closed-form smooth finite-energy $u_0$ on $\mathbb{R}^3$ whose unforced Euler solution blows up in finite time.
+
+## Tangent-sweep Keller maps | 5 | Algebra
+W: One 2026 counterexample to the Jacobian conjecture sweeps tangent lines of a curve. Find every counterexample built that way.
+M: Classify all polynomial maps $\mathbb{C}^3\to\mathbb{C}^3$ with constant nonzero Jacobian arising from the tangent-sweep construction over plane curves.
+
+## Two-to-one Keller maps | 5 | Algebra
+W: Known Jacobian counterexamples cover most points three or more times. Is there one covering most points exactly twice?
+M: Decide whether some $F:\mathbb{C}^3\to\mathbb{C}^3$ with $\det DF\in\mathbb{C}^\times$ has generic fiber size exactly 2.
+
+## Two fires | 5 | Combinatorics
+W: Two fires start a distance d apart. How many firefighters per turn are needed, depending on d?
+M: On $\mathbb{Z}^2$ with 4-neighbour spread, find the least $k(d)$ containing fires started at $(0,0)$ and $(d,0)$.
+
+## Building a firebreak | 5 | Combinatorics
+W: Firefighters must build one connected wall, one cell per turn, each next to the last. Can they ever enclose the fire?
+M: On $\mathbb{Z}^2$, each turn add one protected cell 8-adjacent to the previous one. Decide whether a single fire can be enclosed, and for which build rates.
+
+## Hex on hats | 5 | Games
+W: Play Hex on a board made of hat tiles. Can games end in a draw, and who wins on a small board?
+M: For Hex on hat-tiled rhombus boards, decide whether draws are possible, and solve side length 5.
+
+## Go on a torus | 5 | Games
+W: Go on a 7 × 7 board that wraps around. What komi makes the game fair?
+M: Determine the perfect-play score of Go on $\mathbb{Z}_7^2$ (area scoring, positional superko).
+
+## Worst-case Battleship | 5 | Games
+W: What is the fewest shots that always sinks the standard fleet on a 10 × 10 board?
+M: Compute the minimax number of shots to sink ships of lengths 5,4,3,3,2 on $10\times10$ against an adversary who may move ships consistently with past answers.
+
+## Benford orbits | 5 | Dynamics
+W: The leading digits of largest-factor Collatz orbits should follow Benford's law.
+M: Prove that for almost all $n$ the leading digits of $(f^k(n))_{k\le T(n)}$ satisfy Benford's law as $n\to\infty$.
+
+## Random graceful forests | 5 | Combinatorics
+W: Almost every random forest has the distinct-edge-difference labeling.
+M: For a uniform random forest with $m$ edges and $c\sim\alpha m$ components, prove the graceful-forest labeling exists with probability $\to1$.
+
+## T-junction sofa | 5 | Geometry
+W: A sofa comes up the stem of a T and must be able to leave by either arm. Find the biggest one.
+M: Maximize area over sets admissible from the stem to each arm (separately) of a width-1 T-junction.
+
+## Car-like sofa | 5 | Geometry
+W: The sofa moves like a car: forward only, with limited steering. Find the biggest that makes the corner.
+M: Maximize area over shapes whose motion is a forward Dubins path with turning radius $\ge1$ through the width-1 right-angled corridor.
+
+## Fire on a random planet | 5 | Probability
+W: Fire spreads on a random planar map. Find how fast firefighting budgets must grow.
+M: On the uniform infinite planar triangulation, determine the minimal growth exponent $a$ such that budgets $k_t=t^{a}$ contain a fire almost surely.
+
+## Random lonely runners | 5 | Probability
+W: With random speeds, runners get noticeably lonelier than the conjecture promises.
+M: For i.i.d. uniform speeds in $[1,N]$, $N\gg n^3$, prove the loneliness gap exceeds $\frac1{n+1}+c\frac{\log n}{n^2}$ with probability $\to1$.
+
+## Sudoku resolution bounds | 5 | Computation
+W: Proving a large broken Sudoku has no solution should require long logical proofs.
+M: Prove resolution refutations of unsatisfiable $n^2\times n^2$ Sudoku instances require size $2^{n^{\Omega(1)}}$ for some explicit family.
+
+## Quoridor | 5 | Games
+W: Who wins the board game Quoridor with perfect play?
+M: Weakly solve two-player Quoridor on the $9\times9$ board with 10 walls each.
+
+## Prime-frequency synchrony | 5 | Dynamics
+W: Oscillators with frequencies set by logarithms of primes eventually synchronize when coupled strongly enough. Find the threshold.
+M: For the Kuramoto model with $\omega_i=\log p_i$, prove a sharp synchronization threshold $K_c(N)$ and its asymptotics.
+
+## Hat billiard counting | 5 | Dynamics
+W: Count the periodic bouncing paths inside a hat-shaped table up to a given length.
+M: For billiards in the hat polygon, prove $N(L)\sim cL^2$ for periodic cylinder families and compute $c$.
+
+## Kakeya for hats | 5 | Geometry
+W: What is the smallest region in which you can rotate a hat tile through every orientation?
+M: Determine $\inf$ area of sets containing a translate of every rotation of the hat polygon.
+
+## BB(5), compressed | 5 | Formal proof
+W: The Busy Beaver value BB(5) was proved with a large computer proof. Make it small.
+M: Prove $BB(5)=47{,}176{,}870$ in Lean 4 in under 10,000 lines.
+
+## Four colors, compressed | 5 | Formal proof
+W: Make the computer-checked four color theorem much shorter.
+M: Give a Lean 4 proof of the four color theorem in under 20,000 lines beyond Mathlib.
+
+## Kepler, compressed | 5 | Formal proof
+W: Make the computer-checked proof of the densest sphere packing far shorter.
+M: Give a Lean 4 proof of the Kepler conjecture in under 100,000 lines.
+
+## Fast Prime Nim | 5 | Computation
+W: Compute Prime Nim values up to a trillion.
+M: Give an algorithm computing $G(n)$ for all $n\le10^{12}$ in time $o(N^{1.5})$ and run it.
+
+## Hat electrons | 5 | Physics
+W: An electron hopping on a hat tiling should have an unusual, fractal energy spectrum.
+M: Prove the tight-binding Hamiltonian on the hat adjacency graph has purely singular continuous spectrum on a set of full measure in the hull.
+
+## Hat dimers | 5 | Physics
+W: Cover a hat tiling with dominoes joining neighbouring tiles. Count the coverings exactly per tile.
+M: Compute the dimer entropy per vertex of the hat adjacency graph in closed form.
+
+## Emirps, almost | 5 | Number theory
+W: Show infinitely many primes have a reversal with at most three prime factors.
+M: Prove $\#\{p\le x: \Omega(\operatorname{rev}(p))\le3\}\to\infty$.
+
+## Smallest-factor Collatz, almost always | 5 | Dynamics
+W: For the smallest-odd-factor Collatz map, almost every start reaches 1.
+M: Prove $g^k(n)=1$ for some $k$, for a density-1 set of $n$.
+
+## Hat random walk diffusivity | 5 | Probability
+W: A random walk across hat tiles should look like ordinary Brownian motion from far away. Find its exact spreading rate.
+M: Prove the simple random walk on the hat adjacency graph satisfies an invariance principle with isotropic covariance $\sigma^2 I$, and compute $\sigma^2$.
+
+## Shuffle-sorting | 5 | Combinatorics
+W: Using any of the six 3-pile perfect shuffles each time, how many shuffles reach any reachable arrangement in the worst case?
+M: Determine the diameter of the Cayley graph of the 3-pile shuffle group on $3n$ cards, asymptotically in $n$.
+
+## A four-dimensional einstein | 5 | Geometry
+W: Find one 4D shape that fills 4D space but only without repeating.
+M: Find a connected tile $T\subset\mathbb{R}^4$ that tiles $\mathbb{R}^4$ by isometries but admits no periodic tiling.
+
+## Hinged sofa | 5 | Geometry
+W: A sofa made of two rigid halves joined by a hinge. What total area can turn the corner?
+M: Maximize $|A|+|B|$ for planar sets $A,B$ joined at a common point, moving with relative rotation allowed, through the width-1 right-angled corridor.
+
+## Firefighters on the front line | 5 | Combinatorics
+W: Firefighters may only protect cells touching the fire. How many per turn are needed now?
+M: On $\mathbb{Z}^2$ with protected cells required to be 4-adjacent to the burned set, find the least per-turn number containing a single fire.
+
+## Fire on a random tree | 5 | Probability
+W: On a tree where each node has three branches, fire jumps to two random branches per step. Can one firefighter per turn win?
+M: On the 3-ary tree with fire spreading to a uniform random 2 of 3 children each step, compute $\Pr(\text{containment})$ with one protection per turn.
+
+## Sudoku transversals | 5 | Combinatorics
+W: In every completed big Sudoku, find a set of cells with one in each row, each column and each symbol.
+M: Prove every $n^2\times n^2$ Sudoku grid, viewed as a Latin square, has a transversal.
+
+## Effective Riemann constants | 5 | Number theory
+W: Extract explicit, usable prime-counting error bounds from the 2026 Riemann proof.
+M: From the 2026 Lean proof, extract and formally verify $|\pi(x)-\operatorname{li}(x)|\le\frac{1}{8\pi}\sqrt{x}\log x$ for all $x\ge2657$.
+
+## The sofa's boundary is not algebraic | 5 | Geometry
+W: Gerver's sofa is bounded by 18 curve pieces. Show some of them are not polynomial curves.
+M: Prove at least one boundary arc of Gerver's sofa is not contained in any algebraic curve.
+
+## Random Wang tiles | 5 | Probability
+W: Pick n random tile types with colored edges. How likely are they to tile the plane?
+M: For $n$ Wang tiles with edge colours i.i.d. uniform in $[c]$, find the asymptotics of $\Pr(\text{tiles }\mathbb{Z}^2)$ as $n\to\infty$.
+
+## Random polykites | 5 | Probability
+W: Show almost no shapes made of many kites can tile the plane.
+M: Prove the fraction of $k$-kite polykites that tile $\mathbb{R}^2$ decays exponentially in $k$.
+
+## Leaky firefighting | 5 | Probability
+W: Fire spreads to each neighbour only with probability p. Find the largest p at which one firefighter per turn wins.
+M: On $\mathbb{Z}^2$ with each burning–unburnt edge transmitting independently with probability $p$, find $p^*$ such that one protection per turn contains the fire a.s. iff $p<p^*$.
+
+## Hat isoperimetry | 5 | Combinatorics
+W: Among groups of n hat tiles, how short can the boundary be? Find the exact constant.
+M: For the hat adjacency graph, prove $\min_{|A|=n}|\partial A|\sim c\sqrt n$ and compute $c$.
+
+## Undecidable polykite tiling | 5 | Logic
+W: For sets of five shapes made of kites, deciding whether they tile the plane is unsolvable by any algorithm.
+M: Prove that tileability of $\mathbb{R}^2$ by finite sets of at most 5 polykites is undecidable.
+
+## Petersen Ramsey multiplicity | 5 | Combinatorics
+W: In any two-coloring of a huge complete graph, how many single-color copies of the Petersen graph must appear, at least?
+M: Determine the Ramsey multiplicity constant $\lim_n \min_{\text{2-col}} \#\text{mono } P / \#P \text{ in } K_n$ for the Petersen graph $P$.
+
+## Fire whirls | 5 | Physics
+W: Show the equations of buoyant flow allow a rotating column of fire that travels steadily.
+M: Prove existence of a smooth traveling swirling solution of the 3D Boussinesq equations with a localized heat source.
+
+## Spot fires | 5 | Probability
+W: Fires throw embers ahead at random. Find the exact spreading speed.
+M: For a growth model where each burning site ignites a site at i.i.d. heavy-tailed displacement at rate 1, compute the asymptotic speed or growth exponent explicitly.
+
+## Prime Langford pairings | 5 | Combinatorics
+W: Arrange two copies each of 1 to n so the two copies of k sit exactly the k-th prime apart. For which n is this possible?
+M: Determine all $n$ for which $1,1,\dots,n,n$ can be arranged so the two copies of $k$ are $p_k$ positions apart.
+
+## Prime Golomb rulers | 5 | Combinatorics
+W: Find the shortest ruler with marks only at prime positions where all distances between marks are different.
+M: For each $n$, determine the minimal $L$ such that some set of $n$ primes in an interval of length $L$ has all pairwise differences distinct; find its asymptotics.

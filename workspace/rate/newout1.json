@@ -1,0 +1,512 @@
+[
+ {
+  "title": "4p+1 maximal climbs",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Needs long chains with 4p+1 prime or 3\u00b7prime; Dickson-type."
+ },
+ {
+  "title": "Periodic billiards in Gerver's sofa",
+  "r": 1.0,
+  "flag": "computation",
+  "why": "Find a nondegenerate periodic orbit numerically, certify by interval arithmetic."
+ },
+ {
+  "title": "Few periodic points of square-plus-one",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "No tools for periodic points of P(n^2+1) iteration."
+ },
+ {
+  "title": "Isoperimetric profile of the spectre",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Wulff-type construction on hierarchical tiling; constant likely computable."
+ },
+ {
+  "title": "Seven-free Gaussian primes",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Missing-digit Gaussian-integer analogue of Maynard; heavy but plausible."
+ },
+ {
+  "title": "Sofa constant digits",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Irrationality of a transcendental-equation constant; no methods exist."
+ },
+ {
+  "title": "Minimal degree of a Jacobian counterexample",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Bounded range 3..7 but each degree is a hard classification."
+ },
+ {
+  "title": "Irrational prime weights",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Prime-supported series irrationality; denominators grow too fast for standard methods."
+ },
+ {
+  "title": "The angel on the hat",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Adapt M\u00e1th\u00e9/Kloster and Conway arguments to the hat graph."
+ },
+ {
+  "title": "The hat is not spectral",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Fuglede for one non-convex polygon; Fourier zero-set analysis feasible."
+ },
+ {
+  "title": "Prime cubes with one shift",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Prime points on cubic threefold; smooth cubic has no planes, Dickson-type."
+ },
+ {
+  "title": "Sandpile identity on hats",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Sandpile identity scaling limit is open even on Z^2."
+ },
+ {
+  "title": "First appearances in Prime Nim",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Equivalent to G(n)=O(log n); Prime Nim Grundy growth not understood."
+ },
+ {
+  "title": "Square-sum edge-Hamiltonian",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Extension of square-sum Hamiltonicity constructions; min degree grows."
+ },
+ {
+  "title": "Hat Hofstadter at golden flux",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Cantor spectrum on aperiodic graph with flux; far beyond Ten Martini."
+ },
+ {
+  "title": "Hat Ising critical line",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Kramers\u2013Wannier plus sharpness for non-quasi-transitive planar graph."
+ },
+ {
+  "title": "Seven-free primes with prime digit sum",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Maynard missing digits plus local limit theorem for digit sums."
+ },
+ {
+  "title": "Midpoint map as a random walk",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Needs prime correlations across dilated scales (twin-prime-type) for parity."
+ },
+ {
+  "title": "Prime-sum Hamiltonian cycles through every edge",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Prime circle known; edge version via similar block constructions."
+ },
+ {
+  "title": "Smooth neighbours of squares",
+  "r": 1.5,
+  "flag": "easy",
+  "why": "Schinzel/Balog\u2013Wooley polynomial-family smoothness constructions should give it."
+ },
+ {
+  "title": "Potts transition on hats",
+  "r": 5.5,
+  "flag": "ok",
+  "why": "Exact q0 needs integrability absent on hat graph."
+ },
+ {
+  "title": "Bounded gaps among seven-free primes, weak",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Average gap is x^{0.05}; follows from Maynard's count."
+ },
+ {
+  "title": "Prime-power Collatz, almost always",
+  "r": 0.0,
+  "flag": "easy",
+  "why": "3n+1 always has prime power >=4, so c(n)<n for n>1."
+ },
+ {
+  "title": "Gerver sofa and the circle",
+  "r": 5.5,
+  "flag": "ok",
+  "why": "Linear independence of Gerver constant with 1, pi; hopeless now."
+ },
+ {
+  "title": "Square-sum paths with chosen ends",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Hamiltonian-connectedness strengthening of square-sum problem."
+ },
+ {
+  "title": "Largest factor of the midpoint",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Positive proportion over consecutive-prime midpoints; sieve constants likely insufficient."
+ },
+ {
+  "title": "Hat Laplacian eigenvalue is transcendental",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Transcendence of a non-integrable polygon eigenvalue; no methods."
+ },
+ {
+  "title": "An infinite square-sum line",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Infinite square-sum permutations known; linear growth control is constructive."
+ },
+ {
+  "title": "Lonely runners at Fibonacci speeds",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Fibonacci lacunary: Pollington/Peres\u2013Schlag constant bound plus small cases."
+ },
+ {
+  "title": "Prime-power Collatz cycles",
+  "r": 0.0,
+  "flag": "easy",
+  "why": "c(n)<n for all n>1, so no other cycles."
+ },
+ {
+  "title": "Affine prime maps all settle",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Collatz-type statement for every affine prime map."
+ },
+ {
+  "title": "Hyperdissipative forced blow-up",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Extend 2026 forced blow-up construction up to Lions threshold."
+ },
+ {
+  "title": "Gerver sofa algebraic independence of its angles",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Algebraic independence of transcendental angles: Schanuel-level."
+ },
+ {
+  "title": "Polykite growth: one more digit",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Like polyomino constant bounds; 1% gap requires major computation advances."
+ },
+ {
+  "title": "Equilateral triangles of hat centres",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Centres in Eisenstein-lattice cosets; multidimensional Szemer\u00e9di gives it."
+ },
+ {
+  "title": "Hard-core on the hat",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Aperiodic non-bipartite graph; ground states unknown, PS theory fails."
+ },
+ {
+  "title": "Navier\u2013Stokes blow-up count",
+  "r": 0.0,
+  "flag": "false",
+  "why": "Caffarelli\u2013Kohn\u2013Nirenberg: singular set has zero 1-D Hausdorff measure."
+ },
+ {
+  "title": "Midpoint primes: odd-run lengths",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Run length = v2(p-n)-1; geometric(1/2) since most n lie in long gaps."
+ },
+ {
+  "title": "Long loops for affine prime maps",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "CRT designs cycles; needs simultaneous smoothness of linear forms."
+ },
+ {
+  "title": "Odd-cycle-free square sums",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Bipartite analogue of Khalfalah\u2013Lodha\u2013Szemer\u00e9di 11/32 result."
+ },
+ {
+  "title": "Lattice gauge on the hat",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Sharp area/perimeter transition hard even on Z^3."
+ },
+ {
+  "title": "Smooth shifted primes in two bases",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Beyond 1/(2sqrt e)=0.303 needs Baker\u2013Harman; digit-restricted BV unknown."
+ },
+ {
+  "title": "Joint digit sums of primes",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Joint base-2/base-10 digit sums over primes largely open."
+ },
+ {
+  "title": "Prime-sum Hamiltonian count",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "c=2 by Bregman upper bound; lower bound needs robust Hamiltonicity."
+ },
+ {
+  "title": "RH proof, human-readable core",
+  "r": 3.0,
+  "flag": "ill-posed",
+  "why": "Sociological/expository goal, not a mathematical statement."
+ },
+ {
+  "title": "Lonely runners with square speeds",
+  "r": 4.5,
+  "flag": "famous-equiv",
+  "why": "Lonely runner for arbitrary square speeds; no special leverage."
+ },
+ {
+  "title": "Lost in a hat-shaped forest",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Bellman escape lengths known only for very few shapes."
+ },
+ {
+  "title": "Star-shaped sofa",
+  "r": 0.5,
+  "flag": "known",
+  "why": "Gerver's sofa is star-shaped; Baek's theorem settles it."
+ },
+ {
+  "title": "Chromatic number of prime-difference plus square-sum",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Need explicit non-periodic coloring; lower bound by finite search."
+ },
+ {
+  "title": "Hat quasicrystal Ising universality, bond-disordered",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Disordered Ising specific heat unproven even on Z^2."
+ },
+ {
+  "title": "Prime-power Collatz stopping times",
+  "r": 0.5,
+  "flag": "false",
+  "why": "Odd steps divide by ~n^0.6; average time is O(log log x)."
+ },
+ {
+  "title": "Longest increasing run of prime gaps",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Answer likely 0; proving needs near-Cram\u00e9r gap control."
+ },
+ {
+  "title": "Midpoint-prime, almost surely",
+  "r": 0.0,
+  "flag": "easy",
+  "why": "Bertrand: odd n reaches even <p<2n then halves below n."
+ },
+ {
+  "title": "Sidon sets of hat tiles",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Order L clear; constant via Cilleruelo-type counting."
+ },
+ {
+  "title": "Two digit sums, independently",
+  "r": 0.0,
+  "flag": "false",
+  "why": "s10(p)=p mod 3, so b=0 gives only p=3."
+ },
+ {
+  "title": "Rotor walks on the spectre",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "O(log n) rotor fluctuation unproven even on Z^2."
+ },
+ {
+  "title": "Heesch-one polykites are typical",
+  "r": 0.5,
+  "flag": "false",
+  "why": "Pattern theorem: holes typical, holey polykites have Heesch 0."
+ },
+ {
+  "title": "Boundary entropy of hat discs",
+  "r": 1.5,
+  "flag": "ill-posed",
+  "why": "Legal patches grow polynomially; arbitrary patches unclear; answer depends on reading."
+ },
+ {
+  "title": "Graceful forests from caterpillar seeds",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Relaxed graceful labelling with caterpillar slack; nontrivial assembly."
+ },
+ {
+  "title": "Spectre electrical resistance",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Homogenized conductivity of aperiodic tiling; closed form doubtful."
+ },
+ {
+  "title": "Midpoint-prime orbit lengths",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Mean needs prime correlations along orbits; nextprime convention matters."
+ },
+ {
+  "title": "Weyl remainder for the hat drum",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Optimal polygon Weyl remainder is circle-problem-level."
+ },
+ {
+  "title": "Internal DLA on hats",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "IDLA via homogenization; rotational symmetry of hull forces isotropy."
+ },
+ {
+  "title": "Sofa as a billiard table",
+  "r": 2.0,
+  "flag": "computation",
+  "why": "Certify an elliptic periodic orbit with KAM island by interval arithmetic."
+ },
+ {
+  "title": "Seven-free square-sum chains",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Square-sum Hamiltonicity plus digit restriction."
+ },
+ {
+  "title": "Hat centres and bounded displacement",
+  "r": 1.0,
+  "flag": "known",
+  "why": "Solomon/Haynes\u2013Kelly\u2013Weiss criteria for substitution/model sets decide it."
+ },
+ {
+  "title": "Square-sum chains in primes",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Polynomial prime patterns with alternating signs; Tao\u2013Ziegler not directly applicable."
+ },
+ {
+  "title": "Entering the 4p+1 loop",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Distribution of P(p+a) over primes unknown; iterated even harder."
+ },
+ {
+  "title": "The square-sum avoidance game",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Specific game on structured graph; no symmetry strategy evident."
+ },
+ {
+  "title": "Hat tilings of convex regions",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Parallelograms/triangles excluded by aperiodicity; general convex polygons need work."
+ },
+ {
+  "title": "Midpoint-prime map hitting primes",
+  "r": 0.0,
+  "flag": "easy",
+  "why": "Every orbit descends to 2, which is prime."
+ },
+ {
+  "title": "The 7p+4 dozen",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Cycle confirmed numerically; global claim is Collatz-hard."
+ },
+ {
+  "title": "Counting square-sum chains",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Bregman gives upper bound; matching lower bound needs many Hamiltonian paths."
+ },
+ {
+  "title": "The 4p+1 funnel",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Only cycle numerically; proving all orbits enter is Collatz-hard."
+ },
+ {
+  "title": "Snort on square sums",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Partizan game on structured graph; no known theory."
+ },
+ {
+  "title": "Largest factor of consecutive-prime products",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Needs consecutive-prime product distribution modulo moduli beyond x."
+ },
+ {
+  "title": "Prime-power Collatz in every odd base",
+  "r": 0.0,
+  "flag": "false",
+  "why": "a=13: 3->5->6->3 cycle avoids 1."
+ },
+ {
+  "title": "Square-plus-one collisions",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Needs Dickman-type distribution of P(n^2+1), unknown."
+ },
+ {
+  "title": "Prime-sum perfect matchings",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Bregman and van der Waerden; 2^n factor absorbed by o(1)."
+ },
+ {
+  "title": "Rational fibres of the Alp\u00f6ge map",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Fully-split fibres via Galois closure geometry; likely unirational argument."
+ },
+ {
+  "title": "Blow-up near a wall",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "No-slip boundary singularity; whole-space method does not transfer."
+ },
+ {
+  "title": "Prime Nim on two piles with a shared move",
+  "r": 1.0,
+  "flag": "ill-posed",
+  "why": "Infinitely many P-positions (0,b); not a sequence with ratio."
+ },
+ {
+  "title": "Prime Nim parity bias",
+  "r": 0.5,
+  "flag": "false",
+  "why": "Computation: only 5 even P-positions up to 2e5 vs 30966 odd."
+ },
+ {
+  "title": "Prime-sum graph is an expander",
+  "r": 1.5,
+  "flag": "easy",
+  "why": "Hankel matrix of primes; Vinogradov major/minor arcs bound lambda2 ~ lambda1/2."
+ },
+ {
+  "title": "Spectre-tiled squares",
+  "r": 0.2,
+  "flag": "easy",
+  "why": "Side length integer but tile area 3+3sqrt3 irrational."
+ }
+]

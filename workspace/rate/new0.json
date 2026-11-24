@@ -1,0 +1,512 @@
+[
+{
+"title": "Spectre billiards ergodic",
+"area": "Dynamics",
+"words": "Billiards inside a spectre-shaped room with curved walls should be chaotic. Prove the billiard flow is ergodic.",
+"math": "Prove the billiard flow in the spectre (with its circular-arc edges) is ergodic with respect to Liouville measure."
+},
+{
+"title": "Hats in a torus",
+"area": "Geometry",
+"words": "Hats tile the plane only non-periodically, so they cannot tile a flat torus. Find the smallest uncovered fraction for packing hats on a flat torus of area A.",
+"math": "Let $g(A)$ be the least uncovered area over packings of congruent hats in flat tori of area $A$. Prove $g(A)\\to\\infty$ and determine its growth order in $A$."
+},
+{
+"title": "Ramsey for square sums, three colours",
+"area": "Combinatorics",
+"words": "Colour numbers with three colours; must some colour class contain two numbers summing to a square, three times over in a chain?",
+"math": "Prove every 3-colouring of $\\mathbb{N}$ has a monochromatic path of length 2 in $S_\\infty$, i.e. $a,b,c$ of one colour with $a+b,\\,b+c$ squares, $a<b<c$, and find the least $N$ forcing it in $[N]$."
+},
+{
+"title": "Square-sum labelling of caterpillars",
+"area": "Combinatorics",
+"words": "Label the vertices of a tree with 1 to n so that every edge sums to a perfect square. Show every caterpillar of maximum degree 3 can be done, once it is large.",
+"math": "Prove every caterpillar with $n\\ge n_0$ vertices and maximum degree $\\le3$ admits a bijection $V\\to[n]$ with $\\ell(u)+\\ell(v)$ a square for every edge $uv$."
+},
+{
+"title": "Hat tilings avoid squares",
+"area": "Geometry",
+"words": "Show that in any hat tiling, the centres of four tiles never form a perfect square, or find the smallest one.",
+"math": "Decide whether four tile centres in some hat tiling form the vertices of a square; if so, determine the minimal side length over all hat tilings."
+},
+{
+"title": "Many loops for affine prime maps",
+"area": "Dynamics",
+"words": "Show the number of separate loops of p ↦ largest prime factor of ap + 1 grows without bound as a grows.",
+"math": "Let $N(a)$ be the number of periodic orbits of $p\\mapsto P(ap+1)$ on primes. Prove $\\limsup_{a\\to\\infty}N(a)=\\infty$."
+},
+{
+"title": "Hat-tiling site percolation is irrational",
+"area": "Probability",
+"words": "The critical probability for percolation on the hat tiling is about 0.5442. Prove it is irrational.",
+"math": "Prove $p_c^{\\mathrm{site}}$ of the hat-tiling dual graph is irrational."
+},
+{
+"title": "Hot spots on the hat",
+"area": "Analysis",
+"words": "Heat a hat-shaped insulated plate. Decide whether the hottest point eventually sits on the boundary.",
+"math": "Decide whether a second Neumann eigenfunction of the hat polygon attains its maximum only on $\\partial\\Omega$."
+},
+{
+"title": "Thue–Morse meets Rudin–Shapiro on primes",
+"area": "Number theory",
+"words": "Two classic ±1 patterns, Thue–Morse and Rudin–Shapiro, should be independent along the primes. Prove it.",
+"math": "Prove $\\sum_{p\\le x} t(p)\\,r(p)=o(\\pi(x))$, where $t$ is the Thue–Morse and $r$ the Rudin–Shapiro sequence."
+},
+{
+"title": "Undecidable prime-factor maps",
+"area": "Logic",
+"words": "Show no algorithm can decide, given a and b, whether every orbit of n ↦ n/2 (even) or the largest prime factor of an + b (odd) eventually loops.",
+"math": "Prove $\\{(a,b)\\in\\mathbb{N}^2:$ every orbit of $n\\mapsto n/2$ ($n$ even), $P(an+b)$ ($n$ odd) is eventually periodic$\\}$ is not recursive, or prove it is."
+},
+{
+"title": "Hamiltonian cycles in hat patches",
+"area": "Combinatorics",
+"words": "Count closed tours visiting every tile of a large hat-tiled region once. Find the exponential growth rate per tile.",
+"math": "For hat-tiled $L$-balls with $n$ tiles, prove $(\\#\\text{Hamiltonian cycles})^{1/n}\\to\\beta$ and determine $\\beta$ to 3 digits rigorously."
+},
+{
+"title": "Square-sum cover time",
+"area": "Probability",
+"words": "A random walker on the square-sum graph visits every number up to N. How long does it take?",
+"math": "For simple random walk on the giant component of $S_N$, prove the cover time is $(c+o(1))N^{3/2}\\log N$ in expectation and find $c$."
+},
+{
+"title": "Spectre chromatic number of distances",
+"area": "Geometry",
+"words": "Colour points of the plane so no two points at a distance equal to a spectre edge length or diagonal share a colour. Find the colours needed.",
+"math": "Let $D$ be the set of distances between vertices of the spectre polygon. Determine $\\chi(\\mathbb{R}^2;D)$."
+},
+{
+"title": "Pólya's conjecture for the hat",
+"area": "Analysis",
+"words": "Pólya proved his eigenvalue lower bound for shapes that tile by translations. The hat tiles only with rotations and reflections, and only aperiodically. Prove the bound for the hat anyway.",
+"math": "Prove $\\lambda_k(\\Omega)\\ge \\frac{4\\pi k}{|\\Omega|}$ for all Dirichlet eigenvalues of the hat polygon $\\Omega$."
+},
+{
+"title": "Four-term square-sum chains in primes",
+"area": "Number theory",
+"words": "Find infinitely many chains of four primes where each neighbouring pair sums to a square.",
+"math": "Prove infinitely many 4-tuples of primes $p_1,p_2,p_3,p_4$ with $p_i+p_{i+1}$ a square for $i=1,2,3$."
+},
+{
+"title": "Hearing the hat",
+"area": "Analysis",
+"words": "Show no other polygon has exactly the same vibration frequencies as the hat.",
+"math": "Prove the hat polygon is Dirichlet-spectrally determined among all simply connected polygons."
+},
+{
+"title": "Few loops for square-plus-one",
+"area": "Dynamics",
+"words": "The square-plus-one map has a loop: 89 goes to 233 and back. Show there are only finitely many loops.",
+"math": "Prove $Q(n)=P(n^2+1)$ has finitely many periodic orbits (one is $89\\leftrightarrow233$)."
+},
+{
+"title": "The spectre is not spectral",
+"area": "Analysis",
+"words": "Show the spectre, a curved tile that cannot tile by translations, has no orthogonal basis of exponentials, as Fuglede's conjecture predicts.",
+"math": "Prove there is no $\\Lambda\\subset\\mathbb{R}^2$ such that $\\{e^{2\\pi i\\lambda\\cdot x}\\}_{\\lambda\\in\\Lambda}$ is an orthogonal basis of $L^2$ of the spectre domain."
+},
+{
+"title": "Square-sum clique minors",
+"area": "Combinatorics",
+"words": "Find the largest complete graph that can be formed by contracting parts of the square-sum graph.",
+"math": "Determine the order of growth of the Hadwiger number $h(S_N)$."
+},
+{
+"title": "Injective but not surjective, real",
+"area": "Algebra",
+"words": "Find a polynomial map of 3D real space with determinant 1 everywhere that is one-to-one but misses some points.",
+"math": "Find $F\\in\\mathbb{R}[x,y,z]^3$ with $\\det DF\\equiv1$, $F$ injective on $\\mathbb{R}^3$ but not surjective, or prove none exists."
+},
+{
+"title": "Keller maps over the reals, surjectivity",
+"area": "Algebra",
+"words": "Show some real 3D Keller counterexample is surjective as a map of real space.",
+"math": "Find a polynomial map $F:\\mathbb{R}^3\\to\\mathbb{R}^3$ with $\\det DF\\equiv1$ that is surjective but not injective, or prove none exists."
+},
+{
+"title": "Turán density of the triangle-of-triangles",
+"area": "Combinatorics",
+"words": "Find how many triples a 3-uniform hypergraph can have without containing a specific six-vertex configuration.",
+"math": "Determine $\\pi(F)$ for the 3-graph $F$ on $[6]$ with edges $\\{123,345,561,246\\}$."
+},
+{
+"title": "Square-sum Ramsey of paths",
+"area": "Combinatorics",
+"words": "Two-colour the numbers 1 to N. Show some colour contains a chain of length L where neighbours sum to squares, with L growing like a power of N.",
+"math": "Prove every 2-colouring of $[N]$ has a monochromatic path in $S_N$ of length $\\ge N^{c}$ for some $c>0$, and find the optimal $c$."
+},
+{
+"title": "Linnik for seven-free primes",
+"area": "Number theory",
+"words": "Show the smallest seven-free prime in an arithmetic progression is at most a fixed power of the modulus.",
+"math": "Prove there is $C$ such that for every $q$ and $(a,q)=1$ (with $10\\nmid q$-compatibility conditions) there is a 7-free prime $p\\equiv a\\ (q)$, $p\\le q^C$."
+},
+{
+"title": "Gerver's constant is not a period",
+"area": "Number theory",
+"words": "Show the area of Gerver's sofa cannot be written as an integral of an algebraic function over an algebraic region.",
+"math": "Prove $\\mu_G\\approx2.2195$ is not a Kontsevich–Zagier period."
+},
+{
+"title": "Max-cut of the square-sum graph",
+"area": "Combinatorics",
+"words": "Split the numbers up to N into two groups to cut as many square-sum pairs as possible. Find how far above one half you can get.",
+"math": "Prove $\\mathrm{MaxCut}(S_N)=\\big(\\tfrac12+(c+o(1))N^{-1/4}\\big)e(S_N)$ and determine $c$."
+},
+{
+"title": "Tangent-sweep universality",
+"area": "Algebra",
+"words": "Every known Jacobian-conjecture counterexample in 3D comes from sweeping tangent lines of a curve. Prove all of them do, up to coordinate changes.",
+"math": "Prove every non-invertible Keller map $\\mathbb{C}^3\\to\\mathbb{C}^3$ is, up to composition with polynomial automorphisms on both sides, of tangent-sweep type."
+},
+{
+"title": "Discrete sofa",
+"area": "Geometry",
+"words": "Slide and rotate a polyomino by unit steps and quarter turns around the corner of a corridor k cells wide. Find the largest area possible, asymptotically.",
+"math": "Let $D(k)$ be the maximal number of cells of a polyomino that can pass the width-$k$ L-shaped corridor of $\\mathbb{Z}^2$ by unit translations and $90^\\circ$ rotations about lattice points (staying inside at all times). Prove $D(k)\\sim ck^2$ and find $c$."
+},
+{
+"title": "Greedy independent sets in square sums",
+"area": "Combinatorics",
+"words": "Pick random numbers up to N one by one, skipping any that sum to a square with something already picked. How many do you end with?",
+"math": "Determine the asymptotic size of the random greedy independent set in $S_N$, in probability."
+},
+{
+"title": "Prime-power Collatz",
+"area": "Dynamics",
+"words": "Halve even numbers; for odd n, divide 3n + 1 by its largest prime-power factor. Show every orbit reaches 1.",
+"math": "Let $c(n)=n/2$ ($n$ even), $c(n)=(3n+1)/q(n)$ ($n$ odd), $q(m)$ the largest prime power dividing $m$. Prove every orbit reaches $1$."
+},
+{
+"title": "Lean proof of RH, halved",
+"area": "Formal proof",
+"words": "The 2026 Lean proof of the Riemann hypothesis is 17 million lines. Produce one under 8 million lines on top of the same Mathlib.",
+"math": "Give a Lean 4 proof of Mathlib's `RiemannHypothesis` using at most $8\\times10^6$ lines beyond Mathlib."
+},
+{
+"title": "Prime Nim values stay small",
+"area": "Games",
+"words": "Prime Nim's Grundy values grow incredibly slowly. Show they are at most a constant times log n.",
+"math": "For the subtraction game with prime moves, prove $G(n)=O(\\log n)$."
+},
+{
+"title": "Prime points on a quartic threefold",
+"area": "Number theory",
+"words": "Count prime solutions of x⁴ + y⁴ + z⁴ = w⁴ + 2 up to size X, and find the asymptotic.",
+"math": "Find the asymptotic number of prime 4-tuples $\\le X$ with $x^4+y^4+z^4=w^4+2$, or prove there are finitely many."
+},
+{
+"title": "Hat dominoes freeze",
+"area": "Probability",
+"words": "Random domino-style pairings of hat tiles inside a large region with a fixed boundary develop a frozen outer zone. Find the shape of the boundary between frozen and random regions.",
+"math": "For uniform perfect matchings of the hat graph on regions $L\\cdot\\Omega$, prove an arctic curve exists and identify it for $\\Omega$ a regular hexagon."
+},
+{
+"title": "Seven-free primes as an additive basis",
+"area": "Number theory",
+"words": "Show every large number is a sum of a bounded number of seven-free primes.",
+"math": "Prove there is $k$ such that every sufficiently large integer of suitable parity is a sum of at most $k$ primes with no decimal digit 7, and give an explicit $k$."
+},
+{
+"title": "Spectre self-avoiding walks",
+"area": "Probability",
+"words": "Find the exponential growth rate of non-self-intersecting walks on the spectre tiling, and show it is the same for every spectre tiling.",
+"math": "Prove the connective constant $\\mu$ of the spectre adjacency graph exists, is the same for all spectre tilings, and is not algebraic of degree $\\le2$."
+},
+{
+"title": "Keller maps with bounded fibres",
+"area": "Algebra",
+"words": "Find the smallest possible maximum fibre size for a 3D Keller counterexample over the complex numbers.",
+"math": "Determine $\\min\\{\\max_{y}|F^{-1}(y)|: F:\\mathbb{C}^3\\to\\mathbb{C}^3\\text{ non-invertible Keller}\\}$."
+},
+{
+"title": "Affine prime maps, quantitative",
+"area": "Dynamics",
+"words": "Show that for the map p ↦ largest prime factor of 3p + 4, almost every prime reaches its loop within about log log p steps.",
+"math": "For $p\\mapsto P(3p+4)$, prove that for all but $o(\\pi(x))$ primes $p\\le x$ the orbit of $p$ enters its (unique observed) 7-cycle within $C\\log\\log p$ steps."
+},
+{
+"title": "Lonely runner gap for the first n primes",
+"area": "Number theory",
+"words": "For the first n primes as speeds, find the actual loneliness gap asymptotically.",
+"math": "Determine the asymptotics of $\\delta_n=\\sup_t\\min_{i\\le n}\\|tp_i\\|$ as $n\\to\\infty$."
+},
+{
+"title": "Long progressions of seven-free primes",
+"area": "Number theory",
+"words": "Show the seven-free primes contain arbitrarily long arithmetic progressions.",
+"math": "Prove for every $k$ there are $k$-term arithmetic progressions consisting of primes with no decimal digit 7."
+},
+{
+"title": "Primitive seven-free sets",
+"area": "Number theory",
+"words": "Among sets of seven-free numbers in which no member divides another, show the seven-free primes maximise the sum of 1/(n log n).",
+"math": "Prove $\\sum_{a\\in A}\\frac{1}{a\\log a}\\le\\sum_{p\\ \\text{7-free prime}}\\frac1{p\\log p}$ for every primitive set $A$ of 7-free integers $>1$."
+},
+{
+"title": "Maker–Breaker square-sum triangles",
+"area": "Games",
+"words": "Maker and Breaker alternately claim numbers. Maker wins by owning three numbers whose pairwise sums are all squares. Decide who wins on 1 to N for large N.",
+"math": "Determine the winner of the Maker–Breaker game on $[N]$ whose winning sets are the triangles of $S_N$, for all sufficiently large $N$."
+},
+{
+"title": "Keller monodromy is everything",
+"area": "Algebra",
+"words": "Show every symmetric group appears as the hidden symmetry group of the fibres of some 3D Jacobian-conjecture counterexample.",
+"math": "Prove that for each $n\\ge3$ there is a non-invertible Keller map $\\mathbb{C}^3\\to\\mathbb{C}^3$ of geometric degree $n$ whose generic monodromy group is $S_n$."
+},
+{
+"title": "Hat tiling heat kernel constant",
+"area": "Probability",
+"words": "For a random walk on a hat tiling, find the exact constant in the return probability.",
+"math": "Prove $p_{2n}(o,o)\\sim\\frac{c(o)}{n}$ on the hat graph and show $\\frac1{|B_R|}\\sum_{o\\in B_R}c(o)\\to c$ with $c=\\frac{\\bar d}{2\\pi\\sqrt{\\det\\Sigma}}$, computing $\\Sigma$ in closed form."
+},
+{
+"title": "Cube-sum giant component",
+"area": "Combinatorics",
+"words": "Join numbers summing to a cube. Show one piece eventually contains almost everything.",
+"math": "Prove the largest connected component of $C_N$ has $N-o(N)$ vertices."
+},
+{
+"title": "Kissing numbers of polykite families",
+"area": "Geometry",
+"words": "Show the hat's family of shapes has a kissing number that jumps at exactly one parameter value.",
+"math": "For Tile$(a,b)$, $a,b>0$, let $k(a,b)$ be the kissing number (congruent copies, reflections allowed). Prove $k$ is piecewise constant with finitely many jumps and find them."
+},
+{
+"title": "Square-sum connectivity",
+"area": "Combinatorics",
+"words": "Show the square-sum graph cannot be split by removing fewer vertices than its smallest degree.",
+"math": "Prove $\\kappa(S_N)=\\delta(S_N)$ for all large $N$."
+},
+{
+"title": "Seven-free Chen primes in progressions",
+"area": "Number theory",
+"words": "Show infinitely many seven-free primes p in every allowable residue class have p + 2 with at most three prime factors.",
+"math": "For each $q$ and admissible $a$, prove infinitely many 7-free primes $p\\equiv a\\ (q)$ with $\\Omega(p+2)\\le3$."
+},
+{
+"title": "Arithmetic progressions in hat centres",
+"area": "Combinatorics",
+"words": "Show any positive fraction of hat tiles contains three tiles whose centres are equally spaced on a line.",
+"math": "Prove every $A\\subseteq$ (hat tile centres) of positive upper density contains $a,a+d,a+2d$, $d\\ne0$."
+},
+{
+"title": "Monochromatic square-sum triangles, many colours",
+"area": "Combinatorics",
+"words": "Colour the positive integers with any finite number of colours. Show there are always three numbers of one colour whose pairwise sums are all squares.",
+"math": "Prove that for every $r$ and every $r$-colouring of $\\mathbb{N}$ there are distinct $a,b,c$ of one colour with $a+b,a+c,b+c$ all perfect squares."
+},
+{
+"title": "Seven-free squares",
+"area": "Number theory",
+"words": "Count the numbers up to x whose square has no digit 7. Show the count matches the random-digit prediction.",
+"math": "Prove $\\#\\{n\\le x: 7\\notin n^2\\}=x^{1+2\\log_{10}(9/10)+o(1)}$."
+},
+{
+"title": "Strict convexity of hat first-passage",
+"area": "Probability",
+"words": "Give each hat-tile edge an independent random length. Prove the limiting ball of first-passage distances is strictly convex.",
+"math": "For i.i.d. continuous edge weights with finite exponential moment on the hat adjacency graph, prove the first-passage limit shape exists and is strictly convex."
+},
+{
+"title": "Prime-indexed seven-free primes",
+"area": "Number theory",
+"words": "List the primes in order. Show infinitely many seven-free primes sit at a prime position in that list.",
+"math": "Prove infinitely many primes $p_q$ with $q$ prime and $p_q$ free of the decimal digit 7."
+},
+{
+"title": "Turán density with a twist",
+"area": "Combinatorics",
+"words": "Same question for a seven-vertex configuration of five triples arranged around a central triple.",
+"math": "Determine $\\pi(F)$ for $F=\\{123,145,256,347,567\\}$."
+},
+{
+"title": "Partition numbers contain a 7",
+"area": "Number theory",
+"words": "Show that from some point on, every partition number has a 7 among its digits.",
+"math": "Prove there is $N$ such that the decimal expansion of $p(n)$ contains the digit 7 for all $n\\ge N$."
+},
+{
+"title": "Prime Nim game graph",
+"area": "Games",
+"words": "Prime Nim has losing positions with a hidden mod-structure. Show the losing positions are equidistributed in residue classes mod 3.",
+"math": "Prove $\\#\\{n\\le x:G(n)=0,\\ n\\equiv a\\ (3)\\}\\sim\\frac13\\#\\{n\\le x:G(n)=0\\}$ for each $a$."
+},
+{
+"title": "Seven-free Beatty primes",
+"area": "Number theory",
+"words": "Show infinitely many primes of the form ⌊n√2⌋ contain no digit 7.",
+"math": "Prove infinitely many primes $p=\\lfloor n\\sqrt2\\rfloor$ with no decimal digit 7."
+},
+{
+"title": "Square-plus-one orbits rarely loop",
+"area": "Dynamics",
+"words": "Show almost every starting number's square-plus-one sequence never repeats.",
+"math": "Prove the set of $n$ whose orbit under $Q(n)=P(n^2+1)$ is eventually periodic has natural density 0."
+},
+{
+"title": "Midpoint-prime Collatz",
+"area": "Dynamics",
+"words": "Halve even numbers; replace an odd number by the average of itself and the next prime. Prove every start reaches 1.",
+"math": "Let $m(n)=n/2$ for even $n$ and $m(n)=\\tfrac12(n+p^+(n))$ for odd $n$, with $p^+(n)$ the least prime $>n$. Prove every orbit reaches $1$."
+},
+{
+"title": "The 4p+1 funnel, almost always",
+"area": "Dynamics",
+"words": "Show almost every prime falls into the eight-prime loop of the 4p + 1 map.",
+"math": "Prove the set of primes whose $p\\mapsto P(4p+1)$ orbit enters the 8-cycle has relative density 1 among primes."
+},
+{
+"title": "Square-plus-one ladder",
+"area": "Dynamics",
+"words": "Start at 2. Repeatedly square, add one, and keep only the largest prime factor: 2, 5, 13, 17, 29, 421, … Show this sequence never settles down.",
+"math": "Let $Q(n)=P(n^2+1)$, $P$ = largest prime factor. Prove the orbit $(Q^k(2))_{k\\ge0}$ is unbounded."
+},
+{
+"title": "Prime-sum Latin rectangle",
+"area": "Combinatorics",
+"words": "Build a k × N table using each number 1 to N once per row, so adjacent entries in a row and in a column always sum to primes. Find the largest k possible for large N.",
+"math": "Determine $\\limsup_{N}k(N)$ where $k(N)$ is the largest $k$ admitting a $k\\times N$ array whose rows are permutations of $[N]$ with all horizontally and vertically adjacent sums prime."
+},
+{
+"title": "Seven-free values of n²+1",
+"area": "Number theory",
+"words": "Show infinitely many n make n² + 1 a prime with no digit 7, or at least a product of two such primes.",
+"math": "Prove infinitely many $n$ with $n^2+1=q_1q_2$, $q_i$ primes free of the digit 7."
+},
+{
+"title": "Seven-free Carmichael quotients",
+"area": "Number theory",
+"words": "Show infinitely many Carmichael numbers n have n − 1 seven-free.",
+"math": "Prove infinitely many Carmichael numbers $n$ such that $n-1$ has no decimal digit 7."
+},
+{
+"title": "Waring with seven-free cubes",
+"area": "Number theory",
+"words": "Find the fewest cubes of seven-free numbers needed to write every large number, and prove it.",
+"math": "Determine the least $s$ such that every sufficiently large integer is a sum of $s$ cubes of positive 7-free integers."
+},
+{
+"title": "Square Nim from both ends",
+"area": "Games",
+"words": "Two piles; a move removes a square from one pile or the same square from both. Find the losing positions' asymptotic density.",
+"math": "For moves $(a,b)\\to(a-k^2,b),(a,b-k^2),(a-k^2,b-k^2)$, prove $\\#\\{(a,b)\\in[N]^2:\\mathcal P\\}=N^{1+\\theta+o(1)}$ and find $\\theta$."
+},
+{
+"title": "Antiferromagnetic hats",
+"area": "Physics",
+"words": "Colour hat tiles up or down to minimise same-colour neighbours. The hat graph has odd cycles, so some frustration is unavoidable. Compute the ground-state entropy exactly.",
+"math": "For the antiferromagnetic Ising model on the hat graph, prove the zero-temperature entropy per tile exists, is positive, and compute it in closed form."
+},
+{
+"title": "Prime-sum labelling of balanced trees",
+"area": "Combinatorics",
+"words": "Label a tree with 1 to n so every edge sums to a prime. Parity forces the two sides of the tree to be balanced. Show balance is enough, for large n.",
+"math": "Prove every tree on $n\\ge n_0$ vertices whose bipartition classes have sizes $\\lceil n/2\\rceil,\\lfloor n/2\\rfloor$ admits a bijection $V\\to[n]$ with all edge sums prime."
+},
+{
+"title": "Unit distances in three dimensions after 2026",
+"area": "Geometry",
+"words": "The 2026 number-field idea beat Erdős in the plane. Adapt it to unit distances among points on a sphere in 3D.",
+"math": "Prove there are $n$-point sets on the unit sphere $S^2$ with $\\ge n^{1+c}$ pairs at distance $1$, for some $c>0$ and infinitely many $n$."
+},
+{
+"title": "Three loops for 2p+3",
+"area": "Dynamics",
+"words": "Under p ↦ largest prime factor of 2p + 3, every tested prime ends in one of three loops. Prove there are no others.",
+"math": "Prove every orbit of $p\\mapsto P(2p+3)$ on primes enters one of the cycles $\\{3\\}$, $\\{5,13,29,61\\}$, $\\{43,89,181,73,149\\}$."
+},
+{
+"title": "Irrationality of the hat percolation threshold, bond",
+"area": "Probability",
+"words": "The bond-percolation threshold on the hat tiling's edges is about 0.7982. Prove it is irrational.",
+"math": "Prove $p_c^{\\mathrm{bond}}$ for the hat tiling's edge graph is irrational."
+},
+{
+"title": "Increasing largest prime factors",
+"area": "Number theory",
+"words": "Among P(1), …, P(N), the largest prime factors of 1 to N, find the longest strictly increasing subsequence. Show it grows like a power of N.",
+"math": "Let $L(N)$ be the longest strictly increasing subsequence of $(P(n))_{n\\le N}$. Prove $L(N)=N^{\\theta+o(1)}$ and find $\\theta$."
+},
+{
+"title": "Forced MHD blow-up with no field",
+"area": "Analysis",
+"words": "Show viscous, resistive magnetic fluid can blow up from rest, with no magnetic field at the start, under a smooth push on the velocity alone.",
+"math": "For 3D incompressible viscous resistive MHD with $u_0=0$, $b_0=0$ and smooth compactly supported forcing in the momentum equation only, construct finite-time blow-up of $\\|b\\|_{L^\\infty}$."
+},
+{
+"title": "Bootstrap percolation on hats",
+"area": "Probability",
+"words": "Infect each hat tile at random with small probability p; a tile catches the infection once two neighbours have it. Find the exact scale at which a large region gets fully infected.",
+"math": "For 2-neighbour bootstrap percolation on hat-tiled $L$-balls, prove $p_c(L)\\sim \\lambda_{\\mathrm{hat}}/\\log L$ and determine $\\lambda_{\\mathrm{hat}}$."
+},
+{
+"title": "Square-plus-one merging",
+"area": "Dynamics",
+"words": "Many square-plus-one sequences run into the one starting at 2. Decide whether every sequence eventually does, apart from those caught in loops.",
+"math": "Decide whether every $n\\ge2$ whose $Q$-orbit is not eventually periodic satisfies $Q^a(n)=Q^b(2)$ for some $a,b$."
+},
+{
+"title": "Shuffle orders hit every residue",
+"area": "Algebra",
+"words": "The order of the three-pile shuffle on 3n cards takes every value modulo 4 infinitely often. Prove it.",
+"math": "With $\\sigma_n$ the 3-pile out-shuffle, $\\operatorname{ord}(\\sigma_n)=\\operatorname{ord}_{3n-1}(3)$; prove each residue class mod 4 is hit for infinitely many $n$."
+},
+{
+"title": "Hat-tiling Sudoku impossibility",
+"area": "Combinatorics",
+"words": "Try to label every hat tile with one of seven symbols so that each tile and its neighbours never repeat a symbol. Decide whether some hat tiling allows it.",
+"math": "Decide whether some hat tiling's adjacency graph admits a 7-colouring in which every closed neighbourhood is rainbow (a perfect $L(1,1)$-type colouring)."
+},
+{
+"title": "Spectre quantum walk spreading",
+"area": "Physics",
+"words": "A quantum particle hopping on the spectre tiling should spread at a rate strictly between localization and free motion. Compute the exponent.",
+"math": "For $H$ the adjacency operator of a spectre tiling and $\\psi_0=\\delta_o$, prove $\\langle|X|^2\\rangle_T\\asymp T^{2\\beta}$ and determine $\\beta$."
+},
+{
+"title": "Pólya's conjecture for the spectre",
+"area": "Analysis",
+"words": "Prove Pólya's Neumann eigenvalue upper bound for the spectre, a curved shape that tiles only aperiodically.",
+"math": "Prove $\\mu_{k+1}(\\Omega)\\le\\frac{4\\pi k}{|\\Omega|}$ for all Neumann eigenvalues of the spectre domain $\\Omega$."
+},
+{
+"title": "Squares of seven-free primes",
+"area": "Number theory",
+"words": "Show infinitely many primes have no digit 7 in themselves or in their squares.",
+"math": "Prove infinitely many primes $p$ with neither $p$ nor $p^2$ containing the decimal digit 7."
+},
+{
+"title": "Gerver sofa contact points",
+"area": "Geometry",
+"words": "Prove Gerver's sofa touches the corridor walls in exactly the pattern Gerver described at every moment of its optimal motion, and that the motion is unique.",
+"math": "Prove the optimal motion of Gerver's sofa through the unit corridor is unique up to time reparametrization."
+},
+{
+"title": "Digit-restricted Chowla",
+"area": "Number theory",
+"words": "Show μ(n)μ(n+1) has no bias on numbers n where neither n nor n+1 contains the digit 7.",
+"math": "Prove $\\sum_{n\\le x,\\ 7\\notin n,\\ 7\\notin n+1}\\mu(n)\\mu(n+1)=o(x^{\\log9/\\log10})$."
+},
+{
+"title": "Tile(1,1) frieze",
+"area": "Geometry",
+"words": "Decide whether Tile(1,1) can tile an infinite strip.",
+"math": "Decide whether Tile(1,1) tiles some strip $\\mathbb{R}\\times[0,w]$ using orientation-preserving isometries."
+},
+{
+"title": "Odd runs of the midpoint map",
+"area": "Dynamics",
+"words": "How long can the midpoint-prime map stay on odd numbers? Show the runs can be arbitrarily long.",
+"math": "Prove that for every $L$ there is an odd $n$ with $m^j(n)$ odd for $0\\le j\\le L$."
+},
+{
+"title": "Primes with balanced binary digits",
+"area": "Number theory",
+"words": "Show infinitely many primes have exactly as many 1s as 0s in binary.",
+"math": "Prove infinitely many primes $p$ whose binary expansion (of even length) has equally many 0s and 1s."
+}
+]

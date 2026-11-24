@@ -1,0 +1,512 @@
+[
+ {
+  "title": "Spectre billiards ergodic",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Ergodicity of non-rational/mixed-curvature billiards: no general technique."
+ },
+ {
+  "title": "Hats in a torus",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Needs quantitative aperiodicity of hat; growth order delicate."
+ },
+ {
+  "title": "Ramsey for square sums, three colours",
+  "r": 1.5,
+  "flag": "easy",
+  "why": "Finite-colouring square-sum Ramsey known; length-2 path plus finite search."
+ },
+ {
+  "title": "Square-sum labelling of caterpillars",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Graceful-type labelling; plausible constructive but nontrivial."
+ },
+ {
+  "title": "Hat tilings avoid squares",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Centres lie in Q(sqrt-3); i not in field, so no squares."
+ },
+ {
+  "title": "Many loops for affine prime maps",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Heuristic-only dynamics of largest prime factor; unclear tools."
+ },
+ {
+  "title": "Hat-tiling site percolation is irrational",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Irrationality of percolation thresholds unknown even for simple lattices."
+ },
+ {
+  "title": "Hot spots on the hat",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Single polygon; likely computer-assisted validated numerics."
+ },
+ {
+  "title": "Thue\u2013Morse meets Rudin\u2013Shapiro on primes",
+  "r": 0.5,
+  "flag": "known",
+  "why": "t*r is 2-automatic; Mullner's PNT for automatic sequences applies."
+ },
+ {
+  "title": "Undecidable prime-factor maps",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Collatz-type undecidability for explicit family; very hard either way."
+ },
+ {
+  "title": "Hamiltonian cycles in hat patches",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Aperiodic transfer-matrix entropy; rigorous digits hard."
+ },
+ {
+  "title": "Square-sum cover time",
+  "r": 1.0,
+  "flag": "false",
+  "why": "S_N likely expander-ish; cover time should be ~N log N."
+ },
+ {
+  "title": "Spectre chromatic number of distances",
+  "r": 6.5,
+  "flag": "famous-equiv",
+  "why": "Hadwiger-Nelson-type exact chromatic number; hopeless to pin down."
+ },
+ {
+  "title": "P\u00f3lya's conjecture for the hat",
+  "r": 0.3,
+  "flag": "known",
+  "why": "Polya's argument works for any domain tiling the plane by congruent copies."
+ },
+ {
+  "title": "Four-term square-sum chains in primes",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Prime polynomial system with many variables; circle method plausible."
+ },
+ {
+  "title": "Hearing the hat",
+  "r": 5.5,
+  "flag": "ok",
+  "why": "Spectral rigidity of specific nonconvex polygon; few tools."
+ },
+ {
+  "title": "Few loops for square-plus-one",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Finitely many cycles for P(n^2+1) iteration; no method."
+ },
+ {
+  "title": "The spectre is not spectral",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Specific polygon non-spectral; Fourier zero-set arguments plausible."
+ },
+ {
+  "title": "Square-sum clique minors",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Hadwiger number growth of arithmetic graph; moderate."
+ },
+ {
+  "title": "Injective but not surjective, real",
+  "r": 0.1,
+  "flag": "known",
+  "why": "Injective real polynomial maps are surjective (Bialynicki-Birula-Rosenlicht)."
+ },
+ {
+  "title": "Keller maps over the reals, surjectivity",
+  "r": 2.0,
+  "flag": "computation",
+  "why": "Likely check real points of known Keller counterexamples."
+ },
+ {
+  "title": "Tur\u00e1n density of the triangle-of-triangles",
+  "r": 0.1,
+  "flag": "easy",
+  "why": "F is 3-partite (1,4|3,6|5,2), so pi(F)=0 by Erdos."
+ },
+ {
+  "title": "Square-sum Ramsey of paths",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Existence moderate; optimal exponent hard."
+ },
+ {
+  "title": "Linnik for seven-free primes",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Maynard methods plus Linnik; compatibility conditions vaguely stated."
+ },
+ {
+  "title": "Gerver's constant is not a period",
+  "r": 8.5,
+  "flag": "ok",
+  "why": "No explicit natural constant known to be a non-period."
+ },
+ {
+  "title": "Max-cut of the square-sum graph",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Second-order max-cut term; exponent unverified, plausible."
+ },
+ {
+  "title": "Tangent-sweep universality",
+  "r": 7.5,
+  "flag": "ill-posed",
+  "why": "Classification of all Keller maps; 'tangent-sweep type' undefined generally."
+ },
+ {
+  "title": "Discrete sofa",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Discrete sofa constant; plausibly as hard as continuous variant."
+ },
+ {
+  "title": "Greedy independent sets in square sums",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Random greedy on structured arithmetic graph; no differential-eq handle."
+ },
+ {
+  "title": "Prime-power Collatz",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Collatz-type global convergence; no counterexample to 2e5."
+ },
+ {
+  "title": "Lean proof of RH, halved",
+  "r": 1.0,
+  "flag": "easy",
+  "why": "Engineering/golfing an existing formal proof."
+ },
+ {
+  "title": "Prime Nim values stay small",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Upper bounds for subtraction-game Grundy growth essentially unknown."
+ },
+ {
+  "title": "Prime points on a quartic threefold",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Prime points on diagonal quartic threefold; far beyond circle method."
+ },
+ {
+  "title": "Hat dominoes freeze",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Arctic curves for aperiodic dimers; no Kasteleyn-periodic theory."
+ },
+ {
+  "title": "Seven-free primes as an additive basis",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Maynard minor-arc bounds plus circle method likely suffice."
+ },
+ {
+  "title": "Spectre self-avoiding walks",
+  "r": 8.0,
+  "flag": "ok",
+  "why": "Non-quadratic connective constant hopeless; existence fine."
+ },
+ {
+  "title": "Keller maps with bounded fibres",
+  "r": 0.2,
+  "flag": "known",
+  "why": "Etale fibres <= geometric degree; degree 2 Keller maps invertible; answer 3."
+ },
+ {
+  "title": "Affine prime maps, quantitative",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Almost-all convergence of P(3p+4) orbits; no tools."
+ },
+ {
+  "title": "Lonely runner gap for the first n primes",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Lonely-runner-type gap for primes; asymptotics delicate."
+ },
+ {
+  "title": "Long progressions of seven-free primes",
+  "r": 4.5,
+  "flag": "ok",
+  "why": "Green-Tao needs positive relative density; 7-free primes density zero."
+ },
+ {
+  "title": "Primitive seven-free sets",
+  "r": 0.0,
+  "flag": "false",
+  "why": "A = 7-free primes plus 49 is primitive and exceeds RHS."
+ },
+ {
+  "title": "Maker\u2013Breaker square-sum triangles",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Dense triangle hypergraph; Maker likely wins by standard strategies."
+ },
+ {
+  "title": "Keller monodromy is everything",
+  "r": 2.5,
+  "flag": "ok",
+  "why": "Monodromy of explicit families; likely computable."
+ },
+ {
+  "title": "Hat tiling heat kernel constant",
+  "r": 5.5,
+  "flag": "ok",
+  "why": "Closed-form effective diffusivity for aperiodic graph unlikely."
+ },
+ {
+  "title": "Cube-sum giant component",
+  "r": 1.5,
+  "flag": "easy",
+  "why": "Two-step moves a -> a+3k^2+3k+1 connect almost everything."
+ },
+ {
+  "title": "Kissing numbers of polykite families",
+  "r": 3.0,
+  "flag": "computation",
+  "why": "Parametric finite configuration analysis."
+ },
+ {
+  "title": "Square-sum connectivity",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Plausible via expansion; moderate."
+ },
+ {
+  "title": "Seven-free Chen primes in progressions",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Chen-type sieve with Maynard level of distribution; plausible."
+ },
+ {
+  "title": "Arithmetic progressions in hat centres",
+  "r": 0.5,
+  "flag": "known",
+  "why": "Centres in finitely many lattice cosets; Roth/Szemeredi in Z^2."
+ },
+ {
+  "title": "Monochromatic square-sum triangles, many colours",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Monochromatic square-sum triangles, open Erdos-type partition regularity."
+ },
+ {
+  "title": "Seven-free squares",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Squares missing a digit in base 10 beyond Maynard's large-base results."
+ },
+ {
+  "title": "Strict convexity of hat first-passage",
+  "r": 8.0,
+  "flag": "famous-equiv",
+  "why": "Strict convexity of FPP limit shape open even on Z^2."
+ },
+ {
+  "title": "Prime-indexed seven-free primes",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Combining prime indices with digit restrictions; no method."
+ },
+ {
+  "title": "Tur\u00e1n density with a twist",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Not 3-partite; nondegenerate Turan density, maybe flag algebras."
+ },
+ {
+  "title": "Partition numbers contain a 7",
+  "r": 7.0,
+  "flag": "famous-equiv",
+  "why": "Like 2^n containing a digit; digit questions for p(n) hopeless."
+ },
+ {
+  "title": "Prime Nim game graph",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Equidistribution of P-positions in subtraction game; open-type."
+ },
+ {
+  "title": "Seven-free Beatty primes",
+  "r": 3.5,
+  "flag": "ok",
+  "why": "Beatty primes plus Maynard; plausible combination."
+ },
+ {
+  "title": "Square-plus-one orbits rarely loop",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Density of eventually periodic Q-orbits; no tools."
+ },
+ {
+  "title": "Midpoint-prime Collatz",
+  "r": 0.1,
+  "flag": "easy",
+  "why": "Odd n climbs toward next prime then halves; value < n by Bertrand."
+ },
+ {
+  "title": "The 4p+1 funnel, almost always",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Almost-all convergence of prime-factor map; heuristic only."
+ },
+ {
+  "title": "Square-plus-one ladder",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Unboundedness of one explicit orbit; Collatz-like."
+ },
+ {
+  "title": "Prime-sum Latin rectangle",
+  "r": 0.5,
+  "flag": "ill-posed",
+  "why": "Alternating two rows gives unbounded k unless columns distinct."
+ },
+ {
+  "title": "Seven-free values of n\u00b2+1",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Iwaniec P2 plus digit restrictions on both factors."
+ },
+ {
+  "title": "Seven-free Carmichael quotients",
+  "r": 5.0,
+  "flag": "ok",
+  "why": "Carmichael constructions with digit constraint on n-1."
+ },
+ {
+  "title": "Waring with seven-free cubes",
+  "r": 7.5,
+  "flag": "famous-equiv",
+  "why": "Exact Waring-type s, like G(3), hopeless."
+ },
+ {
+  "title": "Square Nim from both ends",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Even 1D square-subtraction P-position counts unknown."
+ },
+ {
+  "title": "Antiferromagnetic hats",
+  "r": 6.5,
+  "flag": "ok",
+  "why": "Frustrated aperiodic ground-state entropy in closed form."
+ },
+ {
+  "title": "Prime-sum labelling of balanced trees",
+  "r": 4.0,
+  "flag": "ok",
+  "why": "Tree sum-prime labelling; resembles open labelling conjectures."
+ },
+ {
+  "title": "Unit distances in three dimensions after 2026",
+  "r": 3.0,
+  "flag": "ok",
+  "why": "Spherical unit distances; algebraic constructions plausibly adapt."
+ },
+ {
+  "title": "Three loops for 2p+3",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Collatz-type; no other cycles to 3e4."
+ },
+ {
+  "title": "Irrationality of the hat percolation threshold, bond",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Irrationality of percolation threshold; no tools."
+ },
+ {
+  "title": "Increasing largest prime factors",
+  "r": 0.1,
+  "flag": "easy",
+  "why": "Primes p<=N give increasing P(p)=p; theta=1."
+ },
+ {
+  "title": "Forced MHD blow-up with no field",
+  "r": 0.0,
+  "flag": "false",
+  "why": "b0=0 and no forcing in induction eq gives b identically 0."
+ },
+ {
+  "title": "Bootstrap percolation on hats",
+  "r": 0.5,
+  "flag": "false",
+  "why": "Near-triangulated graph: 2 adjacent infected spread; p_c ~ L^-2."
+ },
+ {
+  "title": "Square-plus-one merging",
+  "r": 7.5,
+  "flag": "ok",
+  "why": "Global merging of Q-orbits; hopeless."
+ },
+ {
+  "title": "Shuffle orders hit every residue",
+  "r": 0.0,
+  "flag": "easy",
+  "why": "n=3^(k-1): ord_{3^k-1}(3)=k hits all residues."
+ },
+ {
+  "title": "Hat-tiling Sudoku impossibility",
+  "r": 0.5,
+  "flag": "easy",
+  "why": "Hats with degree >=7 make rainbow closed neighbourhoods impossible."
+ },
+ {
+  "title": "Spectre quantum walk spreading",
+  "r": 7.0,
+  "flag": "ok",
+  "why": "Anomalous transport in 2D aperiodic Hamiltonians; open."
+ },
+ {
+  "title": "P\u00f3lya's conjecture for the spectre",
+  "r": 0.5,
+  "flag": "known",
+  "why": "Polygonal Tile(1,1) tiles periodically with reflections; Kellner applies."
+ },
+ {
+  "title": "Squares of seven-free primes",
+  "r": 6.0,
+  "flag": "ok",
+  "why": "Digit restriction on p and p^2 simultaneously; beyond Maynard."
+ },
+ {
+  "title": "Gerver sofa contact points",
+  "r": 2.0,
+  "flag": "ok",
+  "why": "Likely follows from Baek's optimality analysis."
+ },
+ {
+  "title": "Digit-restricted Chowla",
+  "r": 7.5,
+  "flag": "famous-equiv",
+  "why": "Two-point Chowla correlation variant; Chowla-level difficulty."
+ },
+ {
+  "title": "Tile(1,1) frieze",
+  "r": 0.3,
+  "flag": "easy",
+  "why": "Strip stacking yields periodic tiling; spectre tilings are hierarchical."
+ },
+ {
+  "title": "Odd runs of the midpoint map",
+  "r": 0.0,
+  "flag": "easy",
+  "why": "Take odd n=p-2^(L+1) in a large prime gap."
+ },
+ {
+  "title": "Primes with balanced binary digits",
+  "r": 0.5,
+  "flag": "known",
+  "why": "Drmota-Mauduit-Rivat primes with average binary digit sum."
+ }
+]

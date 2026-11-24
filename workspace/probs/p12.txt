@@ -1,0 +1,87 @@
+## The spectre is not spectral | 7 | Analysis
+W: Show the spectre, a curved tile that cannot tile by translations, has no orthogonal basis of exponentials, as Fuglede's conjecture predicts.
+M: Prove there is no $\Lambda\subset\mathbb{R}^2$ such that $\{e^{2\pi i\lambda\cdot x}\}_{\lambda\in\Lambda}$ is an orthogonal basis of $L^2$ of the spectre domain.
+
+## Midpoint-prime orbit lengths | 6 | Dynamics
+W: Find the average number of steps the midpoint-prime map takes to reach 1, on a logarithmic scale.
+M: For the midpoint-prime map $m$, prove $\frac1x\sum_{n\le x}\frac{T_m(n)}{\log n}\to c$ and compute $c$, where $T_m(n)=\min\{k:m^k(n)=1\}$.
+
+## Many loops for affine prime maps | 6 | Dynamics
+W: Show the number of separate loops of p ↦ largest prime factor of ap + 1 grows without bound as a grows.
+M: Let $N(a)$ be the number of periodic orbits of $p\mapsto P(ap+1)$ on primes. Prove $\limsup_{a\to\infty}N(a)=\infty$.
+
+## First appearances in Prime Nim | 7 | Games
+W: The smallest pile with Grundy value k in Prime Nim grows extremely fast. Show it grows at least exponentially in k.
+M: Let $a(k)=\min\{n:G(n)=k\}$ for the prime subtraction game. Prove $a(k)\ge e^{ck}$ for some $c>0$ and all $k$ for which $a(k)$ exists.
+
+## Rational fibres of the Alpöge map | 7 | Algebra
+W: The 2026 Jacobian counterexample sends three rational points to one point. Show infinitely many rational target points have three rational preimages.
+M: For Alpöge's Keller map $F:\mathbb{Q}^3\to\mathbb{Q}^3$, prove $\{y\in\mathbb{Q}^3:|F^{-1}(y)\cap\mathbb{Q}^3|=3\}$ is Zariski dense in $\mathbb{A}^3$.
+
+## Snort on square sums | 6 | Games
+W: Two players colour numbers up to N, one red and one blue. Neither may colour a number summing to a square with one of the opponent's colour. The player who cannot move loses. Decide who wins for large N.
+M: Determine the outcome of the partizan game Snort on $S_N$ for all sufficiently large $N$.
+
+## Maker–Breaker square-sum triangles | 6 | Games
+W: Maker and Breaker alternately claim numbers. Maker wins by owning three numbers whose pairwise sums are all squares. Decide who wins on 1 to N for large N.
+M: Determine the winner of the Maker–Breaker game on $[N]$ whose winning sets are the triangles of $S_N$, for all sufficiently large $N$.
+
+## Entering the 4p+1 loop | 6 | Dynamics
+W: Show a typical prime enters the 4p + 1 map's eight-prime loop in about log log p steps.
+M: For $p\mapsto P(4p+1)$, prove that the number of steps to enter the 8-cycle is $\sim c\log\log p$ for all but $o(\pi(x))$ primes $p\le x$, and find $c$.
+
+## Seven-free squares | 7 | Number theory
+W: Count the numbers up to x whose square has no digit 7. Show the count matches the random-digit prediction.
+M: Prove $\#\{n\le x: 7\notin n^2\}=x^{1+2\log_{10}(9/10)+o(1)}$.
+
+## Square-plus-one collisions | 6 | Number theory
+W: Count pairs n ≠ m up to x for which n² + 1 and m² + 1 have the same largest prime factor.
+M: Find the asymptotic number of pairs $n<m\le x$ with $P(n^2+1)=P(m^2+1)$.
+
+## Seven-free square-sum chains | 6 | Combinatorics
+W: Take only the numbers up to N with no digit 7. Show they can be lined up so neighbours always sum to perfect squares, for large N.
+M: Let $A_N=\{n\le N: 7\notin n\}$. Prove $S_N[A_N]$ has a Hamiltonian path for all sufficiently large $N$.
+
+## Weyl remainder for the hat drum | 7 | Analysis
+W: Count the vibration frequencies of a hat-shaped drum below a threshold. Find the true size of the error after the two leading terms.
+M: For the Dirichlet Laplacian on the hat polygon, prove $N(\lambda)=\frac{|\Omega|}{4\pi}\lambda-\frac{|\partial\Omega|}{4\pi}\sqrt\lambda+O(\lambda^{\theta})$ and determine the optimal $\theta$.
+
+## Few periodic points of square-plus-one | 7 | Dynamics
+W: Count the numbers up to X that lie on a loop of the square-plus-one map. Show there are very few.
+M: Prove $\#\{n\le X: Q^k(n)=n\text{ for some }k\ge1\}=X^{o(1)}$, where $Q(n)=P(n^2+1)$.
+
+## Long loops for affine prime maps | 6 | Dynamics
+W: As a and b vary, the loops of p ↦ largest prime factor of ap + b get longer and longer. Prove loop lengths are unbounded.
+M: Prove $\sup_{a,b}\max\{\text{length of a cycle of } p\mapsto P(ap+b)\}=\infty$.
+
+## Max-cut of the square-sum graph | 6 | Combinatorics
+W: Split the numbers up to N into two groups to cut as many square-sum pairs as possible. Find how far above one half you can get.
+M: Prove $\mathrm{MaxCut}(S_N)=\big(\tfrac12+(c+o(1))N^{-1/4}\big)e(S_N)$ and determine $c$.
+
+## Seven-free primes with prime digit sum | 6 | Number theory
+W: Show infinitely many primes have no digit 7 and a digit sum that is itself prime.
+M: Prove infinitely many primes $p$ free of the decimal digit 7 with $s_{10}(p)$ prime.
+
+## Gerver's constant is not a period | 9 | Number theory
+W: Show the area of Gerver's sofa cannot be written as an integral of an algebraic function over an algebraic region.
+M: Prove $\mu_G\approx2.2195$ is not a Kontsevich–Zagier period.
+
+## The 89–233 basin | 6 | Dynamics
+W: The square-plus-one map has the loop 89 ↔ 233. Each prime has only finitely many direct predecessors, so the question is whether the tree of predecessors is infinite. Decide whether infinitely many starting numbers fall into the loop.
+M: Decide whether infinitely many $n$ have $Q^k(n)\in\{89,233\}$ for some $k$, where $Q(n)=P(n^2+1)$.
+
+## Finitely many loops for affine prime maps | 7 | Dynamics
+W: For fixed a and b, show the prime map p ↦ largest prime factor of ap + b has only finitely many loops.
+M: Prove that for all integers $a\ge2$, $b\ge1$, the map $p\mapsto P(ap+b)$ on primes has finitely many periodic orbits.
+
+## Missing digits in two bases | 7 | Number theory
+W: Show infinitely many primes have no digit 9 in base 10 and no digit 10 in base 11 at the same time.
+M: Prove infinitely many primes whose base-10 expansion avoids the digit 9 and whose base-11 expansion avoids the digit 10.
+
+## Square-plus-one orbit mod 3 | 8 | Dynamics
+W: Show the square-plus-one sequence starting at 2 lands on primes of both kinds mod 3 infinitely often.
+M: Prove $Q^k(2)\equiv1\pmod 3$ and $Q^k(2)\equiv2\pmod 3$ each hold for infinitely many $k$.
+
+## Seven-free Friedlander–Iwaniec primes | 8 | Number theory
+W: Show infinitely many primes of the form x² + y⁴ have no digit 7.
+M: Prove infinitely many primes $x^2+y^4$ free of the decimal digit 7.

@@ -1,0 +1,206 @@
+[
+{
+"title": "The {5, 8} funnel",
+"area": "Dynamics",
+"W": "Replace n by the sum of the largest prime factors of n and n + 1. Every start tested falls into the loop 5 \u2192 8 \u2192 5. Prove all do.",
+"M": "Let $f(n)=P(n)+P(n+1)$ (with $P(1)=1$). Prove every orbit of $f$ on $n\\ge2$ enters the cycle $\\{5,8\\}$."
+},
+{
+"title": "Doubling minus one",
+"area": "Dynamics",
+"W": "Replace n by twice its largest prime factor minus one. Every tested start ends in 5 \u2194 9 or in the loop 37 \u2192 73 \u2192 145 \u2192 57 \u2192 37. Prove there is nothing else.",
+"M": "Prove every orbit of $n\\mapsto 2P(n)-1$ on $n\\ge2$ enters $\\{5,9\\}$ or $(37,73,145,57)$."
+},
+{
+"title": "Two long loops",
+"area": "Dynamics",
+"W": "Replace n by P(3n + 1) + P(n). Every tested start ends in one of two long loops, through 46 or through 80. Prove there are no others.",
+"M": "Prove every orbit of $n\\mapsto P(3n+1)+P(n)$ on $n\\ge2$ enters the 9-cycle through 46 or the 7-cycle through 80."
+},
+{
+"title": "Gerver's constant has unbounded partial quotients",
+"area": "Number theory",
+"W": "Show the continued fraction of Gerver's sofa area contains arbitrarily large terms.",
+"M": "Prove the continued fraction expansion of $\\mu_G\\approx2.2195$ has unbounded partial quotients."
+},
+{
+"title": "Three large consecutive factors",
+"area": "Number theory",
+"W": "Show infinitely many n have n, n + 1 and n + 2 each with a prime factor bigger than n^0.9.",
+"M": "Prove infinitely many $n$ with $\\min\\{P(n),P(n+1),P(n+2)\\}>n^{0.9}$."
+},
+{
+"title": "A mixed Fermat equation",
+"area": "Number theory",
+"W": "Show the equation x\u00b2 + y\u2074 = z\u2077 + 7 has only finitely many integer solutions.",
+"M": "Prove $x^2+y^4=z^7+7$ has finitely many solutions in integers."
+},
+{
+"title": "Squares of seven-free primes",
+"area": "Number theory",
+"W": "Show every large number of the right residue is a sum of five squares of primes without the digit 7.",
+"M": "Prove every sufficiently large $n\\equiv5\\pmod{24}$ is $p_1^2+\\dots+p_5^2$ with all $p_i$ prime and free of the decimal digit 7."
+},
+{
+"title": "Square-sum 4-cycle factors",
+"area": "Combinatorics",
+"W": "Split 1 to N into groups of four arranged in a cycle, so each pair of neighbours in a cycle sums to a square.",
+"M": "Prove $S_N$ has a $C_4$-factor for all sufficiently large $N\\equiv0\\pmod4$."
+},
+{
+"title": "Additive energy of largest prime factors",
+"area": "Number theory",
+"W": "Count quadruples with P(a) + P(b) = P(c) + P(d) among a, b, c, d up to N. Find the asymptotic.",
+"M": "Determine the asymptotics of $E(N)=\\#\\{(a,b,c,d)\\in[N]^4: P(a)+P(b)=P(c)+P(d)\\}$."
+},
+{
+"title": "Cops on square sums",
+"area": "Games",
+"W": "Show a bounded number of cops can catch a robber on the square-sum graph, however large N is.",
+"M": "Prove $\\sup_N c(S_N)<\\infty$ for the cop number of the giant component of $S_N$, and determine it."
+},
+{
+"title": "Global convergence of P(n)+P(n+k)",
+"area": "Logic",
+"W": "For each shift k, the map n \u21a6 P(n) + P(n + k) seems to fall into finitely many loops. Decide whether there is an algorithm that tells, for each k, whether every orbit is eventually periodic.",
+"M": "Decide whether $\\{k\\ge1:$ every orbit of $n\\mapsto P(n)+P(n+k)$ is eventually periodic$\\}$ is recursive."
+},
+{
+"title": "Pythagorean triangles of legs",
+"area": "Number theory",
+"W": "Find infinitely many triples where every pair is the two legs of an integer right triangle, with all three numbers below a polynomial in the smallest.",
+"M": "Prove infinitely many $a<b<c$ with $a^2+b^2,\\ a^2+c^2,\\ b^2+c^2$ all squares and $c\\le a^{C}$ for a fixed $C$."
+},
+{
+"title": "Prime-sum graph and perfect codes",
+"area": "Combinatorics",
+"W": "Decide for which n the prime-sum graph on 1 to 2n has a set of vertices that dominates every vertex exactly once.",
+"M": "Determine all $n$ for which the prime-sum graph on $[2n]$ has a perfect code (efficient dominating set)."
+},
+{
+"title": "Spectral radius of the prime-sum graph",
+"area": "Combinatorics",
+"W": "Find the largest eigenvalue of the prime-sum graph on 1 to 2n, asymptotically.",
+"M": "Prove $\\lambda_1$ of the prime-sum graph on $[2n]$ is $\\sim c\\,n/\\log n$ and determine $c$."
+},
+{
+"title": "Number of square-sum colourings",
+"area": "Combinatorics",
+"W": "Count proper colourings of the square-sum graph with a fixed number of colours. Find the exponential growth.",
+"M": "For fixed $q\\ge\\chi(S_\\infty)+1$, prove $\\lim_N\\frac1N\\log P_{S_N}(q)$ exists and compute it, where $P$ is the chromatic polynomial."
+},
+{
+"title": "Primes in the {5,8} funnel's tree",
+"area": "Dynamics",
+"W": "Look at which starting numbers reach 5 versus 8 first under n \u21a6 P(n) + P(n+1). Show both happen for a positive fraction of starts.",
+"M": "For $f(n)=P(n)+P(n+1)$, prove both $\\{n:$ the orbit first meets the cycle at $5\\}$ and $\\{n:$ first at $8\\}$ have positive lower density."
+},
+{
+"title": "Packing density of Gerver's sofa",
+"area": "Geometry",
+"W": "Find the densest way to pack copies of Gerver's sofa shape in the plane, and show the density is not a rational multiple of an algebraic number.",
+"M": "Let $\\delta_G$ be the translative-and-rotational packing density of Gerver's sofa. Prove $\\delta_G\\notin\\overline{\\mathbb{Q}}$."
+},
+{
+"title": "Two-corner sofa",
+"area": "Geometry",
+"W": "Find the largest shape that can turn left and then right through two consecutive right-angle corners separated by distance d.",
+"M": "For hallway width 1 and corner separation $d$, determine $\\alpha(d)$ and prove $\\alpha(d)$ is strictly increasing and real-analytic in $d$ on $(1,\\infty)$."
+},
+{
+"title": "Unit distances in the hat tiling",
+"area": "Geometry",
+"W": "Find the largest number of unit distances among n points chosen from the vertices of the hat tiling.",
+"M": "Determine the order of $\\max\\{\\#\\{(x,y)\\in A^2:|x-y|=1\\}:A\\subset V_{\\mathrm{hat}},|A|=n\\}$."
+},
+{
+"title": "Hat tiling Schr\u00f6dinger operators",
+"area": "Analysis",
+"W": "Show the discrete Laplacian on the hat tiling has Cantor spectrum.",
+"M": "Prove the spectrum of the graph Laplacian of the hat-tiling dual graph is a Cantor set of zero Lebesgue measure, or show it contains an interval."
+},
+{
+"title": "Rotation-proof lattice-point-poor shapes",
+"area": "Geometry",
+"W": "Find the shape in the plane with given area that contains the fewest integer lattice points after any rotation, asymptotically.",
+"M": "Determine the convex $K$ of area $A$ minimising $\\sup_{\\theta}\\#(\\rho_\\theta K\\cap\\mathbb{Z}^2)$, asymptotically as $A\\to\\infty$, to second-order term."
+},
+{
+"title": "Minimal Steiner tree for prime points",
+"area": "Geometry",
+"W": "Place points at (p, q) for primes p, q up to N. Find the shortest network connecting them asymptotically.",
+"M": "Prove $\\mathrm{SMT}(\\{(p,q):p,q\\le N\\text{ prime}\\})\\sim cN^2/\\log N$ and determine $c$."
+},
+{
+"title": "Ising model on the spectre tiling",
+"area": "Probability",
+"W": "Find the exact critical temperature of the Ising model on the spectre tiling graph, and prove the interfaces converge to SLE(3).",
+"M": "For the nearest-neighbour Ising model on the spectre-tiling vertex graph, determine $\\beta_c$ and prove critical interfaces converge to $\\mathrm{SLE}_3$."
+},
+{
+"title": "Percolation threshold of the square-sum graph",
+"area": "Probability",
+"W": "Keep each edge of the square-sum graph with probability p. Find the exact threshold for a giant component as N grows.",
+"M": "For bond percolation on $S_N$ with $p=c/\\sqrt N$, determine $c^*$ such that a component of size $\\Theta(N)$ appears w.h.p. iff $c>c^*$."
+},
+{
+"title": "Random greedy square-sum path",
+"area": "Probability",
+"W": "Build a path through 1 to N by always stepping to a random unused neighbour summing to a square. Find the expected length.",
+"M": "Determine $\\lim_N\\mathbb{E}[L_N]/N$ for the random greedy path in $S_N$ started at a uniform vertex."
+},
+{
+"title": "First-passage percolation on primes",
+"area": "Probability",
+"W": "Give each integer point (a, b) a random weight, but only points where a + b is prime can be used. Find the shape of the ball.",
+"M": "For FPP on $\\mathbb{Z}^2$ restricted to sites with $a+b$ prime and i.i.d. Exp(1) weights, prove a shape theorem exists and show the limit shape is not a diamond."
+},
+{
+"title": "Random digit deletion",
+"area": "Probability",
+"W": "Repeatedly delete a random decimal digit of a number until it is prime or has one digit. Find the probability of ending at a prime from a typical large start.",
+"M": "For uniform $n\\le x$ and random single-digit deletions, prove $\\Pr(\\text{the process meets a prime})\\to c$ and determine whether $c<1$."
+},
+{
+"title": "Doubled prime map with a 1231 loop",
+"area": "Dynamics",
+"W": "Map n to twice its largest prime factor plus the largest prime factor of n + 1. Starts below 150,000 reach either a five-step loop through 93 or a three-step loop through 1231. Prove there are no other fates.",
+"M": "For $f(n)=2P(n)+P(n+1)$, prove every orbit reaches $(93,109,229,481,315)$ or $(1231,2473,6183)$."
+},
+{
+"title": "Triple factor map minus two",
+"area": "Dynamics",
+"W": "Map n to P(n) + P(n+1) + P(n+2) \u2212 2. Tested starts reach the fixed points 8 or 33, a 13-step loop through 20, or a 9-step loop through 177. Prove nothing else happens.",
+"M": "For $f(n)=P(n)+P(n+1)+P(n+2)-2$, prove every orbit reaches $\\{8\\}$, $\\{33\\}$, the 13-cycle through $20$, or the 9-cycle through $177$."
+},
+{
+"title": "The Jacobian conjecture for degree 3 in dimension 3",
+"area": "Algebra",
+"W": "Show every polynomial map of three-space of degree at most 3 with Jacobian determinant 1 is invertible.",
+"M": "Prove every $F:\\mathbb{C}^3\\to\\mathbb{C}^3$ with $\\deg F\\le3$ and $\\det JF\\equiv1$ is an automorphism."
+},
+{
+"title": "Prime Nim Grundy growth",
+"area": "Games",
+"W": "Find how fast the largest Grundy value of Prime Nim up to N grows.",
+"M": "Prove $\\max_{n\\le N}G(n)\\asymp N^{\\alpha}$ (or $(\\log N)^\\beta$) and determine the exponent."
+},
+{
+"title": "Seven-free powers of three",
+"area": "Number theory",
+"W": "Show only finitely many powers of 3 have no 7 among their decimal digits.",
+"M": "Prove $\\#\\{n:7\\notin 3^n\\}<\\infty$ and determine the largest such $n$."
+},
+{
+"title": "Primes with digit sum equal to a prime in two bases",
+"area": "Number theory",
+"W": "Show a positive proportion of primes have prime digit sum in base 2 and base 3 simultaneously, relative to the expected count.",
+"M": "Prove $\\#\\{p\\le x:s_2(p),s_3(p)\\text{ both prime}\\}\\asymp\\frac{x}{\\log x(\\log\\log x)^2}$."
+},
+{
+"title": "Treewidth of the prime-sum graph",
+"area": "Combinatorics",
+"W": "Find the treewidth of the prime-sum graph on 1 to 2n asymptotically.",
+"M": "Prove $\\mathrm{tw}(\\Pi_{2n})\\sim c\\,n$ for the prime-sum graph and determine $c$."
+}
+]

@@ -1,0 +1,128 @@
+## Affine prime maps all settle | 8 | Dynamics
+W: Fix whole numbers a and b. Send a prime p to the largest prime factor of ap + b. Every case tested falls into a loop. Prove this always happens.
+M: Prove that for all fixed integers $a\ge2$, $b\ge1$, every orbit of $p\mapsto P(ap+b)$ on primes is eventually periodic.
+
+## Affine prime maps, quantitative | 6 | Dynamics
+W: Show that for the map p ↦ largest prime factor of 3p + 4, almost every prime reaches its loop within about log log p steps.
+M: For $p\mapsto P(3p+4)$, prove that for all but $o(\pi(x))$ primes $p\le x$ the orbit of $p$ enters its (unique observed) 7-cycle within $C\log\log p$ steps.
+
+## The 7p+4 dozen | 8 | Dynamics
+W: Under p ↦ largest prime factor of 7p + 4, every tested prime ends in one loop of length 12. Prove all do.
+M: Prove every orbit of $p\mapsto P(7p+4)$ on primes enters a single cycle of length 12, and identify it.
+
+## Longest increasing run of prime gaps | 8 | Number theory
+W: Among the first N prime gaps, find the longest subsequence that strictly increases. Show it grows like a power of N and find the power.
+M: Let $L(N)$ be the length of the longest strictly increasing subsequence of $(p_{n+1}-p_n)_{n\le N}$. Prove $L(N)=N^{\theta+o(1)}$ and determine $\theta$.
+
+## Prime cubes with one shift | 7 | Number theory
+W: Show infinitely many quadruples of primes satisfy x³ + y³ = z³ + w³ + 1.
+M: Prove infinitely many prime solutions $(x,y,z,w)$ of $x^3+y^3=z^3+w^3+1$.
+
+## Prime points on a quartic threefold | 7 | Number theory
+W: Count prime solutions of x⁴ + y⁴ + z⁴ = w⁴ + 2 up to size X, and find the asymptotic.
+M: Find the asymptotic number of prime 4-tuples $\le X$ with $x^4+y^4+z^4=w^4+2$, or prove there are finitely many.
+
+## Undecidable prime-factor maps | 8 | Logic
+W: Show no algorithm can decide, given a and b, whether every orbit of n ↦ n/2 (even) or the largest prime factor of an + b (odd) eventually loops.
+M: Prove $\{(a,b)\in\mathbb{N}^2:$ every orbit of $n\mapsto n/2$ ($n$ even), $P(an+b)$ ($n$ odd) is eventually periodic$\}$ is not recursive, or prove it is.
+
+## The angel on the hat | 6 | Games
+W: An angel moves up to k tiles per turn on a hat tiling; a devil deletes one tile per turn. Find the least k for which the angel escapes forever.
+M: Determine the least $k$ such that the angel of power $k$ (moves to any tile within graph distance $k$) wins against the devil on every hat tiling's adjacency graph.
+
+## Square-sum paths with chosen ends | 6 | Combinatorics
+W: Show you can line up 1 to N with neighbours summing to squares, starting and ending at almost any two numbers you choose.
+M: Prove $S_N$ contains a Hamiltonian path whose endpoints can be prescribed arbitrarily among vertices of degree $\ge3$, for all large $N$.
+
+## Square-sum Ramsey of paths | 6 | Combinatorics
+W: Two-colour the numbers 1 to N. Show some colour contains a chain of length L where neighbours sum to squares, with L growing like a power of N.
+M: Prove every 2-colouring of $[N]$ has a monochromatic path in $S_N$ of length $\ge N^{c}$ for some $c>0$, and find the optimal $c$.
+
+## Sidon sets of hat tiles | 7 | Combinatorics
+W: Pick hat tiles so all pairwise displacement vectors are distinct. How many can fit in a region of n tiles?
+M: Determine the asymptotics of the maximum size of $A\subseteq B_L$ (hat-tiled $L$-ball, tile centres) with all differences $a-a'$, $a\ne a'$, distinct.
+
+## Isoperimetric profile of the spectre | 6 | Geometry
+W: Among all clusters of n spectre tiles, find the smallest possible perimeter, asymptotically, with the exact constant.
+M: Prove $\min\{|\partial S|:S$ a union of $n$ tiles in a spectre tiling$\}\sim c\sqrt n$ and determine $c$.
+
+## Gerver sofa contact points | 6 | Geometry
+W: Prove Gerver's sofa touches the corridor walls in exactly the pattern Gerver described at every moment of its optimal motion, and that the motion is unique.
+M: Prove the optimal motion of Gerver's sofa through the unit corridor is unique up to time reparametrization.
+
+## Sofa constant digits | 7 | Number theory
+W: Show the digits of Gerver's sofa area do not end in a repeating pattern in base 2 either, and give an explicit irrationality measure bound.
+M: Prove $\mu_G$ is irrational with irrationality measure $\le 100$.
+
+## Irrationality of the hat percolation threshold, bond | 9 | Probability
+W: The bond-percolation threshold on the hat tiling's edges is about 0.7982. Prove it is irrational.
+M: Prove $p_c^{\mathrm{bond}}$ for the hat tiling's edge graph is irrational.
+
+## Hat Ising critical line | 7 | Physics
+W: Ising models on a hat tiling and its dual should be exactly related at their critical points. Prove the duality relation holds rigorously.
+M: For the ferromagnetic Ising model on the hat graph $G$ and its planar dual $G^*$, prove $\sinh(2\beta_c(G))\sinh(2\beta_c(G^*))=1$.
+
+## Digit-restricted Chowla | 8 | Number theory
+W: Show μ(n)μ(n+1) has no bias on numbers n where neither n nor n+1 contains the digit 7.
+M: Prove $\sum_{n\le x,\ 7\notin n,\ 7\notin n+1}\mu(n)\mu(n+1)=o(x^{\log9/\log10})$.
+
+## Hat Hofstadter at golden flux | 7 | Physics
+W: Thread a magnetic flux through each hat tile equal to the golden ratio. Show the resulting energy spectrum is a zero-measure Cantor set.
+M: For the magnetic tight-binding Hamiltonian on the hat graph with flux $\phi=(\sqrt5-1)/2$ per kite, prove $\sigma(H)$ is a Cantor set of Lebesgue measure zero.
+
+## Spectre quantum walk spreading | 6 | Physics
+W: A quantum particle hopping on the spectre tiling should spread at a rate strictly between localization and free motion. Compute the exponent.
+M: For $H$ the adjacency operator of a spectre tiling and $\psi_0=\delta_o$, prove $\langle|X|^2\rangle_T\asymp T^{2\beta}$ and determine $\beta$.
+
+## Minimal degree of a Jacobian counterexample | 8 | Algebra
+W: The 2026 counterexamples have degree 7. Find the smallest degree any 3D counterexample can have.
+M: Determine $\min\{\deg F: F:\mathbb{C}^3\to\mathbb{C}^3$ non-invertible Keller map$\}$.
+
+## Blow-up near a wall | 7 | Analysis
+W: Show the 2026 forced blow-up mechanism also works in a half-space with no-slip wall, with the singularity on the wall.
+M: Construct smooth compactly supported $f$ such that Navier–Stokes in $\mathbb{R}^3_+$ with no-slip, from rest, blows up in finite time at a boundary point.
+
+## Unit distances in three dimensions after 2026 | 7 | Geometry
+W: The 2026 number-field idea beat Erdős in the plane. Adapt it to unit distances among points on a sphere in 3D.
+M: Prove there are $n$-point sets on the unit sphere $S^2$ with $\ge n^{1+c}$ pairs at distance $1$, for some $c>0$ and infinitely many $n$.
+
+## Lonely runner gap for the first n primes | 7 | Number theory
+W: For the first n primes as speeds, find the actual loneliness gap asymptotically.
+M: Determine the asymptotics of $\delta_n=\sup_t\min_{i\le n}\|tp_i\|$ as $n\to\infty$.
+
+## Hat dominoes freeze | 7 | Probability
+W: Random domino-style pairings of hat tiles inside a large region with a fixed boundary develop a frozen outer zone. Find the shape of the boundary between frozen and random regions.
+M: For uniform perfect matchings of the hat graph on regions $L\cdot\Omega$, prove an arctic curve exists and identify it for $\Omega$ a regular hexagon.
+
+## Kissing numbers of polykite families | 6 | Geometry
+W: Show the hat's family of shapes has a kissing number that jumps at exactly one parameter value.
+M: For Tile$(a,b)$, $a,b>0$, let $k(a,b)$ be the kissing number (congruent copies, reflections allowed). Prove $k$ is piecewise constant with finitely many jumps and find them.
+
+## Graceful forests from caterpillar seeds | 6 | Combinatorics
+W: Show forests made of large caterpillars plus one arbitrary tree are graceful-forest labelable.
+M: Prove every forest $T\cup C_1\cup\dots\cup C_k$ with $T$ any tree and $C_i$ caterpillars each of size $\ge|T|$ admits a bijection $V\to\{0,\dots,m+k\}$ with distinct edge differences.
+
+## Spectre billiards ergodic | 7 | Dynamics
+W: Billiards inside a spectre-shaped room with curved walls should be chaotic. Prove the billiard flow is ergodic.
+M: Prove the billiard flow in the spectre (with its circular-arc edges) is ergodic with respect to Liouville measure.
+
+## Square Nim from both ends | 7 | Games
+W: Two piles; a move removes a square from one pile or the same square from both. Find the losing positions' asymptotic density.
+M: For moves $(a,b)\to(a-k^2,b),(a,b-k^2),(a-k^2,b-k^2)$, prove $\#\{(a,b)\in[N]^2:\mathcal P\}=N^{1+\theta+o(1)}$ and find $\theta$.
+
+## Hats in a torus | 6 | Geometry
+W: Hats tile the plane only non-periodically, so they cannot tile a flat torus. Find the smallest uncovered fraction for packing hats on a flat torus of area A.
+M: Let $g(A)$ be the least uncovered area over packings of congruent hats in flat tori of area $A$. Prove $g(A)\to\infty$ and determine its growth order in $A$.
+
+## Spectre chromatic number of distances | 6 | Geometry
+W: Colour points of the plane so no two points at a distance equal to a spectre edge length or diagonal share a colour. Find the colours needed.
+M: Let $D$ be the set of distances between vertices of the spectre polygon. Determine $\chi(\mathbb{R}^2;D)$.
+
+## Seven-free values of n²+1 | 7 | Number theory
+W: Show infinitely many n make n² + 1 a prime with no digit 7, or at least a product of two such primes.
+M: Prove infinitely many $n$ with $n^2+1=q_1q_2$, $q_i$ primes free of the digit 7.
+
+## Chromatic number of prime-difference plus square-sum | 6 | Combinatorics
+W: Join two numbers if their sum is a square or their difference is prime. Find the colours needed for all positive integers.
+M: Determine $\chi(G)$ for $G$ on $\mathbb{N}$ with $a\sim b$ iff $a+b$ is a square or $|a-b|$ is prime.
+

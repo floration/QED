@@ -1,0 +1,206 @@
+[
+{
+"title": "Doubling the largest factor",
+"area": "Dynamics",
+"W": "Replace n by twice its largest prime factor plus one. Every tested start falls into one loop of eight numbers. Prove all do.",
+"M": "Prove every orbit of $n\\mapsto 2P(n)+1$ on $n\\ge2$ enters the cycle $(7,15,11,23,47,95,39,27)$."
+},
+{
+"title": "Three halves of the largest factor",
+"area": "Dynamics",
+"W": "Replace n by the integer part of (3P(n) + 1)/2. Every tested start falls into the loop 3 \u2192 5 \u2192 8 \u2192 3. Prove all do.",
+"M": "Prove every orbit of $n\\mapsto\\lfloor(3P(n)+1)/2\\rfloor$ on $n\\ge2$ enters $(3,5,8)$."
+},
+{
+"title": "Next-prime sums",
+"area": "Dynamics",
+"W": "Add n to the next prime after it and take the largest prime factor of the sum. Every tested start falls into 2 \u2192 5 \u2192 3 \u2192 2. Prove all do.",
+"M": "Prove every orbit of $n\\mapsto P(n+p^+(n))$ ($p^+(n)$ = least prime $>n$) enters $(2,5,3)$."
+},
+{
+"title": "Primes with equal binary and ternary digit sums",
+"area": "Number theory",
+"W": "Show infinitely many primes have the same digit sum in base 2 as in base 3.",
+"M": "Prove infinitely many primes $p$ with $s_2(p)=s_3(p)$."
+},
+{
+"title": "M\u00f6bius-signed Fibonacci",
+"area": "Number theory",
+"W": "Build a sequence like Fibonacci but multiply the older term by the M\u00f6bius function of the index. Show it grows at a definite exponential rate.",
+"M": "Let $x_0=0,x_1=1$, $x_{n+1}=x_n+\\mu(n)x_{n-1}$. Prove $\\lim_n\\frac1n\\log(|x_n|+|x_{n+1}|)$ exists and is positive."
+},
+{
+"title": "Linnik\u2013Gallagher with seven-free primes",
+"area": "Number theory",
+"W": "Show every large even number is a seven-free prime plus a bounded number of powers of two.",
+"M": "Prove there is $K$ such that every sufficiently large even $n$ is $p+2^{a_1}+\\dots+2^{a_k}$ with $k\\le K$ and $p$ a 7-free prime."
+},
+{
+"title": "Tur\u00e1n density of a twisted triple system",
+"area": "Combinatorics",
+"W": "Find the largest density of a 3-uniform hypergraph that avoids a specific six-vertex configuration of six triples.",
+"M": "Determine $\\pi(F)$ for $F=\\{123,124,345,346,561,562\\}$."
+},
+{
+"title": "Codes with square distances",
+"area": "Combinatorics",
+"W": "Find the largest set of binary strings of length n in which every two differ in a nonzero perfect-square number of places. Find the exponential rate.",
+"M": "Determine $\\lim_n\\frac1n\\log_2 B(n)$, where $B(n)$ is the largest $C\\subseteq\\{0,1\\}^n$ with $d_H(x,y)$ a positive square for all $x\\ne y\\in C$."
+},
+{
+"title": "Twin-prime Nim",
+"area": "Games",
+"W": "Remove a stone count p for which p and p + 2 are both prime. Show losing positions have density zero, without assuming the twin prime conjecture.",
+"M": "For the subtraction game with move set $\\{p:p,p+2\\text{ prime}\\}$, prove the P-positions have density 0."
+},
+{
+"title": "Bounded orbits for polynomial prime maps",
+"area": "Logic",
+"W": "Given a polynomial f, can an algorithm decide whether the orbit of 2 under n \u21a6 P(f(n)) stays bounded?",
+"M": "Prove or disprove: $\\{f\\in\\mathbb{Z}[x]:\\text{the orbit of }2\\text{ under }n\\mapsto P(|f(n)|)\\text{ is bounded}\\}$ is decidable."
+},
+{
+"title": "Resolution lower bound for square-sum colouring",
+"area": "Logic",
+"W": "Show any resolution proof that a large square-sum graph cannot be properly coloured with too few colours must be exponentially long.",
+"M": "Let $k(N)=\\chi(S_N)-1$. Prove resolution refutations of the CNF \"$S_N$ is $k(N)$-colourable\" require size $2^{N^{\\Omega(1)}}$."
+},
+{
+"title": "Kneser graphs of square sums",
+"area": "Combinatorics",
+"W": "Take all k-element sets of numbers up to N that contain no square-sum pair, and join two if they are disjoint. Find the chromatic number.",
+"M": "Determine $\\chi$ of the Kneser-type graph on independent $k$-sets of $S_N$ (adjacency = disjointness) for fixed $k$ and large $N$."
+},
+{
+"title": "Extremal square-sum subgraphs",
+"area": "Combinatorics",
+"W": "Find the largest number of edges in a subgraph of the square-sum graph with no 4-cycle.",
+"M": "Determine the order of magnitude of $\\mathrm{ex}(S_N,C_4)$, the maximum number of edges of a $C_4$-free subgraph of $S_N$."
+},
+{
+"title": "Square-sum orderings avoiding progressions",
+"area": "Combinatorics",
+"W": "Line up 1 to N with neighbours summing to squares, and with no three equally spaced positions holding an arithmetic progression.",
+"M": "Prove for all large $N$ there is a Hamiltonian path $v_1\\dots v_N$ of $S_N$ with no $i<j<k$, $j-i=k-j$, such that $v_i,v_j,v_k$ form an AP."
+},
+{
+"title": "Hindman with largest factors",
+"area": "Combinatorics",
+"W": "Colour the integers with finitely many colours. Show some colour contains an infinite set such that the largest prime factor of every finite sum of distinct members is in the same colour.",
+"M": "Prove that for every finite colouring $c$ of $\\mathbb{N}$ there is an infinite $A$ and a colour $i$ with $c(P(\\sum_{a\\in F}a))=i$ for every finite nonempty $F\\subseteq A$."
+},
+{
+"title": "Prime Nim with a doubling option",
+"area": "Games",
+"W": "In Prime Nim, a player may instead double the pile once per game. Characterise who wins.",
+"M": "For the game where a move is $n\\mapsto n-p$ ($p$ prime) or, at most once per player per game, $n\\mapsto2n$, determine the outcome class of every starting $n$."
+},
+{
+"title": "Sofa through a 120-degree corner",
+"area": "Geometry",
+"W": "Find the largest area shape that can turn a 120 degree corner in a hallway of width 1.",
+"M": "Determine $\\alpha(2\\pi/3)$, the maximal area of a connected set movable around a corner of angle $2\\pi/3$ in a hallway of unit width, and prove the optimiser is bounded by finitely many analytic arcs."
+},
+{
+"title": "Distance sets of the spectre tiling",
+"area": "Geometry",
+"W": "Find how many distinct distances occur between tile centres of the spectre tiling within radius R.",
+"M": "Determine the order of growth of $\\#\\{|x-y|:x,y\\in\\Lambda_{\\mathrm{sp}},|x|,|y|\\le R\\}$."
+},
+{
+"title": "Isospectral monotiles",
+"area": "Geometry",
+"W": "Find two different aperiodic monotiles that sound the same as drums.",
+"M": "Construct two non-congruent aperiodic monotiles with identical Dirichlet spectra, or prove none exist."
+},
+{
+"title": "Zaremba with prime digits",
+"area": "Number theory",
+"W": "Show every large enough denominator has a fraction whose continued fraction digits are all primes at most some bound.",
+"M": "Prove there is $A$ such that every sufficiently large $q$ has $a$ coprime to $q$ with $a/q=[0;a_1,\\dots,a_k]$, all $a_i\\in\\mathbb{P}\\cap[1,A]$."
+},
+{
+"title": "Equal-area hat dissection",
+"area": "Geometry",
+"W": "Find the fewest pieces needed to cut a hat tile into pieces that reassemble into a square.",
+"M": "Determine the minimal number of polygonal pieces in a scissors-congruence of the unit-edge hat polygon to a square of equal area."
+},
+{
+"title": "Critical percolation on the hat tiling",
+"area": "Probability",
+"W": "Find the critical probability for site percolation on the hat tiling's tiles, and show crossing probabilities become conformally invariant.",
+"M": "For site percolation on the hat tiling (tiles adjacent if sharing an edge segment), determine whether $p_c=1/2$, and prove Cardy's formula in the scaling limit."
+},
+{
+"title": "Uniform spanning tree of the square-sum graph",
+"area": "Probability",
+"W": "Show a uniformly random spanning tree of the square-sum graph has diameter of order a fixed power of N, and find the exponent.",
+"M": "For $T$ a uniform spanning tree of the giant component of $S_N$, prove $\\mathrm{diam}(T)=N^{\\alpha+o(1)}$ in probability and determine $\\alpha$."
+},
+{
+"title": "Hitting times of the random P-walk",
+"area": "Probability",
+"W": "For the random walk n \u2192 n \u00b1 P(n), find how long it typically takes to reach 1 from N.",
+"M": "For the chain above, prove $\\log\\tau_N/\\log N\\to\\gamma$ in probability and determine $\\gamma$."
+},
+{
+"title": "Loop-erased walk on the spectre tiling",
+"area": "Probability",
+"W": "Show loop-erased random walks on the spectre tiling converge to SLE(2) curves.",
+"M": "Prove loop-erased random walk on the spectre-tiling vertex graph converges to radial $\\mathrm{SLE}_2$ in the scaling limit."
+},
+{
+"title": "Hitting probability for 2P(n)+1 random variant",
+"area": "Probability",
+"W": "With probability one half use 2P(n) + 1 and otherwise 2P(n) \u2212 1. Show the walk visits 5 infinitely often.",
+"M": "For $X_{t+1}=2P(X_t)\\pm1$ with fair signs, prove $X_t=5$ infinitely often almost surely."
+},
+{
+"title": "The shift-3 prime map",
+"area": "Dynamics",
+"W": "Add the largest prime factors of n and n + 3. Every tested start falls into 6, the loop 8 \u2192 13 \u2192 15, or the loop 10 \u2192 18. Prove all do.",
+"M": "For $f(n)=P(n)+P(n+3)$, prove every orbit with $n\\ge3$ reaches $\\{6\\}$, $(8,13,15)$ or $(10,18)$."
+},
+{
+"title": "Four fates of P(n)+P(n+1)+1",
+"area": "Dynamics",
+"W": "Map n to P(n) + P(n+1) + 1. Tested starts reach the fixed point 9 or loops through 6, 19 or 61. Prove these are the only fates.",
+"M": "For $f(n)=P(n)+P(n+1)+1$, prove every orbit reaches $\\{9\\}$, $(6,11,15,8)$, $(19,25)$ or the 4-cycle through $61$."
+},
+{
+"title": "Keller maps with two-point fibres in dimension 3",
+"area": "Algebra",
+"W": "Find a polynomial map of three-space with constant Jacobian 1 whose generic fibre has exactly two points.",
+"M": "Construct $F:\\mathbb{C}^3\\to\\mathbb{C}^3$ polynomial with $\\det JF=1$ and generic fibre size $2$, or prove none exists."
+},
+{
+"title": "Prime Nim Grundy values are unbounded",
+"area": "Games",
+"W": "Show the Grundy function of Prime Nim takes arbitrarily large values.",
+"M": "For $G$ the Grundy function of the subtraction game with move set $\\mathbb{P}$, prove $\\limsup G(n)=\\infty$."
+},
+{
+"title": "Seven-free Carmichael numbers",
+"area": "Number theory",
+"W": "Show there are infinitely many Carmichael numbers with no 7 in their decimal expansion.",
+"M": "Prove infinitely many Carmichael numbers have no decimal digit $7$."
+},
+{
+"title": "Seven-free square sums of two squares",
+"area": "Number theory",
+"W": "Show every large seven-free number that is a sum of two squares is a sum of two seven-free squares.",
+"M": "Prove for all large $n$ with $7\\notin n$ and $n=a^2+b^2$ solvable, there are $a,b$ with $7\\notin a^2$, $7\\notin b^2$, $n=a^2+b^2$, or show the exceptional set is infinite."
+},
+{
+"title": "Twin width of square-sum graphs",
+"area": "Combinatorics",
+"W": "Show the square-sum graphs do not have bounded twin-width.",
+"M": "Prove $\\sup_N\\mathrm{tww}(S_N)=\\infty$."
+},
+{
+"title": "Clique minors in the prime-sum graph",
+"area": "Combinatorics",
+"W": "Show the prime-sum graph on 1 to 2n has a complete minor of size about n over the square root of log n.",
+"M": "Prove $h(\\Pi_{2n})=\\Theta(n/\\sqrt{\\log n})$."
+}
+]

@@ -1,0 +1,95 @@
+## Few loops for square-plus-one | 8 | Dynamics
+W: The square-plus-one map has a loop: 89 goes to 233 and back. Show there are only finitely many loops.
+M: Prove $Q(n)=P(n^2+1)$ has finitely many periodic orbits (one is $89\leftrightarrow233$).
+
+## Square-plus-one merging | 9 | Dynamics
+W: Many square-plus-one sequences run into the one starting at 2. Decide whether every sequence eventually does, apart from those caught in loops.
+M: Decide whether every $n\ge2$ whose $Q$-orbit is not eventually periodic satisfies $Q^a(n)=Q^b(2)$ for some $a,b$.
+
+## The 4p+1 funnel | 8 | Dynamics
+W: Map a prime p to the largest prime factor of 4p + 1. Every prime tested falls into one loop of eight primes. Prove all do.
+M: Prove every orbit of $p\mapsto P(4p+1)$ on primes enters the cycle $5\to7\to29\to13\to53\to71\to19\to11\to5$.
+
+## The 4p+1 funnel, almost always | 6 | Dynamics
+W: Show almost every prime falls into the eight-prime loop of the 4p + 1 map.
+M: Prove the set of primes whose $p\mapsto P(4p+1)$ orbit enters the 8-cycle has relative density 1 among primes.
+
+## Three loops for 2p+3 | 8 | Dynamics
+W: Under p ↦ largest prime factor of 2p + 3, every tested prime ends in one of three loops. Prove there are no others.
+M: Prove every orbit of $p\mapsto P(2p+3)$ on primes enters one of the cycles $\{3\}$, $\{5,13,29,61\}$, $\{43,89,181,73,149\}$.
+
+## Joint digit sums of primes | 7 | Number theory
+W: Show infinitely many primes have a prime digit sum in base 2 and in base 10 at the same time.
+M: Prove infinitely many primes $p$ have $s_2(p)$ and $s_{10}(p)$ both prime.
+
+## Squares of seven-free primes | 7 | Number theory
+W: Show infinitely many primes have no digit 7 in themselves or in their squares.
+M: Prove infinitely many primes $p$ with neither $p$ nor $p^2$ containing the decimal digit 7.
+
+## Partition numbers contain a 7 | 9 | Number theory
+W: Show that from some point on, every partition number has a 7 among its digits.
+M: Prove there is $N$ such that the decimal expansion of $p(n)$ contains the digit 7 for all $n\ge N$.
+
+## Irrational prime weights | 7 | Number theory
+W: Add up 1/(p·2^p) over all primes p. Show the total is irrational.
+M: Prove $\sum_{p}\frac{1}{p\,2^{p}}$ is irrational.
+
+## Largest factor of consecutive-prime products | 6 | Number theory
+W: Show that p_n·p_(n+1) + 1 has a prime factor much bigger than p_(n+1), infinitely often.
+M: Prove $P(p_np_{n+1}+1)>p_{n+1}^{1.5}$ for infinitely many $n$.
+
+## Smooth shifted primes in two bases | 6 | Number theory
+W: Find infinitely many primes p for which p − 1 has only small prime factors and p has no digit 7.
+M: Prove infinitely many 7-free primes $p$ with $P(p-1)\le p^{0.3}$.
+
+## Prime-indexed seven-free primes | 7 | Number theory
+W: List the primes in order. Show infinitely many seven-free primes sit at a prime position in that list.
+M: Prove infinitely many primes $p_q$ with $q$ prime and $p_q$ free of the decimal digit 7.
+
+## Square-sum edge-Hamiltonian | 7 | Combinatorics
+W: Show every edge of the square-sum graph lies on a loop through all of 1 to N, for large N.
+M: Prove that for all large $N$, every edge of $S_N$ lies on a Hamiltonian cycle of $S_N$.
+
+## Square-sum connectivity | 6 | Combinatorics
+W: Show the square-sum graph cannot be split by removing fewer vertices than its smallest degree.
+M: Prove $\kappa(S_N)=\delta(S_N)$ for all large $N$.
+
+## Square-sum clique minors | 7 | Combinatorics
+W: Find the largest complete graph that can be formed by contracting parts of the square-sum graph.
+M: Determine the order of growth of the Hadwiger number $h(S_N)$.
+
+## Prime-sum Hamiltonian count | 7 | Combinatorics
+W: Count the ways to arrange 1 to 2n in a circle so neighbours sum to primes. Find the growth rate.
+M: Let $H_n$ count Hamiltonian cycles of the prime-sum graph on $[2n]$. Prove $\log H_n=(1+o(1))\,c\,n\log n$ and find $c$.
+
+## Turán density with a twist | 7 | Combinatorics
+W: Same question for a seven-vertex configuration of five triples arranged around a central triple.
+M: Determine $\pi(F)$ for $F=\{123,145,256,347,567\}$.
+
+## Odd-cycle-free square sums | 6 | Combinatorics
+W: How many numbers up to N can you keep so the square-sum graph on them has no odd cycle?
+M: Determine $\max\{|A|:A\subseteq[N],\ S_N[A]\text{ bipartite}\}/N$ asymptotically.
+
+## Seven-free Carmichael quotients | 7 | Number theory
+W: Show infinitely many Carmichael numbers n have n − 1 seven-free.
+M: Prove infinitely many Carmichael numbers $n$ such that $n-1$ has no decimal digit 7.
+
+## Hat-tiling site percolation is irrational | 9 | Probability
+W: The critical probability for percolation on the hat tiling is about 0.5442. Prove it is irrational.
+M: Prove $p_c^{\mathrm{site}}$ of the hat-tiling dual graph is irrational.
+
+## Spectre self-avoiding walks | 8 | Probability
+W: Find the exponential growth rate of non-self-intersecting walks on the spectre tiling, and show it is the same for every spectre tiling.
+M: Prove the connective constant $\mu$ of the spectre adjacency graph exists, is the same for all spectre tilings, and is not algebraic of degree $\le2$.
+
+## Lonely runners with square speeds | 7 | Number theory
+W: Prove the lonely runner conjecture when all speeds are perfect squares.
+M: For distinct positive integers $a_1,\dots,a_n$, prove $\sup_t\min_i\|ta_i^2\|\ge\frac1{n+1}$.
+
+## Midpoint map as a random walk | 6 | Dynamics
+W: Show that, for a random large start, the logarithm of the midpoint-prime orbit moves like a Gaussian random walk.
+M: Prove that for $n$ uniform in $[x,2x]$, the distribution of $\log m^{k}(n)-\log n$ for $k=\lfloor\log x\rfloor$ converges after normalization to a Gaussian.
+
+## 4p+1 maximal climbs | 7 | Dynamics
+W: Show the 4p + 1 prime map can climb arbitrarily high above its starting point before falling into its loop.
+M: Prove $\sup_p \max_k P_4^k(p)/p=\infty$, where $P_4(p)=P(4p+1)$.

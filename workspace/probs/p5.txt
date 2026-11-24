@@ -1,0 +1,264 @@
+## Hat tiling Lee–Yang zeros | 7 | Physics
+W: For magnets on a hat tiling, show the complex zeros of the partition function pinch the real axis at exactly one point.
+M: Prove the Lee–Yang zeros of the ferromagnetic Ising model on growing hat patches accumulate on the positive real temperature axis only at $\beta_c$.
+
+## Square-sum expansion | 7 | Combinatorics
+W: Show the square-sum graph (on its large connected piece) is a good expander.
+M: Prove the giant component of $S_N$ has spectral gap at least $(\log N)^{-C}$.
+
+## Doubled-twin sieve upper bound | 7 | Number theory
+W: Bound the number of doubled-twin quadruples up to x by the predicted count times at most 3.
+M: Prove $\#\{p\le x: p,p+2,2p+1,2p+3\text{ prime}\}\le(3+o(1))\,\mathfrak{S}x/\log^4x$, with $\mathfrak S$ the singular series.
+
+## Largest-factor cycles | 7 | Dynamics
+W: Find every loop of the largest-factor Collatz map.
+M: Prove every periodic orbit of $f(n)=n/2$ (even), $P(3n+1)$ (odd) lies in an explicit finite list, and give it.
+
+## Sofa with a rotating door | 7 | Geometry
+W: A door at the corner swings shut as you move. Find the largest shape that still gets through.
+M: Determine the maximal area of a set passing the width-1 right-angled corridor while the region $\{x>1,y>1\}$ moves by a prescribed rotating half-line barrier.
+
+## Hyperoperation fixed points | 7 | Algebra
+W: In any natural real-rank hyperoperation family, show the rank at which 2 ∘ 2 stops being 4 is not a whole number.
+M: For the unique analytic family $a[s]b$ satisfying the recursion and log-convexity in $s$, prove $\{s: 2[s]2=4\}$ is exactly $[1,\infty)\cap$ an explicit closed set and determine whether it is an interval.
+
+## Graceful forests with one big tree | 7 | Combinatorics
+W: A forest with c trees and m edges is graceful-forest labelled if its vertices get the labels 0 to m + c − 1 with all edge differences distinct. Show this works whenever there are at least two trees and one of them holds more than half the edges.
+M: Prove every forest with $m$ edges and $c\ge2$ components, one of which has more than $m/2$ edges, has a bijection $V\to\{0,\dots,m+c-1\}$ with all $|\ell(u)-\ell(v)|$, $uv\in E$, distinct.
+
+## Keller maps with integer fibers | 7 | Algebra
+W: Show no Jacobian-conjecture counterexample with integer coefficients is injective on integer points but not invertible.
+M: Prove every Keller map $F\in\mathbb{Z}[x,y,z]^3$ injective on $\mathbb{Z}^3$ is a polynomial automorphism of $\mathbb{C}^3$.
+
+## Fire on a random hat patch | 7 | Probability
+W: Remove each hat tile with some probability. Find the exact point where a fire can no longer burn forever.
+M: Prove the site-percolation threshold of the hat tiling exists as a single sharp value and bound it within $10^{-4}$.
+
+## Emirp twins | 7 | Number theory
+W: Show infinitely many twin-prime pairs exist where both reverse to primes, assuming only standard sieve bounds plus one level-of-distribution hypothesis.
+M: Assuming Elliott–Halberstam, prove infinitely many $p$ with $p,p+2,\operatorname{rev}(p),\operatorname{rev}(p+2)$ prime among bounded gaps of tuples $(p,p+h)$, $h\le H$ explicit.
+
+## Seven-free Goldbach | 7 | Number theory
+W: Show almost every even number is a sum of two primes that have no digit 7.
+M: Prove all but $o(x)$ even $n\le x$ are sums of two 7-free primes.
+
+## Hat mixing time | 7 | Probability
+W: Randomly flip local patches of a hat tiling. Show it mixes in polynomial time.
+M: For local-move Glauber dynamics on hat tilings of an $L\times L$ region, prove mixing time $L^{O(1)}$.
+
+## Tetris on a cylinder | 7 | Games
+W: When the board wraps left to right, can a player survive forever against any piece sequence?
+M: Decide whether a player can survive indefinitely in a width-10 cylindrical Tetris well against adversarial piece sequences with 1-piece preview.
+
+## Sofa in curved space with a corner | 7 | Geometry
+W: On a cone-shaped surface the hallway corner is the cone point. Find the best sofa.
+M: For the width-1 corridor on a flat cone of angle $\alpha$ with the inner corner at the apex, find the optimal sofa area as a function of $\alpha$.
+
+## Largest-factor Collatz for all n | 8 | Dynamics
+W: Prove every start reaches a loop under the largest-factor Collatz map.
+M: Prove every orbit of $f(n)=n/2$ (even), $P(3n+1)$ (odd) is eventually periodic.
+
+## Smallest-factor Collatz for all n | 8 | Dynamics
+W: Prove every start reaches 1 under the smallest-odd-factor Collatz map.
+M: Prove $g^k(n)=1$ for some $k$, for every $n\ge1$.
+
+## 5n+1 largest-factor convergence | 8 | Dynamics
+W: Prove every orbit of the 5n+1 largest-factor map ends in a loop.
+M: For $f_5(n)=n/2$ (even), $P(5n+1)$ (odd), prove every orbit is eventually periodic.
+
+## Prime Nim closed form | 8 | Games
+W: Find an exact rule for the Prime Nim losing positions that works for every pile size.
+M: Give a closed-form characterization of $\{n: G(n)=0\}$ in Prime Nim checkable in $O(\log n)$ arithmetic operations, with proof.
+
+## Cube-sum Hamiltonian cycles | 8 | Combinatorics
+W: Arrange 1 to N in a circle so neighbours add to perfect cubes, for all large N.
+M: Prove $C_N$ is Hamiltonian for all sufficiently large $N$.
+
+## Gerver constant is transcendental | 8 | Geometry
+W: Show the area of Gerver's sofa is not a root of any polynomial with integer coefficients.
+M: Prove $\mu_G\approx2.2195$ is transcendental.
+
+## Hat Ising critical temperature | 8 | Physics
+W: Find the exact critical temperature for magnets on a hat tiling.
+M: Compute $\beta_c$ of the Ising model on the hat adjacency graph in closed form.
+
+## Hat dimer heights | 8 | Physics
+W: Random pairings of neighbouring hat tiles have a "height" landscape. Show it looks like the standard random surface at large scales.
+M: Prove the height function of uniform dimer covers of growing hat patches converges to a multiple of the Gaussian free field, and compute the multiple.
+
+## Three colors for cube sums | 8 | Combinatorics
+W: Can the positive integers be 3-colored so no two numbers of the same color add to a cube? Settle it.
+M: Decide whether $\chi(C_\infty)\le3$, where $a\sim b$ iff $a+b$ is a perfect cube.
+
+## Two colors for square sums, avoiding triangles | 8 | Combinatorics
+W: Show every way to 2-color 1 to N, for large N, makes three same-colored numbers whose pairwise sums are all squares.
+M: Prove for large $N$ every 2-coloring of $[N]$ has a monochromatic triangle in $S_N$.
+
+## Keller maps are invertible over Q in dimension 3, degree ≤ 4 | 8 | Algebra
+W: Show no Jacobian-conjecture counterexample exists in 3D up to degree 4 with rational coefficients.
+M: Prove every Keller map $F\in\mathbb{Q}[x,y,z]^3$ with $\deg F\le4$ is invertible.
+
+## Real-rank hyperoperation uniqueness | 8 | Algebra
+W: Prove there is exactly one natural way to fill in the operations between addition, multiplication and powers.
+M: Prove uniqueness of an analytic family $a[s]b$ on $s\in[1,3]$ under the recursion law plus a log-convexity condition in $s$, and existence.
+
+## Hat ground state | 8 | Physics
+W: Find the arrangement of hat tiles that minimises a natural energy, and show it is the aperiodic tiling.
+M: Prove the hat tiling is the unique (up to isometry) ground state of a finite-range two-body potential on hat-shaped particles in the plane.
+
+## Spectre is a quasicrystal ground state | 8 | Physics
+W: Find a finite-range pair potential whose only zero-temperature arrangement is the spectre tiling.
+M: Construct a finite-range rotation-invariant pair potential for which every ground state is a spectre tiling, and prove it.
+
+## Sofa beyond Gerver in 3 dimensions of turning | 8 | Geometry
+W: A 2D hallway that turns 90° twice in a row (an S-bend): find the best sofa.
+M: Determine the optimal sofa for the width-1 corridor with two consecutive right turns in opposite directions, separated by length $L$, for every $L>0$.
+
+## Optimal sofa is not algebraic anywhere | 8 | Geometry
+W: Show the optimal sofa for a 60° turn has an outline that no polynomial equation describes.
+M: Prove the boundary of the optimal sofa for the $60^\circ$ corridor contains no arc of any algebraic curve.
+
+## Delayed fire on the grid | 8 | Combinatorics
+W: If the fire only spreads every other turn, find the smallest per-turn budget that always contains it.
+M: Find the infimum of average firefighter budgets that contain the half-speed fire on $\mathbb{Z}^2$.
+
+## 3-pile shuffle mixing constant | 8 | Probability
+W: Find the exact cutoff constant for riffle-style 3-pile shuffles, in closed form.
+M: For random 3-pile shuffles on $3n$ cards, prove cutoff at $c\log n$ with $c$ in closed form and window $O(1)$.
+
+## Prime necklaces for all n | 8 | Combinatorics
+W: Arrange 1 to 2n in a circle so every two neighbours sum to a prime, and so do every two numbers three apart.
+M: Prove for all large $n$ a cyclic arrangement of $[2n]$ with $\pi_i+\pi_{i+1}$ and $\pi_i+\pi_{i+3}$ prime for all $i$.
+
+## Packing hats | 8 | Geometry
+W: Find the densest way to pack hat shapes when they are not allowed to tile.
+M: Determine the maximal packing density of translates and rotations of the hat with reflections forbidden.
+
+## Kissing number of the spectre | 8 | Geometry
+W: How many spectres can touch one central spectre without overlapping?
+M: Determine the kissing number of the spectre polygon under rigid motions (reflections allowed).
+
+## Graceful trees up to 50 vertices in Lean | 8 | Formal proof
+W: Give a computer-checked proof that every tree with up to 50 vertices is graceful.
+M: Formalize in Lean 4 that all trees on $\le50$ vertices admit graceful labelings.
+
+## Yang–Mills on hats | 8 | Physics
+W: Lattice gauge theory placed on a hat tiling should still have a mass gap at strong coupling and at weak coupling.
+M: Prove the $SU(2)$ lattice gauge theory on the 3D product of the hat complex and $\mathbb{Z}$ has a mass gap for all couplings.
+
+## Squared squares with consecutive primes | 8 | Combinatorics
+W: Find a perfect squared square whose square sides are consecutive primes.
+M: Find or rule out a perfect squared square whose component sides are $p_k,p_{k+1},\dots,p_{k+r}$ for some $k,r$.
+
+## Spectral gap of the spectre | 8 | Analysis
+W: Find the exact gaps in the energy levels of an electron moving on a spectre tiling.
+M: Prove the spectrum of the adjacency operator on the spectre tiling has gaps labelled by an explicit $K$-theory group, with every label open.
+
+## Prime Nim with two piles | 8 | Games
+W: Give an exact rule for who wins two-pile Prime Nim (remove a prime from one pile).
+M: Characterize $\{(a,b): G(a)\oplus G(b)=0\}$ via a formula for the Grundy function $G$ of Prime Nim.
+
+## Integer Keller collisions | 8 | Algebra
+W: Show any Jacobian-conjecture counterexample must send two different integer points to the same place.
+M: Prove every non-invertible Keller map in $\mathbb{Z}[x_1,\dots,x_n]^n$ is non-injective on $\mathbb{Z}^n$.
+
+## Polykite growth is irrational | 8 | Combinatorics
+W: Show the growth rate of polykite counts is an irrational number.
+M: Prove $\lambda=\lim k_n^{1/n}$ for polykites is irrational.
+
+## Hat corona limit shape is not polygonal | 8 | Geometry
+W: Show the limiting shape of hat layers has a fractal outline.
+M: Prove the limit shape of scaled hat coronas has boundary of Hausdorff dimension $>1$.
+
+## LF-Collatz stopping time distribution | 8 | Dynamics
+W: Find the exact distribution of how long the largest-factor Collatz map takes to settle.
+M: Prove $T_f(n)/\log n$ converges in distribution on $[1,x]$ and identify the limit law.
+
+## SOF Collatz is undecidable in general | 9 | Logic
+W: Show some natural family of smallest-factor Collatz maps has an undecidable reach-1 question.
+M: Prove the problem "given $a,b$, does every orbit of $n\mapsto n/2$ or $\mathrm{spf}(an+b)$ reach 1?" is undecidable.
+
+## Gerver constant is normal | 9 | Number theory
+W: Show the digits of Gerver's sofa area appear with equal frequency in base 10.
+M: Prove $\mu_G$ is normal in base 10.
+
+## Sofa for every corridor | 9 | Geometry
+W: Give one method that finds the best sofa for every hallway shape.
+M: Prove optimal sofas for piecewise-linear corridors are characterized by a finite system of ODEs on boundary arcs, and solve it in closed form for all right-angle corridors of width ratio $r$.
+
+## Prime Nim is periodic in base 2 | 9 | Games
+W: Show the Grundy values of Prime Nim follow a pattern that a finite machine reads off the binary digits, or prove none exists.
+M: Decide whether the Grundy function of Prime Nim is $2$-automatic.
+
+## Hyperoperation at rank 2.5 is transcendental | 9 | Algebra
+W: Show 2 combined with 3 at "rank 2.5" in the natural hyperoperation family is transcendental.
+M: For the unique natural family $a[s]b$, prove $2[2.5]3$ is transcendental.
+
+## Square-sum chromatic number | 9 | Combinatorics
+W: Find exactly how many colors the infinite square-sum graph needs.
+M: Determine $\chi(S_\infty)$ exactly.
+
+## Cube-sum independence | 9 | Combinatorics
+W: Find the largest set of numbers up to N where no two add to a cube.
+M: Determine $\alpha(C_N)$ asymptotically, with second-order term.
+
+## Keller maps classification | 9 | Algebra
+W: List every Jacobian-conjecture counterexample in 3D, up to symmetry.
+M: Classify all non-invertible Keller maps $\mathbb{C}^3\to\mathbb{C}^3$ up to composition with polynomial automorphisms.
+
+## Hat aperiodicity in Lean, minimal | 9 | Formal proof
+W: Give a computer-checked proof that the hat tiles only aperiodically, in under 2000 lines.
+M: Produce a Lean 4 proof of the hat's aperiodicity of at most 2000 lines using only Mathlib.
+
+## Spectre gap labelling | 9 | Physics
+W: Show every allowed energy gap of the spectre tiling actually opens.
+M: Prove the dry ten-Martini property for the adjacency operator on the spectre tiling.
+
+## Chess on the hat board | 9 | Games
+W: Solve a chess-like game on a hat-tiled board with 10 pieces per side.
+M: Weakly solve the game with standard chess move semantics translated to the hat graph on a fixed 64-tile patch.
+
+## Toroidal Go 9×9 | 9 | Games
+W: Who wins Go on a 9×9 board that wraps around in both directions?
+M: Weakly solve Go on $\mathbb{Z}_9^2$ with area scoring and komi $0$.
+
+## 7×7 Othello | 9 | Games
+W: Who wins Othello on an odd 7×7 board with a fixed off-centre start?
+M: Strongly solve Othello on a $7\times7$ board from the standard initial cross shifted to the corner-adjacent center.
+
+## Hat random walk return | 9 | Probability
+W: Find the exact probability that a random walk on hat tiles returns to its start within n steps, asymptotically.
+M: Prove $p_{2n}(o,o)\sim c/n$ on the hat graph and compute $c$ exactly.
+
+## Firefighter on Z³ | 9 | Combinatorics
+W: How many firefighters per turn are needed to contain a fire in 3D, as a precise growth rate?
+M: Determine $\lim_{t\to\infty}f(t)/t$ for the minimal firefighters needed to contain fire on $\mathbb{Z}^3$ by time $t$.
+
+## Sudoku count asymptotics | 9 | Combinatorics
+W: Count n²×n² Sudoku grids exactly, to leading order.
+M: Prove $\#\text{Sudoku}(n)=\left(\frac{(n^2)!^{2}}{n^{2n^2}e^{\dots}}\right)\!(1+o(1))$ with an explicit leading term.
+
+## Polykite complete classification | 9 | Geometry
+W: For every polykite, decide whether it tiles, and if so how.
+M: Give an algorithm deciding, for any single polykite, whether it tiles the plane, and prove it correct.
+
+## Prime Nim complexity | 10 | Computation
+W: Decide exactly how hard it is to tell if a Prime Nim pile is losing: show it can't be done fast without unproven assumptions.
+M: Prove, unconditionally, that deciding $G(n)=0$ in Prime Nim requires time $(\log n)^{\omega(1)}$.
+
+## LF-Collatz loops classified forever | 10 | Dynamics
+W: Show every largest-factor Collatz-type map for every odd multiplier has only finitely many loops, with a uniform recipe.
+M: For every odd $a\ge3$, prove $f_a(n)=n/2$ (even), $P(an+1)$ (odd) has finitely many cycles, with an explicit bound in $a$.
+
+## Hyperoperation transcendence | 10 | Algebra
+W: Show values of the natural hyperoperation at non-integer ranks are algebraically independent.
+M: Prove $\{2[s]3: s\in\mathbb{Q}\cap(2,3)\}$ is algebraically independent over $\mathbb{Q}$.
+
+## Square-sum Ramsey numbers | 10 | Combinatorics
+W: Find the exact point at which every 2-coloring of 1 to N contains a same-colored square-sum clique of size 4.
+M: Determine $\min\{N: \text{every 2-coloring of }[N]\text{ has a monochromatic }K_4\text{ in }S_N\}$, or prove none exists.
+
+## Optimal 3D origami | 10 | Geometry
+W: For every 3D shape, find the smallest sheet of paper that folds into it.
+M: Give a characterization, with an algorithm, of the minimal-area square that folds into any given polyhedral surface.
+

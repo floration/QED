@@ -1,0 +1,206 @@
+[
+{
+"title": "Climb by the next number's factor",
+"area": "Dynamics",
+"W": "Halve even numbers. For odd n, add the largest prime factor of n + 1. Every tested start ends in the loop through 1 or the loop 7 \u2192 9 \u2192 14 \u2192 7. Prove it.",
+"M": "Let $g(n)=n/2$ ($n$ even), $n+P(n+1)$ ($n$ odd). Prove every orbit enters $(1,3,5,8,4,2)$ or $(7,9,14)$."
+},
+{
+"title": "P(n)+P(n+1)\u22121",
+"area": "Dynamics",
+"W": "Replace n by P(n) + P(n + 1) \u2212 1. Every tested start ends in one of three loops. Prove these are the only ones.",
+"M": "Prove every orbit of $n\\mapsto P(n)+P(n+1)-1$ on $n\\ge2$ enters $(4,6,9,7,8)$, $(17,19,23,25)$ or $(167,173,201)$."
+},
+{
+"title": "Neighbours' largest factors",
+"area": "Dynamics",
+"W": "Replace n by P(n \u2212 1) + P(n + 1). Every tested start ends at 5 or in one of three loops, of lengths 11, 18 and 4. Prove there is nothing else.",
+"M": "Prove every orbit of $n\\mapsto P(n-1)+P(n+1)$ on $n\\ge3$ enters $\\{5\\}$, the 11-cycle through 8, the 18-cycle through 24, or $(224,228,456,470)$."
+},
+{
+"title": "Last digits of consecutive largest factors",
+"area": "Number theory",
+"W": "Look at the last digits of P(n) and P(n + 1). Show the 16 possible pairs of last digits from {1, 3, 7, 9} occur equally often.",
+"M": "Prove $\\#\\{n\\le x: P(n)\\equiv a,\\ P(n+1)\\equiv b\\ (10)\\}\\sim\\frac{x}{16}$ for all $a,b\\in\\{1,3,7,9\\}$."
+},
+{
+"title": "Prime continued fractions",
+"area": "Number theory",
+"W": "Consider real numbers whose continued fraction terms are all prime. Show the fractal dimension of this set is transcendental.",
+"M": "Let $E=\\{x\\in(0,1): \\text{all partial quotients of }x\\text{ are prime}\\}$. Prove $\\dim_H E$ is transcendental."
+},
+{
+"title": "Prime plus two seven-free squares",
+"area": "Number theory",
+"W": "Show every large number is a prime plus a sum of two squares whose bases have no digit 7.",
+"M": "Prove every sufficiently large $n$ is $p+a^2+b^2$ with $p$ prime and $a,b$ free of the decimal digit 7."
+},
+{
+"title": "Infinite monochromatic square-sum paths",
+"area": "Combinatorics",
+"W": "Colour the positive integers red and blue. Show there is always an infinite increasing sequence of one colour in which every two consecutive terms sum to a perfect square.",
+"M": "Prove every 2-colouring of $\\mathbb{N}$ admits $a_1<a_2<\\cdots$ of one colour with $a_i+a_{i+1}$ a perfect square for all $i$."
+},
+{
+"title": "Roth for seven-free numbers",
+"area": "Combinatorics",
+"W": "Show every subset of the seven-free numbers that keeps a fixed fraction of them contains three in arithmetic progression.",
+"M": "Prove for every $\\delta>0$ and large $N$, every $A\\subseteq\\{n\\le N:7\\notin n\\}$ with $|A|\\ge\\delta\\#\\{n\\le N:7\\notin n\\}$ contains a nontrivial 3-term AP."
+},
+{
+"title": "Partizan Prime Nim",
+"area": "Games",
+"W": "Left may remove a prime that is 1 mod 4, Right a prime that is 3 mod 4, from one pile. Describe the game values.",
+"M": "For the partizan subtraction game with $L=\\{p\\equiv1\\ (4)\\}$, $R=\\{p\\equiv3\\ (4)\\}$, prove every position is equal to a number or a number plus a switch of bounded temperature, and find the bound."
+},
+{
+"title": "Is Prime Nim's losing set definable?",
+"area": "Logic",
+"W": "Add the set of Prime Nim losing positions to the arithmetic of addition. Is the resulting theory decidable?",
+"M": "Decide whether the first-order theory of $(\\mathbb{N},+,L)$ is decidable, where $L=\\{n:G(n)=0\\}$ for the prime subtraction game."
+},
+{
+"title": "Hamiltonian induced subgraphs of S_N",
+"area": "Computation",
+"W": "Show deciding whether a given set of numbers can be lined up so neighbours sum to squares is NP-complete.",
+"M": "Prove NP-completeness of: given $A\\subset\\mathbb{N}$ (in binary), decide whether $S_\\infty[A]$ has a Hamiltonian path."
+},
+{
+"title": "Fibonacci-sum chains",
+"area": "Combinatorics",
+"W": "Join two numbers if their sum is a Fibonacci number. Decide for which N the numbers 1 to N can be lined up with neighbours always joined.",
+"M": "Let $F_N$ join $a\\ne b\\in[N]$ when $a+b$ is a Fibonacci number. Determine all $N$ for which $F_N$ has a Hamiltonian path."
+},
+{
+"title": "Ramsey for prime sums of three",
+"area": "Combinatorics",
+"W": "Colour the integers with two colours. Show there are always three distinct numbers of one colour whose three pairwise sums are all prime, or a forced obstruction to this.",
+"M": "Decide whether every 2-colouring of $\\mathbb{N}$ contains distinct $a,b,c$ of one colour with $a+b,a+c,b+c$ all prime."
+},
+{
+"title": "Graceful square-sum paths",
+"area": "Combinatorics",
+"W": "Find infinitely many N for which 1 to N can be lined up with neighbours summing to squares and with all neighbour differences distinct.",
+"M": "Prove infinitely many $N$ admit a Hamiltonian path $v_1\\dots v_N$ of $S_N$ with $|v_{i+1}-v_i|$ pairwise distinct."
+},
+{
+"title": "Prime-sum graph is Hamiltonian-connected",
+"area": "Combinatorics",
+"W": "Show you can line up 1 to 2n with neighbours summing to primes, starting with any odd number and ending with any even one.",
+"M": "Prove for all large $n$ and all odd $a$, even $b$ in $[2n]$, the prime-sum graph on $[2n]$ has a Hamiltonian $a$\u2013$b$ path."
+},
+{
+"title": "No long climbs for 2P(n)+1",
+"area": "Dynamics",
+"W": "Show the map n \u21a6 2P(n) + 1 cannot keep increasing for more than a bounded number of steps.",
+"M": "Prove there is $K$ such that no orbit of $n\\mapsto 2P(n)+1$ has $K$ consecutive increases, and find the optimal $K$."
+},
+{
+"title": "Sofa in three dimensions",
+"area": "Geometry",
+"W": "Find the largest volume solid that can be carried around a right-angled corner in a square-cross-section hallway of width 1 in 3D.",
+"M": "Determine $\\sup\\{\\mathrm{vol}(K)\\}$ over compact $K\\subset\\mathbb{R}^3$ movable by rigid motions from one arm to the other of $L=([0,\\infty)\\times[0,1]\\cup[0,1]\\times[0,\\infty))\\times[0,1]$, and prove the maximiser is not a cylinder over a planar sofa."
+},
+{
+"title": "Self-avoiding polygon on the hat tiling",
+"area": "Probability",
+"W": "Count self-avoiding walks along the edges of the hat tiling. Find the growth rate exactly.",
+"M": "Prove the connective constant $\\mu$ of the hat-tiling edge graph exists (averaged over vertices) and determine it in closed form."
+},
+{
+"title": "Unforced blow-up near the forced one",
+"area": "PDE",
+"W": "Show the known forced Navier\u2013Stokes blow-up can be made to work with forcing that decays to zero at the blow-up time.",
+"M": "Prove there exist smooth $u_0$ and $f\\in L^1_tL^2_x\\cap C^\\infty$ with $\\|f(t)\\|_{L^2}\\to0$ as $t\\to T^-$ such that the forced 3D NS solution blows up at $T$."
+},
+{
+"title": "Prime-digit continued fractions in arithmetic progressions",
+"area": "Number theory",
+"W": "Show there are infinitely many quadratic irrationals all of whose continued fraction digits are prime, in each real quadratic field.",
+"M": "Prove for every real quadratic field $K$ there are infinitely many $\\alpha\\in K$ with purely periodic continued fraction expansion having all partial quotients prime."
+},
+{
+"title": "Hexagonal Lebesgue covering",
+"area": "Geometry",
+"W": "Find the smallest convex shape that can cover every set of diameter 1, if covering is by translation only, not rotation.",
+"M": "Determine $\\min\\{\\mathrm{area}(K):K$ convex, every set of diameter $1$ has a translate inside $K\\}$, and prove the minimiser is unique."
+},
+{
+"title": "Entropy of the Prime Nim word",
+"area": "Games",
+"W": "Read the Grundy values of Prime Nim as an infinite word. Show the number of distinct length-N blocks grows exponentially and find the rate.",
+"M": "Prove $\\lim_N\\frac1N\\log\\#\\{(G(n+1),\\dots,G(n+N)):n\\ge0\\}$ exists and determine it."
+},
+{
+"title": "Self-avoiding walk on the hat tiling scaling",
+"area": "Probability",
+"W": "Show long self-avoiding walks on the hat tiling spread out like distance n^{3/4}, the same as on the square grid.",
+"M": "Prove $\\mathbb{E}|\\omega_n|^2=n^{3/2+o(1)}$ for uniform $n$-step SAWs on the hat-tiling edge graph."
+},
+{
+"title": "Largest-prime-factor random walk",
+"area": "Probability",
+"W": "Start at n and repeatedly move to n + P(n) or n \u2212 P(n) with a fair coin. Show this walk returns to small numbers with probability 1.",
+"M": "For the Markov chain $X_{t+1}=X_t\\pm P(X_t)$ (fair signs, absorbed at $\\le1$), prove absorption is almost sure from every start."
+},
+{
+"title": "Ising with prime couplings",
+"area": "Probability",
+"W": "On the integer line, couple spins i and j with strength 1 if i \u2212 j is prime. Decide whether there is a phase transition.",
+"M": "For the 1D Ising model with $J_{ij}=\\mathbf 1[|i-j|\\in\\mathbb{P}]\\,|i-j|^{-2}$, prove a phase transition at finite $\\beta_c$ and determine whether the magnetization jumps."
+},
+{
+"title": "Random hat tilings",
+"area": "Probability",
+"W": "Choose a random tiling of a large hexagon by hats and their mirror images, with mirror images allowed freely. Find the entropy.",
+"M": "Prove tilings of regions by the hat and its reflection (both used freely) have positive entropy per tile, and compute it."
+},
+{
+"title": "Stopping time law for P(n)+P(n+1)",
+"area": "Probability",
+"W": "For the map n \u21a6 P(n) + P(n+1), find the distribution of the number of steps to the {5, 8} loop.",
+"M": "Prove the stopping time $\\sigma(n)$ of $f(n)=P(n)+P(n+1)$ satisfies $\\sigma(n)/\\log\\log n\\to c$ in density, and determine $c$."
+},
+{
+"title": "Neighbour factors plus one",
+"area": "Dynamics",
+"W": "Map n to P(n \u2212 1) + P(n + 1) + 1. Tested starts reach 8 \u2192 11 \u2192 9 or 10 \u2192 15. Prove all do.",
+"M": "For $f(n)=P(n-1)+P(n+1)+1$, prove every orbit with $n\\ge3$ reaches $(8,11,9)$ or $(10,15)$."
+},
+{
+"title": "Minimal degree of a Jacobian counterexample",
+"area": "Algebra",
+"W": "The first counterexample to the Jacobian conjecture in three dimensions has degree 7. Find the smallest possible degree.",
+"M": "Determine $\\min\\deg F$ over polynomial maps $F:\\mathbb{C}^3\\to\\mathbb{C}^3$ with $\\det JF\\equiv1$ and $F$ not injective."
+},
+{
+"title": "Tileability by the spectre is undecidable for regions with holes",
+"area": "Logic",
+"W": "Show deciding whether a finite region with holes can be tiled by spectres is NP-complete.",
+"M": "Prove NP-completeness of: given a finite polygonal region $R$ (with holes), decide whether $R$ is tileable by copies of the spectre."
+},
+{
+"title": "Sums of a square and a seven-free prime",
+"area": "Number theory",
+"W": "Show almost every number is a square plus a prime with no 7 in its decimal digits.",
+"M": "Prove the set of $n$ not of the form $m^2+p$ with $p$ prime and $7\\notin p$ has density zero."
+},
+{
+"title": "Seven-free squares density",
+"area": "Number theory",
+"W": "Count squares up to x with no 7 in their digits and find the exact power of x.",
+"M": "Prove $\\#\\{m\\le\\sqrt x:7\\notin m^2\\}=x^{\\frac12\\log_{10}9+o(1)}$."
+},
+{
+"title": "Largest prime factor of n^n + 1",
+"area": "Number theory",
+"W": "Show P(n^n + 1) / n tends to infinity.",
+"M": "Prove $P(n^n+1)/n\\to\\infty$."
+},
+{
+"title": "Hadwiger number of square sums",
+"area": "Combinatorics",
+"W": "Find the largest complete graph minor in the square-sum graph on 1 to N.",
+"M": "Determine the order of magnitude of $h(S_N)$, the largest $t$ with $K_t\\preceq S_N$."
+}
+]

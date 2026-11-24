@@ -1,0 +1,39 @@
+## Largest-factor tribonacci | 7 | Dynamics
+W: Repeatedly add the largest prime factors of the last three terms. Show the sequence is always eventually periodic.
+M: For $a_{n+3}=P(a_{n+2})+P(a_{n+1})+P(a_n)$, prove eventual periodicity for every start in $\mathbb{N}_{\ge2}^3$.
+
+## Spanning-tree entropy of the spectre tiling | 6 | Probability
+W: Find the growth rate of the number of spanning trees of large spectre-tiling patches, and show it is not a rational multiple of Catalan's constant.
+M: Prove $\lim\frac{\log\tau(G_R)}{|V(G_R)|}=h$ exists for spectre patches and $h/G\notin\mathbb{Q}$, $G$ Catalan's constant.
+
+## Random square-sum transpositions mixing | 6 | Probability
+W: Shuffle 1 to N by swapping a random pair that sums to a square. Find the mixing time and show cutoff.
+M: For the random walk on $S_N$ (symmetric group) driven by uniform $T$-transpositions, $T$ as above, prove cutoff and determine its location.
+
+## Prime Markov triples | 6 | Number theory
+W: Show only finitely many Markov triples consist of three primes, or infinitely many.
+M: Decide whether infinitely many solutions of $x^2+y^2+z^2=3xyz$ have $x,y,z$ all prime.
+
+## Largest prime factor of Markov numbers | 7 | Number theory
+W: Show the largest prime factor of Markov numbers tends to infinity.
+M: Prove $P(m)\to\infty$ as $m$ runs through Markov numbers.
+
+## Seven-free Markov numbers | 7 | Number theory
+W: Show infinitely many Markov numbers have no digit 7.
+M: Prove infinitely many Markov numbers $m$ satisfy $7\notin m$ (decimal).
+
+## Apollonian packing with prime curvatures | 7 | Number theory
+W: In the integral Apollonian packing with curvatures (−1, 2, 2, 3), show every large prime is the largest prime factor of some circle's curvature.
+M: For the $(-1,2,2,3)$ Apollonian packing with curvature multiset $\mathcal{K}$, prove $\{P(k):k\in\mathcal{K}\}$ contains all sufficiently large primes.
+
+## Apollonian seven-free curvatures | 7 | Number theory
+W: In the Apollonian packing (−1, 2, 2, 3), show infinitely many circles have curvature with no digit 7, and count them.
+M: Prove $\#\{k\le X:k\in\mathcal{K},7\notin k\}=X^{\log_{10}9+o(1)}$ for the $(-1,2,2,3)$ packing.
+
+## Largest factor of p² + p + 1 small | 7 | Number theory
+W: Show infinitely many primes p have P(p² + p + 1) < p.
+M: Prove $\#\{p\le x:P(p^2+p+1)<p\}\gg\pi(x)$.
+
+## Consecutive largest factors both 3 mod 4 | 7 | Number theory
+W: Show P(n) and P(n+1) are both 3 mod 4 for a quarter of all n.
+M: Prove $\#\{n\le x:P(n)\equiv P(n+1)\equiv3\ (4)\}\sim x/4$.

@@ -1,0 +1,602 @@
+[
+{
+"id": "N-098",
+"r": 3.0,
+"flag": "ok",
+"why": "rigorous bound over all strategies; state space far too large"
+},
+{
+"id": "N-409",
+"r": 5.5,
+"flag": "famous-equiv",
+"why": "digit-reversal primes; beyond Maynard methods, twin-prime level"
+},
+{
+"id": "N-345",
+"r": 3.0,
+"flag": "ill-posed",
+"why": "'rows = geodesic paths' on hat graph is vague"
+},
+{
+"id": "N-247",
+"r": 0.5,
+"flag": "easy",
+"why": "Besicovitch-type construction makes infimum zero, unattained"
+},
+{
+"id": "N-054",
+"r": 0.3,
+"flag": "known",
+"why": "bounded gap followed by large gap (Pintz) gives it"
+},
+{
+"id": "N-202",
+"r": 5.5,
+"flag": "famous-equiv",
+"why": "requires proving RH, with length constraint"
+},
+{
+"id": "N-205",
+"r": 2.5,
+"flag": "ok",
+"why": "forced blow-up assumed known; closed-form data is refinement"
+},
+{
+"id": "N-351",
+"r": 1.5,
+"flag": "known",
+"why": "BKT on planar graphs largely known (van Engelenburg\u2013Lis etc.)"
+},
+{
+"id": "N-448",
+"r": 3.0,
+"flag": "ok",
+"why": "subtraction games with irregular sets rarely characterizable"
+},
+{
+"id": "N-450",
+"r": 0.5,
+"flag": "computation",
+"why": "finite count; 'canonical cluster' ill-specified"
+},
+{
+"id": "N-382",
+"r": 4.5,
+"flag": "ok",
+"why": "cycle classification akin to Collatz cycle problem"
+},
+{
+"id": "N-028",
+"r": 2.0,
+"flag": "ok",
+"why": "reduces to multiplicative orders; no closed form expected"
+},
+{
+"id": "N-264",
+"r": 3.0,
+"flag": "ill-posed",
+"why": "uniform separation, optimal bound undefined"
+},
+{
+"id": "N-065",
+"r": 2.0,
+"flag": "computation",
+"why": "ill-defined step measure; minimality certification by search"
+},
+{
+"id": "N-164",
+"r": 3.0,
+"flag": "ok",
+"why": "no structure known for prime-subtraction Grundy values"
+},
+{
+"id": "N-473",
+"r": 1.5,
+"flag": "ok",
+"why": "formalization engineering"
+},
+{
+"id": "N-359",
+"r": 2.5,
+"flag": "ok",
+"why": "digit dynamics; ad hoc constructions maybe"
+},
+{
+"id": "N-190",
+"r": 2.0,
+"flag": "ok",
+"why": "small-tile-set undecidability reductions are active, plausible"
+},
+{
+"id": "N-274",
+"r": 3.0,
+"flag": "ill-posed",
+"why": "sharp rate 'in terms of geometry' vague"
+},
+{
+"id": "N-402",
+"r": 5.0,
+"flag": "famous-equiv",
+"why": "Collatz-type global convergence"
+},
+{
+"id": "N-075",
+"r": 2.5,
+"flag": "ok",
+"why": "firefighter on exponential-growth graphs; asymptotic budget"
+},
+{
+"id": "N-003",
+"r": 0.0,
+"flag": "easy",
+"why": "check residues mod 3,5,7 directly"
+},
+{
+"id": "N-145",
+"r": 0.0,
+"flag": "easy",
+"why": "G(n) at most number of moves pi(n)"
+},
+{
+"id": "N-135",
+"r": 2.5,
+"flag": "ok",
+"why": "depends on structure of new counterexample families"
+},
+{
+"id": "N-094",
+"r": 1.0,
+"flag": "easy",
+"why": "likely 2-periodic orbit between parallel flats"
+},
+{
+"id": "N-302",
+"r": 2.0,
+"flag": "ill-posed",
+"why": "refers to undefined construction class"
+},
+{
+"id": "N-249",
+"r": 3.0,
+"flag": "ok",
+"why": "cop number of sparse arithmetic graph"
+},
+{
+"id": "N-007",
+"r": 0.8,
+"flag": "easy",
+"why": "explicit construction for path forests"
+},
+{
+"id": "N-120",
+"r": 3.0,
+"flag": "computation",
+"why": "huge game-tree search"
+},
+{
+"id": "N-335",
+"r": 3.5,
+"flag": "ok",
+"why": "Peierls on aperiodic non-bipartite structure"
+},
+{
+"id": "N-496",
+"r": 3.5,
+"flag": "ok",
+"why": "optimal folding open even for cube"
+},
+{
+"id": "N-091",
+"r": 3.0,
+"flag": "computation",
+"why": "finite but enormous search near undecidability"
+},
+{
+"id": "N-043",
+"r": 1.5,
+"flag": "ok",
+"why": "small firefighter variant"
+},
+{
+"id": "N-428",
+"r": 4.0,
+"flag": "computation",
+"why": "graceful trees only verified to ~35 vertices; ~1e19 trees"
+},
+{
+"id": "N-119",
+"r": 2.0,
+"flag": "ok",
+"why": "local perturbation argument likely"
+},
+{
+"id": "N-195",
+"r": 2.0,
+"flag": "ok",
+"why": "Skolem/Langford-type; parity obstruction plus constructions"
+},
+{
+"id": "N-184",
+"r": 1.5,
+"flag": "ok",
+"why": "explicit parametrizations; transcendence of curve moderate"
+},
+{
+"id": "N-127",
+"r": 3.5,
+"flag": "ok",
+"why": "Tao-style density result for nonstandard Collatz map"
+},
+{
+"id": "N-213",
+"r": 4.5,
+"flag": "ok",
+"why": "average stopping time in Collatz-type map"
+},
+{
+"id": "N-438",
+"r": 0.5,
+"flag": "computation",
+"why": "finite graph; Gray-code style path likely"
+},
+{
+"id": "N-344",
+"r": 4.0,
+"flag": "ok",
+"why": "asymptotics of minimal puzzles far beyond tools"
+},
+{
+"id": "N-221",
+"r": 3.0,
+"flag": "ok",
+"why": "square-peg variant on surfaces, smooth case"
+},
+{
+"id": "N-071",
+"r": 2.0,
+"flag": "computation",
+"why": "finite game solve, feasible-ish"
+},
+{
+"id": "N-143",
+"r": 0.3,
+"flag": "easy",
+"why": "Dobrushin/cluster expansion gives explicit z0"
+},
+{
+"id": "N-282",
+"r": 1.0,
+"flag": "ill-posed",
+"why": "vague finite geometric optimization"
+},
+{
+"id": "N-206",
+"r": 5.0,
+"flag": "famous-equiv",
+"why": "requires settling Hadwiger\u2013Nelson chi=7"
+},
+{
+"id": "N-408",
+"r": 5.5,
+"flag": "famous-equiv",
+"why": "implies twin prime conjecture"
+},
+{
+"id": "N-086",
+"r": 2.5,
+"flag": "ok",
+"why": "existence on non-transitive graph plus numeric bounds"
+},
+{
+"id": "N-415",
+"r": 3.5,
+"flag": "ok",
+"why": "arithmetic Ramsey for square triangles"
+},
+{
+"id": "N-384",
+"r": 0.8,
+"flag": "known",
+"why": "standard Wang-tile reduction to polyforms"
+},
+{
+"id": "N-201",
+"r": 4.0,
+"flag": "computation",
+"why": "optimal POMDP over astronomic state space"
+},
+{
+"id": "N-464",
+"r": 6.0,
+"flag": "famous-equiv",
+"why": "exact 3D Ising critical point"
+},
+{
+"id": "N-067",
+"r": 0.0,
+"flag": "false",
+"why": "odd N impossible by parity; even case near prime circle problem"
+},
+{
+"id": "N-420",
+"r": 0.0,
+"flag": "easy",
+"why": "n=2^(k-1): order of 2 mod 2^k-1 is k"
+},
+{
+"id": "N-112",
+"r": 4.5,
+"flag": "famous-equiv",
+"why": "analog of Toeplitz square peg for Jordan curves"
+},
+{
+"id": "N-435",
+"r": 3.5,
+"flag": "ok",
+"why": "arithmetic injectivity of Keller maps"
+},
+{
+"id": "N-253",
+"r": 3.0,
+"flag": "ok",
+"why": "chromatic number of sparse arithmetic graph"
+},
+{
+"id": "N-060",
+"r": 2.0,
+"flag": "ok",
+"why": "planar quadratic growth; likely k=2"
+},
+{
+"id": "N-313",
+"r": 4.0,
+"flag": "ok",
+"why": "Baek-level difficulty for each angle"
+},
+{
+"id": "N-087",
+"r": 4.0,
+"flag": "ill-posed",
+"why": "bound 186 not known; would improve Polymath 246"
+},
+{
+"id": "N-182",
+"r": 5.0,
+"flag": "famous-equiv",
+"why": "presupposes proof of RH"
+},
+{
+"id": "N-237",
+"r": 3.5,
+"flag": "ok",
+"why": "Bressan fire-confinement variant, open"
+},
+{
+"id": "N-012",
+"r": 0.5,
+"flag": "easy",
+"why": "finite-parameter calculus optimization"
+},
+{
+"id": "N-178",
+"r": 2.0,
+"flag": "ok",
+"why": "firefighter variant on Z^2"
+},
+{
+"id": "N-394",
+"r": 4.0,
+"flag": "ok",
+"why": "polynomial mixing for tilings is very hard"
+},
+{
+"id": "N-198",
+"r": 4.5,
+"flag": "famous-equiv",
+"why": "c=1 case is graceful tree conjecture"
+},
+{
+"id": "N-146",
+"r": 3.0,
+"flag": "ok",
+"why": "random-tree graceful results partial"
+},
+{
+"id": "N-229",
+"r": 2.5,
+"flag": "ok",
+"why": "massive formalization, not open math"
+},
+{
+"id": "N-431",
+"r": 2.5,
+"flag": "computation",
+"why": "search for squared squares"
+},
+{
+"id": "N-487",
+"r": 3.5,
+"flag": "ok",
+"why": "Maynard\u2013Tao sieve plus digit-restricted distribution"
+},
+{
+"id": "N-332",
+"r": 3.5,
+"flag": "ok",
+"why": "3D sofa variants wide open"
+},
+{
+"id": "N-159",
+"r": 2.5,
+"flag": "ok",
+"why": "formalization engineering; Flyspeck exists"
+},
+{
+"id": "N-360",
+"r": 4.0,
+"flag": "ok",
+"why": "Chen plus missing digits, both heavy"
+},
+{
+"id": "N-467",
+"r": 3.5,
+"flag": "ok",
+"why": "chromatic number of square-sum graph open"
+},
+{
+"id": "N-034",
+"r": 0.2,
+"flag": "easy",
+"why": "S-tetromino cannot fill corners; impossible for all n"
+},
+{
+"id": "N-341",
+"r": 3.0,
+"flag": "ok",
+"why": "beyond Hamiltonicity results"
+},
+{
+"id": "N-357",
+"r": 3.5,
+"flag": "ok",
+"why": "infinite prime squared squares, constructive families unclear"
+},
+{
+"id": "N-243",
+"r": 1.0,
+"flag": "known",
+"why": "Maynard's restricted-digit primes method"
+},
+{
+"id": "N-139",
+"r": 1.5,
+"flag": "ok",
+"why": "draws likely at 4-valent vertices; small solve"
+},
+{
+"id": "N-048",
+"r": 4.0,
+"flag": "ok",
+"why": "requires proving all smaller polyhedra Rupert"
+},
+{
+"id": "N-480",
+"r": 4.0,
+"flag": "ill-posed",
+"why": "precise Sudoku asymptotics; leading term unspecified"
+},
+{
+"id": "N-234",
+"r": 3.5,
+"flag": "ok",
+"why": "Dixmier n=2; JC3 failure gives DC3 not DC2"
+},
+{
+"id": "N-297",
+"r": 3.0,
+"flag": "ok",
+"why": "irregular two-pile game characterization"
+},
+{
+"id": "N-432",
+"r": 4.5,
+"flag": "ok",
+"why": "all-gaps-open is Ten-Martini type"
+},
+{
+"id": "N-305",
+"r": 4.0,
+"flag": "ok",
+"why": "rigorous contact-process bounds weak even on Z^2"
+},
+{
+"id": "N-180",
+"r": 3.5,
+"flag": "ok",
+"why": "Ryser-type transversal problem for Sudoku squares"
+},
+{
+"id": "N-356",
+"r": 7.0,
+"flag": "famous-equiv",
+"why": "requires Yang\u2013Mills existence"
+},
+{
+"id": "N-175",
+"r": 2.5,
+"flag": "ok",
+"why": "SCD-type constructions plausibly extend"
+},
+{
+"id": "N-427",
+"r": 1.0,
+"flag": "computation",
+"why": "finite polygon packing check"
+},
+{
+"id": "N-294",
+"r": 0.2,
+"flag": "known",
+"why": "Berestycki\u2013Hamel\u2013Nadirashvili results"
+},
+{
+"id": "N-460",
+"r": 6.0,
+"flag": "famous-equiv",
+"why": "Hardy\u2013Littlewood k-tuple; implies twin primes"
+},
+{
+"id": "N-392",
+"r": 3.0,
+"flag": "ok",
+"why": "circle method with digit-restricted primes"
+},
+{
+"id": "N-040",
+"r": 3.0,
+"flag": "computation",
+"why": "census plus aperiodicity proofs"
+},
+{
+"id": "N-343",
+"r": 5.5,
+"flag": "famous-equiv",
+"why": "implies infinitely many Sophie Germain primes"
+},
+{
+"id": "N-021",
+"r": 1.5,
+"flag": "ok",
+"why": "standard reduction expected"
+},
+{
+"id": "N-216",
+"r": 3.0,
+"flag": "ok",
+"why": "Ringel extended to forests via MPS methods"
+},
+{
+"id": "N-251",
+"r": 3.0,
+"flag": "ok",
+"why": "mixing on irregular arithmetic graph"
+},
+{
+"id": "N-498",
+"r": 5.5,
+"flag": "famous-equiv",
+"why": "needs Jacobian conjecture in dimension 2"
+},
+{
+"id": "N-410",
+"r": 6.0,
+"flag": "ok",
+"why": "transcendence of ad hoc constant hopeless"
+},
+{
+"id": "N-388",
+"r": 3.5,
+"flag": "ok",
+"why": "arithmetic injectivity versus automorphism"
+}
+]

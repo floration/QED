@@ -1,0 +1,10 @@
+[
+{"title":"Courant-sharp hat","r":2.0,"flag":"computation","why":"Pleijel/Faber-Krahn bound plus validated numerics; finite rigorous computation for fixed polygon."},
+{"title":"The 89–233 basin","r":4.0,"flag":"ok","why":"Each preimage set finite (Størmer); need infinite backward tree, no known handle."},
+{"title":"Finitely many loops for affine prime maps","r":4.5,"flag":"ok","why":"Fixed/2-cycles trivially finite; long cycles Collatz-like, may even fail for some a,b."},
+{"title":"Missing digits in two bases","r":3.0,"flag":"ok","why":"Maynard-type Fourier for two independent bases at once; hard but plausibly reachable."},
+{"title":"Square-plus-one orbit mod 3","r":6.5,"flag":"ok","why":"Orbit of 2 grows erratically; even unboundedness unprovable, residue control hopeless."},
+{"title":"Triangles through every vertex of S_N","r":0.3,"flag":"easy","why":"x²+y²−z²=2n; take x−z=1, odd 2n−y²: explicit construction."},
+{"title":"Clique minors of the prime-sum graph","r":1.5,"flag":"easy","why":"Thomason plus edge count give n/polylog; pseudorandomness likely pins order like G(n,p)."},
+{"title":"Seven-free Friedlander–Iwaniec primes","r":4.0,"flag":"ok","why":"Combining FI sparse-prime sieve with Maynard digit restriction; far beyond current methods."}
+]

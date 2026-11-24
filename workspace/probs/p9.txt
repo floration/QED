@@ -1,0 +1,75 @@
+## Internal DLA on hats | 6 | Probability
+W: Release walkers one at a time from a hat tile; each stops at the first unoccupied tile. Show the occupied cluster becomes a round disc.
+M: For internal DLA on the hat adjacency graph with $n$ particles, prove the cluster rescaled by $\sqrt n$ converges to a Euclidean disc (with tile centres as positions).
+
+## Strict convexity of hat first-passage | 8 | Probability
+W: Give each hat-tile edge an independent random length. Prove the limiting ball of first-passage distances is strictly convex.
+M: For i.i.d. continuous edge weights with finite exponential moment on the hat adjacency graph, prove the first-passage limit shape exists and is strictly convex.
+
+## Rotor walks on the spectre | 6 | Probability
+W: A rotor walk on the spectre tiling should stay within bounded distance of a random walk's expected behaviour. Prove the discrepancy is bounded.
+M: For rotor-router aggregation on the spectre graph with $n$ particles, prove the cluster differs from a disc of area $n$ by $O(\log n)$ in Hausdorff distance.
+
+## Sandpile identity on hats | 8 | Probability
+W: The abelian sandpile on a large hat-tiled region has an identity element that looks like a fractal picture. Show it has a scaling limit.
+M: Prove the sandpile identity on hat-tiled $L$-balls, rescaled by $L$, converges weakly (as a height-density measure) and that the limit is not rotationally invariant.
+
+## Antiferromagnetic hats | 7 | Physics
+W: Colour hat tiles up or down to minimise same-colour neighbours. The hat graph has odd cycles, so some frustration is unavoidable. Compute the ground-state entropy exactly.
+M: For the antiferromagnetic Ising model on the hat graph, prove the zero-temperature entropy per tile exists, is positive, and compute it in closed form.
+
+## Potts transition on hats | 7 | Physics
+W: Show the q-state Potts model on the hat tiling has a discontinuous transition for large q, and a continuous one for q = 2.
+M: Prove the $q$-state Potts model on the hat graph has a first-order transition for all $q\ge q_0$ and a continuous one for $q=2$; find the least such $q_0$.
+
+## Hat Laplacian eigenvalue is transcendental | 8 | Analysis
+W: Show the lowest vibration frequency of a hat-shaped drum with clamped edges is transcendental.
+M: Prove the first Dirichlet eigenvalue $\lambda_1$ of the hat polygon (unit kite side) is transcendental.
+
+## Hot spots on the hat | 6 | Analysis
+W: Heat a hat-shaped insulated plate. Decide whether the hottest point eventually sits on the boundary.
+M: Decide whether a second Neumann eigenfunction of the hat polygon attains its maximum only on $\partial\Omega$.
+
+## Hearing the hat | 8 | Analysis
+W: Show no other polygon has exactly the same vibration frequencies as the hat.
+M: Prove the hat polygon is Dirichlet-spectrally determined among all simply connected polygons.
+
+## Square-sum labelling of caterpillars | 6 | Combinatorics
+W: Label the vertices of a tree with 1 to n so that every edge sums to a perfect square. Show every caterpillar of maximum degree 3 can be done, once it is large.
+M: Prove every caterpillar with $n\ge n_0$ vertices and maximum degree $\le3$ admits a bijection $V\to[n]$ with $\ell(u)+\ell(v)$ a square for every edge $uv$.
+
+## Prime-sum labelling of balanced trees | 7 | Combinatorics
+W: Label a tree with 1 to n so every edge sums to a prime. Parity forces the two sides of the tree to be balanced. Show balance is enough, for large n.
+M: Prove every tree on $n\ge n_0$ vertices whose bipartition classes have sizes $\lceil n/2\rceil,\lfloor n/2\rfloor$ admits a bijection $V\to[n]$ with all edge sums prime.
+
+## The square-sum avoidance game | 6 | Games
+W: Players take turns choosing unused numbers from 1 to N. Whoever picks a number summing to a square with any already-chosen number loses. Decide the winner for all large N.
+M: Determine the outcome class of the avoidance game on $S_N$ (normal play, a move creating an $S_N$-edge inside the chosen set loses) for all sufficiently large $N$.
+
+## Greedy independent sets in square sums | 6 | Combinatorics
+W: Pick random numbers up to N one by one, skipping any that sum to a square with something already picked. How many do you end with?
+M: Determine the asymptotic size of the random greedy independent set in $S_N$, in probability.
+
+## Hamiltonian cycles in hat patches | 6 | Combinatorics
+W: Count closed tours visiting every tile of a large hat-tiled region once. Find the exponential growth rate per tile.
+M: For hat-tiled $L$-balls with $n$ tiles, prove $(\#\text{Hamiltonian cycles})^{1/n}\to\beta$ and determine $\beta$ to 3 digits rigorously.
+
+## Gerver sofa and the circle | 9 | Number theory
+W: Show the area of Gerver's sofa is not a rational combination of π and 1.
+M: Prove $\mu_G\notin\mathbb{Q}+\mathbb{Q}\pi$.
+
+## Hyperdissipative forced blow-up | 7 | Analysis
+W: Fluids with extra strong viscosity never blow up above a known threshold. Show forced blow-up still happens just below it.
+M: For $\partial_tu+(u\cdot\nabla)u+\nabla p=-(-\Delta)^{\alpha}u+f$ on $\mathbb{R}^3$, construct smooth compactly supported $f$ giving finite-time blow-up from rest for every $\alpha<5/4$.
+
+## Hat tilings of convex regions | 7 | Geometry
+W: Show no convex polygon can be tiled exactly by hats.
+M: Prove no convex polygon is a finite union of interior-disjoint congruent hats (reflections allowed), or exhibit one.
+
+## Prime Nim game graph | 6 | Games
+W: Prime Nim has losing positions with a hidden mod-structure. Show the losing positions are equidistributed in residue classes mod 3.
+M: Prove $\#\{n\le x:G(n)=0,\ n\equiv a\ (3)\}\sim\frac13\#\{n\le x:G(n)=0\}$ for each $a$.
+
+## Lattice gauge on the hat | 7 | Physics
+W: Show the Z/2 lattice gauge theory on a hat-tiled surface times a line has a deconfinement transition.
+M: For $\mathbb{Z}_2$ lattice gauge theory on the 3D cell complex $\mathrm{hat}\times\mathbb{Z}$, prove the Wilson loop changes from area law to perimeter law at a single critical coupling.

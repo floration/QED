@@ -1,0 +1,44 @@
+## Ising model on the spectre tiling | 7 | Probability
+W: Find the exact critical temperature of the Ising model on the spectre tiling graph, and prove the interfaces converge to SLE(3).
+M: For the nearest-neighbour Ising model on the spectre-tiling vertex graph, determine $\beta_c$ and prove critical interfaces converge to $\mathrm{SLE}_3$.
+
+## Self-avoiding walk on the hat tiling scaling | 8 | Probability
+W: Show long self-avoiding walks on the hat tiling spread out like distance n^{3/4}, the same as on the square grid.
+M: Prove $\mathbb{E}|\omega_n|^2=n^{3/2+o(1)}$ for uniform $n$-step SAWs on the hat-tiling edge graph.
+
+## Uniform spanning tree of the square-sum graph | 6 | Probability
+W: Show a uniformly random spanning tree of the square-sum graph has diameter of order a fixed power of N, and find the exponent.
+M: For $T$ a uniform spanning tree of the giant component of $S_N$, prove $\mathrm{diam}(T)=N^{\alpha+o(1)}$ in probability and determine $\alpha$.
+
+## Percolation threshold of the square-sum graph | 6 | Probability
+W: Keep each edge of the square-sum graph with probability p. Find the exact threshold for a giant component as N grows.
+M: For bond percolation on $S_N$ with $p=c/\sqrt N$, determine $c^*$ such that a component of size $\Theta(N)$ appears w.h.p. iff $c>c^*$.
+
+## Random greedy square-sum path | 6 | Probability
+W: Build a path through 1 to N by always stepping to a random unused neighbour summing to a square. Find the expected length.
+M: Determine $\lim_N\mathbb{E}[L_N]/N$ for the random greedy path in $S_N$ started at a uniform vertex.
+
+## Random sequential prime-sum packing | 5 | Probability
+W: Add random numbers from 1 to N one at a time, keeping a number only if it forms no prime sum with any kept number. Find the final density.
+M: Determine $\lim_N\mathbb{E}|A_N|/N$ for the random sequential independent set of the prime-sum graph on $[N]$.
+
+## Ising with prime couplings | 6 | Probability
+W: On the integer line, couple spins i and j with strength 1 if i − j is prime. Decide whether there is a phase transition.
+M: For the 1D Ising model with $J_{ij}=\mathbf 1[|i-j|\in\mathbb{P}]\,|i-j|^{-2}$, prove a phase transition at finite $\beta_c$ and determine whether the magnetization jumps.
+
+## Hitting probability for 2P(n)+1 random variant | 6 | Probability
+W: With probability one half use 2P(n) + 1 and otherwise 2P(n) − 1. Show the walk visits 5 infinitely often.
+M: For $X_{t+1}=2P(X_t)\pm1$ with fair signs, prove $X_t=5$ infinitely often almost surely.
+
+## Random digit deletion | 6 | Probability
+W: Repeatedly delete a random decimal digit of a number until it is prime or has one digit. Find the probability of ending at a prime from a typical large start.
+M: For uniform $n\le x$ and random single-digit deletions, prove $\Pr(\text{the process meets a prime})\to c$ and determine whether $c<1$.
+
+## Sharp threshold for prime-sum Hamiltonicity | 6 | Probability
+W: Keep each edge of the prime-sum graph with probability p. Find the threshold for a Hamiltonian cycle.
+M: For random subgraphs of the prime-sum graph on $[2n]$ with edge probability $p$, prove the Hamiltonicity threshold is $p^*=(1+o(1))\frac{\log^2 n}{n}$ times an explicit constant, and determine it.
+
+## Stopping time law for P(n)+P(n+1) | 6 | Probability
+W: For the map n ↦ P(n) + P(n+1), find the distribution of the number of steps to the {5, 8} loop.
+M: Prove the stopping time $\sigma(n)$ of $f(n)=P(n)+P(n+1)$ satisfies $\sigma(n)/\log\log n\to c$ in density, and determine $c$.
+
