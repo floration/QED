@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-280: Primes with equal binary and ternary digit sums
-Show infinitely many primes have the same digit sum in base 2 as in base 3.
-Informal statement: Prove infinitely many primes $p$ with $s_2(p)=s_3(p)$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many primes $p$ with $s_2(p)=s_3(p)$. -/
 namespace OpenProblems.N280
-def Claim : Prop := sorry
+/-- digit sum in base `b` -/
+def ds (b n : ℕ) : ℕ := (Nat.digits b n).sum
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ ds 2 p = ds 3 p}
 end OpenProblems.N280

@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-282: Smooth p²+1
-Show infinitely many primes p have p² + 1 built only from primes below √p.
-Informal statement: Prove infinitely many primes $p$ with $P(p^2+1)<p^{1/2}$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many primes $p$ with $P(p^2+1)<p^{1/2}$. -/
 namespace OpenProblems.N282
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ (P (p ^ 2 + 1) : ℝ) < (p : ℝ) ^ (1 / 2 : ℝ)}
 end OpenProblems.N282

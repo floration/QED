@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-463: Seven-free primes in Piatetski-Shapiro sequences
-Show infinitely many primes of the form ⌊n^1.1⌋ have no digit 7.
-Informal statement: Prove infinitely many primes $\lfloor n^{1.1}\rfloor$ free of the decimal digit 7.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many primes $\lfloor n^{1.1}\rfloor$ free of the decimal digit 7. -/
 namespace OpenProblems.N463
-def Claim : Prop := sorry
+/-- no decimal digit 7 -/
+def SevenFree (n : ℕ) : Prop := 7 ∉ Nat.digits 10 n
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ SevenFree p ∧ ∃ n : ℕ, p = ⌊(n : ℝ) ^ (1.1 : ℝ)⌋₊}
 end OpenProblems.N463

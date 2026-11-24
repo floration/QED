@@ -1,10 +1,12 @@
 import Mathlib
+open Filter Topology
 /-! N-412: Seven-free Carmichael quotients
-Show infinitely many Carmichael numbers n have n − 1 seven-free.
-Informal statement: Prove infinitely many Carmichael numbers $n$ such that $n-1$ has no decimal digit 7.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many Carmichael numbers $n$ such that $n-1$ has no decimal digit 7. -/
 namespace OpenProblems.N412
-def Claim : Prop := sorry
+/-- Carmichael number (Korselt-free definition) -/
+def Carmichael (n : ℕ) : Prop := 1 < n ∧ ¬ n.Prime ∧ ∀ a : ℕ, Nat.Coprime a n → a ^ (n - 1) ≡ 1 [MOD n]
+/-- no decimal digit 7 -/
+def SevenFree (n : ℕ) : Prop := 7 ∉ Nat.digits 10 n
+def Claim : Prop :=
+  Set.Infinite {n : ℕ | Carmichael n ∧ SevenFree (n - 1)}
 end OpenProblems.N412

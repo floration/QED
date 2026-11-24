@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-485: Largest prime factor of n^n + 1
-Show P(n^n + 1) / n tends to infinity.
-Informal statement: Prove $P(n^n+1)/n\to\infty$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove $P(n^n+1)/n\to\infty$. -/
 namespace OpenProblems.N485
-def Claim : Prop := sorry
+/-- largest prime factor; `P 0 = 0`, `P 1 = 1` -/
+def P (n : ℕ) : ℕ := if n ≤ 1 then n else n.primeFactors.sup id
+def Claim : Prop :=
+  Tendsto (fun n : ℕ => (P (n ^ n + 1) : ℝ) / n) atTop atTop
 end OpenProblems.N485

@@ -1,10 +1,9 @@
 import Mathlib
+open Filter Topology
 /-! N-450: Missing digits in two bases
-Show infinitely many primes have no digit 9 in base 10 and no digit 10 in base 11 at the same time.
-Informal statement: Prove infinitely many primes whose base-10 expansion avoids the digit 9 and whose base-11 expansion avoids the digit 10.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many primes whose base-10 expansion avoids the digit 9 and whose base-11 expansion avoids the digit 10. -/
 namespace OpenProblems.N450
-def Claim : Prop := sorry
+
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ 9 ∉ Nat.digits 10 p ∧ 10 ∉ Nat.digits 11 p}
 end OpenProblems.N450

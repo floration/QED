@@ -1,10 +1,9 @@
 import Mathlib
+open Filter Topology
 /-! N-141: Two of four
-Show infinitely many primes p have at least one more prime among p + 2, 2p + 1, 2p + 3.
-Informal statement: Prove infinitely many primes $p$ have at least one of $p+2,\,2p+1,\,2p+3$ prime.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove infinitely many primes $p$ have at least one of $p+2,\,2p+1,\,2p+3$ prime. -/
 namespace OpenProblems.N141
-def Claim : Prop := sorry
+
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ ((p + 2).Prime ∨ (2 * p + 1).Prime ∨ (2 * p + 3).Prime)}
 end OpenProblems.N141

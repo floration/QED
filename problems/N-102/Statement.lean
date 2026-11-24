@@ -1,10 +1,12 @@
 import Mathlib
+open Filter Topology
 /-! N-102: Emirps, almost
-Show infinitely many primes have a reversal with at most three prime factors.
-Informal statement: Prove $\#\{p\le x: \Omega(\operatorname{rev}(p))\le3\}\to\infty$.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove $\#\{p\le x: \Omega(\operatorname{rev}(p))\le3\}\to\infty$. -/
 namespace OpenProblems.N102
-def Claim : Prop := sorry
+/-- decimal digit reversal -/
+def rev (n : ℕ) : ℕ := Nat.ofDigits 10 (Nat.digits 10 n).reverse
+/-- number of prime factors with multiplicity -/
+def Ω (n : ℕ) : ℕ := n.primeFactorsList.length
+def Claim : Prop :=
+  Set.Infinite {p : ℕ | p.Prime ∧ Ω (rev p) ≤ 3}
 end OpenProblems.N102

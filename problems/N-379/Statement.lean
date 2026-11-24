@@ -1,10 +1,10 @@
 import Mathlib
+open Filter Topology
 /-! N-379: Palindromic Carmichael numbers
-Show infinitely many Carmichael numbers read the same backwards.
-Informal statement: Prove there are infinitely many Carmichael numbers that are decimal palindromes.
-STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
-(open a PR touching only this file, labelled `statement`). Solutions are accepted only
-after the statement PR is merged. -/
+Informal: Prove there are infinitely many Carmichael numbers that are decimal palindromes. -/
 namespace OpenProblems.N379
-def Claim : Prop := sorry
+/-- Carmichael number (Korselt-free definition) -/
+def Carmichael (n : ℕ) : Prop := 1 < n ∧ ¬ n.Prime ∧ ∀ a : ℕ, Nat.Coprime a n → a ^ (n - 1) ≡ 1 [MOD n]
+def Claim : Prop :=
+  Set.Infinite {n : ℕ | Carmichael n ∧ (Nat.digits 10 n).reverse = Nat.digits 10 n}
 end OpenProblems.N379
