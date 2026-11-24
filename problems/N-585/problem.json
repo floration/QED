@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 3.5,
  "plain": "Find exactly how many colors the infinite square-sum graph needs.",
- "math": "Determine $\\chi(S_\\infty)$ exactly."
+ "math": "Determine $\\chi(S_\\infty)$ exactly.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 5
 }

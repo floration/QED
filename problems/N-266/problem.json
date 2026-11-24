@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 6.4,
  "plain": "Find the largest set of binary strings of length n in which no two differ in a perfect-square number of positions. Find the exponential rate.",
- "math": "Let $A(n)$ be the largest $C\\subseteq\\{0,1\\}^n$ with $d_H(x,y)$ never a positive perfect square for $x\\ne y\\in C$. Determine $\\lim_n\\frac1n\\log_2A(n)$."
+ "math": "Let $A(n)$ be the largest $C\\subseteq\\{0,1\\}^n$ with $d_H(x,y)$ never a positive perfect square for $x\\ne y\\in C$. Determine $\\lim_n\\frac1n\\log_2A(n)$.",
+ "novelty": 7,
+ "importance": 5,
+ "value": 7
 }

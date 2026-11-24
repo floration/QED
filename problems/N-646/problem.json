@@ -1,0 +1,11 @@
+{
+ "id": "N-646",
+ "title": "L⁴ Strichartz on a cube",
+ "area": "PDE",
+ "difficulty": 5.0,
+ "plain": "On a flat square torus the L⁴ Strichartz estimate holds with only ε loss of derivatives. Prove the same on the surface of a cube, where corners diffract waves.",
+ "math": "Let $S$ be the flat unit-cube surface. Prove that for every $\\varepsilon>0$, $\\|e^{it\\Delta}f\\|_{L^4([0,1]\\times S)}\\le C_\\varepsilon\\|f\\|_{H^\\varepsilon(S)}$.",
+ "novelty": 7,
+ "importance": 5,
+ "value": 7
+}

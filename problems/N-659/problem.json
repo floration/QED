@@ -1,0 +1,11 @@
+{
+ "id": "N-659",
+ "title": "Fibonacci-modulated growing Jacobi matrix",
+ "area": "Analysis",
+ "difficulty": 3.0,
+ "plain": "Off-diagonal weights grow like √n but are doubled wherever the Fibonacci word has a 1. Periodic modulations give spectral phase transitions. Decide what this aperiodic one gives.",
+ "math": "Let $f\\in\\{0,1\\}^{\\mathbb N}$ be the Fibonacci word and $J$ the Jacobi matrix with $a_n=\\sqrt n\\,(1+f_n)$, $b_n=0$. Determine the spectral type of $J$; in particular decide whether $J$ has absolutely continuous spectrum.",
+ "novelty": 7,
+ "importance": 4,
+ "value": 6
+}

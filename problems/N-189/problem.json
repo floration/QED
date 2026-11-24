@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 2.6,
  "plain": "Show that any sofa nearly as big as Gerver's must look nearly like Gerver's.",
- "math": "Prove a quantitative stability bound: $A(S)\\ge A_G-\\varepsilon$ implies $d_H(S,G)\\le C\\varepsilon^{\\alpha}$ up to rigid motion."
+ "math": "Prove a quantitative stability bound: $A(S)\\ge A_G-\\varepsilon$ implies $d_H(S,G)\\le C\\varepsilon^{\\alpha}$ up to rigid motion.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 6
 }

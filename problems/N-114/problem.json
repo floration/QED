@@ -4,5 +4,8 @@
  "area": "Probability",
  "difficulty": 2.6,
  "plain": "Show almost no shapes made of many kites can tile the plane.",
- "math": "Prove the fraction of $k$-kite polykites that tile $\\mathbb{R}^2$ decays exponentially in $k$."
+ "math": "Prove the fraction of $k$-kite polykites that tile $\\mathbb{R}^2$ decays exponentially in $k$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

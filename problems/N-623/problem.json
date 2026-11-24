@@ -1,0 +1,11 @@
+{
+ "id": "N-623",
+ "title": "Simple closed geodesics on the Fermat quartic",
+ "area": "Geometry",
+ "difficulty": 4.2,
+ "plain": "On the surface x⁴+y⁴+z⁴ = 1 the nine symmetry planes cut out nine simple closed geodesics. Are there only finitely many simple closed geodesics altogether?",
+ "math": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the metric induced from $\\mathbb R^3$. The planes $x=0,y=0,z=0,x=\\pm y,y=\\pm z,x=\\pm z$ meet $S$ in simple closed geodesics. Decide whether $S$ has finitely many simple closed geodesics (as unparametrized curves), and if so whether these nine are all of them.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 6
+}

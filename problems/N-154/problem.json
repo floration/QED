@@ -4,5 +4,8 @@
  "area": "Analysis",
  "difficulty": 3.5,
  "plain": "How weak can the push be and still make viscous fluid blow up?",
- "math": "Find the optimal exponent $a$ with $\\inf\\{\\|f\\|_{L^\\infty}: \\text{NS from rest blows up}\\}\\asymp \\nu^{a}$."
+ "math": "Find the optimal exponent $a$ with $\\inf\\{\\|f\\|_{L^\\infty}: \\text{NS from rest blows up}\\}\\asymp \\nu^{a}$.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6
 }

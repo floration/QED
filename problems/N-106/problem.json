@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 2.6,
  "plain": "Find one 4D shape that fills 4D space but only without repeating.",
- "math": "Find a connected tile $T\\subset\\mathbb{R}^4$ that tiles $\\mathbb{R}^4$ by isometries but admits no periodic tiling."
+ "math": "Find a connected tile $T\\subset\\mathbb{R}^4$ that tiles $\\mathbb{R}^4$ by isometries but admits no periodic tiling.",
+ "novelty": 5,
+ "importance": 6,
+ "value": 7
 }

@@ -4,5 +4,8 @@
  "area": "Analysis",
  "difficulty": 6.5,
  "plain": "Fire spreads through random patches of two fuel types. Show it has a definite average speed and compute it.",
- "math": "For the eikonal equation with i.i.d. two-valued speed on a lattice, prove homogenization and give the effective speed in closed form."
+ "math": "For the eikonal equation with i.i.d. two-valued speed on a lattice, prove homogenization and give the effective speed in closed form.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 4
 }

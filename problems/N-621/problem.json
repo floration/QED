@@ -1,0 +1,11 @@
+{
+ "id": "N-621",
+ "title": "Chaos in the symmetric ABC flow",
+ "area": "Dynamics",
+ "difficulty": 3.0,
+ "plain": "The ABC flow with all three coefficients equal to 1 is a classical steady solution of the Euler equations on the 3-torus. Prove it is genuinely chaotic.",
+ "math": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb T^3$ has positive topological entropy.",
+ "novelty": 4,
+ "importance": 6,
+ "value": 8
+}

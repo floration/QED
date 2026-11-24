@@ -4,5 +4,8 @@
  "area": "Formal proof",
  "difficulty": 3.0,
  "plain": "Fermat's Last Theorem has a huge computer formalization effort. Do it in far fewer lines.",
- "math": "Give a Lean 4 proof of $x^n+y^n=z^n\\Rightarrow xyz=0$ for $n\\ge3$ using at most $10^5$ lines beyond current Mathlib."
+ "math": "Give a Lean 4 proof of $x^n+y^n=z^n\\Rightarrow xyz=0$ for $n\\ge3$ using at most $10^5$ lines beyond current Mathlib.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

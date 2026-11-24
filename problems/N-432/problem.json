@@ -4,5 +4,8 @@
  "area": "Games",
  "difficulty": 6.5,
  "plain": "Two piles; a move removes a square from one pile or the same square from both. Find the losing positions' asymptotic density.",
- "math": "For moves $(a,b)\\to(a-k^2,b),(a,b-k^2),(a-k^2,b-k^2)$, prove $\\#\\{(a,b)\\in[N]^2:\\mathcal P\\}=N^{1+\\theta+o(1)}$ and find $\\theta$."
+ "math": "For moves $(a,b)\\to(a-k^2,b),(a,b-k^2),(a-k^2,b-k^2)$, prove $\\#\\{(a,b)\\in[N]^2:\\mathcal P\\}=N^{1+\\theta+o(1)}$ and find $\\theta$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 5
 }

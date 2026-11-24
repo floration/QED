@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 2.8,
  "plain": "Find the asymptotic count of perfect matchings between odd and even numbers up to 2n whose sums are all prime.",
- "math": "Determine $\\log\\mathrm{per}(M_n)$ to $o(n)$ where $M_n=(\\mathbf 1[2i-1+2j\\text{ prime}])_{i,j\\le n}$."
+ "math": "Determine $\\log\\mathrm{per}(M_n)$ to $o(n)$ where $M_n=(\\mathbf 1[2i-1+2j\\text{ prime}])_{i,j\\le n}$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

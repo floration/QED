@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 5.1,
  "plain": "Among the first N prime gaps, find the longest subsequence that strictly increases. Show it grows like a power of N and find the power.",
- "math": "Let $L(N)$ be the length of the longest strictly increasing subsequence of $(p_{n+1}-p_n)_{n\\le N}$. Prove $L(N)=N^{\\theta+o(1)}$ and determine $\\theta$."
+ "math": "Let $L(N)$ be the length of the longest strictly increasing subsequence of $(p_{n+1}-p_n)_{n\\le N}$. Prove $L(N)=N^{\\theta+o(1)}$ and determine $\\theta$.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 5
 }

@@ -1,0 +1,11 @@
+{
+ "id": "N-652",
+ "title": "Chaos in the double pendulum at every energy",
+ "area": "Dynamics",
+ "difficulty": 5.0,
+ "plain": "The planar double pendulum with equal masses and arms is chaotic at moderate energies. Prove it is chaotic at every energy above the rest state, however small.",
+ "math": "Let $H$ be the Hamiltonian of the planar double pendulum with $m_1=m_2=\\ell_1=\\ell_2=g=1$, with minimum $E_0$. Prove that for every $E>E_0$ the flow on $\\{H=E\\}$ has positive topological entropy.",
+ "novelty": 7,
+ "importance": 5,
+ "value": 7
+}

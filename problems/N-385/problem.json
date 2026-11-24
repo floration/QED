@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 3.1,
  "plain": "Every 4D convex body should have the corners of a regular cross-polytope on its boundary.",
- "math": "Prove every convex body in $\\mathbb{R}^4$ has an inscribed regular cross-polytope."
+ "math": "Prove every convex body in $\\mathbb{R}^4$ has an inscribed regular cross-polytope.",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6
 }

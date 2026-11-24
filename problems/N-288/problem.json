@@ -4,5 +4,8 @@
  "area": "Games",
  "difficulty": 3.4,
  "plain": "Left may remove a prime that is 1 mod 4, Right a prime that is 3 mod 4, from one pile. Describe the game values.",
- "math": "For the partizan subtraction game with $L=\\{p\\equiv1\\ (4)\\}$, $R=\\{p\\equiv3\\ (4)\\}$, prove every position is equal to a number or a number plus a switch of bounded temperature, and find the bound."
+ "math": "For the partizan subtraction game with $L=\\{p\\equiv1\\ (4)\\}$, $R=\\{p\\equiv3\\ (4)\\}$, prove every position is equal to a number or a number plus a switch of bounded temperature, and find the bound.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

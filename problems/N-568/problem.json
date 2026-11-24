@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 5.2,
  "plain": "Colour 1 to N with r colours. Show some colour contains four numbers whose six pairwise sums are all squares, once N is large enough.",
- "math": "Prove that for every $r$ there is $N$ such that every $r$-colouring of $[N]$ has a monochromatic $K_4$ in $S_N$, or show it fails for some $r$."
+ "math": "Prove that for every $r$ there is $N$ such that every $r$-colouring of $[N]$ has a monochromatic $K_4$ in $S_N$, or show it fails for some $r$.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 5
 }

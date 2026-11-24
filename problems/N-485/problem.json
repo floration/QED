@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 4.8,
  "plain": "Show P(n^n + 1) / n tends to infinity.",
- "math": "Prove $P(n^n+1)/n\\to\\infty$."
+ "math": "Prove $P(n^n+1)/n\\to\\infty$.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 5
 }

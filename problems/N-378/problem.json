@@ -4,5 +4,8 @@
  "area": "Algebra",
  "difficulty": 1.9,
  "plain": "Find the symmetry group of the preimages of a point under the 2026 Keller maps.",
- "math": "Compute the Galois group of the generic fiber of Gallagher's degree-$n$ Keller family for each $n\\ge3$."
+ "math": "Compute the Galois group of the generic fiber of Gallagher's degree-$n$ Keller family for each $n\\ge3$.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6
 }

@@ -1,0 +1,11 @@
+{
+ "id": "N-662",
+ "title": "Non-arithmetic tones of the cube",
+ "area": "Analysis",
+ "difficulty": 4.8,
+ "plain": "Many vibration frequencies of a cube's surface come from the square torus and are rational multiples of π². Show some frequency is not.",
+ "math": "Let $S$ be the flat unit-cube surface. Prove that some eigenvalue of the Laplacian on $S$ is not a rational multiple of $\\pi^2$.",
+ "novelty": 7,
+ "importance": 4,
+ "value": 6
+}

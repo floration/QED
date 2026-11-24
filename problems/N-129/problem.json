@@ -4,5 +4,8 @@
  "area": "Games",
  "difficulty": 7.0,
  "plain": "In the game where you subtract a square, show infinitely many prime pile sizes are losing positions.",
- "math": "Prove infinitely many primes are P-positions of the subtract-a-square game."
+ "math": "Prove infinitely many primes are P-positions of the subtract-a-square game.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

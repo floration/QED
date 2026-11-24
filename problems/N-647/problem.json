@@ -1,0 +1,11 @@
+{
+ "id": "N-647",
+ "title": "Scattering on the cube corner",
+ "area": "PDE",
+ "difficulty": 3.8,
+ "plain": "Defocusing cubic Schrödinger in the plane scatters for all finite-mass data. Show the same on the surface of an infinite cube corner.",
+ "math": "Let $\\mathcal C$ be the flat cone of angle $3\\pi/2$ (boundary of an octant). Prove that every $u_0\\in L^2(\\mathcal C)$ gives a global solution of $iu_t+\\Delta u=|u|^2u$ that scatters in $L^2$ as $t\\to\\pm\\infty$.",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6
+}

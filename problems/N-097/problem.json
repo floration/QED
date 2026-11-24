@@ -4,5 +4,8 @@
  "area": "Formal proof",
  "difficulty": 2.2,
  "plain": "Make the computer-checked four color theorem much shorter.",
- "math": "Give a Lean 4 proof of the four color theorem in under 20,000 lines beyond Mathlib."
+ "math": "Give a Lean 4 proof of the four color theorem in under 20,000 lines beyond Mathlib.",
+ "novelty": 3,
+ "importance": 3,
+ "value": 4
 }

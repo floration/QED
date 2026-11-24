@@ -1,0 +1,11 @@
+{
+ "id": "N-654",
+ "title": "Two-frequency localization",
+ "area": "Analysis",
+ "difficulty": 4.5,
+ "plain": "Use a potential that is the sum of two cosines with frequencies √2 and √3, and take strong coupling. Prove electrons localize for these specific frequencies, not just for almost every frequency pair.",
+ "math": "Let $(H_\\theta\\psi)(n)=\\psi(n+1)+\\psi(n-1)+10\\big(\\cos2\\pi(n\\sqrt2+\\theta_1)+\\cos2\\pi(n\\sqrt3+\\theta_2)\\big)\\psi(n)$. Prove that for Lebesgue-a.e. $\\theta\\in\\mathbb T^2$, $H_\\theta$ has pure point spectrum with exponentially decaying eigenfunctions.",
+ "novelty": 7,
+ "importance": 5,
+ "value": 6
+}

@@ -4,5 +4,8 @@
  "area": "Analysis",
  "difficulty": 2.7,
  "plain": "Write down a forced Navier–Stokes blow-up as an explicit formula instead of a computer-assisted construction.",
- "math": "Give closed-form smooth $u_0,f$ on $\\mathbb{R}^3$ for which the Navier–Stokes solution blows up in finite time."
+ "math": "Give closed-form smooth $u_0,f$ on $\\mathbb{R}^3$ for which the Navier–Stokes solution blows up in finite time.",
+ "novelty": 5,
+ "importance": 6,
+ "value": 5
 }

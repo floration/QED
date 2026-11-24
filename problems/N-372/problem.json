@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 3.6,
  "plain": "Show infinitely many primes p have p − 1 and p + 1 with the same number of divisors.",
- "math": "Prove infinitely many primes $p$ with $d(p-1)=d(p+1)$."
+ "math": "Prove infinitely many primes $p$ with $d(p-1)=d(p+1)$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 5
 }

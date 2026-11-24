@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 4.4,
  "plain": "Show every tree of maximum degree 3 on N vertices fits inside the square-sum graph on 1 to N.",
- "math": "Prove every tree on $N\\ge N_0$ vertices with maximum degree $\\le3$ is a spanning subgraph of $S_N$."
+ "math": "Prove every tree on $N\\ge N_0$ vertices with maximum degree $\\le3$ is a spanning subgraph of $S_N$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 5
 }

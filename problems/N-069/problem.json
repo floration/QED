@@ -4,5 +4,8 @@
  "area": "Games",
  "difficulty": 2.9,
  "plain": "Who wins two-player Blokus with perfect play?",
- "math": "Weakly solve Blokus Duo on the $14\\times14$ board with standard starting points."
+ "math": "Weakly solve Blokus Duo on the $14\\times14$ board with standard starting points.",
+ "novelty": 4,
+ "importance": 2,
+ "value": 4
 }

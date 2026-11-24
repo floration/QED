@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 4.4,
  "plain": "Runners move in three dimensions on a cube that wraps around. Find the guaranteed loneliness.",
- "math": "For $n$ pairwise independent $v_i\\in\\mathbb{Z}^3$, find the optimal $\\delta_n$ with $\\sup_t\\min_i\\|tv_i\\|_{\\mathbb{T}^3,\\infty}\\ge\\delta_n$."
+ "math": "For $n$ pairwise independent $v_i\\in\\mathbb{Z}^3$, find the optimal $\\delta_n$ with $\\sup_t\\min_i\\|tv_i\\|_{\\mathbb{T}^3,\\infty}\\ge\\delta_n$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 5
 }

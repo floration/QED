@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 3.4,
  "plain": "Count the tone rows in 24-note tuning that use every interval exactly once.",
- "math": "Count permutations of $\\mathbb{Z}_{24}$ whose successive differences are all distinct nonzero residues, and find their growth rate for $\\mathbb{Z}_{2m}$."
+ "math": "Count permutations of $\\mathbb{Z}_{24}$ whose successive differences are all distinct nonzero residues, and find their growth rate for $\\mathbb{Z}_{2m}$.",
+ "novelty": 3,
+ "importance": 4,
+ "value": 5
 }

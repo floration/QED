@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 3.1,
  "plain": "The 2026 number-field idea beat Erdős in the plane. Adapt it to unit distances among points on a sphere in 3D.",
- "math": "Prove there are $n$-point sets on the unit sphere $S^2$ with $\\ge n^{1+c}$ pairs at distance $1$, for some $c>0$ and infinitely many $n$."
+ "math": "Prove there are $n$-point sets on the unit sphere $S^2$ with $\\ge n^{1+c}$ pairs at distance $1$, for some $c>0$ and infinitely many $n$.",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6
 }

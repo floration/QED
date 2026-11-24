@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 4.2,
  "plain": "Show infinitely many primes p have p² + 1 built only from primes below √p.",
- "math": "Prove infinitely many primes $p$ with $P(p^2+1)<p^{1/2}$."
+ "math": "Prove infinitely many primes $p$ with $P(p^2+1)<p^{1/2}$.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 4
 }

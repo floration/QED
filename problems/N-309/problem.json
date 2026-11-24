@@ -4,5 +4,8 @@
  "area": "Probability",
  "difficulty": 4.0,
  "plain": "Repeatedly delete a random decimal digit of a number until it is prime or has one digit. Find the probability of ending at a prime from a typical large start.",
- "math": "For uniform $n\\le x$ and random single-digit deletions, prove $\\Pr(\\text{the process meets a prime})\\to c$ and determine whether $c<1$."
+ "math": "For uniform $n\\le x$ and random single-digit deletions, prove $\\Pr(\\text{the process meets a prime})\\to c$ and determine whether $c<1$.",
+ "novelty": 5,
+ "importance": 2,
+ "value": 4
 }

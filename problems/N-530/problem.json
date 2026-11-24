@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 4.6,
  "plain": "Show infinitely often at least three of the four doubled-twin numbers are prime at once.",
- "math": "Prove there are infinitely many $n$ such that at least three of $n,n+2,2n+1,2n+3$ are prime."
+ "math": "Prove there are infinitely many $n$ such that at least three of $n,n+2,2n+1,2n+3$ are prime.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

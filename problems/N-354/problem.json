@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 3.1,
  "plain": "How does the best sofa's volume grow in an n-dimensional corridor?",
- "math": "Determine the asymptotics in $n$ of the optimal volume in the $n$-dimensional right-angled corridor of unit cross-section."
+ "math": "Determine the asymptotics in $n$ of the optimal volume in the $n$-dimensional right-angled corridor of unit cross-section.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 5
 }

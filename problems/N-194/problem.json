@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 1.5,
  "plain": "Show that most big Sudoku grids have no symmetry at all.",
- "math": "Prove the proportion of $n^2\\times n^2$ Sudoku grids with nontrivial automorphism tends to 0."
+ "math": "Prove the proportion of $n^2\\times n^2$ Sudoku grids with nontrivial automorphism tends to 0.",
+ "novelty": 5,
+ "importance": 2,
+ "value": 4
 }

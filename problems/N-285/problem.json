@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 4.0,
  "plain": "Find the largest density of a 3-uniform hypergraph that avoids a specific six-vertex configuration of six triples.",
- "math": "Determine $\\pi(F)$ for $F=\\{123,124,345,346,561,562\\}$."
+ "math": "Determine $\\pi(F)$ for $F=\\{123,124,345,346,561,562\\}$.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 4
 }

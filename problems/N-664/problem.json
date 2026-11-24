@@ -1,0 +1,11 @@
+{
+ "id": "N-664",
+ "title": "Infinite knots in the ABC flow",
+ "area": "Topology",
+ "difficulty": 4.5,
+ "plain": "Steady Euler flows can carry knotted streamlines. Show the symmetric ABC flow has closed streamlines tied in infinitely many different knots.",
+ "math": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb T^3$ has null-homotopic periodic orbits lying in embedded balls and realizing infinitely many distinct knot types.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 6
+}

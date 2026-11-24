@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 4.1,
  "plain": "Join numbers that add up to a perfect square. Does the number of colors needed stay bounded forever?",
- "math": "Decide whether $\\sup_N \\chi(S_N)<\\infty$."
+ "math": "Decide whether $\\sup_N \\chi(S_N)<\\infty$.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 6
 }

@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 3.0,
  "plain": "Almost every random forest has the distinct-edge-difference labeling.",
- "math": "For a uniform random forest with $m$ edges and $c\\sim\\alpha m$ components, prove the graceful-forest labeling exists with probability $\\to1$."
+ "math": "For a uniform random forest with $m$ edges and $c\\sim\\alpha m$ components, prove the graceful-forest labeling exists with probability $\\to1$.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

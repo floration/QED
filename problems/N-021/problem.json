@@ -4,5 +4,8 @@
  "area": "Games",
  "difficulty": 1.4,
  "plain": "An opponent places every new tile in 2048 as unhelpfully as possible. What is the biggest tile you can still guarantee?",
- "math": "On the $4\\times4$ board where an adversary chooses each spawn's position and value in $\\{2,4\\}$, determine the largest tile the player can force."
+ "math": "On the $4\\times4$ board where an adversary chooses each spawn's position and value in $\\{2,4\\}$, determine the largest tile the player can force.",
+ "novelty": 5,
+ "importance": 1,
+ "value": 4
 }

@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 2.8,
  "plain": "The \"hat\" is made of 8 kites and tiles the plane only non-periodically. Find every such shape made of at most 12 kites.",
- "math": "Enumerate all polykites with $\\le12$ kites (from the $\\{6,3\\}$ kite grid) that tile $\\mathbb{R}^2$ but admit no periodic tiling."
+ "math": "Enumerate all polykites with $\\le12$ kites (from the $\\{6,3\\}$ kite grid) that tile $\\mathbb{R}^2$ but admit no periodic tiling.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

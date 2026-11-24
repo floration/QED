@@ -1,0 +1,11 @@
+{
+ "id": "N-625",
+ "title": "Outer billiards around a superellipse",
+ "area": "Dynamics",
+ "difficulty": 3.6,
+ "plain": "Outer billiards around a smooth convex shape with positive curvature has only bounded orbits. Decide whether this survives for x⁴+y⁴ ≤ 1, whose curvature vanishes at four points.",
+ "math": "Let $K=\\{x^4+y^4\\le1\\}$ and let $T:\\mathbb R^2\\setminus K\\to\\mathbb R^2\\setminus K$ be the outer billiard map ($T(p)$ is the reflection of $p$ in the point where the right-hand tangent line from $p$ touches $\\partial K$). Decide whether every $T$-orbit is bounded.",
+ "novelty": 7,
+ "importance": 5,
+ "value": 7
+}

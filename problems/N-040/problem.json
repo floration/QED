@@ -4,5 +4,8 @@
  "area": "Formal proof",
  "difficulty": 2.1,
  "plain": "Turn Baek's proof that Gerver's sofa is optimal into a computer-checked proof.",
- "math": "Formalize in Lean 4 the statement and proof that the moving sofa constant equals the area of Gerver's sofa."
+ "math": "Formalize in Lean 4 the statement and proof that the moving sofa constant equals the area of Gerver's sofa.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

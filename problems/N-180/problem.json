@@ -4,5 +4,8 @@
  "area": "Algebra",
  "difficulty": 3.1,
  "plain": "Show that every 3D polynomial map of degree at most 4 with constant Jacobian has a polynomial inverse.",
- "math": "Prove $F:\\mathbb{C}^3\\to\\mathbb{C}^3$, $\\deg F\\le4$, $\\det DF\\in\\mathbb{C}^\\times$ implies $F$ is an automorphism."
+ "math": "Prove $F:\\mathbb{C}^3\\to\\mathbb{C}^3$, $\\deg F\\le4$, $\\det DF\\in\\mathbb{C}^\\times$ implies $F$ is an automorphism.",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6
 }

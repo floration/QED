@@ -4,5 +4,8 @@
  "area": "Games",
  "difficulty": 1.6,
  "plain": "When the board wraps left to right, can a player survive forever against any piece sequence?",
- "math": "Decide whether a player can survive indefinitely in a width-10 cylindrical Tetris well against adversarial piece sequences with 1-piece preview."
+ "math": "Decide whether a player can survive indefinitely in a width-10 cylindrical Tetris well against adversarial piece sequences with 1-piece preview.",
+ "novelty": 5,
+ "importance": 2,
+ "value": 4
 }

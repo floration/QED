@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 3.3,
  "plain": "For every 3D shape, find the smallest sheet of paper that folds into it.",
- "math": "Give a characterization, with an algorithm, of the minimal-area square that folds into any given polyhedral surface."
+ "math": "Give a characterization, with an algorithm, of the minimal-area square that folds into any given polyhedral surface.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 4
 }

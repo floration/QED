@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 2.9,
  "plain": "Find the largest set of numbers up to N where no two add to a cube.",
- "math": "Determine $\\alpha(C_N)$ asymptotically, with second-order term."
+ "math": "Determine $\\alpha(C_N)$ asymptotically, with second-order term.",
+ "novelty": 4,
+ "importance": 3,
+ "value": 4
 }

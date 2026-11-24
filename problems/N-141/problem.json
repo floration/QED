@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 4.2,
  "plain": "Show infinitely many primes p have at least one more prime among p + 2, 2p + 1, 2p + 3.",
- "math": "Prove infinitely many primes $p$ have at least one of $p+2,\\,2p+1,\\,2p+3$ prime."
+ "math": "Prove infinitely many primes $p$ have at least one of $p+2,\\,2p+1,\\,2p+3$ prime.",
+ "novelty": 4,
+ "importance": 5,
+ "value": 5
 }

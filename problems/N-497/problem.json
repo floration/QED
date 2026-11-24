@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 3.5,
  "plain": "Show infinitely many primes p have P(p² + p + 1) < p.",
- "math": "Prove $\\#\\{p\\le x:P(p^2+p+1)<p\\}\\gg\\pi(x)$."
+ "math": "Prove $\\#\\{p\\le x:P(p^2+p+1)<p\\}\\gg\\pi(x)$.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 5
 }

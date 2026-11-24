@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 2.9,
  "plain": "If the fire only spreads every other turn, find the smallest per-turn budget that always contains it.",
- "math": "Find the infimum of average firefighter budgets that contain the half-speed fire on $\\mathbb{Z}^2$."
+ "math": "Find the infimum of average firefighter budgets that contain the half-speed fire on $\\mathbb{Z}^2$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

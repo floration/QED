@@ -4,5 +4,8 @@
  "area": "Logic",
  "difficulty": 6.5,
  "plain": "Show no algorithm can decide, given a and b, whether every orbit of n ↦ n/2 (even) or the largest prime factor of an + b (odd) eventually loops.",
- "math": "Prove $\\{(a,b)\\in\\mathbb{N}^2:$ every orbit of $n\\mapsto n/2$ ($n$ even), $P(an+b)$ ($n$ odd) is eventually periodic$\\}$ is not recursive, or prove it is."
+ "math": "Prove $\\{(a,b)\\in\\mathbb{N}^2:$ every orbit of $n\\mapsto n/2$ ($n$ even), $P(an+b)$ ($n$ odd) is eventually periodic$\\}$ is not recursive, or prove it is.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

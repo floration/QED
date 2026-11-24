@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 4.3,
  "plain": "Hats tile the plane only non-periodically, so they cannot tile a flat torus. Find the smallest uncovered fraction for packing hats on a flat torus of area A.",
- "math": "Let $g(A)$ be the least uncovered area over packings of congruent hats in flat tori of area $A$. Prove $g(A)\\to\\infty$ and determine its growth order in $A$."
+ "math": "Let $g(A)$ be the least uncovered area over packings of congruent hats in flat tori of area $A$. Prove $g(A)\\to\\infty$ and determine its growth order in $A$.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 5
 }

@@ -4,5 +4,8 @@
  "area": "Analysis",
  "difficulty": 2.7,
  "plain": "The 2026 Navier–Stokes blow-up pushed fluid right where it broke. Make it break with a push kept far away.",
- "math": "Construct smooth compactly supported $f$ with $\\operatorname{supp} f\\cap B(x_*,1)=\\emptyset$ such that 3D Navier–Stokes from rest blows up at $x_*$ in finite time."
+ "math": "Construct smooth compactly supported $f$ with $\\operatorname{supp} f\\cap B(x_*,1)=\\emptyset$ such that 3D Navier–Stokes from rest blows up at $x_*$ in finite time.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 4
 }

@@ -2,11 +2,14 @@
 Usage: python3 scripts/gen.py path/to/D2.json   (re-running never overwrites a Statement.lean that has been formalized)"""
 import json,sys,os
 D=json.load(open(sys.argv[1])); REPO=os.environ.get('REPO','floration/qed')
+SC=json.load(open('data/scores.json')) if os.path.exists('data/scores.json') else {}
 out=[]
 for r in D:
     pid,title,rating,area,W,M=r[:6]; adv=r[7]
     d=f'problems/{pid}'; os.makedirs(d,exist_ok=True)
     p=dict(id=pid,title=title,area=area,difficulty=(adv[0] if adv else rating),plain=W,math=M)
+    sc=SC.get(pid)
+    if sc: p.update({k:sc[k] for k in ('novelty','importance','value')})
     json.dump(p,open(f'{d}/problem.json','w'),ensure_ascii=False,indent=1); out.append(p)
     ns=pid.replace('-','')
     sp=f'{d}/Statement.lean'

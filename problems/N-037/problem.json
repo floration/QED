@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 4.1,
  "plain": "Find the densest way to pack identical seven-pointed stars in the plane.",
- "math": "Determine the maximal packing density of congruent copies of the regular star polygon $\\{7/2\\}$."
+ "math": "Determine the maximal packing density of congruent copies of the regular star polygon $\\{7/2\\}$.",
+ "novelty": 5,
+ "importance": 2,
+ "value": 4
 }

@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 2.5,
  "plain": "How many firefighters per turn are needed to contain a fire in 3D, as a precise growth rate?",
- "math": "Determine $\\lim_{t\\to\\infty}f(t)/t$ for the minimal firefighters needed to contain fire on $\\mathbb{Z}^3$ by time $t$."
+ "math": "Determine $\\lim_{t\\to\\infty}f(t)/t$ for the minimal firefighters needed to contain fire on $\\mathbb{Z}^3$ by time $t$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 6
 }

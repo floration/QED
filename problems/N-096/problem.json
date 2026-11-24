@@ -4,5 +4,8 @@
  "area": "Formal proof",
  "difficulty": 1.2,
  "plain": "The Busy Beaver value BB(5) was proved with a large computer proof. Make it small.",
- "math": "Prove $BB(5)=47{,}176{,}870$ in Lean 4 in under 10,000 lines."
+ "math": "Prove $BB(5)=47{,}176{,}870$ in Lean 4 in under 10,000 lines.",
+ "novelty": 4,
+ "importance": 3,
+ "value": 4
 }

@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 2.4,
  "plain": "Find the best convex sofa.",
- "math": "Maximize area over convex sets admissible in the width-1 right-angled corridor."
+ "math": "Maximize area over convex sets admissible in the width-1 right-angled corridor.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 5
 }

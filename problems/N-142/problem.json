@@ -4,5 +4,8 @@
  "area": "Games",
  "difficulty": 3.2,
  "plain": "Do the Prime Nim values grow without limit?",
- "math": "Decide whether $\\sup_n G(n)=\\infty$ for the prime subtraction game."
+ "math": "Decide whether $\\sup_n G(n)=\\infty$ for the prime subtraction game.",
+ "novelty": 4,
+ "importance": 3,
+ "value": 5
 }

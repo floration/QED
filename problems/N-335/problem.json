@@ -4,5 +4,8 @@
  "area": "Dynamics",
  "difficulty": 5.5,
  "plain": "For n ↦ P(n) + P(n+1), show some orbits climb above their starting value by any factor you like.",
- "math": "Prove $\\sup_n\\max_k f^k(n)/n=\\infty$ for $f(n)=P(n)+P(n+1)$."
+ "math": "Prove $\\sup_n\\max_k f^k(n)/n=\\infty$ for $f(n)=P(n)+P(n+1)$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 5
 }

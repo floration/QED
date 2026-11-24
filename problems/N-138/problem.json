@@ -4,5 +4,8 @@
  "area": "Formal proof",
  "difficulty": 5.3,
  "plain": "Shrink the 2026 machine-checked Riemann proof drastically.",
- "math": "Give a Lean 4 proof of `RiemannHypothesis` in at most 10,000 lines beyond Mathlib."
+ "math": "Give a Lean 4 proof of `RiemannHypothesis` in at most 10,000 lines beyond Mathlib.",
+ "novelty": 3,
+ "importance": 4,
+ "value": 4
 }

@@ -1,0 +1,11 @@
+{
+ "id": "N-663",
+ "title": "Multiplicities on the Fermat quartic",
+ "area": "Analysis",
+ "difficulty": 6.5,
+ "plain": "The surface x⁴+y⁴+z⁴ = 1 has the symmetries of a cube. Show its Laplace eigenvalues never repeat more than symmetry forces, except perhaps finitely often.",
+ "math": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the induced metric. Prove that all but finitely many Laplace eigenvalues of $S$ have multiplicity at most $3$.",
+ "novelty": 7,
+ "importance": 5,
+ "value": 6
+}

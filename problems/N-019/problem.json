@@ -4,5 +4,8 @@
  "area": "Computation",
  "difficulty": 0.9,
  "plain": "Moving n voices through a chord progression with the least total motion while avoiding parallel fifths should be computationally hard.",
- "math": "Show NP-hardness of minimizing $\\sum_t\\sum_i |x_{t+1,i}-x_{t,i}|$ over voicings of a given chord sequence with $n$ voices, subject to no parallel perfect fifths."
+ "math": "Show NP-hardness of minimizing $\\sum_t\\sum_i |x_{t+1,i}-x_{t,i}|$ over voicings of a given chord sequence with $n$ voices, subject to no parallel perfect fifths.",
+ "novelty": 6,
+ "importance": 2,
+ "value": 4
 }

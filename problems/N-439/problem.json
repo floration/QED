@@ -4,5 +4,8 @@
  "area": "Algebra",
  "difficulty": 2.5,
  "plain": "Show every symmetric group appears as the hidden symmetry group of the fibres of some 3D Jacobian-conjecture counterexample.",
- "math": "Prove that for each $n\\ge3$ there is a non-invertible Keller map $\\mathbb{C}^3\\to\\mathbb{C}^3$ of geometric degree $n$ whose generic monodromy group is $S_n$."
+ "math": "Prove that for each $n\\ge3$ there is a non-invertible Keller map $\\mathbb{C}^3\\to\\mathbb{C}^3$ of geometric degree $n$ whose generic monodromy group is $S_n$.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6
 }

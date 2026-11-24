@@ -1,0 +1,11 @@
+{
+ "id": "N-630",
+ "title": "Charge on a Fermat conductor",
+ "area": "Analysis",
+ "difficulty": 4.5,
+ "plain": "Put a unit of electric charge on a perfectly conducting body x⁴+y⁴+z⁴ ≤ 1. Show the surface charge is thinnest at the six flat points and thickest at the eight diagonal points.",
+ "math": "Let $\\mu$ be the Newtonian equilibrium measure of $K=\\{x^4+y^4+z^4\\le1\\}$, with density $\\rho$ with respect to surface area on $\\partial K$. Prove that $\\rho$ attains its minimum exactly at $(\\pm1,0,0),(0,\\pm1,0),(0,0,\\pm1)$ and its maximum exactly at $3^{-1/4}(\\pm1,\\pm1,\\pm1)$.",
+ "novelty": 7,
+ "importance": 4,
+ "value": 6
+}

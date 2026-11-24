@@ -1,0 +1,10 @@
+import Mathlib
+/-! N-648: Thue–Morse quantum walk
+A quantum walker on the line uses a Hadamard coin or a rotation coin according to the Thue–Morse sequence. Decide whether it spreads at full ballistic speed.
+Informal statement: On $\ell^2(\mathbb Z)\otimes\mathbb C^2$ let $U=S\,C$, where $S$ shifts the up and down components by $+1$ and $-1$, and $C_n=H$ if $t_{|n|}=0$, $C_n=\begin{pmatrix}\cos\frac\pi3&\sin\frac\pi3\\-\sin\frac\pi3&\cos\frac\pi3\end{pmatrix}$ if $t_{|n|}=1$. For $\psi_0=\delta_0\otimes e_1$ decide whether $\limsup_{T\to\infty}\frac{\log\sum_n|n|^2\|(U^T\psi_0)(n)\|^2}{2\log T}=1$.
+STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
+(open a PR touching only this file, labelled `statement`). Solutions are accepted only
+after the statement PR is merged. -/
+namespace OpenProblems.N648
+def Claim : Prop := sorry
+end OpenProblems.N648

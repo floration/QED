@@ -4,5 +4,8 @@
  "area": "Algebra",
  "difficulty": 2.2,
  "plain": "In any natural real-rank hyperoperation family, show the rank at which 2 ∘ 2 stops being 4 is not a whole number.",
- "math": "For the unique analytic family $a[s]b$ satisfying the recursion and log-convexity in $s$, prove $\\{s: 2[s]2=4\\}$ is exactly $[1,\\infty)\\cap$ an explicit closed set and determine whether it is an interval."
+ "math": "For the unique analytic family $a[s]b$ satisfying the recursion and log-convexity in $s$, prove $\\{s: 2[s]2=4\\}$ is exactly $[1,\\infty)\\cap$ an explicit closed set and determine whether it is an interval.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

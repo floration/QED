@@ -1,0 +1,11 @@
+{
+ "id": "N-657",
+ "title": "Spikes at the primes",
+ "area": "Analysis",
+ "difficulty": 6.5,
+ "plain": "Put a fixed bump at every prime on the half-line lattice. Prove the electron is localized at energies inside the free band, as it would be if the primes were random.",
+ "math": "Let $H=\\Delta+\\lambda\\mathbf 1_{\\mathbb P}$ on $\\ell^2(\\mathbb N)$, $\\lambda\\ne0$. Prove that $H$ has pure point spectrum in $(-2,2)$.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6
+}

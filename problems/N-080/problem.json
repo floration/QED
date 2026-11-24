@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 1.6,
  "plain": "Two fires start a distance d apart. How many firefighters per turn are needed, depending on d?",
- "math": "On $\\mathbb{Z}^2$ with 4-neighbour spread, find the least $k(d)$ containing fires started at $(0,0)$ and $(d,0)$."
+ "math": "On $\\mathbb{Z}^2$ with 4-neighbour spread, find the least $k(d)$ containing fires started at $(0,0)$ and $(d,0)$.",
+ "novelty": 4,
+ "importance": 2,
+ "value": 4
 }

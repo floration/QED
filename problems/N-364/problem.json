@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 3.9,
  "plain": "How many uniquely solvable Sudokus with no removable clue exist, as the board grows?",
- "math": "Find the asymptotics of the number of minimal uniquely solvable $n^2\\times n^2$ puzzles."
+ "math": "Find the asymptotics of the number of minimal uniquely solvable $n^2\\times n^2$ puzzles.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

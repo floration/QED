@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 2.7,
  "plain": "Firefighters must build one connected wall, one cell per turn, each next to the last. Can they ever enclose the fire?",
- "math": "On $\\mathbb{Z}^2$, each turn add one protected cell 8-adjacent to the previous one. Decide whether a single fire can be enclosed, and for which build rates."
+ "math": "On $\\mathbb{Z}^2$, each turn add one protected cell 8-adjacent to the previous one. Decide whether a single fire can be enclosed, and for which build rates.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 5
 }

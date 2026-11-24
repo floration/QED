@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 5.8,
  "plain": "Show infinitely many n have n, n + 1 and n + 2 each with a prime factor bigger than n^0.9.",
- "math": "Prove infinitely many $n$ with $\\min\\{P(n),P(n+1),P(n+2)\\}>n^{0.9}$."
+ "math": "Prove infinitely many $n$ with $\\min\\{P(n),P(n+1),P(n+2)\\}>n^{0.9}$.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 5
 }

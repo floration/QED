@@ -4,5 +4,8 @@
  "area": "Physics",
  "difficulty": 3.4,
  "plain": "Ising models on a hat tiling and its dual should be exactly related at their critical points. Prove the duality relation holds rigorously.",
- "math": "For the ferromagnetic Ising model on the hat graph $G$ and its planar dual $G^*$, prove $\\sinh(2\\beta_c(G))\\sinh(2\\beta_c(G^*))=1$."
+ "math": "For the ferromagnetic Ising model on the hat graph $G$ and its planar dual $G^*$, prove $\\sinh(2\\beta_c(G))\\sinh(2\\beta_c(G^*))=1$.",
+ "novelty": 4,
+ "importance": 3,
+ "value": 4
 }

@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 7.7,
  "plain": "Show μ(n)μ(n+1) has no bias on numbers n where neither n nor n+1 contains the digit 7.",
- "math": "Prove $\\sum_{n\\le x,\\ 7\\notin n,\\ 7\\notin n+1}\\mu(n)\\mu(n+1)=o(x^{\\log9/\\log10})$."
+ "math": "Prove $\\sum_{n\\le x,\\ 7\\notin n,\\ 7\\notin n+1}\\mu(n)\\mu(n+1)=o(x^{\\log9/\\log10})$.",
+ "novelty": 3,
+ "importance": 4,
+ "value": 4
 }

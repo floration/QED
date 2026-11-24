@@ -4,5 +4,8 @@
  "area": "Games",
  "difficulty": 5.9,
  "plain": "Losing pile sizes in Prime Nim are about three times as likely to be 1 mod 3 as 0 mod 3. Find the exact limiting proportions.",
- "math": "For the prime subtraction game, prove the limits $\\lim_x\\#\\{n\\le x:G(n)=0,\\ n\\equiv r\\ (3)\\}/\\#\\{n\\le x:G(n)=0\\}$ exist for $r=0,1,2$, and determine them."
+ "math": "For the prime subtraction game, prove the limits $\\lim_x\\#\\{n\\le x:G(n)=0,\\ n\\equiv r\\ (3)\\}/\\#\\{n\\le x:G(n)=0\\}$ exist for $r=0,1,2$, and determine them.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

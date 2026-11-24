@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 4.4,
  "plain": "For the first n primes as speeds, find the actual loneliness gap asymptotically.",
- "math": "Determine the asymptotics of $\\delta_n=\\sup_t\\min_{i\\le n}\\|tp_i\\|$ as $n\\to\\infty$."
+ "math": "Determine the asymptotics of $\\delta_n=\\sup_t\\min_{i\\le n}\\|tp_i\\|$ as $n\\to\\infty$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 6
 }

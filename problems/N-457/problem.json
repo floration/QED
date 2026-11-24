@@ -4,5 +4,8 @@
  "area": "Physics",
  "difficulty": 6.8,
  "plain": "Show the AKLT quantum spin model placed on a hat tiling has an energy gap above its ground state.",
- "math": "For the AKLT Hamiltonian on the vertex graph of a hat tiling (spin $d(v)/2$ at vertex $v$), prove a uniform spectral gap on finite patches."
+ "math": "For the AKLT Hamiltonian on the vertex graph of a hat tiling (spin $d(v)/2$ at vertex $v$), prove a uniform spectral gap on finite patches.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 5
 }

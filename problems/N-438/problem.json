@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 5.2,
  "plain": "Colour the positive integers with any finite number of colours. Show there are always three numbers of one colour whose pairwise sums are all squares.",
- "math": "Prove that for every $r$ and every $r$-colouring of $\\mathbb{N}$ there are distinct $a,b,c$ of one colour with $a+b,a+c,b+c$ all perfect squares."
+ "math": "Prove that for every $r$ and every $r$-colouring of $\\mathbb{N}$ there are distinct $a,b,c$ of one colour with $a+b,a+c,b+c$ all perfect squares.",
+ "novelty": 4,
+ "importance": 5,
+ "value": 6
 }

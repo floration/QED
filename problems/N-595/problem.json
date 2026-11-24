@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 4.1,
  "plain": "Count n²×n² Sudoku grids exactly, to leading order.",
- "math": "Prove $\\#\\text{Sudoku}(n)=\\left(\\frac{(n^2)!^{2}}{n^{2n^2}e^{\\dots}}\\right)\\!(1+o(1))$ with an explicit leading term."
+ "math": "Prove $\\#\\text{Sudoku}(n)=\\left(\\frac{(n^2)!^{2}}{n^{2n^2}e^{\\dots}}\\right)\\!(1+o(1))$ with an explicit leading term.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

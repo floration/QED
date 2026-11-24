@@ -4,5 +4,8 @@
  "area": "Dynamics",
  "difficulty": 3.8,
  "plain": "Pin down the fractal dimension of the classic Lorenz attractor to two decimals, rigorously.",
- "math": "For $\\sigma=10,\\beta=8/3,\\rho=28$, prove $2.06\\le\\dim_H\\mathcal{A}\\le2.07$."
+ "math": "For $\\sigma=10,\\beta=8/3,\\rho=28$, prove $2.06\\le\\dim_H\\mathcal{A}\\le2.07$.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

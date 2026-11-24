@@ -4,5 +4,8 @@
  "area": "Dynamics",
  "difficulty": 6.7,
  "plain": "The square-plus-one map has a loop: 89 goes to 233 and back. Show there are only finitely many loops.",
- "math": "Prove $Q(n)=P(n^2+1)$ has finitely many periodic orbits (one is $89\\leftrightarrow233$)."
+ "math": "Prove $Q(n)=P(n^2+1)$ has finitely many periodic orbits (one is $89\\leftrightarrow233$).",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

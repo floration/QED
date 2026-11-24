@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 3.1,
  "plain": "Prove the lonely runner conjecture whenever all speeds are at most 10 times the number of runners.",
- "math": "Prove $\\sup_t\\min_i\\|tv_i\\|\\ge\\frac1{n+1}$ for all distinct $v_i\\le10n$."
+ "math": "Prove $\\sup_t\\min_i\\|tv_i\\|\\ge\\frac1{n+1}$ for all distinct $v_i\\le10n$.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

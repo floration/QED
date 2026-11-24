@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 4.8,
  "plain": "Extract explicit, usable prime-counting error bounds from the 2026 Riemann proof.",
- "math": "From the 2026 Lean proof, extract and formally verify $|\\pi(x)-\\operatorname{li}(x)|\\le\\frac{1}{8\\pi}\\sqrt{x}\\log x$ for all $x\\ge2657$."
+ "math": "From the 2026 Lean proof, extract and formally verify $|\\pi(x)-\\operatorname{li}(x)|\\le\\frac{1}{8\\pi}\\sqrt{x}\\log x$ for all $x\\ge2657$.",
+ "novelty": 3,
+ "importance": 4,
+ "value": 4
 }

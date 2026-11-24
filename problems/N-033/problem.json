@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 2.3,
  "plain": "Count the essentially different 16 × 16 Sudoku grids, ignoring symmetries, to three significant figures.",
- "math": "Determine the automorphism group $\\Gamma$ of the $16\\times16$ Sudoku constraint structure and estimate $|\\text{grids}/\\Gamma|$ to 3 significant figures."
+ "math": "Determine the automorphism group $\\Gamma$ of the $16\\times16$ Sudoku constraint structure and estimate $|\\text{grids}/\\Gamma|$ to 3 significant figures.",
+ "novelty": 5,
+ "importance": 2,
+ "value": 4
 }

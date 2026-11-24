@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 5.8,
  "plain": "Show the largest prime factor of Markov numbers tends to infinity.",
- "math": "Prove $P(m)\\to\\infty$ as $m$ runs through Markov numbers."
+ "math": "Prove $P(m)\\to\\infty$ as $m$ runs through Markov numbers.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 6
 }

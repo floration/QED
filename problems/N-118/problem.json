@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 3.5,
  "plain": "In any two-coloring of a huge complete graph, how many single-color copies of the Petersen graph must appear, at least?",
- "math": "Determine the Ramsey multiplicity constant $\\lim_n \\min_{\\text{2-col}} \\#\\text{mono } P / \\#P \\text{ in } K_n$ for the Petersen graph $P$."
+ "math": "Determine the Ramsey multiplicity constant $\\lim_n \\min_{\\text{2-col}} \\#\\text{mono } P / \\#P \\text{ in } K_n$ for the Petersen graph $P$.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6
 }

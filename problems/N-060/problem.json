@@ -4,5 +4,8 @@
  "area": "Computation",
  "difficulty": 3.7,
  "plain": "With one tile shape, deciding whether a region can be tiled is easy in some cases; with many shapes it is hard. Find the smallest number of shapes where it becomes hard.",
- "math": "Find the least $t$ such that some fixed set of $t$ polygons makes \"does this finite region admit an exact tiling?\" NP-complete, and prove all sets of fewer polygons give polynomial-time problems."
+ "math": "Find the least $t$ such that some fixed set of $t$ polygons makes \"does this finite region admit an exact tiling?\" NP-complete, and prove all sets of fewer polygons give polynomial-time problems.",
+ "novelty": 7,
+ "importance": 6,
+ "value": 7
 }

@@ -4,5 +4,8 @@
  "area": "Probability",
  "difficulty": 5.8,
  "plain": "Random domino-style pairings of hat tiles inside a large region with a fixed boundary develop a frozen outer zone. Find the shape of the boundary between frozen and random regions.",
- "math": "For uniform perfect matchings of the hat graph on regions $L\\cdot\\Omega$, prove an arctic curve exists and identify it for $\\Omega$ a regular hexagon."
+ "math": "For uniform perfect matchings of the hat graph on regions $L\\cdot\\Omega$, prove an arctic curve exists and identify it for $\\Omega$ a regular hexagon.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

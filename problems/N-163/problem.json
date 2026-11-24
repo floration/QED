@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 3.0,
  "plain": "Find long stretches full of primes but containing no twin primes.",
- "math": "Prove there are intervals $[x,x+(\\log x)^{1.1}]$ with $\\ge(\\log x)^{0.05}$ primes but no twin pair, for infinitely many $x$."
+ "math": "Prove there are intervals $[x,x+(\\log x)^{1.1}]$ with $\\ge(\\log x)^{0.05}$ primes but no twin pair, for infinitely many $x$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

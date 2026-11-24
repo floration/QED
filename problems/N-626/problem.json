@@ -1,0 +1,11 @@
+{
+ "id": "N-626",
+ "title": "Sup norms on the Fermat quartic",
+ "area": "Analysis",
+ "difficulty": 2.4,
+ "plain": "On a sphere, some eigenfunctions pile up at the poles as much as possible. Show this cannot happen on the surface x⁴+y⁴+z⁴ = 1.",
+ "math": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the induced metric and $\\Delta\\varphi=-\\lambda\\varphi$, $\\|\\varphi\\|_{L^2(S)}=1$. Prove that $\\|\\varphi\\|_{L^\\infty(S)}=o(\\lambda^{1/4})$ as $\\lambda\\to\\infty$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 6
+}

@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 5.1,
  "plain": "The four color theorem's proof checks a big list of map configurations. Find the smallest list that works.",
- "math": "Determine the minimum size of an unavoidable set of reducible configurations for planar triangulations, with proof of minimality."
+ "math": "Determine the minimum size of an unavoidable set of reducible configurations for planar triangulations, with proof of minimality.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

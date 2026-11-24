@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 3.0,
  "plain": "Every smooth closed curve on a convex surface should pass through the corners of a square made of shortest paths.",
- "math": "Prove every smooth simple closed curve on a smooth convex surface inscribes a geodesic quadrilateral with equal sides and equal diagonals."
+ "math": "Prove every smooth simple closed curve on a smooth convex surface inscribes a geodesic quadrilateral with equal sides and equal diagonals.",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6
 }

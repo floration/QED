@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 4.7,
  "plain": "Every closed curve in the hyperbolic plane should pass through the corners of some hyperbolic square.",
- "math": "Prove every Jordan curve in $\\mathbb{H}^2$ contains the four vertices of a regular hyperbolic quadrilateral."
+ "math": "Prove every Jordan curve in $\\mathbb{H}^2$ contains the four vertices of a regular hyperbolic quadrilateral.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5
 }

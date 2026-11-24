@@ -4,5 +4,8 @@
  "area": "PDE",
  "difficulty": 6.8,
  "plain": "Show the known forced Navier–Stokes blow-up can be made to work with forcing that decays to zero at the blow-up time.",
- "math": "Prove there exist smooth $u_0$ and $f\\in L^1_tL^2_x\\cap C^\\infty$ with $\\|f(t)\\|_{L^2}\\to0$ as $t\\to T^-$ such that the forced 3D NS solution blows up at $T$."
+ "math": "Prove there exist smooth $u_0$ and $f\\in L^1_tL^2_x\\cap C^\\infty$ with $\\|f(t)\\|_{L^2}\\to0$ as $t\\to T^-$ such that the forced 3D NS solution blows up at $T$.",
+ "novelty": 5,
+ "importance": 6,
+ "value": 6
 }

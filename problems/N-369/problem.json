@@ -4,5 +4,8 @@
  "area": "Analysis",
  "difficulty": 3.1,
  "plain": "Show viscous fluid in a closed box with sticky walls can blow up under a smooth push.",
- "math": "Construct smooth $f$ such that 3D Navier–Stokes with no-slip in the unit cube blows up in finite time."
+ "math": "Construct smooth $f$ such that 3D Navier–Stokes with no-slip in the unit cube blows up in finite time.",
+ "novelty": 5,
+ "importance": 7,
+ "value": 6
 }

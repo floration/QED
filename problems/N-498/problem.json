@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 5.6,
  "plain": "Show P(n) and P(n+1) are both 3 mod 4 for a quarter of all n.",
- "math": "Prove $\\#\\{n\\le x:P(n)\\equiv P(n+1)\\equiv3\\ (4)\\}\\sim x/4$."
+ "math": "Prove $\\#\\{n\\le x:P(n)\\equiv P(n+1)\\equiv3\\ (4)\\}\\sim x/4$.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 5
 }

@@ -4,5 +4,8 @@
  "area": "Logic",
  "difficulty": 6.2,
  "plain": "Add the set of Prime Nim losing positions to the arithmetic of addition. Is the resulting theory decidable?",
- "math": "Decide whether the first-order theory of $(\\mathbb{N},+,L)$ is decidable, where $L=\\{n:G(n)=0\\}$ for the prime subtraction game."
+ "math": "Decide whether the first-order theory of $(\\mathbb{N},+,L)$ is decidable, where $L=\\{n:G(n)=0\\}$ for the prime subtraction game.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 5
 }

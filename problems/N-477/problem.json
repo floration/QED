@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 6.3,
  "plain": "Show the largest prime factor of 2^n + 3^n grows faster than n².",
- "math": "Prove $P(2^n+3^n)/n^2\\to\\infty$."
+ "math": "Prove $P(2^n+3^n)/n^2\\to\\infty$.",
+ "novelty": 4,
+ "importance": 5,
+ "value": 5
 }

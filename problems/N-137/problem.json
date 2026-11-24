@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 5.5,
  "plain": "The 2026 Riemann proof is a giant machine-checked archive. Write a proof people can read.",
- "math": "Give a proof of the Riemann hypothesis of at most 100 pages acceptable to expert referees."
+ "math": "Give a proof of the Riemann hypothesis of at most 100 pages acceptable to expert referees.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 5
 }

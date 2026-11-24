@@ -30,7 +30,7 @@ input,select{background:var(--card);color:var(--fg);border:1px solid var(--line)
 .dots button{width:15px;height:15px;border-radius:50%;border:0;padding:0;cursor:pointer;transition:transform .12s,box-shadow .12s;opacity:.92}
 .dots button:hover,.dots button.sel{transform:scale(1.75);opacity:1;z-index:1;position:relative}
 .dots button.sel{outline:2px solid #fff;outline-offset:2px}
-.g{background:var(--g);box-shadow:0 0 10px rgba(61,220,132,.55)}.y{background:var(--y);box-shadow:0 0 9px rgba(255,197,61,.5);animation:pulse 2.4s infinite}.r{background:var(--r);opacity:.8}
+.a{background:#3a3f4a;opacity:.55}.g{background:var(--g);box-shadow:0 0 10px rgba(61,220,132,.55)}.y{background:var(--y);box-shadow:0 0 9px rgba(255,197,61,.5);animation:pulse 2.4s infinite}.r{background:var(--r);opacity:.8}
 @keyframes pulse{50%{box-shadow:0 0 16px rgba(255,197,61,.9)}}
 .panel{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:18px;backdrop-filter:blur(6px)}
 aside{position:sticky;top:12px;align-self:start}
@@ -53,7 +53,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:0 0 40px}
 </header>
 <main>
 <section>
-<div class="controls"><input id="q" placeholder="Search title or id…"><select id="area"><option value="">All areas</option></select><select id="st"><option value="">All statuses</option><option value="g">Solved</option><option value="y">In progress</option><option value="r">Untouched</option></select></div>
+<div class="controls"><input id="q" placeholder="Search title or id…"><select id="area"><option value="">All areas</option></select><select id="st"><option value="">All statuses</option><option value="g">Solved</option><option value="y">In progress</option><option value="r">Untouched</option></select><label class="mut" style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="arc" style="min-width:0;flex:none"> Show archive (<span id="an">0</span>)</label></div>
 <div id="grid"></div>
 </section>
 <aside>
@@ -64,37 +64,38 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:0 0 40px}
 <script>
 const REPO='floration/qed'; document.getElementById('repo').href=`https://github.com/${REPO}/blob/main/CONTRIBUTING.md`;
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let P=[],S={},C={},L={first:[],smallest:[]},cur=null,tab='first';
+let P=[],A=[],S={},C={},L={first:[],smallest:[]},cur=null,tab='first';
 const get=u=>fetch(u+'?t='+Date.now()).then(r=>r.ok?r.json():{}).catch(()=>({}));
-Promise.all([get('data/problems.json'),get('data/solutions.json'),get('data/claims.json'),get('data/leaderboard.json')]).then(([p,s,c,l])=>{
-  P=p||[];S=s||{};C=c||{};L=Object.assign({first:[],smallest:[]},l);
+Promise.all([get('data/problems.json'),get('data/solutions.json'),get('data/claims.json'),get('data/leaderboard.json'),get('data/archive.json')]).then(([p,s,c,l,arx])=>{
+  P=p||[];A=(Array.isArray(arx)?arx:[]).map(x=>Object.assign(x,{archived:true}));document.getElementById('an').textContent=A.length;S=s||{};C=c||{};L=Object.assign({first:[],smallest:[]},l);
   const areas=[...new Set(P.map(x=>x.area))].sort(); const a=document.getElementById('area');
   areas.forEach(x=>a.insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`));
   draw();board(); const h=location.hash.slice(1); if(h) show(h);
 });
-const status=id=>S[id]?'g':(C[id]&&C[id].length?'y':'r');
+const AR=()=>document.getElementById('arc')&&document.getElementById('arc').checked;
+const status=id=>A.some(x=>x.id===id)?'a':S[id]?'g':(C[id]&&C[id].length?'y':'r');
 function draw(){
   const q=document.getElementById('q').value.toLowerCase(),ar=document.getElementById('area').value,st=document.getElementById('st').value;
   const g=document.getElementById('grid');g.innerHTML='';let n={g:0,y:0,r:0};const groups={};
-  P.forEach(p=>{const s=status(p.id);n[s]++;
+  (AR()?P.concat(A):P).forEach(p=>{const s=status(p.id);if(s!=='a')n[s]++;
     if(q&&!(p.title.toLowerCase().includes(q)||p.id.toLowerCase().includes(q)))return;
-    if(ar&&p.area!==ar)return;if(st&&s!==st)return;(groups[p.area]=groups[p.area]||[]).push([p,s]);});
-  Object.keys(groups).sort((a,b)=>groups[b].length-groups[a].length).forEach(k=>{
+    if(ar&&p.area!==ar)return;if(st&&s!==st)return;(groups[s==='a'?'Archive':p.area]=groups[s==='a'?'Archive':p.area]||[]).push([p,s]);});
+  Object.keys(groups).sort((a,b)=>(a==='Archive')-(b==='Archive')||groups[b].length-groups[a].length).forEach(k=>{
     const sec=document.createElement('div');sec.className='area';const done=groups[k].filter(x=>x[1]==='g').length;
     sec.innerHTML=`<h3><span>${esc(k)}</span><span>${done}/${groups[k].length}</span></h3><div class="dots"></div>`;const d=sec.lastChild;
     groups[k].forEach(([p,s])=>{const b=document.createElement('button');b.className=s+(cur===p.id?' sel':'');b.title=`${p.id} · ${p.title}`;b.onclick=()=>show(p.id);d.appendChild(b);});
     g.appendChild(sec);});
   sG.textContent=n.g;sY.textContent=n.y;sR.textContent=n.r;
   sW.textContent=new Set(Object.values(C).flat().map(c=>c.user)).size;
-  pG.style.width=n.g/10+'%';pY.style.width=n.y/10+'%';pR.style.width=n.r/10+'%';pT.textContent=`${P.length} / 1000 problems posted`;
+  pG.style.width=n.g/10+'%';pY.style.width=n.y/10+'%';pR.style.width=n.r/10+'%';pT.textContent=`${P.filter(p=>p.id!=='N-000').length} / 1000 problems posted`;
 }
 const sol=e=>e?`<b>${e.size}</b> lines · <a href="https://github.com/${esc(e.user)}">@${esc(e.user)}</a> · ${esc(e.model)}<span class="mut"> · ${esc((e.time||'').slice(0,10))}</span>`:'<span class="mut">none yet</span>';
 function show(id){
-  const p=P.find(x=>x.id===id);if(!p)return;cur=id;location.hash=id;draw();
+  const p=P.find(x=>x.id===id)||A.find(x=>x.id===id);if(!p)return;cur=id;location.hash=id;draw();
   const s=S[id],c=C[id]||[],st=status(id);
   document.getElementById('detail').innerHTML=`<div class="pid"><i class="dot ${st}"></i> ${esc(p.id)}</div><h2>${esc(p.title)}</h2>
   <div class="mut">${esc(p.area)} · difficulty ${esc(p.difficulty)}/10${s?' · '+(s.kind==='disproof'?'DISPROVED':'SOLVED'):''}</div>
-  <p>${esc(p.plain)}</p><div class="math">${esc(p.math)}</div>
+  ${p.archived?`<p class="mut">Archived: ${esc(p.reason)}. Kept for reference; not open for claims.</p>`:''}${p.value!=null?`<div class="mut" style="font-size:13px">novelty ${p.novelty} · importance ${p.importance} · value ${p.value}</div>`:''}<p>${esc(p.plain)}</p><div class="math">${esc(p.math)}</div>
   <div class="kv"><div class="mut">First victor</div><div>${sol(s&&s.first)}</div>
   <div class="mut">Smallest</div><div>${sol(s&&s.smallest)}</div>
   <div class="mut">Working on it</div><div><b>${c.length}</b> ${c.map(x=>`<a href="${esc(x.issue)}">@${esc(x.user)}</a>`).join(', ')}</div></div>
@@ -106,5 +107,5 @@ function board(){
    (rows.length?rows.map((r,i)=>`<tr><td>${i+1}</td><td><a href="https://github.com/${esc(r.user)}">@${esc(r.user)}</a></td><td>${esc(r.model)}</td><td>${r.count}</td></tr>`).join(''):'<tr><td colspan=4 class="mut">No solves yet — be the first.</td></tr>');
 }
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');tab=b.dataset.b;board();});
-['q','area','st'].forEach(i=>document.getElementById(i).oninput=draw);
+['q','area','st'].forEach(i=>document.getElementById(i).oninput=draw);document.getElementById('arc').onchange=draw;
 </script></body></html>

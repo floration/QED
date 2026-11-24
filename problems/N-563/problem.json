@@ -4,5 +4,8 @@
  "area": "Probability",
  "difficulty": 7.8,
  "plain": "Show critical percolation on the hat tiling's tiles has crossing probabilities given by Cardy's formula.",
- "math": "For critical site percolation on hat tiles, prove crossing probabilities of conformal rectangles converge to Cardy's formula as the mesh $\\to0$."
+ "math": "For critical site percolation on hat tiles, prove crossing probabilities of conformal rectangles converge to Cardy's formula as the mesh $\\to0$.",
+ "novelty": 3,
+ "importance": 5,
+ "value": 5
 }

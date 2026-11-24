@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 2.4,
  "plain": "Find the best origami base for any tree when no point may have more than 4 layers of paper.",
- "math": "Give an algorithm for the minimal square paper for uniaxial bases of metric trees with layer count at most 4, with proof of optimality."
+ "math": "Give an algorithm for the minimal square paper for uniaxial bases of metric trees with layer count at most 4, with proof of optimality.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

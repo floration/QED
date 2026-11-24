@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 4.8,
  "plain": "Find the smallest area region on the unit sphere that can cover every curve of length 1 after a rotation.",
- "math": "Determine $\\inf\\{\\sigma(K):K\\subset S^2$ covers every rectifiable curve of length $1$ up to $SO(3)\\}$ to within $1\\%$, and prove the infimum is attained by a set bounded by finitely many circular arcs or show it is not."
+ "math": "Determine $\\inf\\{\\sigma(K):K\\subset S^2$ covers every rectifiable curve of length $1$ up to $SO(3)\\}$ to within $1\\%$, and prove the infimum is attained by a set bounded by finitely many circular arcs or show it is not.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4
 }

@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 5.2,
  "plain": "Count the numbers up to x whose square has no digit 7. Show the count matches the random-digit prediction.",
- "math": "Prove $\\#\\{n\\le x: 7\\notin n^2\\}=x^{1+2\\log_{10}(9/10)+o(1)}$."
+ "math": "Prove $\\#\\{n\\le x: 7\\notin n^2\\}=x^{1+2\\log_{10}(9/10)+o(1)}$.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 5
 }

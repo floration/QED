@@ -4,5 +4,8 @@
  "area": "Combinatorics",
  "difficulty": 2.6,
  "plain": "Show you can line up 1 to 2n with neighbours summing to primes, starting with any odd number and ending with any even one.",
- "math": "Prove for all large $n$ and all odd $a$, even $b$ in $[2n]$, the prime-sum graph on $[2n]$ has a Hamiltonian $a$–$b$ path."
+ "math": "Prove for all large $n$ and all odd $a$, even $b$ in $[2n]$, the prime-sum graph on $[2n]$ has a Hamiltonian $a$–$b$ path.",
+ "novelty": 4,
+ "importance": 3,
+ "value": 4
 }

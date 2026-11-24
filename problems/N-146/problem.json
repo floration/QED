@@ -4,5 +4,8 @@
  "area": "Number theory",
  "difficulty": 5.0,
  "plain": "Change one digit at a time, staying prime. Show any two k-digit primes are linked by at most k + 1 steps.",
- "math": "In the graph on $k$-digit primes joined when differing in one decimal digit, prove $\\operatorname{diam}\\le k+1$ for all $k$."
+ "math": "In the graph on $k$-digit primes joined when differing in one decimal digit, prove $\\operatorname{diam}\\le k+1$ for all $k$.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 5
 }

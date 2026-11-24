@@ -4,5 +4,8 @@
  "area": "Geometry",
  "difficulty": 3.5,
  "plain": "Find a single 3D tile that fills space and forces five-fold, icosahedral symmetry in every tiling.",
- "math": "Find $T\\subset\\mathbb{R}^3$ tiling space such that every tiling by $T$ has icosahedral symmetry in its hull, or prove none exists."
+ "math": "Find $T\\subset\\mathbb{R}^3$ tiling space such that every tiling by $T$ has icosahedral symmetry in its hull, or prove none exists.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6
 }
