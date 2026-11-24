@@ -5,5 +5,5 @@ Informal: Prove for every $k$ there are primes $p_1,\dots,p_k$ with $p_i+p_{i+1}
 namespace OpenProblems.N555
 
 def Claim : Prop :=
-  ∀ k : ℕ, ∃ l : List ℕ, l.length = k ∧ l.Nodup ∧ (∀ p ∈ l, p.Prime) ∧ ∀ i : ℕ, ∀ h : i + 1 < l.length, IsSquare (l[i] + l[i + 1])
+  ∀ k : ℕ, ∃ l : List ℕ, l.length = k ∧ l.Nodup ∧ (∀ p ∈ l, p.Prime) ∧ l.Chain' (fun a b => IsSquare (a + b))
 end OpenProblems.N555
