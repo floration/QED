@@ -1,0 +1,8 @@
+## Perfect powers among squarefree tau values | 7 | Number theory
+W: Ramanujan's tau function is the sequence of coefficients of the discriminant modular form. Show that, at squarefree arguments n > 1, |tau(n)| is a perfect square, cube or higher power only finitely many times (no example exists for n up to one million).
+M: Let $\tau(n)$ be defined by $q\prod_{m\ge1}(1-q^m)^{24}=\sum_{n\ge1}\tau(n)q^n$. Prove that the set of squarefree $n>1$ for which $|\tau(n)|=y^k$ for some integers $y\ge 0$, $k\ge2$ is finite. (Computation: for all $2\le n\le 10^6$, squarefree or not, $|\tau(n)|$ is not a perfect power; squarefree is imposed because $\tau(p)=0$ would force $\tau(p^4)=p^{22}$.)
+
+## Is Ramanujan's tau one-to-one? | 8 | Number theory
+W: Show that two different positive integers never have the same nonzero Ramanujan tau value. For all n up to one million, even the absolute values |tau(n)| are pairwise distinct.
+M: Prove that if $m\neq n$ are positive integers with $\tau(m)\tau(n)\neq0$, then $\tau(m)\neq\tau(n)$; more strongly, that $|\tau(m)|\neq|\tau(n)|$. (Verified: the values $|\tau(n)|$, $1\le n\le10^6$, are pairwise distinct.)
+

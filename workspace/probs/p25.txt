@@ -1,0 +1,15 @@
+## Real zeros of the theta cosine sum | 6 | Analysis
+W: Count the zeros of cos(x) + cos(4x) + cos(9x) + ... + cos(N²x) over one period. A random-sign version has about 0.894 N² zeros, but the true theta sum seems to have about 0.93 N². Prove the count divided by N² has a limit and that it beats the random prediction.
+M: Let $Z_N=\#\{x\in[0,2\pi):\sum_{n=1}^N\cos(n^2x)=0\}$. Prove that $\lim_{N\to\infty}Z_N/N^2=c$ exists and that $c>2/\sqrt5$ (the Kac–Rice value for random signs $\pm\cos(n^2x)$). Grid sign-change counts (FFT, 24–64 points per shortest period) give $Z_N/N^2=0.9379,0.9334,0.9327,0.9315$ for $N=160,320,640,1280$, while random signs give $0.8954$ at $N=640$.
+
+## Real zeros of the prime cosine sum | 6 | Analysis
+W: Count the zeros of the sum of cos(px) over primes p below X, over one period. Prove the count matches what random signs would predict, about twice the root-mean-square prime, even though the sum has huge spikes near rationals with small denominators.
+M: Let $Z(X)=\#\{x\in[0,2\pi):\sum_{p<X}\cos(px)=0\}$ and $R(X)=2\big(\pi(X)^{-1}\sum_{p<X}p^2\big)^{1/2}\sim 2X/\sqrt3$. Prove $Z(X)/R(X)\to1$. Grid counts give $Z(X)/R(X)=1.126,1.089,1.065$ for $X=10^4,10^5,10^6$ (random signs give $1.0003$ at $X=10^6$), so the convergence, if it holds, is slow and from above; determine the rate.
+
+## Zeros of the theta polynomial inside the disc | 6 | Analysis
+W: The polynomial 1 + z + z⁴ + z⁹ + ... + z^(N²) has N² roots, nearly all close to the unit circle. With random signs, one third of them lie inside the circle on average, but for the theta polynomial itself the fraction seems to settle near 0.346. Prove the fraction has a limit and find it.
+M: Let $F_N(z)=\sum_{n=0}^N z^{n^2}$ and $I_N=\#\{z:|z|<1,F_N(z)=0\}$. Prove $I_N/N^2\to c$ and identify $c$ (for instance as an integral against the limiting distribution of normalized theta sums $N^{-1/2}\sum_{n\le N}e(n^2x+ny)$). Winding numbers computed on 32 points per shortest period give $I_N/N^2=0.3432,0.3440,0.3460,0.34646,0.34628$ for $N=50,100,200,400,800$; with independent random signs the expected fraction is $1/3$ (observed $0.333\pm0.001$ at $N=400$). Prove in particular that $c>1/3$.
+
+## Chaos in the Reuleaux triangle billiard | 8 | Dynamics
+W: A ball bouncing inside a Reuleaux triangle (the rounded triangle of constant width) has a stable three-bounce orbit hitting the middles of the three arcs, so the motion is not fully chaotic. Prove that the chaotic part nevertheless fills a region of positive area in phase space.
+M: Let $R$ be the Reuleaux triangle of width 1 and $T$ its billiard map on $\partial R\times(0,\pi)$ with the invariant measure $\sin\phi\,ds\,d\phi$. The 3-periodic orbit through the arc midpoints has monodromy trace $\approx0.8986$ (computed numerically), so it is elliptic. Prove that $T$ has positive metric entropy, i.e. a positive-measure set of points with a nonzero Lyapunov exponent.
