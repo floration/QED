@@ -7,6 +7,9 @@ for f in sorted(glob.glob('/home/claude/probs/p*.txt'),key=lambda s:int(re.searc
         w=next(x[2:].strip() for x in l if x.startswith('W:')); m=next(x[2:].strip() for x in l if x.startswith('M:'))
         items.append([h[0],int(h[1]),h[2],w,m])
 items.sort(key=lambda x:x[1])
+import os
+if os.path.exists('/home/claude/score/keep_titles.json'):
+    _K=set(json.load(open('/home/claude/score/keep_titles.json'))); items=[i for i in items if i[0] in _K]
 NT=int(__import__('os').environ.get('NT','750'))
 assert len(items)==NT, len(items)
 assert len({i[0].lower() for i in items})==NT, [t for t in {i[0] for i in items} if sum(1 for j in items if j[0]==t)>1]
@@ -36,6 +39,8 @@ RULES=[ # (regex on title+math, note, url) for problems with no tag yet
 ]
 # Stable IDs: problems already published keep their id; new ones get the next free numbers.
 FROZEN={r[1]:r[0] for r in json.load(open('/home/claude/D2_617_frozen.json'))}
+FROZEN.update(json.load(open('/home/claude/idmap_extra.json')))
+KEEP=set(json.load(open('/home/claude/score/keep_titles.json'))) if __import__('os').path.exists('/home/claude/score/keep_titles.json') else None
 nxt=max(int(v[2:]) for v in FROZEN.values())+1
 idmap={}
 for i in items:
