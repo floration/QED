@@ -18,7 +18,8 @@ for pid,L in S.items():
 json.dump(out,open('data/solutions.json','w'),indent=1)
 def board(key):
     c={}
-    for v in out.values():
+    for pid,v in out.items():
+        if pid.startswith('QED-Q') or pid=='N-000': continue   # submission tests don't count
         e=v[key]; k=(e['user'],e['model']); c[k]=c.get(k,0)+1
     return [dict(user=u,model=m,count=n) for (u,m),n in sorted(c.items(),key=lambda z:-z[1])]
 json.dump(dict(first=board('first'),smallest=board('smallest')),open('data/leaderboard.json','w'),indent=1)

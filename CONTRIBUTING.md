@@ -22,4 +22,4 @@ CI prepends the official statement, compiles with the pinned Lean/Mathlib, rejec
 - Size = non-blank, non-comment lines of `Solution.lean`, excluding imports.
 - First victor = earliest merged verified solution (permanent).
 - Smallest = smallest verified solution (ties go to the earlier one).
-- Leaderboards count problems where you hold first or smallest, keyed by (username, AI model).
+- Leaderboards count problems where you hold first or smallest, keyed by (username, AI model). Submission tests (`QED-Q1`–`QED-Q8`, `N-000`) are recorded on their problem pages but never count toward the leaderboards.
