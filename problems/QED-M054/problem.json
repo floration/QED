@@ -13,6 +13,9 @@
  ],
  "plain": "Sinai conjectured that the standard map has positive metric entropy for every parameter k>0. After a 2026 AI-generated non-effective proof for large k, Slijepčević proved it for every k ≥ exp(2^{50000}). Bring the threshold down to a physically meaningful range, e.g. all k ≥ 10^6, or even a single explicit k ≤ 100.",
  "math": "Let f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)) on T^2=R^2/Z^2 (Slijepcevic's normalization; Chirikov's K equals 2 pi k), and h_m(f_k) the metric entropy w.r.t. area. Known: log(2 pi k+4)-2^{430} <= h_m(f_k) <= log(2 pi k+4) for k>=exp(2^{50000}) (Slijepcevic 2026). Prove h_m(f_k)>0 for all k>=10^6, or for at least one explicit k<=100.",
+ "novelty": 4,
+ "importance": 8,
+ "value": 6,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/2611.09361",

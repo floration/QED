@@ -1,0 +1,22 @@
+{
+ "id": "QED-E082",
+ "set": "extended",
+ "title": "Binary-error LWE with linearly many samples",
+ "area": "Complexity",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Micciancio, Peikert, Hardness of SIS and LWE with small parameters, CRYPTO 2013; Arora, Ge, ICALP 2011.",
+ "plain": "For LWE with secret in Z_q^n (q = poly(n)) and errors uniform in {0,1}, given m = C*n samples for a fixed constant C > 1, either give a polynomial-time (or 2^{o(n)}) algorithm, or prove hardness from standard LWE/worst-case lattice problems for m = C*n (beyond the n(1+O(1/log n)) samples of Micciancio-Peikert).",
+ "math": "Fix q = q(n) with 2 <= q(n) <= poly(n) and a constant C > 1; m = ceil(Cn). Decision binary-error LWE: given (A, b), A uniform in Z_q^{m x n}, b = As + e mod q (s uniform, e uniform in {0,1}^m) or b uniform. Show that for every such C and q either (a) some randomized 2^{o(n)}-time algorithm distinguishes with non-negligible advantage, or (b) the problem is hard for polynomial time (no non-negligible advantage) assuming standard decision LWE is hard for some standard parameter family (dimension polynomially related to n, poly(n) modulus and samples, discrete Gaussian error of width alpha q' >= 2 sqrt(n')). Known: Arora-Ge solves m ~ n^2 in poly time; Micciancio-Peikert give (b) for m = n(1+O(1/log n)).",
+ "novelty": 4,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "Micciancio, Peikert, Hardness of SIS and LWE with small parameters, CRYPTO 2013",
+  "Arora, Ge, New algorithms for learning in presence of errors, ICALP 2011",
+  "Albrecht, Cid, Faugère, Fitzpatrick, Perret, Algebraic algorithms for LWE problems, ACM CCA 2015",
+  "Aaronson, That IACR preprint (blog post on Chen 2024), scottaaronson.blog/?p=7946"
+ ]
+}

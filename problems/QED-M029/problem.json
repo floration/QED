@@ -13,6 +13,9 @@
  ],
  "plain": "Mao's counterexample (permutation-invariant graph distributions with zero low-degree advantage up to degree Theta(log^{r-1} n) that a linear-time rank test detects after constant-rate resampling) needs non-uniform advice for its Reed-Muller subspace / evaluation-point seed. Find a polynomial-time algorithm that outputs a good seed, giving a uniformly poly-time samplable counterexample; or show that every uniformly samplable permutation-invariant distribution with vanishing degree-polylog advantage is hard for poly-time noise-robust tests (a repaired conjecture).",
  "math": "For some fixed r >= 3, give a single randomized algorithm that, given 1^n, samples in expected poly(n) time from a permutation-invariant distribution P_n on n-vertex graphs whose low-degree advantage over G(n,1/2) tends to 0 at degree D_n = ceil(c0 (log n)^{r-1}) (some c0 > 0), while after independent edge resampling at a fixed rate delta in (0,1) a deterministic poly-time test distinguishes it from G(n,1/2) with both error probabilities -> 0. (Sufficient route via Mao's construction: find in poly(n) time evaluation points with every <= L of the vectors phi(x_i) linearly independent.)",
+ "novelty": 7,
+ "importance": 5,
+ "value": 6,
  "formal_status": "formalized",
  "refs": [
   "Mao, The Polynomial-Time Low-Degree Conjecture is False, arXiv:2607.20318",

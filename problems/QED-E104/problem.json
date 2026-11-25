@@ -1,0 +1,24 @@
+{
+ "id": "QED-E104",
+ "set": "extended",
+ "title": "One-level density of quadratic Dirichlet L-functions beyond support (−2,2)",
+ "area": "Number theory",
+ "difficulty": 5.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Özlük–Snyder (Canad. J. Math. 58, 2006; earlier 1999 work) and Rubinstein (Duke 2001) for support (−2,2); Katz–Sarnak (1999) density conjectures.",
+ "plain": "Under GRH, the low-lying zeros of L(s,χ_d) for quadratic characters are known to follow the symplectic random-matrix law only for test functions whose Fourier transform is supported in (−2,2). Go beyond 2.",
+ "math": "For the family of real primitive characters $\\chi_{8d}$, $d$ odd squarefree, $X<d\\le 2X$, and even Schwartz $\\phi$ with $\\operatorname{supp}\\hat\\phi\\subset(-\\sigma,\\sigma)$, prove under GRH that $\\frac1{|\\mathcal F|}\\sum_d\\sum_{\\gamma_d}\\phi\\!\\big(\\gamma_d\\frac{\\log X}{2\\pi}\\big)\\to\\int\\phi(x)\\big(1-\\frac{\\sin 2\\pi x}{2\\pi x}\\big)dx$ for some $\\sigma>2$.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2002.11968",
+  "https://msp.org/ant/2023/17-4/ant-v17-n4-p01-p.pdf",
+  "Ozluk-Snyder, Canad. J. Math 58 (2006)",
+  "arXiv:1601.06833",
+  "arXiv:1710.06834",
+  "arXiv:2002.11968"
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "id": "QED-E085",
+ "set": "extended",
+ "title": "How fast does eps_k vanish for k-OV in low dimension?",
+ "area": "Complexity",
+ "difficulty": 3.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Dürr, Kipouridis, Lampis, Węgrzycki, 'Faster algorithms for k-Orthogonal Vectors in low dimension', ICALP 2026, arXiv:2507.11098; Björklund–Kaski, STOC 2024, arXiv:2310.11926.",
+ "plain": "Dürr-Kipouridis-Lampis-Węgrzycki show k-OV is solvable in O(2^{(1-eps_k)d} n) for every fixed k, and that eps_k -> 0 is forced by the Set Cover Conjecture. Determine the decay rate: prove eps_k >= c/log k (or c/k), or show that eps_k >= omega(1/k) would refute the Set Cover Conjecture.",
+ "math": "Prove or disprove: there are absolute constants c > 0 and p ∈ ℕ such that for every k ≥ 2, k-OV on k sets of n vectors in {0,1}^d is solvable by a deterministic word-RAM algorithm in time O_k(2^{(1 - c/ln k) d} · n^p). (The exponent p must not depend on k: otherwise brute force n^k·d makes the statement trivial. Companion SCC direction is separate.)",
+ "novelty": 6,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "Dürr, Kipouridis, Lampis, Węgrzycki, Faster algorithms for k-Orthogonal Vectors in low dimension, ICALP 2026, arXiv:2507.11098",
+  "Björklund, Kaski, The Asymptotic Rank Conjecture and the Set Cover Conjecture are not both true, STOC 2024, arXiv:2310.11926"
+ ]
+}

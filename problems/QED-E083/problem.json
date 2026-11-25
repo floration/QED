@@ -1,0 +1,26 @@
+{
+ "id": "QED-E083",
+ "set": "extended",
+ "title": "Densest k-Subgraph and k-Biclique FPT-inapproximability from plain ETH",
+ "area": "Complexity",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Chalermsook et al., From Gap-ETH to FPT-inapproximability, FOCS 2017 (arXiv:1708.04218); Feldmann, Karthik C.S., Lee, Manurangsi, survey on approximation in parameterized complexity 2020 (arXiv:2006.04411)",
+ "plain": "Prove, assuming only ETH, that Densest k-Subgraph cannot be approximated within k^{o(1)} (or any omega(1) factor) in f(k) n^{o(k)} time, or that k-Biclique has no f(k)n^{o(sqrt k)}-type algorithm, matching known Gap-ETH-based results.",
+ "math": "Assuming only (deterministic) ETH, prove that there is a function g(k) -> infinity such that no algorithm running in time f(k) n^{O(1)} (f computable) approximates (uncolored) Densest k-Subgraph within factor g(k), i.e. outputs v with OPT/g(k) <= v <= OPT. (Gap-ETH gives every g = k^{o(1)}; the k-Biclique disjunct is already known under ETH, Lin JACM 2018.)",
+ "novelty": 4,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "Guruswami, Lin, Ren, Sun, Wu, Parameterized Inapproximability Hypothesis under ETH, STOC 2024, arXiv:2311.16587",
+  "Aggarwal, Gupta, Morolia, Zhang, Mind the Gap? Not for SVP Hardness under ETH!, ICALP 2026, arXiv:2504.02695",
+  "Chalermsook et al., From Gap-ETH to FPT-inapproximability, FOCS 2017",
+  "arXiv:1406.3700",
+  "arXiv:2311.16587",
+  "arXiv:2504.02695",
+  "arXiv:2112.04669",
+  "arXiv:1708.04218"
+ ]
+}

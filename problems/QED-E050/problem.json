@@ -13,6 +13,9 @@
  ],
  "plain": "Start with 8 and repeatedly multiply by 3/2, rounding down. Keep score: +2 for every even number you see and −1 for every odd number. Does the score ever go negative? This is exactly the question of whether a specific 6-state Turing machine, called Antihydra, ever halts. Answering it is the first obstacle to determining the sixth Busy Beaver number.",
  "math": "Let $a_0=8$ and $a_{n+1}=\\lfloor 3a_n/2\\rfloor$. For $n\\ge1$ let $E_n=\\#\\{i<n:a_i\\text{ even}\\}$ and $O_n=\\#\\{i<n:a_i\\text{ odd}\\}$. Does there exist $n$ with $O_n>2E_n$? Equivalently (bbchallenge), does the 6-state 2-symbol Turing machine 1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA halt from a blank tape? The conjecture is that it never halts.",
+ "novelty": 4,
+ "importance": 5,
+ "value": 5,
  "formal_status": "formalized",
  "review_note": "Known: Simulated to $2^{38}$ rule steps without halting (bbchallenge wiki). Under a random-walk heuristic (steps +2/−1), the chance of ever reaching −1 from the current score is about $10^{-2.87\\times10^{10}}$ (wiki). It is listed as an undecided 'probviously non-halting' cryptid on the BB(6) wiki page; the current BB(6) champion exceeds $10\\uparrow\\uparrow10\\uparrow\\uparrow10\\uparrow\\uparrow8$ (mxdys, June 2025). BB(5) is determined (arXiv:2509.12337). Related: Mahler's 3/2 problem; Dubickas on integer sequences from linear maps. More BB(6) cryptids, all unresolved: arXiv:2610.22603 (2026).",
  "refs": [

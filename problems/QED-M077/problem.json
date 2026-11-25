@@ -13,6 +13,9 @@
  ],
  "plain": "The Alternative Hypothesis says normalized gaps between zeta zeros are almost all near half-integers. It contradicts GUE, but no proven hypothesis is known to rule it out. Decide whether GRH plus Elliott–Halberstam (strong statements about primes, not zeros) is incompatible with it.",
  "math": "Let AH be as in arXiv:2508.10857. Does RH + GRH for Dirichlet L-functions + the Elliott–Halberstam conjecture (or GEH) imply that AH fails? (The 'equivalently' clause is a research route, not an equivalent statement, and is dropped.)",
+ "novelty": 6,
+ "importance": 6,
+ "value": 5,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/1905.12123",

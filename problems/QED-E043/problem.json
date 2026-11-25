@@ -13,6 +13,9 @@
  ],
  "plain": "How many unit balls can touch a central unit ball in 5-dimensional space without overlapping? A configuration with 40 has been known since 1873, and the best proved upper limit, from large semidefinite computations, is 44 (the computed bound is about 44.998). Prove that 44 is impossible.",
  "math": "Let $\\tau_5$ be the maximum size of a set $X\\subset S^4$ with $\\langle x,y\\rangle\\le 1/2$ for all distinct $x,y\\in X$. Known $40\\le\\tau_5\\le44$. Prove $\\tau_5\\le 43$.",
+ "novelty": 2,
+ "importance": 4,
+ "value": 5,
  "formal_status": "formalized",
  "review_note": "Known: Lower 40: $D_5$ root system (Korkine–Zolotareff 1873); non-isometric 40-configurations by Leech (1967) and Cohn–Rajagopal (arXiv:2412.00937). Upper: Coxeter 48; Odlyzko–Sloane 46.345 (1979); 45 Bachoc–Vallentin (2008); 44 Mittelmann & Vallentin, Experiment. Math. 19 (2010), arXiv:0902.1105 (SDP value ≈44.998). New SDP upper bounds in dimensions 11–23 (de Laat, Leijenhorst et al.) do not touch $n=5$.",
  "refs": [

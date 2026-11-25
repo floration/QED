@@ -1,0 +1,28 @@
+{
+ "id": "QED-M109",
+ "set": "main",
+ "title": "Are random Cayley graphs of S_n expanders?",
+ "area": "Probability",
+ "difficulty": 7.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Long-standing question (attributed variously to Lubotzky and to Babai); stated as open in Handel (2025)",
+ "premise_risks": [
+  "Could be false (non-expansion for random generators would itself be a major surprise but is not ruled out).",
+  "Exact form of the best known inverse-polynomial gap bound after Helfgott-Seress-Zuk should be confirmed by the vetter."
+ ],
+ "plain": "Pick two uniformly random permutations s, t of n symbols and run the random walk on the group they generate (with high probability all of S_n or A_n) that at each step multiplies by one of s, t, s^-1, t^-1 chosen uniformly. Is the spectral gap of this walk bounded below by a fixed positive constant, with probability tending to 1 as n grows? Specific bounded generating sets of S_n are known to give expanders, but for random generators the best proven gap still tends to 0 polynomially in n.",
+ "math": "For $\\sigma,\\tau\\in S_n$ let $H=\\langle\\sigma,\\tau\\rangle$ and $Pf(x)=\\tfrac14\\sum_{g\\in\\{\\sigma^{\\pm1},\\tau^{\\pm1}\\}}f(xg)$ on $\\ell^2(H)$, with second-largest eigenvalue $\\lambda_2(\\sigma,\\tau)$ (largest eigenvalue on $\\{f:\\sum_x f(x)=0\\}$). Prove or disprove: there is an absolute $\\varepsilon>0$ such that, for $\\sigma,\\tau$ independent and uniform in $S_n$, $\\Pr[\\lambda_2(\\sigma,\\tau)\\le 1-\\varepsilon]\\to1$ as $n\\to\\infty$.",
+ "novelty": 3,
+ "importance": 9,
+ "value": 8,
+ "formal_status": "formalized",
+ "review_note": "Known: Whp $\\langle\\sigma,\\tau\\rangle\\in\\{A_n,S_n\\}$ (Dixon 1969). Whp diameter $O(n^2(\\log n)^c)$ and mixing time $O(n^3(\\log n)^c)$, i.e. a gap that is only inverse polynomial (Helfgott-Seress-Zuk, J. Algebra 2015, arXiv 1311.6742); improved but still non-constant bounds later (e.g. Eberhard-Jezernik on Babai's conjecture for random generators). Random permutations have near-optimal spectral gap on $k$-tuples for $k\\le n^{1/20-\\epsilon}$ (Cassidy, arXiv 2412.13941), and constant $k$ earlier (Friedman et al. 1998). Some explicit bounded generating sets of $S_n$ give expanders (Kassabov, Invent. Math. 2007). No constant gap for random generators.",
+ "refs": [
+  "https://arxiv.org/abs/2507.00346",
+  "https://www.emergentmind.com/open-problems/expansion-random-cayley-graphs-symmetric-group",
+  "https://arxiv.org/abs/1311.6742",
+  "https://arxiv.org/abs/2412.13941",
+  "https://arxiv.org/abs/1807.03879"
+ ]
+}

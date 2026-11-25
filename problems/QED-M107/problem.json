@@ -1,0 +1,27 @@
+{
+ "id": "QED-M107",
+ "set": "main",
+ "title": "The Thorp shuffle mixes in O(log n) steps",
+ "area": "Probability",
+ "difficulty": 6.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Thorp (1973); problem popularised by Aldous-Diaconis and Morris; bounds by Morris, Montenegro-Tetali, Jiang",
+ "premise_risks": [
+  "The best upper bound d^{5/3} is an unrefereed Oct 2026 preprint (arXiv 2610.18884); the refereed state of the art is O(d^3) (Morris 2013). The open target O(d) does not depend on it.",
+  "The 1/4 threshold is conventional; any fixed epsilon in (0,1) gives an equivalent statement up to constants by submultiplicativity."
+ ],
+ "plain": "Take a deck of n = 2^d cards and cut it into two equal halves. For each i, the i-th card of each half are placed next to each other, with a fair coin deciding which goes on top. Repeat. A counting argument shows about 2d shuffles are needed before the deck can be close to uniformly random. Prove that a constant times d shuffles always suffice.",
+ "math": "Let $n=2^d$, $h=n/2$. For $\\xi\\in\\{0,1\\}^h$ let $\\sigma_\\xi\\in S_n$ put the cards from positions $i$ and $i+h$ into positions $2i,2i+1$, in that order if $\\xi_i=0$ and swapped if $\\xi_i=1$ ($0\\le i<h$). Let $\\mu_d$ be uniform on $\\{\\sigma_\\xi\\}$ and $t_{\\rm mix}(d)=\\min\\{t:\\|\\mu_d^{*t}-U_{S_n}\\|_{TV}\\le 1/4\\}$. Prove there is an absolute constant $C$ with $t_{\\rm mix}(d)\\le Cd$ for all $d\\ge1$. (Counting the support gives $t_{\\rm mix}(d)\\ge(2-o(1))d$.)",
+ "novelty": 3,
+ "importance": 8,
+ "value": 8,
+ "formal_status": "formalized",
+ "review_note": "Known: Lower bound $(2-o(1))d$ from counting (support of $\\mu_d^{*t}$ has size at most $2^{tn/2}$). Upper bounds for $n=2^d$: $O(d^{44})$ (Morris 2005, AoP 2008), $O(d^{29})$ (Montenegro-Tetali), $O(d^4)$ (Morris, AoP 37 (2009), arXiv 0802.0339), $O(d^3)$ (Morris, Combin. Probab. Comput. 2013, arXiv 0912.2759), and $C_* d^{5/3}+O(d^{4/3}\\log d)$ with $C_*\\approx5.15$ (Y. Jiang, arXiv 2610.18884, Oct 2026, unrefereed). No O(d) or $d^{1+o(1)}$ bound is known.",
+ "refs": [
+  "https://arxiv.org/abs/2610.18884",
+  "https://arxiv.org/abs/0912.2759",
+  "https://arxiv.org/abs/0802.0339",
+  "https://arxiv.org/abs/math/0507307"
+ ]
+}
