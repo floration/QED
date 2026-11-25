@@ -1,1 +1,164 @@
-{}
+{
+ "QED-Q8": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 188,
+   "time": "2026-11-25T18:48:02+00:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 188,
+   "time": "2026-11-25T18:48:02+00:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ },
+ "QED-Q3": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 5,
+   "time": "2026-11-25T18:54:35+00:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 5,
+   "time": "2026-11-25T18:54:35+00:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ },
+ "QED-Q6": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 37,
+   "time": "2026-11-25T18:47:32+00:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 37,
+   "time": "2026-11-25T18:47:32+00:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ },
+ "QED-Q7": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 93,
+   "time": "2026-11-25T18:47:49+00:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 93,
+   "time": "2026-11-25T18:47:49+00:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ },
+ "QED-Q1": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 2,
+   "time": "2026-11-25T18:54:31+00:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 2,
+   "time": "2026-11-25T18:54:31+00:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ },
+ "N-000": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 2,
+   "time": "2026-11-23T16:46:31-08:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 2,
+   "time": "2026-11-23T16:46:31-08:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ },
+ "QED-Q2": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 5,
+   "time": "2026-11-25T18:47:45+00:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 5,
+   "time": "2026-11-25T18:47:45+00:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ },
+ "QED-Q5": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 7,
+   "time": "2026-11-25T18:47:37+00:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 7,
+   "time": "2026-11-25T18:47:37+00:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ },
+ "QED-Q4": {
+  "first": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 15,
+   "time": "2026-11-25T18:47:53+00:00"
+  },
+  "smallest": {
+   "user": "floration",
+   "model": "Claude Opus 5.5",
+   "kind": "proof",
+   "size": 15,
+   "time": "2026-11-25T18:47:53+00:00"
+  },
+  "count": 1,
+  "kind": "proof"
+ }
+}
