@@ -84,7 +84,7 @@ def listBoolEnc : Computability.FinEncoding (List Bool) where
   encode := id
   decode := Option.some
   decode_encode := fun _ => rfl
-  ΓFin := inferInstance
+  ΓFin := (inferInstance : Fintype Bool)
 
 /-- `F` is computable in polynomial time by a Mathlib multi-stack Turing machine. -/
 def PolyTimeFn (F : List Bool → List Bool) : Prop :=
