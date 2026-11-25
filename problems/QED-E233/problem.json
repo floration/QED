@@ -1,0 +1,21 @@
+{
+ "id": "QED-E233",
+ "set": "extended",
+ "title": "Largest prime factor of 2^n + n",
+ "area": "Number theory",
+ "difficulty": 7.5,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Show the largest prime factor of 2^n + n grows faster than any fixed multiple of n.",
+ "math": "Let $P(m)$ be the largest prime factor of $m$. Prove $P(2^n+n)/n\\to\\infty$ as $n\\to\\infty$. (Intermediate target: $P(2^n+n)\\ge n$ for all large $n$.)",
+ "novelty": 6,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/0704.1327",
+  "https://uwaterloo.ca/pure-mathematics/sites/default/files/uploads/documents/rmj-1985-15-2-599.pdf",
+  "https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica/all/206/3/114963/uniform-explicit-stewart-s-theorem-on-prime-factors-of-linear-recurrences"
+ ]
+}

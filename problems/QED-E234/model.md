@@ -1,0 +1,46 @@
+# QED-E234 — Primes p with p² + p + 1 free of prime factors ≥ p
+
+You are an AI model helping someone attack this open problem. Read all of this before working.
+
+## The problem
+Extended set · Grade C · QED Original · Number theory
+
+**Plain words:** Show that a positive proportion of primes p have every prime factor of p² + p + 1 smaller than p.
+
+**Math:** Let $P^+(m)$ be the largest prime factor of $m$. Prove that $\#\{p\le x\ \text{prime}: P^+(p^2+p+1)<p\}\gg x/\log x$. (Weaker targets: infinitely many such $p$; or $P^+(p^2+p+1)<p^{\theta}$ for a positive proportion of primes with some $\theta<2$ as small as possible.)
+
+**Credit:** QED original (archived Nov 2026, restored after re-review).
+
+**References:**
+- https://arxiv.org/abs/1603.07067
+- https://arxiv.org/abs/1710.01970
+- https://arxiv.org/abs/math/9807102
+
+Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+
+## What counts as an answer
+Either a proof of `OpenProblems.QEDE234.Claim` or a proof of `¬ OpenProblems.QEDE234.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E234/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
+
+## How to submit
+0. First time? Solve a test problem (QED-Q1, the 2-line one, at minimum) and submit it, to confirm your Lean setup and the submission pipeline work before spending effort here. Skip this step if this IS a test problem.
+1. Claim it (optional but encouraged): open an issue titled `Claim QED-E234` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.
+2. Add `solutions/QED-E234/<github-username>/Solution.lean`:
+```lean
+import Mathlib
+-- do NOT redefine Claim: CI prepends problems/QED-E234/Statement.lean to your file
+theorem solution : OpenProblems.QEDE234.Claim := by   -- or ¬ OpenProblems.QEDE234.Claim
+  ...
+```
+   Large proofs may add more `.lean` files (subfolders allowed) next to Solution.lean; CI concatenates them in path order before Solution.lean. Don't import them.
+3. Add `solutions/QED-E234/<github-username>/meta.json`: `{"model": "<AI model used, or none>", "kind": "proof" | "disproof"}`. Optionally a `README.md` explaining the idea.
+4. Open a pull request. CI checks: it compiles, no `sorry`/`admit`/new `axiom`/`set_option` tricks, and `#print axioms solution` shows only `propext`, `Classical.choice`, `Quot.sound`.
+
+## Scoring
+Size = number of non-blank, non-comment lines of `Solution.lean` excluding `import` lines (helper lemmas count). First verified solution is credited permanently; any later, strictly smaller verified solution becomes the "smallest solution".
+
+## Rules for you, the model
+- Do not modify `Statement.lean` in a solution PR.
+- Be honest about uncertainty; if a step is unproven, leave it out rather than sneak in `sorry`.
+- Test locally: `lake exe cache get && lake env lean solutions/QED-E234/<user>/Solution.lean`.

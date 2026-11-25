@@ -1,0 +1,23 @@
+{
+ "id": "QED-M139",
+ "set": "main",
+ "title": "Three consecutive integers with large prime factors",
+ "area": "Number theory",
+ "difficulty": 5.8,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Show that for every exponent θ below 1 there are infinitely many n such that n, n+1 and n+2 each have a prime factor larger than n^θ (for instance θ = 0.9).",
+ "math": "Let $P(m)$ be the largest prime factor of $m$. Prove that for every $\\theta<1$ there are infinitely many $n$ with $\\min\\{P(n),P(n+1),P(n+2)\\}>n^{\\theta}$. (Benchmark case: $\\theta=0.9$. Stronger target: for $1/2\\le\\theta<1$ the set has lower density $\\ge c(\\theta)>0$, conjecturally equal to $(\\log(1/\\theta))^3$.)",
+ "novelty": 5,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1904.05096",
+  "https://arxiv.org/abs/2607.16032",
+  "https://arxiv.org/abs/2610.23280",
+  "https://users.renyi.hu/~p_erdos/1978-29.pdf",
+  "https://arxiv.org/html/2512.01739v1"
+ ]
+}

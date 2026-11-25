@@ -1,0 +1,20 @@
+{
+ "id": "QED-E223",
+ "set": "extended",
+ "title": "Sudoku resolution bounds",
+ "area": "Computation",
+ "difficulty": 1.6,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Find an explicit family of large unsolvable Sudoku puzzles (n^2 by n^2 grids with some givens) for which any resolution proof that the puzzle has no solution must be exponentially long.",
+ "math": "For n ≥ 2 and a partial assignment A of symbols [n²] to cells of the n²×n² grid, let SUD_n(A) be the CNF in variables x_{c,v} (cell c holds v) consisting of: unit clauses for A; for every cell c, ⋁_v x_{c,v} and ¬x_{c,v} ∨ ¬x_{c,w} (v ≠ w); for every row, column and n×n box U, every v and distinct c,c' ∈ U, ¬x_{c,v} ∨ ¬x_{c',v}; and for every U and v, ⋁_{c∈U} x_{c,v}. Give a family (A_n), computable from n (in unary) in polynomial time, and ε > 0 such that for all sufficiently large n, SUD_n(A_n) is unsatisfiable and every resolution refutation of SUD_n(A_n) has at least 2^{n^ε} clauses.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 4,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.csc.kth.se/~jakobn/research/ProofComplexityChapter.pdf",
+  "https://arxiv.org/abs/1202.5074"
+ ]
+}

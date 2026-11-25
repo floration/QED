@@ -1,0 +1,21 @@
+{
+ "id": "QED-M146",
+ "set": "main",
+ "title": "Primes with a missing digit in bases 10 and 11 at once",
+ "area": "Number theory",
+ "difficulty": 3.2,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Are there infinitely many primes that have no digit 9 when written in base 10 and also no digit 10 (the digit 'A') when written in base 11?",
+ "math": "Let $\\mathcal A=\\{n\\ge1:\\ 9\\text{ is not a base-}10\\text{ digit of }n\\text{ and }10\\text{ is not a base-}11\\text{ digit of }n\\}$. Prove that $\\mathcal A$ contains infinitely many primes; more strongly, prove $\\#\\{p\\le x: p\\in\\mathcal A\\}=x^{\\gamma+o(1)}$ with $\\gamma=\\frac{\\log 9}{\\log 10}+\\frac{\\log 10}{\\log 11}-1\\approx0.9145$.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1604.01041",
+  "https://arxiv.org/abs/2503.09528",
+  "https://arxiv.org/abs/2509.02835"
+ ]
+}

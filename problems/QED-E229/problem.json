@@ -1,0 +1,21 @@
+{
+ "id": "QED-E229",
+ "set": "extended",
+ "title": "Squares with no digit 7",
+ "area": "Number theory",
+ "difficulty": 5.2,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Count the numbers n up to x whose square, written in base 10, has no digit 7. Show that the count has the size the random-digit model predicts.",
+ "math": "Let $\\mathcal A=\\{m\\ge1:\\ \\text{the decimal expansion of }m\\text{ contains no digit }7\\}$. Prove that $\\#\\{n\\le x:\\ n^2\\in\\mathcal A\\}=x^{\\,1+2\\log_{10}(9/10)+o(1)}$ as $x\\to\\infty$ (exponent $\\approx0.9085$). The lower bound $\\ge x^{1+2\\log_{10}(9/10)-o(1)}$ is the main difficulty; even an asymptotic for the count in some fixed base $q\\le 10$ would be new.",
+ "novelty": 4,
+ "importance": 6,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1510.07711",
+  "https://arxiv.org/abs/1604.01041",
+  "https://arxiv.org/abs/2601.20897"
+ ]
+}

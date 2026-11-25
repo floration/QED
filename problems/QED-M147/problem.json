@@ -1,0 +1,21 @@
+{
+ "id": "QED-M147",
+ "set": "main",
+ "title": "Largest prime factor of p−1 in residue classes",
+ "area": "Number theory",
+ "difficulty": 4.4,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "For each prime p, take the largest prime factor of p − 1. Show that this factor is 1 mod 4 for half of all primes and 3 mod 4 for the other half. More generally, show it is spread evenly over the allowed residue classes mod q.",
+ "math": "Let $P(n)$ be the largest prime factor of $n$. Prove that for every fixed $q\\ge2$ and every $a$ with $\\gcd(a,q)=1$, $\\#\\{p\\le x:\\ P(p-1)\\equiv a\\ (\\mathrm{mod}\\ q)\\}\\sim\\frac{\\pi(x)}{\\varphi(q)}$ as $x\\to\\infty$. The first open case is $q=4$, $a=1$: $\\#\\{p\\le x: P(p-1)\\equiv1\\ (4)\\}\\sim\\tfrac12\\pi(x)$.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://mospace.umsystem.edu/xmlui/handle/10355/10840",
+  "https://portal.mardi4nfdi.de/wiki/Publication:2491070",
+  "https://arxiv.org/abs/1311.2527"
+ ]
+}

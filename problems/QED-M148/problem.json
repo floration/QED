@@ -1,0 +1,23 @@
+{
+ "id": "QED-M148",
+ "set": "main",
+ "title": "Critical Ising interfaces on the hat tiling converge to SLE(3)",
+ "area": "Physics",
+ "difficulty": 7.3,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Put an Ising spin on every tile of a hat tiling, with neighbouring tiles (sharing an edge segment) interacting, at the critical temperature. Take a large simply connected region with plus spins forced on one boundary arc and minus spins on the other. Show that, as the tiles shrink, the interface between the plus and minus clusters converges to the random curve SLE(3), just as on the square lattice, although the hat graph is neither periodic nor isoradial.",
+ "math": "Let $G_T$ be the tile-adjacency graph of a hat tiling $T$ (Smith–Myers–Kaplan–Goodman-Strauss hat, reflections allowed; tiles adjacent iff they share a boundary segment of positive length), with the ferromagnetic nearest-neighbour Ising model, $J\\equiv1$. Prove: (i) there is $\\beta_c\\in(0,\\infty)$, independent of $T$, such that the plus-state magnetisation of every tile vanishes for $0<\\beta\\le\\beta_c$ and is positive for $\\beta>\\beta_c$; (ii) for every hat tiling $T$, every Jordan domain $\\Omega$ with distinct boundary points $a,b$, and all discretisations $(\\Omega_\\delta,a_\\delta,b_\\delta)$ by simply connected unions of tiles of $\\delta T$ whose boundary curves converge to $\\partial\\Omega$ uniformly up to reparametrisation, with $a_\\delta\\to a$, $b_\\delta\\to b$: with Dobrushin boundary conditions ($+$ on the boundary arc from $a_\\delta$ to $b_\\delta$, $-$ on the other) at $\\beta=\\beta_c$, the interface from $a_\\delta$ to $b_\\delta$ (any interface path, whatever choice is made at vertices where several interface edges meet) converges in law, in the topology of curves up to reparametrisation, to chordal $\\mathrm{SLE}_3$ in $(\\Omega,a,b)$.",
+ "novelty": 7,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2402.11331",
+  "https://arxiv.org/abs/2006.14559",
+  "https://arxiv.org/abs/1712.04192",
+  "https://arxiv.org/abs/2309.08470",
+  "https://arxiv.org/abs/2604.21165"
+ ]
+}

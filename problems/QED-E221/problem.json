@@ -1,0 +1,22 @@
+{
+ "id": "QED-E221",
+ "set": "extended",
+ "title": "Hyperbolic square peg for all Jordan curves",
+ "area": "Geometry",
+ "difficulty": 4.7,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Every closed curve without self-crossings in the hyperbolic plane should pass through the four corners of some regular hyperbolic quadrilateral (four equal sides, four equal angles). Smooth curves are known; the question is all continuous ones.",
+ "math": "Let $\\gamma\\subset\\mathbb H^2$ be a Jordan curve and $d$ the hyperbolic metric. Prove there are four distinct points $p_1,p_2,p_3,p_4\\in\\gamma$ with $d(p_1,p_2)=d(p_2,p_3)=d(p_3,p_4)=d(p_4,p_1)$ and $d(p_1,p_3)=d(p_2,p_4)$ (so they are the vertices of a regular geodesic quadrilateral). First targets: rectifiable curves, or the analogue of Stromquist's locally monotone class.",
+ "novelty": 4,
+ "importance": 6,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/html/2507.07945v1",
+  "https://en.wikipedia.org/wiki/Inscribed_square_problem",
+  "https://ar5iv.labs.arxiv.org/html/1801.01945",
+  "https://math.stonybrook.edu/~scott/mat360.spr09/Constr/h-insquare.html"
+ ]
+}

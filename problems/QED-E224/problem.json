@@ -1,0 +1,20 @@
+{
+ "id": "QED-E224",
+ "set": "extended",
+ "title": "Infinitely many prime losing positions in subtract-a-square",
+ "area": "Games",
+ "difficulty": 7.0,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "In subtract-a-square, players alternately remove a positive square number of tokens from a pile, and whoever cannot move loses. Show that infinitely many prime pile sizes are losing positions for the player to move.",
+ "math": "Let $\\mathcal P\\subset\\mathbb N_0$ be the P-positions of subtract-a-square: $0\\in\\mathcal P$, and $n\\in\\mathcal P$ iff $n-k^2\\notin\\mathcal P$ for all $1\\le k\\le\\sqrt n$. Prove that $\\mathcal P$ contains infinitely many primes.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 3,
+ "formal_status": "formalized",
+ "refs": [
+  "https://en.wikipedia.org/wiki/Subtract_a_square",
+  "https://11011110.github.io/blog/2016/11/16/better-behaved-subtraction-game.html"
+ ]
+}

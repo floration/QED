@@ -1,0 +1,20 @@
+{
+ "id": "QED-E222",
+ "set": "extended",
+ "title": "One firefighter on the UIPT",
+ "area": "Probability",
+ "difficulty": 3.4,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "A fire starts at the root of the uniform infinite planar triangulation and spreads to all neighbouring vertices each turn, while firefighters permanently protect some vertices each turn. Is one firefighter per turn enough to stop it with probability one?",
+ "math": "Let $(T,\\rho)$ be the type II UIPT (Angel–Schramm: local limit of uniform rooted triangulations of the sphere with $n$ vertices, multiple edges allowed, no loops). The fire starts at $\\rho$. At each step $t\\ge1$ the defender protects $k_t$ vertices, then the fire spreads to all unprotected unburnt neighbours of burning vertices. Prove that with $k_t\\equiv1$, almost surely there is a protection strategy that contains the fire (equivalently, by local convergence: for every $\\varepsilon>0$ there is $T$ such that, for all large $n$, the uniform $n$-vertex triangulation lets one firefighter per step contain the fire by time $T$ with probability $\\ge1-\\varepsilon$). More generally determine $k_*$; the formal Claim is the case $k=1$, i.e. $k_*=1$.",
+ "novelty": 7,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1710.02990",
+  "https://projecteuclid.org/euclid.aop/1556784025"
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "id": "QED-E225",
+ "set": "extended",
+ "title": "Is the hat-tiling spectrum a Cantor set?",
+ "area": "Physics",
+ "difficulty": 4.5,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Put a quantum particle on the vertices of a hat tiling, hopping along tile edges with equal amplitude. Decide whether the set of allowed energies is a Cantor set (closed, with no intervals); if it is, decide whether it has Lebesgue measure zero.",
+ "math": "Let $\\mathcal T$ be a tiling of $\\mathbb R^2$ by isometric copies (reflections allowed) of the Smith--Myers--Kaplan--Goodman-Strauss hat, and let $G_{\\mathcal T}$ be its vertex--edge graph (vertices: the 13 polygon corners of each tile; edges: the boundary segments between consecutive vertices). Let $A_{\\mathcal T}$ be the adjacency operator on $\\ell^2(V(G_{\\mathcal T}))$ and $\\Sigma_{\\mathcal T}$ its spectrum (expected to be independent of $\\mathcal T$ by minimality of the hull). (a) Decide whether $\\Sigma_{\\mathcal T}$ is nowhere dense, i.e. contains no interval, for every hat tiling $\\mathcal T$. (b) If so, decide whether $|\\Sigma_{\\mathcal T}|=0$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 4,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2307.11054",
+  "https://arxiv.org/abs/2303.10798"
+ ]
+}

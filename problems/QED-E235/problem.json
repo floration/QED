@@ -1,0 +1,22 @@
+{
+ "id": "QED-E235",
+ "set": "extended",
+ "title": "Is tiling by a single polykite decidable?",
+ "area": "Geometry",
+ "difficulty": 4.6,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "A polykite is a shape glued from kites of the kite grid (the hat monotile is one). Find an algorithm that decides, for any single polykite, whether copies of it can tile the plane, or prove that no such algorithm exists.",
+ "math": "Let $\\mathcal K$ be the deltoidal trihexagonal (Laves $[3.4.6.4]$) tiling of $\\mathbb R^2$ by congruent kites. A polykite is a union $P$ of finitely many tiles of $\\mathcal K$ that is a closed topological disk. $P$ tiles the plane if $\\mathbb R^2=\\bigcup_j g_j(P)$ with $g_j$ isometries of $\\mathbb R^2$ (reflections allowed) and the $g_j(P)$ having pairwise disjoint interiors. Is the set $\\{P:\\ P$ tiles the plane$\\}$ decidable? (Variant: restrict to $g_j$ in the symmetry group of $\\mathcal K$, i.e. kite-grid-aligned tilings.)",
+ "novelty": 5,
+ "importance": 6,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2303.10798",
+  "https://arxiv.org/html/2509.12216v1",
+  "https://arxiv.org/html/2508.10067v1",
+  "https://arxiv.org/pdf/2506.11628"
+ ]
+}
