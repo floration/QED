@@ -50,5 +50,4 @@ jobs:
           export PATH="$HOME/.elan/bin:$PATH"
           if [ -f lake-manifest.json ]; then lake exe cache get; else lake update && lake exe cache get; fi
       - name: Verify every case (trusted stage) and check expectations
-        env: { SELFTEST_TIMEOUT: "300" }
         run: python3 -I tests/verifier/selftest.py verify "$RUNNER_TEMP/selftest-in"
