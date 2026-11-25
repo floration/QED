@@ -1,0 +1,112 @@
+[
+{
+"id": "N-553",
+"title": "Minimal degree of a Jacobian counterexample",
+"area": "Algebra",
+"W": "The 2026 counterexamples have degree 7. Find the smallest degree any 3D counterexample can have.",
+"M": "Determine $\\min\\{\\deg F: F:\\mathbb{C}^3\\to\\mathbb{C}^3$ non-invertible Keller map$\\}$.",
+"value": 7,
+"importance": 6,
+"novelty": 6,
+"family": "keller"
+},
+{
+"id": "N-369",
+"title": "Fluid in a box blows up",
+"area": "Analysis",
+"W": "Show viscous fluid in a closed box with sticky walls can blow up under a smooth push.",
+"M": "Construct smooth $f$ such that 3D Navier–Stokes with no-slip in the unit cube blows up in finite time.",
+"value": 6,
+"importance": 7,
+"novelty": 5,
+"family": "navier-stokes"
+},
+{
+"id": "N-656",
+"title": "Spikes at the squares",
+"area": "Analysis",
+"W": "Put a fixed bump at every perfect square on the half-line lattice. The spectrum has no absolutely continuous part. Prove the states are localized inside the free band.",
+"M": "Let $H=\\Delta+\\lambda\\mathbf 1_{\\{m^2:m\\ge1\\}}$ on $\\ell^2(\\mathbb N)$, $\\lambda\\ne0$. Prove that the spectral measure of $\\delta_1$ restricted to $(-2,2)$ is pure point.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-649",
+"title": "Paley spin glass",
+"area": "Combinatorics",
+"W": "Spins on F_p interact through Legendre symbols of their differences. The spectral bound caps the ground-state energy at one half times p^{3/2}, and local search gets to about 0.46. Is the bound sharp?",
+"M": "For primes $p\\equiv1\\pmod4$ let $E_p=\\max_{\\sigma\\in\\{\\pm1\\}^{\\mathbb F_p}}\\sum_{i<j}\\left(\\frac{j-i}{p}\\right)\\sigma_i\\sigma_j\\le\\frac12p^{3/2}$. Decide whether $E_p/p^{3/2}\\to\\frac12$. (Greedy local search from 30 random starts gave ratios $0.461,0.461,0.461,0.456$ for $p=101,197,401,797$.)",
+"value": 7,
+"importance": 5,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "C-94",
+"title": "Finding Huang's vertex",
+"area": "Computation",
+"W": "Huang's theorem says any set of more than half the corners of an n-dimensional cube contains a corner with at least √n neighbours in the set. When the set is given by a small circuit, how hard is it to find such a corner? Place this search problem among the known classes of total search problems.",
+"M": "$\\mathrm{HUANG}$: given a Boolean circuit $f:\\{0,1\\}^{n}\\to\\{0,1\\}^n$ whose domain is read as $[2^{n-1}+1]$ (inputs beyond $2^{n-1}+1$ are ignored), output either $i\\ne j$ with $f(i)=f(j)$, or indices $i,j_1,\\dots,j_m$ with $m=\\lceil\\sqrt n\\rceil$ such that $f(j_1),\\dots,f(j_m)$ are distinct and each is at Hamming distance 1 from $f(i)$. By Huang's theorem and the pigeonhole principle this is a TFNP problem. Is $\\mathrm{HUANG}\\in\\mathrm{FP}$? Is it in $\\mathrm{PPP}$, $\\mathrm{PPA}$ or $\\mathrm{PLS}$, and is it complete for any standard subclass of TFNP?",
+"family": "tcs-logic",
+"novelty": 7,
+"importance": 5,
+"value": 6
+},
+{
+"id": "N-665",
+"title": "Frozen vortices for Kuramoto on a cube",
+"area": "Dynamics",
+"W": "Identical Kuramoto oscillators on the grid of a cube surface tend to synchronize. Show that for large grids a stable state that is not synchronized also exists.",
+"M": "Let $Q_n$ be the vertex–edge graph of the $n\\times n$ subdivided cube surface and $\\dot\\theta_i=\\sum_{j\\sim i}\\sin(\\theta_j-\\theta_i)$. Prove that for all large $n$ there is a linearly stable equilibrium that is not of the form $\\theta_i\\equiv c$.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-624",
+"title": "How nearly can tetrahedra close up",
+"area": "Geometry",
+"W": "A chain of regular tetrahedra glued face to face can never close exactly. Find the exact exponential rate at which the best near-closure improves with chain length.",
+"M": "For a regular tetrahedron $T_0$, a chain of length $n$ is $T_0,\\dots,T_n$ with $T_{k+1}$ the reflection of $T_k$ in a face not shared with $T_{k-1}$. Let $g(n)$ be the minimum over chains of the Hausdorff distance between $T_n$ and $T_0$ (always positive). Prove that $\\lim_{n\\to\\infty}\\frac1n\\log g(n)=-\\frac{\\log 3}{6}$.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "C-98",
+"title": "Logic of random Latin squares",
+"area": "Logic",
+"W": "Pick a Latin square of order n uniformly at random and view it as a multiplication table on n symbols. Does every first-order statement about it have a limiting probability as n grows? A full zero-one law should fail. For example, the chance that some x satisfies x·x = x presumably tends to 1 − 1/e.",
+"M": "Let $L_n$ be a uniformly random Latin square on $[n]$, viewed as the structure $([n],\\circ)$ with $x\\circ y=L_n(x,y)$. Prove or disprove the first-order convergence law: for every first-order sentence $\\varphi$ in the language $\\{\\circ\\}$, $\\lim_{n\\to\\infty}\\Pr[L_n\\models\\varphi]$ exists. As a first step, prove that $\\Pr[\\exists x\\ (x\\circ x=x)]\\to1-e^{-1}$.",
+"family": "tcs-logic",
+"novelty": 7,
+"importance": 5,
+"value": 6
+},
+{
+"id": "N-639",
+"title": "KdV with a cosine coefficient",
+"area": "PDE",
+"W": "Put a cos x in front of the cubic term of modified KdV on the circle. Energy survives but the L² norm no longer does. Can solutions blow up?",
+"M": "Consider $u_t+u_{xxx}+(\\cos(x)\\,u^3)_x=0$ on $\\mathbb T=\\mathbb R/2\\pi\\mathbb Z$, which conserves $\\int u$ and $\\int(\\tfrac12u_x^2-\\tfrac14\\cos(x)u^4)$ but not $\\int u^2$. Decide whether every $u_0\\in C^\\infty(\\mathbb T)$ yields a global smooth solution.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-610",
+"title": "Unforced blow-up near the forced one",
+"area": "PDE",
+"W": "Show the known forced Navier–Stokes blow-up can be made to work with forcing that decays to zero at the blow-up time.",
+"M": "Prove there exist smooth $u_0$ and $f\\in L^1_tL^2_x\\cap C^\\infty$ with $\\|f(t)\\|_{L^2}\\to0$ as $t\\to T^-$ such that the forced 3D NS solution blows up at $T$.",
+"value": 6,
+"importance": 6,
+"novelty": 5,
+"family": "fluid-blowup"
+}
+]

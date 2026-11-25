@@ -1,0 +1,112 @@
+[
+{
+"id": "N-427",
+"title": "Blow-up near a wall",
+"area": "Analysis",
+"W": "Show the 2026 forced blow-up mechanism also works in a half-space with no-slip wall, with the singularity on the wall.",
+"M": "Construct smooth compactly supported $f$ such that Navier–Stokes in $\\mathbb{R}^3_+$ with no-slip, from rest, blows up in finite time at a boundary point.",
+"value": 6,
+"importance": 6,
+"novelty": 5,
+"family": "ns-blowup"
+},
+{
+"id": "N-655",
+"title": "Kagome Hofstadter butterfly",
+"area": "Analysis",
+"W": "The Harper model on the square lattice has a Cantor spectrum for every irrational flux. Prove the same for electrons hopping on the kagome lattice.",
+"M": "Let $H_\\alpha$ be the nearest-neighbour magnetic Laplacian on the kagome lattice for a uniform magnetic field with flux $2\\pi\\alpha$ through each unit cell. Prove that $\\sigma(H_\\alpha)$ is a Cantor set for every irrational $\\alpha$.",
+"value": 7,
+"importance": 6,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-022",
+"title": "Blank jigsaw",
+"area": "Combinatorics",
+"W": "A jigsaw with no picture can only be solved from piece shapes. How few edge shapes force a unique solution?",
+"M": "Find the asymptotics in $n$ of the least number of edge types such that some $n\\times n$ jigsaw has exactly one assembly (up to rotation of the whole).",
+"value": 6,
+"importance": 3,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-139",
+"title": "Small Hadwiger counterexample",
+"area": "Combinatorics",
+"W": "The claimed counterexamples to Hadwiger's conjecture are astronomically large. Find one under a million vertices.",
+"M": "Find $G$ with $|V(G)|<10^6$ and $h(G)<\\chi(G)$, or prove every counterexample is larger.",
+"value": 6,
+"importance": 6,
+"novelty": 5,
+"family": "hadwiger"
+},
+{
+"id": "C-95",
+"title": "The Mandelbrot set at Gaussian rationals",
+"area": "Computation",
+"W": "Is there an algorithm that takes a complex number with rational real and imaginary parts and decides whether it lies in the Mandelbrot set? Escaping points can be confirmed and attracting cycles can be found. But some Gaussian rationals, such as c = (37 + 16i)/100, lie on the boundary with an irrationally rotating fixed point, and other kinds of boundary point might hide there too.",
+"M": "Let $M=\\{c\\in\\mathbb C:\\ (f_c^{n}(0))_{n\\ge0}\\text{ bounded}\\}$, $f_c(z)=z^2+c$. Prove or disprove that $M\\cap\\mathbb Q(i)$ is a decidable subset of $\\mathbb Q(i)$. (The parameter $c=\\mu/2-\\mu^2/4$ with $\\mu=(3+4i)/5$ equals $(37+16i)/100\\in\\partial M$; its fixed point has multiplier $\\mu$, which is not a root of unity. Every element of $\\mathbb Q(i)\\setminus\\mathbb Z[i]$ is neither a centre nor a Misiurewicz parameter, since those are algebraic integers.)",
+"family": "tcs-logic",
+"novelty": 6,
+"importance": 6,
+"value": 6
+},
+{
+"id": "N-106",
+"title": "A four-dimensional einstein",
+"area": "Geometry",
+"W": "Find one 4D shape that fills 4D space but only without repeating.",
+"M": "Find a connected tile $T\\subset\\mathbb{R}^4$ that tiles $\\mathbb{R}^4$ by isometries but admits no periodic tiling.",
+"value": 7,
+"importance": 6,
+"novelty": 5,
+"family": "einstein"
+},
+{
+"id": "N-623",
+"title": "Simple closed geodesics on the Fermat quartic",
+"area": "Geometry",
+"W": "On the surface x⁴+y⁴+z⁴ = 1 the nine symmetry planes cut out nine simple closed geodesics. Are there only finitely many simple closed geodesics altogether?",
+"M": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the metric induced from $\\mathbb R^3$. The planes $x=0,y=0,z=0,x=\\pm y,y=\\pm z,x=\\pm z$ meet $S$ in simple closed geodesics. Decide whether $S$ has finitely many simple closed geodesics (as unparametrized curves), and if so whether these nine are all of them.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-429",
+"title": "Lonely runner gap for the first n primes",
+"area": "Number theory",
+"W": "For the first n primes as speeds, find the actual loneliness gap asymptotically.",
+"M": "Determine the asymptotics of $\\delta_n=\\sup_t\\min_{i\\le n}\\|tp_i\\|$ as $n\\to\\infty$.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "lonely-runner"
+},
+{
+"id": "N-642",
+"title": "Permanent–Ampère equation",
+"area": "PDE",
+"W": "Monge–Ampère sets the Hessian determinant to 1, and Jörgens showed its entire convex solutions are quadratics. Swap the determinant for the permanent.",
+"M": "Let $u\\in C^4(\\mathbb R^2)$ satisfy $u_{xx}u_{yy}+u_{xy}^2=1$, $u_{xx}>0$, $2u_{xy}^2<1$ everywhere (ellipticity). Prove or disprove that $u$ is a quadratic polynomial.",
+"value": 6,
+"importance": 4,
+"novelty": 8,
+"family": "other"
+},
+{
+"id": "N-664",
+"title": "Infinite knots in the ABC flow",
+"area": "Topology",
+"W": "Steady Euler flows can carry knotted streamlines. Show the symmetric ABC flow has closed streamlines tied in infinitely many different knots.",
+"M": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb T^3$ has null-homotopic periodic orbits lying in embedded balls and realizing infinitely many distinct knot types.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "other"
+}
+]

@@ -1,0 +1,112 @@
+[
+{
+"id": "N-024",
+"title": "Small Keller maps in 3D",
+"area": "Algebra",
+"W": "The 2026 counterexamples to the Jacobian conjecture have fairly high degree. Is there one of degree 5 or less?",
+"M": "Decide whether some $F:\\mathbb{C}^3\\to\\mathbb{C}^3$ with $\\deg F\\le5$ and $\\det DF\\in\\mathbb{C}^\\times$ has no polynomial inverse.",
+"value": 6,
+"importance": 6,
+"novelty": 4,
+"family": "keller"
+},
+{
+"id": "N-418",
+"title": "Hyperdissipative forced blow-up",
+"area": "Analysis",
+"W": "Fluids with extra strong viscosity never blow up above a known threshold. Show forced blow-up still happens just below it.",
+"M": "For $\\partial_tu+(u\\cdot\\nabla)u+\\nabla p=-(-\\Delta)^{\\alpha}u+f$ on $\\mathbb{R}^3$, construct smooth compactly supported $f$ giving finite-time blow-up from rest for every $\\alpha<5/4$.",
+"value": 6,
+"importance": 6,
+"novelty": 6,
+"family": "navier-stokes"
+},
+{
+"id": "N-360",
+"title": "Time-independent force",
+"area": "Analysis",
+"W": "Make viscous fluid blow up with a push that never changes in time.",
+"M": "Construct smooth compactly supported time-independent $f$ such that 3D Navier–Stokes from rest blows up in finite time.",
+"value": 6,
+"importance": 6,
+"novelty": 6,
+"family": "navier-stokes"
+},
+{
+"id": "N-417",
+"title": "Prime-sum labelling of balanced trees",
+"area": "Combinatorics",
+"W": "Label a tree with 1 to n so every edge sums to a prime. Parity forces the two sides of the tree to be balanced. Show balance is enough, for large n.",
+"M": "Prove every tree on $n\\ge n_0$ vertices whose bipartition classes have sizes $\\lceil n/2\\rceil,\\lfloor n/2\\rfloor$ admits a bijection $V\\to[n]$ with all edge sums prime.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "square-sum"
+},
+{
+"id": "C-93",
+"title": "Information-tight sorting of pattern classes",
+"area": "Computation",
+"W": "Suppose an array is promised to avoid some fixed pattern (for example, no four entries in the relative order 1, 3, 2, 4). Counting the allowed orders gives a lower bound on the number of comparisons needed to sort it, and Fredman's theorem says this bound plus 2n comparisons always suffice. Is the counting bound always tight up to a negligible error, for every forbidden pattern?",
+"M": "For a permutation $\\tau$ let $\\mathrm{Av}_n(\\tau)$ be the set of $\\tau$-avoiding permutations of $[n]$ and let $C_\\tau(n)$ be the least worst-case number of comparisons $a_i\\overset{?}{<}a_j$ needed by a decision tree that determines the order of $a_1,\\dots,a_n$ when the order pattern of $(a_i)$ is promised to lie in $\\mathrm{Av}_n(\\tau)$. Fredman's bound gives $\\log_2|\\mathrm{Av}_n(\\tau)|\\le C_\\tau(n)\\le\\log_2|\\mathrm{Av}_n(\\tau)|+2n$. Decide whether $C_\\tau(n)=\\log_2|\\mathrm{Av}_n(\\tau)|+o(n)$ for every $\\tau$. In particular, decide this for $\\tau=1324$, whose growth rate is unknown.",
+"family": "tcs-logic",
+"novelty": 6,
+"importance": 5,
+"value": 6
+},
+{
+"id": "N-625",
+"title": "Outer billiards around a superellipse",
+"area": "Dynamics",
+"W": "Outer billiards around a smooth convex shape with positive curvature has only bounded orbits. Decide whether this survives for x⁴+y⁴ ≤ 1, whose curvature vanishes at four points.",
+"M": "Let $K=\\{x^4+y^4\\le1\\}$ and let $T:\\mathbb R^2\\setminus K\\to\\mathbb R^2\\setminus K$ be the outer billiard map ($T(p)$ is the reflection of $p$ in the point where the right-hand tangent line from $p$ touches $\\partial K$). Decide whether every $T$-orbit is bounded.",
+"value": 7,
+"importance": 5,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-300",
+"title": "Rotation-proof lattice-point-poor shapes",
+"area": "Geometry",
+"W": "Find the shape in the plane with given area that contains the fewest integer lattice points after any rotation, asymptotically.",
+"M": "Determine the convex $K$ of area $A$ minimising $\\sup_{\\theta}\\#(\\rho_\\theta K\\cap\\mathbb{Z}^2)$, asymptotically as $A\\to\\infty$, to second-order term.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "C-101",
+"title": "Rational rotation numbers of piecewise-linear circle maps",
+"area": "Logic",
+"W": "A circle homeomorphism built from finitely many straight pieces, with rational break points and rational slopes, has a rotation number. Can a computer decide whether that number is rational? Rational rotation numbers come with periodic orbits through rational points, so they can be detected by search. No method is known to certify irrationality.",
+"M": "Let $f:\\mathbb R/\\mathbb Z\\to\\mathbb R/\\mathbb Z$ be an orientation-preserving piecewise-linear homeomorphism given by finitely many rational break points and rational slopes (and rational $f(0)$). Is $\\{f:\\rho(f)\\in\\mathbb Q\\}$ decidable? (If $\\rho(f)=p/q$ then $f$ has a periodic orbit, and periodic points solve rational linear equations, so this set is computably enumerable.)",
+"family": "tcs-logic",
+"novelty": 6,
+"importance": 4,
+"value": 6
+},
+{
+"id": "N-646",
+"title": "L⁴ Strichartz on a cube",
+"area": "PDE",
+"W": "On a flat square torus the L⁴ Strichartz estimate holds with only ε loss of derivatives. Prove the same on the surface of a cube, where corners diffract waves.",
+"M": "Let $S$ be the flat unit-cube surface. Prove that for every $\\varepsilon>0$, $\\|e^{it\\Delta}f\\|_{L^4([0,1]\\times S)}\\le C_\\varepsilon\\|f\\|_{H^\\varepsilon(S)}$.",
+"value": 7,
+"importance": 5,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-653",
+"title": "Ising spin at a cube corner",
+"area": "Probability",
+"W": "Glue three quarter-planes of the square grid into the surface of an infinite cube corner and run the critical Ising model. Prove the corner spin decorrelates with the exponent 7/24 that conformal field theory predicts.",
+"M": "Let $\\Gamma$ be the union of the three quadrant grids $\\mathbb Z_{\\ge0}^2$ on the faces of the octant boundary, glued along the axes, with apex $o$. For the critical nearest-neighbour Ising model on $\\Gamma$ prove $\\langle\\sigma_o\\sigma_x\\rangle\\asymp|x|^{-7/24}$ as $|x|\\to\\infty$.",
+"value": 8,
+"importance": 6,
+"novelty": 7,
+"family": "other"
+}
+]

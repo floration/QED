@@ -1,0 +1,123 @@
+[
+{
+"id": "N-160",
+"title": "Integer-bijective Keller map",
+"area": "Algebra",
+"W": "Find a polynomial map with Jacobian 1 that shuffles integer points perfectly but has no polynomial inverse.",
+"M": "Find $F\\in\\mathbb{Z}[x]^n$, $\\det DF\\equiv1$, inducing a bijection of $\\mathbb{Z}^n$ but not a polynomial automorphism.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "keller"
+},
+{
+"id": "N-077",
+"title": "Closed-form Euler blow-up",
+"area": "Analysis",
+"W": "Give smooth starting data for frictionless 3D fluid, written as an explicit formula, that blows up.",
+"M": "Find closed-form smooth finite-energy $u_0$ on $\\mathbb{R}^3$ whose unforced Euler solution blows up in finite time.",
+"value": 7,
+"importance": 7,
+"novelty": 6,
+"family": "fluid-blowup"
+},
+{
+"id": "N-662",
+"title": "Non-arithmetic tones of the cube",
+"area": "Analysis",
+"W": "Many vibration frequencies of a cube's surface come from the square torus and are rational multiples of π². Show some frequency is not.",
+"M": "Let $S$ be the flat unit-cube surface. Prove that some eigenvalue of the Laplacian on $S$ is not a rational multiple of $\\pi^2$.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-594",
+"title": "Firefighter on Z³",
+"area": "Combinatorics",
+"W": "How many firefighters per turn are needed to contain a fire in 3D, as a precise growth rate?",
+"M": "Determine $\\lim_{t\\to\\infty}f(t)/t$ for the minimal firefighters needed to contain fire on $\\mathbb{Z}^3$ by time $t$.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "firefighter"
+},
+{
+"id": "N-061",
+"title": "Square-sum coloring",
+"area": "Combinatorics",
+"W": "Join numbers that add up to a perfect square. Does the number of colors needed stay bounded forever?",
+"M": "Decide whether $\\sup_N \\chi(S_N)<\\infty$.",
+"value": 6,
+"importance": 4,
+"novelty": 5,
+"family": "square-sum"
+},
+{
+"id": "N-621",
+"title": "Chaos in the symmetric ABC flow",
+"area": "Dynamics",
+"W": "The ABC flow with all three coefficients equal to 1 is a classical steady solution of the Euler equations on the 3-torus. Prove it is genuinely chaotic.",
+"M": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb T^3$ has positive topological entropy.",
+"value": 8,
+"importance": 6,
+"novelty": 4,
+"family": "other"
+},
+{
+"id": "N-385",
+"title": "Cross-polytopes in 4D",
+"area": "Geometry",
+"W": "Every 4D convex body should have the corners of a regular cross-polytope on its boundary.",
+"M": "Prove every convex body in $\\mathbb{R}^4$ has an inscribed regular cross-polytope.",
+"value": 6,
+"importance": 5,
+"novelty": 5,
+"family": "other"
+},
+{
+"id": "N-428",
+"title": "Unit distances in three dimensions after 2026",
+"area": "Geometry",
+"W": "The 2026 number-field idea beat Erdős in the plane. Adapt it to unit distances among points on a sphere in 3D.",
+"M": "Prove there are $n$-point sets on the unit sphere $S^2$ with $\\ge n^{1+c}$ pairs at distance $1$, for some $c>0$ and infinitely many $n$.",
+"value": 6,
+"importance": 5,
+"novelty": 5,
+"family": "other"
+},
+{
+"id": "N-641",
+"title": "Burgers with degenerate critical dissipation",
+"area": "PDE",
+"W": "Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off at one point of the circle. Do shocks form there?",
+"M": "Let $a(x)=1-\\cos x$ and consider $u_t+uu_x+\\Lambda^{1/2}\\big(a\\,\\Lambda^{1/2}u\\big)=0$ on $\\mathbb T$, $\\Lambda=(-\\partial_x^2)^{1/2}$. Decide whether every $u_0\\in C^\\infty(\\mathbb T)$ yields a global smooth solution.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-634",
+"title": "Riesz-transform Schrödinger equation",
+"area": "PDE",
+"W": "Couple a 2D Schrödinger wave to the Riesz transform of its own density. Mass is conserved but there is no energy. Do smooth solutions live forever?",
+"M": "Consider $i u_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb R\\times\\mathbb R^2$, where $\\widehat{R_1 f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. Decide whether every $u_0\\in H^1(\\mathbb R^2)$ gives a global solution in $C(\\mathbb R,H^1)$.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-618",
+"title": "Period-doubling torus bundles",
+"area": "Topology",
+"W": "Build a once-punctured torus bundle by reading the period-doubling word as a product of the two basic shear matrices. Show its hyperbolic volume per letter settles to a limit as the word grows.",
+"M": "Let $W_n\\in\\{a,b\\}^{2^n}$ be the length-$2^n$ prefix of the fixed point of $a\\mapsto ab,\\ b\\mapsto aa$, let $\\phi_n$ be $W_n$ with $a\\mapsto R=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$, $b\\mapsto L=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}$, and let $M_n$ be the (hyperbolic) once-punctured torus bundle with monodromy $\\phi_n$. Prove that $\\lim_{n\\to\\infty}\\mathrm{vol}(M_n)/2^n$ exists.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "topology"
+}
+]

@@ -1,0 +1,123 @@
+[
+{
+"id": "N-180",
+"title": "Keller maps of degree 4",
+"area": "Algebra",
+"W": "Show that every 3D polynomial map of degree at most 4 with constant Jacobian has a polynomial inverse.",
+"M": "Prove $F:\\mathbb{C}^3\\to\\mathbb{C}^3$, $\\deg F\\le4$, $\\det DF\\in\\mathbb{C}^\\times$ implies $F$ is an automorphism.",
+"value": 6,
+"importance": 5,
+"novelty": 5,
+"family": "keller"
+},
+{
+"id": "N-629",
+"title": "Drum tones of superellipses",
+"area": "Analysis",
+"W": "Among regions x^p + y^p ≤ r of unit area, the circle (p = 2) has the lowest tone and the square (p = ∞) is back up high. Show the tone rises steadily as p goes from 2 to infinity.",
+"M": "Let $D_p=\\{|x|^p+|y|^p\\le r_p^p\\}$ with $r_p$ chosen so $|D_p|=1$, and let $\\lambda_1(p)$ be its first Dirichlet eigenvalue. Prove $\\lambda_1$ is strictly increasing on $[2,\\infty)$.",
+"value": 6,
+"importance": 3,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-660",
+"title": "Quartic oscillator ground state",
+"area": "Analysis",
+"W": "The lowest energy of the quartic oscillator, −d²/dx² + x⁴, is about 1.0603620905. Show it is irrational.",
+"M": "Let $E_0=\\min\\sigma\\big(-\\frac{d^2}{dx^2}+x^4\\big)$ on $L^2(\\mathbb R)$. Prove $E_0\\notin\\mathbb Q$.",
+"value": 6,
+"importance": 5,
+"novelty": 5,
+"family": "other"
+},
+{
+"id": "N-396",
+"title": "Graceful forests with one big tree",
+"area": "Combinatorics",
+"W": "A forest with c trees and m edges is graceful-forest labelled if its vertices get the labels 0 to m + c − 1 with all edge differences distinct. Show this works whenever there are at least two trees and one of them holds more than half the edges.",
+"M": "Prove every forest with $m$ edges and $c\\ge2$ components, one of which has more than $m/2$ edges, has a bijection $V\\to\\{0,\\dots,m+c-1\\}$ with all $|\\ell(u)-\\ell(v)|$, $uv\\in E$, distinct.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "graceful"
+},
+{
+"id": "N-110",
+"title": "Sudoku transversals",
+"area": "Combinatorics",
+"W": "In every completed big Sudoku, find a set of cells with one in each row, each column and each symbol.",
+"M": "Prove every $n^2\\times n^2$ Sudoku grid, viewed as a Latin square, has a transversal.",
+"value": 7,
+"importance": 5,
+"novelty": 7,
+"family": "latin-square"
+},
+{
+"id": "N-631",
+"title": "Chaotic billiards in a superellipse",
+"area": "Dynamics",
+"W": "The billiard table x⁴+y⁴ ≤ 1 is smooth and convex but has four flat points, so it has no caustics. Show a positive fraction of its phase space is chaotic.",
+"M": "Let $\\Phi$ be the billiard map of $\\{x^4+y^4\\le1\\}$ with its invariant Liouville measure $\\nu$. Prove that the metric entropy $h_\\nu(\\Phi)$ is positive.",
+"value": 7,
+"importance": 6,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-632",
+"title": "Free-boundary disks in a superball",
+"area": "Geometry",
+"W": "In a round ball the only free-boundary minimal disks are flat. In the superball x⁴+y⁴+z⁴ ≤ 1, is there one that is not a flat slice?",
+"M": "Let $B=\\{x^4+y^4+z^4\\le1\\}$. Decide whether there is an embedded minimal disk $\\Sigma\\subset B$ with $\\partial\\Sigma\\subset\\partial B$ meeting $\\partial B$ orthogonally that is not contained in a plane.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "C-99",
+"title": "Colouring Cayley graphs of the plane lattice",
+"area": "Logic",
+"W": "Join two points of the integer grid when their difference lies in a fixed finite set D. Given D and a number of colours k, can a computer decide whether this graph can be properly coloured? On the line, periodic colourings settle it. In the plane, the colourings form a tiling-type system that might have no periodic member.",
+"M": "For finite symmetric $D\\subset\\mathbb Z^2\\setminus\\{0\\}$ let $G_D=\\mathrm{Cay}(\\mathbb Z^2,D)$. Is $\\{(D,k): \\chi(G_D)\\le k\\}$ decidable? Equivalently, does every $k$-colourable $G_D$ admit a $k$-colouring periodic under a finite-index subgroup of $\\mathbb Z^2$ (which would give decidability, since non-colourability is witnessed by a finite box)? Settle either question.",
+"family": "tcs-logic",
+"novelty": 6,
+"importance": 5,
+"value": 6
+},
+{
+"id": "N-643",
+"title": "Critical NLS mass on the cube",
+"area": "PDE",
+"W": "Focusing cubic Schrödinger blow-up in 2D needs the ground-state mass. On a cube surface the corners should lower the threshold to three quarters of it.",
+"M": "On the flat unit-cube surface $S$, consider $iu_t+\\Delta u+|u|^2u=0$. Prove: $H^1$ data with $\\|u_0\\|_2^2<\\tfrac34\\|Q\\|_{L^2(\\mathbb R^2)}^2$ give global solutions, and for every $m>\\tfrac34\\|Q\\|_2^2$ there is $H^1$ data of mass $m$ blowing up in finite time.",
+"value": 7,
+"importance": 5,
+"novelty": 7,
+"family": "PDE"
+},
+{
+"id": "N-647",
+"title": "Scattering on the cube corner",
+"area": "PDE",
+"W": "Defocusing cubic Schrödinger in the plane scatters for all finite-mass data. Show the same on the surface of an infinite cube corner.",
+"M": "Let $\\mathcal C$ be the flat cone of angle $3\\pi/2$ (boundary of an octant). Prove that every $u_0\\in L^2(\\mathcal C)$ gives a global solution of $iu_t+\\Delta u=|u|^2u$ that scatters in $L^2$ as $t\\to\\pm\\infty$.",
+"value": 6,
+"importance": 5,
+"novelty": 5,
+"family": "other"
+},
+{
+"id": "N-619",
+"title": "Thue–Morse Lorenz knots",
+"area": "Topology",
+"W": "Turn the first 2^n letters of the Thue–Morse word into a periodic orbit of the Lorenz template. Show these knots are eventually hyperbolic and their volume grows proportionally to the word length.",
+"M": "Let $K_n$ be the Lorenz knot whose Lorenz word is the length-$2^n$ Thue–Morse prefix $t_0\\cdots t_{2^n-1}$ with $0\\mapsto x$, $1\\mapsto y$ (this word is primitive). Prove that $S^3\\setminus K_n$ is hyperbolic for all sufficiently large $n$ and that $\\lim_{n\\to\\infty}\\mathrm{vol}(S^3\\setminus K_n)/2^n$ exists and is positive.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "knots"
+}
+]

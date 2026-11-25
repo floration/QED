@@ -1,0 +1,112 @@
+[
+{
+"id": "N-397",
+"title": "Keller maps with integer fibers",
+"area": "Algebra",
+"W": "Show no Jacobian-conjecture counterexample with integer coefficients is injective on integer points but not invertible.",
+"M": "Prove every Keller map $F\\in\\mathbb{Z}[x,y,z]^3$ injective on $\\mathbb{Z}^3$ is a polynomial automorphism of $\\mathbb{C}^3$.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "keller"
+},
+{
+"id": "N-659",
+"title": "Fibonacci-modulated growing Jacobi matrix",
+"area": "Analysis",
+"W": "Off-diagonal weights grow like √n but are doubled wherever the Fibonacci word has a 1. Periodic modulations give spectral phase transitions. Decide what this aperiodic one gives.",
+"M": "Let $f\\in\\{0,1\\}^{\\mathbb N}$ be the Fibonacci word and $J$ the Jacobi matrix with $a_n=\\sqrt n\\,(1+f_n)$, $b_n=0$. Determine the spectral type of $J$; in particular decide whether $J$ has absolutely continuous spectrum.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "jacobi-spectral"
+},
+{
+"id": "N-154",
+"title": "Smallest force for blow-up",
+"area": "Analysis",
+"W": "How weak can the push be and still make viscous fluid blow up?",
+"M": "Find the optimal exponent $a$ with $\\inf\\{\\|f\\|_{L^\\infty}: \\text{NS from rest blows up}\\}\\asymp \\nu^{a}$.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "fluid-blowup"
+},
+{
+"id": "N-133",
+"title": "Hadwiger's true constant",
+"area": "Combinatorics",
+"W": "If graphs needing many colors need not contain a full complete-graph minor, find how large a complete minor they must contain.",
+"M": "Find $c^*=\\liminf_{t}\\min\\{h(G)/t:\\chi(G)\\ge t\\}$, where $h$ is the Hadwiger number.",
+"value": 8,
+"importance": 8,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-145",
+"title": "3-SAT at density 4",
+"area": "Computation",
+"W": "Give a fast algorithm that solves almost all random 3-SAT puzzles up to clause density 4.",
+"M": "Give a polynomial-time algorithm finding satisfying assignments of random 3-SAT with density $4.0$ with probability $1-o(1)$.",
+"value": 7,
+"importance": 7,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-633",
+"title": "Ergodicity of the regular tetrahedron billiard",
+"area": "Dynamics",
+"W": "The regular tetrahedron does not tile space, so its billiard cannot be unfolded into a straight-line flow on a torus. Is a billiard ball in it ergodic?",
+"M": "Prove or disprove that the billiard flow in a regular tetrahedron in $\\mathbb R^3$ is ergodic with respect to Liouville measure on the unit tangent bundle.",
+"value": 7,
+"importance": 6,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-151",
+"title": "Geodesic squares on surfaces",
+"area": "Geometry",
+"W": "Every smooth closed curve on a convex surface should pass through the corners of a square made of shortest paths.",
+"M": "Prove every smooth simple closed curve on a smooth convex surface inscribes a geodesic quadrilateral with equal sides and equal diagonals.",
+"value": 6,
+"importance": 5,
+"novelty": 5,
+"family": "other"
+},
+{
+"id": "C-102",
+"title": "Deciding limit cycles",
+"area": "Logic",
+"W": "Given a polynomial vector field in the plane with rational coefficients, is there an algorithm that decides whether it has a limit cycle, an isolated closed orbit? Hilbert's 16th problem asks how many limit cycles there can be. This asks only whether their existence is decidable at all.",
+"M": "Is the set $\\{(P,Q)\\in\\mathbb Q[x,y]^2:\\ \\dot x=P,\\ \\dot y=Q\\text{ has a limit cycle}\\}$ decidable? Is the set of $(P,Q)$ having at least one non-constant periodic orbit decidable?",
+"family": "tcs-logic",
+"novelty": 4,
+"importance": 6,
+"value": 6
+},
+{
+"id": "N-636",
+"title": "Euler with reversed stretching",
+"area": "PDE",
+"W": "Flip the sign of the vortex-stretching term in the 3D Euler equations, keeping the usual Biot–Savart law. Do smooth solutions stay smooth forever?",
+"M": "Consider $\\omega_t+(u\\cdot\\nabla)\\omega=-S\\omega$ on $\\mathbb T^3$, where $u=\\nabla\\times(-\\Delta)^{-1}\\omega$ and $S=\\tfrac12(\\nabla u+\\nabla u^{T})$. Decide whether every $\\omega_0\\in C^\\infty(\\mathbb T^3)$ with mean zero yields a global smooth solution.",
+"value": 6,
+"importance": 5,
+"novelty": 7,
+"family": "fluid-model"
+},
+{
+"id": "N-635",
+"title": "Shifted Fujita equation",
+"area": "PDE",
+"W": "In the plane, every positive solution of u_t = Δu + u² blows up. Does this survive when the square is replaced by the product of values one unit to the left and right?",
+"M": "Let $e=(1,0)$. Prove or disprove: every solution of $u_t=\\Delta u+u(x-e,t)\\,u(x+e,t)$ on $\\mathbb R^2$ with $0\\le u_0\\in C_c(\\mathbb R^2)$, $u_0\\not\\equiv0$, blows up in finite time.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "other"
+}
+]

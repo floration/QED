@@ -1,0 +1,112 @@
+[
+{
+"id": "N-439",
+"title": "Keller monodromy is everything",
+"area": "Algebra",
+"W": "Show every symmetric group appears as the hidden symmetry group of the fibres of some 3D Jacobian-conjecture counterexample.",
+"M": "Prove that for each $n\\ge3$ there is a non-invertible Keller map $\\mathbb{C}^3\\to\\mathbb{C}^3$ of geometric degree $n$ whose generic monodromy group is $S_n$.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "keller"
+},
+{
+"id": "N-161",
+"title": "Firebreak with wind",
+"area": "Analysis",
+"W": "How long must a firebreak be to save a round town from a wind-driven fire?",
+"M": "For front speed $a+b\\cos\\theta$ and a disc town at distance $D$, find the minimal length of a curve built at speed $\\sigma$ that protects the town.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "firefighting"
+},
+{
+"id": "N-657",
+"title": "Spikes at the primes",
+"area": "Analysis",
+"W": "Put a fixed bump at every prime on the half-line lattice. Prove the electron is localized at energies inside the free band, as it would be if the primes were random.",
+"M": "Let $H=\\Delta+\\lambda\\mathbf 1_{\\mathbb P}$ on $\\ell^2(\\mathbb N)$, $\\lambda\\ne0$. Prove that $H$ has pure point spectrum in $(-2,2)$.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-438",
+"title": "Monochromatic square-sum triangles, many colours",
+"area": "Combinatorics",
+"W": "Colour the positive integers with any finite number of colours. Show there are always three numbers of one colour whose pairwise sums are all squares.",
+"M": "Prove that for every $r$ and every $r$-colouring of $\\mathbb{N}$ there are distinct $a,b,c$ of one colour with $a+b,a+c,b+c$ all perfect squares.",
+"value": 6,
+"importance": 5,
+"novelty": 4,
+"family": "square-sum"
+},
+{
+"id": "C-97",
+"title": "Computable connective constants",
+"area": "Computation",
+"W": "Count the self-avoiding walks of length n on the Cayley graph of a finitely generated group. Their n-th root tends to the connective constant, and upper bounds converge to it. For groups with a solvable word problem, is the connective constant always a computable number?",
+"M": "Let $G$ be a finitely generated group with solvable word problem and finite symmetric generating set $S$, let $c_n$ be the number of $n$-step self-avoiding walks from $e$ in the Cayley graph $\\mathrm{Cay}(G,S)$, and let $\\mu(G,S)=\\lim c_n^{1/n}=\\inf_n c_n^{1/n}$ (so $\\mu$ is upper semicomputable). Is $\\mu(G,S)$ a computable real for every such $(G,S)$? If not, give a counterexample. If so, is it computable uniformly from $S$ and an algorithm for the word problem?",
+"family": "tcs-logic",
+"novelty": 7,
+"importance": 4,
+"value": 6
+},
+{
+"id": "N-651",
+"title": "Four vortices on a square torus",
+"area": "Dynamics",
+"W": "Three point vortices on a flat torus are integrable. Show four identical ones are not.",
+"M": "Let $H=-\\sum_{i<j}G(z_i-z_j)$, with $G$ the Green function of $\\mathbb C/(\\mathbb Z+i\\mathbb Z)$, for four unit vortices. Prove that after reduction by the translation symmetry the system has no real-analytic first integral independent of $H$.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-126",
+"title": "Hexagonal Lebesgue covering",
+"area": "Geometry",
+"W": "Find the smallest convex shape that can cover every set of diameter 1, if covering is by translation only, not rotation.",
+"M": "Determine $\\min\\{\\mathrm{area}(K):K$ convex, every set of diameter $1$ has a translate inside $K\\}$, and prove the minimiser is unique.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "covering"
+},
+{
+"id": "N-316",
+"title": "Formal verification depth of RH",
+"area": "Logic",
+"W": "The Riemann hypothesis now has a Lean proof. Show it cannot be proved in a weak arithmetic like I-Sigma-1 plus exponentiation, or show it can.",
+"M": "Decide whether RH (as a $\\Pi^0_1$ sentence) is provable in $\\mathrm{I}\\Sigma_1$, or in $\\mathrm{EFA}$.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "logic"
+},
+{
+"id": "N-640",
+"title": "Heat with a cosine reaction",
+"area": "PDE",
+"W": "In u_t = u_xx + cos(x)u², the reaction averages to zero, but a second-order effect looks like +u³, the borderline Fujita case. Does every positive start blow up?",
+"M": "Prove or disprove: for every $0\\le u_0\\in C_c(\\mathbb R)$, $u_0\\not\\equiv0$, the solution of $u_t=u_{xx}+\\cos(x)\\,u^2$ on $\\mathbb R$ blows up in finite time.",
+"value": 7,
+"importance": 5,
+"novelty": 7,
+"family": "other"
+},
+{
+"id": "N-637",
+"title": "Strauss exponent for an oscillating source",
+"area": "PDE",
+"W": "The wave equation with source |u|^p in 3D has small-data global existence exactly above the Strauss exponent 1+√2. Find the threshold when the source is multiplied by cos t.",
+"M": "For $u_{tt}-\\Delta u=\\cos(t)\\,|u|^p$ on $\\mathbb R^{1+3}$ with data $\\varepsilon(f,g)$, $f,g\\in C_c^\\infty$, determine $p_c$ such that for $p>p_c$ solutions are global for all small $\\varepsilon$, and for $1<p<p_c$ some data blow up for all small $\\varepsilon$; decide whether $p_c=1+\\sqrt2$.",
+"value": 6,
+"importance": 4,
+"novelty": 7,
+"family": "PDE"
+}
+]

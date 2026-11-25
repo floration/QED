@@ -1,0 +1,112 @@
+[
+{
+"id": "N-510",
+"title": "Real-rank hyperoperation uniqueness",
+"area": "Algebra",
+"W": "Prove there is exactly one natural way to fill in the operations between addition, multiplication and powers.",
+"M": "Prove uniqueness of an analytic family $a[s]b$ on $s\\in[1,3]$ under the recursion law plus a log-convexity condition in $s$, and existence.",
+"value": 6,
+"importance": 5,
+"novelty": 5,
+"family": "hyperop"
+},
+{
+"id": "N-661",
+"title": "Hearing tetrahedra",
+"area": "Analysis",
+"W": "Triangles can be heard: their Dirichlet spectrum determines them. Show the same holds for tetrahedra.",
+"M": "Prove that two tetrahedra in $\\mathbb R^3$ with the same Dirichlet Laplacian spectrum are congruent.",
+"value": 6,
+"importance": 5,
+"novelty": 3,
+"family": "other"
+},
+{
+"id": "N-626",
+"title": "Sup norms on the Fermat quartic",
+"area": "Analysis",
+"W": "On a sphere, some eigenfunctions pile up at the poles as much as possible. Show this cannot happen on the surface x⁴+y⁴+z⁴ = 1.",
+"M": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the induced metric and $\\Delta\\varphi=-\\lambda\\varphi$, $\\|\\varphi\\|_{L^2(S)}=1$. Prove that $\\|\\varphi\\|_{L^\\infty(S)}=o(\\lambda^{1/4})$ as $\\lambda\\to\\infty$.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-118",
+"title": "Petersen Ramsey multiplicity",
+"area": "Combinatorics",
+"W": "In any two-coloring of a huge complete graph, how many single-color copies of the Petersen graph must appear, at least?",
+"M": "Determine the Ramsey multiplicity constant $\\lim_n \\min_{\\text{2-col}} \\#\\text{mono } P / \\#P \\text{ in } K_n$ for the Petersen graph $P$.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "C-100",
+"title": "How much of the real quadratic family is chaotic?",
+"area": "Computation",
+"W": "For real c between −2 and 1/4, the map x ↦ x² + c has an attracting cycle for an open dense set of c, but the remaining chaotic parameters have positive length. Is the total length of the parameters with an attracting cycle a computable number? It can be approximated from below by listing windows, but no method approximates it from above.",
+"M": "Let $H=\\{c\\in[-2,1/4]: x\\mapsto x^2+c\\text{ has an attracting periodic orbit}\\}$. Is the Lebesgue measure $\\lambda(H)$ a computable real? (It is lower semicomputable, and $0<\\lambda(H)<9/4$ by Jakobson's theorem.)",
+"family": "tcs-logic",
+"novelty": 6,
+"importance": 5,
+"value": 6
+},
+{
+"id": "N-622",
+"title": "Integrability of the egg-crate torus",
+"area": "Dynamics",
+"W": "Take the surface z = ε sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.",
+"M": "For $\\varepsilon>0$ let $g_\\varepsilon$ be the metric on $\\mathbb R^2/(2\\pi\\mathbb Z)^2$ induced by the graph $z=\\varepsilon\\sin x\\sin y$ in $\\mathbb R^3$. Prove that for every $\\varepsilon>0$ the geodesic flow of $g_\\varepsilon$ has no real-analytic first integral on $T^*\\mathbb T^2\\setminus 0$ that is functionally independent of the Hamiltonian.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-134",
+"title": "Icosahedral monotile",
+"area": "Geometry",
+"W": "Find a single 3D tile that fills space and forces five-fold, icosahedral symmetry in every tiling.",
+"M": "Find $T\\subset\\mathbb{R}^3$ tiling space such that every tiling by $T$ has icosahedral symmetry in its hull, or prove none exists.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "hat-tiling"
+},
+{
+"id": "C-96",
+"title": "Proof complexity of the sensitivity theorem",
+"area": "Logic",
+"W": "Huang proved that any set of more than half the corners of the n-cube contains a corner with at least √n neighbours inside the set. Write this as a propositional formula with one variable per corner. Do polynomial-size proofs exist in resolution, cutting planes or sum-of-squares, measured against the 2^n variables?",
+"M": "Let $N=2^n$, $d=\\lceil\\sqrt n\\rceil-1$, and let $\\mathrm{SENS}_n$ be the unsatisfiable CNF on variables $x_v$ ($v\\in\\{0,1\\}^n$) plus auxiliary counter variables expressing $\\sum_v x_v\\ge 2^{n-1}+1$ (sequential-counter encoding), together with, for every $v$ and every $(d+1)$-set $U$ of neighbours of $v$, the clause $\\neg x_v\\vee\\bigvee_{u\\in U}\\neg x_u$. Does $\\mathrm{SENS}_n$ have refutations of size $N^{O(1)}$ in (a) resolution, (b) cutting planes, (c) sum-of-squares (or degree $O(\\log N)$ sum-of-squares)? A lower bound of $2^{N^{\\Omega(1)}}$ for any of these would also be of interest.",
+"family": "tcs-logic",
+"novelty": 7,
+"importance": 5,
+"value": 6
+},
+{
+"id": "N-644",
+"title": "Lane–Emden with a shift",
+"area": "PDE",
+"W": "Replace u² in the five-dimensional Lane–Emden equation by the square of u at a shifted point. Are there still no positive solutions?",
+"M": "Let $e\\in\\mathbb R^5$, $e\\ne0$. Decide whether there is a positive $u\\in C^2(\\mathbb R^5)$ with $-\\Delta u(x)=u(x+e)^2$ for all $x$.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "other"
+},
+{
+"id": "N-344",
+"title": "Hat Ising universality",
+"area": "Physics",
+"W": "Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid.",
+"M": "Prove the hat-graph Ising model has critical exponents $\\beta=1/8$, $\\gamma=7/4$, $\\nu=1$.",
+"value": 6,
+"importance": 6,
+"novelty": 4,
+"family": "hat-spectral"
+}
+]

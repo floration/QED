@@ -1,0 +1,46 @@
+[
+{
+"id": "C-T0",
+"title": "Singularities of the permanental hypersurface",
+"area": "Algebra",
+"W": "The hypersurface where the determinant vanishes has the mildest possible kind of singularities (rational ones), a fact that underlies much of its geometry. Decide whether the hypersurface where the n × n permanent vanishes is equally mild, by computing its log canonical threshold.",
+"M": "Let $X_n=\\{\\operatorname{per}_n=0\\}\\subset\\mathbb A^{n^2}_{\\mathbb C}$. For $n=2$ it is a nondegenerate quadric cone in $\\mathbb A^4$, with rational singularities. For every $n\\ge3$ determine the log canonical threshold $\\operatorname{lct}(\\mathbb A^{n^2},X_n)$ and Saito's minimal exponent $\\tilde\\alpha(X_n)$, and decide whether $X_n$ has rational singularities (equivalently $\\tilde\\alpha(X_n)>1$). In particular decide whether the answer is the same as for $\\{\\det_n=0\\}$ (rational singularities for all $n$) or fails from some $n$ on.",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "algebra-topology"
+},
+{
+"id": "C-T1",
+"title": "Distinct character degrees of the symmetric group",
+"area": "Algebra",
+"W": "Conjugate partitions always give representations of the same dimension, so at most about half of the p(n) irreducible representations of S_n can have distinct dimensions. Decide what fraction of p(n) the number of distinct dimensions really is in the limit — in particular whether it tends to one half, to zero, or to something in between.",
+"M": "Let $d(n)=\\#\\{f^\\lambda:\\lambda\\vdash n\\}$ be the number of distinct irreducible character degrees of $S_n$. Determine whether $\\lim_{n\\to\\infty}d(n)/p(n)$ exists and find it; in particular decide whether $d(n)/p(n)\\to 0$. (Computed by the hook length formula: $d(n)/p(n)$ lies in $[0.40,0.47]$ for $20\\le n\\le45$, e.g. $d(40)=16216$, $p(40)=37338$, ratio $0.434$; prime $n$ give smaller ratios, e.g. $0.405$ at $n=29$, $0.412$ at $n=41$.)",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "algebra-topology"
+},
+{
+"id": "C-T2",
+"title": "The complex of planar graphs",
+"area": "Topology",
+"W": "Planar graphs on n labelled vertices form a simplicial complex: delete an edge and the graph stays planar. Every maximal planar graph has 3n − 6 edges, so the complex is pure. Show it is a wedge of top-dimensional spheres and count them.",
+"M": "Let $\\Pi_n$ be the simplicial complex on vertex set $E(K_n)$ whose faces are edge sets of planar graphs. It is pure of dimension $3n-7$. Prove that $\\Pi_n$ is homotopy equivalent to a wedge of $(3n-7)$-spheres (or shellable), and find the number $a_n$ of spheres. Exact computation of the reduced Euler characteristic from all graphs on at most 7 vertices gives $\\Pi_4\\simeq$ point, $\\Pi_5=\\partial\\Delta^9\\cong S^8$, $\\tilde\\chi(\\Pi_6)=-15$, $\\tilde\\chi(\\Pi_7)=177$, consistent with $a_5=1,a_6=15,a_7=177$. Find the growth rate of $a_n$ and the $S_n$-representation on $\\tilde H_{3n-7}(\\Pi_n)$.",
+"value": 6,
+"importance": 4,
+"novelty": 6,
+"family": "algebra-topology"
+},
+{
+"id": "C-T3",
+"title": "Alternating quotients of knot groups",
+"area": "Topology",
+"W": "The trefoil's group maps onto every large alternating group because it maps onto the modular group. Show that every nontrivial knot group maps onto the alternating group A_n for all large n, and bound the last exception in terms of the knot.",
+"M": "Prove that for every nontrivial knot $K\\subset S^3$ there is $N(K)$ such that $\\pi_1(S^3\\setminus K)$ surjects onto $A_n$ for all $n\\ge N(K)$, and bound $N(K)$ by a function of the crossing number. Exhaustive search over pairs of conjugate even permutations satisfying the Wirtinger-type relation $wx=yw$ shows: the trefoil ($w=xy$) surjects onto $A_5$ but not onto $A_6,A_7,A_8$ (and onto $A_n$ for $n\\ge9$ via $\\mathrm{PSL}_2(\\mathbb Z)$ and Miller's $(2,3)$-generation); the figure-eight knot ($w=x^{-1}yxy^{-1}$) surjects onto $A_6$, $A_9$, $A_{10}$ but not onto $A_5,A_7,A_8$. Is $N(4_1)=9$?",
+"value": 6,
+"importance": 5,
+"novelty": 6,
+"family": "algebra-topology"
+}
+]

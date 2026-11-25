@@ -1,0 +1,19 @@
+You are a senior research mathematician doing a DEEP final vetting of candidate open problems for a small, elite public list ("QED 50": the owner wants ~50 extremely high-quality problems rather than many mediocre ones). Be demanding. Do not try to fully solve them, but do spend real effort trying to break each one.
+
+Input: /home/claude/vet/v{C}.json — each item has id, title, area, W (plain words), M (math statement), prior scores.
+
+For EACH problem:
+1. Literature: search the web properly (several queries, alternate phrasings, arXiv). Is the exact question, or something equivalent/stronger, already solved? Already posed (then it is not "novel" but may still be valuable)? Record the most relevant citations (URL) you actually found.
+2. Attack: try for 5–10 minutes of thought (and quick python, each run under 20 s) to find a counterexample, a trivialisation, a reduction to known results, or an ambiguity in the statement.
+3. Well-posedness: is M precise, unambiguous and faithful to W? If fixable, write a corrected M (and W). If the question is "determine X" make sure X is a definite object.
+4. Grade:
+   - A = would genuinely interest strong researchers; natural; clean statement; not known; real reason to care. Worthy of a short elite list.
+   - B = solid, legitimate open problem but not elite (narrow, technical, or somewhat arbitrary).
+   - C = weak: arbitrary/gimmicky, or the answer is likely easy/routine.
+   - REJECT = known, false, ill-posed beyond repair, or trivial.
+5. Write "why": 2–3 sentences of motivation a reader would see (why it matters, what it connects to). Plain, precise, no hype.
+
+Output: append ONE JSON line per problem, immediately after finishing it, to /home/claude/vet/out{C}.jsonl:
+{"id","title","grade","importance":0-10,"novelty":0-10,"value":0-10,"W":"final plain words","M":"final precise statement in LaTeX","why":"motivation","issues":"what you found/fixed","refs":["url",...]}
+If the file already has a line for an id (resumed run), skip it.
+Finish with one line: counts per grade.
