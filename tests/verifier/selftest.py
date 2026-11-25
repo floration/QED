@@ -201,6 +201,7 @@ def do_verify(inp):
                 claim = f"OpenProblems.{c['id'].replace('-', '')}.Claim"
                 rd = os.path.join(inp, c['name'], 'raw')
                 code, o, _ = lean(['--run', 'scripts/qed_verify.lean', nonce, 'QEDStmt', 'QEDSol', claim, kind], [stmt_dirs[c['id']], rd])
+                print(''.join(l + '\n' for l in o.splitlines() if l.startswith('[qed_verify')), end='', flush=True)
                 okline = re.search(rf'(?m)^QED-VERIFY {nonce} OK', o) is not None
                 actual = 'PASS' if code == 0 and okline else 'FAIL(verify)'
                 m = re.search(rf'(?m)^QED-VERIFY {nonce} (.*)$', o)
