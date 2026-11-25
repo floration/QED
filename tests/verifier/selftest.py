@@ -20,7 +20,7 @@ Two modes per case:
              rejected by the verifier; "fail" = rejected at either step; "pass" = must be accepted.
 Every merged solution in solutions/<id>/<user>/ is also run through the pipeline and must pass.
 Exit status of `verify` is 1 if any expectation is violated."""
-import sys, os, re, json, shutil, subprocess, secrets, time
+import sys, os, re, json, shutil, subprocess, secrets, time, signal
 
 ROOT = os.getcwd()
 CASES = os.path.join(ROOT, 'tests', 'verifier', 'cases')
@@ -28,13 +28,19 @@ USER = 'qedselftest'
 EXCLUDE = {'case.json', 'Statement.lean'}
 
 
-def sh(args, env=None, timeout=1200):
+def sh(args, env=None, timeout=None):
+    """Run a command in its own process group; on timeout kill the whole group and keep the partial output."""
+    timeout = timeout or int(os.environ.get('SELFTEST_TIMEOUT', '900'))
     t = time.time()
+    p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, env=env, cwd=ROOT,
+                         start_new_session=True)
     try:
-        r = subprocess.run(args, capture_output=True, text=True, timeout=timeout, env=env, cwd=ROOT)
-        return r.returncode, r.stdout + r.stderr, time.time() - t
+        out, _ = p.communicate(timeout=timeout)
+        return p.returncode, out, time.time() - t
     except subprocess.TimeoutExpired:
-        return 124, 'timeout', time.time() - t
+        os.killpg(p.pid, signal.SIGKILL)
+        out, _ = p.communicate()
+        return 124, (out or '') + f'\n[selftest] TIMEOUT after {timeout} s', time.time() - t
 
 
 _LP = None
@@ -201,7 +207,7 @@ def do_verify(inp):
                 claim = f"OpenProblems.{c['id'].replace('-', '')}.Claim"
                 rd = os.path.join(inp, c['name'], 'raw')
                 code, o, _ = lean(['--run', 'scripts/qed_verify.lean', nonce, 'QEDStmt', 'QEDSol', claim, kind], [stmt_dirs[c['id']], rd])
-                print(''.join(l + '\n' for l in o.splitlines() if l.startswith('[qed_verify')), end='', flush=True)
+                print(''.join(l + '\n' for l in o.splitlines() if l.startswith('[qed_verify') or 'TIMEOUT' in l), end='', flush=True)
                 okline = re.search(rf'(?m)^QED-VERIFY {nonce} OK', o) is not None
                 actual = 'PASS' if code == 0 and okline else 'FAIL(verify)'
                 m = re.search(rf'(?m)^QED-VERIFY {nonce} (.*)$', o)
