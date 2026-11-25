@@ -2,10 +2,6 @@
 W: Alice holds one permutation of n items and Bob holds another. How many bits must they exchange, using shared randomness and allowing a small error, to decide whether the two permutations commute? A simple reduction from set disjointness shows about n bits are needed, and sending a whole permutation costs about n log n bits. Find the right answer.
 M: For $\pi,\sigma\in S_n$ let $\mathrm{COMM}_n(\pi,\sigma)=1$ iff $\pi\sigma=\sigma\pi$, with $\pi$ given to Alice and $\sigma$ to Bob, and let $R(\mathrm{COMM}_n)$ be its public-coin randomized communication complexity with error $1/3$. Splitting $[n]$ into blocks $\{3j,3j+1,3j+2\}$, with Alice applying $(3j\ 3j{+}1)$ iff $x_j=1$ and Bob applying $(3j{+}1\ 3j{+}2)$ iff $y_j=1$, embeds disjointness on $\lfloor n/3\rfloor$ bits, so $\Omega(n)\le R(\mathrm{COMM}_n)\le O(n\log n)$. Determine $R(\mathrm{COMM}_n)$ up to a constant factor. In particular, decide whether $R(\mathrm{COMM}_n)=o(n\log n)$.
 
-## Does the product of two permutations fix a point? | 4 | Computation
-W: Alice holds a permutation π and Bob holds a permutation σ of n items. They want to know whether π after σ leaves some item where it was. A three-item gadget turns set disjointness into this problem, so about n bits are needed. Is about n bits always enough, or do they really need n log n?
-M: Let $\mathrm{FIX}_n(\pi,\sigma)=1$ iff there is $i\in[n]$ with $\pi(\sigma(i))=i$. On each block of three points, Alice using $c$ if her bit is 1 and $\mathrm{id}$ if it is 0, and Bob using $c^{-1}$ if his bit is 1 and $c$ if it is 0, where $c$ is a 3-cycle (so the block contains a fixed point of $\pi\sigma$ exactly when both bits are 1), embeds disjointness, giving $R(\mathrm{FIX}_n)=\Omega(n)$, while $R(\mathrm{FIX}_n)=O(n\log n)$ is trivial. Determine whether $R(\mathrm{FIX}_n)=\Theta(n)$, where $R$ is public-coin randomized communication complexity with error $1/3$.
-
 ## Information-tight sorting of pattern classes | 5 | Computation
 W: Suppose an array is promised to avoid some fixed pattern (for example, no four entries in the relative order 1, 3, 2, 4). Counting the allowed orders gives a lower bound on the number of comparisons needed to sort it, and Fredman's theorem says this bound plus 2n comparisons always suffice. Is the counting bound always tight up to a negligible error, for every forbidden pattern?
 M: For a permutation $\tau$ let $\mathrm{Av}_n(\tau)$ be the set of $\tau$-avoiding permutations of $[n]$ and let $C_\tau(n)$ be the least worst-case number of comparisons $a_i\overset{?}{<}a_j$ needed by a decision tree that determines the order of $a_1,\dots,a_n$ when the order pattern of $(a_i)$ is promised to lie in $\mathrm{Av}_n(\tau)$. Fredman's bound gives $\log_2|\mathrm{Av}_n(\tau)|\le C_\tau(n)\le\log_2|\mathrm{Av}_n(\tau)|+2n$. Decide whether $C_\tau(n)=\log_2|\mathrm{Av}_n(\tau)|+o(n)$ for every $\tau$. In particular, decide this for $\tau=1324$, whose growth rate is unknown.
@@ -62,10 +58,6 @@ M: Let $h(n)$ be the number of Hamiltonian cycles of the grid graph $P_n\times P
 W: The integer complexity of n is the fewest 1s needed to write n using +, × and brackets. Deciding whether it is at most k is in NP, since a short formula is a certificate. Is the problem NP-hard for n written in binary, or can it be solved in time polynomial in the number of digits?
 M: Let $\|n\|$ be the least number of $1$'s in an expression for $n$ built from $1$, $+$, $\times$ and parentheses. Since $\|n\|\le3\log_2 n+O(1)$, the language $\{(n,k):\|n\|\le k\}$ with $n$ in binary lies in NP. Prove that it is NP-hard (possibly under randomized reductions), or show that $\|n\|$ can be computed in time $(\log n)^{O(1)}$.
 
-## How hard is the hat guessing number? | 5 | Computation
-W: Each person at a vertex of a graph gets a hat in one of q colours. Each sees only the neighbours' hats and guesses their own colour, and the team wins if someone is always right. Deciding whether a team on a given graph can win with 3 colours is a finite problem. How hard is it?
-M: For a graph $G$ and $q\ge2$, a strategy is a family of maps $g_v:[q]^{N(v)}\to[q]$ ($v\in V(G)$). It wins if for every colouring $c:V\to[q]$ some $v$ has $g_v(c|_{N(v)})=c(v)$. Let $\mathrm{HG}(G)$ be the largest $q$ with a winning strategy. Determine the complexity of deciding $\mathrm{HG}(G)\ge3$ for an arbitrary input graph $G$. Is it NP-hard? Is it in PSPACE, or is it $\mathrm{NEXP}$-hard? (For graphs of bounded maximum degree it lies in $\Sigma_2^{\mathrm P}$.)
-
 ## Proof complexity of Graham–Pollak | 5 | Logic
 W: The edges of a complete graph on n vertices cannot be split into fewer than n − 1 complete bipartite pieces. The known proofs use linear algebra. Written as a propositional formula, does this fact have short proofs in resolution, in cutting planes, or in low-degree sum-of-squares?
 M: Let $\mathrm{GP}_n$ be the CNF with variables $\ell_{t,v},r_{t,v}$ ($t\in[n-2]$, $v\in[n]$) and auxiliary variables $e_{t,uv}\leftrightarrow(\ell_{t,u}\wedge r_{t,v})\vee(r_{t,u}\wedge\ell_{t,v})$, with clauses $\neg\ell_{t,v}\vee\neg r_{t,v}$, and for each edge $uv$ of $K_n$ the clauses saying exactly one $e_{t,uv}$ is true. $\mathrm{GP}_n$ is unsatisfiable by the Graham–Pollak theorem and has size $\mathrm{poly}(n)$. Determine whether $\mathrm{GP}_n$ has (a) resolution refutations of size $2^{n^{o(1)}}$, (b) polynomial-size cutting-planes refutations, (c) sum-of-squares refutations of degree $O(1)$.
@@ -97,10 +89,6 @@ M: Let $L_n$ be a uniformly random Latin square on $[n]$, viewed as the structur
 ## The exact constant for Greater-Than | 5 | Computation
 W: Alice and Bob each hold an n-bit number and want to know whose is larger. With shared randomness and small error this takes about log n bits, up to a constant factor. Find the exact constant in front of log n.
 M: Let $R_\varepsilon(\mathrm{GT}_n)$ be the public-coin randomized communication complexity of $\mathrm{GT}_n(x,y)=[x>y]$ for $x,y\in\{0,1\}^n$, with error $\varepsilon$. It is known that $R_{1/3}(\mathrm{GT}_n)=\Theta(\log n)$. For fixed $\varepsilon\in(0,1/2)$, determine $c(\varepsilon)=\lim_{n\to\infty}R_\varepsilon(\mathrm{GT}_n)/\log_2 n$, proving that the limit exists. In particular, decide whether $c(\varepsilon)$ depends on $\varepsilon$.
-
-## Finding a large convex polygon fast | 5 | Computation
-W: Suk proved that among about 2^k points in general position in the plane there are always k forming a convex polygon. The classical cups-and-caps argument finds such a polygon quickly but needs about 4^k points. Is there a polynomial-time algorithm that finds a convex polygon as large as Suk's theorem promises?
-M: Given $n$ points in general position in $\mathbb R^2$ (integer coordinates), output the vertices of a convex polygon formed by $k$ of them. Is there a deterministic (or randomized) algorithm running in time $n^{O(1)}$ that always succeeds with $k\ge(1-o(1))\log_2 n$? The Erdős–Szekeres cups-and-caps argument gives $k\ge(\tfrac12-o(1))\log_2 n$ in polynomial time, and Suk's theorem guarantees existence for $k=(1-o(1))\log_2 n$. Improving $\tfrac12$ to any constant $c>\tfrac12$ would already be of interest.
 
 ## Constructive near-transversals | 5 | Computation
 W: Every Latin square of large order n has n − 1 cells in distinct rows and columns with distinct symbols. This is the Ryser–Brualdi–Stein bound, proved by Montgomery in 2023 with probabilistic absorption methods. Can such a near-transversal be found in polynomial time?
@@ -198,17 +186,9 @@ M: Is there a deterministic (or randomized) algorithm that, given $n$ and a sequ
 W: The topological entropy of the logistic map x ↦ ax(1 − x) is a continuous function of a that can be computed from the kneading sequence. But the known error bounds force exponentially long kneading data for n correct digits. Is the entropy polynomial-time computable at rational a?
 M: Let $h(a)$ be the topological entropy of $x\mapsto ax(1-x)$ on $[0,1]$, $a\in[1,4]$. Is there an algorithm that, given rational $a$ and $n$, outputs a rational within $2^{-n}$ of $h(a)$ in time polynomial in $n$ and the bit size of $a$?
 
-## Is the knot crossing number NP-hard? | 6 | Computation
-W: Given a diagram of a knot, what is the fewest crossings of any diagram of the same knot? This is computable, since one can list diagrams and test equivalence, but its complexity is unknown. Show that deciding whether the crossing number is at most k is NP-hard, or find a better algorithm.
-M: Let $\mathrm{CR}=\{(D,k): D\text{ a knot diagram},\ \mathrm{cr}(K_D)\le k\}$, with $D$ given as a planar diagram code and $k$ in unary. Is $\mathrm{CR}$ NP-hard? Is $\mathrm{CR}\in\mathrm{NP}$? (For reduced alternating diagrams $\mathrm{cr}$ equals the number of crossings, by Kauffman–Murasugi–Thistlethwaite.)
-
 ## Counting squarefree numbers faster | 5 | Computation
 W: How quickly can one count exactly the squarefree numbers up to x? Known methods take time around x^{2/5}. Is there an algorithm using about the cube root of x, or less?
 M: Let $Q(x)=\#\{n\le x: n\text{ squarefree}\}=\sum_{d\le\sqrt x}\mu(d)\lfloor x/d^2\rfloor$. Is there an algorithm computing $Q(x)$ exactly in time $x^{1/3+o(1)}$? Is there one running in time $x^{\varepsilon}$ for every $\varepsilon>0$?
-
-## Counting distinct subset sums | 5 | Computation
-W: Given n positive integers, how many different totals can their subsets have? Deciding whether a single total is reachable is NP-complete. But counting the reachable totals counts numbers that have a witness, not witnesses, so it is not obviously even in #P. Pin down its complexity.
-M: For $a_1,\dots,a_n\in\mathbb Z_{>0}$ (binary) let $\Sigma(a)=\{\sum_{i\in S}a_i:S\subseteq[n]\}$. Is $a\mapsto|\Sigma(a)|$ computable in $\mathrm{FP}^{\#\mathrm P}$? Or is it complete for $\#\cdot\mathrm{NP}$ under polynomial-time Turing reductions? (It is $\#\mathrm P$-hard.)
 
 ## Word equations with square-free unknowns | 6 | Logic
 W: Solving equations between words with unknown pieces is decidable (Makanin), even with regular constraints on the unknowns. What if some unknowns must be square-free, meaning they contain no block repeated twice in a row? Square-freeness is not a regular property.
@@ -225,14 +205,6 @@ M: For $a,b\in S_n$ let $g(a,b)$ be the least length of a nonempty freely reduce
 ## Complexity of the Davenport constant | 6 | Computation
 W: The Davenport constant of a finite abelian group is the shortest length that forces every sequence of group elements to contain a nonempty block summing to zero. It has a simple formula for groups of rank at most 2 and for p-groups, but not in general. How hard is it to compute from the group's invariants?
 M: For $G=\mathbb Z_{n_1}\oplus\cdots\oplus\mathbb Z_{n_r}$ ($n_1\mid\cdots\mid n_r$), let $D(G)$ be the least $\ell$ such that every sequence of $\ell$ elements of $G$ has a nonempty zero-sum subsequence. It is known that $D(G)\ge D^*(G)=1+\sum_i(n_i-1)$, with equality for $r\le2$ and for $p$-groups, and that equality can fail. Is there an algorithm computing $D(G)$ in time polynomial in $r$ and $\log n_r$? For fixed $r=3$, is there one running in time $\mathrm{poly}(n_3)$?
-
-## The exact constant for Gap-Hamming | 5 | Computation
-W: Alice and Bob each hold an n-bit string and must tell whether the strings differ in noticeably more than half the positions or noticeably fewer, with a gap of g√n. This is known to need order n bits. Find the exact constant in front of n.
-M: For $g>0$ let $\mathrm{GHD}_{n,g}$ be the promise problem on $x,y\in\{0,1\}^n$: output 1 if $|x\oplus y|\ge n/2+g\sqrt n$ and 0 if $|x\oplus y|\le n/2-g\sqrt n$. It is known that $R_{1/3}(\mathrm{GHD}_{n,g})=\Theta(n)$. Prove that $c(g)=\lim_n R_{1/3}(\mathrm{GHD}_{n,g})/n$ exists and determine it. In particular, decide whether $c(g)<1$ for all $g$, and find the behaviour of $c(g)$ as $g\to0$ and as $g\to\infty$.
-
-## Does the Mandelbrot set define the integers? | 7 | Logic
-W: Add the Mandelbrot set, as a subset of the plane, to the real numbers with addition and multiplication. Can one then define the integers by a first-order formula, which would make the theory undecidable? The structure is not o-minimal: on the real line its interior breaks into infinitely many windows that pile up at the Feigenbaum point.
-M: Identify $\mathbb C$ with $\mathbb R^2$ and let $M$ be the Mandelbrot set. Is $\mathbb Z$ definable in $(\mathbb R,<,+,\cdot,M)$? Is $\mathrm{Th}(\mathbb R,<,+,\cdot,M)$ decidable? (The set $\mathrm{int}(M)\cap\mathbb R$ is definable and has infinitely many connected components, such as the period-doubling windows accumulating at the Feigenbaum point $c_F\approx-1.4011$.)
 
 ## Finding a vertex that beats half the field | 4 | Computation
 W: In any round-robin tournament on n players, some player beats at least half of the others. How many match results must you look up to find such a player? Finding a player with the most wins is known to need almost all results. Is order n log n lookups enough here, or are almost all results needed again?
