@@ -1,0 +1,27 @@
+{
+ "id": "QED-E202",
+ "set": "extended",
+ "title": "A positive proportion of integers are sums of three cubes",
+ "area": "Number theory",
+ "difficulty": 5.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Folklore density form of the sums-of-three-cubes problem; conditional results by Diaconu (2019) and V. Y. Wang (2021-23)",
+ "premise_risks": [
+  "Conditional 100% result by Wang: check that no 2025-26 unconditional improvement exists beyond what searches found",
+  "Scorer may judge as close to the famous full problem; it is a strictly weaker, distinct milestone"
+ ],
+ "plain": "An integer a^3+b^3+c^3 (with a, b, c integers, negatives allowed) never leaves remainder 4 or 5 on division by 9, and every other integer is believed to be such a sum. Nobody can even prove that a fixed positive fraction of integers are sums of three cubes. Prove that for some c>0, at least cN of the integers 1, ..., N are sums of three integer cubes for all large N.",
+ "math": "Let $\\mathcal C=\\{a^3+b^3+c^3: a,b,c\\in\\mathbb Z\\}$. Prove $\\liminf_{N\\to\\infty}\\frac1N\\#\\{1\\le n\\le N: n\\in\\mathcal C\\}>0$. (Conjecturally the density exists and equals $7/9$.)",
+ "novelty": 2,
+ "importance": 8,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1502.01944",
+  "https://web.math.princeton.edu/~vywang/2021-10-13_BGWS_slides_with_notes.pdf",
+  "https://epoch.ai/files/open-problems/sum-of-three-cubes.pdf",
+  "https://arxiv.org/abs/1404.3846",
+  "https://arxiv.org/abs/2608.19262"
+ ]
+}

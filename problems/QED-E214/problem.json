@@ -1,0 +1,27 @@
+{
+ "id": "QED-E214",
+ "set": "extended",
+ "title": "Cyclic perfect difference sets exist only for prime-power orders",
+ "area": "Combinatorics",
+ "difficulty": 5.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Folklore conjecture going back to Singer (1938) and Hall (1947); standard formulation in Jungnickel's and Beth–Jungnickel–Lenz's design theory texts; asymptotic version by S. Peluse.",
+ "premise_risks": [
+  "Well-known problem (lower novelty); 'prime power conjecture' is not person-named but is related to famous projective-plane questions",
+  "Must be kept distinct from pending J14 (projective plane of order 12)"
+ ],
+ "plain": "A perfect (planar) difference set of order n is a set of n+1 residues modulo n^2+n+1 such that every nonzero residue is the difference of exactly one ordered pair of its elements. Singer showed that one exists whenever n is a prime power, and each one gives a projective plane of order n with a cyclic symmetry. Prove that if such a set exists then n is a prime power.",
+ "math": "Let $n\\ge2$. Suppose $D\\subseteq\\mathbb{Z}/(n^2+n+1)\\mathbb{Z}$ has $|D|=n+1$ and that for every $x\\neq0$ there is exactly one pair $(a,b)\\in D\\times D$ with $a-b=x$. Prove that $n$ is a prime power.",
+ "novelty": 1,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v1i1r6",
+  "https://arxiv.org/pdf/2003.04929",
+  "https://personal.ntu.edu.sg/bernhard/Publications/pub/Singer.pdf",
+  "https://api.emergentmind.com/open-problems/prime-power-conjecture-cyclic-projective-planes",
+  "https://mathworld.wolfram.com/PlanarDifferenceSet.html"
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "QED-E195",
+ "set": "extended",
+ "title": "Is the Held–Karp integrality ratio for asymmetric TSP equal to 2?",
+ "area": "Combinatorics",
+ "difficulty": 4.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Open question posed in Charikar–Goemans–Karloff (2006) and repeated in Svensson–Tarnawski–Végh and Traub–Vygen.",
+ "premise_risks": [
+  "Upper bound ~14.83 rests on a 2026 preprint (refereed bound is 22)",
+  "Exact value 2 is a natural target but not universally conjectured; some experts only expect a small constant"
+ ],
+ "plain": "In the asymmetric traveling salesman problem the distance from a to b may differ from b to a, but the triangle inequality holds. The Held–Karp linear program assigns fractional weights to directed arcs so that every city has in-weight and out-weight 1 and every proper set of cities has out-weight at least 1. Is the cheapest directed tour always at most twice the LP value? A factor 2 is known to be necessary; the best proven factor is 22 in refereed work and about 14.8 in a 2026 preprint.",
+ "math": "Let $n\\ge2$ and $c:[n]\\times[n]\\to\\mathbb R_{\\ge0}$ with $c(u,w)\\le c(u,v)+c(v,w)$ for all $u,v,w$ (not necessarily symmetric). Let $x\\ge0$ be defined on arcs $(u,v)$, $u\\ne v$, with $x(\\delta^+(v))=x(\\delta^-(v))=1$ for all $v$ and $x(\\delta^+(S))\\ge1$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove or disprove: there is a cyclic ordering $v_1,\\dots,v_n$ of $[n]$ with $\\sum_{i=1}^n c(v_i,v_{i+1})\\le 2\\sum_{(u,v)}c(u,v)x_{uv}$ (indices mod $n$). Since the integrality ratio is known to be $\\ge2$ (Charikar–Goemans–Karloff), a proof shows it equals $2$.",
+ "novelty": 2,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/html/2603.14334v1",
+  "https://math.mit.edu/~goemans/PAPERS/CharikarGoemansKarloff-2006-ATSP.pdf",
+  "https://arxiv.org/pdf/1708.04215"
+ ]
+}

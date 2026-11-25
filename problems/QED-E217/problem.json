@@ -1,0 +1,26 @@
+{
+ "id": "QED-E217",
+ "set": "extended",
+ "title": "Does a generalized quadrangle of order (4,11) exist?",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Open problem in Payne–Thas, Finite Generalized Quadrangles; SRG status from A. E. Brouwer's tables.",
+ "premise_risks": [
+  "Two-case question; could be split into GQ(4,11) and GQ(4,12) separately",
+  "Could not locate a 2024-2026 source that explicitly restates 'GQ(4,11), GQ(4,12) open', status inferred from Brouwer's live SRG table (point graphs open) and Payne–Thas"
+ ],
+ "plain": "A generalized quadrangle of order (s,t) is a point-line geometry in which every line has s+1 points, every point is on t+1 lines, two points share at most one line, and for every point P not on a line L exactly one point of L is collinear with P. For five points per line (s=4), the standard counting conditions allow t in {1,2,4,6,8,11,12,16}, and all but t=11 and t=12 are realised. Decide whether such a quadrangle exists for t=11 (the case t=12 is a separate problem).",
+ "math": "For t = 11 only: decide whether there exists a finite incidence structure with nonempty point set, every line of size 5, every point on exactly 12 lines, two distinct lines meeting in at most one point, and for every P not on L exactly one Q on L collinear with P. (Case t = 12 to be posed as a separate problem with the same definitions.)",
+ "novelty": 2,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://aeb.win.tue.nl/graphs/srg/srgtab201-250.html",
+  "https://arxiv.org/abs/2504.09372",
+  "https://arxiv.org/abs/1205.1431",
+  "https://arxiv.org/abs/1909.07609"
+ ]
+}

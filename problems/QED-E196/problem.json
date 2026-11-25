@@ -1,0 +1,26 @@
+{
+ "id": "QED-E196",
+ "set": "extended",
+ "title": "The 6/5 integrality gap for 2-edge-connected spanning multigraphs",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "'6/5 conjecture' of Alexander, Boyd and Elliott-Magwood (2006); restated in Boyd–Fu–Sun (2016) and Boyd et al. (2020).",
+ "premise_risks": [
+  "Less famous than the TSP 4/3 question; scorer may view it as a sibling of the TSP subtour problem",
+  "The '6/5 conjecture' is attributed to its authors but named by its number, not a person"
+ ],
+ "plain": "Given nonnegative edge costs on a complete graph, find the cheapest multiset of edges (each edge may be used twice) such that every cut is crossed at least twice, i.e. the result is 2-edge-connected. The LP relaxation only asks for fractional edge weights crossing every cut with total at least 2. Is the best integral solution always within a factor 6/5 of the LP optimum? The factor 6/5 is known to be needed, while the best proven bound is only 3/2 minus a tiny constant.",
+ "math": "Let $n\\ge2$, $c\\in\\mathbb R_{\\ge0}^{E(K_n)}$ and $x\\in\\mathbb R_{\\ge0}^{E(K_n)}$ with $x(\\delta(S))\\ge2$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove that there is $z\\in\\mathbb Z_{\\ge0}^{E(K_n)}$ with $z(\\delta(S))\\ge2$ for all such $S$ and $c^\\top z\\le\\tfrac65\\,c^\\top x$. (Since examples with ratio arbitrarily close to $6/5$ are known, this would show the integrality gap of the cut LP for 2-edge-connected multigraphs is exactly $6/5$.)",
+ "novelty": 2,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1512.08070",
+  "https://arxiv.org/abs/2511.11215",
+  "https://arxiv.org/pdf/2006.06957",
+  "https://arxiv.org/abs/2008.03327"
+ ]
+}

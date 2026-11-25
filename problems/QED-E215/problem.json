@@ -1,0 +1,25 @@
+{
+ "id": "QED-E215",
+ "set": "extended",
+ "title": "Ovoids of the parabolic quadric Q(6,q) when q is not a power of 3",
+ "area": "Combinatorics",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Open problem from Thas (1981) and Kantor (1982); current status in Ball–Govaerts–Storme (2006) and Bartoli–Durante–Grimaldi (2024).",
+ "premise_risks": [
+  "Specialist topic; the scorer may rate importance moderately",
+  "Faithfulness relies on the standard fact that partial ovoids of size q^3+1 are ovoids (counting argument), which the Lean statement sidesteps by stating the size condition directly"
+ ],
+ "plain": "Over a finite field with q elements (q odd), take the quadratic form Q(x)=x0x1+x2x3+x4x5+x6^2 in seven variables. An ovoid is a set of q^3+1 isotropic points (nonzero solutions of Q=0, up to scaling) no two of which are orthogonal. Ovoids exist when q is a power of 3 and do not exist when q is even or q is a prime larger than 3. Does an ovoid exist for any other q? The smallest open case is q=25.",
+ "math": "Let $q=p^h$ with $p\\ge5$ prime and $h\\ge2$. Put $Q(x)=x_0x_1+x_2x_3+x_4x_5+x_6^2$ on $\\mathbb F_q^7$ and $B(x,y)=Q(x+y)-Q(x)-Q(y)$. Decide whether there is a set $S\\subseteq\\mathbb F_q^7\\setminus\\{0\\}$ with $|S|=q^3+1$, $Q(v)=0$ for all $v\\in S$, and $B(v,w)\\ne0$ for all distinct $v,w\\in S$ (i.e. whether $Q(6,q)$ has an ovoid). The smallest open case is $q=25$; it is widely expected that no such $S$ exists.",
+ "novelty": 2,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://link.springer.com/10.1007/s10623-024-01388-9",
+  "https://doi.org/10.1007/s10623-005-5666-0",
+  "https://arxiv.org/abs/2502.02219"
+ ]
+}

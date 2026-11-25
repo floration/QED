@@ -1,0 +1,25 @@
+{
+ "id": "QED-E210",
+ "set": "extended",
+ "title": "Thue-Morse along fourth powers",
+ "area": "Number theory",
+ "difficulty": 6.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "A. O. Gelfond (1968) posed the general polynomial problem; degree 2 Mauduit-Rivat, degree 3 Spiegelhofer.",
+ "premise_risks": [
+  "Cube case (arXiv:2308.09498) is a preprint as of my check; acceptance status unverified",
+  "Scorer may regard degree 4 as a parameter choice; it is the first open monomial case, and the general k>=4 version is given as strengthening"
+ ],
+ "plain": "Let s(m) be the number of 1s in the binary expansion of m. It is known that s(n), s(n^2) and (since 2023) s(n^3) are even for asymptotically half of all n. Prove the same for fourth powers: s(n^4) is even for asymptotically half of all n.",
+ "math": "Let $s_2(m)$ be the binary digit sum. Prove $\\lim_{N\\to\\infty}\\frac1N\\#\\{0\\le n<N:\\ s_2(n^4)\\equiv0\\pmod 2\\}=\\tfrac12$, equivalently $\\sum_{n<N}(-1)^{s_2(n^4)}=o(N)$. (Natural strengthening: the same for $n^k$ for every $k\\ge4$.)",
+ "novelty": 4,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2308.09498",
+  "https://www.unileoben.ac.at/fileadmin/shares/mathstat/personal/spiegelhofer/files/slides/2024_02_29_Spiegelhofer.pdf",
+  "https://arxiv.org/abs/1110.4830"
+ ]
+}

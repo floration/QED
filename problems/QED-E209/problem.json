@@ -1,0 +1,26 @@
+{
+ "id": "QED-E209",
+ "set": "extended",
+ "title": "Langton's ant builds a highway from every finite start",
+ "area": "Dynamics",
+ "difficulty": 6.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "C. Langton (1986, the ant); highway conjecture folklore, see Bunimovich-Troubetzkoy 1992 and Gajardo-Lutfalla-Rao 2024.",
+ "premise_risks": [
+  "Well known (low novelty)",
+  "If an alternative highway for the LR ant exists, the statement here still holds; only the stronger 'period-104' version could fail"
+ ],
+ "plain": "Langton's ant walks on the square grid of black and white cells. On a white cell it turns right, on a black cell it turns left, then it flips the colour of the cell it is on and steps forward. Starting from any configuration with finitely many black cells, simulations always end with the ant building a 'highway': after some time its motion repeats periodically while it drifts off in a fixed direction. Prove that this always happens.",
+ "math": "A state is $(S,p,d)$ with $S\\subset\\mathbb{Z}^2$ finite (the black cells), $p\\in\\mathbb{Z}^2$ and $d\\in\\{(1,0),(0,1),(-1,0),(0,-1)\\}$. One step: if $p\\notin S$, rotate $d$ by $-90^\\circ$, otherwise by $+90^\\circ$; then set $S\\leftarrow S\\,\\triangle\\,\\{p\\}$ and $p\\leftarrow p+d$. Prove that for every initial state with $S_0$ finite there exist $T\\ge0$, $P\\ge1$ and $v\\in\\mathbb{Z}^2\\setminus\\{0\\}$ such that $p_{t+P}=p_t+v$ and $d_{t+P}=d_t$ for all $t\\ge T$.",
+ "novelty": 2,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.arxiv.org/pdf/2409.10124",
+  "https://arxiv.org/abs/2505.05426",
+  "https://drops.dagstuhl.de/storage/00lipics/lipics-vol386-mfcs2026/LIPIcs.MFCS.2026.49/LIPIcs.MFCS.2026.49.pdf",
+  "https://arxiv.org/pdf/nlin/0306022"
+ ]
+}

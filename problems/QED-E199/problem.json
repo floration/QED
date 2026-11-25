@@ -1,0 +1,28 @@
+{
+ "id": "QED-E199",
+ "set": "extended",
+ "title": "Are VT codes optimal single-deletion-correcting codes for every length?",
+ "area": "Coding theory",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Varshamov-Tenengolts (1965), Levenshtein; optimality question recorded by Sloane (2002)",
+ "premise_risks": [
+  "Could be false for some larger n (only n<=11 verified); posed as prove-or-disprove",
+  "Object named after people (VT codes) but the question is not a person-named conjecture",
+  "n=11 verification (arXiv:2309.14736) may be unrefereed"
+ ],
+ "plain": "A set of binary strings of length n corrects one deletion if no two of its strings can become the same string when each loses one symbol. The Varshamov-Tenengolts code VT_0(n), the strings whose position-weighted sum of 1s is divisible by n+1, is such a code, with about 2^n/(n+1) words. Is VT_0(n) a largest single-deletion-correcting code for every length n?",
+ "math": "Let $D(n)=\\max\\{|C|: C\\subseteq\\{0,1\\}^n,\\ \\mathcal D_1(x)\\cap\\mathcal D_1(y)=\\emptyset\\ \\forall x\\ne y\\in C\\}$, where $\\mathcal D_1(x)$ is the set of length-$(n-1)$ subsequences of $x$. Let $VT_0(n)=\\{x\\in\\{0,1\\}^n:\\sum_{i=1}^n i x_i\\equiv0\\pmod{n+1}\\}$, so $|VT_0(n)|=\\frac{1}{2(n+1)}\\sum_{d\\mid n+1,\\ d\\text{ odd}}\\varphi(d)\\,2^{(n+1)/d}$. Decide whether $D(n)=|VT_0(n)|$ for all $n\\ge1$.",
+ "novelty": 3,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2309.14736",
+  "https://www.mdpi.com/1099-4300/21/12/1202",
+  "https://arxiv.org/abs/2504.00613",
+  "https://arxiv.org/abs/math/0207197",
+  "https://arxiv.org/pdf/2602.08952"
+ ]
+}

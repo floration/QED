@@ -1,0 +1,27 @@
+{
+ "id": "QED-E200",
+ "set": "extended",
+ "title": "Beat √2−1: the zero-rate threshold for adversarial bit deletions",
+ "area": "Coding theory",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Bukh-Guruswami-Håstad (2017) open question",
+ "premise_risks": [
+  "Could not read arXiv:2609.21395 (Sept 2026); title suggests it concerns code size for few deletions, but unverified",
+  "If p*=√2-1 the claim is false; posed as prove-or-disprove would also be fine"
+ ],
+ "plain": "A binary code of length n can correct pn adversarial deletions if no two codewords share a common subsequence of length (1−p)n. Let p* be the largest fraction for which there are codes of exponential size (positive rate). Simple pigeonhole shows p* ≤ 1/2. The best known constructions (Bukh-Guruswami-Håstad, 2015) give p* ≥ √2−1 ≈ 0.414, and the best upper bound is 1/2 − δ for a tiny unspecified δ. Decide whether p* > √2−1, i.e. whether there are positive-rate binary codes that correct more than a √2−1 fraction of deletions.",
+ "math": "For $x,y\\in\\{0,1\\}^n$ let $\\mathrm{LCS}(x,y)$ be the length of a longest common subsequence. Let $p^*$ be the supremum of $p\\in[0,1]$ for which there is $R>0$ and, for infinitely many $n$, a code $C\\subseteq\\{0,1\\}^n$ with $|C|\\ge 2^{Rn}$ and $\\mathrm{LCS}(x,y)<(1-p)n$ for all distinct $x,y\\in C$. It is known that $\\sqrt2-1\\le p^*<1/2$. Determine whether $p^*>\\sqrt2-1$.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1507.01719",
+  "https://arxiv.org/abs/2106.05250",
+  "https://arxiv.org/pdf/1612.06335",
+  "https://arxiv.org/pdf/2107.01785",
+  "https://cs.stanford.edu/~rayyli/static/paper/MSThesis.pdf"
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "id": "QED-E219",
+ "set": "extended",
+ "title": "A triangle-free strongly regular graph on 162 vertices",
+ "area": "Graph theory",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Classical question (Biggs, Brouwer); smallest open case per A. E. Brouwer's table of strongly regular graphs.",
+ "premise_risks": [
+  "Same family as the pending degree-57 Moore graph (H06); scorer may see overlap",
+  "AI-assisted SRG exclusions are moving quickly in 2026 (Kovaľ + AI; Akiyama), so this case may fall soon",
+  "Pure existence question resolved, if at all, likely by computation"
+ ],
+ "plain": "Only seven triangle-free strongly regular graphs are known (pentagon, Petersen, Clebsch, Hoffman-Singleton, Gewirtz, M22 and Higman-Sims graphs). The smallest parameter set for which such a graph is neither known nor ruled out has 162 vertices, every vertex of degree 21, no triangles, and every pair of non-adjacent vertices with exactly 3 common neighbours. Does such a graph exist?",
+ "math": "Decide whether there exists a simple graph on $162$ vertices that is strongly regular with parameters $(162,21,0,3)$: $21$-regular, adjacent vertices have no common neighbours, and distinct non-adjacent vertices have exactly $3$ common neighbours.",
+ "novelty": 2,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://aeb.win.tue.nl/graphs/srg/srgtab151-200.html",
+  "https://norcom2019.math.aau.dk/J%C3%B8rgensen.pdf",
+  "https://arxiv.org/abs/0911.2160",
+  "https://arxiv.org/pdf/2610.20259"
+ ]
+}

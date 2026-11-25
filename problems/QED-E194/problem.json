@@ -1,0 +1,29 @@
+{
+ "id": "QED-E194",
+ "set": "extended",
+ "title": "Uniform spectral gap for the spin-2 Heisenberg antiferromagnetic ring",
+ "area": "Mathematical physics",
+ "difficulty": 5.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Haldane (1983) prediction; S=2 case left open after the 2026 S=1 claims",
+ "premise_risks": [
+  "Active area: the S=1 proof and its extensions are Sept-Nov 2026 preprints, and a certified S=2 result could appear soon. Not currently claimed by OpenAI or Anthropic.",
+  "Special case of the person-named Haldane conjecture: allowed as an unnamed partial sub-question, but the scorer may see it as a famous problem in disguise.",
+  "If solved by pure large computation plus the existing bootstrap, it may be judged low in new ideas."
+ ],
+ "plain": "Put a quantum spin of size 2 at each site of a ring of L sites (L even) and couple neighbours by the antiferromagnetic Heisenberg interaction; the Hamiltonian is an explicit Hermitian matrix of size 5^L whose lowest eigenvalue is simple. Prove that the gap between the lowest and second-lowest eigenvalue stays above a fixed positive constant for all even L. The spin-1 case was proved in 2026 by a computer-assisted method; for spin 2 the predicted gap is only about 0.088 and the correlation length about 50 sites.",
+ "math": "Let $S^x,S^y,S^z$ be the spin-2 matrices on $\\mathbb C^5$ and, for even $L\\ge 4$, $H_L=\\sum_{i\\in\\mathbb Z/L\\mathbb Z}\\vec S_i\\cdot\\vec S_{i+1}$ acting on $(\\mathbb C^5)^{\\otimes L}$, with eigenvalues (counted with multiplicity) $\\lambda_1(L)\\le\\lambda_2(L)\\le\\cdots$. Prove that $\\inf_{L\\ \\mathrm{even},\\,L\\ge4}\\big(\\lambda_2(L)-\\lambda_1(L)\\big)>0$.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2611.11049",
+  "https://arxiv.org/abs/2611.07400",
+  "https://arxiv.org/pdf/cond-mat/9903035",
+  "https://arxiv.org/pdf/cond-mat/9501115",
+  "https://arxiv.org/html/2407.17041v4",
+  "https://www.emergentmind.com/open-problems/haldane-conjecture-integer-spin-heisenberg-chain-gap"
+ ]
+}

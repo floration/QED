@@ -4852,5 +4852,884 @@
   ],
   "lean": "import Mathlib\n/-! QED-E191: Do two triangular 2×2 matrices generate a free semigroup? Decide it\nFor rationals λ, μ consider D_λ = [[λ,0],[0,1]] and T_μ = [[μ,1],[0,1]]. Is there an algorithm\nthat decides, given (λ, μ), whether every two distinct words in D_λ, T_μ give distinct matrix\nproducts?\nInformal statement: For λ, μ ∈ ℚ let φ_{λ,μ} : {0,1}* → M₂(ℚ) be the monoid morphism with\n0 ↦ D_λ and 1 ↦ T_μ. Let Φ = {(λ,μ) ∈ ℚ² : φ_{λ,μ} injective}. Determine whether Φ is a\ndecidable (recursive) subset of ℚ². A proof of either answer settles the problem.\nFormalization notes: Words over {0,1} are `List Bool` (`false` ↦ D_λ, `true` ↦ T_μ), and\nφ_{λ,μ}(w) is the ordered product of the corresponding matrices (`List.prod`, empty word ↦ 1);\nthis is exactly the free-monoid morphism. Rationals are input through the computable encoding\n(a, b) ↦ a/(b+1) with a ∈ ℤ, b ∈ ℕ, which is surjective onto ℚ and whose inverse direction\n(rational ↦ such a code) is computable, so decidability of Φ in this encoding is the same as\ndecidability of Φ ⊆ ℚ² in the usual sense (and avoids relying on a `Primcodable ℚ` instance).\nDecidability is Mathlib's `ComputablePred` (computable by a partial recursive function).\n`Claim` = Φ is decidable; `¬Claim` = Φ is undecidable. Both directions are open.\n-/\nnamespace OpenProblems.QEDE191\nnoncomputable section\n\n/-- The rational a/(b+1). -/\ndef decodeQ (c : ℤ × ℕ) : ℚ := (c.1 : ℚ) / ((c.2 : ℚ) + 1)\n\n/-- The generator matrix for a letter: `false ↦ D_λ`, `true ↦ T_μ`. -/\ndef gen (l m : ℚ) (b : Bool) : Matrix (Fin 2) (Fin 2) ℚ :=\n  if b then !![m, 1; 0, 1] else !![l, 0; 0, 1]\n\n/-- The image φ_{λ,μ}(w) of a word. -/\ndef phi (l m : ℚ) (w : List Bool) : Matrix (Fin 2) (Fin 2) ℚ :=\n  (w.map (gen l m)).prod\n\n/-- (λ, μ) ∈ Φ: the morphism φ_{λ,μ} is injective (the semigroup ⟨D_λ, T_μ⟩ is free on them). -/\ndef InPhi (l m : ℚ) : Prop := Function.Injective (phi l m)\n\ndef Claim : Prop :=\n  ComputablePred (fun c : (ℤ × ℕ) × (ℤ × ℕ) => InPhi (decodeQ c.1) (decodeQ c.2))\n\nend\nend OpenProblems.QEDE191\n",
   "set": "extended"
+ },
+ {
+  "id": "QED-E192",
+  "review_id": "R6-L00",
+  "title": "Hard squares at activity -1: free-strip transfer-matrix eigenvalues are roots of unity",
+  "area": "Mathematical physics",
+  "difficulty": 4.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Fendley, Schoutens, van Eerten (2005); restated as open by Bousquet-Mélou, Linusson, Nevo (2008)",
+  "results": null,
+  "premise_risks": [
+   "Naming: the source is often cited as 'the conjecture of Fendley, Schoutens and van Eerten'. It is not a standard eponymous name, but the scorer may treat it as person-named. Mitigation: title it by content.",
+   "An unpublished resolution may exist in a thesis (M. Assis 2014 thesis not checked) or in the omega-institute auto-proof effort (open, unreviewed, preregistration only)",
+   "Direction convention: (O_K)_{s,t} with sign on t vs on s gives similar matrices (conjugate by diag signs and transpose), so the claim is robust"
+  ],
+  "plain": "Take a row of K sites. A row state is a set of sites with no two neighbours occupied (there are Fibonacci-many). Let O_K be the matrix with entry (-1)^{|t|} from state s to state t when s and t share no occupied site, and 0 otherwise: the transfer matrix of the hard-square lattice gas at activity -1 on a strip with free side boundaries. Show that every eigenvalue of O_K is a root of unity for every K, i.e. its characteristic polynomial is a product of cyclotomic polynomials.",
+  "math": "For $K\\ge1$ let $\\mathcal S_K=\\{s\\subseteq\\{1,\\dots,K\\}: s\\text{ has no two consecutive elements}\\}$ and $O_K\\in\\mathbb Z^{\\mathcal S_K\\times\\mathcal S_K}$, $(O_K)_{s,t}=(-1)^{|t|}[s\\cap t=\\emptyset]$. Prove that for every $K\\ge1$ every root of $\\det(xI-O_K)$ is a root of unity (equivalently, by Kronecker, all eigenvalues have modulus $1$). Note: $O_K$ itself need not have finite order (Jordan blocks occur, e.g. $K=4$), so the claim is about the spectrum only.",
+  "novelty": 3,
+  "importance": 4,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/cond-mat/0408497",
+   "https://arxiv.org/abs/math/0701890",
+   "https://arxiv.org/abs/0709.4324",
+   "https://arxiv.org/abs/0812.1165",
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v13i1r67"
+  ],
+  "lean": "import Mathlib\n/-! QED-E192: Hard squares at activity -1: free-strip transfer-matrix eigenvalues are roots of unity\nTake a row of K sites. A row state is a set of sites with no two neighbours occupied (there are Fibonacci-many). Let O_K be the matrix with entry (-1)^{|t|} from state s to state t when s and t share no occupied site, and 0 otherwise: the transfer matrix of the hard-square lattice gas at activity -1 on a strip with free side boundaries. Show that every eigenvalue of O_K is a root of unity for every K, i.e. its characteristic polynomial is a product of cyclotomic polynomials.\nInformal statement: For $K\\ge1$ let $\\mathcal S_K=\\{s\\subseteq\\{1,\\dots,K\\}: s\\text{ has no two consecutive elements}\\}$ and $O_K\\in\\mathbb Z^{\\mathcal S_K\\times\\mathcal S_K}$, $(O_K)_{s,t}=(-1)^{|t|}[s\\cap t=\\emptyset]$. Prove that for every $K\\ge1$ every root of $\\det(xI-O_K)$ is a root of unity. ($O_K$ itself need not have finite order; the claim is about the spectrum only.)\nFormalization notes: Sites are `Fin K` (0-indexed, same as {1,…,K} up to shift). `State K` is the subtype of\nfinsets of `Fin K` with no two elements i, j satisfying i + 1 = j (as natural numbers), i.e. no two\nconsecutive occupied sites (free boundary: site K-1 and site 0 are NOT adjacent). `O K` is the integer matrix\nwith entry (-1)^|t| if s ∩ t = ∅ and 0 otherwise. Its characteristic polynomial is taken after mapping to ℂ\n(`Matrix.charpoly`, which is det(X·I - O), monic of degree |State K| ≥ 1, so it has roots and the claim is not\nvacuous). Claim: for every K ≥ 1, every complex root z of the charpoly satisfies z^n = 1 for some n ≥ 1.\nProving Claim settles the Fendley–Schoutens–van Eerten free-boundary conjecture; ¬Claim exhibits a K and an\neigenvalue that is not a root of unity. The sign convention (sign on t rather than s) gives a similar matrix,\nso the spectrum is convention-independent.\n-/\nnamespace OpenProblems.QEDE192\nnoncomputable section\n\n/-- Row states of a free strip of width `K`: sets of sites with no two consecutive sites occupied. -/\nabbrev State (K : ℕ) : Type :=\n  {s : Finset (Fin K) // ∀ i ∈ s, ∀ j ∈ s, (i : ℕ) + 1 ≠ (j : ℕ)}\n\n/-- Transfer matrix of hard squares at activity `-1` on the free strip of width `K`. -/\ndef O (K : ℕ) : Matrix (State K) (State K) ℤ :=\n  fun s t => if s.1 ∩ t.1 = ∅ then (-1 : ℤ) ^ t.1.card else 0\n\ndef Claim : Prop :=\n  ∀ K : ℕ, 1 ≤ K → ∀ z : ℂ, ((O K).map (Int.castRingHom ℂ)).charpoly.IsRoot z →\n    ∃ n : ℕ, 0 < n ∧ z ^ n = 1\n\nend\nend OpenProblems.QEDE192\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E193",
+  "review_id": "R6-L01",
+  "title": "Do hexagonal and cubic ice have the same residual entropy?",
+  "area": "Mathematical physics",
+  "difficulty": 5.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Question going back to Onsager/Nagle (1960s); restated as open in arXiv:2404.13897, 2511.22477 and 2608.07613",
+  "results": null,
+  "premise_risks": [
+   "The claimed direction (equality) could be false: a rigorous strict inequality would refute the Claim, though it would still resolve the question. The scorer may want it phrased as 'decide'.",
+   "Chen-Ran 2608.07613 (unrefereed, 2026) supplies only side bounds and is not needed for the premise. The premise W_h >= W_c rests on Onsager/Nagle 1966 plus the 2024 PRB.",
+   "Defining the periodic lonsdaleite quotients in Lean needs care (even number of layers, consistent registry). The limit's independence of the torus shape is standard but must either be assumed in the statement or proved."
+  ],
+  "plain": "In ice, each oxygen sits at a vertex of a 4-regular crystal lattice and the hydrogens obey the ice rule: two bonds point in and two point out at every vertex. Counting such configurations is counting Eulerian orientations of the lattice. Hexagonal ice (Ih, the lonsdaleite net) and cubic ice (Ic, the diamond net) are two different stackings of the same puckered layers and look identical locally. Onsager proved that hexagonal ice has at least as many configurations per molecule as cubic ice. Are the two per-vertex growth constants exactly equal?",
+  "math": "Same as M, with the clarification that D_m, H_m are treated as multigraph quotients (parallel edges only for m=1) and EO counts orientations with in-degree 2 at every vertex; Claim asserts both limits exist and coincide (W_h = W_c).",
+  "novelty": 3,
+  "importance": 5,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2511.22477",
+   "https://arxiv.org/abs/2404.13897",
+   "https://arxiv.org/pdf/math/9810155",
+   "https://arxiv.org/pdf/2409.04989"
+  ],
+  "lean": "import Mathlib\n/-! QED-E193: Do hexagonal and cubic ice have the same residual entropy?\nIn ice, each oxygen sits at a vertex of a 4-regular crystal lattice and the hydrogens obey the ice rule: two bonds point in and two point out at every vertex. Counting such configurations is counting Eulerian orientations of the lattice. Hexagonal ice (Ih, the lonsdaleite net) and cubic ice (Ic, the diamond net) are two different stackings of the same puckered layers and look identical locally. Onsager proved that hexagonal ice has at least as many configurations per molecule as cubic ice. Are the two per-vertex growth constants exactly equal?\nInformal statement: Let $D$ be the diamond net and $H$ the lonsdaleite (hexagonal diamond) net, viewed as 4-regular graphs with period lattices $\\Lambda_D,\\Lambda_H\\cong\\mathbb Z^3$. For $m\\ge1$ let $D_m=D/m\\Lambda_D$ and $H_m=H/m\\Lambda_H$ (finite 4-regular toroidal quotients, possibly with parallel edges for tiny $m$). For a 4-regular (multi)graph $G$ let $\\mathrm{EO}(G)$ be the number of orientations with in-degree $2$ at every vertex. The limits $W_c=\\lim_m \\mathrm{EO}(D_m)^{1/|V(D_m)|}$ and $W_h=\\lim_m\\mathrm{EO}(H_m)^{1/|V(H_m)|}$ exist and satisfy $W_h\\ge W_c\\ge 3/2$. Decide whether $W_h=W_c$.\nFormalization notes:\n* Layer model. Both nets are built from the same puckered bilayers stacked along [111]/c.\n  Lateral positions lie on a triangular lattice with basis a₁, a₂ (a₁=(1,0),\n  a₂=(1/2,√3/2)) and three registries A,B,C at offsets 0, τ, 2τ, τ=(a₁+a₂)/3.\n  Bilayer n has a lower sublayer (s=0) and an upper sublayer (s=1). Each lower atom bonds to the\n  three nearest upper atoms of its own bilayer (lateral registry shift ±1), and each upper atom\n  bonds vertically to the lower atom of bilayer n+1 directly above it. Cubic (diamond, 3C):\n  registries A|B B|C C|A ... (shift +1 in every bilayer). Hexagonal (lonsdaleite, 2H):\n  A|B B|A A|B ... (shift +1 in even bilayers, −1 in odd ones).\n* Coordinates. An atom is (n, s, u) with u ∈ ℤ² the lateral position minus its registry offset,\n  written in the basis a₁, a₂. Then the vertical bond is (n,1,u)–(n+1,0,u), and the three intra\n  bonds are (n,0,u)–(n,1,u+δ) with δ ∈ {0, −e₁, −e₂} for registry shift +1 (since τ, τ−a₁, τ−a₂\n  are the three nearest-neighbour vectors) and δ ∈ {0, e₁, e₂} for shift −1.\n  In these coordinates the translation lattice is ℤ² (lateral) × ℤ·(1 bilayer) for diamond\n  (2 atoms per cell = primitive FCC cell) and ℤ² × ℤ·(2 bilayers) for lonsdaleite (4 atoms per\n  primitive cell). Since mΛ does not depend on the chosen basis of Λ, the torus with\n  ZMod m × ZMod m lateral and ZMod m bilayers is exactly D/mΛ_D (2m³ vertices), and with\n  ZMod (2m) bilayers it is exactly H/mΛ_H (4m³ vertices). We index by m+1 to avoid m = 0.\n* Edges are explicit indices (n, u, k), k : Fin 4 (k = 0,1,2 intra bonds out of (n,0,u),\n  k = 3 the vertical bond out of (n,1,u)); so the quotient is treated as a multigraph\n  (parallel edges only occur for m = 1; irrelevant for the limit). No loops occur (every edge\n  joins s=0 to s=1). An orientation is o : Edge → Bool (true = tail→head); in-degree of v\n  counts edges with (o = true ∧ head = v) or (o = false ∧ tail = v). EO counts orientations with\n  in-degree 2 everywhere (ice rule). Counting uses `Set.ncard` of a finite set of functions.\n* Claim: both sequences EO(D_m)^{1/|V|} and EO(H_m)^{1/|V|} converge to the same real number,\n  i.e. W_c = W_h. Since existence of both limits is standard, ¬Claim amounts to W_h ≠ W_c\n  (by Onsager, W_h > W_c). (A proof that one limit fails to exist would also give ¬Claim, but\n  that would itself be a substantial and surprising result, not a loophole.)\n-/\nnamespace OpenProblems.QEDE193\nnoncomputable section\nopen Filter Topology\n\n/-- Edge indices on a torus with `N` bilayers and an `m × m` lateral torus. -/\nabbrev Edge (N m : ℕ) : Type := ZMod N × (ZMod m × ZMod m) × Fin 4\n\n/-- Vertices: (bilayer, sublayer 0 = lower / 1 = upper, lateral coordinate). -/\nabbrev Vert (N m : ℕ) : Type := ZMod N × Fin 2 × (ZMod m × ZMod m)\n\n/-- Lateral offset of intra-bilayer bond `k` (k = 0,1,2); `flip = false` for registry\nshift +1 (offsets 0, −e₁, −e₂), `flip = true` for shift −1 (offsets 0, e₁, e₂). -/\ndef offset (m : ℕ) (flip : Bool) (k : Fin 4) : ZMod m × ZMod m :=\n  if k = 1 then (if flip then ((1 : ZMod m), (0 : ZMod m)) else ((-1 : ZMod m), (0 : ZMod m)))\n  else if k = 2 then (if flip then ((0 : ZMod m), (1 : ZMod m)) else ((0 : ZMod m), (-1 : ZMod m)))\n  else ((0 : ZMod m), (0 : ZMod m))\n\n/-- Tail of an edge. -/\ndef tail {N m : ℕ} (e : Edge N m) : Vert N m :=\n  if e.2.2 = 3 then (e.1, (1 : Fin 2), e.2.1) else (e.1, (0 : Fin 2), e.2.1)\n\n/-- Head of an edge; `flipAt n` says whether bilayer `n` has registry shift −1. -/\ndef head {N m : ℕ} (flipAt : ZMod N → Bool) (e : Edge N m) : Vert N m :=\n  if e.2.2 = 3 then (e.1 + 1, (0 : Fin 2), e.2.1)\n  else (e.1, (1 : Fin 2), e.2.1 + offset m (flipAt e.1) e.2.2)\n\n/-- In-degree of `v` under orientation `o` (`o e = true` means `e` points tail → head). -/\ndef indeg {N m : ℕ} (flipAt : ZMod N → Bool) (o : Edge N m → Bool) (v : Vert N m) : ℕ :=\n  {e : Edge N m | (o e = true ∧ head flipAt e = v) ∨ (o e = false ∧ tail e = v)}.ncard\n\n/-- Number of ice-rule (Eulerian, in-degree 2 everywhere) orientations. -/\ndef EO (N m : ℕ) (flipAt : ZMod N → Bool) : ℕ :=\n  {o : Edge N m → Bool | ∀ v : Vert N m, indeg flipAt o v = 2}.ncard\n\n/-- Diamond (cubic, ABC stacking): every bilayer has shift +1. -/\ndef cubicFlip (N : ℕ) : ZMod N → Bool := fun _ => false\n\n/-- Lonsdaleite (hexagonal, AB stacking): odd bilayers have shift −1 (N is even below). -/\ndef hexFlip (N : ℕ) : ZMod N → Bool := fun n => decide (n.val % 2 = 1)\n\n/-- `EO(D_{m+1})^{1/|V(D_{m+1})|}`, |V| = 2(m+1)³. -/\ndef cubicSeq (m : ℕ) : ℝ :=\n  ((EO (m + 1) (m + 1) (cubicFlip (m + 1)) : ℕ) : ℝ) ^ ((1 : ℝ) / (2 * ((m : ℝ) + 1) ^ 3))\n\n/-- `EO(H_{m+1})^{1/|V(H_{m+1})|}`, |V| = 4(m+1)³. -/\ndef hexSeq (m : ℕ) : ℝ :=\n  ((EO (2 * (m + 1)) (m + 1) (hexFlip (2 * (m + 1))) : ℕ) : ℝ) ^\n    ((1 : ℝ) / (4 * ((m : ℝ) + 1) ^ 3))\n\n/-- Cubic and hexagonal ice have the same residual entropy: W_c = W_h. -/\ndef Claim : Prop :=\n  ∃ w : ℝ, Tendsto cubicSeq atTop (𝓝 w) ∧ Tendsto hexSeq atTop (𝓝 w)\n\nend\nend OpenProblems.QEDE193\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E194",
+  "review_id": "R6-L02",
+  "title": "Uniform spectral gap for the spin-2 Heisenberg antiferromagnetic ring",
+  "area": "Mathematical physics",
+  "difficulty": 5.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Haldane (1983) prediction; S=2 case left open after the 2026 S=1 claims",
+  "results": null,
+  "premise_risks": [
+   "Active area: the S=1 proof and its extensions are Sept-Nov 2026 preprints, and a certified S=2 result could appear soon. Not currently claimed by OpenAI or Anthropic.",
+   "Special case of the person-named Haldane conjecture: allowed as an unnamed partial sub-question, but the scorer may see it as a famous problem in disguise.",
+   "If solved by pure large computation plus the existing bootstrap, it may be judged low in new ideas."
+  ],
+  "plain": "Put a quantum spin of size 2 at each site of a ring of L sites (L even) and couple neighbours by the antiferromagnetic Heisenberg interaction; the Hamiltonian is an explicit Hermitian matrix of size 5^L whose lowest eigenvalue is simple. Prove that the gap between the lowest and second-lowest eigenvalue stays above a fixed positive constant for all even L. The spin-1 case was proved in 2026 by a computer-assisted method; for spin 2 the predicted gap is only about 0.088 and the correlation length about 50 sites.",
+  "math": "Let $S^x,S^y,S^z$ be the spin-2 matrices on $\\mathbb C^5$ and, for even $L\\ge 4$, $H_L=\\sum_{i\\in\\mathbb Z/L\\mathbb Z}\\vec S_i\\cdot\\vec S_{i+1}$ acting on $(\\mathbb C^5)^{\\otimes L}$, with eigenvalues (counted with multiplicity) $\\lambda_1(L)\\le\\lambda_2(L)\\le\\cdots$. Prove that $\\inf_{L\\ \\mathrm{even},\\,L\\ge4}\\big(\\lambda_2(L)-\\lambda_1(L)\\big)>0$.",
+  "novelty": 3,
+  "importance": 7,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2611.11049",
+   "https://arxiv.org/abs/2611.07400",
+   "https://arxiv.org/pdf/cond-mat/9903035",
+   "https://arxiv.org/pdf/cond-mat/9501115",
+   "https://arxiv.org/html/2407.17041v4",
+   "https://www.emergentmind.com/open-problems/haldane-conjecture-integer-spin-heisenberg-chain-gap"
+  ],
+  "lean": "import Mathlib\n/-! QED-E194: Uniform spectral gap for the spin-2 Heisenberg antiferromagnetic ring\nPut a quantum spin of size 2 at each site of a ring of L sites (L even) and couple neighbours by the\nantiferromagnetic Heisenberg interaction; the Hamiltonian is an explicit Hermitian matrix of size 5^L whose\nlowest eigenvalue is simple. Prove that the gap between the lowest and second-lowest eigenvalue stays above a\nfixed positive constant for all even L.\nInformal statement: Let $S^x,S^y,S^z$ be the spin-2 matrices on $\\mathbb C^5$ and, for even $L\\ge 4$,\n$H_L=\\sum_{i\\in\\mathbb Z/L\\mathbb Z}\\vec S_i\\cdot\\vec S_{i+1}$ acting on $(\\mathbb C^5)^{\\otimes L}$, with\neigenvalues (counted with multiplicity) $\\lambda_1(L)\\le\\lambda_2(L)\\le\\cdots$. Prove that\n$\\inf_{L\\ \\mathrm{even},\\,L\\ge4}\\big(\\lambda_2(L)-\\lambda_1(L)\\big)>0$.\nFormalization notes: The Hilbert space $(\\mathbb C^5)^{\\otimes L}$ is modelled in its product basis: vectors are\nfunctions `(Fin L → Fin 5) → ℂ` and operators are matrices indexed by configurations σ : Fin L → Fin 5. The\nbasis index b : Fin 5 stands for the S^z-eigenvalue m = b − 2 ∈ {−2,…,2}. The spin matrices are the standard ones:\nS^z = diag(m), S^+|m⟩ = √(S(S+1) − m(m+1)) |m+1⟩ with S = 2 (so S(S+1) = 6), S^- = (S^+)^T (real entries),\nS^x = (S^+ + S^-)/2, S^y = (S^+ − S^-)/(2i). For single-site operators A, B and distinct sites i ≠ j, `bond A B i j`\nis the matrix of A_i ⊗ B_j ⊗ (identity elsewhere) in the product basis: its (σ, τ) entry is\nA(σ_i, τ_i) · B(σ_j, τ_j) if σ and τ agree off {i, j}, and 0 otherwise. The ring neighbour of i is\n`finRotate L i` (i+1 mod L); for L ≥ 4 it differs from i. H_L = Σ_i Σ_{α ∈ {x,y,z}} S^α_i S^α_{i+1}; it is Hermitian.\nInstead of sorting eigenvalues, the gap condition is stated by min–max: for Hermitian H, λ₂ − λ₁ ≥ c holds iff\nthere are an eigenvector ψ ≠ 0 with eigenvalue E such that every v ⊥ ψ satisfies ⟨v, Hv⟩ ≥ (E + c)‖v‖².\n(⇒: take ψ a ground state. ⇐: the orthogonal complement of ψ is H-invariant and H ≥ E + c there, so the spectrum\nis {E} together with eigenvalues ≥ E + c, hence E = λ₁ is simple and λ₂ ≥ λ₁ + c.) The inner product is\n⟨u, v⟩ = Σ_σ conj(u σ) v σ and ‖v‖² = Σ_σ |v σ|².\n`Claim` = there is c > 0 such that for every even L ≥ 4 the gap λ₂(L) − λ₁(L) is at least c (equivalent to\ninf > 0). `¬Claim` = the gaps along even L accumulate at 0 (spin-2 chain not uniformly gapped).\n-/\nnamespace OpenProblems.QEDE194\n\nnoncomputable section\n\nopen Matrix\n\n/-- S^z-eigenvalue m = b − 2 of basis index b. -/\ndef mval (b : Fin 5) : ℝ := (b.val : ℝ) - 2\n\n/-- Raising operator S^+ for spin 2: S^+|m⟩ = √(6 − m(m+1)) |m+1⟩. -/\ndef Splus : Matrix (Fin 5) (Fin 5) ℂ :=\n  Matrix.of fun a b : Fin 5 =>\n    if a.val = b.val + 1 then ((Real.sqrt (6 - mval b * (mval b + 1)) : ℝ) : ℂ) else 0\n\n/-- Lowering operator S^- = (S^+)^T (entries are real). -/\ndef Sminus : Matrix (Fin 5) (Fin 5) ℂ :=\n  Matrix.of fun a b : Fin 5 => Splus b a\n\n/-- S^x = (S^+ + S^-)/2. -/\ndef Sx : Matrix (Fin 5) (Fin 5) ℂ := ((1 : ℂ) / 2) • (Splus + Sminus)\n\n/-- S^y = (S^+ − S^-)/(2i) = (−i/2)(S^+ − S^-). -/\ndef Sy : Matrix (Fin 5) (Fin 5) ℂ := (-Complex.I / 2) • (Splus - Sminus)\n\n/-- S^z = diag(m). -/\ndef Sz : Matrix (Fin 5) (Fin 5) ℂ := Matrix.diagonal fun b : Fin 5 => ((mval b : ℝ) : ℂ)\n\n/-- The operator A_i ⊗ B_j (identity on the other sites) on (ℂ^5)^{⊗L}, in the product basis. -/\ndef bond (L : ℕ) (A B : Matrix (Fin 5) (Fin 5) ℂ) (i j : Fin L) :\n    Matrix (Fin L → Fin 5) (Fin L → Fin 5) ℂ :=\n  Matrix.of fun σ τ : Fin L → Fin 5 =>\n    A (σ i) (τ i) * B (σ j) (τ j) *\n      (if (∀ k : Fin L, k ≠ i → k ≠ j → σ k = τ k) then (1 : ℂ) else 0)\n\n/-- The spin-2 Heisenberg ring Hamiltonian H_L = Σ_i S_i · S_{i+1}. -/\ndef H (L : ℕ) : Matrix (Fin L → Fin 5) (Fin L → Fin 5) ℂ :=\n  ∑ i : Fin L,\n    (bond L Sx Sx i (finRotate L i) + bond L Sy Sy i (finRotate L i) +\n      bond L Sz Sz i (finRotate L i))\n\n/-- Inner product ⟨u, v⟩ = Σ conj(u σ) v σ. -/\ndef inner5 (L : ℕ) (u v : (Fin L → Fin 5) → ℂ) : ℂ :=\n  ∑ σ : Fin L → Fin 5, star (u σ) * v σ\n\n/-- Squared norm ‖v‖². -/\ndef normSq5 (L : ℕ) (v : (Fin L → Fin 5) → ℂ) : ℝ :=\n  ∑ σ : Fin L → Fin 5, Complex.normSq (v σ)\n\n/-- λ₂(H_L) − λ₁(H_L) ≥ c, stated via min–max: an eigenvector ψ with eigenvalue E such that\nthe quadratic form is ≥ (E + c)‖v‖² on ψ^⊥. -/\ndef GapAtLeast (L : ℕ) (c : ℝ) : Prop :=\n  ∃ ψ : (Fin L → Fin 5) → ℂ, ψ ≠ 0 ∧ ∃ E : ℝ,\n    (H L).mulVec ψ = (E : ℂ) • ψ ∧\n    ∀ v : (Fin L → Fin 5) → ℂ, inner5 L ψ v = 0 →\n      (E + c) * normSq5 L v ≤ (inner5 L v ((H L).mulVec v)).re\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 0 < c ∧ ∀ L : ℕ, Even L → 4 ≤ L → GapAtLeast L c\n\nend\n\nend OpenProblems.QEDE194\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E195",
+  "review_id": "R6-L04",
+  "title": "Is the Held–Karp integrality ratio for asymmetric TSP equal to 2?",
+  "area": "Combinatorics",
+  "difficulty": 4.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Open question posed in Charikar–Goemans–Karloff (2006) and repeated in Svensson–Tarnawski–Végh and Traub–Vygen.",
+  "results": null,
+  "premise_risks": [
+   "Upper bound ~14.83 rests on a 2026 preprint (refereed bound is 22)",
+   "Exact value 2 is a natural target but not universally conjectured; some experts only expect a small constant"
+  ],
+  "plain": "In the asymmetric traveling salesman problem the distance from a to b may differ from b to a, but the triangle inequality holds. The Held–Karp linear program assigns fractional weights to directed arcs so that every city has in-weight and out-weight 1 and every proper set of cities has out-weight at least 1. Is the cheapest directed tour always at most twice the LP value? A factor 2 is known to be necessary; the best proven factor is 22 in refereed work and about 14.8 in a 2026 preprint.",
+  "math": "Let $n\\ge2$ and $c:[n]\\times[n]\\to\\mathbb R_{\\ge0}$ with $c(u,w)\\le c(u,v)+c(v,w)$ for all $u,v,w$ (not necessarily symmetric). Let $x\\ge0$ be defined on arcs $(u,v)$, $u\\ne v$, with $x(\\delta^+(v))=x(\\delta^-(v))=1$ for all $v$ and $x(\\delta^+(S))\\ge1$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove or disprove: there is a cyclic ordering $v_1,\\dots,v_n$ of $[n]$ with $\\sum_{i=1}^n c(v_i,v_{i+1})\\le 2\\sum_{(u,v)}c(u,v)x_{uv}$ (indices mod $n$). Since the integrality ratio is known to be $\\ge2$ (Charikar–Goemans–Karloff), a proof shows it equals $2$.",
+  "novelty": 2,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/html/2603.14334v1",
+   "https://math.mit.edu/~goemans/PAPERS/CharikarGoemansKarloff-2006-ATSP.pdf",
+   "https://arxiv.org/pdf/1708.04215"
+  ],
+  "lean": "import Mathlib\n/-! QED-E195: Is the Held–Karp integrality ratio for asymmetric TSP equal to 2?\nIn the asymmetric traveling salesman problem the distance from a to b may differ from b to a, but the triangle inequality holds. The Held–Karp linear program assigns fractional weights to directed arcs so that every city has in-weight and out-weight 1 and every proper set of cities has out-weight at least 1. Is the cheapest directed tour always at most twice the LP value? A factor 2 is known to be necessary; the best proven factor is 22 in refereed work and about 14.8 in a 2026 preprint.\nInformal statement: Let $n\\ge2$ and $c:[n]\\times[n]\\to\\mathbb R_{\\ge0}$ with $c(u,w)\\le c(u,v)+c(v,w)$ for all $u,v,w$ (not necessarily symmetric). Let $x\\ge0$ be defined on arcs $(u,v)$, $u\\ne v$, with $x(\\delta^+(v))=x(\\delta^-(v))=1$ for all $v$ and $x(\\delta^+(S))\\ge1$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove or disprove: there is a cyclic ordering $v_1,\\dots,v_n$ of $[n]$ with $\\sum_{i=1}^n c(v_i,v_{i+1})\\le 2\\sum_{(u,v)}c(u,v)x_{uv}$ (indices mod $n$). Since the integrality ratio is known to be $\\ge2$ (Charikar–Goemans–Karloff), a proof shows it equals $2$.\nFormalization notes: Cities are `Fin n`, n ≥ 2. Costs `c : Fin n → Fin n → ℝ`, nonnegative, satisfying the\ndirected triangle inequality (no symmetry assumed; the loop values c v v are never used). A Held–Karp point is\n`x : Fin n → Fin n → ℝ` with x ≥ 0, x v v = 0 (no loops), out-degree and in-degree 1 at every vertex, and\nout-cut ∑_{u∈S, w∉S} x u w ≥ 1 for every nonempty proper S. A directed Hamiltonian tour is a permutation σ of\n`Fin n` which is a single cycle through all vertices (`σ.IsCycle ∧ σ.support = univ`); its cost is\n∑_v c v (σ v). Quantifying over every feasible x (not only an optimal one) is equivalent to bounding by\n2·(LP optimum), since the LP minimum is attained on the compact feasible polytope. Claim true ⇒ the\nintegrality ratio of Held–Karp for ATSP is exactly 2 (with the Charikar–Goemans–Karloff lower bound);\n¬Claim ⇒ the ratio exceeds 2 (some instance and feasible x beat every tour by more than factor 2).\n-/\nnamespace OpenProblems.QEDE195\nnoncomputable section\n\n/-- Feasible points of the Held–Karp (subtour elimination) LP for ATSP on `Fin n`. -/\ndef HeldKarpFeasible (n : ℕ) (x : Fin n → Fin n → ℝ) : Prop :=\n  (∀ u w : Fin n, 0 ≤ x u w) ∧\n  (∀ v : Fin n, x v v = 0) ∧\n  (∀ v : Fin n, ∑ w : Fin n, x v w = 1) ∧\n  (∀ v : Fin n, ∑ w : Fin n, x w v = 1) ∧\n  (∀ S : Finset (Fin n), S.Nonempty → S ≠ Finset.univ →\n    1 ≤ ∑ u ∈ S, ∑ w ∈ Finset.univ \\ S, x u w)\n\ndef Claim : Prop :=\n  ∀ n : ℕ, 2 ≤ n → ∀ c : Fin n → Fin n → ℝ,\n    (∀ u w : Fin n, 0 ≤ c u w) →\n    (∀ u v w : Fin n, c u w ≤ c u v + c v w) →\n    ∀ x : Fin n → Fin n → ℝ, HeldKarpFeasible n x →\n      ∃ σ : Equiv.Perm (Fin n), σ.IsCycle ∧ σ.support = Finset.univ ∧\n        ∑ v : Fin n, c v (σ v) ≤ 2 * ∑ u : Fin n, ∑ w : Fin n, c u w * x u w\n\nend\nend OpenProblems.QEDE195\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E196",
+  "review_id": "R6-L06",
+  "title": "The 6/5 integrality gap for 2-edge-connected spanning multigraphs",
+  "area": "Combinatorics",
+  "difficulty": 3.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "'6/5 conjecture' of Alexander, Boyd and Elliott-Magwood (2006); restated in Boyd–Fu–Sun (2016) and Boyd et al. (2020).",
+  "results": null,
+  "premise_risks": [
+   "Less famous than the TSP 4/3 question; scorer may view it as a sibling of the TSP subtour problem",
+   "The '6/5 conjecture' is attributed to its authors but named by its number, not a person"
+  ],
+  "plain": "Given nonnegative edge costs on a complete graph, find the cheapest multiset of edges (each edge may be used twice) such that every cut is crossed at least twice, i.e. the result is 2-edge-connected. The LP relaxation only asks for fractional edge weights crossing every cut with total at least 2. Is the best integral solution always within a factor 6/5 of the LP optimum? The factor 6/5 is known to be needed, while the best proven bound is only 3/2 minus a tiny constant.",
+  "math": "Let $n\\ge2$, $c\\in\\mathbb R_{\\ge0}^{E(K_n)}$ and $x\\in\\mathbb R_{\\ge0}^{E(K_n)}$ with $x(\\delta(S))\\ge2$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove that there is $z\\in\\mathbb Z_{\\ge0}^{E(K_n)}$ with $z(\\delta(S))\\ge2$ for all such $S$ and $c^\\top z\\le\\tfrac65\\,c^\\top x$. (Since examples with ratio arbitrarily close to $6/5$ are known, this would show the integrality gap of the cut LP for 2-edge-connected multigraphs is exactly $6/5$.)",
+  "novelty": 2,
+  "importance": 6,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1512.08070",
+   "https://arxiv.org/abs/2511.11215",
+   "https://arxiv.org/pdf/2006.06957",
+   "https://arxiv.org/abs/2008.03327"
+  ],
+  "lean": "import Mathlib\n/-! QED-E196: The 6/5 integrality gap for 2-edge-connected spanning multigraphs\nGiven nonnegative edge costs on a complete graph, find the cheapest multiset of edges (each edge may be used\ntwice) such that every cut is crossed at least twice, i.e. the result is 2-edge-connected. The LP relaxation only\nasks for fractional edge weights crossing every cut with total at least 2. Is the best integral solution always\nwithin a factor 6/5 of the LP optimum?\nInformal statement: Let $n\\ge2$, $c\\in\\mathbb R_{\\ge0}^{E(K_n)}$ and $x\\in\\mathbb R_{\\ge0}^{E(K_n)}$ with\n$x(\\delta(S))\\ge2$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove that there is $z\\in\\mathbb Z_{\\ge0}^{E(K_n)}$ with\n$z(\\delta(S))\\ge2$ for all such $S$ and $c^\\top z\\le\\tfrac65\\,c^\\top x$.\nFormalization notes: Vertices are Fin n. An edge of K_n is a pair (i, j) with i < j; edge functions are given as\n`Fin n → Fin n → ℝ` (resp. ℕ) and only the values at i < j are ever used, so values at i ≥ j are irrelevant junk\n(this loses nothing and adds nothing). `cut f S` = Σ over edges ij (i < j) with exactly one endpoint in S of f i j,\ni.e. f(δ(S)). `cost c f` = Σ_{i<j} c i j · f i j. A multigraph is z with z i j ∈ ℕ copies of edge ij; no upper\nbound on multiplicities is imposed (with c ≥ 0, multiplicities can always be capped at 2 without breaking any cut\nconstraint or increasing cost, so this is the same as the \"each edge at most twice\" version). The cut LP is\n{x ≥ 0 : x(δ(S)) ≥ 2 ∀ ∅ ≠ S ⊊ V}, without upper bounds, as in the literature on 2ECM (by parsimony it has the same\nvalue as the subtour LP for metric costs). `Claim` = for every n ≥ 2, every nonnegative cost and every feasible\nfractional x there is an integral 2-edge-connected multigraph z of cost ≤ (6/5)·cost(x), i.e. the integrality gap\nis ≤ 6/5 (hence exactly 6/5 by known examples). `¬Claim` = an explicit instance with gap > 6/5.\n-/\nnamespace OpenProblems.QEDE196\n\nnoncomputable section\n\nopen Classical\n\n/-- f(δ(S)): total weight of edges ij (i < j) with exactly one endpoint in S. -/\ndef cut {n : ℕ} {R : Type} [AddCommMonoid R] (f : Fin n → Fin n → R) (S : Finset (Fin n)) : R :=\n  ∑ i : Fin n, ∑ j : Fin n, if i < j ∧ (i ∈ S ↔ j ∉ S) then f i j else 0\n\n/-- Cost Σ_{i<j} c_ij f_ij. -/\ndef cost {n : ℕ} (c f : Fin n → Fin n → ℝ) : ℝ :=\n  ∑ i : Fin n, ∑ j : Fin n, if i < j then c i j * f i j else 0\n\n/-- Fractional feasibility: every nonempty proper vertex subset is crossed with weight ≥ 2. -/\ndef CutFeasibleR {n : ℕ} (f : Fin n → Fin n → ℝ) : Prop :=\n  ∀ S : Finset (Fin n), S.Nonempty → S ≠ Finset.univ → (2 : ℝ) ≤ cut f S\n\n/-- Integral feasibility: the multigraph z is 2-edge-connected (every cut has ≥ 2 edge copies). -/\ndef CutFeasibleN {n : ℕ} (z : Fin n → Fin n → ℕ) : Prop :=\n  ∀ S : Finset (Fin n), S.Nonempty → S ≠ Finset.univ → 2 ≤ cut z S\n\ndef Claim : Prop :=\n  ∀ n : ℕ, 2 ≤ n → ∀ c x : Fin n → Fin n → ℝ,\n    (∀ i j : Fin n, 0 ≤ c i j) → (∀ i j : Fin n, 0 ≤ x i j) → CutFeasibleR x →\n      ∃ z : Fin n → Fin n → ℕ, CutFeasibleN z ∧\n        cost c (fun i j => (z i j : ℝ)) ≤ (6 / 5 : ℝ) * cost c x\n\nend\n\nend OpenProblems.QEDE196\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E197",
+  "review_id": "R6-L07",
+  "title": "Trifferent codes: an exponential improvement over (3/2)^n",
+  "area": "Combinatorics",
+  "difficulty": 7.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Problem posed by Korner and Marton (1988) / Elias; status per Bhandari-Khetan (2024)",
+  "results": null,
+  "premise_risks": [
+   "Lower-bound side moving in 2026 (unrefereed arXiv:2611.11262), but the upper-bound target is untouched",
+   "Problem is sometimes informally called 'the trifference problem' (non-person name) - fine"
+  ],
+  "plain": "A set of words of length n over the alphabet {0,1,2} is trifferent if any three distinct words have a position where they show all three letters 0, 1, 2. Let T(n) be the largest size of such a set. A simple counting argument from 1988 gives T(n) ≤ 2(3/2)^n, and every later improvement has been only by a polynomial factor. Show that T(n) ≤ c^n for some constant c < 3/2 and all large n.",
+  "math": "Call $C\\subseteq\\{0,1,2\\}^n$ trifferent if for all pairwise distinct $x,y,z\\in C$ there is $i$ with $\\{x_i,y_i,z_i\\}=\\{0,1,2\\}$, and let $T(n)$ be the maximum size of a trifferent code. Prove that $\\limsup_{n\\to\\infty}\\frac1n\\log T(n)<\\log\\frac32$.",
+  "novelty": 2,
+  "importance": 6,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2402.02390",
+   "https://arxiv.org/abs/2510.04079",
+   "https://arxiv.org/pdf/2105.00122",
+   "https://arxiv.org/pdf/2201.06846",
+   "https://arxiv.org/pdf/2310.13563"
+  ],
+  "lean": "import Mathlib\n/-! QED-E197: Trifferent codes: an exponential improvement over (3/2)^n\nA set of words of length n over the alphabet {0,1,2} is trifferent if any three distinct words have a position where they show all three letters 0, 1, 2. Let T(n) be the largest size of such a set. A simple counting argument from 1988 gives T(n) ≤ 2(3/2)^n, and every later improvement has been only by a polynomial factor. Show that T(n) ≤ c^n for some constant c < 3/2 and all large n.\nInformal statement: Call $C\\subseteq\\{0,1,2\\}^n$ trifferent if for all pairwise distinct $x,y,z\\in C$ there is $i$ with $\\{x_i,y_i,z_i\\}=\\{0,1,2\\}$, and let $T(n)$ be the maximum size of a trifferent code. Prove that $\\limsup_{n\\to\\infty}\\frac1n\\log T(n)<\\log\\frac32$.\nFormalization notes: Words of length n over {0,1,2} are functions `Fin n → Fin 3`; a code is a\n`Finset` of words. Since three elements of `Fin 3` form the set {0,1,2} iff they are pairwise\ndistinct, trifference of C means: for all pairwise distinct x, y, z ∈ C there is a coordinate i\nwith x i, y i, z i pairwise distinct. Instead of defining T(n) as a maximum we quantify over all\ntrifferent codes, which avoids junk values. The limsup statement is equivalent to\n\"∃ c with 0 < c < 3/2 and N such that every trifferent code of length n ≥ N has at most c^n words\":\nif limsup (1/n) log T(n) = L < log(3/2), take c = exp((L + log(3/2))/2); conversely T(n) ≤ c^n\neventually gives limsup ≤ log c < log(3/2) (T(n) ≥ 1, so the logs are defined).\nProving Claim settles the problem; proving ¬Claim shows log(3/2) is the exact exponential rate's\nupper limit (limsup = log(3/2)).\n-/\nnamespace OpenProblems.QEDE197\nnoncomputable section\n\n/-- `C` is a trifferent code: any three distinct codewords are separated in some coordinate\nby all three symbols. -/\ndef Trifferent (n : ℕ) (C : Finset (Fin n → Fin 3)) : Prop :=\n  ∀ x ∈ C, ∀ y ∈ C, ∀ z ∈ C, x ≠ y → y ≠ z → x ≠ z →\n    ∃ i : Fin n, x i ≠ y i ∧ y i ≠ z i ∧ x i ≠ z i\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 0 < c ∧ c < 3 / 2 ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n →\n    ∀ C : Finset (Fin n → Fin 3), Trifferent n C → (C.card : ℝ) ≤ c ^ n\n\nend\nend OpenProblems.QEDE197\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E198",
+  "review_id": "R6-L09",
+  "title": "Is the Shannon capacity of the 7-cycle below its Lovász theta?",
+  "area": "Information theory",
+  "difficulty": 8.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Lovász (1979) / Shannon (1956); status per Tao's optimization-constants list (2026)",
+  "results": null,
+  "premise_risks": [
+   "Lower bound actively moving on Tao's list (2026, partly AI-produced and unrefereed); the posed question concerns the untouched upper side",
+   "Well-known; low novelty"
+  ],
+  "plain": "The Shannon capacity Θ(G) of a graph measures how many messages per channel use can be sent with zero error when G records which symbols can be confused. For the 7-cycle the best lower bound is about 3.2588 (2026 computer constructions) and the only upper bound is still Lovász's 1979 theta number 7cos(π/7)/(1+cos(π/7)) ≈ 3.3177. Decide whether Θ(C_7) is strictly smaller than this theta value.",
+  "math": "For a graph $G$ let $\\Theta(G)=\\sup_{k\\ge1}\\alpha(G^{\\boxtimes k})^{1/k}$, $\\boxtimes$ the strong product. Decide whether $\\Theta(C_7)<\\vartheta(C_7)=\\dfrac{7\\cos(\\pi/7)}{1+\\cos(\\pi/7)}$; equivalently (since $\\Theta\\le\\vartheta$), whether $\\Theta(C_7)=\\vartheta(C_7)$ fails.",
+  "novelty": 2,
+  "importance": 7,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/html/2509.24600v3",
+   "https://arxiv.org/pdf/2607.29681",
+   "https://arxiv.org/pdf/2608.30273",
+   "https://arxiv.org/abs/1808.07438"
+  ],
+  "lean": "import Mathlib\n/-! QED-E198: Is the Shannon capacity of the 7-cycle below its Lovász theta?\nThe Shannon capacity Θ(G) of a graph measures how many messages per channel use can be sent with zero error when G records which symbols can be confused. For the 7-cycle the best lower bound is about 3.2588 (2026 computer constructions) and the only upper bound is still Lovász's 1979 theta number 7cos(π/7)/(1+cos(π/7)) ≈ 3.3177. Decide whether Θ(C_7) is strictly smaller than this theta value.\nInformal statement: For a graph $G$ let $\\Theta(G)=\\sup_{k\\ge1}\\alpha(G^{\\boxtimes k})^{1/k}$, $\\boxtimes$ the strong product. Decide whether $\\Theta(C_7)<\\vartheta(C_7)=\\dfrac{7\\cos(\\pi/7)}{1+\\cos(\\pi/7)}$; equivalently (since $\\Theta\\le\\vartheta$), whether $\\Theta(C_7)=\\vartheta(C_7)$ fails.\nFormalization notes:\n* C₇ has vertex set ZMod 7, with a ~ b iff b = a + 1 or a = b + 1.\n* The k-th strong power C₇^{⊠k} has vertex set (Fin k → ZMod 7); distinct x, y are adjacent\n  (confusable) iff every coordinate is equal or adjacent. So S is independent in C₇^{⊠k} iff any\n  two distinct words of S differ, in some coordinate, by a value that is neither equal nor\n  adjacent (i.e. by ±2 or ±3 mod 7).\n* Θ(C₇) = sup_{k≥1} α_k^{1/k}. We avoid the real `iSup` (and its junk value) by the equivalent\n  form: Θ(C₇) < ϑ  ⇔  ∃ c < ϑ such that |S| ≤ c^k for every k ≥ 1 and every independent S in\n  C₇^{⊠k} (since α_k^{1/k} ≤ c for all k iff sup ≤ c, and c^k is monotone in c ≥ 0; note c ≥ 1\n  is forced by k = 1).\n* ϑ(C₇) = 7cos(π/7)/(1+cos(π/7)) is written via `Real.cos` and `Real.pi`.\n* Claim: Θ(C₇) < ϑ(C₇). ¬Claim: Θ(C₇) ≥ ϑ(C₇), i.e. (by Lovász's Θ ≤ ϑ) Θ(C₇) = ϑ(C₇).\n-/\nnamespace OpenProblems.QEDE198\nnoncomputable section\n\n/-- Adjacency of the 7-cycle on `ZMod 7`. -/\ndef c7Adj (a b : ZMod 7) : Prop := b = a + 1 ∨ a = b + 1\n\n/-- `S` is an independent set of the strong power `C₇^{⊠k}`. -/\ndef IsIndepStrong (k : ℕ) (S : Finset (Fin k → ZMod 7)) : Prop :=\n  ∀ x ∈ S, ∀ y ∈ S, x ≠ y → ∃ i : Fin k, x i ≠ y i ∧ ¬ c7Adj (x i) (y i)\n\n/-- Lovász theta of `C₇`. -/\ndef theta7 : ℝ := 7 * Real.cos (Real.pi / 7) / (1 + Real.cos (Real.pi / 7))\n\n/-- `Θ(C₇) < ϑ(C₇)`. -/\ndef Claim : Prop :=\n  ∃ c : ℝ, c < theta7 ∧ ∀ k : ℕ, 1 ≤ k → ∀ S : Finset (Fin k → ZMod 7),\n    IsIndepStrong k S → (S.card : ℝ) ≤ c ^ k\n\nend\nend OpenProblems.QEDE198\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E199",
+  "review_id": "R6-L11",
+  "title": "Are VT codes optimal single-deletion-correcting codes for every length?",
+  "area": "Coding theory",
+  "difficulty": 7.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Varshamov-Tenengolts (1965), Levenshtein; optimality question recorded by Sloane (2002)",
+  "results": null,
+  "premise_risks": [
+   "Could be false for some larger n (only n<=11 verified); posed as prove-or-disprove",
+   "Object named after people (VT codes) but the question is not a person-named conjecture",
+   "n=11 verification (arXiv:2309.14736) may be unrefereed"
+  ],
+  "plain": "A set of binary strings of length n corrects one deletion if no two of its strings can become the same string when each loses one symbol. The Varshamov-Tenengolts code VT_0(n), the strings whose position-weighted sum of 1s is divisible by n+1, is such a code, with about 2^n/(n+1) words. Is VT_0(n) a largest single-deletion-correcting code for every length n?",
+  "math": "Let $D(n)=\\max\\{|C|: C\\subseteq\\{0,1\\}^n,\\ \\mathcal D_1(x)\\cap\\mathcal D_1(y)=\\emptyset\\ \\forall x\\ne y\\in C\\}$, where $\\mathcal D_1(x)$ is the set of length-$(n-1)$ subsequences of $x$. Let $VT_0(n)=\\{x\\in\\{0,1\\}^n:\\sum_{i=1}^n i x_i\\equiv0\\pmod{n+1}\\}$, so $|VT_0(n)|=\\frac{1}{2(n+1)}\\sum_{d\\mid n+1,\\ d\\text{ odd}}\\varphi(d)\\,2^{(n+1)/d}$. Decide whether $D(n)=|VT_0(n)|$ for all $n\\ge1$.",
+  "novelty": 3,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2309.14736",
+   "https://www.mdpi.com/1099-4300/21/12/1202",
+   "https://arxiv.org/abs/2504.00613",
+   "https://arxiv.org/abs/math/0207197",
+   "https://arxiv.org/pdf/2602.08952"
+  ],
+  "lean": "import Mathlib\n/-! QED-E199: Are VT codes optimal single-deletion-correcting codes for every length?\nA set of binary strings of length n corrects one deletion if no two of its strings can become the same string when each loses one symbol. The Varshamov-Tenengolts code VT_0(n), the strings whose position-weighted sum of 1s is divisible by n+1, is such a code, with about 2^n/(n+1) words. Is VT_0(n) a largest single-deletion-correcting code for every length n?\nInformal statement: Let $D(n)=\\max\\{|C|: C\\subseteq\\{0,1\\}^n,\\ \\mathcal D_1(x)\\cap\\mathcal D_1(y)=\\emptyset\\ \\forall x\\ne y\\in C\\}$, where $\\mathcal D_1(x)$ is the set of length-$(n-1)$ subsequences of $x$. Let $VT_0(n)=\\{x\\in\\{0,1\\}^n:\\sum_{i=1}^n i x_i\\equiv0\\pmod{n+1}\\}$, so $|VT_0(n)|=\\frac{1}{2(n+1)}\\sum_{d\\mid n+1,\\ d\\text{ odd}}\\varphi(d)\\,2^{(n+1)/d}$. Decide whether $D(n)=|VT_0(n)|$ for all $n\\ge1$.\nFormalization notes: Binary words of length n are `x : Fin n → Bool` (true = 1). The deletion ball\nD₁(x) is the finset of lists obtained from `List.ofFn x` by erasing one position\n(`List.eraseIdx`), i.e. all length-(n-1) subsequences. A code C is single-deletion-correcting\nwhen distinct codewords have disjoint deletion balls. VT₀(n) is the set of words with\n∑_{i=1}^n i·x_i ≡ 0 (mod n+1), positions 1-indexed (index i : Fin n has weight i.val + 1).\nClaim is the \"yes\" answer: for every n ≥ 1, VT₀(n) is single-deletion-correcting (a classical\ntheorem of Levenshtein, included so that Claim literally says D(n) = |VT₀(n)|) and no\nsingle-deletion-correcting code is larger. ¬Claim means some length n has a strictly larger\nsingle-deletion-correcting code (since VT₀(n) is known to be one). Note D(n) here is unrestricted\n(nonlinear) codes, as in the literature.\n-/\nnamespace OpenProblems.QEDE199\nnoncomputable section\n\n/-- The single-deletion ball: all words obtained from `x` by deleting exactly one symbol. -/\ndef del1 (n : ℕ) (x : Fin n → Bool) : Finset (List Bool) :=\n  (Finset.univ : Finset (Fin n)).image fun i : Fin n => (List.ofFn x).eraseIdx i.val\n\n/-- `C` corrects a single deletion. -/\ndef SingleDeletionCorrecting (n : ℕ) (C : Finset (Fin n → Bool)) : Prop :=\n  ∀ x ∈ C, ∀ y ∈ C, x ≠ y → Disjoint (del1 n x) (del1 n y)\n\n/-- The Varshamov–Tenengolts code VT₀(n): ∑ i·xᵢ ≡ 0 (mod n+1), positions 1..n. -/\ndef VT0 (n : ℕ) : Finset (Fin n → Bool) :=\n  Finset.univ.filter fun x : Fin n → Bool =>\n    (∑ i : Fin n, if x i then i.val + 1 else 0) % (n + 1) = 0\n\ndef Claim : Prop :=\n  ∀ n : ℕ, 1 ≤ n →\n    SingleDeletionCorrecting n (VT0 n) ∧\n      ∀ C : Finset (Fin n → Bool), SingleDeletionCorrecting n C → C.card ≤ (VT0 n).card\n\nend\nend OpenProblems.QEDE199\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E200",
+  "review_id": "R6-L12",
+  "title": "Beat √2−1: the zero-rate threshold for adversarial bit deletions",
+  "area": "Coding theory",
+  "difficulty": 7.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Bukh-Guruswami-Håstad (2017) open question",
+  "results": null,
+  "premise_risks": [
+   "Could not read arXiv:2609.21395 (Sept 2026); title suggests it concerns code size for few deletions, but unverified",
+   "If p*=√2-1 the claim is false; posed as prove-or-disprove would also be fine"
+  ],
+  "plain": "A binary code of length n can correct pn adversarial deletions if no two codewords share a common subsequence of length (1−p)n. Let p* be the largest fraction for which there are codes of exponential size (positive rate). Simple pigeonhole shows p* ≤ 1/2. The best known constructions (Bukh-Guruswami-Håstad, 2015) give p* ≥ √2−1 ≈ 0.414, and the best upper bound is 1/2 − δ for a tiny unspecified δ. Decide whether p* > √2−1, i.e. whether there are positive-rate binary codes that correct more than a √2−1 fraction of deletions.",
+  "math": "For $x,y\\in\\{0,1\\}^n$ let $\\mathrm{LCS}(x,y)$ be the length of a longest common subsequence. Let $p^*$ be the supremum of $p\\in[0,1]$ for which there is $R>0$ and, for infinitely many $n$, a code $C\\subseteq\\{0,1\\}^n$ with $|C|\\ge 2^{Rn}$ and $\\mathrm{LCS}(x,y)<(1-p)n$ for all distinct $x,y\\in C$. It is known that $\\sqrt2-1\\le p^*<1/2$. Determine whether $p^*>\\sqrt2-1$.",
+  "novelty": 3,
+  "importance": 6,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1507.01719",
+   "https://arxiv.org/abs/2106.05250",
+   "https://arxiv.org/pdf/1612.06335",
+   "https://arxiv.org/pdf/2107.01785",
+   "https://cs.stanford.edu/~rayyli/static/paper/MSThesis.pdf"
+  ],
+  "lean": "import Mathlib\n/-! QED-E200: Beat √2−1: the zero-rate threshold for adversarial bit deletions\nA binary code of length n can correct pn adversarial deletions if no two codewords share a common subsequence of length (1−p)n. Let p* be the largest fraction for which there are codes of exponential size (positive rate). Simple pigeonhole shows p* ≤ 1/2. The best known constructions (Bukh-Guruswami-Håstad, 2015) give p* ≥ √2−1 ≈ 0.414, and the best upper bound is 1/2 − δ for a tiny unspecified δ. Decide whether p* > √2−1, i.e. whether there are positive-rate binary codes that correct more than a √2−1 fraction of deletions.\nInformal statement: For $x,y\\in\\{0,1\\}^n$ let $\\mathrm{LCS}(x,y)$ be the length of a longest common subsequence. Let $p^*$ be the supremum of $p\\in[0,1]$ for which there is $R>0$ and, for infinitely many $n$, a code $C\\subseteq\\{0,1\\}^n$ with $|C|\\ge 2^{Rn}$ and $\\mathrm{LCS}(x,y)<(1-p)n$ for all distinct $x,y\\in C$. It is known that $\\sqrt2-1\\le p^*<1/2$. Determine whether $p^*>\\sqrt2-1$.\nFormalization notes: Words are `Fin n → Bool`, read as lists via `List.ofFn`; a common subsequence is a list z\nwith `z <+ x` and `z <+ y` (`List.Sublist`, i.e. subsequence, not necessarily contiguous). \"LCS(x,y) < (1-p)n\"\nis \"every common subsequence has length < (1-p)n\". The set of achievable p is downward closed, so\np* > √2−1 ⇔ some achievable p exceeds √2−1; Claim states exactly this: there are p > √2−1 and R > 0 such that\nfor infinitely many n (∀ N ∃ n ≥ N) a code of size ≥ 2^{Rn} has all pairwise LCS < (1−p)n. No loophole for\np > 1: then (1−p)n < 0 would forbid even the empty common subsequence, which is impossible once |C| ≥ 2 (forced\nby |C| ≥ 2^{Rn} > 1 for n ≥ 1). Claim true ⇔ p* > √2−1; ¬Claim ⇔ p* = √2−1 (given the known p* ≥ √2−1).\n-/\nnamespace OpenProblems.QEDE200\nnoncomputable section\n\n/-- `C` is a code of length `n` in which every common subsequence of two distinct codewords has length\n`< (1 - p) * n`, i.e. it corrects a `p` fraction of adversarial deletions. -/\ndef DeletionCode (n : ℕ) (p : ℝ) (C : Finset (Fin n → Bool)) : Prop :=\n  ∀ x ∈ C, ∀ y ∈ C, x ≠ y → ∀ z : List Bool,\n    z.Sublist (List.ofFn x) → z.Sublist (List.ofFn y) → (z.length : ℝ) < (1 - p) * (n : ℝ)\n\ndef Claim : Prop :=\n  ∃ p : ℝ, Real.sqrt 2 - 1 < p ∧ ∃ R : ℝ, 0 < R ∧\n    ∀ N : ℕ, ∃ n : ℕ, N ≤ n ∧ ∃ C : Finset (Fin n → Bool),\n      (2 : ℝ) ^ (R * (n : ℝ)) ≤ (C.card : ℝ) ∧ DeletionCode n p C\n\nend\nend OpenProblems.QEDE200\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E201",
+  "review_id": "R6-L13",
+  "title": "3-query locally decodable codes: beat the cubic lower bound",
+  "area": "Coding theory",
+  "difficulty": 7.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Katz-Trevisan (2000); barrier per Alrabiah-Guruswami-Kothari-Manohar (2023)",
+  "results": null,
+  "premise_risks": [
+   "Lean statement needs care with the order of quantifiers (c absolute, K depending on delta, eps)"
+  ],
+  "plain": "A 3-query locally decodable code encodes k bits into n bits so that any single message bit can be recovered with probability 1/2+eps by reading just 3 randomly chosen positions, even after a delta fraction of the codeword has been corrupted. The shortest known such codes have length exp(exp(O(sqrt(log k loglog k)))), while the best lower bound (2023) is n >= k^3/polylog(k). Prove n >= k^{3+c} for some fixed c>0.",
+  "math": "A map $E:\\{0,1\\}^k\\to\\{0,1\\}^n$ is a $(3,\\delta,\\varepsilon)$-LDC if for each $i\\in[k]$ there is a probability distribution $\\mu_i$ on pairs $(S,f)$ with $S\\in[n]^3$ and $f:\\{0,1\\}^3\\to\\{0,1\\}$ such that for all $x\\in\\{0,1\\}^k$ and all $y\\in\\{0,1\\}^n$ with $d_H(y,E(x))\\le\\delta n$: $\\Pr_{(S,f)\\sim\\mu_i}[f(y_S)=x_i]\\ge\\tfrac12+\\varepsilon$. Prove: for all fixed $\\delta,\\varepsilon\\in(0,1/2)$ there exist $c=c(\\delta,\\varepsilon)>0$ and $K$ such that every $(3,\\delta,\\varepsilon)$-LDC with $k\\ge K$ has $n\\ge k^{3+c}$. (Strengthening: $c$ independent of $\\delta,\\varepsilon$.)",
+  "novelty": 3,
+  "importance": 6,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2308.15403",
+   "https://eccc.weizmann.ac.il/report/2022/101",
+   "https://eccc.weizmann.ac.il/report/2026/156/download",
+   "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2025.2"
+  ],
+  "lean": "import Mathlib\n/-! QED-E201: 3-query locally decodable codes: beat the cubic lower bound\nA 3-query locally decodable code encodes k bits into n bits so that any single message bit can be recovered with probability 1/2+eps by reading just 3 randomly chosen positions, even after a delta fraction of the codeword has been corrupted. The shortest known such codes have length exp(exp(O(sqrt(log k loglog k)))), while the best lower bound (2023) is n >= k^3/polylog(k). Prove n >= k^{3+c} for some fixed c>0.\nInformal statement: A map $E:\\{0,1\\}^k\\to\\{0,1\\}^n$ is a $(3,\\delta,\\varepsilon)$-LDC if for each $i\\in[k]$ there is a probability distribution $\\mu_i$ on pairs $(S,f)$ with $S\\in[n]^3$ and $f:\\{0,1\\}^3\\to\\{0,1\\}$ such that for all $x\\in\\{0,1\\}^k$ and all $y\\in\\{0,1\\}^n$ with $d_H(y,E(x))\\le\\delta n$: $\\Pr_{(S,f)\\sim\\mu_i}[f(y_S)=x_i]\\ge\\tfrac12+\\varepsilon$. Prove: for all fixed $\\delta,\\varepsilon\\in(0,1/2)$ there exist $c=c(\\delta,\\varepsilon)>0$ and $K$ such that every $(3,\\delta,\\varepsilon)$-LDC with $k\\ge K$ has $n\\ge k^{3+c}$. (Strengthening: $c$ independent of $\\delta,\\varepsilon$.)\nFormalization notes:\n* Bits are `Bool`; messages `Fin k → Bool`, codewords `Fin n → Bool`; Hamming distance is\n  Mathlib's `hammingDist` (number of differing coordinates).\n* A decoder for bit i is a probability distribution μ i on the finite set of queries\n  (Fin 3 → Fin n) × ((Fin 3 → Bool) → Bool): a query tuple S (repetitions allowed, so this\n  covers ≤ 3 queries) and a decision function f. Its success probability on y is\n  Σ_q μ i q · [q.2 (y ∘ q.1) = x i]. This is the standard non-adaptive LDC definition used by\n  Katz–Trevisan and Alrabiah–Guruswami–Kothari–Manohar (adaptive 3-query decoders are not\n  covered by this definition, as in the informal statement).\n* `IsLDC3 k n δ ε E` requires the existence of such μ for every i, with success ≥ 1/2 + ε for all\n  x and all y with d_H(y, E x) ≤ δ n.\n* Quantifiers follow the informal statement: ∀ δ ε ∈ (0,1/2), ∃ c > 0, ∃ K, ∀ k ≥ K, ∀ n, every\n  (3,δ,ε)-LDC E : {0,1}^k → {0,1}^n has n ≥ k^{3+c} (real power). There is no junk at n = 0:\n  then y is unique and the decoder cannot output both values of x_i with probability > 1/2.\n* Claim = the k^{3+c} lower bound (c may depend on δ, ε). ¬Claim: for some δ, ε, for every\n  c > 0 there are arbitrarily large k with a (3,δ,ε)-LDC of length n < k^{3+c}.\n-/\nnamespace OpenProblems.QEDE201\nnoncomputable section\n\n/-- `E` is a non-adaptive `(3, δ, ε)` locally decodable code. -/\ndef IsLDC3 (k n : ℕ) (δ ε : ℝ) (E : (Fin k → Bool) → (Fin n → Bool)) : Prop :=\n  ∀ i : Fin k, ∃ μ : (Fin 3 → Fin n) × ((Fin 3 → Bool) → Bool) → ℝ,\n    (∀ q, 0 ≤ μ q) ∧ (∑ q, μ q) = 1 ∧\n    ∀ x : Fin k → Bool, ∀ y : Fin n → Bool, (hammingDist y (E x) : ℝ) ≤ δ * n →\n      (1 : ℝ) / 2 + ε ≤ ∑ q, μ q * (if q.2 (y ∘ q.1) = x i then (1 : ℝ) else 0)\n\n/-- 3-query LDCs have length at least `k^{3+c}`. -/\ndef Claim : Prop :=\n  ∀ δ ε : ℝ, 0 < δ → δ < 1 / 2 → 0 < ε → ε < 1 / 2 →\n    ∃ c : ℝ, 0 < c ∧ ∃ K : ℕ, ∀ k : ℕ, K ≤ k → ∀ n : ℕ,\n      ∀ E : (Fin k → Bool) → (Fin n → Bool), IsLDC3 k n δ ε E →\n        (k : ℝ) ^ ((3 : ℝ) + c) ≤ (n : ℝ)\n\nend\nend OpenProblems.QEDE201\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E202",
+  "review_id": "R6-L15",
+  "title": "A positive proportion of integers are sums of three cubes",
+  "area": "Number theory",
+  "difficulty": 5.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Folklore density form of the sums-of-three-cubes problem; conditional results by Diaconu (2019) and V. Y. Wang (2021-23)",
+  "results": null,
+  "premise_risks": [
+   "Conditional 100% result by Wang: check that no 2025-26 unconditional improvement exists beyond what searches found",
+   "Scorer may judge as close to the famous full problem; it is a strictly weaker, distinct milestone"
+  ],
+  "plain": "An integer a^3+b^3+c^3 (with a, b, c integers, negatives allowed) never leaves remainder 4 or 5 on division by 9, and every other integer is believed to be such a sum. Nobody can even prove that a fixed positive fraction of integers are sums of three cubes. Prove that for some c>0, at least cN of the integers 1, ..., N are sums of three integer cubes for all large N.",
+  "math": "Let $\\mathcal C=\\{a^3+b^3+c^3: a,b,c\\in\\mathbb Z\\}$. Prove $\\liminf_{N\\to\\infty}\\frac1N\\#\\{1\\le n\\le N: n\\in\\mathcal C\\}>0$. (Conjecturally the density exists and equals $7/9$.)",
+  "novelty": 2,
+  "importance": 8,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1502.01944",
+   "https://web.math.princeton.edu/~vywang/2021-10-13_BGWS_slides_with_notes.pdf",
+   "https://epoch.ai/files/open-problems/sum-of-three-cubes.pdf",
+   "https://arxiv.org/abs/1404.3846",
+   "https://arxiv.org/abs/2608.19262"
+  ],
+  "lean": "import Mathlib\n/-! QED-E202: A positive proportion of integers are sums of three cubes\nAn integer a^3+b^3+c^3 (with a, b, c integers, negatives allowed) never leaves remainder 4 or 5 on division by 9,\nand every other integer is believed to be such a sum. Nobody can even prove that a fixed positive fraction of\nintegers are sums of three cubes. Prove that for some c>0, at least cN of the integers 1, ..., N are sums of three\ninteger cubes for all large N.\nInformal statement: Let $\\mathcal C=\\{a^3+b^3+c^3: a,b,c\\in\\mathbb Z\\}$. Prove\n$\\liminf_{N\\to\\infty}\\frac1N\\#\\{1\\le n\\le N: n\\in\\mathcal C\\}>0$.\nFormalization notes: `IsSumThreeCubes n` says n = a³ + b³ + c³ for some integers a, b, c (signs allowed).\nliminf_{N} (1/N)·#{1 ≤ n ≤ N : n ∈ 𝒞} > 0 is stated in the equivalent form: there is δ > 0 such that for all\nsufficiently large N, δ·N ≤ #{n ∈ [1, N] : n ∈ 𝒞} (counting over the integer interval Icc 1 N, with the\npredicate made decidable classically). `Claim` = positive lower density; `¬Claim` = the lower density is 0.\n-/\nnamespace OpenProblems.QEDE202\n\nnoncomputable section\n\nopen Classical\n\n/-- n is a sum of three integer cubes. -/\ndef IsSumThreeCubes (n : ℤ) : Prop := ∃ a b c : ℤ, a ^ 3 + b ^ 3 + c ^ 3 = n\n\ndef Claim : Prop :=\n  ∃ δ : ℝ, 0 < δ ∧ ∀ᶠ N : ℕ in Filter.atTop,\n    δ * (N : ℝ) ≤ (((Finset.Icc (1 : ℤ) (N : ℤ)).filter IsSumThreeCubes).card : ℝ)\n\nend\n\nend OpenProblems.QEDE202\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E203",
+  "review_id": "R6-L16",
+  "title": "Does a triangle with integer sides, medians and area exist?",
+  "area": "Number theory",
+  "difficulty": 6.0,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Classical (Euler's work on rational medians; perfect-triangle problem listed in Guy, Unsolved Problems in Number Theory); Buchholz, Rathbun, Hone",
+  "results": null,
+  "premise_risks": [
+   "Unrefereed non-existence claim arXiv:2111.05118 (Shihaliev, revised through 2026) - not accepted, but scorer should know",
+   "Answer may be a computer find; but decades of searches suggest none exists"
+  ],
+  "plain": "Is there a triangle whose three sides, three medians (segments from a vertex to the midpoint of the opposite side) and area are all integers? Triangles with integer sides and area (Heron triangles) are plentiful, triangles with integer sides and integer medians exist, and there are infinitely many Heron triangles with two integer medians, but no triangle with all seven quantities integral has ever been found.",
+  "math": "Decide whether there exist positive integers $a,b,c,m_a,m_b,m_c,A$ with $a<b+c,\\ b<a+c,\\ c<a+b$, $4m_a^2=2b^2+2c^2-a^2$, $4m_b^2=2a^2+2c^2-b^2$, $4m_c^2=2a^2+2b^2-c^2$ and $16A^2=(a+b+c)(-a+b+c)(a-b+c)(a+b-c)$. (Equivalently, by scaling: a non-degenerate triangle with rational sides, medians and area.)",
+  "novelty": 2,
+  "importance": 4,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2401.05581",
+   "https://arxiv.org/abs/2107.03197",
+   "https://arxiv.org/abs/1910.06888",
+   "https://arxiv.org/abs/2111.05118",
+   "https://arxiv.org/html/2605.22458v1"
+  ],
+  "lean": "import Mathlib\n/-! QED-E203: Does a triangle with integer sides, medians and area exist?\nIs there a triangle whose three sides, three medians (segments from a vertex to the midpoint of the opposite side) and area are all integers? Triangles with integer sides and area (Heron triangles) are plentiful, triangles with integer sides and integer medians exist, and there are infinitely many Heron triangles with two integer medians, but no triangle with all seven quantities integral has ever been found.\nInformal statement: Decide whether there exist positive integers $a,b,c,m_a,m_b,m_c,A$ with $a<b+c,\\ b<a+c,\\ c<a+b$, $4m_a^2=2b^2+2c^2-a^2$, $4m_b^2=2a^2+2c^2-b^2$, $4m_c^2=2a^2+2b^2-c^2$ and $16A^2=(a+b+c)(-a+b+c)(a-b+c)(a+b-c)$. (Equivalently, by scaling: a non-degenerate triangle with rational sides, medians and area.)\nFormalization notes: Pure Diophantine formulation over ℤ. For a non-degenerate triangle with\nsides a, b, c, the median to side a has length m_a with 4m_a² = 2b² + 2c² - a² (Apollonius), and\nHeron's formula gives 16A² = (a+b+c)(-a+b+c)(a-b+c)(a+b-c); strict triangle inequalities encode\nnon-degeneracy. Lengths and area are positive, so requiring positive integer values for all seven\nquantities is exactly \"all seven are integers\". The rational version is equivalent by scaling\nby a common denominator (all equations are homogeneous of degree 2 in the lengths and degree 2 in\nA against degree 4 in sides, so scaling sides and medians by d scales A by d²).\nClaim is the conjectured answer (no perfect triangle exists). Proving ¬Claim amounts to exhibiting\nan explicit 7-tuple, checkable by `decide`/`norm_num`.\n-/\nnamespace OpenProblems.QEDE203\nnoncomputable section\n\n/-- A \"perfect triangle\": integer sides, medians and area. -/\ndef PerfectTriangle (a b c ma mb mc A : ℤ) : Prop :=\n  0 < a ∧ 0 < b ∧ 0 < c ∧ 0 < ma ∧ 0 < mb ∧ 0 < mc ∧ 0 < A ∧\n    a < b + c ∧ b < a + c ∧ c < a + b ∧\n    4 * ma ^ 2 = 2 * b ^ 2 + 2 * c ^ 2 - a ^ 2 ∧\n    4 * mb ^ 2 = 2 * a ^ 2 + 2 * c ^ 2 - b ^ 2 ∧\n    4 * mc ^ 2 = 2 * a ^ 2 + 2 * b ^ 2 - c ^ 2 ∧\n    16 * A ^ 2 = (a + b + c) * (-a + b + c) * (a - b + c) * (a + b - c)\n\ndef Claim : Prop :=\n  ¬ ∃ a b c ma mb mc A : ℤ, PerfectTriangle a b c ma mb mc A\n\nend\nend OpenProblems.QEDE203\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E204",
+  "review_id": "R6-L17",
+  "title": "Solve x^2 + y^5 = z^7, the smallest open generalized Fermat equation",
+  "area": "Number theory",
+  "difficulty": 3.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Sub-case of the generalized Fermat (Fermat–Catalan) problem; identification of (2,5,7) as smallest open case from Grechuk et al. survey arXiv:2412.11933",
+  "results": null,
+  "premise_risks": [
+   "Unrefereed IUT-based claim (Zhou, arXiv:2510.05448) may list (2,5,7) among 'solved' signatures; not accepted",
+   "Survey's 'smallest sum' claim as of Dec 2024/2025 versions; a 2026 solution could exist unnoticed (searched, none found)",
+   "Possible overlap with archived board item N-281 'A mixed Fermat equation' (content unknown)"
+  ],
+  "plain": "Equations x^p + y^q = z^r with 1/p+1/q+1/r < 1 are expected to have only finitely many solutions in coprime integers, and many individual exponent triples have been solved. A 2024 survey identifies (2,5,7) as the unsolved triple with the smallest exponent sum. Show that x^2 + y^5 = z^7 has no solution in nonzero coprime integers.",
+  "math": "Prove that there are no $x,y,z\\in\\mathbb Z$ with $xyz\\neq0$, $\\gcd(x,y,z)=1$ and $x^2+y^5=z^7$. (Since 5 and 7 are odd and signs are allowed, this covers every arrangement of the exponents, e.g. $x^5+y^7=z^2$.)",
+  "novelty": 3,
+  "importance": 5,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/pdf/2412.11933v1",
+   "https://arxiv.org/pdf/2609.26996",
+   "https://arxiv.org/pdf/2512.04936",
+   "https://arxiv.org/abs/2503.14510",
+   "https://arxiv.org/pdf/1506.02860"
+  ],
+  "lean": "import Mathlib\n/-! QED-E204: Solve x^2 + y^5 = z^7, the smallest open generalized Fermat equation\nEquations x^p + y^q = z^r with 1/p+1/q+1/r < 1 are expected to have only finitely many solutions in coprime integers, and many individual exponent triples have been solved. A 2024 survey identifies (2,5,7) as the unsolved triple with the smallest exponent sum. Show that x^2 + y^5 = z^7 has no solution in nonzero coprime integers.\nInformal statement: Prove that there are no $x,y,z\\in\\mathbb Z$ with $xyz\\neq0$, $\\gcd(x,y,z)=1$ and $x^2+y^5=z^7$. (Since 5 and 7 are odd and signs are allowed, this covers every arrangement of the exponents, e.g. $x^5+y^7=z^2$.)\nFormalization notes: Integers ℤ; gcd(x,y,z) = 1 is written as `Int.gcd (Int.gcd x y) z = 1` (the inner gcd is\na natural number, cast back to ℤ). For a solution of x²+y⁵=z⁷ this is equivalent to pairwise coprimality.\nThe gcd condition is essential: non-primitive solutions exist, e.g. (2^10, 2^4, 2^3). Claim true means no\nprimitive nontrivial solution exists; ¬Claim exhibits one.\n-/\nnamespace OpenProblems.QEDE204\nnoncomputable section\n\ndef Claim : Prop :=\n  ∀ x y z : ℤ, x ≠ 0 → y ≠ 0 → z ≠ 0 → Int.gcd ((Int.gcd x y : ℕ) : ℤ) z = 1 →\n    x ^ 2 + y ^ 5 ≠ z ^ 7\n\nend\nend OpenProblems.QEDE204\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E205",
+  "review_id": "R6-L18",
+  "title": "A rational Diophantine septuple",
+  "area": "Number theory",
+  "difficulty": 5.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical (Diophantus, Fermat, Euler); modern formulation and record constructions by Dujella, Gibbs, Kazalicki, Mikić, Szikszai",
+  "results": null,
+  "premise_risks": [
+   "Listed on Epoch FrontierMath Open Problems, so actively targeted by AI search efforts; could be found by computation",
+   "Expected answer unknown; if no septuple exists, a proof is far beyond current methods (needs bounds on rational points of general-type varieties)"
+  ],
+  "plain": "A rational Diophantine m-tuple is a set of m distinct nonzero rational numbers such that the product of any two of them, plus 1, is a square of a rational number. Infinitely many such sets of size 6 are known, but nobody knows whether a set of size 7 exists. Find one, or prove that none exists.",
+  "math": "Decide whether there exist seven distinct $a_1,\\dots,a_7\\in\\mathbb Q\\setminus\\{0\\}$ such that $a_ia_j+1$ is the square of a rational number for all $1\\le i<j\\le7$.",
+  "novelty": 2,
+  "importance": 5,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1507.00569",
+   "https://arxiv.org/pdf/2403.17959",
+   "https://arxiv.org/pdf/2604.08729",
+   "https://epoch.ai/frontiermath/open-problems/diophantine-septuple"
+  ],
+  "lean": "import Mathlib\n/-! QED-E205: A rational Diophantine septuple\nA rational Diophantine m-tuple is a set of m distinct nonzero rational numbers such that the product of any two of them, plus 1, is a square of a rational number. Infinitely many such sets of size 6 are known, but nobody knows whether a set of size 7 exists. Find one, or prove that none exists.\nInformal statement: Decide whether there exist seven distinct $a_1,\\dots,a_7\\in\\mathbb Q\\setminus\\{0\\}$ such that $a_ia_j+1$ is the square of a rational number for all $1\\le i<j\\le7$.\nFormalization notes:\n* A set of seven distinct rationals is a `Finset ℚ` of card 7. `IsSquare q` (Mathlib) means\n  q = r * r for some r : ℚ, i.e. q is the square of a rational.\n* The condition is required for every ordered pair of distinct elements (symmetric anyway).\n* Claim: a rational Diophantine septuple exists. ¬Claim: none exists. An explicit witness\n  would be checkable by `decide`/`norm_num` with the square roots supplied.\n-/\nnamespace OpenProblems.QEDE205\nnoncomputable section\n\n/-- `s` is a rational Diophantine tuple: nonzero elements, `ab + 1` a rational square for all\ndistinct `a, b ∈ s`. -/\ndef IsDiophTuple (s : Finset ℚ) : Prop :=\n  (0 : ℚ) ∉ s ∧ ∀ a ∈ s, ∀ b ∈ s, a ≠ b → IsSquare (a * b + 1)\n\n/-- There is a rational Diophantine septuple. -/\ndef Claim : Prop :=\n  ∃ s : Finset ℚ, s.card = 7 ∧ IsDiophTuple s\n\nend\nend OpenProblems.QEDE205\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E206",
+  "review_id": "R6-L19",
+  "title": "Is strong shift equivalence of nonnegative integer matrices decidable?",
+  "area": "Dynamics",
+  "difficulty": 7.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Problem implicit in R. F. Williams, Annals of Math. 98 (1973); stated as the main open problem in Boyle's symbolic dynamics open-problem list and in Lind-Marcus, 'An Introduction to Symbolic Dynamics and Coding'.",
+  "results": null,
+  "premise_risks": [
+   "Recent status relies partly on unrefereed 2026 preprints (Jeandel 2609.03567, Bilich et al. 2609.11834), but all only confirm openness",
+   "Must be stated for SSE over Z_+ (over Z, SSE=SE and is decidable for some cases); stating it over Z would be a different problem"
+  ],
+  "plain": "Call two square matrices A and B with nonnegative integer entries elementarily equivalent if A = RS and B = SR for some rectangular nonnegative integer matrices R and S, and strongly shift equivalent if they are linked by a finite chain of such moves. By Williams' 1973 theorem this is exactly when two shifts of finite type are topologically conjugate. Is there an algorithm that decides, given A and B, whether they are strongly shift equivalent?",
+  "math": "For $A\\in\\mathbb Z_{\\ge0}^{m\\times m}$, $B\\in\\mathbb Z_{\\ge0}^{n\\times n}$ with $m,n\\ge1$ write $A\\approx B$ if there are $R\\in\\mathbb Z_{\\ge0}^{m\\times n}$, $S\\in\\mathbb Z_{\\ge0}^{n\\times m}$ with $A=RS$, $B=SR$; let $\\sim_{SSE}$ be the equivalence relation generated by $\\approx$ on square matrices of all positive sizes. Determine whether $\\{(A,B):A\\sim_{SSE}B\\}$ is a computable set (it is computably enumerable).",
+  "novelty": 2,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.ams.org/bull/1999-36-03/S0273-0979-99-00798-3/",
+   "https://arxiv.org/pdf/2509.24754",
+   "https://arxiv.org/pdf/2609.03567",
+   "https://arxiv.org/html/2605.28297v1"
+  ],
+  "lean": "import Mathlib\n/-! QED-E206: Is strong shift equivalence of nonnegative integer matrices decidable?\nCall two square matrices A and B with nonnegative integer entries elementarily equivalent if A = RS and B = SR for\nsome rectangular nonnegative integer matrices R and S, and strongly shift equivalent if they are linked by a finite\nchain of such moves. By Williams' 1973 theorem this is exactly when two shifts of finite type are topologically\nconjugate. Is there an algorithm that decides, given A and B, whether they are strongly shift equivalent?\nInformal statement: For $A\\in\\mathbb Z_{\\ge0}^{m\\times m}$, $B\\in\\mathbb Z_{\\ge0}^{n\\times n}$ ($m,n\\ge1$) write\n$A\\approx B$ if there are $R\\in\\mathbb Z_{\\ge0}^{m\\times n}$, $S\\in\\mathbb Z_{\\ge0}^{n\\times m}$ with $A=RS$,\n$B=SR$; let $\\sim_{SSE}$ be the equivalence relation generated by $\\approx$ on square matrices of all positive\nsizes. Determine whether $\\{(A,B):A\\sim_{SSE}B\\}$ is a computable set (it is computably enumerable).\nFormalization notes: A square matrix of size m+1 (m : ℕ) is an element of `SqMat = Σ m, Matrix (Fin (m+1))\n(Fin (m+1)) ℕ`; sizes are ≥ 1 as in the literature (0 × 0 matrices are excluded so that zero matrices are not\nartificially linked through the empty matrix). `Elem A B` is the elementary move A = RS, B = SR with R, S\nrectangular over ℕ. SSE is the reflexive–transitive closure of the symmetric closure of `Elem`, i.e. the\nequivalence relation generated by it. Inputs are codes (m, l) : ℕ × List ℕ, decoded as the (m+1) × (m+1) matrix\nwhose (i, j) entry is the (i(m+1)+j)-th element of l (0 if l is too short; extra entries are ignored). Decoding is\ncomputable and surjective, so decidability of SSE on codes is decidability of SSE on matrices. \"Computable set\" is\nMathlib's `ComputablePred` on the Primcodable type of code pairs. `Claim` = SSE over ℤ₊ is decidable;\n`¬Claim` = it is undecidable.\n-/\nnamespace OpenProblems.QEDE206\n\nnoncomputable section\n\n/-- Square nonnegative integer matrices of all positive sizes. -/\nabbrev SqMat : Type := Σ m : ℕ, Matrix (Fin (m + 1)) (Fin (m + 1)) ℕ\n\n/-- Elementary strong shift equivalence: A = RS and B = SR. -/\ndef Elem (A B : SqMat) : Prop :=\n  ∃ R : Matrix (Fin (A.1 + 1)) (Fin (B.1 + 1)) ℕ, ∃ S : Matrix (Fin (B.1 + 1)) (Fin (A.1 + 1)) ℕ,\n    A.2 = R * S ∧ B.2 = S * R\n\n/-- Strong shift equivalence: the equivalence relation generated by `Elem`. -/\ndef SSE (A B : SqMat) : Prop :=\n  Relation.ReflTransGen (fun X Y : SqMat => Elem X Y ∨ Elem Y X) A B\n\n/-- Decode (m, l) as the (m+1)×(m+1) matrix with row-major entries from l (missing entries 0). -/\ndef decode (c : ℕ × List ℕ) : SqMat :=\n  ⟨c.1, Matrix.of fun i j : Fin (c.1 + 1) => c.2.getD (i.val * (c.1 + 1) + j.val) 0⟩\n\ndef Claim : Prop :=\n  ComputablePred (fun p : (ℕ × List ℕ) × (ℕ × List ℕ) => SSE (decode p.1) (decode p.2))\n\nend\n\nend OpenProblems.QEDE206\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E207",
+  "review_id": "R6-L20",
+  "title": "Strong shift equivalence of the Baker matrices for every k",
+  "area": "Dynamics",
+  "difficulty": 6.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "K. A. Baker, Ergodic Theory Dynam. Systems 3 (1983); recent computations E. Jeandel arXiv:2609.03567.",
+  "results": null,
+  "premise_risks": [
+   "Small-k results for 3<=k<=12 rest on an unrefereed Sept 2026 preprint (Jeandel), which also contains an internally inconsistent sentence ('open for k>=3'); the claim for all k does not depend on them",
+   "Overlaps thematically with the SSE-decidability candidate, but is a distinct statement (a decision procedure would not by itself settle all k)"
+  ],
+  "plain": "For each k >= 1, the 2x2 matrices A_k = [[1, k+1],[k, 1]] and B_k = [[1, k(k+1)],[1, 1]] are similar over the integers and primitive, so their shifts of finite type are shift equivalent. Are the two shifts topologically conjugate for every k, i.e. can A_k be turned into B_k by finitely many moves RS -> SR with nonnegative integer matrices R, S?",
+  "math": "Let $A_k=\\begin{pmatrix}1&k+1\\\\k&1\\end{pmatrix}$, $B_k=\\begin{pmatrix}1&k(k+1)\\\\1&1\\end{pmatrix}$, and let $\\sim_{SSE}$ be the equivalence relation on square nonnegative integer matrices of all sizes generated by $RS\\approx SR$ ($R,S$ rectangular, nonnegative integer). Determine whether $A_k\\sim_{SSE}B_k$ for every integer $k\\ge1$.",
+  "novelty": 4,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2609.03567",
+   "https://members.loria.fr/EJeandel/research/conjugacy.html",
+   "https://www.cambridge.org/core/journals/ergodic-theory-and-dynamical-systems/article/strong-shift-equivalence-of-2-2-matrices-of-nonnegative-integers/39330AB511E617F439648AADD93AF062",
+   "https://arxiv.org/abs/1501.04697"
+  ],
+  "lean": "import Mathlib\n/-! QED-E207: Strong shift equivalence of the Baker matrices for every k\nFor each k >= 1, the 2x2 matrices A_k = [[1, k+1],[k, 1]] and B_k = [[1, k(k+1)],[1, 1]] are similar over the integers and primitive, so their shifts of finite type are shift equivalent. Are the two shifts topologically conjugate for every k, i.e. can A_k be turned into B_k by finitely many moves RS -> SR with nonnegative integer matrices R, S?\nInformal statement: Let $A_k=\\begin{pmatrix}1&k+1\\\\k&1\\end{pmatrix}$, $B_k=\\begin{pmatrix}1&k(k+1)\\\\1&1\\end{pmatrix}$, and let $\\sim_{SSE}$ be the equivalence relation on square nonnegative integer matrices of all sizes generated by $RS\\approx SR$ ($R,S$ rectangular, nonnegative integer). Determine whether $A_k\\sim_{SSE}B_k$ for every integer $k\\ge1$.\nFormalization notes: A square nonnegative integer matrix of any size is a dependent pair\n`⟨m, M⟩ : Σ m : ℕ, Matrix (Fin m) (Fin m) ℕ` (entries in ℕ = nonnegative integers).\nElementary strong shift equivalence (Williams): `elemSSE ⟨m, A⟩ ⟨l, B⟩` iff there are\nR : m × l and S : l × m nonnegative integer matrices with A = R S and B = S R. This relation is\nsymmetric (swap R and S), so its reflexive–transitive closure `Relation.ReflTransGen` is exactly\nthe equivalence relation it generates, i.e. strong shift equivalence over ℤ₊. By Williams'\ntheorem, SSE of A and B is equivalent to topological conjugacy of the edge shifts X_A, X_B, so\nthis is the standard formulation. Intermediate matrices of any size (including 0) are allowed,\nas in the standard definition; this cannot matter here since A_k, B_k are primitive.\nClaim is the \"yes\" answer: A_k ~SSE B_k for every k ≥ 1. ¬Claim means some k ≥ 1 with A_k, B_k\nnot strong shift equivalent (a new conjugacy invariant beyond shift equivalence would be needed).\n-/\nnamespace OpenProblems.QEDE207\nnoncomputable section\n\n/-- Square matrices over ℕ of arbitrary size. -/\nabbrev SqMat : Type := Σ m : ℕ, Matrix (Fin m) (Fin m) ℕ\n\n/-- Elementary strong shift equivalence: A = R S and B = S R with R, S nonnegative integer. -/\ndef elemSSE (A B : SqMat) : Prop :=\n  ∃ (R : Matrix (Fin A.1) (Fin B.1) ℕ) (S : Matrix (Fin B.1) (Fin A.1) ℕ),\n    A.2 = R * S ∧ B.2 = S * R\n\n/-- Strong shift equivalence over ℤ₊: the equivalence relation generated by `elemSSE`\n(which is symmetric, so the reflexive–transitive closure suffices). -/\ndef SSE (A B : SqMat) : Prop :=\n  Relation.ReflTransGen elemSSE A B\n\n/-- Baker's matrix A_k = [[1, k+1], [k, 1]]. -/\ndef bakerA (k : ℕ) : SqMat := ⟨2, !![1, k + 1; k, 1]⟩\n\n/-- Baker's matrix B_k = [[1, k(k+1)], [1, 1]]. -/\ndef bakerB (k : ℕ) : SqMat := ⟨2, !![1, k * (k + 1); 1, 1]⟩\n\ndef Claim : Prop :=\n  ∀ k : ℕ, 1 ≤ k → SSE (bakerA k) (bakerB k)\n\nend\nend OpenProblems.QEDE207\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E208",
+  "review_id": "R6-L21",
+  "title": "The centre column of Rule 30 is never periodic",
+  "area": "Dynamics",
+  "difficulty": 6.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "S. Wolfram, Rule 30 Prize Problem 1 (2019); partial result E. Jen (1986/1990).",
+  "results": null,
+  "premise_risks": [
+   "An unrefereed 2022 arXiv preprint (2207.13237) claims a solution; it has not been accepted",
+   "Well known, so novelty is low"
+  ],
+  "plain": "Rule 30 is the one-dimensional cellular automaton in which each cell's new colour is (left) XOR (centre OR right). Start from a single black cell on an infinite white row and record the colour of the starting cell at each time step. Prove that this 0/1 sequence is not eventually periodic.",
+  "math": "Let $x_0:\\mathbb{Z}\\to\\{0,1\\}$ with $x_0(0)=1$ and $x_0(j)=0$ for $j\\ne0$, and $x_{t+1}(j)=x_t(j-1)\\oplus\\big(x_t(j)\\vee x_t(j+1)\\big)$. Let $c_t=x_t(0)$. Prove that there are no $p\\ge1$ and $T\\ge0$ with $c_{t+p}=c_t$ for all $t\\ge T$.",
+  "novelty": 2,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/",
+   "https://arxiv.org/abs/2609.09431",
+   "https://arxiv.org/abs/2609.25077",
+   "https://arxiv.org/abs/2207.13237"
+  ],
+  "lean": "import Mathlib\n/-! QED-E208: The centre column of Rule 30 is never periodic\nRule 30 is the one-dimensional cellular automaton in which each cell's new colour is (left) XOR (centre OR right). Start from a single black cell on an infinite white row and record the colour of the starting cell at each time step. Prove that this 0/1 sequence is not eventually periodic.\nInformal statement: Let $x_0:\\mathbb{Z}\\to\\{0,1\\}$ with $x_0(0)=1$ and $x_0(j)=0$ for $j\\ne0$, and $x_{t+1}(j)=x_t(j-1)\\oplus\\big(x_t(j)\\vee x_t(j+1)\\big)$. Let $c_t=x_t(0)$. Prove that there are no $p\\ge1$ and $T\\ge0$ with $c_{t+p}=c_t$ for all $t\\ge T$.\nFormalization notes: Configurations are `ℤ → Bool` (true = black). `step` is Rule 30:\nnew(j) = x(j-1) XOR (x(j) OR x(j+1)); XOR on Bool is written `!=` (boolean inequality, which is exactly XOR).\nThis is Wolfram code 30 (truth table 111↦0, 110↦0, 101↦0, 100↦1, 011↦1, 010↦1, 001↦1, 000↦0).\n`orbit t` is the configuration at time t from the single seed at 0. The centre column is `orbit t 0`\n(1,1,0,1,1,1,0,0,… = OEIS A051023). Claim: there are no period p ≥ 1 and threshold T with\nc(t+p) = c(t) for all t ≥ T. Claim true solves Wolfram's Rule 30 Prize Problem 1; ¬Claim exhibits eventual\nperiodicity.\n-/\nnamespace OpenProblems.QEDE208\nnoncomputable section\n\n/-- One step of elementary cellular automaton Rule 30. -/\ndef step (x : ℤ → Bool) : ℤ → Bool :=\n  fun j => x (j - 1) != (x j || x (j + 1))\n\n/-- The Rule 30 orbit from a single black cell at position 0. -/\ndef orbit : ℕ → ℤ → Bool\n  | 0 => fun j => decide (j = 0)\n  | t + 1 => step (orbit t)\n\ndef Claim : Prop :=\n  ¬ ∃ p T : ℕ, 0 < p ∧ ∀ t : ℕ, T ≤ t → orbit (t + p) 0 = orbit t 0\n\nend\nend OpenProblems.QEDE208\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E209",
+  "review_id": "R6-L22",
+  "title": "Langton's ant builds a highway from every finite start",
+  "area": "Dynamics",
+  "difficulty": 6.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "C. Langton (1986, the ant); highway conjecture folklore, see Bunimovich-Troubetzkoy 1992 and Gajardo-Lutfalla-Rao 2024.",
+  "results": null,
+  "premise_risks": [
+   "Well known (low novelty)",
+   "If an alternative highway for the LR ant exists, the statement here still holds; only the stronger 'period-104' version could fail"
+  ],
+  "plain": "Langton's ant walks on the square grid of black and white cells. On a white cell it turns right, on a black cell it turns left, then it flips the colour of the cell it is on and steps forward. Starting from any configuration with finitely many black cells, simulations always end with the ant building a 'highway': after some time its motion repeats periodically while it drifts off in a fixed direction. Prove that this always happens.",
+  "math": "A state is $(S,p,d)$ with $S\\subset\\mathbb{Z}^2$ finite (the black cells), $p\\in\\mathbb{Z}^2$ and $d\\in\\{(1,0),(0,1),(-1,0),(0,-1)\\}$. One step: if $p\\notin S$, rotate $d$ by $-90^\\circ$, otherwise by $+90^\\circ$; then set $S\\leftarrow S\\,\\triangle\\,\\{p\\}$ and $p\\leftarrow p+d$. Prove that for every initial state with $S_0$ finite there exist $T\\ge0$, $P\\ge1$ and $v\\in\\mathbb{Z}^2\\setminus\\{0\\}$ such that $p_{t+P}=p_t+v$ and $d_{t+P}=d_t$ for all $t\\ge T$.",
+  "novelty": 2,
+  "importance": 5,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.arxiv.org/pdf/2409.10124",
+   "https://arxiv.org/abs/2505.05426",
+   "https://drops.dagstuhl.de/storage/00lipics/lipics-vol386-mfcs2026/LIPIcs.MFCS.2026.49/LIPIcs.MFCS.2026.49.pdf",
+   "https://arxiv.org/pdf/nlin/0306022"
+  ],
+  "lean": "import Mathlib\n/-! QED-E209: Langton's ant builds a highway from every finite start\nLangton's ant walks on the square grid of black and white cells. On a white cell it turns right, on a black cell it turns left, then it flips the colour of the cell it is on and steps forward. Starting from any configuration with finitely many black cells, simulations always end with the ant building a 'highway': after some time its motion repeats periodically while it drifts off in a fixed direction. Prove that this always happens.\nInformal statement: A state is $(S,p,d)$ with $S\\subset\\mathbb{Z}^2$ finite (the black cells), $p\\in\\mathbb{Z}^2$ and $d\\in\\{(1,0),(0,1),(-1,0),(0,-1)\\}$. One step: if $p\\notin S$, rotate $d$ by $-90^\\circ$, otherwise by $+90^\\circ$; then set $S\\leftarrow S\\,\\triangle\\,\\{p\\}$ and $p\\leftarrow p+d$. Prove that for every initial state with $S_0$ finite there exist $T\\ge0$, $P\\ge1$ and $v\\in\\mathbb{Z}^2\\setminus\\{0\\}$ such that $p_{t+P}=p_t+v$ and $d_{t+P}=d_t$ for all $t\\ge T$.\nFormalization notes:\n* The black set is a `Finset (ℤ × ℤ)` (finitely many black cells; the step preserves\n  finiteness). The direction is `Fin 4`, with d ↦ (1,0), (0,1), (−1,0), (0,−1) for d = 0,1,2,3,\n  i.e. counterclockwise order, so a +90° (left) turn is d + 1 and a −90° (right) turn is d − 1\n  (mod 4, `Fin 4` arithmetic).\n* One step: turn right if the current cell is white (pos ∉ black), left if black; toggle the\n  colour of the current cell (erase if black, insert if white = symmetric difference with\n  {pos}); move one cell in the new direction. This is exactly the step in the informal statement.\n* Claim: for every initial state there are T, P ≥ 1 and v ≠ 0 with\n  pos(t+P) = pos(t) + v and dir(t+P) = dir(t) for all t ≥ T (the highway conjecture, in the\n  weak form not insisting on the period-104 highway). ¬Claim: some finite start never settles\n  into such a periodic drift.\n-/\nnamespace OpenProblems.QEDE209\nnoncomputable section\n\n/-- State of Langton's ant: black cells, position, direction. -/\nstructure AntState where\n  black : Finset (ℤ × ℤ)\n  pos : ℤ × ℤ\n  dir : Fin 4\n\n/-- Unit vector of a direction (counterclockwise order). -/\ndef dirVec (d : Fin 4) : ℤ × ℤ :=\n  if d = 0 then (1, 0) else if d = 1 then (0, 1) else if d = 2 then (-1, 0) else (0, -1)\n\n/-- One step of Langton's ant. -/\ndef step (s : AntState) : AntState :=\n  let d : Fin 4 := if s.pos ∈ s.black then s.dir + 1 else s.dir - 1\n  { black := if s.pos ∈ s.black then s.black.erase s.pos else insert s.pos s.black\n    pos := s.pos + dirVec d\n    dir := d }\n\n/-- The highway conjecture for Langton's ant. -/\ndef Claim : Prop :=\n  ∀ s₀ : AntState, ∃ T P : ℕ, ∃ v : ℤ × ℤ, 0 < P ∧ v ≠ 0 ∧\n    ∀ t : ℕ, T ≤ t →\n      (step^[t + P] s₀).pos = (step^[t] s₀).pos + v ∧\n      (step^[t + P] s₀).dir = (step^[t] s₀).dir\n\nend\nend OpenProblems.QEDE209\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E210",
+  "review_id": "R6-L23",
+  "title": "Thue-Morse along fourth powers",
+  "area": "Number theory",
+  "difficulty": 6.0,
+  "grade": "B",
+  "provenance": "Extension",
+  "credit": "A. O. Gelfond (1968) posed the general polynomial problem; degree 2 Mauduit-Rivat, degree 3 Spiegelhofer.",
+  "results": null,
+  "premise_risks": [
+   "Cube case (arXiv:2308.09498) is a preprint as of my check; acceptance status unverified",
+   "Scorer may regard degree 4 as a parameter choice; it is the first open monomial case, and the general k>=4 version is given as strengthening"
+  ],
+  "plain": "Let s(m) be the number of 1s in the binary expansion of m. It is known that s(n), s(n^2) and (since 2023) s(n^3) are even for asymptotically half of all n. Prove the same for fourth powers: s(n^4) is even for asymptotically half of all n.",
+  "math": "Let $s_2(m)$ be the binary digit sum. Prove $\\lim_{N\\to\\infty}\\frac1N\\#\\{0\\le n<N:\\ s_2(n^4)\\equiv0\\pmod 2\\}=\\tfrac12$, equivalently $\\sum_{n<N}(-1)^{s_2(n^4)}=o(N)$. (Natural strengthening: the same for $n^k$ for every $k\\ge4$.)",
+  "novelty": 4,
+  "importance": 6,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2308.09498",
+   "https://www.unileoben.ac.at/fileadmin/shares/mathstat/personal/spiegelhofer/files/slides/2024_02_29_Spiegelhofer.pdf",
+   "https://arxiv.org/abs/1110.4830"
+  ],
+  "lean": "import Mathlib\n/-! QED-E210: Thue-Morse along fourth powers\nLet s(m) be the number of 1s in the binary expansion of m. It is known that s(n), s(n^2) and (since 2023) s(n^3)\nare even for asymptotically half of all n. Prove the same for fourth powers: s(n^4) is even for asymptotically\nhalf of all n.\nInformal statement: Let $s_2(m)$ be the binary digit sum. Prove\n$\\lim_{N\\to\\infty}\\frac1N\\#\\{0\\le n<N:\\ s_2(n^4)\\equiv0\\pmod 2\\}=\\tfrac12$.\nFormalization notes: s₂(m) is `(Nat.digits 2 m).sum` (Mathlib's little-endian base-2 digit list; s₂(0) = 0).\nThe counting function is #{n ∈ range N : s₂(n⁴) even}, divided by N as a real (for N = 0 the quotient is the\njunk value 0, irrelevant for a limit at infinity). `Claim` = the ratio tends to 1/2. `¬Claim` = it does not\n(the strengthening to all n^k, k ≥ 4, is not encoded).\n-/\nnamespace OpenProblems.QEDE210\n\nnoncomputable section\n\n/-- Binary digit sum. -/\ndef s2 (m : ℕ) : ℕ := (Nat.digits 2 m).sum\n\ndef Claim : Prop :=\n  Filter.Tendsto\n    (fun N : ℕ => ((((Finset.range N).filter (fun n : ℕ => s2 (n ^ 4) % 2 = 0)).card : ℕ) : ℝ) / (N : ℝ))\n    Filter.atTop (nhds (1 / 2 : ℝ))\n\nend\n\nend OpenProblems.QEDE210\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E211",
+  "review_id": "R6-L24",
+  "title": "Two consecutive 1s infinitely often in the binary expansion of √2",
+  "area": "Number theory",
+  "difficulty": 6.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Stated open by H. Kaneko (J. Aust. Math. Soc. 2010) and B. Adamczewski - N. Rampersad (Proc. AMS 2008); cf. Y. Bugeaud, 'Distribution modulo one and Diophantine approximation'.",
+  "results": null,
+  "premise_risks": [
+   "A weak sub-question of the normality of √2 (famous); but it is the explicit unknown stated in refereed papers, not a disguise",
+   "Possibly provable by a clever Diophantine argument specific to quadratics - would still be a notable result"
+  ],
+  "plain": "Write √2 in binary: 1.0110101000001001111... Every irrational number has infinitely many 0s, 1s, '01's and '10's in its binary expansion, but nothing known forces '11' to appear infinitely often. Prove that the block 11 occurs infinitely often in the binary expansion of √2.",
+  "math": "Let $b_n=\\lfloor 2^n\\sqrt2\\rfloor \\bmod 2$. Prove that $\\{n\\ge0: b_n=b_{n+1}=1\\}$ is infinite; equivalently, no tail of the binary expansion of $\\sqrt2$ avoids the block $11$.",
+  "novelty": 3,
+  "importance": 7,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.cambridge.org/core/journals/journal-of-the-australian-mathematical-society/article/on-the-binary-digits-of-algebraic-numbers/F8E0A1D687B54F0FB1F306249CD9F268",
+   "https://arxiv.org/pdf/1711.01722",
+   "https://arxiv.org/pdf/0908.4034"
+  ],
+  "lean": "import Mathlib\n/-! QED-E211: Two consecutive 1s infinitely often in the binary expansion of √2\nWrite √2 in binary: 1.0110101000001001111... Every irrational number has infinitely many 0s, 1s, '01's and '10's in its binary expansion, but nothing known forces '11' to appear infinitely often. Prove that the block 11 occurs infinitely often in the binary expansion of √2.\nInformal statement: Let $b_n=\\lfloor 2^n\\sqrt2\\rfloor \\bmod 2$. Prove that $\\{n\\ge0: b_n=b_{n+1}=1\\}$ is infinite; equivalently, no tail of the binary expansion of $\\sqrt2$ avoids the block $11$.\nFormalization notes: Since √2 is irrational its binary expansion is unique, and its n-th binary\ndigit after the point (n ≥ 1; n = 0 gives the units digit 1) is ⌊2^n √2⌋ mod 2. We define\n`bit n := ⌊(2:ℝ)^n * √2⌋ % 2` as an integer (`Int.floor`, `Real.sqrt`; the value is in {0,1}\nbecause ⌊·⌋ ≥ 0 here and `%` on ℤ with positive modulus is the nonnegative remainder). Claim says\nthe set of n with bit n = bit (n+1) = 1 is infinite. Including n = 0 (the integer digit) changes\nnothing, since only infinitude matters. Proving ¬Claim means showing the expansion of √2 is\neventually free of the block 11.\n-/\nnamespace OpenProblems.QEDE211\nnoncomputable section\n\n/-- The n-th binary digit of √2 (n = 0: units digit; n ≥ 1: n-th digit after the point). -/\ndef bit (n : ℕ) : ℤ := ⌊(2 : ℝ) ^ n * Real.sqrt 2⌋ % 2\n\ndef Claim : Prop :=\n  Set.Infinite {n : ℕ | bit n = 1 ∧ bit (n + 1) = 1}\n\nend\nend OpenProblems.QEDE211\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E212",
+  "review_id": "R6-L25",
+  "title": "Every sextic Salem number has an eventually periodic expansion of 1",
+  "area": "Dynamics",
+  "difficulty": 7.0,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Question for degree 6 raised and heuristically supported by D. W. Boyd, Math. Comp. 1996; part of the general K. Schmidt (1980) question whether all Salem numbers are Parry numbers.",
+  "results": null,
+  "premise_risks": [
+   "Truth uncertain: heuristics favour 'yes' but only probabilistically; a single non-Parry sextic Salem number would refute it (that would also be a major result)",
+   "Sub-question of the person-named Schmidt conjecture (all Salem numbers); the degree-6 restriction is an unnamed partial question"
+  ],
+  "plain": "For beta > 1, the map T(x) = beta x - floor(beta x) gives greedy base-beta digits; beta is a Parry number if the T-orbit of 1 is finite. A Salem number is an algebraic integer beta > 1 whose other conjugates lie in the closed unit disc, at least one on the unit circle. Boyd proved every degree-4 Salem number is Parry. Prove the same for degree 6.",
+  "math": "Let $\\beta>1$ be a Salem number of degree $6$ (an algebraic integer with minimal polynomial of degree 6 whose other roots satisfy $|z|\\le1$, at least one with $|z|=1$), and $T_\\beta(x)=\\beta x-\\lfloor\\beta x\\rfloor$ on $[0,1)$. Prove that $\\{T_\\beta^{\\,n}(\\beta-\\lfloor\\beta\\rfloor):n\\ge0\\}$ is finite. (First test case: the root $>1$ of $x^6-3x^5-x^4-7x^3-x^2-3x+1$, whose orbit length exceeds $7.7\\times10^{10}$ if finite.)",
+  "novelty": 3,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.ams.org/journals/mcom/1996-65-214/S0025-5718-96-00700-4",
+   "https://arxiv.org/abs/1912.10386",
+   "https://arxiv.org/abs/1408.0195",
+   "https://arxiv.org/abs/2504.10787",
+   "https://arxiv.org/abs/2206.06675"
+  ],
+  "lean": "import Mathlib\n/-! QED-E212: Every sextic Salem number has an eventually periodic expansion of 1\nFor beta > 1, the map T(x) = beta x - floor(beta x) gives greedy base-beta digits; beta is a Parry number if the T-orbit of 1 is finite. A Salem number is an algebraic integer beta > 1 whose other conjugates lie in the closed unit disc, at least one on the unit circle. Boyd proved every degree-4 Salem number is Parry. Prove the same for degree 6.\nInformal statement: Let $\\beta>1$ be a Salem number of degree $6$ (an algebraic integer with minimal polynomial of degree 6 whose other roots satisfy $|z|\\le1$, at least one with $|z|=1$), and $T_\\beta(x)=\\beta x-\\lfloor\\beta x\\rfloor$ on $[0,1)$. Prove that $\\{T_\\beta^{\\,n}(\\beta-\\lfloor\\beta\\rfloor):n\\ge0\\}$ is finite. (First test case: the root $>1$ of $x^6-3x^5-x^4-7x^3-x^2-3x+1$, whose orbit length exceeds $7.7\\times10^{10}$ if finite.)\nFormalization notes: β is a real number. `IsSalem6 β`: β > 1, β is integral over ℤ (algebraic integer), its\nminimal polynomial over ℚ has degree 6, every complex root of that polynomial other than β itself has\nmodulus ≤ 1, and some complex root has modulus exactly 1. (The minimal polynomial is separable, so β occurs\nonce among the roots; the degree-6 condition rules out the junk value minpoly = 0.) The β-transformation is\nT_β(x) = β x − ⌊β x⌋ = `Int.fract (β * x)`, and T_β(1) = β − ⌊β⌋ = `Int.fract β`, so the orbit of 1 is the\nset {T_β^n(Int.fract β) : n ≥ 0}. Claim: for every sextic Salem β this set is finite (β is a Parry number).\n¬Claim exhibits a sextic Salem number whose expansion of 1 is not eventually periodic.\n-/\nnamespace OpenProblems.QEDE212\nnoncomputable section\n\n/-- `β` is a Salem number of degree 6. -/\ndef IsSalem6 (β : ℝ) : Prop :=\n  1 < β ∧ IsIntegral ℤ β ∧ (minpoly ℚ β).natDegree = 6 ∧\n    (∀ z ∈ ((minpoly ℚ β).map (algebraMap ℚ ℂ)).roots, z ≠ (β : ℂ) → ‖z‖ ≤ 1) ∧\n    (∃ z ∈ ((minpoly ℚ β).map (algebraMap ℚ ℂ)).roots, ‖z‖ = 1)\n\n/-- The β-transformation `x ↦ β x - ⌊β x⌋`. -/\ndef betaT (β : ℝ) (x : ℝ) : ℝ := Int.fract (β * x)\n\ndef Claim : Prop :=\n  ∀ β : ℝ, IsSalem6 β →\n    (Set.range (fun n : ℕ => (betaT β)^[n] (Int.fract β))).Finite\n\nend\nend OpenProblems.QEDE212\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E213",
+  "review_id": "R6-L26",
+  "title": "Half of the binary digits of Champernowne's constant are 1",
+  "area": "Number theory",
+  "difficulty": 6.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Open question recorded by V. Becher and N. Graus; constant due to D. G. Champernowne (1933).",
+  "results": null,
+  "premise_risks": [
+   "Numerical frequency at 3×10^5 bits is 0.4978, slightly below 1/2; convergence may be very slow (or, in principle, the claim false) - the problem is honest either way, but a disproof would be extremely surprising",
+   "Low novelty: normality of classical constants in other bases is a well-known folklore question"
+  ],
+  "plain": "Champernowne's constant C = 0.123456789101112... (write the positive integers one after another in decimal) was proved normal in base 10 in 1933: every block of decimal digits appears with the expected frequency. Nothing is known about its expansion in bases that are not powers of 10. Prove the first instance: in the binary expansion of C, the proportion of 1s among the first N digits tends to 1/2.",
+  "math": "Let $C=\\sum_{k\\ge1}d_k10^{-k}$ where $d_1d_2d_3\\ldots=123456789101112\\ldots$ is the concatenation of the decimal representations of $1,2,3,\\ldots$, and let $b_n=\\lfloor 2^nC\\rfloor\\bmod 2$ for $n\\ge1$. Prove that $\\lim_{N\\to\\infty}\\frac1N\\#\\{1\\le n\\le N:\\ b_n=1\\}=\\frac12$.",
+  "novelty": 4,
+  "importance": 5,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://staff.dc.uba.ar/becher/papers/champ.pdf",
+   "https://cecm-wayback.dcr.sfu.ca/~pborwein/PAPERS/P211.pdf",
+   "https://en.wikipedia.org/wiki/Champernowne_constant",
+   "https://arxiv.org/abs/1710.09313"
+  ],
+  "lean": "import Mathlib\n/-! QED-E213: Half of the binary digits of Champernowne's constant are 1\nChampernowne's constant C = 0.123456789101112... (write the positive integers one after another in decimal) was proved normal in base 10 in 1933: every block of decimal digits appears with the expected frequency. Nothing is known about its expansion in bases that are not powers of 10. Prove the first instance: in the binary expansion of C, the proportion of 1s among the first N digits tends to 1/2.\nInformal statement: Let $C=\\sum_{k\\ge1}d_k10^{-k}$ where $d_1d_2d_3\\ldots=123456789101112\\ldots$ is the concatenation of the decimal representations of $1,2,3,\\ldots$, and let $b_n=\\lfloor 2^nC\\rfloor\\bmod 2$ for $n\\ge1$. Prove that $\\lim_{N\\to\\infty}\\frac1N\\#\\{1\\le n\\le N:\\ b_n=1\\}=\\frac12$.\nFormalization notes:\n* `champList N` is the concatenation of the decimal digit strings of 1, …, N (most significant\n  digit first: `Nat.digits 10` lists digits least significant first, so it is reversed).\n* `champDigit k` (k ≥ 0) is the (k+1)-st digit d_{k+1} of the concatenation, read off from\n  `champList (k+1)`; this list has length ≥ k+1 since every positive integer has ≥ 1 digit,\n  and longer lists only extend it, so the default value of `getD` is never used.\n* C = Σ_{k≥0} champDigit k · 10^{-(k+1)} as a real `tsum` (summable, terms ≤ 9·10^{-(k+1)}).\n* b_n = ⌊2ⁿ C⌋ mod 2 is the n-th binary digit after the point (C is irrational, Mahler, so the\n  binary expansion is unique). Claim: (1/N)·#{1 ≤ n ≤ N : b_n = 1} → 1/2 (simple normality of\n  the digit 1 in base 2). ¬Claim: the frequency of 1s does not converge to 1/2.\n-/\nnamespace OpenProblems.QEDE213\nnoncomputable section\nopen Filter Topology\n\n/-- Concatenation of the decimal representations of `1, …, N`. -/\ndef champList : ℕ → List ℕ\n  | 0 => []\n  | N + 1 => champList N ++ (Nat.digits 10 (N + 1)).reverse\n\n/-- `champDigit k = d_{k+1}`, the `(k+1)`-st decimal digit of Champernowne's constant. -/\ndef champDigit (k : ℕ) : ℕ := (champList (k + 1)).getD k 0\n\n/-- Champernowne's constant `0.123456789101112…`. -/\ndef champernowne : ℝ := ∑' k : ℕ, (champDigit k : ℝ) / (10 : ℝ) ^ (k + 1)\n\n/-- Half of the binary digits of Champernowne's constant are `1`. -/\ndef Claim : Prop :=\n  Tendsto (fun N : ℕ =>\n      ((((Finset.Icc 1 N).filter (fun n : ℕ => ⌊(2 : ℝ) ^ n * champernowne⌋ % 2 = 1)).card : ℕ) : ℝ) / (N : ℝ))\n    atTop (𝓝 ((1 : ℝ) / 2))\n\nend\nend OpenProblems.QEDE213\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E214",
+  "review_id": "R6-L27",
+  "title": "Cyclic perfect difference sets exist only for prime-power orders",
+  "area": "Combinatorics",
+  "difficulty": 5.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Folklore conjecture going back to Singer (1938) and Hall (1947); standard formulation in Jungnickel's and Beth–Jungnickel–Lenz's design theory texts; asymptotic version by S. Peluse.",
+  "results": null,
+  "premise_risks": [
+   "Well-known problem (lower novelty); 'prime power conjecture' is not person-named but is related to famous projective-plane questions",
+   "Must be kept distinct from pending J14 (projective plane of order 12)"
+  ],
+  "plain": "A perfect (planar) difference set of order n is a set of n+1 residues modulo n^2+n+1 such that every nonzero residue is the difference of exactly one ordered pair of its elements. Singer showed that one exists whenever n is a prime power, and each one gives a projective plane of order n with a cyclic symmetry. Prove that if such a set exists then n is a prime power.",
+  "math": "Let $n\\ge2$. Suppose $D\\subseteq\\mathbb{Z}/(n^2+n+1)\\mathbb{Z}$ has $|D|=n+1$ and that for every $x\\neq0$ there is exactly one pair $(a,b)\\in D\\times D$ with $a-b=x$. Prove that $n$ is a prime power.",
+  "novelty": 1,
+  "importance": 7,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v1i1r6",
+   "https://arxiv.org/pdf/2003.04929",
+   "https://personal.ntu.edu.sg/bernhard/Publications/pub/Singer.pdf",
+   "https://api.emergentmind.com/open-problems/prime-power-conjecture-cyclic-projective-planes",
+   "https://mathworld.wolfram.com/PlanarDifferenceSet.html"
+  ],
+  "lean": "import Mathlib\n/-! QED-E214: Cyclic perfect difference sets exist only for prime-power orders\nA perfect (planar) difference set of order n is a set of n+1 residues modulo n^2+n+1 such that every nonzero\nresidue is the difference of exactly one ordered pair of its elements. Singer showed that one exists whenever n is\na prime power, and each one gives a projective plane of order n with a cyclic symmetry. Prove that if such a set\nexists then n is a prime power.\nInformal statement: Let $n\\ge2$. Suppose $D\\subseteq\\mathbb{Z}/(n^2+n+1)\\mathbb{Z}$ has $|D|=n+1$ and that for\nevery $x\\neq0$ there is exactly one pair $(a,b)\\in D\\times D$ with $a-b=x$. Prove that $n$ is a prime power.\nFormalization notes: D is a Finset of ZMod (n²+n+1); the difference condition counts ordered pairs in D ×ˢ D with\np.1 − p.2 = x and requires exactly one for each nonzero residue x. \"Prime power\" is Mathlib's `IsPrimePow`\n(p^k with p prime, k ≥ 1). `Claim` = the prime power conjecture for cyclic planar difference sets;\n`¬Claim` = a perfect difference set of some non-prime-power order n ≥ 2 exists.\n-/\nnamespace OpenProblems.QEDE214\n\nnoncomputable section\n\nopen Classical\n\n/-- D is a planar (perfect) difference set of order n in ℤ/(n²+n+1). -/\ndef IsPerfectDiffSet (n : ℕ) (D : Finset (ZMod (n ^ 2 + n + 1))) : Prop :=\n  D.card = n + 1 ∧\n    ∀ x : ZMod (n ^ 2 + n + 1), x ≠ 0 →\n      ((D ×ˢ D).filter (fun p : ZMod (n ^ 2 + n + 1) × ZMod (n ^ 2 + n + 1) => p.1 - p.2 = x)).card = 1\n\ndef Claim : Prop :=\n  ∀ n : ℕ, 2 ≤ n → ∀ D : Finset (ZMod (n ^ 2 + n + 1)), IsPerfectDiffSet n D → IsPrimePow n\n\nend\n\nend OpenProblems.QEDE214\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E215",
+  "review_id": "R6-L28",
+  "title": "Ovoids of the parabolic quadric Q(6,q) when q is not a power of 3",
+  "area": "Combinatorics",
+  "difficulty": 4.0,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Open problem from Thas (1981) and Kantor (1982); current status in Ball–Govaerts–Storme (2006) and Bartoli–Durante–Grimaldi (2024).",
+  "results": null,
+  "premise_risks": [
+   "Specialist topic; the scorer may rate importance moderately",
+   "Faithfulness relies on the standard fact that partial ovoids of size q^3+1 are ovoids (counting argument), which the Lean statement sidesteps by stating the size condition directly"
+  ],
+  "plain": "Over a finite field with q elements (q odd), take the quadratic form Q(x)=x0x1+x2x3+x4x5+x6^2 in seven variables. An ovoid is a set of q^3+1 isotropic points (nonzero solutions of Q=0, up to scaling) no two of which are orthogonal. Ovoids exist when q is a power of 3 and do not exist when q is even or q is a prime larger than 3. Does an ovoid exist for any other q? The smallest open case is q=25.",
+  "math": "Let $q=p^h$ with $p\\ge5$ prime and $h\\ge2$. Put $Q(x)=x_0x_1+x_2x_3+x_4x_5+x_6^2$ on $\\mathbb F_q^7$ and $B(x,y)=Q(x+y)-Q(x)-Q(y)$. Decide whether there is a set $S\\subseteq\\mathbb F_q^7\\setminus\\{0\\}$ with $|S|=q^3+1$, $Q(v)=0$ for all $v\\in S$, and $B(v,w)\\ne0$ for all distinct $v,w\\in S$ (i.e. whether $Q(6,q)$ has an ovoid). The smallest open case is $q=25$; it is widely expected that no such $S$ exists.",
+  "novelty": 2,
+  "importance": 5,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://link.springer.com/10.1007/s10623-024-01388-9",
+   "https://doi.org/10.1007/s10623-005-5666-0",
+   "https://arxiv.org/abs/2502.02219"
+  ],
+  "lean": "import Mathlib\n/-! QED-E215: Ovoids of the parabolic quadric Q(6,q) when q is not a power of 3\nOver a finite field with q elements (q odd), take the quadratic form Q(x)=x0x1+x2x3+x4x5+x6^2 in seven variables. An ovoid is a set of q^3+1 isotropic points (nonzero solutions of Q=0, up to scaling) no two of which are orthogonal. Ovoids exist when q is a power of 3 and do not exist when q is even or q is a prime larger than 3. Does an ovoid exist for any other q? The smallest open case is q=25.\nInformal statement: Let $q=p^h$ with $p\\ge5$ prime and $h\\ge2$. Put $Q(x)=x_0x_1+x_2x_3+x_4x_5+x_6^2$ on $\\mathbb F_q^7$ and $B(x,y)=Q(x+y)-Q(x)-Q(y)$. Decide whether there is a set $S\\subseteq\\mathbb F_q^7\\setminus\\{0\\}$ with $|S|=q^3+1$, $Q(v)=0$ for all $v\\in S$, and $B(v,w)\\ne0$ for all distinct $v,w\\in S$ (i.e. whether $Q(6,q)$ has an ovoid). The smallest open case is $q=25$; it is widely expected that no such $S$ exists.\nFormalization notes: F ranges over all finite fields (`Field F`, `Fintype F`) with\n`Fintype.card F = p^h`, p prime ≥ 5, h ≥ 2 (every such q is realized by some F, and the question\ndoes not depend on the choice of F up to isomorphism). Q is the explicit nondegenerate parabolic\nform of Q(6,q) and B its polar form. A set S of vectors stands for a set of projective points:\nthe conditions force distinct elements of S to be non-proportional, because for Q(v) = 0 one has\nB(v, λv) = 2λQ(v) = 0; hence |S| = q³+1 vectors give q³+1 distinct singular points, pairwise\nnon-orthogonal, i.e. pairwise non-collinear on the quadric. A set of q³+1 pairwise non-collinear\nsingular points of Q(6,q) is exactly an ovoid (standard counting: each of the generators meets it\nat most once and the double count forces exactly once), so this is the standard notion.\nClaim is the conjectured (expected) answer: Q(6,q) has no ovoid for every q = p^h, p ≥ 5, h ≥ 2.\n¬Claim means an ovoid exists for some such q (e.g. q = 25). Deciding a single case such as q = 25\nwithout the general case is not captured by Claim alone.\n-/\nnamespace OpenProblems.QEDE215\nnoncomputable section\n\n/-- The parabolic quadratic form x0x1 + x2x3 + x4x5 + x6² on F⁷. -/\ndef Q {F : Type} [Field F] (x : Fin 7 → F) : F :=\n  x 0 * x 1 + x 2 * x 3 + x 4 * x 5 + x 6 ^ 2\n\n/-- Its polar bilinear form B(x,y) = Q(x+y) - Q(x) - Q(y). -/\ndef B {F : Type} [Field F] (x y : Fin 7 → F) : F :=\n  Q (x + y) - Q x - Q y\n\n/-- `S` represents an ovoid of Q(6,q): q³+1 nonzero singular vectors, pairwise non-orthogonal. -/\ndef IsOvoid {F : Type} [Field F] [Fintype F] (S : Finset (Fin 7 → F)) : Prop :=\n  S.card = Fintype.card F ^ 3 + 1 ∧ (∀ v ∈ S, v ≠ 0 ∧ Q v = 0) ∧\n    ∀ v ∈ S, ∀ w ∈ S, v ≠ w → B v w ≠ 0\n\ndef Claim : Prop :=\n  ∀ (F : Type) [Field F] [Fintype F] (p h : ℕ), p.Prime → 5 ≤ p → 2 ≤ h →\n    Fintype.card F = p ^ h → ¬ ∃ S : Finset (Fin 7 → F), IsOvoid S\n\nend\nend OpenProblems.QEDE215\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E216",
+  "review_id": "R6-L29",
+  "title": "A biplane with more than 13 points per block",
+  "area": "Combinatorics",
+  "difficulty": 4.0,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Classical open problem on biplanes (Hussain 1945, Cameron 1973 survey 'Biplanes'); smallest open case per Alavi–Daneshkhah–Praeger and Crnković et al.",
+  "results": null,
+  "premise_risks": [
+   "Disjunction risk: posed as an existence question whose positive answer needs one example and negative answer would need infinitely many cases; the board may prefer the single case (121,16,2) — offer that as the headline formalization",
+   "Related in spirit to pending J14 (projective plane order 12) and E023 (S(2,6,51)) but different parameters and family"
+  ],
+  "plain": "A biplane is a family of v blocks, each a k-element subset of a v-point set, such that every two blocks share exactly two points (equivalently every two points lie in exactly two blocks). Only sixteen nontrivial biplanes are known, all with k ≤ 13. Is there a biplane with larger blocks? The smallest open case is v = 121, k = 16.",
+  "math": "Does there exist a symmetric $2$-$(v,k,2)$ design with $k\\ge14$, i.e. $v$ distinct $k$-subsets of a $v$-set with $k(k-1)=2(v-1)$, $k\\ge14$, any two of which meet in exactly $2$ points? (Bruck–Ryser–Chowla excludes $k=14,15$; the first open case is $(v,k)=(121,16)$.)",
+  "novelty": 2,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/pdf/2010.12944",
+   "https://arxiv.org/pdf/2004.04535"
+  ],
+  "lean": "import Mathlib\n/-! QED-E216: A biplane with more than 13 points per block\nA biplane is a family of v blocks, each a k-element subset of a v-point set, such that every two blocks share exactly two points (equivalently every two points lie in exactly two blocks). Only sixteen nontrivial biplanes are known, all with k ≤ 13. Is there a biplane with larger blocks? The smallest open case is v = 121, k = 16.\nInformal statement: Does there exist a symmetric $2$-$(v,k,2)$ design with $k\\ge14$, i.e. $v$ distinct $k$-subsets of a $v$-set with $k(k-1)=2(v-1)$, $k\\ge14$, any two of which meet in exactly $2$ points? (Bruck–Ryser–Chowla excludes $k=14,15$; the first open case is $(v,k)=(121,16)$.)\nFormalization notes: Points are `Fin v`; the block family is a `Finset (Finset (Fin v))`, so blocks are\nautomatically distinct, and it has exactly v blocks, each of size k, any two distinct blocks meeting in exactly\n2 points. By Ryser's dual theorem (the incidence matrix N satisfies N Nᵀ = (k−2)I + 2J, is invertible for\nk > 2, hence Nᵀ N = (k−2)I + 2J too), this is the same as a symmetric 2-(v,k,2) design; the parameter relation\nk(k−1) = 2(v−1) is then automatic but is included explicitly. Claim (existence) true means some biplane with\nk ≥ 14 exists (e.g. a (121,16,2) biplane); ¬Claim means no biplane has k ≥ 14 at all.\n-/\nnamespace OpenProblems.QEDE216\nnoncomputable section\n\n/-- `B` is a family of `v` blocks of size `k` in a `v`-point set, any two distinct blocks meeting in\nexactly two points: a biplane. -/\ndef IsBiplane (v k : ℕ) (B : Finset (Finset (Fin v))) : Prop :=\n  B.card = v ∧ (∀ b ∈ B, b.card = k) ∧ ∀ b ∈ B, ∀ c ∈ B, b ≠ c → (b ∩ c).card = 2\n\ndef Claim : Prop :=\n  ∃ v k : ℕ, 14 ≤ k ∧ k * (k - 1) = 2 * (v - 1) ∧\n    ∃ B : Finset (Finset (Fin v)), IsBiplane v k B\n\nend\nend OpenProblems.QEDE216\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E217",
+  "review_id": "R6-L30",
+  "title": "Does a generalized quadrangle of order (4,11) exist?",
+  "area": "Combinatorics",
+  "difficulty": 3.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Open problem in Payne–Thas, Finite Generalized Quadrangles; SRG status from A. E. Brouwer's tables.",
+  "results": null,
+  "premise_risks": [
+   "Two-case question; could be split into GQ(4,11) and GQ(4,12) separately",
+   "Could not locate a 2024-2026 source that explicitly restates 'GQ(4,11), GQ(4,12) open', status inferred from Brouwer's live SRG table (point graphs open) and Payne–Thas"
+  ],
+  "plain": "A generalized quadrangle of order (s,t) is a point-line geometry in which every line has s+1 points, every point is on t+1 lines, two points share at most one line, and for every point P not on a line L exactly one point of L is collinear with P. For five points per line (s=4), the standard counting conditions allow t in {1,2,4,6,8,11,12,16}, and all but t=11 and t=12 are realised. Decide whether such a quadrangle exists for t=11 (the case t=12 is a separate problem).",
+  "math": "For t = 11 only: decide whether there exists a finite incidence structure with nonempty point set, every line of size 5, every point on exactly 12 lines, two distinct lines meeting in at most one point, and for every P not on L exactly one Q on L collinear with P. (Case t = 12 to be posed as a separate problem with the same definitions.)",
+  "novelty": 2,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://aeb.win.tue.nl/graphs/srg/srgtab201-250.html",
+   "https://arxiv.org/abs/2504.09372",
+   "https://arxiv.org/abs/1205.1431",
+   "https://arxiv.org/abs/1909.07609"
+  ],
+  "lean": "import Mathlib\n/-! QED-E217: Does a generalized quadrangle of order (4,11) exist?\nA generalized quadrangle of order (s,t) is a point-line geometry in which every line has s+1 points, every point is on t+1 lines, two points share at most one line, and for every point P not on a line L exactly one point of L is collinear with P. For five points per line (s=4), the standard counting conditions allow t in {1,2,4,6,8,11,12,16}, and all but t=11 and t=12 are realised. Decide, for t=11 and for t=12, whether such a quadrangle exists.\nInformal statement: For each $t\\in\\{11,12\\}$, determine whether there exists a finite incidence structure $(\\mathcal P,\\mathcal L)$ with nonempty point set, every line of size $5$, every point on exactly $t+1$ lines, two distinct lines meeting in at most one point, and such that for every $P\\notin L$ there is exactly one $Q\\in L$ collinear with $P$. (Equivalently: determine the set of $t$ for which a $\\mathrm{GQ}(4,t)$ exists; known examples give $\\{1,2,4,6,8,16\\}$.)\nFormalization notes:\n* Points: `Fin N` (any finite point set up to relabelling). Lines are identified with their\n  point sets, `L : Finset (Finset (Fin N))`; this loses nothing because distinct lines of a GQ\n  with s ≥ 1 share at most one point and so have distinct point sets.\n* `IsGQ s t N L`: N > 0 (nonempty point set: without it the empty structure satisfies every\n  axiom vacuously); every line has s+1 points; every point is on exactly t+1 lines; distinct\n  lines meet in ≤ 1 point (equivalent to \"two points share at most one line\"); and for every\n  point p and line l with p ∉ l there is exactly one q ∈ l collinear with p (on a common line).\n  Connectedness and the standard counts |P| = (s+1)(st+1) follow from these axioms.\n* The source problem has two independent cases, and one Prop cannot decide two independent\n  bits. So this file covers only t = 11: Claim := ¬ GQExists 4 11. Proving Claim shows no\n  GQ(4,11) exists; proving ¬Claim gives one. The case t = 12 is a separate board problem with the\n  same definitions.\n-/\nnamespace OpenProblems.QEDE217\nnoncomputable section\n\n/-- `L` is the line set of a generalized quadrangle of order `(s,t)` on the points `Fin N`. -/\ndef IsGQ (s t N : ℕ) (L : Finset (Finset (Fin N))) : Prop :=\n  0 < N ∧\n  (∀ l ∈ L, l.card = s + 1) ∧\n  (∀ p : Fin N, (L.filter (fun l : Finset (Fin N) => p ∈ l)).card = t + 1) ∧\n  (∀ l ∈ L, ∀ m ∈ L, l ≠ m → (l ∩ m).card ≤ 1) ∧\n  (∀ p : Fin N, ∀ l ∈ L, p ∉ l → ∃! q : Fin N, q ∈ l ∧ ∃ m ∈ L, p ∈ m ∧ q ∈ m)\n\n/-- A generalized quadrangle of order `(s,t)` exists. -/\ndef GQExists (s t : ℕ) : Prop := ∃ N : ℕ, ∃ L : Finset (Finset (Fin N)), IsGQ s t N L\n\n/-- No generalized quadrangle of order (4,11) exists. (Order (4,12) is a separate problem.) -/\ndef Claim : Prop := ¬ GQExists 4 11\n\nend\nend OpenProblems.QEDE217\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E218",
+  "review_id": "R6-L30b",
+  "title": "Does a generalized quadrangle of order (4,12) exist?",
+  "area": "Combinatorics",
+  "difficulty": 3.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Open problem in Payne–Thas, Finite Generalized Quadrangles; SRG status from A. E. Brouwer's tables.",
+  "results": null,
+  "premise_risks": [
+   "Two-case question; could be split into GQ(4,11) and GQ(4,12) separately",
+   "Could not locate a 2024-2026 source that explicitly restates 'GQ(4,11), GQ(4,12) open', status inferred from Brouwer's live SRG table (point graphs open) and Payne–Thas"
+  ],
+  "plain": "A generalized quadrangle of order (s,t) is a point-line geometry in which every line has s+1 points, every point is on t+1 lines, two points share at most one line, and for every point P not on a line L exactly one point of L is collinear with P. For five points per line (s=4), the standard counting conditions allow t in {1,2,4,6,8,11,12,16}, and all but t=11 and t=12 are realised. Decide whether such a quadrangle exists for t=12 (the case t=11 is a separate problem).",
+  "math": "For t = 12 only: decide whether there exists a finite incidence structure with nonempty point set, every line of size 5, every point on exactly 13 lines, two distinct lines meeting in at most one point, and for every P not on L exactly one Q on L collinear with P. (Case t = 11 is posed as a separate problem with the same definitions.)",
+  "novelty": 2,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://aeb.win.tue.nl/graphs/srg/srgtab201-250.html",
+   "https://arxiv.org/abs/2504.09372",
+   "https://arxiv.org/abs/1205.1431",
+   "https://arxiv.org/abs/1909.07609"
+  ],
+  "lean": "import Mathlib\n/-! QED-E218: Does a generalized quadrangle of order (4,12) exist?\nA generalized quadrangle of order (s,t) is a point-line geometry in which every line has s+1 points, every point is on t+1 lines, two points share at most one line, and for every point P not on a line L exactly one point of L is collinear with P. For five points per line (s=4), the standard counting conditions allow t in {1,2,4,6,8,11,12,16}, and all but t=11 and t=12 are realised. Decide, for t=11 and for t=12, whether such a quadrangle exists.\nInformal statement: For each $t\\in\\{11,12\\}$, determine whether there exists a finite incidence structure $(\\mathcal P,\\mathcal L)$ with nonempty point set, every line of size $5$, every point on exactly $t+1$ lines, two distinct lines meeting in at most one point, and such that for every $P\\notin L$ there is exactly one $Q\\in L$ collinear with $P$. (Equivalently: determine the set of $t$ for which a $\\mathrm{GQ}(4,t)$ exists; known examples give $\\{1,2,4,6,8,16\\}$.)\nFormalization notes:\n* Points: `Fin N` (any finite point set up to relabelling). Lines are identified with their\n  point sets, `L : Finset (Finset (Fin N))`; this loses nothing because distinct lines of a GQ\n  with s ≥ 1 share at most one point and so have distinct point sets.\n* `IsGQ s t N L`: N > 0 (nonempty point set: without it the empty structure satisfies every\n  axiom vacuously); every line has s+1 points; every point is on exactly t+1 lines; distinct\n  lines meet in ≤ 1 point (equivalent to \"two points share at most one line\"); and for every\n  point p and line l with p ∉ l there is exactly one q ∈ l collinear with p (on a common line).\n  Connectedness and the standard counts |P| = (s+1)(st+1) follow from these axioms.\n* The source problem has two independent cases, and one Prop cannot decide two independent\n  bits. So this file covers only t = 12: Claim := ¬ GQExists 4 12. Proving Claim shows no\n  GQ(4,12) exists; proving ¬Claim gives one. The case t = 11 is a separate board problem with the\n  same definitions.\n-/\nnamespace OpenProblems.QEDE218\nnoncomputable section\n\n/-- `L` is the line set of a generalized quadrangle of order `(s,t)` on the points `Fin N`. -/\ndef IsGQ (s t N : ℕ) (L : Finset (Finset (Fin N))) : Prop :=\n  0 < N ∧\n  (∀ l ∈ L, l.card = s + 1) ∧\n  (∀ p : Fin N, (L.filter (fun l : Finset (Fin N) => p ∈ l)).card = t + 1) ∧\n  (∀ l ∈ L, ∀ m ∈ L, l ≠ m → (l ∩ m).card ≤ 1) ∧\n  (∀ p : Fin N, ∀ l ∈ L, p ∉ l → ∃! q : Fin N, q ∈ l ∧ ∃ m ∈ L, p ∈ m ∧ q ∈ m)\n\n/-- A generalized quadrangle of order `(s,t)` exists. -/\ndef GQExists (s t : ℕ) : Prop := ∃ N : ℕ, ∃ L : Finset (Finset (Fin N)), IsGQ s t N L\n\n/-- No generalized quadrangle of order (4,12) exists. (Order (4,11) is a separate problem.) -/\ndef Claim : Prop := ¬ GQExists 4 12\n\nend\nend OpenProblems.QEDE218\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E219",
+  "review_id": "R6-L31",
+  "title": "A triangle-free strongly regular graph on 162 vertices",
+  "area": "Graph theory",
+  "difficulty": 3.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Classical question (Biggs, Brouwer); smallest open case per A. E. Brouwer's table of strongly regular graphs.",
+  "results": null,
+  "premise_risks": [
+   "Same family as the pending degree-57 Moore graph (H06); scorer may see overlap",
+   "AI-assisted SRG exclusions are moving quickly in 2026 (Kovaľ + AI; Akiyama), so this case may fall soon",
+   "Pure existence question resolved, if at all, likely by computation"
+  ],
+  "plain": "Only seven triangle-free strongly regular graphs are known (pentagon, Petersen, Clebsch, Hoffman-Singleton, Gewirtz, M22 and Higman-Sims graphs). The smallest parameter set for which such a graph is neither known nor ruled out has 162 vertices, every vertex of degree 21, no triangles, and every pair of non-adjacent vertices with exactly 3 common neighbours. Does such a graph exist?",
+  "math": "Decide whether there exists a simple graph on $162$ vertices that is strongly regular with parameters $(162,21,0,3)$: $21$-regular, adjacent vertices have no common neighbours, and distinct non-adjacent vertices have exactly $3$ common neighbours.",
+  "novelty": 2,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://aeb.win.tue.nl/graphs/srg/srgtab151-200.html",
+   "https://norcom2019.math.aau.dk/J%C3%B8rgensen.pdf",
+   "https://arxiv.org/abs/0911.2160",
+   "https://arxiv.org/pdf/2610.20259"
+  ],
+  "lean": "import Mathlib\n/-! QED-E219: A triangle-free strongly regular graph on 162 vertices\nOnly seven triangle-free strongly regular graphs are known (pentagon, Petersen, Clebsch, Hoffman-Singleton,\nGewirtz, M22 and Higman-Sims graphs). The smallest parameter set for which such a graph is neither known nor ruled\nout has 162 vertices, every vertex of degree 21, no triangles, and every pair of non-adjacent vertices with exactly\n3 common neighbours. Does such a graph exist?\nInformal statement: Decide whether there exists a simple graph on $162$ vertices that is strongly regular with\nparameters $(162,21,0,3)$: $21$-regular, adjacent vertices have no common neighbours, and distinct non-adjacent\nvertices have exactly $3$ common neighbours.\nFormalization notes: Vertices are Fin 162 (any 162-vertex graph is isomorphic to one on Fin 162). Strong\nregularity is spelled out by hand (equivalent to Mathlib's `SimpleGraph.IsSRGWith G 162 21 0 3`, avoiding\ndependence on its instance arguments): every vertex has exactly 21 neighbours; for distinct v, w the number of\ncommon neighbours u is 0 if v ~ w and 3 otherwise. Counting uses classical decidability. `Claim` = such a graph\nexists; `¬Claim` = no srg(162,21,0,3) exists.\n-/\nnamespace OpenProblems.QEDE219\n\nnoncomputable section\n\nopen Classical\n\n/-- G is strongly regular with parameters (162, 21, 0, 3). -/\ndef IsSRG162 (G : SimpleGraph (Fin 162)) : Prop :=\n  (∀ v : Fin 162, (Finset.univ.filter (fun u : Fin 162 => G.Adj v u)).card = 21) ∧\n    ∀ v w : Fin 162, v ≠ w →\n      (G.Adj v w → (Finset.univ.filter (fun u : Fin 162 => G.Adj v u ∧ G.Adj w u)).card = 0) ∧\n      (¬ G.Adj v w → (Finset.univ.filter (fun u : Fin 162 => G.Adj v u ∧ G.Adj w u)).card = 3)\n\ndef Claim : Prop := ∃ G : SimpleGraph (Fin 162), IsSRG162 G\n\nend\n\nend OpenProblems.QEDE219\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E220",
+  "review_id": "R6-L33",
+  "title": "Is there a cubic graph of girth 13 with fewer than 272 vertices?",
+  "area": "Graph theory",
+  "difficulty": 3.0,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "Cage problem (Tutte 1947); bounds from McKay–Myrvold–Nadon (1998) and the Exoo–Jajcay dynamic survey.",
+  "results": null,
+  "premise_risks": [
+   "Largely computational; could be seen as a 'pure large computation' (rule 5) though it is a recognized open problem with refereed bounds",
+   "Upper-bound constructions for neighbouring girths moved in Nov 2026; 272 may be beaten soon by search"
+  ],
+  "plain": "A (3,g)-cage is a smallest 3-regular graph with no cycle shorter than g. Cubic cages are known for every girth up to 12. For girth 13 the best known graph has 272 vertices, while exhaustive computer searches only show that at least 202 vertices are needed. Is there a 3-regular graph of girth at least 13 on fewer than 272 vertices?",
+  "math": "Does there exist a $3$-regular simple graph $G$ with $|V(G)|<272$ and girth at least $13$? Equivalently (by strict monotonicity $n(3,g)<n(3,g+1)$), is $n(3,13)<272$, given the known bounds $202\\le n(3,13)\\le272$?",
+  "novelty": 2,
+  "importance": 4,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v33i1p54/pdf",
+   "https://arxiv.org/abs/2511.07247",
+   "https://arxiv.org/abs/2611.09000"
+  ],
+  "lean": "import Mathlib\n/-! QED-E220: Is there a cubic graph of girth 13 with fewer than 272 vertices?\nA (3,g)-cage is a smallest 3-regular graph with no cycle shorter than g. Cubic cages are known for every girth up to 12. For girth 13 the best known graph has 272 vertices, while exhaustive computer searches only show that at least 202 vertices are needed. Is there a 3-regular graph of girth at least 13 on fewer than 272 vertices?\nInformal statement: Does there exist a $3$-regular simple graph $G$ with $|V(G)|<272$ and girth at least $13$? Equivalently (by strict monotonicity $n(3,g)<n(3,g+1)$), is $n(3,13)<272$, given the known bounds $202\\le n(3,13)\\le272$?\nFormalization notes: A simple graph on `Fin n`, n < 272. 3-regularity is stated as: every vertex has exactly\n3 neighbours (`Nat.card (G.neighborSet v) = 3`, avoiding decidability instances). Girth ≥ 13 is stated by\nhand: every cycle (`SimpleGraph.Walk.IsCycle`, a closed walk of length ≥ 3 with no repeated vertices other\nthan the endpoints and no repeated edges) has length ≥ 13. A 3-regular finite graph with n ≥ 1 vertices is\nnot acyclic, so the cycle condition is not vacuous; the empty graph on Fin 0 would satisfy both conditions\nvacuously, so n ≥ 1 is required explicitly. Claim true ⇔ n(3,13) < 272; ¬Claim ⇔\nn(3,13) = 272.\n-/\nnamespace OpenProblems.QEDE220\nnoncomputable section\n\ndef Claim : Prop :=\n  ∃ n : ℕ, 1 ≤ n ∧ n < 272 ∧ ∃ G : SimpleGraph (Fin n),\n    (∀ v : Fin n, Nat.card (G.neighborSet v) = 3) ∧\n    ∀ (u : Fin n) (p : G.Walk u u), p.IsCycle → 13 ≤ p.length\n\nend\nend OpenProblems.QEDE220\n",
+  "set": "extended"
  }
 ]

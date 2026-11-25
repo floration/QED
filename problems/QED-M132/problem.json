@@ -1,0 +1,25 @@
+{
+ "id": "QED-M132",
+ "set": "main",
+ "title": "The 4/3 integrality gap of the subtour LP for metric TSP",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Folklore '4/3 conjecture' (Goemans 1995; Williamson 1990s); statement source: Karlin–Klein–Oveis Gharan 2022; Cook–Hougardy–Petrich 2026.",
+ "premise_risks": [
+  "Very famous problem (low novelty, high importance)",
+  "Cook–Hougardy–Petrich computations are an unrefereed 2026 preprint (only used as supporting evidence)"
+ ],
+ "plain": "Take n cities with distances that satisfy the triangle inequality. The subtour LP relaxes 'pick a tour' to 'put fractional weights on the roads so every city has total weight 2, and every split of the cities into two groups is crossed by total weight at least 2'. Is the cheapest tour always at most 4/3 times the cheapest fractional solution? Known examples show 4/3 cannot be lowered; the best proven factor is only slightly below 3/2.",
+ "math": "Let $n\\ge3$ and let $c:\\binom{[n]}{2}\\to\\mathbb R_{\\ge0}$ satisfy $c_{uw}\\le c_{uv}+c_{vw}$. Let $x\\in\\mathbb R_{\\ge0}^{\\binom{[n]}{2}}$ satisfy $x(\\delta(v))=2$ for all $v\\in[n]$ and $x(\\delta(S))\\ge2$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove that some Hamiltonian cycle $H$ on $[n]$ has $c(H)\\le\\frac43\\sum_e c_ex_e$. (Equivalently: the integrality ratio of the subtour/Held--Karp relaxation of metric TSP equals $4/3$; the lower bound $4/3$ is known.)",
+ "novelty": 1,
+ "importance": 9,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2105.10043",
+  "https://arxiv.org/abs/2603.12995",
+  "https://arxiv.org/abs/2507.07003"
+ ]
+}
