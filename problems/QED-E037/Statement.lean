@@ -14,7 +14,7 @@ def mulOf {n : ℕ} (g : Group (Fin n)) (a b : Fin n) : Fin n :=
 def IsoRel (n : ℕ) (g h : Group (Fin n)) : Prop :=
   ∃ e : Fin n ≃ Fin n, ∀ a b : Fin n, e (mulOf g a b) = mulOf h (e a) (e b)
 
-def numGroups (n : ℕ) : ℕ := Nat.card (Quot (IsoRel n))
+noncomputable def numGroups (n : ℕ) : ℕ := Nat.card (Quot (IsoRel n))
 
 def Claim : Prop := numGroups 2048 < 1780000000000000
 
