@@ -1,0 +1,24 @@
+{
+ "id": "QED-E040",
+ "set": "extended",
+ "title": "Densest packing of regular heptagons",
+ "area": "Geometry",
+ "difficulty": 5.5,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Kuperberg & Kuperberg (1990); Kallus (2013); after Hales–Kusner (2016)",
+ "premise_risks": [
+  "global optimality could appear in a recent preprint not found",
+  "likely a large computer-assisted project (difficulty may be underestimated)"
+ ],
+ "plain": "Copies of a regular heptagon (any rotations and positions allowed) are placed in the plane without overlapping. The best known arrangement uses rows of heptagons pointing alternately up and down and covers about 89.27% of the plane. Prove no arrangement does better.",
+ "math": "Let $\\delta(P_7)$ be the maximal packing density of congruent copies of the regular heptagon $P_7$ in $\\mathbb R^2$ (isometries allowed). Prove $\\delta(P_7)=\\frac{2}{97}\\left(-111+492\\cos\\frac{\\pi}{7}-356\\cos^2\\frac{\\pi}{7}\\right)\\approx 0.892691$, the density of the best double-lattice packing.",
+ "formal_status": "formalized",
+ "review_note": "Known: Best double-lattice density: Kuperberg & Kuperberg, DCG 5 (1990); value as stated (AMS Visual Insight, Baez 2014). Pentagon optimum = double lattice: Hales & Kusner, arXiv:1602.07220 (computer-assisted). Kallus, 'Pessimal packing shapes', Geom. Topol. (arXiv:1305.0289): heptagon is a local pessimum for double-lattice density. Local optimality of double lattices: Kallus–Marcus arXiv:1509.02241. The heptagon is believed to be the worst-packing convex shape, unproved. No proof of global optimality.",
+ "refs": [
+  "https://blogs.ams.org/visualinsight/2014/11/15/packing-regular-heptagons/",
+  "https://arxiv.org/abs/1602.07220",
+  "https://arxiv.org/abs/1305.0289",
+  "https://arxiv.org/abs/1509.02241"
+ ]
+}

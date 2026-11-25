@@ -1,0 +1,25 @@
+{
+ "id": "QED-E033",
+ "set": "extended",
+ "title": "Ideal Prouhet–Tarry–Escott solution of size 11",
+ "area": "Number theory",
+ "difficulty": 5.0,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Prouhet, Tarry, Escott; frontier noted by Borwein–Lisoněk–Percival and the 2025 PTE survey",
+ "premise_risks": [
+  "the general ideal-PTE conjecture is classical; this is its smallest open case, not a new question",
+  "heuristics do not strongly favour existence at degree 10; a negative answer would need an obstruction"
+ ],
+ "plain": "Find two different lists of 11 integers whose sums agree, whose sums of squares agree, and so on all the way up to their sums of 10th powers. Such 'ideal' pairs are known for every list size up to 10 and for size 12, but size 11 has never been found, nor proved impossible.",
+ "math": "Do there exist multisets $\\{a_1,\\dots,a_{11}\\}\\neq\\{b_1,\\dots,b_{11}\\}$ of integers with $\\sum_i a_i^j=\\sum_i b_i^j$ for $j=1,\\dots,10$? Equivalently, is there an ideal PTE solution of degree $10$, i.e. $\\prod_{i=1}^{11}(x-a_i)-\\prod_{i=1}^{11}(x-b_i)$ a nonzero constant?",
+ "formal_status": "formalized",
+ "review_note": "Known: Ideal solutions known for degrees $n\\le 9$ and $n=11$ (sizes $\\le10$ and $12$); survey arXiv:2506.11429 (2025). Degree-11 (size-12) symmetric solution: Kuosa, Meyrignac, Chen Shuwen (1999). Borwein–Lisoněk–Percival, 'Computational investigations of the PTE problem', Math. Comp. 72 (2003): unsuccessful searches for degree 10 and 12 within their search class. Caley, PhD thesis (Waterloo 2012): constants $C_n$ and divisibility constraints. Inagaki–Matsumura–Sawa–Uchida, arXiv:2603.11100 (Mar 2026): characterization of ideal PTE_1 solutions via designs, no degree-10 solution.",
+ "refs": [
+  "https://arxiv.org/abs/2506.11429",
+  "https://www.ams.org/mcom/2003-72-244/S0025-5718-02-01504-1/",
+  "https://arxiv.org/abs/2304.11254",
+  "https://arxiv.org/abs/2603.11100",
+  "https://uwspace.uwaterloo.ca/bitstream/10012/7205/1/Caley_Timothy.pdf"
+ ]
+}

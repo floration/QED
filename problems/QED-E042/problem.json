@@ -1,0 +1,25 @@
+{
+ "id": "QED-E042",
+ "set": "extended",
+ "title": "Happy ending for heptagons: ES(7)=33",
+ "area": "Geometry",
+ "difficulty": 4.5,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Erdős–Szekeres (1935/1961); Szekeres–Peters (2006); Mojarrad–Vlachos (2016)",
+ "premise_risks": [
+  "a special case of a famous conjecture, but the genuine first open case",
+  "an intermediate bound between 33 and 113 specific to k=7 might exist (none found)",
+  "likely to fall to a large SAT computation; check for a 2026 announcement before publishing"
+ ],
+ "plain": "Among any 17 points in the plane with no three on a line, some 6 form a convex hexagon, and 16 points are not enough; this was proved by computer in 2006. Erdős and Szekeres predicted that the right number for convex 7-gons is 33. Prove that every 33 points in general position contain 7 in convex position.",
+ "math": "Let $ES(k)$ be the least $N$ such that every set of $N$ points in $\\mathbb R^2$ with no three collinear contains $k$ points in convex position. Known $ES(k)\\ge 2^{k-2}+1$ (Erdős–Szekeres 1961) with equality for $k\\le6$; $ES(7)\\le 113$. Prove $ES(7)=33$, i.e. every 33-point set in general position contains a convex heptagon (any rigorous improvement of $113$ is also progress).",
+ "formal_status": "formalized",
+ "review_note": "Known: $ES(6)=17$: Szekeres & Peters, ANZIAM J. 48 (2006). Small-$k$ bound $ES(k)\\le\\binom{2k-5}{k-2}-\\binom{2k-8}{k-3}+2$ (Mojarrad & Vlachos, DCG 2016, arXiv:1510.06255), giving $ES(7)\\le113$; earlier $\\binom{2k-5}{k-2}+1=127$ (Tóth–Valtr 2005). Asymptotic $ES(k)\\le2^{k+O(\\sqrt{k\\log k})}$: Suk, JAMS 2017 (refined by Holmsen–Mojarrad–Pach–Tardos). Empty hexagon $h(6)=30$: Heule & Scheucher, arXiv:2403.00737 (SoCG 2024). Dumitru, 'Notes on the 33-point Erdős–Szekeres problem', arXiv:2512.24061 (Dec 2025): SAT encoding, partial UNSAT only.",
+ "refs": [
+  "https://arxiv.org/abs/2512.24061",
+  "https://arxiv.org/abs/1510.06255",
+  "https://arxiv.org/abs/2403.00737",
+  "https://en.wikipedia.org/wiki/Happy_ending_problem"
+ ]
+}

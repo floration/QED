@@ -1,0 +1,23 @@
+{
+ "id": "QED-E028",
+ "set": "extended",
+ "title": "Strong edge colouring with maximum degree 4: 20 or 21 colours?",
+ "area": "Graph theory",
+ "difficulty": 4.0,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Erdos-Nesetril conjecture; Cranston; Huang-Santana-Yu.",
+ "premise_risks": [
+  "A 2026 improvement to 20 might exist that the searches missed"
+ ],
+ "plain": "A strong edge colouring gives edges colours so that any two edges that touch, or are joined by a third edge, get different colours. Erdős and Nešetřil conjectured that graphs with maximum degree 4 need at most 20 colours; it is proved that 21 suffice. Close the one-colour gap.",
+ "math": "Prove that every graph $G$ with $\\Delta(G)\\le4$ has strong chromatic index $\\chi'_s(G)\\le20$ (Erdos-Nesetril bound $\\tfrac54\\Delta^2$), or find a graph with $\\Delta\\le4$ and $\\chi'_s=21$.",
+ "formal_status": "formalized",
+ "review_note": "Known: chi'_s <= 22: Cranston (2006, arXiv:math/0601623). chi'_s <= 21: Huang-Santana-Yu, Electron. J. Combin. 25(3) (2018) P3.31 (arXiv:1806.07012). Lower bound 20 is attained by the blow-up of C_5 (each vertex replaced by 2 vertices). Related: packing edge-colouring results for Delta <= 4 (Involve 18(2), 2025) do not give 20. Delta=3 is settled (10; Andersen, Horak-He-Trotter).",
+ "refs": [
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v25i3p31",
+  "https://arxiv.org/abs/1806.07012",
+  "https://arxiv.org/abs/math/0601623",
+  "https://msp.org/involve/2025/18-2/p04.xhtml"
+ ]
+}

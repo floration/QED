@@ -1,0 +1,24 @@
+{
+ "id": "QED-E048",
+ "set": "extended",
+ "title": "Equilateral stick number versus stick number",
+ "area": "Topology",
+ "difficulty": 5.0,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Rawdon & Scharein (2002); restated as open in Cantarella–Rechnitzer–Schumacher–Shonkwiler, arXiv 2508.18263",
+ "premise_risks": [
+  "A strict gap needs exact lower bounds on s_eq, so the problem may be out of reach in practice",
+  "Exact s(K) is unknown for many ≤10-crossing knots; 'agree' means only that the best known bounds coincide"
+ ],
+ "plain": "Build a knot out of straight sticks joined end to end. The stick number of a knot is the fewest sticks that can make it. If all the sticks must also be the same length, you might need more. Is there any knot that really does need more sticks when they all have to be the same length?",
+ "math": "For a knot type $K$ let $s(K)$ be the minimum number of edges of a polygonal knot of type $K$, and $s_{eq}(K)$ the minimum over equilateral polygons. Formal Claim: there is a knot type $K$ with $s_{eq}(K)>s(K)$ (¬Claim: $s_{eq}=s$ for all $K$; the infinite-family variant is not formalized).",
+ "formal_status": "formalized",
+ "review_note": "Known: Posed by Rawdon–Scharein (2002). After the equilateral 9-stick $9_{29}$ (Theorem 4, proved via a Millett–Rawdon perturbation condition), no knot with ≤10 crossings has differing best known bounds for $s$ and $s_{eq}$ (Cantarella–Rechnitzer–Schumacher–Shonkwiler, arXiv:2508.18263, Sec. 4). Lower bounds for $s$ (Calvo's crossing-number bound, superbridge index) do not depend on edge lengths. Upper bounds on $s_{eq}$ in terms of crossing number: Kim–No–Oh, arXiv:1401.7383.",
+ "refs": [
+  "https://arxiv.org/abs/2508.18263",
+  "https://arxiv.org/abs/1401.7383",
+  "https://arxiv.org/abs/1909.00917",
+  "https://cecm-colab.dcr.sfu.ca/KnotPlot/ktheory.html"
+ ]
+}
