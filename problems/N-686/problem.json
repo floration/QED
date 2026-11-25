@@ -1,0 +1,19 @@
+{
+ "id": "N-686",
+ "title": "Proof complexity of the sensitivity theorem",
+ "area": "Complexity",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "Huang proved that any set of more than half the corners of the n-cube contains a corner with at least √n neighbours inside the set. Write this as a propositional formula with one variable per corner. Do polynomial-size proofs exist in resolution, cutting planes or sum-of-squares, measured against the 2^n variables?",
+ "math": "Let $N=2^n$, $d=\\lceil\\sqrt n\\rceil-1$. $\\mathrm{SENS}_n$ is the CNF on variables $x_v$ ($v\\in\\{0,1\\}^n$) plus sequential-counter variables encoding $\\sum_v x_v\\ge 2^{n-1}+1$, together with the clauses $\\neg x_v\\vee\\bigvee_{u\\in U}\\neg x_u$ for every $v$ and every $(d+1)$-set $U$ of neighbours of $v$ (size $N\\cdot n^{O(\\sqrt n)}=N^{1+o(1)}$). It is unsatisfiable by Huang's theorem. Does $\\mathrm{SENS}_n$ have refutations of size $N^{O(1)}$ in (a) resolution, (b) cutting planes, (c) sum-of-squares of degree $O(\\log N)$? Lower bounds $2^{N^{\\Omega(1)}}$ are equally of interest.",
+ "novelty": 7,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "not_formalized",
+ "lean_gap": "Statement left as sorry by design. Reviewer notes that (a) is likely 'no' for matching-type reasons, so W should stress (b),(c).",
+ "refs": [
+  "https://arxiv.org/abs/1907.00847",
+  "https://arxiv.org/pdf/1912.05406"
+ ]
+}

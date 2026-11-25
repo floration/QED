@@ -1,0 +1,21 @@
+{
+ "id": "N-676",
+ "title": "2^{Omega(n)} hardness of Euclidean SVP under ETH",
+ "area": "Complexity",
+ "difficulty": 5.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Aggarwal, Gupta, Morolia, Zhang, 'Mind the Gap? Not for SVP Hardness under ETH!', ICALP 2026 (LIPIcs 374, paper 8), arXiv:2504.02695, Open Problem 1.",
+ "plain": "Show that approximate SVP in the l_2 norm (some constant gamma>1) has no 2^{o(n)}-time algorithm unless (randomized) ETH fails; or identify an obstruction (e.g. for the Z^n-based gadget) showing the l_p, p>2 technique cannot reach p=2.",
+ "math": "Prove there is a constant gamma>1 such that, unless randomized ETH fails, no 2^{o(n)}-time randomized algorithm solves gamma-GapSVP in the l_2 norm on rank-n lattices. Alternatively, prove that the AGMZ approach (Z^n gadget + Theta-function inequality, valid for p>2) provably fails at p=2.",
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: needs time-bounded randomized computation, GapSVP promise problems, and randomized ETH, none in Mathlib. Only the main (hardness) question would be formalized; the 'technique obstruction' alternative is not a theorem-level statement.",
+ "refs": [
+  "Aggarwal, Gupta, Morolia, Zhang, Mind the Gap? Not for SVP Hardness under ETH!, ICALP 2026, arXiv:2504.02695",
+  "Aggarwal, Stephens-Davidowitz, (Gap-)ETH-hardness of SVP, STOC 2018",
+  "arXiv:2504.02695v2",
+  "LIPIcs.ICALP.2026.8",
+  "arXiv:1712.00942",
+  "arXiv:2109.04025"
+ ]
+}

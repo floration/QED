@@ -1,16 +1,33 @@
-# N-428 — Unit distances in three dimensions after 2026
+# N-428 — Superlinear unit distances on the unit sphere
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** The 2026 number-field idea beat Erdős in the plane. Adapt it to unit distances among points on a sphere in 3D.
+Grade A · QED Curated · Geometry
 
-**Math:** Prove there are $n$-point sets on the unit sphere $S^2$ with $\ge n^{1+c}$ pairs at distance $1$, for some $c>0$ and infinitely many $n$.
+**Plain words:** In 2026 a number-field construction showed that points in the plane can have n^(1+c) unit distances, disproving Erdos's conjecture. On a sphere of radius 1/sqrt2 an n^(4/3) construction is classical, but on the unit sphere only n·sqrt(log n) is known. Can the new ideas give a power gain there?
 
-Difficulty estimate: 3.1/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Prove or disprove: there is $c>0$ such that for infinitely many $n$ there exist $P\subset S^2=\{x\in\mathbb{R}^3:|x|=1\}$ with $|P|=n$ and $\#\{\{p,q\}\subset P:|p-q|=1\}\ge n^{1+c}$.
+
+**Credit:** Erdős, Hickerson, Pach, 'A problem of Leo Moser about repeated distances on the sphere', Amer. Math. Monthly 96 (1989); Swanepoel-Valtr (2004)
+
+**References:**
+- https://arxiv.org/abs/2605.20579
+- https://arxiv.org/html/2605.20695
+- https://web.math.princeton.edu/~nalon/PDFS/udremarks.pdf
+- https://researchonline.lse.ac.uk/id/eprint/25462
+- https://ar5iv.arxiv.org/html/0707.0213
+- https://kam.mff.cuni.cz/kamserie/clanky/2004/s673.pdf
+- https://arxiv.org/abs/2605.20579
+- https://arxiv.org/html/2605.20695
+- https://arxiv.org/abs/2606.03419
+
+Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N428.Claim` or a proof of `¬ OpenProblems.N428.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-428/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N428.Claim` or a proof of `¬ OpenProblems.N428.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-428/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-428` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

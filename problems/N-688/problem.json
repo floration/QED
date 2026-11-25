@@ -1,0 +1,21 @@
+{
+ "id": "N-688",
+ "title": "Deciding rationality of PL rotation numbers",
+ "area": "Dynamics",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Belk, Hyde, Moore (2022), arXiv:2211.05825, Questions 3–4.",
+ "plain": "A circle homeomorphism made of finitely many straight pieces, with rational break points and slopes, has a rotation number. Rational rotation numbers can be confirmed by finding a rational periodic orbit. Irrational ones occur too: Belk–Hyde–Moore found √2−1 with slopes 3/2, 2/3, 1. Is there an algorithm that always decides which case holds?",
+ "math": "Let $\\mathcal P$ be the set of orientation-preserving PL homeomorphisms of $\\mathbb R/\\mathbb Z$ with finitely many rational break points, rational slopes and $f(0)\\in\\mathbb Q$, encoded by these data. Is $\\{f\\in\\mathcal P:\\rho(f)\\in\\mathbb Q\\}$ decidable? (It is computably enumerable: if $\\rho(f)=p/q$, the zero set of the lift $F^q(x)-x-p$ is a nonempty finite union of rational points and rational intervals.)",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2211.05825",
+  "https://arxiv.org/abs/math/0604109",
+  "https://arxiv.org/pdf/1609.00771",
+  "https://arxiv.org/pdf/2505.13689"
+ ]
+}

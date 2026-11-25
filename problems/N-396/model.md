@@ -1,16 +1,28 @@
-# N-396 — Graceful forests with one big tree
+# N-396 — Graceful labellings of forests
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** A forest with c trees and m edges is graceful-forest labelled if its vertices get the labels 0 to m + c − 1 with all edge differences distinct. Show this works whenever there are at least two trees and one of them holds more than half the edges.
+Grade B · QED Extension · Graph theory
 
-**Math:** Prove every forest with $m$ edges and $c\ge2$ components, one of which has more than $m/2$ edges, has a bijection $V\to\{0,\dots,m+c-1\}$ with all $|\ell(u)-\ell(v)|$, $uv\in E$, distinct.
+**Plain words:** A forest with m edges and c trees has m + c vertices. Label them with 0, 1, ..., m + c - 1, each label used once, so that the m edge differences |label(u) - label(v)| are all different. Show that every forest has such a labelling. The case 'a tree plus one isolated vertex' already says that every tree can be labelled gracefully if one spare label is allowed.
 
-Difficulty estimate: 7.8/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Prove that every forest $F$ with $m$ edges and $c\ge1$ components has a bijection $\ell:V(F)\to\{0,1,\dots,m+c-1\}$ such that the values $|\ell(u)-\ell(v)|$, $uv\in E(F)$, are pairwise distinct. (Key special case: $F=T\sqcup K_1$, i.e. every tree with $m$ edges has an injective labelling into $\{0,\dots,m+1\}$ with distinct edge differences.)
+
+**Credit:** Relaxation of the Ringel–Kotzig–Rosa Graceful Tree Conjecture; related: Van Bussel (EJC 2002, range-relaxed graceful labellings), Adamaszek–Allen–Grosu–Hladký arXiv:1608.01577, gracesize arXiv:2511.11331.
+
+**References:**
+- https://www.combinatorics.org/ojs/index.php/eljc/article/view/v9i1r4
+- https://arxiv.org/abs/1608.01577
+- https://arxiv.org/abs/2511.11331
+- https://arxiv.org/abs/1402.0196
+
+Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N396.Claim` or a proof of `¬ OpenProblems.N396.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-396/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N396.Claim` or a proof of `¬ OpenProblems.N396.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-396/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-396` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

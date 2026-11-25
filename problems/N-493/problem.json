@@ -2,10 +2,19 @@
  "id": "N-493",
  "title": "Largest prime factor of Markov numbers",
  "area": "Number theory",
- "difficulty": 5.8,
- "plain": "Show the largest prime factor of Markov numbers tends to infinity.",
- "math": "Prove $P(m)\\to\\infty$ as $m$ runs through Markov numbers.",
- "novelty": 6,
- "importance": 4,
- "value": 6
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Extends Corvaja–Zannier, 'On the greatest prime factor of Markov pairs', Rend. Sem. Mat. Univ. Padova 116 (2006).",
+ "plain": "Markov numbers are the numbers appearing in positive integer solutions of x^2+y^2+z^2=3xyz. Show that the largest prime factor of a Markov number tends to infinity. Equivalently, for any finite set of primes, only finitely many Markov numbers are built from those primes alone.",
+ "math": "Let $\\mathcal M=\\{m\\ge1:\\exists\\,x,y\\in\\mathbb Z_{>0},\\ x^2+y^2+m^2=3xym\\}$ and let $P(m)$ denote the largest prime factor of $m$ (with $P(1)=1$). Prove that $P(m)\\to\\infty$ as $m\\to\\infty$ in $\\mathcal M$; equivalently, for every finite set $S$ of primes, only finitely many $m\\in\\mathcal M$ are $S$-units.",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.numdam.org/item/RSMUP_2006__116__253_0/",
+  "https://arxiv.org/abs/math/0606283",
+  "https://arxiv.org/abs/1607.01530"
+ ]
 }

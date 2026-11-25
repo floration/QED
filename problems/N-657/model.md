@@ -3,14 +3,26 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Put a fixed bump at every prime on the half-line lattice. Prove the electron is localized at energies inside the free band, as it would be if the primes were random.
+Grade B · QED Curated · Analysis
 
-**Math:** Let $H=\Delta+\lambda\mathbf 1_{\mathbb P}$ on $\ell^2(\mathbb N)$, $\lambda\ne0$. Prove that $H$ has pure point spectrum in $(-2,2)$.
+**Plain words:** Put a bump of fixed height at every prime on the half-line lattice and study the electron (discrete Schrodinger operator). What kind of spectrum does it have inside the free band (-2,2)? If the primes behaved like a random sparse set (Cramer model), the states would be localized (pure point spectrum); is that true for the actual primes?
 
-Difficulty estimate: 6.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $(Hu)(n)=u(n+1)+u(n-1)+\lambda\mathbf 1_{\mathbb P}(n)u(n)$ on $\ell^2(\mathbb N)$ with Dirichlet condition $u(0)=0$, $\lambda\ne0$. Determine the spectral type of $H$ on $(-2,2)$. In particular: is the spectral measure restricted to $(-2,2)$ pure point (with exponentially or sub-exponentially decaying eigenfunctions), or does it have a singular continuous part, e.g. near $E=0$?
+
+**Credit:** C. R. de Oliveira and G. Q. Pellegrino, '(De)Localization in the Prime Schrodinger Operator', 2001, arXiv:cond-mat/0103313.
+
+**References:**
+- https://arxiv.org/abs/cond-mat/0103313
+- https://ar5iv.arxiv.org/html/cond-mat/0103313
+- https://arxiv.org/pdf/1107.1094
+- https://arxiv.org/abs/1012.5217
+
+Difficulty estimate: 5.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N657.Claim` or a proof of `¬ OpenProblems.N657.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-657/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N657.Claim` or a proof of `¬ OpenProblems.N657.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-657/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-657` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

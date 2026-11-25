@@ -1,11 +1,25 @@
 {
  "id": "N-664",
- "title": "Infinite knots in the ABC flow",
+ "title": "Infinitely many knot types in the symmetric ABC flow",
  "area": "Topology",
  "difficulty": 4.5,
- "plain": "Steady Euler flows can carry knotted streamlines. Show the symmetric ABC flow has closed streamlines tied in infinitely many different knots.",
- "math": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb T^3$ has null-homotopic periodic orbits lying in embedded balls and realizing infinitely many distinct knot types.",
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Etnyre & Ghrist (2000), arXiv:math-ph/9906021; Enciso, Peralta-Salas (and Romaniega), arXiv:2006.15033.",
+ "premise_risks": [
+  "arXiv:2609.17449 (Szumiński–Llibre, 2026 preprint): cited only as related perturbative work; nothing in the statement depends on it."
+ ],
+ "plain": "Steady Euler flows can carry knotted streamlines, and generic high-frequency Beltrami fields on the torus contain every knot. Show that the most-studied explicit example, the ABC flow with A = B = C = 1, has closed streamlines tied in infinitely many different knots.",
+ "math": "Let $X=(\\sin z+\\cos y,\\ \\sin x+\\cos z,\\ \\sin y+\\cos x)$ on $\\mathbb T^3=(\\mathbb R/2\\pi\\mathbb Z)^3$ (a curl eigenfield, $\\nabla\\times X=X$). Prove that the periodic orbits of $X$ that lie in some embedded 3-ball $B\\subset\\mathbb T^3$ realize infinitely many distinct knot types (as knots in $B\\cong$ a ball in $\\mathbb R^3$). Stronger: every knot type is realized.",
  "novelty": 6,
- "importance": 4,
- "value": 6
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/math-ph/9906021",
+  "https://arxiv.org/pdf/1601.02724",
+  "https://arxiv.org/pdf/2609.17449",
+  "https://arxiv.org/pdf/2006.15033",
+  "https://www2.math.upenn.edu/%7Eghrist/preprints/beltrami.pdf"
+ ]
 }

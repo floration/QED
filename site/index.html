@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>QED — 1000 open problems</title>
+<title>QED — open problems</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -48,12 +48,12 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:0 0 40px}
 <div class="tag">A thousand open problems, one dot each. Prove one in Lean 4, open a pull request, and your dot turns green. <a id="repo" href="#">Start here →</a></div>
 <div class="stats"><div><b id="sG">0</b><span>solved</span></div><div><b id="sY">0</b><span>in progress</span></div><div><b id="sR">0</b><span>untouched</span></div><div><b id="sW">0</b><span>people working</span></div></div>
 <div class="prog"><i id="pG" style="background:var(--g)"></i><i id="pY" style="background:var(--y)"></i><i id="pR" style="background:var(--r);opacity:.55"></i></div>
-<div class="progl"><span id="pT">0 / 1000 problems posted</span><span>goal 1000</span></div>
+<div class="progl"><span id="pT">0 problems in the main set</span><span>solved / in progress / open</span></div>
 <div class="legend mut"><span><i class="dot g"></i>solved or disproved</span><span><i class="dot y"></i>someone is on it</span><span><i class="dot r"></i>no attempts yet</span></div>
 </header>
 <main>
 <section>
-<div class="controls"><input id="q" placeholder="Search title or id…"><select id="area"><option value="">All areas</option></select><select id="st"><option value="">All statuses</option><option value="g">Solved</option><option value="y">In progress</option><option value="r">Untouched</option></select><label class="mut" style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="arc" style="min-width:0;flex:none"> Show archive (<span id="an">0</span>)</label></div>
+<div class="controls"><input id="q" placeholder="Search title or id…"><select id="area"><option value="">All areas</option></select><select id="st"><option value="">All statuses</option><option value="g">Solved</option><option value="y">In progress</option><option value="r">Untouched</option></select><select id="gr"><option value="">All grades</option><option value="A">Grade A</option><option value="B">Grade B</option></select><select id="pv"><option value="">All types</option><option>Original</option><option>Extension</option><option>Curated</option><option value="R">Has QED results</option></select><label class="mut" style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="arc" style="min-width:0;flex:none"> Show archive (<span id="an">0</span>)</label></div>
 <div id="grid"></div>
 </section>
 <aside>
@@ -75,11 +75,11 @@ Promise.all([get('data/problems.json'),get('data/solutions.json'),get('data/clai
 const AR=()=>document.getElementById('arc')&&document.getElementById('arc').checked;
 const status=id=>A.some(x=>x.id===id)?'a':S[id]?'g':(C[id]&&C[id].length?'y':'r');
 function draw(){
-  const q=document.getElementById('q').value.toLowerCase(),ar=document.getElementById('area').value,st=document.getElementById('st').value;
+  const q=document.getElementById('q').value.toLowerCase(),ar=document.getElementById('area').value,st=document.getElementById('st').value,gr=document.getElementById('gr').value,pv=document.getElementById('pv').value;
   const g=document.getElementById('grid');g.innerHTML='';let n={g:0,y:0,r:0};const groups={};
   (AR()?P.concat(A):P).forEach(p=>{const s=status(p.id);if(s!=='a')n[s]++;
     if(q&&!(p.title.toLowerCase().includes(q)||p.id.toLowerCase().includes(q)))return;
-    if(ar&&p.area!==ar)return;if(st&&s!==st)return;(groups[s==='a'?'Archive':p.area]=groups[s==='a'?'Archive':p.area]||[]).push([p,s]);});
+    if(ar&&p.area!==ar)return;if(st&&s!==st)return;if(gr&&p.grade!==gr)return;if(pv&&(pv==='R'?!p.results:p.provenance!==pv))return;(groups[s==='a'?'Archive':p.area]=groups[s==='a'?'Archive':p.area]||[]).push([p,s]);});
   Object.keys(groups).sort((a,b)=>(a==='Archive')-(b==='Archive')||groups[b].length-groups[a].length).forEach(k=>{
     const sec=document.createElement('div');sec.className='area';const done=groups[k].filter(x=>x[1]==='g').length;
     sec.innerHTML=`<h3><span>${esc(k)}</span><span>${done}/${groups[k].length}</span></h3><div class="dots"></div>`;const d=sec.lastChild;
@@ -87,15 +87,15 @@ function draw(){
     g.appendChild(sec);});
   sG.textContent=n.g;sY.textContent=n.y;sR.textContent=n.r;
   sW.textContent=new Set(Object.values(C).flat().map(c=>c.user)).size;
-  pG.style.width=n.g/10+'%';pY.style.width=n.y/10+'%';pR.style.width=n.r/10+'%';pT.textContent=`${P.filter(p=>p.id!=='N-000').length} / 1000 problems posted`;
+  const tot=Math.max(1,n.g+n.y+n.r);pG.style.width=100*n.g/tot+'%';pY.style.width=100*n.y/tot+'%';pR.style.width=100*n.r/tot+'%';pT.textContent=`${P.filter(p=>p.id!=='N-000').length} problems in the main set`;
 }
 const sol=e=>e?`<b>${e.size}</b> lines · <a href="https://github.com/${esc(e.user)}">@${esc(e.user)}</a> · ${esc(e.model)}<span class="mut"> · ${esc((e.time||'').slice(0,10))}</span>`:'<span class="mut">none yet</span>';
 function show(id){
   const p=P.find(x=>x.id===id)||A.find(x=>x.id===id);if(!p)return;cur=id;location.hash=id;draw();
   const s=S[id],c=C[id]||[],st=status(id);
   document.getElementById('detail').innerHTML=`<div class="pid"><i class="dot ${st}"></i> ${esc(p.id)}</div><h2>${esc(p.title)}</h2>
-  <div class="mut">${esc(p.area)} · difficulty ${esc(p.difficulty)}/10${s?' · '+(s.kind==='disproof'?'DISPROVED':'SOLVED'):''}</div>
-  ${p.archived?`<p class="mut">Archived: ${esc(p.reason)}. Kept for reference; not open for claims.</p>`:''}${p.value!=null?`<div class="mut" style="font-size:13px">novelty ${p.novelty} · importance ${p.importance} · value ${p.value}</div>`:''}<p>${esc(p.plain)}</p><div class="math">${esc(p.math)}</div>
+  <div class="mut">${p.grade?`<b>Grade ${esc(p.grade)}</b> · QED ${esc(p.provenance)} · `:''}${esc(p.area)} · difficulty ${esc(p.difficulty)}/10${s?' · '+(s.kind==='disproof'?'DISPROVED':'SOLVED'):''}</div>${p.credit?`<div class="mut" style="font-size:13px">Credit: ${esc(p.credit)}</div>`:''}
+  ${p.archived?`<p class="mut">Archived: ${esc(p.reason)}. Kept for reference; not open for claims.</p>`:''}${p.value!=null?`<div class="mut" style="font-size:13px">novelty ${p.novelty} · importance ${p.importance} · value ${p.value}</div>`:''}<p>${esc(p.plain)}</p><div class="math">${esc(p.math)}</div>${p.results?`<p><b>QED results so far.</b> ${esc(p.results)}</p>`:''}${p.premise_risks&&p.premise_risks.length?`<p class="mut" style="font-size:13px">Rests on recent unrefereed work: ${p.premise_risks.map(esc).join('; ')}</p>`:''}${p.formal_status==='not_formalized'?`<p class="mut" style="font-size:13px">Not yet formalized in Lean: ${esc(p.lean_gap||'')}</p>`:''}
   <div class="kv"><div class="mut">First victor</div><div>${sol(s&&s.first)}</div>
   <div class="mut">Smallest</div><div>${sol(s&&s.smallest)}</div>
   <div class="mut">Working on it</div><div><b>${c.length}</b> ${c.map(x=>`<a href="${esc(x.issue)}">@${esc(x.user)}</a>`).join(', ')}</div></div>
@@ -107,5 +107,5 @@ function board(){
    (rows.length?rows.map((r,i)=>`<tr><td>${i+1}</td><td><a href="https://github.com/${esc(r.user)}">@${esc(r.user)}</a></td><td>${esc(r.model)}</td><td>${r.count}</td></tr>`).join(''):'<tr><td colspan=4 class="mut">No solves yet — be the first.</td></tr>');
 }
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');tab=b.dataset.b;board();});
-['q','area','st'].forEach(i=>document.getElementById(i).oninput=draw);document.getElementById('arc').onchange=draw;
+['q','area','st','gr','pv'].forEach(i=>document.getElementById(i).oninput=draw);document.getElementById('arc').onchange=draw;
 </script></body></html>

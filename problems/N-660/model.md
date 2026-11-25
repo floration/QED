@@ -1,16 +1,24 @@
-# N-660 — Quartic oscillator ground state
+# N-660 — Irrationality of the quartic oscillator ground state
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** The lowest energy of the quartic oscillator, −d²/dx² + x⁴, is about 1.0603620905. Show it is irrational.
+Grade B · QED Original · Mathematical physics
 
-**Math:** Let $E_0=\min\sigma\big(-\frac{d^2}{dx^2}+x^4\big)$ on $L^2(\mathbb R)$. Prove $E_0\notin\mathbb Q$.
+**Plain words:** The lowest energy of the quartic oscillator, -d^2/dx^2 + x^4 on the line, is about 1.0603620905. Show that it is irrational.
+
+**Math:** Let $E_0=\min\sigma\big(-\tfrac{d^2}{dx^2}+x^4\big)$, the operator taken self-adjoint on $L^2(\mathbb R)$ ($E_0=1.06036209048418\ldots$). Prove that $E_0\notin\mathbb Q$.
+
+**References:**
+- https://arxiv.org/abs/math-ph/0005029
+- https://arxiv.org/abs/2401.07131
 
 Difficulty estimate: 7.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N660.Claim` or a proof of `¬ OpenProblems.N660.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-660/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N660.Claim` or a proof of `¬ OpenProblems.N660.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-660/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-660` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

@@ -1,16 +1,38 @@
-# N-180 — Keller maps of degree 4
+# N-180 — Smallest dimension of a cubic-homogeneous Jacobian counterexample
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Show that every 3D polynomial map of degree at most 4 with constant Jacobian has a polynomial inverse.
+Grade A · QED Extension · Algebra
 
-**Math:** Prove $F:\mathbb{C}^3\to\mathbb{C}^3$, $\deg F\le4$, $\det DF\in\mathbb{C}^\times$ implies $F$ is an automorphism.
+**Plain words:** The Jacobian conjecture is now known to fail. A classical reduction says that if it fails at all, it fails for maps of the special form x + (cubic homogeneous terms), but the reduction pays for this by raising the number of variables. Such a cubic counterexample is now known in 18 variables, and none exists in 4 or fewer. What is the smallest number of variables in which one exists?
 
-Difficulty estimate: 3.1/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $N_3$ be the least $n$ such that there is $H=(H_1,\dots,H_n)$, each $H_i\in\mathbb C[x_1,\dots,x_n]$ homogeneous of degree 3, with $JH$ nilpotent (equivalently, for homogeneous $H$, $\det(I+JH)=1$) and $x+H$ not an automorphism of $\mathbb C^n$. Hubbers' classification of cubic homogeneous nilpotent Jacobians for $n\le4$ gives $N_3\ge5$ ($n=5$ is open as far as we know). De Bondt (arXiv:2610.24889, unrefereed), building on Alp\"oge's map and improving Van Rijn's 19, gives $N_3\le18$. Determine $N_3$; in particular, decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5. Companion: let $d_3$ be the least $\max_i\deg F_i$ over non-invertible Keller maps $F:\mathbb C^3\to\mathbb C^3$ ($\det JF\in\mathbb C^*$). Wang's theorem gives $d_3\ge3$ and Alp\"oge's map gives $d_3\le7$.
+
+**Credit:** Classical HJC(n,3) program: Bass–Connell–Wright (1982), Yagzhev; Hubbers (n ≤ 4 classification); de Bondt–van den Essen arXiv:1609.09753; upper bound de Bondt arXiv:2610.24889.
+
+**Rests on recent unrefereed work. Check these premises first:**
+- arXiv:2610.24889 (de Bondt, Oct 2026, unrefereed, partly AI-written): source of N₃ ≤ 18 via HJC(18,3); only the upper bound depends on it.
+- arXiv:2608.00222 / arXiv:2609.17795 (2026 preprints, Alpöge's map and follow-up): the premise that the Jacobian conjecture is false at all; the formal Claim (dimension 5) does not depend on it.
+
+**References:**
+- https://arxiv.org/abs/2610.24889
+- https://arxiv.org/abs/2608.00222
+- https://arxiv.org/abs/2609.17795
+- https://www.cs.ru.nl/E.Hubbers/pubs/nilpotent_jacobians_112500.pdf
+- https://isa-afp.org/entries/Jacobian_Counterexample.html
+- https://arxiv.org/abs/2610.24889
+- https://arxiv.org/abs/2608.00222
+- https://arxiv.org/abs/2609.17795
+- https://arxiv.org/abs/1609.09753
+- https://arxiv.org/pdf/1501.04845
+
+Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N180.Claim` or a proof of `¬ OpenProblems.N180.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-180/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N180.Claim` or a proof of `¬ OpenProblems.N180.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-180/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-180` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

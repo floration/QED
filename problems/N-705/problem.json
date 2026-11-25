@@ -1,0 +1,17 @@
+{
+ "id": "N-705",
+ "title": "Push the GRH lower bound for Montgomery's F(alpha) beyond alpha = 1",
+ "area": "Number theory",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Goldston, Gonek, Özlük, Snyder (2000), 'On the pair correlation of zeros of the Riemann zeta-function', Proc. London Math. Soc.",
+ "plain": "Montgomery's function F(α) is known only for |α|≤1 (on RH). Under GRH for Dirichlet L-functions, Goldston–Gonek–Özlük–Snyder proved F(α) ≥ 3/2−|α|−ε on 1≤|α|≤3/2, while the conjecture says F(α)=1 there. Improve this lower bound.",
+ "math": "Assume GRH for all Dirichlet $L$-functions. Prove that for some $\\delta>0$ and all $\\alpha\\in[1,1+\\delta]$, $\\liminf_{T\\to\\infty}F(\\alpha,T)\\ge \\tfrac32-\\alpha+\\delta$, or prove $\\liminf_T \\int_{1}^{3/2}F(\\alpha,T)\\,d\\alpha>1/8$ (the value forced by the GGOS bound).",
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.cambridge.org/core/journals/proceedings-of-the-london-mathematical-society/article/on-the-pair-correlation-of-zeros-of-the-riemann-zetafunction/29A91CBF07210A94E8EEFEAFFBB9FDEE",
+  "https://arxiv.org/abs/2508.10857",
+  "https://myweb.ecu.edu/baluyots24/alternativehyp.pdf"
+ ]
+}

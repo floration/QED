@@ -3,14 +3,23 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Take the surface z = ε sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.
+Grade B · QED Extension · Dynamics
 
-**Math:** For $\varepsilon>0$ let $g_\varepsilon$ be the metric on $\mathbb R^2/(2\pi\mathbb Z)^2$ induced by the graph $z=\varepsilon\sin x\sin y$ in $\mathbb R^3$. Prove that for every $\varepsilon>0$ the geodesic flow of $g_\varepsilon$ has no real-analytic first integral on $T^*\mathbb T^2\setminus 0$ that is functionally independent of the Hamiltonian.
+**Plain words:** Put the surface z = ε sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.
 
-Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** For $\varepsilon>0$ let $g_\varepsilon$ be the metric on $\mathbb T^2=\mathbb R^2/(2\pi\mathbb Z)^2$ induced from the graph $z=\varepsilon\sin x\sin y$, i.e. $g_\varepsilon=dx^2+dy^2+\varepsilon^2(\cos x\sin y\,dx+\sin x\cos y\,dy)^2$. Prove that for every $\varepsilon>0$ the geodesic flow on $T^*\mathbb T^2\setminus0$ has no real-analytic first integral functionally independent of the Hamiltonian (for example, by showing positive topological entropy).
+
+**Credit:** V. V. Kozlov, non-integrability of perturbed geodesic flows on the torus (Poincaré-Kozlov theory; 'Symmetries, Topology and Resonances in Hamiltonian Mechanics', 1996); Paternain, Taimanov for entropy obstructions
+
+**References:**
+- https://en.wikipedia.org/wiki/Integrable_system
+
+Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N622.Claim` or a proof of `¬ OpenProblems.N622.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-622/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N622.Claim` or a proof of `¬ OpenProblems.N622.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-622/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-622` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

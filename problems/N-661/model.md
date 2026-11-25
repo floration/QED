@@ -3,14 +3,35 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Triangles can be heard: their Dirichlet spectrum determines them. Show the same holds for tetrahedra.
+Grade A · QED Extension · Analysis
 
-**Math:** Prove that two tetrahedra in $\mathbb R^3$ with the same Dirichlet Laplacian spectrum are congruent.
+**Plain words:** Triangles can be heard: their Dirichlet spectrum determines them up to congruence (Durso 1988; Grieser–Maronna 2013). Show the same for tetrahedra.
 
-Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $T_1,T_2\subset\mathbb R^3$ be (nondegenerate) tetrahedra whose Dirichlet Laplacian eigenvalues, counted with multiplicity, coincide. Prove that $T_1$ and $T_2$ are congruent.
+
+**Credit:** Extends Durso (1988, MIT thesis) and Grieser-Maronna, 'Hearing the shape of a triangle' (Notices AMS 2013, arXiv:1208.3163); Kac's question.
+
+**QED results so far (reviewer-derived; check before relying on them):** The heat-invariant count is correct. The polyhedral Dirichlet heat trace gives volume, surface area, the edge sum of L_e times a function of the dihedral angle, and a vertex term (not explicit for general solid angles): 4 numbers against 6 congruence parameters. So the heat trace alone is insufficient.
+
+**Rests on recent unrefereed work. Check these premises first:**
+- arXiv:2609.28602 (Krejcirik, 2026 survey): used only for the openness check (does not settle the problem); the statement itself assumes nothing from it.
+
+**References:**
+- https://arxiv.org/abs/1208.3163
+- https://arxiv.org/pdf/2406.18369
+- https://arxiv.org/pdf/1911.06758
+- https://arxiv.org/pdf/2009.00714
+- https://arxiv.org/abs/1208.3163
+- https://arxiv.org/pdf/1911.06758
+- https://arxiv.org/pdf/2012.06465
+- https://arxiv.org/pdf/2609.28602
+
+Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N661.Claim` or a proof of `¬ OpenProblems.N661.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-661/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N661.Claim` or a proof of `¬ OpenProblems.N661.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-661/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-661` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

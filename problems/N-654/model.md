@@ -3,14 +3,30 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Use a potential that is the sum of two cosines with frequencies √2 and √3, and take strong coupling. Prove electrons localize for these specific frequencies, not just for almost every frequency pair.
+Grade B · QED Curated · Analysis
 
-**Math:** Let $(H_\theta\psi)(n)=\psi(n+1)+\psi(n-1)+10\big(\cos2\pi(n\sqrt2+\theta_1)+\cos2\pi(n\sqrt3+\theta_2)\big)\psi(n)$. Prove that for Lebesgue-a.e. $\theta\in\mathbb T^2$, $H_\theta$ has pure point spectrum with exponentially decaying eigenfunctions.
+**Plain words:** Take a one-dimensional lattice Schrödinger operator whose potential is the sum of two cosines with frequencies √2 and √3, and make the coupling strong. Prove that for these specific frequencies, not just for almost every frequency pair, almost every phase gives localized eigenfunctions that decay exponentially.
+
+**Math:** For $\lambda>0$ and $\theta\in\mathbb T^2$ let $(H_{\lambda,\theta}\psi)(n)=\psi(n+1)+\psi(n-1)+\lambda\big(\cos2\pi(n\sqrt2+\theta_1)+\cos2\pi(n\sqrt3+\theta_2)\big)\psi(n)$ on $\ell^2(\mathbb Z)$. Prove there is $\lambda_0$ such that for all $\lambda\ge\lambda_0$ and Lebesgue-a.e. $\theta$, $H_{\lambda,\theta}$ has pure point spectrum with exponentially decaying eigenfunctions (Anderson localization).
+
+**Credit:** Recognised open problem from the Bourgain-Goldstein / Bourgain-Goldstein-Schlag multi-frequency programme; stated open in arXiv:2603.07180 (2026). Pure point spectrum without exponential decay at fixed Diophantine frequency: Eliasson, Acta Math. 1997.
+
+**Rests on recent unrefereed work. Check these premises first:**
+- arXiv:2603.07180 (2026 preprint): the problem relies on its statement that it is unknown whether any fixed Diophantine frequency vector gives localization.
+- arXiv:2603.10649 (2026 preprint): cited background; content not relied on in the statement.
+
+**References:**
+- https://arxiv.org/abs/2603.07180
+- https://arxiv.org/abs/1204.3086
+- https://arxiv.org/abs/1610.00380
+- https://arxiv.org/abs/2603.10649
 
 Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N654.Claim` or a proof of `¬ OpenProblems.N654.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-654/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N654.Claim` or a proof of `¬ OpenProblems.N654.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-654/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-654` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

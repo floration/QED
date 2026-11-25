@@ -1,0 +1,24 @@
+{
+ "id": "N-674",
+ "title": "Positive metric entropy of the Chirikov standard map at an explicit moderate parameter",
+ "area": "Dynamics",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Ya. G. Sinai (conjecture, 1994); Slijepcevic 2026, arXiv:2611.09361",
+ "premise_risks": [
+  "arXiv:2611.09361 (Slijepcevic, Nov 2026 preprint): the known result h_m(f_k) >= log(2 pi k+4) - 2^430 for k >= exp(2^50000), quoted as background only.",
+  "OpenAI preprint (unrefereed, credited in 2611.09361): non-effective positivity for large k, background only."
+ ],
+ "plain": "Sinai conjectured that the standard map has positive metric entropy for every parameter k>0. After a 2026 AI-generated non-effective proof for large k, Slijepčević proved it for every k ≥ exp(2^{50000}). Bring the threshold down to a physically meaningful range, e.g. all k ≥ 10^6, or even a single explicit k ≤ 100.",
+ "math": "Let f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)) on T^2=R^2/Z^2 (Slijepcevic's normalization; Chirikov's K equals 2 pi k), and h_m(f_k) the metric entropy w.r.t. area. Known: log(2 pi k+4)-2^{430} <= h_m(f_k) <= log(2 pi k+4) for k>=exp(2^{50000}) (Slijepcevic 2026). Prove h_m(f_k)>0 for all k>=10^6, or for at least one explicit k<=100.",
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2611.09361",
+  "https://arxiv.org/abs/2507.11375",
+  "https://arxiv.org/abs/2003.09329",
+  "arXiv:2611.09361",
+  "arXiv:2003.09329",
+  "arXiv:2507.11375"
+ ]
+}

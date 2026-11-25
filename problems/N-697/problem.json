@@ -1,0 +1,17 @@
+{
+ "id": "N-697",
+ "title": "Matching lower bound for OMv on low-VC-dimension matrices",
+ "area": "Complexity",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Anand, van den Brand, McCarty, 'The Structural Complexity of Matrix-Vector Multiplication', NeurIPS 2025, arXiv:2502.21240; OMv conjecture: Henzinger, Krinninger, Nanongkai, Saranurak (STOC 2015).",
+ "plain": "Anand-van den Brand-McCarty give O~(n^2) preprocessing and O~(n^{2-1/d}) query time for Boolean Mv when M has VC-dimension d. Show, assuming OMv (or unconditionally in the cell-probe model), that n^{2-c/d} query time is necessary for some constant c, for d up to some omega(1) function; or improve the upper bound to n^{2-f(d)} with f(d) >> 1/d.",
+ "math": "Assume the OMv conjecture. Prove there are c > 0 and D(n) → ∞ such that for all d ≤ D(n), every algorithm with poly(n) preprocessing for online Boolean matrix–vector multiplication on n×n Boolean matrices of VC-dimension ≤ d needs amortized query time n^{2−c/d−o(1)}. (Alternative positive target: an algorithm with query time n^{2−f(d)} where d·f(d) → ∞.)",
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: requires an online algorithm/time model and the OMv conjecture as a hypothesis over all algorithms. The 'either lower or upper bound' disjunction should be split into two board entries if formalized later; as one Claim it is not a single proposition.",
+ "refs": [
+  "Anand, van den Brand, McCarty, The Structural Complexity of Matrix-Vector Multiplication, NeurIPS 2025, arXiv:2502.21240",
+  "Henzinger, Krinninger, Nanongkai, Saranurak, Unifying and strengthening hardness for dynamic problems via the OMv conjecture, STOC 2015"
+ ]
+}

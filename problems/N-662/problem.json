@@ -2,10 +2,18 @@
  "id": "N-662",
  "title": "Non-arithmetic tones of the cube",
  "area": "Analysis",
- "difficulty": 4.8,
- "plain": "Many vibration frequencies of a cube's surface come from the square torus and are rational multiples of π². Show some frequency is not.",
- "math": "Let $S$ be the flat unit-cube surface. Prove that some eigenvalue of the Laplacian on $S$ is not a rational multiple of $\\pi^2$.",
- "novelty": 7,
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "Many vibration frequencies of a cube's surface come from flat tori and are rational multiples of pi squared. Prove that at least one frequency is not of this form.",
+ "math": "Let $S$ be the boundary of the unit cube $[0,1]^3$ with its intrinsic flat metric (8 cone points of angle $3\\pi/2$), and let $\\Delta$ be the Friedrichs extension of the Laplacian on $S$. Prove that some eigenvalue of $\\Delta$ is not in $\\pi^2\\mathbb{Q}$.",
+ "novelty": 6,
  "importance": 4,
- "value": 6
+ "value": 5,
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: needs H¹ on a flat cone surface, Dirichlet forms / Friedrichs extension, and spectral theory of the resulting operator; none are in Mathlib.",
+ "refs": [
+  "https://arxiv.org/abs/1809.09909",
+  "https://www.numdam.org/item/CRMATH_2002__335_12_1047_0"
+ ]
 }

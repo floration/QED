@@ -3,14 +3,27 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Split a complete graph on 2m + 1 vertices into identical copies of any given forest with m edges.
+Grade B · QED Extension · Graph theory
 
-**Math:** Prove $K_{2m+1}$ decomposes into $2m+1$ copies of any forest with $m$ edges.
+**Plain words:** Ringel's conjecture, now a theorem for large n, says the complete graph on 2m+1 vertices splits into 2m+1 copies of any tree with m edges. Show the same holds for every forest with m edges. A stronger form asks that every such forest have a rho-labelling, which gives a cyclic decomposition.
 
-Difficulty estimate: 3.1/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Prove that for every m ≥ 1 and every forest F with m edges and no isolated vertices, E(K_{2m+1}) can be partitioned into 2m+1 subgraphs each isomorphic to F. Stronger form: every such F admits a ρ-labelling.
+
+**Credit:** Ringel (1963); Montgomery-Pokrovskiy-Sudakov (arXiv:2001.02665); Keevash-Staden (arXiv:2004.09947); Barrientos-Minion, EJGTA 4(2) 2016 (ρ-labelled forests)
+
+**References:**
+- https://arxiv.org/abs/2001.02665
+- https://arxiv.org/abs/2004.09947
+- https://arxiv.org/abs/2202.03178
+- https://arxiv.org/abs/1803.03316
+- https://ejgta.org/index.php/ejgta/article/view/132
+
+Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N148.Claim` or a proof of `¬ OpenProblems.N148.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-148/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N148.Claim` or a proof of `¬ OpenProblems.N148.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-148/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-148` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

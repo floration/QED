@@ -1,16 +1,32 @@
-# N-628 — Capacities of the 4D superball
+# N-628 — Gromov width of the 4D l^4 ball
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Viterbo's conjecture that all symplectic capacities agree on convex bodies is false in general. Do they agree on the 4D ball x⁴+y⁴+z⁴+w⁴ ≤ 1?
+Grade B · QED Original · Geometry
 
-**Math:** Let $U=\{x_1^4+y_1^4+x_2^4+y_2^4\le1\}\subset(\mathbb R^4,\omega_0)$. Decide whether the Gromov width of $U$ equals its Ekeland–Hofer–Zehnder capacity (the minimal action of a closed characteristic on $\partial U$).
+**Plain words:** The 4D superball x1^4+y1^4+x2^4+y2^4 <= 1 contains the round unit ball, so it holds a symplectic ball of capacity pi. Its cylindrical capacity is about 3.708, and no symplectic ball can be bigger than that. Narrow the gap: embed a bigger ball, or show that no ball of capacity close to 3.708 fits.
 
-Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let U = {x1^4+y1^4+x2^4+y2^4 <= 1} ⊂ (R^4, ω0) and c_G(U) = sup{πr^2 : B^4(r) embeds symplectically in U}. Known: π <= c_G(U) <= c0 := 4Γ(5/4)^2/Γ(3/2) ≈ 3.7081 (= c_Z(U) = c_EHZ(U)). Prove or disprove: c_G(U) = c0 (i.e. U satisfies the strong Viterbo equality between Gromov width and cylindrical capacity).
+
+**QED results so far (reviewer-derived; check before relying on them):** c_G(U) >= pi: U contains the Euclidean unit ball, since sum x_i^4 <= (sum x_i^2)^2. (Trivial.) c_G(U) <= c_Z(U) = c_EHZ(U) = c0 = 4Gamma(5/4)^2/Gamma(3/2) ~ 3.7081 (arXiv 2609.37794, Thm 2 with n=2, p=4, B=D=I). Gromov width is <= every normalized capacity. The volume bound sqrt(2 Vol U) ~ 4.65 is weaker.
+
+**Rests on recent unrefereed work. Check these premises first:**
+- arXiv:2609.37794 (2026, unrefereed): Thm 2 giving c_Z(U) = c_EHZ(U) = 4Γ(5/4)^2/Γ(3/2); the Claim's target value c0 comes from it. If that value is wrong, Claim may be false for a trivial reason.
+
+**References:**
+- https://arxiv.org/pdf/2609.37794
+- https://arxiv.org/pdf/2405.16513
+- https://arxiv.org/pdf/2402.07709
+- https://arxiv.org/pdf/2203.02294
+- https://arxiv.org/pdf/2610.31906
+
+Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N628.Claim` or a proof of `¬ OpenProblems.N628.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-628/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N628.Claim` or a proof of `¬ OpenProblems.N628.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-628/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-628` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

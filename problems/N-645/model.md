@@ -1,16 +1,27 @@
-# N-645 — Quintic Szegő growth
+# N-645 — Quintic Szego growth
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** The cubic Szegő equation on the circle is integrable and its solutions' high Sobolev norms can grow without bound. Decide what the quintic version does.
+Grade B · QED Extension · PDE
 
-**Math:** For $iu_t=\Pi(|u|^4u)$ on $L^2_+(\mathbb T)$ ($\Pi$ the Szegő projector), decide whether there is $u_0\in C^\infty\cap L^2_+$ with $\limsup_{t\to\infty}\|u(t)\|_{H^s}=\infty$ for some $s>\tfrac12$.
+**Plain words:** The cubic Szego equation on the circle is completely integrable, and Gerard-Grellier showed that its smooth solutions can have Sobolev norms that are unbounded in time. Decide whether the quintic Szego equation, which is presumably not integrable, also has smooth solutions with unbounded high Sobolev norms.
+
+**Math:** On $L^2_+(\mathbb T)=\{u\in L^2:\hat u(k)=0\ \forall k<0\}$ with Szego projector $\Pi$, consider $i\partial_tu=\Pi(|u|^4u)$, which is globally well posed in $H^s_+$, $s>1/2$, with conserved $\|u\|_{L^2}$, $(Du,u)$ and $\|u\|_{L^6}$. Decide whether there exist $u_0\in C^\infty(\mathbb T)\cap L^2_+$ and $s>1/2$ with $\limsup_{t\to\infty}\|u(t)\|_{H^s}=\infty$.
+
+**Credit:** Gérard–Grellier (cubic Szegő equation, turbulent solutions); Thirouin, quadratic Szegő equation (arXiv:1710.01512).
+
+**References:**
+- https://arxiv.org/abs/1710.01512
+- https://arxiv.org/pdf/1508.01500
+- https://arxiv.org/pdf/2002.07785
 
 Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N645.Claim` or a proof of `¬ OpenProblems.N645.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-645/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N645.Claim` or a proof of `¬ OpenProblems.N645.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-645/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs well-posedness theory for the quintic Szegő equation.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-645` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

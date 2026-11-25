@@ -3,14 +3,22 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Many vibration frequencies of a cube's surface come from the square torus and are rational multiples of π². Show some frequency is not.
+Grade B · QED Original · Analysis
 
-**Math:** Let $S$ be the flat unit-cube surface. Prove that some eigenvalue of the Laplacian on $S$ is not a rational multiple of $\pi^2$.
+**Plain words:** Many vibration frequencies of a cube's surface come from flat tori and are rational multiples of pi squared. Prove that at least one frequency is not of this form.
 
-Difficulty estimate: 4.8/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $S$ be the boundary of the unit cube $[0,1]^3$ with its intrinsic flat metric (8 cone points of angle $3\pi/2$), and let $\Delta$ be the Friedrichs extension of the Laplacian on $S$. Prove that some eigenvalue of $\Delta$ is not in $\pi^2\mathbb{Q}$.
+
+**References:**
+- https://arxiv.org/abs/1809.09909
+- https://www.numdam.org/item/CRMATH_2002__335_12_1047_0
+
+Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N662.Claim` or a proof of `¬ OpenProblems.N662.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-662/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N662.Claim` or a proof of `¬ OpenProblems.N662.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-662/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs H¹ on a flat cone surface, Dirichlet forms / Friedrichs extension, and spectral theory of the resulting operator; none are in Mathlib.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-662` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

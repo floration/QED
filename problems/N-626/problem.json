@@ -1,11 +1,20 @@
 {
  "id": "N-626",
- "title": "Sup norms on the Fermat quartic",
+ "title": "Maximal eigenfunction growth beyond surfaces of revolution",
  "area": "Analysis",
- "difficulty": 2.4,
- "plain": "On a sphere, some eigenfunctions pile up at the poles as much as possible. Show this cannot happen on the surface x⁴+y⁴+z⁴ = 1.",
- "math": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the induced metric and $\\Delta\\varphi=-\\lambda\\varphi$, $\\|\\varphi\\|_{L^2(S)}=1$. Prove that $\\|\\varphi\\|_{L^\\infty(S)}=o(\\lambda^{1/4})$ as $\\lambda\\to\\infty$.",
- "novelty": 6,
- "importance": 4,
- "value": 6
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "C. D. Sogge and S. Zelditch, 'Focal points and sup-norms of eigenfunctions' (arXiv:1311.3999) and its two-dimensional addendum (arXiv:1409.2063, Rev. Mat. Iberoam. 2016).",
+ "plain": "On the round sphere, some eigenfunctions are as peaked as theory allows, because every geodesic leaving the pole comes back to it. Sogge and Zelditch proved that on any real-analytic surface, maximally peaked eigenfunctions force such a 'pole'. Is rotational symmetry also forced: must such a surface be a surface of revolution?",
+ "math": "Let $(M,g)$ be a compact boundaryless real-analytic Riemannian surface with $\\Delta_g e_j=-\\lambda_j^2e_j$, $\\|e_j\\|_{L^2}=1$. Say $g$ has maximal eigenfunction growth if $\\limsup_j \\|e_j\\|_{L^\\infty}/\\lambda_j^{1/2}>0$ for some orthonormal eigenbasis. Decide whether every such $(M,g)$ admits a nontrivial isometric $S^1$-action, i.e. is a surface of revolution. (Necessary condition, Sogge-Zelditch 2016: $M$ has a pole $p$, meaning all geodesics from $p$ return smoothly closed at a common time $2T_p$.)",
+ "novelty": 5,
+ "importance": 3,
+ "value": 4,
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: needs real-analytic Riemannian surfaces, the Laplace-Beltrami spectral theory, and isometric circle actions.",
+ "refs": [
+  "https://arxiv.org/abs/1311.3999",
+  "https://arxiv.org/abs/1409.2063"
+ ]
 }

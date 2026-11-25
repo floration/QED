@@ -1,16 +1,29 @@
-# N-651 — Four vortices on a square torus
+# N-651 — Three identical vortices on a square torus are chaotic
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Three point vortices on a flat torus are integrable. Show four identical ones are not.
+Grade B · QED Curated · Dynamics
 
-**Math:** Let $H=-\sum_{i<j}G(z_i-z_j)$, with $G$ the Green function of $\mathbb C/(\mathbb Z+i\mathbb Z)$, for four unit vortices. Prove that after reduction by the translation symmetry the system has no real-analytic first integral independent of $H$.
+**Plain words:** On a flat torus, three point vortices with total circulation zero form an integrable system (Stremler-Aref), but for vortices of equal strength even three are believed chaotic, from numerics only. Prove that three identical point vortices on the square torus are not integrable; the same question is open for four.
 
-Difficulty estimate: 2.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $G$ be the Green function of $\mathbb T=\mathbb C/(\mathbb Z+i\mathbb Z)$ ($\Delta G=\delta_0-1$) and $H=-\sum_{i<j}G(z_i-z_j)$ on $\{(z_1,\dots,z_N)\in\mathbb T^N: z_i\ne z_j\}$ with symplectic form $\sum_i dx_i\wedge dy_i$. The centre $Z=\sum_i z_i\in\mathbb T$ is conserved; the reduced space $M_N=\{Z=Z_0\}/(\tfrac1N\mathbb Z[i]/\mathbb Z[i])$ is symplectic of dimension $2N-2$. Prove that for $N=3$ the reduced flow on $M_3$ has no real-analytic first integral functionally independent of $H$ (and likewise for $N=4$ on $M_4$).
+
+**Credit:** Borisov, Mamaev, Kilin, Regul. Chaotic Dyn. (2019); survey arXiv:2003.00716 (Thm 7); Stremler-Aref (1999, chao-dyn/9907038) for the zero-circulation integrable case
+
+**References:**
+- https://ar5iv.arxiv.org/html/2003.00716
+- https://rcd.ics.org.ru/S1560354719010064/
+- https://data.zhenzhi.com/details/1/870900550
+- https://arxiv.org/pdf/chao-dyn/9907038
+- https://mathnet.ru/eng/rcd392
+
+Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N651.Claim` or a proof of `¬ OpenProblems.N651.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-651/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N651.Claim` or a proof of `¬ OpenProblems.N651.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-651/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs the torus Green function and symplectic reduction (or a verified explicit coordinate model). The 'likewise for N=4' clause is secondary and would be a separate Claim.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-651` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

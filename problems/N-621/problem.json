@@ -2,10 +2,26 @@
  "id": "N-621",
  "title": "Chaos in the symmetric ABC flow",
  "area": "Dynamics",
- "difficulty": 3.0,
- "plain": "The ABC flow with all three coefficients equal to 1 is a classical steady solution of the Euler equations on the 3-torus. Prove it is genuinely chaotic.",
- "math": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb T^3$ has positive topological entropy.",
+ "difficulty": 2.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "T. Dombre, U. Frisch, J. M. Greene, M. Henon, A. Mehr, A. M. Soward, 'Chaotic streamlines in the ABC flows', J. Fluid Mech. 167 (1986); V. I. Arnold (1965); M. Henon (1966).",
+ "premise_risks": [
+  "arXiv:2609.17449 (Szuminski-Llibre, 2026 preprint): relied on only for the openness check (it is perturbative near the axes and does not settle A=B=C=1); the statement assumes nothing from it."
+ ],
+ "plain": "The ABC flow with all three coefficients equal to 1 is the classical steady Euler flow on the 3-torus that is believed to be chaotic. Prove that it really is: show it has positive topological entropy.",
+ "math": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb{T}^3=(\\mathbb{R}/2\\pi\\mathbb{Z})^3$ has positive topological entropy (e.g. by exhibiting a transversal homoclinic orbit to a hyperbolic periodic orbit, or a horseshoe for a Poincare map).",
  "novelty": 4,
  "importance": 6,
- "value": 8
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1601.02724",
+  "https://arxiv.org/abs/1704.03128",
+  "https://arxiv.org/abs/2609.17449",
+  "https://www.mathnet.ru/eng/faa525",
+  "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/chaotic-streamlines-in-the-abc-flows/7139EDCF0CC8A9B4D9D749B1FAA6CE54",
+  "https://arxiv.org/pdf/2504.04887",
+  "https://arxiv.org/abs/2204.14056"
+ ]
 }

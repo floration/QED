@@ -1,16 +1,36 @@
-# N-134 — Icosahedral monotile
+# N-134 — A monotile that forces quasicrystalline symmetry
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Find a single 3D tile that fills space and forces five-fold, icosahedral symmetry in every tiling.
+Grade A · QED Extension · Geometry
 
-**Math:** Find $T\subset\mathbb{R}^3$ tiling space such that every tiling by $T$ has icosahedral symmetry in its hull, or prove none exists.
+**Plain words:** Every aperiodic monotile known (Socolar-Taylor, the hat, the spectre, and the 3D examples) has tilings with only crystallographic rotational structure: 2-, 3-, 4- or 6-fold. Is there a single tile in the plane whose tilings are all forced to be quasicrystalline with fivefold symmetry, as Penrose tilings are? Or is non-crystallographic symmetry something only two or more tiles can enforce?
 
-Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Call a compact set T ⊂ ℝ² homeomorphic to a closed disc a monotile if it tiles ℝ² by isometric copies, reflections allowed. Does there exist a monotile T such that (i) every tiling by copies of T uses only finitely many orientations of T (up to translation), and (ii) for every such tiling 𝒯 the translation hull Ω(𝒯), the closure of {𝒯 + v} in the standard local topology (agreement on B(0,1/ε) after a translation of size < ε), is invariant under rotation by 2π/5? (Equivalently, the rotated tiling R𝒯 lies in Ω(𝒯).) The R³ icosahedral analogue is a secondary target.
+
+**Credit:** Einstein problem: Socolar-Taylor (2011, arXiv:1009.1419); Smith-Myers-Kaplan-Goodman-Strauss (2023, arXiv:2303.10798); Gummelt decagon covering (1996); Steinhardt-Jeong quasi-unit-cell model
+
+**References:**
+- https://arxiv.org/pdf/2303.10798
+- https://arxiv.org/pdf/1009.1419
+- https://arxiv.org/abs/2609.19214
+- https://arxiv.org/pdf/1003.4909
+- https://collaborate.princeton.edu/en/publications/constructing-penrose-like-tilings-from-a-single-prototile-and-the/
+- https://en.wikipedia.org/wiki/Einstein_problem
+- https://arxiv.org/pdf/1604.06280
+- https://arxiv.org/pdf/2409.15880
+- https://arxiv.org/abs/1907.10139
+- https://arxiv.org/abs/2106.08155
+- https://arxiv.org/abs/2609.19214
+- https://arxiv.org/pdf/1009.1419
+
+Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N134.Claim` or a proof of `¬ OpenProblems.N134.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-134/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N134.Claim` or a proof of `¬ OpenProblems.N134.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-134/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-134` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

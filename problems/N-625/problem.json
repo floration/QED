@@ -1,11 +1,30 @@
 {
  "id": "N-625",
- "title": "Outer billiards around a superellipse",
+ "title": "Outer billiards around analytic tables with flat points",
  "area": "Dynamics",
- "difficulty": 3.6,
- "plain": "Outer billiards around a smooth convex shape with positive curvature has only bounded orbits. Decide whether this survives for x⁴+y⁴ ≤ 1, whose curvature vanishes at four points.",
- "math": "Let $K=\\{x^4+y^4\\le1\\}$ and let $T:\\mathbb R^2\\setminus K\\to\\mathbb R^2\\setminus K$ be the outer billiard map ($T(p)$ is the reflection of $p$ in the point where the right-hand tangent line from $p$ touches $\\partial K$). Decide whether every $T$-orbit is bounded.",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Extension",
+ "credit": "Moser's boundedness question (J. Moser, Stable and Random Motions, 1973); Douady (thesis, 1982); Sorrentino arXiv:2610.06418 (2026) for the C^1-generic case.",
+ "results": "I checked the singularity claim. At a flat point of order k the radius of curvature satisfies rho(theta)~|theta|^{-k/(k+1)} (|theta|^{-2/3} for x^4+y^4), and the tangency point q(p) is only C^{1/(k+1)} across the tangent lines at the flat points. So T and the limiting map at infinity are genuinely non-smooth, and KAM does not apply directly. The claim is correct.",
+ "premise_risks": [
+  "arXiv:2610.06418 (Sorrentino, 2026 preprint): cited for C^1-generic unbounded orbits (centrally symmetric tables only); motivation only, the statement does not depend on it."
+ ],
+ "plain": "Outer billiards around a smooth convex shape with positive curvature has only bounded orbits (Moser-Douady). Polygons, semicircles and generic C^1 shapes can have orbits that escape to infinity. What if the table is analytic and strictly convex, but its curvature vanishes at a few points, like the superellipse x^4+y^4 ≤ 1? Decide whether every orbit stays bounded.",
+ "math": "Let $K\\subset\\mathbb R^2$ be a strictly convex body whose boundary is a real-analytic closed curve with curvature vanishing at at least one point (hence, by analyticity, at finitely many). For $p\\in\\mathbb R^2\\setminus K$, let $T(p)=2q-p$, where $q\\in\\partial K$ is the tangency point of the tangent line from $p$ that has $K$ on its left. Is every $T$-orbit bounded, for every such $K$? If not, characterize the $K$ with unbounded orbits, e.g. by the vanishing orders of the curvature or by symmetry. First test case: $K=\\{x^4+y^4\\le1\\}$.",
  "novelty": 7,
  "importance": 5,
- "value": 7
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2610.06418",
+  "https://www.math.umd.edu/~dolgop/outer15.pdf",
+  "https://arxiv.org/abs/math/0702073",
+  "https://arxiv.org/pdf/math/9408216",
+  "https://arxiv.org/abs/2610.06418",
+  "https://www.math.umd.edu/~dolgop/outer15.pdf",
+  "https://arxiv.org/abs/math/9408216",
+  "https://arxiv.org/html/2508.15142v1",
+  "https://cedar.wwu.edu/math_facpubs/14"
+ ]
 }

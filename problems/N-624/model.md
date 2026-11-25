@@ -1,16 +1,32 @@
-# N-624 — How nearly can tetrahedra close up
+# N-624 — How nearly can tetrahedra close up: the exponent
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** A chain of regular tetrahedra glued face to face can never close exactly. Find the exact exponential rate at which the best near-closure improves with chain length.
+Grade B · QED Extension · Geometry
 
-**Math:** For a regular tetrahedron $T_0$, a chain of length $n$ is $T_0,\dots,T_n$ with $T_{k+1}$ the reflection of $T_k$ in a face not shared with $T_{k-1}$. Let $g(n)$ be the minimum over chains of the Hausdorff distance between $T_n$ and $T_0$ (always positive). Prove that $\lim_{n\to\infty}\frac1n\log g(n)=-\frac{\log 3}{6}$.
+**Plain words:** Glue regular tetrahedra face to face in a chain of length n; it can never close exactly. How close to closing can it get? Short arguments show the best gap is at least about 3^{-n/2} and, for infinitely many n, at most about 3^{-n/12}; counting suggests 3^{-n/6}. Narrow the exponent range [1/12, 1/2].
 
-Difficulty estimate: 6.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let g(k) be the minimal Hausdorff distance between T_k and T_0 over non-backtracking face-reflection chains of length k, and κ := liminf_{n→∞} −(1/n) log₃ min_{1≤k≤n} g(k). Known: 1/12 ≤ κ ≤ 1/2 (heuristic κ = 1/6). Prove κ > 1/12, i.e. there are δ > 0 and N such that for every n ≥ N some non-backtracking chain of length between 1 and n ends within 3^{−(1/12+δ)n} of T_0.
+
+**Credit:** Steinhaus problem; Świerczkowski (1959) non-closure; Elgersma & Wagon (2016), arXiv:1610.00280.
+
+**QED results so far (reviewer-derived; check before relying on them):** g(n) >= c*3^{-n/2} for all n (new, short proof): g_n = s_{i1}...s_{in}, linear part = ±R_q, q = v_{i1}...v_{in}, v_i the pure quaternions ±i±j±k (norm 3); non-backtracking => q primitive in the Hurwitz order (unique factorisation; checked by computer to n=11). If T_n is near T_0 the linear part is near a symmetry ±R_u; q*conj(u) cannot be real (primitivity / 2*3^n not a square), so its vector part has length >=1/2 while |q u| <= sqrt2*3^{n/2}, giving rotation error >> 3^{-n/2}.
+
+**Rests on recent unrefereed work. Check these premises first:**
+- QED-internal derivation (unrefereed): the bounds 1/12 ≤ κ ≤ 1/2 (Hurwitz-order primitivity checked by computer only to n = 11). The formal Claim only uses the definitions, not these bounds.
+
+**References:**
+- https://arxiv.org/abs/1610.00280
+- https://arxiv.org/pdf/1610.00280
+- https://portal.mardi4nfdi.de/wiki/Item:Q2354124
+
+Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N624.Claim` or a proof of `¬ OpenProblems.N624.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-624/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N624.Claim` or a proof of `¬ OpenProblems.N624.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-624/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-624` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

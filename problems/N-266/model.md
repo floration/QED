@@ -3,14 +3,31 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Find the largest set of binary strings of length n in which no two differ in a perfect-square number of positions. Find the exponential rate.
+Grade A · QED Original · Combinatorics
 
-**Math:** Let $A(n)$ be the largest $C\subseteq\{0,1\}^n$ with $d_H(x,y)$ never a positive perfect square for $x\ne y\in C$. Determine $\lim_n\frac1n\log_2A(n)$.
+**Plain words:** Find the largest set of binary strings of length n in which no two differ in a perfect-square number of positions. Does it grow exponentially in n, and if so at what rate? This is a hypercube version of Sarkozy's theorem on square differences.
 
-Difficulty estimate: 6.4/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $A(n)=\max\{|C|: C\subseteq\{0,1\}^n,\ d_H(x,y)\notin\{1,4,9,16,\dots\}\ \forall x\ne y\in C\}$. Decide whether $A(n)=2^{o(n)}$. More precisely, determine $\liminf_n\frac1n\log_2A(n)$ and $\limsup_n\frac1n\log_2A(n)$ (in particular whether they are equal).
+
+**QED results so far (reviewer-derived; check before relying on them):** Small values A(1..7)=1,2,4,5,10,12,14 re-verified by exact max-clique. Frankl-Rodl rate<1 argument is correct. The claim that codes with all distances between consecutive squares are polynomial is only correct for windows at linear distance. Constant-weight codes with w~k^2/2, w~n^{2/3}, and pairwise intersections <k have all distances in (k^2,(k+1)^2).
+
+**References:**
+- https://arxiv.org/pdf/2504.12296v3
+- https://arxiv.org/pdf/1402.6294
+- https://people.maths.ox.ac.uk/keevash/papers/franklrodl-journal.pdf
+- https://arxiv.org/pdf/2604.05607
+- https://arxiv.org/pdf/2305.00433
+- https://arxiv.org/pdf/2611.04523
+- https://arxiv.org/pdf/2604.05607
+- https://arxiv.org/pdf/2506.18782
+- https://people.maths.ox.ac.uk/keevash/papers/franklrodl-journal.pdf
+
+Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N266.Claim` or a proof of `¬ OpenProblems.N266.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-266/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N266.Claim` or a proof of `¬ OpenProblems.N266.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-266/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-266` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

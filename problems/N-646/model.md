@@ -1,16 +1,31 @@
-# N-646 — L⁴ Strichartz on a cube
+# N-646 — Derivative loss in L4 Strichartz on the cube surface
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** On a flat square torus the L⁴ Strichartz estimate holds with only ε loss of derivatives. Prove the same on the surface of a cube, where corners diffract waves.
+Grade B · QED Extension · PDE
 
-**Math:** Let $S$ be the flat unit-cube surface. Prove that for every $\varepsilon>0$, $\|e^{it\Delta}f\|_{L^4([0,1]\times S)}\le C_\varepsilon\|f\|_{H^\varepsilon(S)}$.
+**Plain words:** On the flat torus, the L4 space-time estimate for Schrodinger waves loses only epsilon derivatives (Bourgain). On the surface of a cube, which has eight cone points that diffract waves, only a loss of 1/4 derivative is known. Find the true loss: prove any loss below 1/4, or show some loss is necessary.
 
-Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $S$ be the unit cube surface, $\Delta$ the Friedrichs extension from $C_c^\infty(S\setminus\text{vertices})$, and $s^*=\inf\{s\ge0:\|e^{it\Delta}f\|_{L^4([0,1]\times S)}\le C_s\|f\|_{H^s(S)}\}$. Known: $0\le s^*\le\tfrac14$ (Blair–Ford–Marzuola). Prove $s^*<\tfrac14$, or $s^*>0$; ideally determine $s^*$ (conjecturally $0$).
+
+**Credit:** Blair, Ford, Marzuola, Strichartz estimates for the wave equation on flat cones / Euclidean surfaces with conical singularities, arXiv:1003.0666.
+
+**QED results so far (reviewer-derived; check before relying on them):** s* >= 0 (trivial). No positive lower bound known. s* <= 1/4: Blair-Ford-Marzuola, Thm 1.5 (arXiv 1003.0666), loss 1/p for compact Euclidean surfaces with conical singularities, p=q=4; authors call the loss an artifact of the method.
+
+**References:**
+- https://arxiv.org/abs/1003.0666
+- https://arxiv.org/abs/1809.09909
+- https://arxiv.org/pdf/0910.1795
+- https://arxiv.org/pdf/1105.5410
+- https://arxiv.org/pdf/1003.0666
+
+Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N646.Claim` or a proof of `¬ OpenProblems.N646.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-646/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N646.Claim` or a proof of `¬ OpenProblems.N646.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-646/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs Friedrichs Laplacian and Sobolev spaces on a cone surface.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-646` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

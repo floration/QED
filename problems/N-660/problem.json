@@ -1,11 +1,18 @@
 {
  "id": "N-660",
- "title": "Quartic oscillator ground state",
- "area": "Analysis",
+ "title": "Irrationality of the quartic oscillator ground state",
+ "area": "Mathematical physics",
  "difficulty": 7.5,
- "plain": "The lowest energy of the quartic oscillator, −d²/dx² + x⁴, is about 1.0603620905. Show it is irrational.",
- "math": "Let $E_0=\\min\\sigma\\big(-\\frac{d^2}{dx^2}+x^4\\big)$ on $L^2(\\mathbb R)$. Prove $E_0\\notin\\mathbb Q$.",
- "novelty": 5,
- "importance": 5,
- "value": 6
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "The lowest energy of the quartic oscillator, -d^2/dx^2 + x^4 on the line, is about 1.0603620905. Show that it is irrational.",
+ "math": "Let $E_0=\\min\\sigma\\big(-\\tfrac{d^2}{dx^2}+x^4\\big)$, the operator taken self-adjoint on $L^2(\\mathbb R)$ ($E_0=1.06036209048418\\ldots$). Prove that $E_0\\notin\\mathbb Q$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/math-ph/0005029",
+  "https://arxiv.org/abs/2401.07131"
+ ]
 }

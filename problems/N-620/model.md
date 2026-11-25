@@ -3,14 +3,24 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** A billiard ball bouncing periodically inside a regular tetrahedron traces a closed polygon. Show that infinitely many different knot types arise this way.
+Grade B · QED Extension · Topology
 
-**Math:** Call a periodic billiard trajectory in a regular tetrahedron $T\subset\mathbb R^3$ admissible if it avoids edges and vertices and is an embedded closed polygon. Prove that the set of knot types of admissible periodic trajectories is infinite.
+**Plain words:** A billiard ball bouncing periodically inside a regular tetrahedron, without hitting edges or corners, traces a closed polygon in space. Is any such polygon knotted, and do infinitely many different knot types occur?
 
-Difficulty estimate: 3.2/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Call a periodic billiard trajectory in a regular tetrahedron $T\subset\mathbb R^3$ admissible if it never meets an edge or vertex of $T$ and its image is an embedded closed polygon. (a) Does some admissible trajectory form a nontrivial knot? (b) Prove that the set of knot types of admissible periodic trajectories is infinite.
+
+**Credit:** Extends Jones–Przytycki (Lissajous knots and billiard knots, 1998) and Koseleff–Pecker, 'Every knot is a billiard knot', arXiv:1106.5600; periodic orbits in polyhedra: Bedaride–Rao arXiv:1104.1051.
+
+**References:**
+- https://arxiv.org/abs/1106.5600
+- https://arxiv.org/pdf/1104.1051
+
+Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N620.Claim` or a proof of `¬ OpenProblems.N620.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-620/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N620.Claim` or a proof of `¬ OpenProblems.N620.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-620/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-620` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

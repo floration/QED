@@ -1,0 +1,27 @@
+{
+ "id": "N-668",
+ "title": "Is the measure of the hyperbolic real quadratic parameters computable?",
+ "area": "Dynamics",
+ "difficulty": 5.5,
+ "grade": "A",
+ "provenance": "Original",
+ "results": "The first reviewer's semicomputability check is correct. λ(H) is lower semicomputable. Each CE(C,γ) piece is an intersection of finite-time conditions, so it is only upper semicomputable, which is the wrong direction. The 'equivalently' clause is valid through Lyubich's regular-or-stochastic theorem and Avila–Moreira (almost every stochastic parameter is CE).",
+ "premise_risks": [
+  "arXiv 2505.20495 (Golmakani–Koudjinan–Luzzatto–Pilarczyk, 2025 preprint): cited only for the remark that computer-assisted schemes certify expansion, not measure; statement does not depend on it."
+ ],
+ "plain": "For real c between −2 and 1/4, the map x ↦ x²+c has an attracting cycle for an open dense set of c, yet the chaotic parameters have positive length (Jakobson). Is the total length of the parameters with an attracting cycle a computable number? It can be approximated from below by listing windows, but no known method approximates it from above.",
+ "math": "Let $H=\\{c\\in[-2,1/4]:\\ x\\mapsto x^2+c\\text{ has an attracting periodic orbit}\\}$. Is the Lebesgue measure $\\lambda(H)$ a computable real number? ($H$ is open and its components can be certified by interval arithmetic, so $\\lambda(H)$ is lower semicomputable; Jakobson's theorem gives $\\lambda(H)<9/4$.) Equivalently: is the measure of the set of stochastic (Collet–Eckmann) parameters lower semicomputable?",
+ "novelty": 6,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/math/0508302",
+  "https://arxiv.org/abs/2004.13444",
+  "https://arxiv.org/pdf/1504.00116",
+  "https://annals.math.princeton.edu/2002/156-1/p01",
+  "https://arxiv.org/abs/math/0508302",
+  "https://arxiv.org/abs/2505.20495",
+  "https://arxiv.org/abs/2501.00006"
+ ]
+}

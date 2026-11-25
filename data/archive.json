@@ -28,6 +28,20 @@
 "note": "Likely easy improvement over the extruded sofa; overlaps N-068."
 },
 {
+"id": "N-003",
+"title": "Lonely runner with one fast runner",
+"area": "Number theory",
+"plain": "Runners have speeds 1, 2, 3 and some larger speed m. Work out exactly how lonely a stationary runner is guaranteed to get, depending on m.",
+"math": "Compute $\\delta(m)=\\sup_t\\min(\\|t\\|,\\|2t\\|,\\|3t\\|,\\|mt\\|)$ in closed form for all integers $m\\ge4$.",
+"difficulty": 1.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 2,
+"value": 4,
+"family": "other",
+"note": "Exact lonely-runner gap for speeds 1,2,3,m; tractable, explicit."
+},
+{
 "id": "N-004",
 "title": "Hardest Rush Hour",
 "area": "Games",
@@ -56,6 +70,34 @@
 "note": "Natural follow-up to wind-driven firefighter N-001; secondary optimization."
 },
 {
+"id": "N-006",
+"title": "Infinite Prime Nim losses",
+"area": "Games",
+"plain": "Prime Nim has infinitely many losing pile sizes (a known theorem, since primes have arbitrarily large gaps). Show they are rare.",
+"math": "Let $L=\\{n: G(n)=0\\}$ for the subtraction game with prime moves ($|L|=\\infty$ is known). Prove $L$ has natural density $0$.",
+"difficulty": 3.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 5,
+"family": "prime-nim",
+"note": "Density zero of Prime Nim P-positions; the natural first quantitative question."
+},
+{
+"id": "N-007",
+"title": "Lean golf is NP-hard",
+"area": "Computation",
+"plain": "Show that finding the shortest proof using only a few basic Lean tactics is computationally hard.",
+"math": "Prove NP-hardness of: given a Lean 4 goal and $k$ in unary, is there a proof using only intro, apply, exact, rfl with at most $k$ steps?",
+"difficulty": 1.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 2,
+"value": 4,
+"family": "other",
+"note": "NP-hardness of restricted-tactic Lean proof golf; likely routine reduction."
+},
+{
 "id": "N-008",
 "title": "Obtuse sofa",
 "area": "Geometry",
@@ -68,6 +110,20 @@
 "value": 3,
 "family": "sofa",
 "note": "120-degree corridor sofa; cosmetic angle change."
+},
+{
+"id": "N-009",
+"title": "Graceful spider forests",
+"area": "Combinatorics",
+"plain": "Spiders are trees with one central branching vertex. Show forests of spiders have the distinct-difference labeling.",
+"math": "For any forest of spiders with $m$ edges and $c$ components, find a bijection $V\\to\\{0,\\dots,m+c-1\\}$ with distinct edge differences.",
+"difficulty": 2.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "graceful",
+"note": "Graceful forest family for spiders; one of many graceful-forest variants."
 },
 {
 "id": "N-010",
@@ -98,6 +154,20 @@
 "note": "Sofa with arbitrary 0.8 narrowing; cosmetic corridor variant."
 },
 {
+"id": "N-012",
+"title": "Shuffle with a cut",
+"area": "Combinatorics",
+"plain": "Do a perfect shuffle, then cut k cards from top to bottom, and repeat. How many repetitions bring the deck back?",
+"math": "For the permutation $c_k\\circ\\sigma_{\\text{out}}$ on $2n$ cards, determine its order as a function of $n$ and $k$.",
+"difficulty": 1.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 2,
+"value": 4,
+"family": "other",
+"note": "Order of shuffle-plus-cut permutation; tidy but likely elementary or known."
+},
+{
 "id": "N-013",
 "title": "Anti-knight Sudoku",
 "area": "Games",
@@ -126,6 +196,34 @@
 "note": "Monotonicity of sofa area in angle; natural structural question."
 },
 {
+"id": "N-015",
+"title": "Delayed firefighters",
+"area": "Combinatorics",
+"plain": "Fire spreads in four directions, but a firefighter assigned now only takes effect a turn later. How many per turn are needed?",
+"math": "On $\\mathbb{Z}^2$ with 4-neighbour spread, cells chosen at turn $t$ become protected at turn $t+1$. Find the least per-turn number that contains a single fire.",
+"difficulty": 1.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "firefighter",
+"note": "Clean delayed-response firefighter variant on the grid."
+},
+{
+"id": "N-016",
+"title": "Aperiodic polykite census",
+"area": "Geometry",
+"plain": "The \"hat\" is made of 8 kites and tiles the plane only non-periodically. Find every such shape made of at most 12 kites.",
+"math": "Enumerate all polykites with $\\le12$ kites (from the $\\{6,3\\}$ kite grid) that tile $\\mathbb{R}^2$ but admit no periodic tiling.",
+"difficulty": 2.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "hat-tiling",
+"note": "Census of small aperiodic polykite monotiles; concrete, informative for monotile theory."
+},
+{
 "id": "N-017",
 "title": "Fire on a cylinder",
 "area": "Combinatorics",
@@ -152,6 +250,62 @@
 "value": 3,
 "family": "collatz-variant",
 "note": "Finite cycle enumeration for an ad hoc mod-3 Collatz map."
+},
+{
+"id": "N-019",
+"title": "Voice leading is NP-hard",
+"area": "Computation",
+"plain": "Moving n voices through a chord progression with the least total motion while avoiding parallel fifths should be computationally hard.",
+"math": "Show NP-hardness of minimizing $\\sum_t\\sum_i |x_{t+1,i}-x_{t,i}|$ over voicings of a given chord sequence with $n$ voices, subject to no parallel perfect fifths.",
+"difficulty": 0.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 2,
+"value": 4,
+"family": "other",
+"note": "Voice-leading NP-hardness; charming but likely routine reduction."
+},
+{
+"id": "N-020",
+"title": "Real-rank hyperoperations",
+"area": "Algebra",
+"plain": "Addition, multiplication and exponentiation are ranks 1, 2, 3 of one ladder. Find natural rules that fix a unique operation at every real rank in between.",
+"math": "Find axioms (analytic in $s$, $a[s{+}1](b{+}1)=a[s](a[s{+}1]b)$, agreement with $+,\\times,\\uparrow$ at $s=1,2,3$) that determine $a[s]b$ uniquely for real $s\\in[1,3]$, and prove uniqueness.",
+"difficulty": 2.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "hyperop",
+"note": "Classic folklore question made precise with axioms; overlaps N-510."
+},
+{
+"id": "N-021",
+"title": "Adversarial 2048",
+"area": "Games",
+"plain": "An opponent places every new tile in 2048 as unhelpfully as possible. What is the biggest tile you can still guarantee?",
+"math": "On the $4\\times4$ board where an adversary chooses each spawn's position and value in $\\{2,4\\}$, determine the largest tile the player can force.",
+"difficulty": 1.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 1,
+"value": 4,
+"family": "games",
+"note": "Adversarial 2048 max tile; fun, finite, clearly stated."
+},
+{
+"id": "N-023",
+"title": "Quarter-tone all-interval rows",
+"area": "Combinatorics",
+"plain": "Count the tone rows in 24-note tuning that use every interval exactly once.",
+"math": "Count permutations of $\\mathbb{Z}_{24}$ whose successive differences are all distinct nonzero residues, and find their growth rate for $\\mathbb{Z}_{2m}$.",
+"difficulty": 3.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 3,
+"importance": 4,
+"value": 5,
+"family": "other",
+"note": "Known open count of cyclic sequencings/all-interval rows, in music dress."
 },
 {
 "id": "N-025",
@@ -196,6 +350,34 @@
 "note": "Perturbative curvature correction of sofa constant; niche."
 },
 {
+"id": "N-028",
+"title": "Penrose firefighter",
+"area": "Combinatorics",
+"plain": "Fire spreads along a Penrose tiling's edges. How many firefighters per turn can trap any fire?",
+"math": "On the vertex graph of a Penrose rhomb tiling, find the least $k$ such that protecting $k$ vertices per turn contains a fire from any single vertex.",
+"difficulty": 2.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "firefighter",
+"note": "Firefighter on Penrose graph; most natural of the aperiodic firefighter variants."
+},
+{
+"id": "N-029",
+"title": "Three-pile shuffle group",
+"area": "Algebra",
+"plain": "Using the six ways to stack three piles in a perfect shuffle, which rearrangements of the deck can you reach?",
+"math": "Determine the subgroup of $S_{3n}$ generated by the six 3-pile perfect shuffles (all pile orders), for every $n$.",
+"difficulty": 1.9,
+"reason": "removed in Nov 2026 review: solved in 2024 (arXiv 2304.01037)",
+"novelty": 5,
+"importance": 4,
+"value": 6,
+"family": "shuffle",
+"note": "Natural extension of Diaconis-Graham-Kantor; clean group-theory question."
+},
+{
 "id": "N-030",
 "title": "Two-tree graceful forests",
 "area": "Combinatorics",
@@ -238,6 +420,20 @@
 "note": "Same round-pipe-bend sofa as N-183."
 },
 {
+"id": "N-033",
+"title": "Counting 16 × 16 Sudoku",
+"area": "Combinatorics",
+"plain": "Count the essentially different 16 × 16 Sudoku grids, ignoring symmetries, to three significant figures.",
+"math": "Determine the automorphism group $\\Gamma$ of the $16\\times16$ Sudoku constraint structure and estimate $|\\text{grids}/\\Gamma|$ to 3 significant figures.",
+"difficulty": 2.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 2,
+"value": 4,
+"family": "other",
+"note": "Hard enumeration challenge with group-orbit counting; recreational."
+},
+{
 "id": "N-034",
 "title": "Toroidal Hex",
 "area": "Games",
@@ -250,6 +446,20 @@
 "value": 3,
 "family": "games",
 "note": "Toroidal Hex 7x7 solve; computation, modest interest."
+},
+{
+"id": "N-035",
+"title": "Hyperbolic firefighter budgets",
+"area": "Combinatorics",
+"plain": "In a hyperbolic tiling, fire spreads exponentially, so no fixed crew stops it. How fast must the crew grow?",
+"math": "On the $\\{7,3\\}$ tiling graph, find the minimal growth of budgets $k_t$ (firefighters at turn $t$) that contains any single fire.",
+"difficulty": 2.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "firefighting",
+"note": "Firefighting under exponential growth; natural for hyperbolic graphs."
 },
 {
 "id": "N-036",
@@ -266,6 +476,20 @@
 "note": "Kissing number of hat; finite computation, spectre twin N-190."
 },
 {
+"id": "N-037",
+"title": "Packing seven-pointed stars",
+"area": "Geometry",
+"plain": "Find the densest way to pack identical seven-pointed stars in the plane.",
+"math": "Determine the maximal packing density of congruent copies of the regular star polygon $\\{7/2\\}$.",
+"difficulty": 4.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 2,
+"value": 4,
+"family": "other",
+"note": "Packing density of {7/2} star polygons; clean classical-style question."
+},
+{
 "id": "N-038",
 "title": "Square in a snowflake",
 "area": "Geometry",
@@ -278,6 +502,34 @@
 "value": 3,
 "family": "other",
 "note": "Largest inscribed square in Koch snowflake; computation-flavored curiosity."
+},
+{
+"id": "N-039",
+"title": "Formalize 3D Kakeya",
+"area": "Formal proof",
+"plain": "Turn the 2025 proof of the three-dimensional Kakeya conjecture into a compact computer-checked proof.",
+"math": "Produce a Lean 4 formalization of the Wang–Zahl theorem ($\\dim_H K=3$ for Kakeya $K\\subset\\mathbb{R}^3$) in under 50,000 lines beyond Mathlib.",
+"difficulty": 2.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "formalization",
+"note": "Useful formalization target; line bound arbitrary, not a math question."
+},
+{
+"id": "N-040",
+"title": "Formalize the sofa",
+"area": "Formal proof",
+"plain": "Turn Baek's proof that Gerver's sofa is optimal into a computer-checked proof.",
+"math": "Formalize in Lean 4 the statement and proof that the moving sofa constant equals the area of Gerver's sofa.",
+"difficulty": 2.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "sofa",
+"note": "Formalising Baek's long proof is worthwhile verification work, not open math."
 },
 {
 "id": "N-041",
@@ -348,6 +600,20 @@
 "value": 2,
 "family": "formal",
 "note": "Re-formalize a recent prime-gap bound; little new mathematics."
+},
+{
+"id": "N-046",
+"title": "Optimal origami base",
+"area": "Geometry",
+"plain": "Folders design animal shapes by packing circles on paper. Find the smallest paper needed for every stick figure with six legs or fewer.",
+"math": "For every weighted tree with $\\le6$ leaves, determine the minimum square side admitting a uniaxial base (optimal circle–river packing), with certificates.",
+"difficulty": 2.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 2,
+"value": 4,
+"family": "origami",
+"note": "Exact optimal circle-river packings for small trees; applied, finite."
 },
 {
 "id": "N-047",
@@ -518,6 +784,48 @@
 "note": "Intermediate step toward boundedness question N-061."
 },
 {
+"id": "N-059",
+"title": "Hamiltonian induced subgraphs of S_N",
+"area": "Computation",
+"plain": "Show deciding whether a given set of numbers can be lined up so neighbours sum to squares is NP-complete.",
+"math": "Prove NP-completeness of: given $A\\subset\\mathbb{N}$ (in binary), decide whether $S_\\infty[A]$ has a Hamiltonian path.",
+"difficulty": 2.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "square-sum",
+"note": "Concrete complexity question, plausibly provable; more substantive than most S_N items."
+},
+{
+"id": "N-060",
+"title": "Monotile assembly threshold",
+"area": "Computation",
+"plain": "With one tile shape, deciding whether a region can be tiled is easy in some cases; with many shapes it is hard. Find the smallest number of shapes where it becomes hard.",
+"math": "Find the least $t$ such that some fixed set of $t$ polygons makes \"does this finite region admit an exact tiling?\" NP-complete, and prove all sets of fewer polygons give polynomial-time problems.",
+"difficulty": 3.7,
+"reason": "removed in Nov 2026 review: already done by Moore–Robson (2001)",
+"novelty": 7,
+"importance": 6,
+"value": 7,
+"family": "tiling-complexity",
+"note": "Threshold number of tiles for NP-hard tiling; natural complexity dichotomy."
+},
+{
+"id": "N-061",
+"title": "Square-sum coloring",
+"area": "Combinatorics",
+"plain": "Join numbers that add up to a perfect square. Does the number of colors needed stay bounded forever?",
+"math": "Decide whether $\\sup_N \\chi(S_N)<\\infty$.",
+"difficulty": 4.1,
+"reason": "removed in Nov 2026 review: already covered by Khalfalah–Szemerédi",
+"novelty": 5,
+"importance": 4,
+"value": 6,
+"family": "square-sum",
+"note": "Core square-sum chromatic boundedness; the family's root question."
+},
+{
 "id": "N-062",
 "title": "Hyperbolic sofa",
 "area": "Geometry",
@@ -530,6 +838,62 @@
 "value": 4,
 "family": "sofa",
 "note": "Hyperbolic sofa; natural geometry change but sofa template."
+},
+{
+"id": "N-063",
+"title": "Hyperbolic square peg",
+"area": "Geometry",
+"plain": "Every closed curve in the hyperbolic plane should pass through the corners of some hyperbolic square.",
+"math": "Prove every Jordan curve in $\\mathbb{H}^2$ contains the four vertices of a regular hyperbolic quadrilateral.",
+"difficulty": 4.7,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "square-peg",
+"note": "Square peg in hyperbolic plane; natural geometric transfer of famous problem."
+},
+{
+"id": "N-064",
+"title": "FLT, compressed",
+"area": "Formal proof",
+"plain": "Fermat's Last Theorem has a huge computer formalization effort. Do it in far fewer lines.",
+"math": "Give a Lean 4 proof of $x^n+y^n=z^n\\Rightarrow xyz=0$ for $n\\ge3$ using at most $10^5$ lines beyond current Mathlib.",
+"difficulty": 3.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "formal",
+"note": "Compact Lean FLT; meaningful formalization engineering goal, vague bound."
+},
+{
+"id": "N-065",
+"title": "Prime pancakes",
+"area": "Computation",
+"plain": "Sort pancakes by flipping only a prime number at a time. Find the worst-case number of flips asymptotically.",
+"math": "With prefix reversals of prime length, determine $\\lim_n d(n)/n$ for the worst-case sorting distance $d(n)$.",
+"difficulty": 4.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "other",
+"note": "Pancake sorting with prime-length flips; natural restricted-generator diameter question."
+},
+{
+"id": "N-066",
+"title": "Seven-free three primes",
+"area": "Number theory",
+"plain": "Every large odd number should be a sum of three primes that never use the digit 7.",
+"math": "Prove every sufficiently large odd $N$ is $p_1+p_2+p_3$ with each $p_i$ prime and free of the decimal digit 7.",
+"difficulty": 1.7,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 3,
+"importance": 3,
+"value": 4,
+"family": "seven-free",
+"note": "Vinogradov for digit-restricted primes; likely follows from Maynard's methods."
 },
 {
 "id": "N-067",
@@ -558,6 +922,34 @@
 "value": 3,
 "family": "sofa",
 "note": "Reasonable qualitative 3D sofa question; plausibly tractable."
+},
+{
+"id": "N-069",
+"title": "Blokus Duo",
+"area": "Games",
+"plain": "Who wins two-player Blokus with perfect play?",
+"math": "Weakly solve Blokus Duo on the $14\\times14$ board with standard starting points.",
+"difficulty": 2.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 2,
+"value": 4,
+"family": "games-solve",
+"note": "Computational solve of a real game; engineering, sibling of Quoridor N-092."
+},
+{
+"id": "N-070",
+"title": "Square-sum cliques",
+"area": "Combinatorics",
+"plain": "How many numbers can pairwise add up to perfect squares? Decide if there is a limit.",
+"math": "Decide whether $\\omega(S_N)$ is bounded, i.e., whether there exist arbitrarily large sets of distinct positive integers with all pairwise sums square.",
+"difficulty": 4.7,
+"reason": "removed in Nov 2026 review: dropped in upgrade pass (no fix made it strong enough)",
+"novelty": 2,
+"importance": 6,
+"value": 6,
+"family": "square-sum",
+"note": "Classical open Diophantine problem (pairwise square sums), Bombieri-Lang linked."
 },
 {
 "id": "N-071",
@@ -630,6 +1022,34 @@
 "note": "Likely easy via Sunada/transplantation with kite-built shapes; gimmick."
 },
 {
+"id": "N-076",
+"title": "Distant-force blow-up",
+"area": "Analysis",
+"plain": "The 2026 Navier–Stokes blow-up pushed fluid right where it broke. Make it break with a push kept far away.",
+"math": "Construct smooth compactly supported $f$ with $\\operatorname{supp} f\\cap B(x_*,1)=\\emptyset$ such that 3D Navier–Stokes from rest blows up at $x_*$ in finite time.",
+"difficulty": 2.7,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 4,
+"family": "ns-blowup",
+"note": "Reasonable strengthening of forced blow-up; one of several similar variants."
+},
+{
+"id": "N-077",
+"title": "Closed-form Euler blow-up",
+"area": "Analysis",
+"plain": "Give smooth starting data for frictionless 3D fluid, written as an explicit formula, that blows up.",
+"math": "Find closed-form smooth finite-energy $u_0$ on $\\mathbb{R}^3$ whose unforced Euler solution blows up in finite time.",
+"difficulty": 5.1,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 7,
+"value": 7,
+"family": "fluid-blowup",
+"note": "Explicit smooth finite-energy Euler blow-up is a deep, natural goal."
+},
+{
 "id": "N-078",
 "title": "Tangent-sweep Keller maps",
 "area": "Algebra",
@@ -658,6 +1078,34 @@
 "note": "Likely settled: degree-2 extensions are Galois; Campbell's theorem forces automorphism."
 },
 {
+"id": "N-080",
+"title": "Two fires",
+"area": "Combinatorics",
+"plain": "Two fires start a distance d apart. How many firefighters per turn are needed, depending on d?",
+"math": "On $\\mathbb{Z}^2$ with 4-neighbour spread, find the least $k(d)$ containing fires started at $(0,0)$ and $(d,0)$.",
+"difficulty": 1.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 2,
+"value": 4,
+"family": "firefighting",
+"note": "Two-source firefighter variant; mild tweak but natural."
+},
+{
+"id": "N-081",
+"title": "Building a firebreak",
+"area": "Combinatorics",
+"plain": "Firefighters must build one connected wall, one cell per turn, each next to the last. Can they ever enclose the fire?",
+"math": "On $\\mathbb{Z}^2$, each turn add one protected cell 8-adjacent to the previous one. Decide whether a single fire can be enclosed, and for which build rates.",
+"difficulty": 2.7,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "firefighter",
+"note": "Connected-wall firefighter variant; fresh constraint, playful but sensible."
+},
+{
 "id": "N-082",
 "title": "Hex on hats",
 "area": "Games",
@@ -672,6 +1120,34 @@
 "note": "Hex on hat boards; gimmick mash-up, finite computation."
 },
 {
+"id": "N-083",
+"title": "Go on a torus",
+"area": "Games",
+"plain": "Go on a 7 × 7 board that wraps around. What komi makes the game fair?",
+"math": "Determine the perfect-play score of Go on $\\mathbb{Z}_7^2$ (area scoring, positional superko).",
+"difficulty": 2.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 2,
+"value": 4,
+"family": "games",
+"note": "Toroidal 7x7 Go value; tractable sibling of 9x9 N-591."
+},
+{
+"id": "N-084",
+"title": "Worst-case Battleship",
+"area": "Games",
+"plain": "What is the fewest shots that always sinks the standard fleet on a 10 × 10 board?",
+"math": "Compute the minimax number of shots to sink ships of lengths 5,4,3,3,2 on $10\\times10$ against an adversary who may move ships consistently with past answers.",
+"difficulty": 1.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 1,
+"value": 4,
+"family": "games",
+"note": "Adversarial Battleship minimax; fun, well-posed, computational."
+},
+{
 "id": "N-085",
 "title": "Benford orbits",
 "area": "Dynamics",
@@ -684,6 +1160,20 @@
 "value": 3,
 "family": "P-map",
 "note": "Benford law for largest-factor Collatz orbits; gimmicky, ill-posed growth."
+},
+{
+"id": "N-086",
+"title": "Random graceful forests",
+"area": "Combinatorics",
+"plain": "Almost every random forest has the distinct-edge-difference labeling.",
+"math": "For a uniform random forest with $m$ edges and $c\\sim\\alpha m$ components, prove the graceful-forest labeling exists with probability $\\to1$.",
+"difficulty": 3.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "graceful",
+"note": "Random-structure version of graceful forest labeling; natural probabilistic angle."
 },
 {
 "id": "N-087",
@@ -728,6 +1218,34 @@
 "note": "Firefighting on UIPT; natural random-geometry growth question."
 },
 {
+"id": "N-090",
+"title": "Random lonely runners",
+"area": "Probability",
+"plain": "With random speeds, runners get noticeably lonelier than the conjecture promises.",
+"math": "For i.i.d. uniform speeds in $[1,N]$, $N\\gg n^3$, prove the loneliness gap exceeds $\\frac1{n+1}+c\\frac{\\log n}{n^2}$ with probability $\\to1$.",
+"difficulty": 1.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "other",
+"note": "Typical lonely-runner gap for random speeds; natural probabilistic version."
+},
+{
+"id": "N-091",
+"title": "Sudoku resolution bounds",
+"area": "Computation",
+"plain": "Proving a large broken Sudoku has no solution should require long logical proofs.",
+"math": "Prove resolution refutations of unsatisfiable $n^2\\times n^2$ Sudoku instances require size $2^{n^{\\Omega(1)}}$ for some explicit family.",
+"difficulty": 1.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "sudoku",
+"note": "Proof complexity of Sudoku; plausible via pigeonhole-type embedding."
+},
+{
 "id": "N-092",
 "title": "Quoridor",
 "area": "Games",
@@ -740,6 +1258,20 @@
 "value": 3,
 "family": "game-solve",
 "note": "Solving a real board game; large computation, little theory."
+},
+{
+"id": "N-093",
+"title": "Prime-frequency synchrony",
+"area": "Dynamics",
+"plain": "Oscillators with frequencies set by logarithms of primes eventually synchronize when coupled strongly enough. Find the threshold.",
+"math": "For the Kuramoto model with $\\omega_i=\\log p_i$, prove a sharp synchronization threshold $K_c(N)$ and its asymptotics.",
+"difficulty": 2.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Kuramoto with log-prime frequencies; gimmicky choice but analyzable threshold."
 },
 {
 "id": "N-094",
@@ -768,6 +1300,34 @@
 "value": 2,
 "family": "hat-geometry",
 "note": "Kakeya/rotation-set area for the hat; arbitrary shape transplant."
+},
+{
+"id": "N-096",
+"title": "BB(5), compressed",
+"area": "Formal proof",
+"plain": "The Busy Beaver value BB(5) was proved with a large computer proof. Make it small.",
+"math": "Prove $BB(5)=47{,}176{,}870$ in Lean 4 in under 10,000 lines.",
+"difficulty": 1.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "formal-compress",
+"note": "Proof-compression engineering challenge; concrete but mostly effort."
+},
+{
+"id": "N-097",
+"title": "Four colors, compressed",
+"area": "Formal proof",
+"plain": "Make the computer-checked four color theorem much shorter.",
+"math": "Give a Lean 4 proof of the four color theorem in under 20,000 lines beyond Mathlib.",
+"difficulty": 2.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 3,
+"importance": 3,
+"value": 4,
+"family": "formal-proof",
+"note": "Compressed Lean four colour proof; engineering target with some method interest."
 },
 {
 "id": "N-098",
@@ -826,6 +1386,20 @@
 "note": "Dimer entropy on hat graph; standard model transplanted, aperiodic graph non-planar-Kasteleyn ok."
 },
 {
+"id": "N-102",
+"title": "Emirps, almost",
+"area": "Number theory",
+"plain": "Show infinitely many primes have a reversal with at most three prime factors.",
+"math": "Prove $\\#\\{p\\le x: \\Omega(\\operatorname{rev}(p))\\le3\\}\\to\\infty$.",
+"difficulty": 3.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "digits",
+"note": "Almost-prime reversals of primes; natural sieve-with-digits question."
+},
+{
 "id": "N-103",
 "title": "Smallest-factor Collatz, almost always",
 "area": "Dynamics",
@@ -854,6 +1428,20 @@
 "note": "Diffusivity of walk on hat graph; template random-walk transfer."
 },
 {
+"id": "N-105",
+"title": "Shuffle-sorting",
+"area": "Combinatorics",
+"plain": "Using any of the six 3-pile perfect shuffles each time, how many shuffles reach any reachable arrangement in the worst case?",
+"math": "Determine the diameter of the Cayley graph of the 3-pile shuffle group on $3n$ cards, asymptotically in $n$.",
+"difficulty": 1.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "shuffle",
+"note": "Cayley diameter for shuffle group; follows naturally after N-029."
+},
+{
 "id": "N-107",
 "title": "Hinged sofa",
 "area": "Geometry",
@@ -866,6 +1454,20 @@
 "value": 3,
 "family": "sofa",
 "note": "Two-piece hinged sofa; one of many sofa modifications."
+},
+{
+"id": "N-108",
+"title": "Firefighters on the front line",
+"area": "Combinatorics",
+"plain": "Firefighters may only protect cells touching the fire. How many per turn are needed now?",
+"math": "On $\\mathbb{Z}^2$ with protected cells required to be 4-adjacent to the burned set, find the least per-turn number containing a single fire.",
+"difficulty": 1.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "firefighting",
+"note": "Reasonable new firefighter rule variant; one of many firefighter tweaks."
 },
 {
 "id": "N-109",
@@ -882,6 +1484,34 @@
 "note": "Firefighter on random tree; minor computation."
 },
 {
+"id": "N-110",
+"title": "Sudoku transversals",
+"area": "Combinatorics",
+"plain": "In every completed big Sudoku, find a set of cells with one in each row, each column and each symbol.",
+"math": "Prove every $n^2\\times n^2$ Sudoku grid, viewed as a Latin square, has a transversal.",
+"difficulty": 3.4,
+"reason": "removed in Nov 2026 review: false for even n (Hall–Paige)",
+"novelty": 7,
+"importance": 5,
+"value": 7,
+"family": "latin-square",
+"note": "Ryser-type transversal question for Sudoku Latin squares; natural and crisp."
+},
+{
+"id": "N-111",
+"title": "Effective Riemann constants",
+"area": "Number theory",
+"plain": "Extract explicit, usable prime-counting error bounds from the 2026 Riemann proof.",
+"math": "From the 2026 Lean proof, extract and formally verify $|\\pi(x)-\\operatorname{li}(x)|\\le\\frac{1}{8\\pi}\\sqrt{x}\\log x$ for all $x\\ge2657$.",
+"difficulty": 4.8,
+"reason": "removed in Nov 2026 review: false premise (assumed RH proved in Lean)",
+"novelty": 3,
+"importance": 4,
+"value": 4,
+"family": "riemann-2026",
+"note": "Effective PNT bounds; already Schoenfeld-type under RH."
+},
+{
 "id": "N-112",
 "title": "The sofa's boundary is not algebraic",
 "area": "Geometry",
@@ -894,6 +1524,34 @@
 "value": 3,
 "family": "sofa",
 "note": "Likely easy: some arcs are circle involutes, non-algebraic."
+},
+{
+"id": "N-113",
+"title": "Random Wang tiles",
+"area": "Probability",
+"plain": "Pick n random tile types with colored edges. How likely are they to tile the plane?",
+"math": "For $n$ Wang tiles with edge colours i.i.d. uniform in $[c]$, find the asymptotics of $\\Pr(\\text{tiles }\\mathbb{Z}^2)$ as $n\\to\\infty$.",
+"difficulty": 1.6,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Random Wang tile sets tiling probability; natural, connects undecidability and probability."
+},
+{
+"id": "N-114",
+"title": "Random polykites",
+"area": "Probability",
+"plain": "Show almost no shapes made of many kites can tile the plane.",
+"math": "Prove the fraction of $k$-kite polykites that tile $\\mathbb{R}^2$ decays exponentially in $k$.",
+"difficulty": 2.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "hat-tiling",
+"note": "Exponential rarity of tiling polykites; natural, analogous to polyomino question."
 },
 {
 "id": "N-115",
@@ -938,6 +1596,20 @@
 "note": "Port of Ollinger-style few-tile undecidability to polykites."
 },
 {
+"id": "N-119",
+"title": "Fire whirls",
+"area": "Physics",
+"plain": "Show the equations of buoyant flow allow a rotating column of fire that travels steadily.",
+"math": "Prove existence of a smooth traveling swirling solution of the 3D Boussinesq equations with a localized heat source.",
+"difficulty": 2.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Traveling swirling Boussinesq solution; physical but loosely specified."
+},
+{
 "id": "N-120",
 "title": "Spot fires",
 "area": "Probability",
@@ -964,6 +1636,34 @@
 "value": 3,
 "family": "other",
 "note": "Langford variant with prime gaps; cute but isolated, likely parity-plus-construction."
+},
+{
+"id": "N-122",
+"title": "Prime Golomb rulers",
+"area": "Combinatorics",
+"plain": "Find the shortest ruler with marks only at prime positions where all distances between marks are different.",
+"math": "For each $n$, determine the minimal $L$ such that some set of $n$ primes in an interval of length $L$ has all pairwise differences distinct; find its asymptotics.",
+"difficulty": 2.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Golomb rulers within primes; links Sidon sets and prime gaps, mostly computational."
+},
+{
+"id": "N-123",
+"title": "Three large consecutive factors",
+"area": "Number theory",
+"plain": "Show infinitely many n have n, n + 1 and n + 2 each with a prime factor bigger than n^0.9.",
+"math": "Prove infinitely many $n$ with $\\min\\{P(n),P(n+1),P(n+2)\\}>n^{0.9}$.",
+"difficulty": 5.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "number-theory",
+"note": "Three consecutive integers with large prime factors; natural, hard."
 },
 {
 "id": "N-124",
@@ -994,6 +1694,16 @@
 "note": "Roth on digit-restricted set; likely follows from known Fourier methods."
 },
 {
+"id": "N-126",
+"title": "Translative Lebesgue covering: area constant",
+"area": "Geometry",
+"plain": "Only translations allowed: find the least area of a convex shape that contains a translated copy of every planar set of diameter 1. It is known that this area lies between sqrt(3)/2 ~ 0.866 (the regular hexagon of width 1 is forced) and pi/3 ~ 1.047 (Jung's disc). Improve either bound.",
+"math": "Let α be the infimum of the areas of convex sets K ⊂ R² containing a translate of every planar set of diameter ≤ 1. Known: √3/2 ≤ α ≤ 1. (Lower: K contains translates of the Reuleaux triangle R and of −R; area conv(R ∪ (−R+t)) is convex and D3-invariant in t, so it is minimised at t = 0, where the hull is the regular hexagon of width 1. Upper: the unit square [0,1]² is a translation cover, since a set of diameter ≤ 1 has x- and y-extent ≤ 1; this beats Jung's disc, area π/3 ≈ 1.047.) Target: prove α > √3/2.",
+"difficulty": 2.5,
+"reason": "removed Nov 2026: stated best upper bound was beaten by the unit square, and the target looked routine",
+"grade_was": "B"
+},
+{
 "id": "N-127",
 "title": "Random sequential prime-sum packing",
 "area": "Probability",
@@ -1020,6 +1730,20 @@
 "value": 2,
 "family": "P-map",
 "note": "P-map mixed with base-10 digit sum; arbitrary, Collatz-like."
+},
+{
+"id": "N-129",
+"title": "Square subtraction with prime piles",
+"area": "Games",
+"plain": "In the game where you subtract a square, show infinitely many prime pile sizes are losing positions.",
+"math": "Prove infinitely many primes are P-positions of the subtract-a-square game.",
+"difficulty": 7.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "prime-nim",
+"note": "Primes among sparse subtract-a-square P-positions; deep arithmetic interplay."
 },
 {
 "id": "N-130",
@@ -1064,6 +1788,34 @@
 "note": "Bandwidth-type parameter of square-sum Hamiltonian cycles; isolated."
 },
 {
+"id": "N-133",
+"title": "Hadwiger's true constant",
+"area": "Combinatorics",
+"plain": "If graphs needing many colors need not contain a full complete-graph minor, find how large a complete minor they must contain.",
+"math": "Find $c^*=\\liminf_{t}\\min\\{h(G)/t:\\chi(G)\\ge t\\}$, where $h$ is the Hadwiger number.",
+"difficulty": 6.1,
+"reason": "removed in Nov 2026 review: dropped in upgrade pass (no fix made it strong enough)",
+"novelty": 6,
+"importance": 8,
+"value": 8,
+"family": "other",
+"note": "Optimal linear Hadwiger constant; central structural graph theory question."
+},
+{
+"id": "N-135",
+"title": "Minimal four-color proof",
+"area": "Combinatorics",
+"plain": "The four color theorem's proof checks a big list of map configurations. Find the smallest list that works.",
+"math": "Determine the minimum size of an unavoidable set of reducible configurations for planar triangulations, with proof of minimality.",
+"difficulty": 5.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "other",
+"note": "Minimal unavoidable reducible set; concrete, meaningful for proof complexity."
+},
+{
 "id": "N-136",
 "title": "Perfect Minesweeper",
 "area": "Probability",
@@ -1078,6 +1830,76 @@
 "note": "Exact optimal Minesweeper win rate; infeasible computation, recreational."
 },
 {
+"id": "N-137",
+"title": "Readable Riemann",
+"area": "Number theory",
+"plain": "The 2026 Riemann proof is a giant machine-checked archive. Write a proof people can read.",
+"math": "Give a proof of the Riemann hypothesis of at most 100 pages acceptable to expert referees.",
+"difficulty": 5.5,
+"reason": "removed in Nov 2026 review: false premise (assumed RH proved in Lean)",
+"novelty": 3,
+"importance": 7,
+"value": 5,
+"family": "riemann-2026",
+"note": "Human-readable RH proof; important but more a project than a problem."
+},
+{
+"id": "N-138",
+"title": "Short Riemann",
+"area": "Formal proof",
+"plain": "Shrink the 2026 machine-checked Riemann proof drastically.",
+"math": "Give a Lean 4 proof of `RiemannHypothesis` in at most 10,000 lines beyond Mathlib.",
+"difficulty": 5.3,
+"reason": "removed in Nov 2026 review: false premise (assumed RH proved in Lean)",
+"novelty": 3,
+"importance": 4,
+"value": 4,
+"family": "formal-proof",
+"note": "Line-count golf on Lean RH proof; readable-proof N-137 more meaningful."
+},
+{
+"id": "N-140",
+"title": "Explicit Navier–Stokes blow-up",
+"area": "Analysis",
+"plain": "Write down a forced Navier–Stokes blow-up as an explicit formula instead of a computer-assisted construction.",
+"math": "Give closed-form smooth $u_0,f$ on $\\mathbb{R}^3$ for which the Navier–Stokes solution blows up in finite time.",
+"difficulty": 2.7,
+"reason": "removed in Nov 2026 review: dropped in upgrade pass (no fix made it strong enough)",
+"novelty": 5,
+"importance": 6,
+"value": 5,
+"family": "navier-stokes",
+"note": "Explicit formula for known computer-assisted blow-up; meaningful but derivative."
+},
+{
+"id": "N-141",
+"title": "Two of four",
+"area": "Number theory",
+"plain": "Show infinitely many primes p have at least one more prime among p + 2, 2p + 1, 2p + 3.",
+"math": "Prove infinitely many primes $p$ have at least one of $p+2,\\,2p+1,\\,2p+3$ prime.",
+"difficulty": 4.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 5,
+"value": 5,
+"family": "other",
+"note": "Two primes among four linear forms; sharp test just beyond Maynard-Tao."
+},
+{
+"id": "N-142",
+"title": "Unbounded Prime Nim",
+"area": "Games",
+"plain": "Do the Prime Nim values grow without limit?",
+"math": "Decide whether $\\sup_n G(n)=\\infty$ for the prime subtraction game.",
+"difficulty": 3.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 5,
+"family": "prime-nim",
+"note": "Basic, natural Prime Nim question; keep as family representative."
+},
+{
 "id": "N-143",
 "title": "Rounded corners",
 "area": "Geometry",
@@ -1090,6 +1912,48 @@
 "value": 3,
 "family": "sofa",
 "note": "Rounded-corner sofa family; parametrised variant of a solved problem."
+},
+{
+"id": "N-144",
+"title": "Kakeya discs",
+"area": "Geometry",
+"plain": "What is the least volume needed to turn a flat disc to every orientation?",
+"math": "Determine $\\inf$ volume of sets in $\\mathbb{R}^3$ containing a unit disc in every orientation (positive by Marstrand), with an extremizer.",
+"difficulty": 4.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "kakeya",
+"note": "Extremal volume for disc Kakeya sets; well posed, decent motivation."
+},
+{
+"id": "N-145",
+"title": "3-SAT at density 4",
+"area": "Computation",
+"plain": "Give a fast algorithm that solves almost all random 3-SAT puzzles up to clause density 4.",
+"math": "Give a polynomial-time algorithm finding satisfying assignments of random 3-SAT with density $4.0$ with probability $1-o(1)$.",
+"difficulty": 4.1,
+"reason": "removed in Nov 2026 review: dropped in upgrade pass (no fix made it strong enough)",
+"novelty": 6,
+"importance": 7,
+"value": 7,
+"family": "other",
+"note": "Random 3-SAT algorithm past clustering regime; central algorithmic barrier question."
+},
+{
+"id": "N-146",
+"title": "Prime ladders",
+"area": "Number theory",
+"plain": "Change one digit at a time, staying prime. Show any two k-digit primes are linked by at most k + 1 steps.",
+"math": "In the graph on $k$-digit primes joined when differing in one decimal digit, prove $\\operatorname{diam}\\le k+1$ for all $k$.",
+"difficulty": 5.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "other",
+"note": "Diameter of prime digit-change graph; appealing, natural."
 },
 {
 "id": "N-147",
@@ -1148,6 +2012,48 @@
 "note": "Opaque set for the hat; unsolved even for the square, shape is gimmick."
 },
 {
+"id": "N-153",
+"title": "Hat spectrum is a Cantor set",
+"area": "Physics",
+"plain": "Show the energy levels of a particle hopping on a hat tiling form a dust of measure zero.",
+"math": "Prove the spectrum of the adjacency operator on the hat graph is a Cantor set of Lebesgue measure zero.",
+"difficulty": 4.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 5,
+"value": 5,
+"family": "hat-spectral",
+"note": "Zero-measure Cantor spectrum for hat Laplacian; standard aperiodic-operator question."
+},
+{
+"id": "N-154",
+"title": "Smallest force for blow-up",
+"area": "Analysis",
+"plain": "How weak can the push be and still make viscous fluid blow up?",
+"math": "Find the optimal exponent $a$ with $\\inf\\{\\|f\\|_{L^\\infty}: \\text{NS from rest blows up}\\}\\asymp \\nu^{a}$.",
+"difficulty": 3.5,
+"reason": "removed in Nov 2026 review: ill-posed",
+"novelty": 6,
+"importance": 5,
+"value": 6,
+"family": "fluid-blowup",
+"note": "Quantitative scaling of minimal blow-up forcing; meaningful but murky setup."
+},
+{
+"id": "N-155",
+"title": "Forced SQG blow-up",
+"area": "Analysis",
+"plain": "Copy the 2026 forced Navier–Stokes blow-up for the surface quasi-geostrophic equation.",
+"math": "Construct smooth compactly supported $f$ such that forced SQG on $\\mathbb{R}^2$ from rest blows up in finite time.",
+"difficulty": 2.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 3,
+"importance": 5,
+"value": 4,
+"family": "ns-blowup",
+"note": "Transfer of a mechanism to SQG; meaningful equation but template port."
+},
+{
 "id": "N-156",
 "title": "Prime Nim is not simple",
 "area": "Computation",
@@ -1204,6 +2110,20 @@
 "note": "Non-automaticity of Prime Nim losses; clean, plausibly provable."
 },
 {
+"id": "N-160",
+"title": "Integer-bijective Keller map",
+"area": "Algebra",
+"plain": "Find a polynomial map with Jacobian 1 that shuffles integer points perfectly but has no polynomial inverse.",
+"math": "Find $F\\in\\mathbb{Z}[x]^n$, $\\det DF\\equiv1$, inducing a bijection of $\\mathbb{Z}^n$ but not a polynomial automorphism.",
+"difficulty": 2.9,
+"reason": "removed in Nov 2026 review: argued impossible (Chebotarev plus Keller)",
+"novelty": 6,
+"importance": 5,
+"value": 6,
+"family": "keller",
+"note": "Arithmetic twist on Jacobian maps; natural, pairs with N-397 as converse."
+},
+{
 "id": "N-162",
 "title": "5n+1 largest-factor cycles",
 "area": "Dynamics",
@@ -1216,6 +2136,34 @@
 "value": 2,
 "family": "P-map",
 "note": "Multiplier-swap clone of LF-Collatz; subsumed by N-612/N-501."
+},
+{
+"id": "N-163",
+"title": "Twin-free stretches",
+"area": "Number theory",
+"plain": "Find long stretches full of primes but containing no twin primes.",
+"math": "Prove there are intervals $[x,x+(\\log x)^{1.1}]$ with $\\ge(\\log x)^{0.05}$ primes but no twin pair, for infinitely many $x$.",
+"difficulty": 3.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Prime-rich twin-free short intervals; Maynard-Tao-adjacent, plausible."
+},
+{
+"id": "N-164",
+"title": "Big factors of p² + p + 1",
+"area": "Number theory",
+"plain": "For primes p, show p² + p + 1 often has a very large prime factor.",
+"math": "Prove $P(p^2+p+1)>p^{1.5}$ for infinitely many primes $p$.",
+"difficulty": 3.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 5,
+"value": 5,
+"family": "number-theory",
+"note": "Large prime factors of p^2+p+1; standard sieve-theoretic, genuine."
 },
 {
 "id": "N-165",
@@ -1370,6 +2318,34 @@
 "value": 3,
 "family": "other",
 "note": "Sieve-on-reversed-primes variant of N-102."
+},
+{
+"id": "N-176",
+"title": "Lonely runner, bounded speeds",
+"area": "Number theory",
+"plain": "Prove the lonely runner conjecture whenever all speeds are at most 10 times the number of runners.",
+"math": "Prove $\\sup_t\\min_i\\|tv_i\\|\\ge\\frac1{n+1}$ for all distinct $v_i\\le10n$.",
+"difficulty": 3.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "lonely-runner",
+"note": "Lonely runner in a bounded-speed regime; meaningful partial case."
+},
+{
+"id": "N-177",
+"title": "Lonely runners in 3D",
+"area": "Number theory",
+"plain": "Runners move in three dimensions on a cube that wraps around. Find the guaranteed loneliness.",
+"math": "For $n$ pairwise independent $v_i\\in\\mathbb{Z}^3$, find the optimal $\\delta_n$ with $\\sup_t\\min_i\\|tv_i\\|_{\\mathbb{T}^3,\\infty}\\ge\\delta_n$.",
+"difficulty": 4.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 4,
+"value": 5,
+"family": "other",
+"note": "Multidimensional lonely runner; natural generalisation with real content."
 },
 {
 "id": "N-178",
@@ -1568,6 +2544,20 @@
 "note": "Seven-free plus almost Sophie Germain; gimmick stacking of standard sieve result."
 },
 {
+"id": "N-194",
+"title": "Sudoku symmetry breaking",
+"area": "Combinatorics",
+"plain": "Show that most big Sudoku grids have no symmetry at all.",
+"math": "Prove the proportion of $n^2\\times n^2$ Sudoku grids with nontrivial automorphism tends to 0.",
+"difficulty": 1.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 2,
+"value": 4,
+"family": "sudoku",
+"note": "Asymmetry of random Sudoku; clean, possibly easy."
+},
+{
 "id": "N-195",
 "title": "Twin hats",
 "area": "Geometry",
@@ -1594,6 +2584,20 @@
 "value": 3,
 "family": "hat-tiling",
 "note": "FPP limit shape on hat graph; standard question transplanted onto hat."
+},
+{
+"id": "N-197",
+"title": "Lorenz attractor dimension",
+"area": "Dynamics",
+"plain": "Pin down the fractal dimension of the classic Lorenz attractor to two decimals, rigorously.",
+"math": "For $\\sigma=10,\\beta=8/3,\\rho=28$, prove $2.06\\le\\dim_H\\mathcal{A}\\le2.07$.",
+"difficulty": 3.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "other",
+"note": "Rigorous Lorenz attractor dimension bounds; concrete computer-assisted analysis target."
 },
 {
 "id": "N-198",
@@ -1650,6 +2654,20 @@
 "value": 5,
 "family": "keller",
 "note": "Natural arithmetic statistics of Keller maps over F_p; clear and distinct."
+},
+{
+"id": "N-202",
+"title": "Unit-distance barrier",
+"area": "Geometry",
+"plain": "Show the 2026 number-field method for many equal distances can never reach exponent 1.1.",
+"math": "Prove every construction of the Alon–Bloom–Gowers–…–Sawin type (lattices from number fields of bounded class-field degree) gives $u(n)\\le n^{1.1}$.",
+"difficulty": 2.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "other",
+"note": "Barrier result for a new unit-distance method; methodologically useful."
 },
 {
 "id": "N-203",
@@ -1734,6 +2752,20 @@
 "value": 2,
 "family": "seven-free",
 "note": "Seven-free primes in short intervals; Maynard x Baker-Harman mash-up."
+},
+{
+"id": "N-209",
+"title": "Three-pile shuffle cutoff",
+"area": "Probability",
+"plain": "Random three-pile shuffles mix a deck suddenly, after a precise number of shuffles. Find it.",
+"math": "For random compositions of uniformly chosen 3-pile shuffles on $3n$ cards, prove total-variation cutoff at $c\\log n$ and find $c$.",
+"difficulty": 3.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "shuffle",
+"note": "Cutoff for random 3-pile shuffles; natural Diaconis-style question."
 },
 {
 "id": "N-210",
@@ -1904,6 +2936,20 @@
 "note": "Avoidance game on square-sum graph; one of several game-on-S_N clones."
 },
 {
+"id": "N-222",
+"title": "Greedy independent sets in square sums",
+"area": "Combinatorics",
+"plain": "Pick random numbers up to N one by one, skipping any that sum to a square with something already picked. How many do you end with?",
+"math": "Determine the asymptotic size of the random greedy independent set in $S_N$, in probability.",
+"difficulty": 4.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "square-sum",
+"note": "Random greedy process on arithmetic graph; reasonable probabilistic question."
+},
+{
 "id": "N-223",
 "title": "Hamiltonian cycles in hat patches",
 "area": "Combinatorics",
@@ -2002,6 +3048,34 @@
 "note": "Spectre copy of hat isoperimetry N-116."
 },
 {
+"id": "N-230",
+"title": "Gerver sofa contact points",
+"area": "Geometry",
+"plain": "Prove Gerver's sofa touches the corridor walls in exactly the pattern Gerver described at every moment of its optimal motion, and that the motion is unique.",
+"math": "Prove the optimal motion of Gerver's sofa through the unit corridor is unique up to time reparametrization.",
+"difficulty": 1.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "sofa",
+"note": "Uniqueness of Gerver's optimal motion; natural follow-up to Baek."
+},
+{
+"id": "N-231",
+"title": "Spectre quantum walk spreading",
+"area": "Physics",
+"plain": "A quantum particle hopping on the spectre tiling should spread at a rate strictly between localization and free motion. Compute the exponent.",
+"math": "For $H$ the adjacency operator of a spectre tiling and $\\psi_0=\\delta_o$, prove $\\langle|X|^2\\rangle_T\\asymp T^{2\\beta}$ and determine $\\beta$.",
+"difficulty": 6.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 5,
+"value": 5,
+"family": "hat-spectral",
+"note": "Anomalous transport on spectre; genuine quasicrystal question, hard."
+},
+{
 "id": "N-232",
 "title": "Kissing numbers of polykite families",
 "area": "Geometry",
@@ -2028,6 +3102,20 @@
 "value": 3,
 "family": "graceful",
 "note": "Partial case of graceful-forest family; incremental."
+},
+{
+"id": "N-234",
+"title": "Hats in a torus",
+"area": "Geometry",
+"plain": "Hats tile the plane only non-periodically, so they cannot tile a flat torus. Find the smallest uncovered fraction for packing hats on a flat torus of area A.",
+"math": "Let $g(A)$ be the least uncovered area over packings of congruent hats in flat tori of area $A$. Prove $g(A)\\to\\infty$ and determine its growth order in $A$.",
+"difficulty": 4.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "hat-tiling",
+"note": "Quantifies aperiodicity via torus packing defect; genuinely new angle."
 },
 {
 "id": "N-235",
@@ -2100,6 +3188,20 @@
 "note": "Exact Waring number for 7-free cubes; hopeless since G(3) unknown."
 },
 {
+"id": "N-240",
+"title": "Counting square-sum chains",
+"area": "Combinatorics",
+"plain": "Count the ways to line up 1 to N with neighbours summing to squares. Find the leading growth.",
+"math": "Let $h(N)$ be the number of Hamiltonian paths of $S_N$. Prove $\\log h(N)=(\\tfrac12+o(1))N\\log N$.",
+"difficulty": 3.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "square-sum",
+"note": "Counting Hamiltonian paths of square-sum graph; reasonable enumeration question."
+},
+{
 "id": "N-241",
 "title": "Seven-free Beatty primes",
 "area": "Number theory",
@@ -2126,6 +3228,20 @@
 "value": 3,
 "family": "seven-free",
 "note": "Seven-free primes as additive basis; follows from Maynard's methods likely."
+},
+{
+"id": "N-243",
+"title": "Discrete sofa",
+"area": "Geometry",
+"plain": "Slide and rotate a polyomino by unit steps and quarter turns around the corner of a corridor k cells wide. Find the largest area possible, asymptotically.",
+"math": "Let $D(k)$ be the maximal number of cells of a polyomino that can pass the width-$k$ L-shaped corridor of $\\mathbb{Z}^2$ by unit translations and $90^\\circ$ rotations about lattice points (staying inside at all times). Prove $D(k)\\sim ck^2$ and find $c$.",
+"difficulty": 4.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "sofa",
+"note": "Lattice-motion discrete sofa asymptotics; genuinely different model, natural constant."
 },
 {
 "id": "N-244",
@@ -2280,6 +3396,20 @@
 "value": 2,
 "family": "P-map",
 "note": "Stopping-time template for another P-map; same as N-297 in form."
+},
+{
+"id": "N-255",
+"title": "Square-plus-one collisions",
+"area": "Number theory",
+"plain": "Count pairs n ≠ m up to x for which n² + 1 and m² + 1 have the same largest prime factor.",
+"math": "Find the asymptotic number of pairs $n<m\\le x$ with $P(n^2+1)=P(m^2+1)$.",
+"difficulty": 4.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "largest-factor",
+"note": "Collisions of P(n^2+1); reasonable distribution question."
 },
 {
 "id": "N-256",
@@ -2604,6 +3734,20 @@
 "note": "Joint residue law of consecutive P(n); Chowla-flavoured correlation."
 },
 {
+"id": "N-280",
+"title": "Primes with equal binary and ternary digit sums",
+"area": "Number theory",
+"plain": "Show infinitely many primes have the same digit sum in base 2 as in base 3.",
+"math": "Prove infinitely many primes $p$ with $s_2(p)=s_3(p)$.",
+"difficulty": 4.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 4,
+"value": 5,
+"family": "digits",
+"note": "Two-base digit-sum coincidence for primes; Mauduit-Rivat style, natural."
+},
+{
 "id": "N-281",
 "title": "A mixed Fermat equation",
 "area": "Number theory",
@@ -2616,6 +3760,20 @@
 "value": 2,
 "family": "other",
 "note": "Arbitrary-constant exponential Diophantine surface; finiteness unmotivated, maybe false."
+},
+{
+"id": "N-282",
+"title": "Smooth p²+1",
+"area": "Number theory",
+"plain": "Show infinitely many primes p have p² + 1 built only from primes below √p.",
+"math": "Prove infinitely many primes $p$ with $P(p^2+1)<p^{1/2}$.",
+"difficulty": 4.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 4,
+"family": "other",
+"note": "Smooth values of p^2+1 at primes; natural sieve question."
 },
 {
 "id": "N-283",
@@ -2646,6 +3804,20 @@
 "note": "Linnik-Gallagher with 7-free restriction; gimmick transfer."
 },
 {
+"id": "N-285",
+"title": "Turán density of a twisted triple system",
+"area": "Combinatorics",
+"plain": "Find the largest density of a 3-uniform hypergraph that avoids a specific six-vertex configuration of six triples.",
+"math": "Determine $\\pi(F)$ for $F=\\{123,124,345,346,561,562\\}$.",
+"difficulty": 4.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 4,
+"family": "turan",
+"note": "Specific hypergraph Turan density; standard but legitimate."
+},
+{
 "id": "N-286",
 "title": "Square-sum 4-cycle factors",
 "area": "Combinatorics",
@@ -2672,6 +3844,20 @@
 "value": 2,
 "family": "prime-nim",
 "note": "Prime Nim restricted to 1 mod 4 primes; cosmetic variant of N-006."
+},
+{
+"id": "N-288",
+"title": "Partizan Prime Nim",
+"area": "Games",
+"plain": "Left may remove a prime that is 1 mod 4, Right a prime that is 3 mod 4, from one pile. Describe the game values.",
+"math": "For the partizan subtraction game with $L=\\{p\\equiv1\\ (4)\\}$, $R=\\{p\\equiv3\\ (4)\\}$, prove every position is equal to a number or a number plus a switch of bounded temperature, and find the bound.",
+"difficulty": 3.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "prime-nim",
+"note": "Partizan prime subtraction with temperature bound; genuine CGT content."
 },
 {
 "id": "N-289",
@@ -2758,6 +3944,20 @@
 "note": "Mash-up of square-sum Hamiltonicity with AP avoidance; no real reason."
 },
 {
+"id": "N-295",
+"title": "Prime-sum graph is Hamiltonian-connected",
+"area": "Combinatorics",
+"plain": "Show you can line up 1 to 2n with neighbours summing to primes, starting with any odd number and ending with any even one.",
+"math": "Prove for all large $n$ and all odd $a$, even $b$ in $[2n]$, the prime-sum graph on $[2n]$ has a Hamiltonian $a$–$b$ path.",
+"difficulty": 2.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "prime-sum",
+"note": "Hamiltonian-connectedness of prime-sum graph; natural strengthening."
+},
+{
 "id": "N-296",
 "title": "Primes in the {5,8} funnel's tree",
 "area": "Dynamics",
@@ -2812,6 +4012,34 @@
 "value": 3,
 "family": "hat-spectral",
 "note": "Isospectral aperiodic monotiles; mash-up of two famous themes."
+},
+{
+"id": "N-300",
+"title": "Rotation-proof lattice-point-poor shapes",
+"area": "Geometry",
+"plain": "Find the shape in the plane with given area that contains the fewest integer lattice points after any rotation, asymptotically.",
+"math": "Determine the convex $K$ of area $A$ minimising $\\sup_{\\theta}\\#(\\rho_\\theta K\\cap\\mathbb{Z}^2)$, asymptotically as $A\\to\\infty$, to second-order term.",
+"difficulty": 6.5,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Rotation-uniform lattice-point minimizing shapes; fresh lattice-point problem."
+},
+{
+"id": "N-301",
+"title": "Moser's worm in the sphere",
+"area": "Geometry",
+"plain": "Find the smallest area region on the unit sphere that can cover every curve of length 1 after a rotation.",
+"math": "Determine $\\inf\\{\\sigma(K):K\\subset S^2$ covers every rectifiable curve of length $1$ up to $SO(3)\\}$ to within $1\\%$, and prove the infimum is attained by a set bounded by finitely many circular arcs or show it is not.",
+"difficulty": 4.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Spherical Moser worm; natural transplant but numeric-precision target is soft."
 },
 {
 "id": "N-302",
@@ -2884,6 +4112,20 @@
 "note": "Random greedy process on square-sum graph; isolated."
 },
 {
+"id": "N-307",
+"title": "Ising with prime couplings",
+"area": "Probability",
+"plain": "On the integer line, couple spins i and j with strength 1 if i − j is prime. Decide whether there is a phase transition.",
+"math": "For the 1D Ising model with $J_{ij}=\\mathbf 1[|i-j|\\in\\mathbb{P}]\\,|i-j|^{-2}$, prove a phase transition at finite $\\beta_c$ and determine whether the magnetization jumps.",
+"difficulty": 4.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 4,
+"value": 5,
+"family": "other",
+"note": "1D 1/r^2 Ising restricted to prime distances; nice Thouless-effect probe."
+},
+{
 "id": "N-308",
 "title": "Hitting probability for 2P(n)+1 random variant",
 "area": "Probability",
@@ -2896,6 +4138,20 @@
 "value": 2,
 "family": "P-map",
 "note": "Randomized P-map recurrence; ad hoc."
+},
+{
+"id": "N-309",
+"title": "Random digit deletion",
+"area": "Probability",
+"plain": "Repeatedly delete a random decimal digit of a number until it is prime or has one digit. Find the probability of ending at a prime from a typical large start.",
+"math": "For uniform $n\\le x$ and random single-digit deletions, prove $\\Pr(\\text{the process meets a prime})\\to c$ and determine whether $c<1$.",
+"difficulty": 4.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 2,
+"value": 4,
+"family": "other",
+"note": "Random digit deletion reaching primes; cute probabilistic digit question."
 },
 {
 "id": "N-310",
@@ -2980,6 +4236,20 @@
 "value": 2,
 "family": "P-map",
 "note": "Triple P-sum with different constant; clone of N-314."
+},
+{
+"id": "N-316",
+"title": "Formal verification depth of RH",
+"area": "Logic",
+"plain": "The Riemann hypothesis now has a Lean proof. Show it cannot be proved in a weak arithmetic like I-Sigma-1 plus exponentiation, or show it can.",
+"math": "Decide whether RH (as a $\\Pi^0_1$ sentence) is provable in $\\mathrm{I}\\Sigma_1$, or in $\\mathrm{EFA}$.",
+"difficulty": 3.8,
+"reason": "removed in Nov 2026 review: false premise (assumed RH proved in Lean)",
+"novelty": 6,
+"importance": 5,
+"value": 6,
+"family": "logic",
+"note": "Reverse-math strength of RH; genuine proof-theory question, well posed."
 },
 {
 "id": "N-317",
@@ -3164,6 +4434,20 @@
 "note": "Basin density for an arbitrary ad hoc P-map."
 },
 {
+"id": "N-330",
+"title": "Permanent of the prime-sum matrix",
+"area": "Combinatorics",
+"plain": "Find the asymptotic count of perfect matchings between odd and even numbers up to 2n whose sums are all prime.",
+"math": "Determine $\\log\\mathrm{per}(M_n)$ to $o(n)$ where $M_n=(\\mathbf 1[2i-1+2j\\text{ prime}])_{i,j\\le n}$.",
+"difficulty": 2.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "prime-sum",
+"note": "Natural matching count tied to prime pair correlations; reasonable."
+},
+{
 "id": "N-331",
 "title": "Square-sum matchings count",
 "area": "Combinatorics",
@@ -3218,6 +4502,20 @@
 "value": 1,
 "family": "P-map",
 "note": "Plus/minus-one shift of N-333 map."
+},
+{
+"id": "N-335",
+"title": "Unbounded excursions in prime maps",
+"area": "Dynamics",
+"plain": "For n ↦ P(n) + P(n+1), show some orbits climb above their starting value by any factor you like.",
+"math": "Prove $\\sup_n\\max_k f^k(n)/n=\\infty$ for $f(n)=P(n)+P(n+1)$.",
+"difficulty": 5.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "P-map",
+"note": "Unbounded relative excursions; qualitative and plausibly approachable, unlike cycle lists."
 },
 {
 "id": "N-336",
@@ -3290,6 +4588,20 @@
 "note": "Cutoff for square-sum transposition shuffle; real random-walk content."
 },
 {
+"id": "N-341",
+"title": "Prime Markov triples",
+"area": "Number theory",
+"plain": "Show only finitely many Markov triples consist of three primes, or infinitely many.",
+"math": "Decide whether infinitely many solutions of $x^2+y^2+z^2=3xyz$ have $x,y,z$ all prime.",
+"difficulty": 7.5,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "All-prime Markov triples; natural, crisp, connects tree growth to prime sieving."
+},
+{
 "id": "N-342",
 "title": "SOF Collatz orbits are bounded",
 "area": "Dynamics",
@@ -3302,6 +4614,34 @@
 "value": 3,
 "family": "P-map",
 "note": "Boundedness half of N-500's SOF-Collatz convergence; same idea."
+},
+{
+"id": "N-343",
+"title": "Sofa for every angle",
+"area": "Geometry",
+"plain": "Find the optimal sofa for a hallway turning by any angle, not just 90°.",
+"math": "For every $\\theta\\in(0,\\pi)$, determine the optimal sofa for the width-1 corridor turning by $\\theta$.",
+"difficulty": 4.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "sofa",
+"note": "General-angle moving sofa; the natural generalisation after Gerver's optimality."
+},
+{
+"id": "N-345",
+"title": "Finite simple groups in Lean",
+"area": "Formal proof",
+"plain": "Turn the classification of finite simple groups into one computer-checked proof.",
+"math": "Formalize the classification of finite simple groups in Lean 4.",
+"difficulty": 2.6,
+"reason": "removed in Nov 2026 review: dropped in upgrade pass (no fix made it strong enough)",
+"novelty": 5,
+"importance": 6,
+"value": 5,
+"family": "formal",
+"note": "CFSG formalization: major engineering, not a math question per se."
 },
 {
 "id": "N-346",
@@ -3318,6 +4658,20 @@
 "note": "Cube-sum path; implied by cycle version N-503; known-style question."
 },
 {
+"id": "N-347",
+"title": "Alternating prime residues",
+"area": "Number theory",
+"plain": "Find ten consecutive primes whose remainders mod 4 alternate 1, 3, 1, 3, …, and infinitely many such runs.",
+"math": "Prove infinitely many $n$ with $p_{n+i}\\equiv 2+(-1)^{i}\\pmod 4$ for $0\\le i<10$.",
+"difficulty": 4.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "prime-patterns",
+"note": "Prescribed residue patterns of consecutive primes; tied to Maynard-type methods."
+},
+{
 "id": "N-348",
 "title": "Largest-factor climbs",
 "area": "Dynamics",
@@ -3330,6 +4684,20 @@
 "value": 2,
 "family": "P-map",
 "note": "Excursion question for a P-map; isolated."
+},
+{
+"id": "N-349",
+"title": "Counting Prime Nim losses",
+"area": "Games",
+"plain": "Show the losing positions of Prime Nim thin out at a precise power rate.",
+"math": "Prove $|L\\cap[1,x]|=x^{\\alpha+o(1)}$ for some $\\alpha$ and compute it.",
+"difficulty": 3.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "prime-nim",
+"note": "Growth exponent of Prime Nim P-positions; core family question."
 },
 {
 "id": "N-350",
@@ -3346,6 +4714,20 @@
 "note": "Same complexity question as Prime Nim hardness problem."
 },
 {
+"id": "N-351",
+"title": "Primes a² + b⁴ with prime inputs",
+"area": "Number theory",
+"plain": "Show infinitely many primes are a square of a prime plus a fourth power of a prime.",
+"math": "Prove infinitely many primes of the form $p^2+q^4$ with $p,q$ prime.",
+"difficulty": 4.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 5,
+"value": 5,
+"family": "other",
+"note": "Friedlander-Iwaniec with prime inputs; natural sieve challenge."
+},
+{
 "id": "N-352",
 "title": "Primes x² + y³ with prime inputs",
 "area": "Number theory",
@@ -3360,6 +4742,34 @@
 "note": "Exponent swap of prime-input N-351 (a^2+b^4)."
 },
 {
+"id": "N-353",
+"title": "Doubly smooth neighbours",
+"area": "Number theory",
+"plain": "Find infinitely many primes whose two neighbours have only small prime factors.",
+"math": "Prove infinitely many primes $p$ with $P(p-1),P(p+1)\\le p^{0.1}$.",
+"difficulty": 4.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 5,
+"value": 5,
+"family": "other",
+"note": "Natural doubly-smooth shifted primes; extends Baker-Harman type results."
+},
+{
+"id": "N-354",
+"title": "High-dimensional sofa",
+"area": "Geometry",
+"plain": "How does the best sofa's volume grow in an n-dimensional corridor?",
+"math": "Determine the asymptotics in $n$ of the optimal volume in the $n$-dimensional right-angled corridor of unit cross-section.",
+"difficulty": 3.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "sofa",
+"note": "Asymptotic high-dimensional sofa; natural scaling question."
+},
+{
 "id": "N-355",
 "title": "Ambidextrous 3D sofa",
 "area": "Geometry",
@@ -3372,6 +4782,20 @@
 "value": 3,
 "family": "sofa",
 "note": "3D ambidextrous sofa; stacking two sofa variants."
+},
+{
+"id": "N-356",
+"title": "Polykite structure theorem",
+"area": "Geometry",
+"plain": "Classify every shape of up to 20 kites: tiles periodically, tiles only aperiodically, or fails within a few layers.",
+"math": "Prove each polykite with $\\le20$ kites either tiles periodically, tiles only aperiodically, or has Heesch number $\\le10$.",
+"difficulty": 2.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "hat-tiling",
+"note": "Classify small polykites by tiling behavior; substantive structural survey."
 },
 {
 "id": "N-357",
@@ -3416,6 +4840,20 @@
 "note": "Existence half of N-510's existence-plus-uniqueness analytic hyperoperation problem."
 },
 {
+"id": "N-361",
+"title": "Stable blow-up",
+"area": "Analysis",
+"plain": "Show the 2026 Navier–Stokes blow-up still happens after any tiny change to the setup.",
+"math": "Prove the 2026 forced blow-up is stable under small smooth perturbations of $(u_0,f)$ in a suitable topology.",
+"difficulty": 2.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 5,
+"value": 5,
+"family": "fluid-blowup",
+"note": "Stability of the forced NS blow-up; natural follow-up, topology unspecified."
+},
+{
 "id": "N-362",
 "title": "Square-sum pancyclicity",
 "area": "Combinatorics",
@@ -3428,6 +4866,34 @@
 "value": 3,
 "family": "square-sum",
 "note": "Square-sum pancyclicity; standard graph property on overused graph."
+},
+{
+"id": "N-363",
+"title": "Prime-speed lonely runners",
+"area": "Number theory",
+"plain": "Prove the lonely runner conjecture when every speed is a prime number.",
+"math": "For distinct primes $p_1,\\dots,p_n$, prove $\\sup_t\\min_i\\|tp_i\\|\\ge\\frac1{n+1}$.",
+"difficulty": 4.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 3,
+"importance": 4,
+"value": 4,
+"family": "lonely-runner",
+"note": "Lonely runner restricted to prime speeds; variant of restricted-speed siblings."
+},
+{
+"id": "N-364",
+"title": "Counting minimal Sudokus",
+"area": "Combinatorics",
+"plain": "How many uniquely solvable Sudokus with no removable clue exist, as the board grows?",
+"math": "Find the asymptotics of the number of minimal uniquely solvable $n^2\\times n^2$ puzzles.",
+"difficulty": 3.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "sudoku",
+"note": "Natural enumeration asymptotic; probably very hard to get sharp."
 },
 {
 "id": "N-365",
@@ -3486,6 +4952,20 @@
 "note": "Kiselev-Sverak growth in a polygon; hat shape is cosmetic."
 },
 {
+"id": "N-369",
+"title": "Fluid in a box blows up",
+"area": "Analysis",
+"plain": "Show viscous fluid in a closed box with sticky walls can blow up under a smooth push.",
+"math": "Construct smooth $f$ such that 3D Navier–Stokes with no-slip in the unit cube blows up in finite time.",
+"difficulty": 3.1,
+"reason": "removed in Nov 2026 review: already done by Cao–Chi–Nie",
+"novelty": 5,
+"importance": 7,
+"value": 6,
+"family": "navier-stokes",
+"note": "Bounded-domain no-slip forced blow-up; genuine extension, wall effects matter."
+},
+{
 "id": "N-370",
 "title": "Toroidal Othello",
 "area": "Games",
@@ -3512,6 +4992,20 @@
 "value": 3,
 "family": "squared-square",
 "note": "Prime squared squares infinitude; gimmick constraint, family of variants."
+},
+{
+"id": "N-372",
+"title": "Divisor-balanced primes",
+"area": "Number theory",
+"plain": "Show infinitely many primes p have p − 1 and p + 1 with the same number of divisors.",
+"math": "Prove infinitely many primes $p$ with $d(p-1)=d(p+1)$.",
+"difficulty": 3.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "other",
+"note": "Prime analogue of Heath-Brown d(n)=d(n+1); natural, sieve-hard."
 },
 {
 "id": "N-373",
@@ -3570,6 +5064,34 @@
 "note": "QUE failure for polygons is real, but hat choice is cosmetic."
 },
 {
+"id": "N-377",
+"title": "Homogenized wildfire",
+"area": "Analysis",
+"plain": "Fire spreads through random patches of two fuel types. Show it has a definite average speed and compute it.",
+"math": "For the eikonal equation with i.i.d. two-valued speed on a lattice, prove homogenization and give the effective speed in closed form.",
+"difficulty": 6.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 4,
+"family": "other",
+"note": "First-passage percolation in disguise; closed-form time constant unrealistic."
+},
+{
+"id": "N-378",
+"title": "Galois groups of Keller fibers",
+"area": "Algebra",
+"plain": "Find the symmetry group of the preimages of a point under the 2026 Keller maps.",
+"math": "Compute the Galois group of the generic fiber of Gallagher's degree-$n$ Keller family for each $n\\ge3$.",
+"difficulty": 1.9,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 5,
+"value": 6,
+"family": "keller",
+"note": "Natural monodromy question for new Keller family; concrete and computable."
+},
+{
 "id": "N-379",
 "title": "Palindromic Carmichael numbers",
 "area": "Number theory",
@@ -3612,6 +5134,20 @@
 "note": "Constrained-class sofa; twin of convex-sofa variant."
 },
 {
+"id": "N-382",
+"title": "Convex sofa",
+"area": "Geometry",
+"plain": "Find the best convex sofa.",
+"math": "Maximize area over convex sets admissible in the width-1 right-angled corridor.",
+"difficulty": 2.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "sofa",
+"note": "Convex-restricted moving sofa; natural, cleanest of the sofa variants."
+},
+{
 "id": "N-383",
 "title": "Unattained hyperbolic sofa",
 "area": "Geometry",
@@ -3624,6 +5160,20 @@
 "value": 3,
 "family": "sofa",
 "note": "Non-attainment in hyperbolic sofa; mildly interesting existence twist."
+},
+{
+"id": "N-384",
+"title": "Squares on a sphere",
+"area": "Geometry",
+"plain": "Every closed curve on a sphere should pass through the corners of a spherical square.",
+"math": "Prove every Jordan curve on $S^2$ inscribes a spherical quadrilateral with equal sides and equal angles.",
+"difficulty": 4.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "square-peg",
+"note": "Spherical square peg for Jordan curves; natural, overlaps surfaces version."
 },
 {
 "id": "N-386",
@@ -3652,6 +5202,20 @@
 "value": 3,
 "family": "square-sum",
 "note": "Prime+square neighbor bijection; mash-up of two templates, likely easy greedy."
+},
+{
+"id": "N-388",
+"title": "Prime-graceful forests",
+"area": "Combinatorics",
+"plain": "Label any forest so the edge differences are exactly the first m primes.",
+"math": "Prove every forest with $m$ edges has an injective $\\ell:V\\to\\mathbb{Z}_{\\ge0}$ whose edge differences are $\\{p_1,\\dots,p_m\\}$.",
+"difficulty": 1.7,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "graceful",
+"note": "Prime-difference graceful labelling of forests; plausible, Ringel-adjacent."
 },
 {
 "id": "N-389",
@@ -3696,6 +5260,20 @@
 "note": "Spectral gap of square-sum graph, same as N-071."
 },
 {
+"id": "N-392",
+"title": "Doubled-twin sieve upper bound",
+"area": "Number theory",
+"plain": "Bound the number of doubled-twin quadruples up to x by the predicted count times at most 3.",
+"math": "Prove $\\#\\{p\\le x: p,p+2,2p+1,2p+3\\text{ prime}\\}\\le(3+o(1))\\,\\mathfrak{S}x/\\log^4x$, with $\\mathfrak S$ the singular series.",
+"difficulty": 4.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Sieve upper bound constant 3 for prime quadruple pattern; technical."
+},
+{
 "id": "N-393",
 "title": "Largest-factor cycles",
 "area": "Dynamics",
@@ -3722,6 +5300,34 @@
 "value": 2,
 "family": "sofa",
 "note": "Rotating-door sofa; contrived corridor mechanics, overlaps revolving-corridor variant."
+},
+{
+"id": "N-395",
+"title": "Hyperoperation fixed points",
+"area": "Algebra",
+"plain": "In any natural real-rank hyperoperation family, show the rank at which 2 ∘ 2 stops being 4 is not a whole number.",
+"math": "For the unique analytic family $a[s]b$ satisfying the recursion and log-convexity in $s$, prove $\\{s: 2[s]2=4\\}$ is exactly $[1,\\infty)\\cap$ an explicit closed set and determine whether it is an interval.",
+"difficulty": 2.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "hyperop",
+"note": "Depends on undefined 'unique analytic family'; vague target set, modest interest."
+},
+{
+"id": "N-397",
+"title": "Keller maps with integer fibers",
+"area": "Algebra",
+"plain": "Show no Jacobian-conjecture counterexample with integer coefficients is injective on integer points but not invertible.",
+"math": "Prove every Keller map $F\\in\\mathbb{Z}[x,y,z]^3$ injective on $\\mathbb{Z}^3$ is a polynomial automorphism of $\\mathbb{C}^3$.",
+"difficulty": 3.6,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 5,
+"value": 6,
+"family": "keller",
+"note": "Integer-injectivity implies automorphism: clean arithmetic Jacobian question."
 },
 {
 "id": "N-398",
@@ -3778,6 +5384,20 @@
 "value": 1,
 "family": "hat-spectral",
 "note": "Likely ill-posed: hat tilings are rigid with no local flip moves."
+},
+{
+"id": "N-402",
+"title": "Tetris on a cylinder",
+"area": "Games",
+"plain": "When the board wraps left to right, can a player survive forever against any piece sequence?",
+"math": "Decide whether a player can survive indefinitely in a width-10 cylindrical Tetris well against adversarial piece sequences with 1-piece preview.",
+"difficulty": 1.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 2,
+"value": 4,
+"family": "games",
+"note": "Cylindrical Tetris survival; fun, crisp adversarial question."
 },
 {
 "id": "N-403",
@@ -3976,6 +5596,20 @@
 "note": "Potts transition order on hats; template transfer of known results."
 },
 {
+"id": "N-417",
+"title": "Prime-sum labelling of balanced trees",
+"area": "Combinatorics",
+"plain": "Label a tree with 1 to n so every edge sums to a prime. Parity forces the two sides of the tree to be balanced. Show balance is enough, for large n.",
+"math": "Prove every tree on $n\\ge n_0$ vertices whose bipartition classes have sizes $\\lceil n/2\\rceil,\\lfloor n/2\\rfloor$ admits a bijection $V\\to[n]$ with all edge sums prime.",
+"difficulty": 3.9,
+"reason": "removed in Nov 2026 review: false as stated",
+"novelty": 6,
+"importance": 4,
+"value": 6,
+"family": "square-sum",
+"note": "Natural parity-sharp prime-sum tree labelling; Goldbach-flavored, well motivated."
+},
+{
 "id": "N-419",
 "title": "Hat tilings of convex regions",
 "area": "Geometry",
@@ -4060,6 +5694,20 @@
 "note": "Irrationality of sofa constant; hopeless, duplicate of N-597."
 },
 {
+"id": "N-425",
+"title": "Hat Ising critical line",
+"area": "Physics",
+"plain": "Ising models on a hat tiling and its dual should be exactly related at their critical points. Prove the duality relation holds rigorously.",
+"math": "For the ferromagnetic Ising model on the hat graph $G$ and its planar dual $G^*$, prove $\\sinh(2\\beta_c(G))\\sinh(2\\beta_c(G^*))=1$.",
+"difficulty": 3.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "hat-ising",
+"note": "Kramers-Wannier duality on aperiodic planar graph; reasonable extension."
+},
+{
 "id": "N-426",
 "title": "Hat Hofstadter at golden flux",
 "area": "Physics",
@@ -4074,6 +5722,34 @@
 "note": "Golden-flux magnetic version of hat Cantor spectrum N-153."
 },
 {
+"id": "N-429",
+"title": "Lonely runner gap for the first n primes",
+"area": "Number theory",
+"plain": "For the first n primes as speeds, find the actual loneliness gap asymptotically.",
+"math": "Determine the asymptotics of $\\delta_n=\\sup_t\\min_{i\\le n}\\|tp_i\\|$ as $n\\to\\infty$.",
+"difficulty": 4.4,
+"reason": "removed in Nov 2026 review: trivial (t = 1/4 works)",
+"novelty": 6,
+"importance": 4,
+"value": 6,
+"family": "lonely-runner",
+"note": "Asymptotic loneliness gap for prime speeds; concrete, well-posed."
+},
+{
+"id": "N-430",
+"title": "Hat dominoes freeze",
+"area": "Probability",
+"plain": "Random domino-style pairings of hat tiles inside a large region with a fixed boundary develop a frozen outer zone. Find the shape of the boundary between frozen and random regions.",
+"math": "For uniform perfect matchings of the hat graph on regions $L\\cdot\\Omega$, prove an arctic curve exists and identify it for $\\Omega$ a regular hexagon.",
+"difficulty": 5.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "hat-spectral",
+"note": "Arctic curve for dimers on aperiodic graph; would need new integrability tools."
+},
+{
 "id": "N-431",
 "title": "Spectre billiards ergodic",
 "area": "Dynamics",
@@ -4086,6 +5762,20 @@
 "value": 3,
 "family": "hat-spectral",
 "note": "Ergodicity of a curved-wall billiard; spectre shape is a gimmick."
+},
+{
+"id": "N-432",
+"title": "Square Nim from both ends",
+"area": "Games",
+"plain": "Two piles; a move removes a square from one pile or the same square from both. Find the losing positions' asymptotic density.",
+"math": "For moves $(a,b)\\to(a-k^2,b),(a,b-k^2),(a-k^2,b-k^2)$, prove $\\#\\{(a,b)\\in[N]^2:\\mathcal P\\}=N^{1+\\theta+o(1)}$ and find $\\theta$.",
+"difficulty": 6.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 4,
+"value": 5,
+"family": "square-nim",
+"note": "Wythoff-style square subtraction density exponent; natural, ties to Sarkozy-type questions."
 },
 {
 "id": "N-433",
@@ -4156,6 +5846,20 @@
 "value": 2,
 "family": "seven-free",
 "note": "Linnik bound for 7-free primes; mechanical Maynard-style mash-up."
+},
+{
+"id": "N-439",
+"title": "Keller monodromy is everything",
+"area": "Algebra",
+"plain": "Show every symmetric group appears as the hidden symmetry group of the fibres of some 3D Jacobian-conjecture counterexample.",
+"math": "Prove that for each $n\\ge3$ there is a non-invertible Keller map $\\mathbb{C}^3\\to\\mathbb{C}^3$ of geometric degree $n$ whose generic monodromy group is $S_n$.",
+"difficulty": 2.5,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 5,
+"value": 6,
+"family": "keller",
+"note": "Monodromy of Keller maps; concrete, structural, clearly stated."
 },
 {
 "id": "N-440",
@@ -4242,6 +5946,20 @@
 "note": "Concrete arithmetic question about a specific counterexample; narrow but well-posed."
 },
 {
+"id": "N-446",
+"title": "Seven-free squares",
+"area": "Number theory",
+"plain": "Count the numbers up to x whose square has no digit 7. Show the count matches the random-digit prediction.",
+"math": "Prove $\\#\\{n\\le x: 7\\notin n^2\\}=x^{1+2\\log_{10}(9/10)+o(1)}$.",
+"difficulty": 5.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "seven-free",
+"note": "Missing-digit squares; natural polynomial extension of Maynard, genuinely hard."
+},
+{
 "id": "N-447",
 "title": "Weyl remainder for the hat drum",
 "area": "Analysis",
@@ -4282,6 +6000,20 @@
 "value": 4,
 "family": "P-map",
 "note": "Finitely many cycles for affine P-maps; companion to N-548."
+},
+{
+"id": "N-450",
+"title": "Missing digits in two bases",
+"area": "Number theory",
+"plain": "Show infinitely many primes have no digit 9 in base 10 and no digit 10 in base 11 at the same time.",
+"math": "Prove infinitely many primes whose base-10 expansion avoids the digit 9 and whose base-11 expansion avoids the digit 10.",
+"difficulty": 3.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "digits",
+"note": "Missing digits simultaneously in two bases for primes; real difficulty."
 },
 {
 "id": "N-451",
@@ -4338,6 +6070,48 @@
 "value": 2,
 "family": "hat-spectral",
 "note": "Gimmick transcendence of a conformal invariant on hat; twin of sofa version."
+},
+{
+"id": "N-455",
+"title": "Spanning trees inside the prime-sum graph",
+"area": "Combinatorics",
+"plain": "Show every balanced tree of bounded degree on 2n vertices can be laid out on 1 to 2n so all its edges sum to primes.",
+"math": "Prove that for every $\\Delta$ there is $n_0$ such that every tree on $2n\\ge n_0$ vertices with maximum degree $\\le\\Delta$ and bipartition classes of size $n$ is a spanning subgraph of the prime-sum graph on $[2n]$.",
+"difficulty": 3.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "prime-sum",
+"note": "Bandwidth-style spanning tree embedding in arithmetic graph; decent."
+},
+{
+"id": "N-456",
+"title": "Spanning trees inside the square-sum graph",
+"area": "Combinatorics",
+"plain": "Show every tree of maximum degree 3 on N vertices fits inside the square-sum graph on 1 to N.",
+"math": "Prove every tree on $N\\ge N_0$ vertices with maximum degree $\\le3$ is a spanning subgraph of $S_N$.",
+"difficulty": 4.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "square-sum",
+"note": "Spanning bounded-degree trees in square-sum graph; strengthens Hamiltonicity results."
+},
+{
+"id": "N-457",
+"title": "AKLT on the hat",
+"area": "Physics",
+"plain": "Show the AKLT quantum spin model placed on a hat tiling has an energy gap above its ground state.",
+"math": "For the AKLT Hamiltonian on the vertex graph of a hat tiling (spin $d(v)/2$ at vertex $v$), prove a uniform spectral gap on finite patches.",
+"difficulty": 6.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "hat-physics",
+"note": "AKLT gap on aperiodic variable-degree graph; real content beyond the gimmick."
 },
 {
 "id": "N-458",
@@ -4424,6 +6198,34 @@
 "note": "Seven-free primes in thin sequence; Beatty clone with exponent swapped."
 },
 {
+"id": "N-464",
+"title": "Quasi-independence of square-plus-one steps",
+"area": "Number theory",
+"plain": "Show the largest prime factors of n² + 1 and (n + 1)² + 1 are nearly independent in size.",
+"math": "Prove $\\#\\{n\\le x: P(n^2+1)<P((n+1)^2+1)\\}\\sim x/2$.",
+"difficulty": 5.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Polynomial analog of Teravainen's P(n)<P(n+1) density result; natural."
+},
+{
+"id": "N-465",
+"title": "Prime Nim's mod-3 bias",
+"area": "Games",
+"plain": "Losing pile sizes in Prime Nim are about three times as likely to be 1 mod 3 as 0 mod 3. Find the exact limiting proportions.",
+"math": "For the prime subtraction game, prove the limits $\\lim_x\\#\\{n\\le x:G(n)=0,\\ n\\equiv r\\ (3)\\}/\\#\\{n\\le x:G(n)=0\\}$ exist for $r=0,1,2$, and determine them.",
+"difficulty": 5.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "prime-nim",
+"note": "Explicit mod-3 bias of P-positions; concrete empirical phenomenon."
+},
+{
 "id": "N-466",
 "title": "Square losses in Prime Nim",
 "area": "Games",
@@ -4450,6 +6252,20 @@
 "value": 3,
 "family": "prime-nim",
 "note": "APs in Prime Nim losses; Szemeredi-type transplant without clear mechanism."
+},
+{
+"id": "N-468",
+"title": "Bombieri–Vinogradov for seven-free primes in base 10",
+"area": "Number theory",
+"plain": "Show seven-free primes are well distributed in arithmetic progressions on average over moduli up to x^θ, for some θ > 0, in base 10.",
+"math": "Prove there is $\\theta>0$ such that $\\sum_{q\\le x^\\theta}\\max_{(a,q)=1}\\big|\\pi_7(x;q,a)-\\frac{\\pi_7(x)}{\\varphi(q)}\\big|\\ll_A \\pi_7(x)(\\log x)^{-A}$, where $\\pi_7$ counts 7-free primes (moduli coprime to 10).",
+"difficulty": 3.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 4,
+"family": "seven-free",
+"note": "Bombieri-Vinogradov for Maynard missing-digit primes; substantive despite family."
 },
 {
 "id": "N-469",
@@ -4564,6 +6380,48 @@
 "note": "Hua five-squares theorem restricted to 7-free primes; mash-up."
 },
 {
+"id": "N-477",
+"title": "Large prime factors of 2^n + 3^n",
+"area": "Number theory",
+"plain": "Show the largest prime factor of 2^n + 3^n grows faster than n².",
+"math": "Prove $P(2^n+3^n)/n^2\\to\\infty$.",
+"difficulty": 6.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 5,
+"value": 5,
+"family": "other",
+"note": "Natural improvement over Stewart's bounds for P(a^n+b^n); hard, meaningful."
+},
+{
+"id": "N-478",
+"title": "Infinite monochromatic square-sum paths",
+"area": "Combinatorics",
+"plain": "Colour the positive integers red and blue. Show there is always an infinite increasing sequence of one colour in which every two consecutive terms sum to a perfect square.",
+"math": "Prove every 2-colouring of $\\mathbb{N}$ admits $a_1<a_2<\\cdots$ of one colour with $a_i+a_{i+1}$ a perfect square for all $i$.",
+"difficulty": 2.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "square-sum",
+"note": "Genuine infinite Ramsey question for square-sum graph."
+},
+{
+"id": "N-479",
+"title": "Is Prime Nim's losing set definable?",
+"area": "Logic",
+"plain": "Add the set of Prime Nim losing positions to the arithmetic of addition. Is the resulting theory decidable?",
+"math": "Decide whether the first-order theory of $(\\mathbb{N},+,L)$ is decidable, where $L=\\{n:G(n)=0\\}$ for the prime subtraction game.",
+"difficulty": 6.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "prime-nim",
+"note": "Decidability of Presburger plus Prime Nim losses; interesting logic angle."
+},
+{
 "id": "N-480",
 "title": "Packing density of Gerver's sofa",
 "area": "Geometry",
@@ -4576,6 +6434,20 @@
 "value": 1,
 "family": "sofa",
 "note": "Packing density of sofa plus transcendence; hopeless mash-up."
+},
+{
+"id": "N-481",
+"title": "Prime-digit continued fractions in arithmetic progressions",
+"area": "Number theory",
+"plain": "Show there are infinitely many quadratic irrationals all of whose continued fraction digits are prime, in each real quadratic field.",
+"math": "Prove for every real quadratic field $K$ there are infinitely many $\\alpha\\in K$ with purely periodic continued fraction expansion having all partial quotients prime.",
+"difficulty": 3.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Prime partial quotients in every quadratic field; McMullen arithmetic-chaos analogue."
 },
 {
 "id": "N-482",
@@ -4606,6 +6478,34 @@
 "note": "Arbitrary P-map cycle classification; pure template clone."
 },
 {
+"id": "N-484",
+"title": "Largest prime factor of 2^n + n",
+"area": "Number theory",
+"plain": "Show the largest prime factor of 2^n + n tends to infinity faster than any fixed multiple of n.",
+"math": "Prove $P(2^n+n)/n\\to\\infty$.",
+"difficulty": 7.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 4,
+"family": "number-theory",
+"note": "P(2^n+n)/n to infinity; Stewart-type, natural but very hard."
+},
+{
+"id": "N-485",
+"title": "Largest prime factor of n^n + 1",
+"area": "Number theory",
+"plain": "Show P(n^n + 1) / n tends to infinity.",
+"math": "Prove $P(n^n+1)/n\\to\\infty$.",
+"difficulty": 4.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "largest-factor",
+"note": "Stewart-type growth of P(n^n+1); classical-flavoured and natural."
+},
+{
 "id": "N-486",
 "title": "Growth rate of square-sum Hamiltonian cycles",
 "area": "Combinatorics",
@@ -4618,6 +6518,20 @@
 "value": 3,
 "family": "square-sum",
 "note": "Counting Hamiltonian cycles of S_N; template counting question."
+},
+{
+"id": "N-487",
+"title": "Primes on circles centred at the origin",
+"area": "Number theory",
+"plain": "Find the largest number of prime points (p, q) lying on a single circle centred at the origin with radius up to R.",
+"math": "Determine the order of $\\max_{n\\le R^2}\\#\\{(p,q)\\in\\mathbb{P}^2:p^2+q^2=n\\}$.",
+"difficulty": 5.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 4,
+"value": 5,
+"family": "other",
+"note": "Max prime representations p^2+q^2=n; natural extremal question."
 },
 {
 "id": "N-488",
@@ -4732,6 +6646,34 @@
 "note": "Apollonian curvatures restricted to 7-free; gimmick mash-up."
 },
 {
+"id": "N-497",
+"title": "Largest factor of p² + p + 1 small",
+"area": "Number theory",
+"plain": "Show infinitely many primes p have P(p² + p + 1) < p.",
+"math": "Prove $\\#\\{p\\le x:P(p^2+p+1)<p\\}\\gg\\pi(x)$.",
+"difficulty": 3.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "smooth-values",
+"note": "Smooth values of p^2+p+1 at primes; genuine analytic number theory."
+},
+{
+"id": "N-498",
+"title": "Consecutive largest factors both 3 mod 4",
+"area": "Number theory",
+"plain": "Show P(n) and P(n+1) are both 3 mod 4 for a quarter of all n.",
+"math": "Prove $\\#\\{n\\le x:P(n)\\equiv P(n+1)\\equiv3\\ (4)\\}\\sim x/4$.",
+"difficulty": 5.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "P-map",
+"note": "Joint residue independence of P(n),P(n+1); Chowla-flavoured, natural."
+},
+{
 "id": "N-499",
 "title": "Largest-factor Collatz for all n",
 "area": "Dynamics",
@@ -4800,6 +6742,20 @@
 "value": 3,
 "family": "square-sum",
 "note": "Cycle version of cube-sum Hamiltonian path problem."
+},
+{
+"id": "N-504",
+"title": "Gerver constant is transcendental",
+"area": "Geometry",
+"plain": "Show the area of Gerver's sofa is not a root of any polynomial with integer coefficients.",
+"math": "Prove $\\mu_G\\approx2.2195$ is transcendental.",
+"difficulty": 6.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 5,
+"value": 5,
+"family": "sofa",
+"note": "Canonical transcendence question for Gerver's constant; keep as representative."
 },
 {
 "id": "N-505",
@@ -4872,6 +6828,34 @@
 "note": "Low-degree 3D Keller invertibility; near-duplicate of degree-4 and degree-5 versions."
 },
 {
+"id": "N-510",
+"title": "Real-rank hyperoperation uniqueness",
+"area": "Algebra",
+"plain": "Prove there is exactly one natural way to fill in the operations between addition, multiplication and powers.",
+"math": "Prove uniqueness of an analytic family $a[s]b$ on $s\\in[1,3]$ under the recursion law plus a log-convexity condition in $s$, and existence.",
+"difficulty": 2.5,
+"reason": "removed in Nov 2026 review: ill-posed",
+"novelty": 5,
+"importance": 5,
+"value": 6,
+"family": "hyperop",
+"note": "Cleanest formulation of fractional hyperoperation uniqueness; Kneser-style rigidity question."
+},
+{
+"id": "N-511",
+"title": "Hat ground state",
+"area": "Physics",
+"plain": "Find the arrangement of hat tiles that minimises a natural energy, and show it is the aperiodic tiling.",
+"math": "Prove the hat tiling is the unique (up to isometry) ground state of a finite-range two-body potential on hat-shaped particles in the plane.",
+"difficulty": 3.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "hat-tiling",
+"note": "Monotile as unique ground state of pair potential; real quasicrystal physics."
+},
+{
 "id": "N-512",
 "title": "Spectre is a quasicrystal ground state",
 "area": "Physics",
@@ -4912,6 +6896,20 @@
 "value": 2,
 "family": "sofa",
 "note": "Non-algebraic boundary claim, just for 60-degree corridor; clone of N-112."
+},
+{
+"id": "N-515",
+"title": "Delayed fire on the grid",
+"area": "Combinatorics",
+"plain": "If the fire only spreads every other turn, find the smallest per-turn budget that always contains it.",
+"math": "Find the infimum of average firefighter budgets that contain the half-speed fire on $\\mathbb{Z}^2$.",
+"difficulty": 2.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "firefighter",
+"note": "Half-speed fire on Z^2; reasonable variant of classic firefighter."
 },
 {
 "id": "N-516",
@@ -5012,6 +7010,20 @@
 "note": "Stricter gimmick version of prime squared square N-054."
 },
 {
+"id": "N-523",
+"title": "Spectral gap of the spectre",
+"area": "Analysis",
+"plain": "Find the exact gaps in the energy levels of an electron moving on a spectre tiling.",
+"math": "Prove the spectrum of the adjacency operator on the spectre tiling has gaps labelled by an explicit $K$-theory group, with every label open.",
+"difficulty": 4.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 5,
+"value": 5,
+"family": "hat-spectral",
+"note": "Gap labelling plus all-gaps-open for spectre; subsumes N-589, standard aperiodic question."
+},
+{
 "id": "N-524",
 "title": "Prime Nim with two piles",
 "area": "Games",
@@ -5094,6 +7106,20 @@
 "value": 2,
 "family": "P-map",
 "note": "5n+1 smallest-factor swap of the 5n+1 largest-factor convergence clone."
+},
+{
+"id": "N-530",
+"title": "Three of four",
+"area": "Number theory",
+"plain": "Show infinitely often at least three of the four doubled-twin numbers are prime at once.",
+"math": "Prove there are infinitely many $n$ such that at least three of $n,n+2,2n+1,2n+3$ are prime.",
+"difficulty": 4.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "other",
+"note": "Three of four primes in admissible 4-tuple; natural Dickson-type target."
 },
 {
 "id": "N-531",
@@ -5208,6 +7234,34 @@
 "note": "Isolated coincidence-of-orders question; mild number-theoretic interest."
 },
 {
+"id": "N-539",
+"title": "Hyperbolic Hex",
+"area": "Games",
+"plain": "On a board tiled by heptagons in hyperbolic space, find an explicit first-player win for Hex-like connection.",
+"math": "On the $(7,3)$ tiling with a disk of radius $r$ split into four boundary arcs, give an explicit winning strategy for the first player for all $r$.",
+"difficulty": 3.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "games",
+"note": "Explicit Hex strategy on hyperbolic board; concrete and somewhat fresh."
+},
+{
+"id": "N-540",
+"title": "Few loops for square-plus-one",
+"area": "Dynamics",
+"plain": "The square-plus-one map has a loop: 89 goes to 233 and back. Show there are only finitely many loops.",
+"math": "Prove $Q(n)=P(n^2+1)$ has finitely many periodic orbits (one is $89\\leftrightarrow233$).",
+"difficulty": 6.7,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "P-map",
+"note": "Cycles of P(n^2+1); ties to studied largest factor of n^2+1."
+},
+{
 "id": "N-541",
 "title": "The 4p+1 funnel",
 "area": "Dynamics",
@@ -5250,6 +7304,34 @@
 "note": "Connective constant on spectre; same as hat SAW N-044."
 },
 {
+"id": "N-544",
+"title": "Strict convexity of hat first-passage",
+"area": "Probability",
+"plain": "Give each hat-tile edge an independent random length. Prove the limiting ball of first-passage distances is strictly convex.",
+"math": "For i.i.d. continuous edge weights with finite exponential moment on the hat adjacency graph, prove the first-passage limit shape exists and is strictly convex.",
+"difficulty": 7.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 3,
+"importance": 4,
+"value": 4,
+"family": "hat-tiling",
+"note": "Strict convexity FPP; open even on Z^2, hat incidental."
+},
+{
+"id": "N-545",
+"title": "Sandpile identity on hats",
+"area": "Probability",
+"plain": "The abelian sandpile on a large hat-tiled region has an identity element that looks like a fractal picture. Show it has a scaling limit.",
+"math": "Prove the sandpile identity on hat-tiled $L$-balls, rescaled by $L$, converges weakly (as a height-density measure) and that the limit is not rotationally invariant.",
+"difficulty": 5.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "hat-statmech",
+"note": "Sandpile identity scaling limit on hats; real phenomenon, gimmick lattice."
+},
+{
 "id": "N-546",
 "title": "Hat Laplacian eigenvalue is transcendental",
 "area": "Analysis",
@@ -5278,6 +7360,20 @@
 "note": "Spectral rigidity of one polygon; hat is incidental."
 },
 {
+"id": "N-548",
+"title": "Affine prime maps all settle",
+"area": "Dynamics",
+"plain": "Fix whole numbers a and b. Send a prime p to the largest prime factor of ap + b. Every case tested falls into a loop. Prove this always happens.",
+"math": "Prove that for all fixed integers $a\\ge2$, $b\\ge1$, every orbit of $p\\mapsto P(ap+b)$ on primes is eventually periodic.",
+"difficulty": 6.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "P-map",
+"note": "General affine P-map convergence; the umbrella statement of many family clones."
+},
+{
 "id": "N-549",
 "title": "The 7p+4 dozen",
 "area": "Dynamics",
@@ -5290,6 +7386,62 @@
 "value": 1,
 "family": "P-map",
 "note": "Affine prime map with new constants; clone of 4p+1 funnel."
+},
+{
+"id": "N-550",
+"title": "Longest increasing run of prime gaps",
+"area": "Number theory",
+"plain": "Among the first N prime gaps, find the longest subsequence that strictly increases. Show it grows like a power of N and find the power.",
+"math": "Let $L(N)$ be the length of the longest strictly increasing subsequence of $(p_{n+1}-p_n)_{n\\le N}$. Prove $L(N)=N^{\\theta+o(1)}$ and determine $\\theta$.",
+"difficulty": 5.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "number-theory",
+"note": "Longest increasing subsequence of prime gaps; fresh, plausibly tied to Cramer model."
+},
+{
+"id": "N-551",
+"title": "Undecidable prime-factor maps",
+"area": "Logic",
+"plain": "Show no algorithm can decide, given a and b, whether every orbit of n ↦ n/2 (even) or the largest prime factor of an + b (odd) eventually loops.",
+"math": "Prove $\\{(a,b)\\in\\mathbb{N}^2:$ every orbit of $n\\mapsto n/2$ ($n$ even), $P(an+b)$ ($n$ odd) is eventually periodic$\\}$ is not recursive, or prove it is.",
+"difficulty": 6.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "P-map",
+"note": "Undecidability for P-map family, Conway-style; most meaningful in family."
+},
+{
+"id": "N-552",
+"title": "Digit-restricted Chowla",
+"area": "Number theory",
+"plain": "Show μ(n)μ(n+1) has no bias on numbers n where neither n nor n+1 contains the digit 7.",
+"math": "Prove $\\sum_{n\\le x,\\ 7\\notin n,\\ 7\\notin n+1}\\mu(n)\\mu(n+1)=o(x^{\\log9/\\log10})$.",
+"difficulty": 7.7,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 3,
+"importance": 4,
+"value": 4,
+"family": "seven-free",
+"note": "Chowla on digit-restricted set; mash-up of Chowla and seven-free."
+},
+{
+"id": "N-554",
+"title": "Square-plus-one orbits rarely loop",
+"area": "Dynamics",
+"plain": "Show almost every starting number's square-plus-one sequence never repeats.",
+"math": "Prove the set of $n$ whose orbit under $Q(n)=P(n^2+1)$ is eventually periodic has natural density 0.",
+"difficulty": 6.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "P-map",
+"note": "P(n^2+1) orbits generically non-periodic; ties to P(n^2+1) size."
 },
 {
 "id": "N-555",
@@ -5390,6 +7542,48 @@
 "note": "Euclid-Mullin flavour via cyclotomic values; somewhat natural, hopeless."
 },
 {
+"id": "N-562",
+"title": "Exponential growth of square-plus-one orbits",
+"area": "Dynamics",
+"plain": "Show square-plus-one sequences, when they don't loop, grow at a steady exponential rate in the number of digits.",
+"math": "Prove that for almost every $n$ (density 1), $\\lim_{k}\\frac1k\\log\\log Q^k(n)$ exists and equals a constant $\\gamma>0$; identify $\\gamma$.",
+"difficulty": 8.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "P-map",
+"note": "Growth rate of square-plus-one orbits; probabilistic model question, hard."
+},
+{
+"id": "N-563",
+"title": "Hat percolation is conformally invariant",
+"area": "Probability",
+"plain": "Show critical percolation on the hat tiling's tiles has crossing probabilities given by Cardy's formula.",
+"math": "For critical site percolation on hat tiles, prove crossing probabilities of conformal rectangles converge to Cardy's formula as the mesh $\\to0$.",
+"difficulty": 7.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 3,
+"importance": 5,
+"value": 5,
+"family": "hat-tiling",
+"note": "Cardy on hat percolation; universality beyond triangular lattice, very hard."
+},
+{
+"id": "N-564",
+"title": "Critical Ising on the hat is SLE(3)",
+"area": "Physics",
+"plain": "Show the interface in the critical Ising model on a hat tiling converges to the random curve SLE(3), even though the graph is not isoradial.",
+"math": "For the critical Ising model on the hat graph with Dobrushin boundary conditions, prove the interface converges to chordal SLE$_3$.",
+"difficulty": 7.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 6,
+"value": 5,
+"family": "hat-spectral",
+"note": "Ising universality beyond isoradial graphs; hat is a good test case."
+},
+{
 "id": "N-565",
 "title": "Hat packing density is irrational",
 "area": "Geometry",
@@ -5430,6 +7624,20 @@
 "value": 2,
 "family": "hat-spectral",
 "note": "Irrationality of hat Ising temperature; gimmick, ungrounded."
+},
+{
+"id": "N-568",
+"title": "Square-sum Ramsey with many colours",
+"area": "Combinatorics",
+"plain": "Colour 1 to N with r colours. Show some colour contains four numbers whose six pairwise sums are all squares, once N is large enough.",
+"math": "Prove that for every $r$ there is $N$ such that every $r$-colouring of $[N]$ has a monochromatic $K_4$ in $S_N$, or show it fails for some $r$.",
+"difficulty": 5.2,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 4,
+"value": 5,
+"family": "square-sum",
+"note": "Monochromatic square-sum K4; real arithmetic Ramsey question, likely very hard."
 },
 {
 "id": "N-569",
@@ -5572,6 +7780,20 @@
 "note": "Transcendence of an artificial continued fraction; hopeless, isolated."
 },
 {
+"id": "N-579",
+"title": "Undecidability of Prime Nim variants",
+"area": "Logic",
+"plain": "Show there is no algorithm that takes a polynomial f and decides whether the subtraction game with moves {f(p) : p prime} has eventually periodic Grundy values.",
+"math": "Prove $\\{f\\in\\mathbb{Z}[x]:\\text{Grundy sequence of the game with move set }f(\\mathbb{P})\\cap\\mathbb{N}\\text{ is eventually periodic}\\}$ is undecidable, or decidable.",
+"difficulty": 7.0,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 4,
+"value": 5,
+"family": "prime-nim",
+"note": "Undecidability of periodicity across polynomial-prime subtraction games; genuine meta-question."
+},
+{
 "id": "N-580",
 "title": "SOF Collatz is undecidable in general",
 "area": "Logic",
@@ -5640,6 +7862,34 @@
 "value": 3,
 "family": "hyperop",
 "note": "Single-value special case of N-613; \"natural family\" undefined."
+},
+{
+"id": "N-585",
+"title": "Square-sum chromatic number",
+"area": "Combinatorics",
+"plain": "Find exactly how many colors the infinite square-sum graph needs.",
+"math": "Determine $\\chi(S_\\infty)$ exactly.",
+"difficulty": 3.5,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 5,
+"family": "square-sum",
+"note": "Chromatic number of infinite square-sum graph; natural, clean."
+},
+{
+"id": "N-586",
+"title": "Cube-sum independence",
+"area": "Combinatorics",
+"plain": "Find the largest set of numbers up to N where no two add to a cube.",
+"math": "Determine $\\alpha(C_N)$ asymptotically, with second-order term.",
+"difficulty": 2.9,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 4,
+"importance": 3,
+"value": 4,
+"family": "square-sum",
+"note": "Cube analogue of sum-free-type square-sum independence; modest additive content."
 },
 {
 "id": "N-588",
@@ -5726,6 +7976,34 @@
 "note": "Same hat return-probability constant as heat kernel problem."
 },
 {
+"id": "N-595",
+"title": "Sudoku count asymptotics",
+"area": "Combinatorics",
+"plain": "Count n²×n² Sudoku grids exactly, to leading order.",
+"math": "Prove $\\#\\text{Sudoku}(n)=\\left(\\frac{(n^2)!^{2}}{n^{2n^2}e^{\\dots}}\\right)\\!(1+o(1))$ with an explicit leading term.",
+"difficulty": 4.1,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "sudoku",
+"note": "Sudoku count asymptotics; natural, connects to Latin square entropy methods."
+},
+{
+"id": "N-596",
+"title": "Polykite complete classification",
+"area": "Geometry",
+"plain": "For every polykite, decide whether it tiles, and if so how.",
+"math": "Give an algorithm deciding, for any single polykite, whether it tiles the plane, and prove it correct.",
+"difficulty": 4.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "polykite",
+"note": "Decidability of monotile tiling restricted to polykites; meaningful."
+},
+{
 "id": "N-597",
 "title": "Gerver sofa is not periodic in its digits",
 "area": "Number theory",
@@ -5768,6 +8046,20 @@
 "note": "Dimer criticality on spectre graph; dubious for non-bipartite graph, gimmick."
 },
 {
+"id": "N-600",
+"title": "Origami with a bounded number of layers",
+"area": "Geometry",
+"plain": "Find the best origami base for any tree when no point may have more than 4 layers of paper.",
+"math": "Give an algorithm for the minimal square paper for uniaxial bases of metric trees with layer count at most 4, with proof of optimality.",
+"difficulty": 2.4,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 3,
+"value": 4,
+"family": "other",
+"note": "Layer-bounded optimal origami bases; real computational-origami question."
+},
+{
 "id": "N-601",
 "title": "Seven-free primes have a bounded gap",
 "area": "Number theory",
@@ -5780,6 +8072,20 @@
 "value": 3,
 "family": "seven-free",
 "note": "Maynard-Zhang bounded gaps on seven-free primes; follows from BV-type input."
+},
+{
+"id": "N-602",
+"title": "Square-plus-one merging",
+"area": "Dynamics",
+"plain": "Many square-plus-one sequences run into the one starting at 2. Decide whether every sequence eventually does, apart from those caught in loops.",
+"math": "Decide whether every $n\\ge2$ whose $Q$-orbit is not eventually periodic satisfies $Q^a(n)=Q^b(2)$ for some $a,b$.",
+"difficulty": 7.6,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 5,
+"family": "P-map",
+"note": "Orbit-merging structure for square-plus-one prime map; more structural than convergence."
 },
 {
 "id": "N-603",
@@ -5880,6 +8186,20 @@
 "note": "Irrationality of hat SAW constant; hopeless, template 'X on hat irrational'."
 },
 {
+"id": "N-610",
+"title": "Unforced blow-up near the forced one",
+"area": "PDE",
+"plain": "Show the known forced Navier–Stokes blow-up can be made to work with forcing that decays to zero at the blow-up time.",
+"math": "Prove there exist smooth $u_0$ and $f\\in L^1_tL^2_x\\cap C^\\infty$ with $\\|f(t)\\|_{L^2}\\to0$ as $t\\to T^-$ such that the forced 3D NS solution blows up at $T$.",
+"difficulty": 6.8,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 5,
+"importance": 6,
+"value": 6,
+"family": "fluid-blowup",
+"note": "Decaying-force NS blow-up; meaningful step toward unforced blow-up."
+},
+{
 "id": "N-611",
 "title": "Prime Nim complexity",
 "area": "Computation",
@@ -5936,6 +8256,20 @@
 "note": "Square-sum Ramsey K4 threshold; template variant of square-sum Ramsey problems."
 },
 {
+"id": "N-615",
+"title": "Optimal 3D origami",
+"area": "Geometry",
+"plain": "For every 3D shape, find the smallest sheet of paper that folds into it.",
+"math": "Give a characterization, with an algorithm, of the minimal-area square that folds into any given polyhedral surface.",
+"difficulty": 3.3,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 5,
+"importance": 4,
+"value": 4,
+"family": "other",
+"note": "Minimal paper for folding polyhedra; broad, loosely posed."
+},
+{
 "id": "N-616",
 "title": "Prime Nim Grundy values are unbounded in density",
 "area": "Games",
@@ -5962,5 +8296,231 @@
 "value": 3,
 "family": "other",
 "note": "Irrationality of non-explicit fractal dimension; hopeless, little payoff."
+},
+{
+"id": "N-618",
+"title": "Period-doubling torus bundles",
+"area": "Topology",
+"plain": "Build a once-punctured torus bundle by reading the period-doubling word as a product of the two basic shear matrices. Show its hyperbolic volume per letter settles to a limit as the word grows.",
+"math": "Let $W_n\\in\\{a,b\\}^{2^n}$ be the length-$2^n$ prefix of the fixed point of $a\\mapsto ab,\\ b\\mapsto aa$, let $\\phi_n$ be $W_n$ with $a\\mapsto R=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$, $b\\mapsto L=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}$, and let $M_n$ be the (hyperbolic) once-punctured torus bundle with monodromy $\\phi_n$. Prove that $\\lim_{n\\to\\infty}\\mathrm{vol}(M_n)/2^n$ exists.",
+"difficulty": 2.2,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 4,
+"value": 6,
+"family": "topology",
+"note": "Volume growth of substitution-word torus bundles; fresh, concrete."
+},
+{
+"id": "N-619",
+"title": "Thue–Morse Lorenz knots",
+"area": "Topology",
+"plain": "Turn the first 2^n letters of the Thue–Morse word into a periodic orbit of the Lorenz template. Show these knots are eventually hyperbolic and their volume grows proportionally to the word length.",
+"math": "Let $K_n$ be the Lorenz knot whose Lorenz word is the length-$2^n$ Thue–Morse prefix $t_0\\cdots t_{2^n-1}$ with $0\\mapsto x$, $1\\mapsto y$ (this word is primitive). Prove that $S^3\\setminus K_n$ is hyperbolic for all sufficiently large $n$ and that $\\lim_{n\\to\\infty}\\mathrm{vol}(S^3\\setminus K_n)/2^n$ exists and is positive.",
+"difficulty": 3.4,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 4,
+"value": 6,
+"family": "knots",
+"note": "Lorenz knots from Thue-Morse; concrete hyperbolic volume growth question."
+},
+{
+"id": "N-623",
+"title": "Simple closed geodesics on the Fermat quartic",
+"area": "Geometry",
+"plain": "On the surface x⁴+y⁴+z⁴ = 1 the nine symmetry planes cut out nine simple closed geodesics. Are there only finitely many simple closed geodesics altogether?",
+"math": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the metric induced from $\\mathbb R^3$. The planes $x=0,y=0,z=0,x=\\pm y,y=\\pm z,x=\\pm z$ meet $S$ in simple closed geodesics. Decide whether $S$ has finitely many simple closed geodesics (as unparametrized curves), and if so whether these nine are all of them.",
+"difficulty": 4.2,
+"reason": "removed in Nov 2026 review: \"these nine are all\" is false; graded C",
+"novelty": 6,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Concrete natural geodesic finiteness question on a classic surface."
+},
+{
+"id": "N-627",
+"title": "Rupert superballs",
+"area": "Geometry",
+"plain": "The cube can pass through a hole drilled in a copy of itself; the round ball cannot. Show every superball between them, |x|^p+|y|^p+|z|^p ≤ 1 with p > 2, can.",
+"math": "Let $B_p=\\{|x|^p+|y|^p+|z|^p\\le1\\}$. Prove that for every $p\\in(2,\\infty)$ there are orthogonal projections $\\pi_1,\\pi_2$ onto planes and a rigid motion $\\rho$ of the plane with $\\rho(\\pi_1(B_p))\\subset\\operatorname{int}\\pi_2(B_p)$.",
+"difficulty": 3.0,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 3,
+"value": 6,
+"family": "other",
+"note": "Rupert property interpolating ball and cube; clean, fresh, well-posed."
+},
+{
+"id": "N-629",
+"title": "Drum tones of superellipses",
+"area": "Analysis",
+"plain": "Among regions x^p + y^p ≤ r of unit area, the circle (p = 2) has the lowest tone and the square (p = ∞) is back up high. Show the tone rises steadily as p goes from 2 to infinity.",
+"math": "Let $D_p=\\{|x|^p+|y|^p\\le r_p^p\\}$ with $r_p$ chosen so $|D_p|=1$, and let $\\lambda_1(p)$ be its first Dirichlet eigenvalue. Prove $\\lambda_1$ is strictly increasing on $[2,\\infty)$.",
+"difficulty": 2.9,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 3,
+"value": 6,
+"family": "other",
+"note": "Clean monotonicity of eigenvalue in superellipse family; natural, crisp."
+},
+{
+"id": "N-632",
+"title": "Free-boundary disks in a superball",
+"area": "Geometry",
+"plain": "In a round ball the only free-boundary minimal disks are flat. In the superball x⁴+y⁴+z⁴ ≤ 1, is there one that is not a flat slice?",
+"math": "Let $B=\\{x^4+y^4+z^4\\le1\\}$. Decide whether there is an embedded minimal disk $\\Sigma\\subset B$ with $\\partial\\Sigma\\subset\\partial B$ meeting $\\partial B$ orthogonally that is not contained in a plane.",
+"difficulty": 3.0,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Nitsche-type uniqueness for free-boundary disks beyond the round ball."
+},
+{
+"id": "N-634",
+"title": "Riesz-transform Schrödinger equation",
+"area": "PDE",
+"plain": "Couple a 2D Schrödinger wave to the Riesz transform of its own density. Mass is conserved but there is no energy. Do smooth solutions live forever?",
+"math": "Consider $i u_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb R\\times\\mathbb R^2$, where $\\widehat{R_1 f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. Decide whether every $u_0\\in H^1(\\mathbb R^2)$ gives a global solution in $C(\\mathbb R,H^1)$.",
+"difficulty": 4.2,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Riesz-coupled NLS without energy; natural, well-posed global existence question."
+},
+{
+"id": "N-635",
+"title": "Shifted Fujita equation",
+"area": "PDE",
+"plain": "In the plane, every positive solution of u_t = Δu + u² blows up. Does this survive when the square is replaced by the product of values one unit to the left and right?",
+"math": "Let $e=(1,0)$. Prove or disprove: every solution of $u_t=\\Delta u+u(x-e,t)\\,u(x+e,t)$ on $\\mathbb R^2$ with $0\\le u_0\\in C_c(\\mathbb R^2)$, $u_0\\not\\equiv0$, blows up in finite time.",
+"difficulty": 2.2,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Nonlocal shifted Fujita blow-up; crisp, genuinely new twist."
+},
+{
+"id": "N-638",
+"title": "Minimal-mass blow-up with reflection",
+"area": "PDE",
+"plain": "In the 2D Schrödinger equation where each point feels the density at its mirror point, blow-up needs at least the ground-state mass. Classify the solutions that blow up with exactly that mass.",
+"math": "For $i u_t+\\Delta u+|u(-x,t)|^2u=0$ on $\\mathbb R^2$ with $\\|u_0\\|_{L^2}=\\|Q\\|_{L^2}$ ($Q$ the cubic ground state), prove that every $H^1$ solution blowing up in finite time equals, up to phase and scaling, the pseudo-conformal transform of $Q$ centred at the origin.",
+"difficulty": 2.5,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 4,
+"value": 6,
+"family": "PDE",
+"note": "Merle-type minimal-mass classification for nonlocal parity NLS."
+},
+{
+"id": "N-641",
+"title": "Burgers with degenerate critical dissipation",
+"area": "PDE",
+"plain": "Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off at one point of the circle. Do shocks form there?",
+"math": "Let $a(x)=1-\\cos x$ and consider $u_t+uu_x+\\Lambda^{1/2}\\big(a\\,\\Lambda^{1/2}u\\big)=0$ on $\\mathbb T$, $\\Lambda=(-\\partial_x^2)^{1/2}$. Decide whether every $u_0\\in C^\\infty(\\mathbb T)$ yields a global smooth solution.",
+"difficulty": 3.8,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Degenerate critical dissipation for Burgers; sharp, natural PDE test."
+},
+{
+"id": "N-648",
+"title": "Thue–Morse quantum walk",
+"area": "Analysis",
+"plain": "A quantum walker on the line uses a Hadamard coin or a rotation coin according to the Thue–Morse sequence. Decide whether it spreads at full ballistic speed.",
+"math": "On $\\ell^2(\\mathbb Z)\\otimes\\mathbb C^2$ let $U=S\\,C$, where $S$ shifts the up and down components by $+1$ and $-1$, and $C_n=H$ if $t_{|n|}=0$, $C_n=\\begin{pmatrix}\\cos\\frac\\pi3&\\sin\\frac\\pi3\\\\-\\sin\\frac\\pi3&\\cos\\frac\\pi3\\end{pmatrix}$ if $t_{|n|}=1$. For $\\psi_0=\\delta_0\\otimes e_1$ decide whether $\\limsup_{T\\to\\infty}\\frac{\\log\\sum_n|n|^2\\|(U^T\\psi_0)(n)\\|^2}{2\\log T}=1$.",
+"difficulty": 2.8,
+"reason": "not selected for the main set in the Nov 2026 review",
+"novelty": 6,
+"importance": 3,
+"value": 5,
+"family": "other",
+"note": "Thue-Morse coined quantum walk transport; specific but natural aperiodic-order question."
+},
+{
+"id": "N-650",
+"title": "Two vortices on a cube",
+"area": "Dynamics",
+"plain": "Two identical point vortices on the surface of a cube have no symmetry to make them integrable. Show their motion is chaotic.",
+"math": "Let $G$ be the Green function of the flat unit-cube surface $S$ and $R$ its Robin function. Show the Hamiltonian $H(z_1,z_2)=G(z_1,z_2)+\\tfrac12(R(z_1)+R(z_2))$ on $S\\times S\\setminus\\Delta$, with symplectic form $dA_1+dA_2$, has an energy level on which the flow has positive topological entropy.",
+"difficulty": 4.0,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Non-integrability of vortex pair on flat cube surface; fresh, well-posed."
+},
+{
+"id": "N-663",
+"title": "Multiplicities on the Fermat quartic",
+"area": "Analysis",
+"plain": "The surface x⁴+y⁴+z⁴ = 1 has the symmetries of a cube. Show its Laplace eigenvalues never repeat more than symmetry forces, except perhaps finitely often.",
+"math": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the induced metric. Prove that all but finitely many Laplace eigenvalues of $S$ have multiplicity at most $3$.",
+"difficulty": 6.5,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 7,
+"importance": 5,
+"value": 6,
+"family": "other",
+"note": "Generic simplicity of spectrum on explicit symmetric surface; natural, hard."
+},
+{
+"id": "N-665",
+"title": "Frozen vortices for Kuramoto on a cube",
+"area": "Dynamics",
+"plain": "Identical Kuramoto oscillators on the grid of a cube surface tend to synchronize. Show that for large grids a stable state that is not synchronized also exists.",
+"math": "Let $Q_n$ be the vertex–edge graph of the $n\\times n$ subdivided cube surface and $\\dot\\theta_i=\\sum_{j\\sim i}\\sin(\\theta_j-\\theta_i)$. Prove that for all large $n$ there is a linearly stable equilibrium that is not of the form $\\theta_i\\equiv c$.",
+"difficulty": 2.5,
+"reason": "graded C in Nov 2026 deep review (kept for reference)",
+"novelty": 6,
+"importance": 4,
+"value": 6,
+"family": "other",
+"note": "Stable twisted states for Kuramoto on cube-surface graph; natural, concrete."
+},
+{
+"id": "N-690",
+"title": "Hinted OMv outside the thin regime",
+"area": "Complexity",
+"plain": "For the van den Brand-Nanongkai-Saranurak hinted Mv conjectures (v-hinted Mv, Mv-hinted Mv, uMv-hinted uMv) with hint dimension n^tau, give a polynomially faster algorithm for some tau >= 0.1204 (ideally tau = 1/2), or prove one of them equivalent to plain Boolean OMv for tau >= some explicit threshold.",
+"math": "(i) For some tau >= 0.17227, give an algorithm with polynomial saving for the vdBNS19 v-hinted Mv or Mv-hinted Mv problem with hint dimension n^tau (ideally tau ~ 0.53); or (ii) for some explicit tau_0 give a fine-grained reduction showing that polynomial saving for one of these problems at some tau >= tau_0 implies polynomial saving for Boolean OMv.",
+"difficulty": 3.0,
+"reason": "removed Nov 2026: duplicates N-667 at low tau; high-tau part is essentially OMv",
+"grade_was": "B"
+},
+{
+"id": "N-694",
+"title": "Does 4SUM survive the thin-product attack?",
+"area": "Complexity",
+"plain": "Solve 4SUM on n integers of poly(n) magnitude in O(n^{2-eps}) time, or 3SUM-Indexing with S space and T query time where S*T = O(n^{2-eps}); alternatively prove that any algorithm built from AVW-style thin rectangular product subroutines plus fine-grained self-reductions cannot beat n^{ceil(k/2)} for k=4.",
+"math": "Model: word-RAM with Θ(log n)-bit words. Prove or disprove: for some constants ε > 0 and every c >= 1, there is a (possibly randomized) algorithm that, given n integers in [−n^c, n^c], decides whether four of them (with repetition allowed) sum to 0 in time O(n^{2−ε}). (This is exactly refuting the 4SUM hypothesis; the 3SUM-Indexing and 'barrier' alternatives in the original should be dropped or posed separately with precise definitions.)",
+"difficulty": 4.5,
+"reason": "removed Nov 2026: restates refuting the 4SUM hypothesis; partly stale (arXiv 2610.42012)",
+"grade_was": "B"
+},
+{
+"id": "N-698",
+"title": "Combinatorial BMM beating the sqrt(log n) saving",
+"area": "Complexity",
+"plain": "Give a combinatorial (no fast matrix multiplication) algorithm for n x n Boolean matrix multiplication or triangle detection in n^3/2^{omega(sqrt(log n))} time, e.g. n^3/2^{Omega(log^{0.6} n)}; or show the Cui-Liu-Woodruff decomposition (2^{O(d^2)} pieces) is optimal within the regularity/decomposition framework of Abboud et al.",
+"math": "Does there exist a combinatorial (no fast matrix multiplication) algorithm for n×n Boolean matrix multiplication, or triangle detection, running in n³/2^{ω(√log n)} time? Barrier alternative: is the Cui–Liu–Woodruff 2^{O(d²)}-piece decomposition optimal within the regularity/decomposition framework of Abboud–Fischer–Kelley–Lovett–Meka?",
+"difficulty": 4.5,
+"reason": "removed Nov 2026: not a precise statement (\"combinatorial\" undefined)",
+"grade_was": "B"
 }
 ]

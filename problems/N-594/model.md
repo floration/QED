@@ -1,16 +1,30 @@
-# N-594 — Firefighter on Z³
+# N-594 — Critical linear firefighter rate on Z^3
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** How many firefighters per turn are needed to contain a fire in 3D, as a precise growth rate?
+Grade B · QED Extension · Combinatorics
 
-**Math:** Determine $\lim_{t\to\infty}f(t)/t$ for the minimal firefighters needed to contain fire on $\mathbb{Z}^3$ by time $t$.
+**Plain words:** On the 3D grid, a finite fire spreads to all unprotected neighbours each step, and at step t you may protect about ct new vertices. It is known that linear growth is the right order. Elementary arguments show that rate c>8 always contains the fire and that c<8/243 does not. Narrow this gap, or find the exact critical rate.
+
+**Math:** Let c* = inf{c : for every finite initial fire B_0 ⊂ Z^3 there is a protection schedule with at most ⌊c t⌋ newly protected vertices at step t that keeps the total burnt set finite}. Known (QED-derived, elementary): 8/243 ≤ c* ≤ 8 (bound field and W); M additionally records 64/243 ≤ c* ≤ 48/7 (not independently checked here; numerics suggest a static ℓ^4-ball wall gives ≈ 6.4). Target: prove c* > 64/243, i.e. some rate c > 64/243 fails to contain some finite outbreak.
+
+**Credit:** Extension of Develin-Hartke (arXiv:math/0409195) and Dyer-Martinez-Pedroza-Thorne (arXiv:1507.03050, Cor. 4); o(t) failure from arXiv:2002.11205.
+
+**QED results so far (reviewer-derived; check before relying on them):** c* >= 8/243 (~0.033), elementary: Loomis-Whitney gives |vertex boundary of B| >= |B|^{2/3}; for c<2a^2-6a^3 with a=2/9, a large initial cube burns forever by induction b_t >= (a(t+T0))^3. Using the asymptotically sharp Wang-Wang vertex isoperimetry (l1-balls, constant 4(3/4)^{2/3}) the same argument heuristically gives ~32/27, not checked rigorously c* <= 8, elementary: protect the l1-sphere |x|_1=D (4D^2+2 vertices) before step D-R; c>8 suffices for large D.
+
+**References:**
+- https://arxiv.org/abs/math/0409195
+- https://arxiv.org/abs/1507.03050
+- https://arxiv.org/abs/2002.11205
+- https://arxiv.org/pdf/2307.10081
 
 Difficulty estimate: 2.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N594.Claim` or a proof of `¬ OpenProblems.N594.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-594/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N594.Claim` or a proof of `¬ OpenProblems.N594.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-594/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-594` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

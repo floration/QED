@@ -1,11 +1,28 @@
 {
  "id": "N-637",
- "title": "Strauss exponent for an oscillating source",
+ "title": "Does an oscillating source lower the Strauss exponent?",
  "area": "PDE",
  "difficulty": 3.2,
- "plain": "The wave equation with source |u|^p in 3D has small-data global existence exactly above the Strauss exponent 1+√2. Find the threshold when the source is multiplied by cos t.",
- "math": "For $u_{tt}-\\Delta u=\\cos(t)\\,|u|^p$ on $\\mathbb R^{1+3}$ with data $\\varepsilon(f,g)$, $f,g\\in C_c^\\infty$, determine $p_c$ such that for $p>p_c$ solutions are global for all small $\\varepsilon$, and for $1<p<p_c$ some data blow up for all small $\\varepsilon$; decide whether $p_c=1+\\sqrt2$.",
+ "grade": "A",
+ "provenance": "Original",
+ "results": "Bound p_c<=1+sqrt2 is correct: John/Zhou iteration uses only |F(u)|<=C|u|^p and |F(u)-F(v)|<=C(|u|+|v|)^{p-1}|u-v|, both hold for g(t)|u|^p. The 'resonance predicts 2' heuristic (exp of int t^{1-p}) is arithmetically right but not an argument; a normal-form attempt (H''=g) just recycles the oscillating factor, so nothing is proved.",
+ "premise_risks": [
+  "arXiv:2609.28389 (2026 preprint): cited background on Strauss-type problems with time-dependent coefficients; the statement does not depend on it."
+ ],
+ "plain": "For the 3D wave equation with source |u|^p, small smooth data give global solutions exactly when p > 1+√2 (Strauss). Multiply the source by a factor that oscillates periodically in time with average zero, such as cos t. The global-existence proof still works above 1+√2. Every blow-up proof below it breaks, because they all need the source to be positive. Is the true threshold strictly smaller?",
+ "math": "Let $g$ be smooth, $2\\pi$-periodic, $\\int_0^{2\\pi}g=0$, $g\\not\\equiv0$ (model $g=\\cos t$). For $u_{tt}-\\Delta u=g(t)|u|^p$ on $\\mathbb R^{1+3}$ with data $\\varepsilon(f,h)$, $f,h\\in C_c^\\infty$ (solutions in the usual weak/mild sense, e.g. $C([0,T);H^1)$ with John-type weighted bounds), let $p_c(g)=\\inf\\{p>1:\\forall f,h\\ \\exists\\varepsilon_0>0$ such that the solution is global for all $0<\\varepsilon<\\varepsilon_0\\}$. Since John/Zhou/Glassey global existence uses only $|g|u|^p|\\lesssim|u|^p$ and the matching Lipschitz bound, $p_c(g)\\le1+\\sqrt2$. Is $p_c(g)<1+\\sqrt2$? Determine $p_c(g)$ and whether it depends on $g$ (a heuristic predicts 2). For $1<p<p_c(g)$, determine the lifespan $T_\\varepsilon$ as $\\varepsilon\\to0$ for suitable data.",
  "novelty": 7,
- "importance": 4,
- "value": 6
+ "importance": 5,
+ "value": 6,
+ "formal_status": "not_formalized",
+ "lean_gap": "Statement left as sorry by design.",
+ "refs": [
+  "https://arxiv.org/pdf/1705.03965",
+  "https://ricerca.uniba.it/retrieve/df4c0680-37be-4856-a2cb-00c79cabccc2/Postprint%20DAbbiccoLucenteReissig2015%20JDE.pdf",
+  "https://arxiv.org/pdf/2306.11471",
+  "https://arxiv.org/pdf/1110.4454",
+  "https://arxiv.org/pdf/2306.11471",
+  "https://arxiv.org/html/2609.28389",
+  "https://arxiv.org/pdf/1705.03965"
+ ]
 }

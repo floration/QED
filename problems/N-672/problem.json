@@ -1,0 +1,24 @@
+{
+ "id": "N-672",
+ "title": "A uniformly samplable counterexample to the poly-time low-degree conjecture",
+ "area": "Complexity",
+ "difficulty": 4.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Mao, The Polynomial-Time Low-Degree Conjecture is False, arXiv:2607.20318 (2026), Sec. 4.",
+ "premise_risks": [
+  "arXiv:2607.20318 (Mao, 2026 preprint): the whole problem assumes Mao's construction (Reed-Muller subspace/trace functions, the advice size, the linear-time rank test after resampling) is correct.",
+  "arXiv:2505.17360 (Buhai-Hsieh-Jain-Kothari, 2025 preprint): background quasi-polynomial counterexample; status of refereeing not verified."
+ ],
+ "plain": "Mao's counterexample (permutation-invariant graph distributions with zero low-degree advantage up to degree Theta(log^{r-1} n) that a linear-time rank test detects after constant-rate resampling) needs non-uniform advice for its Reed-Muller subspace / evaluation-point seed. Find a polynomial-time algorithm that outputs a good seed, giving a uniformly poly-time samplable counterexample; or show that every uniformly samplable permutation-invariant distribution with vanishing degree-polylog advantage is hard for poly-time noise-robust tests (a repaired conjecture).",
+ "math": "For some fixed r>=3, give a single randomized algorithm that, given 1^n, samples in expected poly(n) time from a permutation-invariant distribution P_n on n-vertex graphs whose low-degree advantage over G(n,1/2) vanishes up to degree D_n=Theta((log n)^{r-1}), while after independent edge resampling at a fixed rate delta>0 a poly-time test distinguishes it from G(n,1/2) w.p. 1-o(1). A sufficient route via Mao's construction: find in poly(n) time evaluation points with every <=L of the vectors phi(x_i) linearly independent.",
+ "formal_status": "not_formalized",
+ "lean_gap": "Statement left as sorry by design (no complexity-class infrastructure).",
+ "refs": [
+  "Mao, The Polynomial-Time Low-Degree Conjecture is False, arXiv:2607.20318",
+  "Buhai, Hsieh, Jain, Kothari, The Quasi-Polynomial Low-Degree Conjecture is False, arXiv:2505.17360",
+  "Hopkins, Statistical inference and the sum of squares method, PhD thesis 2018",
+  "arXiv:2607.20318",
+  "arXiv:2505.17360"
+ ]
+}

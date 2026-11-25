@@ -1,16 +1,26 @@
-# N-626 — Sup norms on the Fermat quartic
+# N-626 — Maximal eigenfunction growth beyond surfaces of revolution
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** On a sphere, some eigenfunctions pile up at the poles as much as possible. Show this cannot happen on the surface x⁴+y⁴+z⁴ = 1.
+Grade B · QED Curated · Analysis
 
-**Math:** Let $S=\{x^4+y^4+z^4=1\}$ with the induced metric and $\Delta\varphi=-\lambda\varphi$, $\|\varphi\|_{L^2(S)}=1$. Prove that $\|\varphi\|_{L^\infty(S)}=o(\lambda^{1/4})$ as $\lambda\to\infty$.
+**Plain words:** On the round sphere, some eigenfunctions are as peaked as theory allows, because every geodesic leaving the pole comes back to it. Sogge and Zelditch proved that on any real-analytic surface, maximally peaked eigenfunctions force such a 'pole'. Is rotational symmetry also forced: must such a surface be a surface of revolution?
 
-Difficulty estimate: 2.4/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $(M,g)$ be a compact boundaryless real-analytic Riemannian surface with $\Delta_g e_j=-\lambda_j^2e_j$, $\|e_j\|_{L^2}=1$. Say $g$ has maximal eigenfunction growth if $\limsup_j \|e_j\|_{L^\infty}/\lambda_j^{1/2}>0$ for some orthonormal eigenbasis. Decide whether every such $(M,g)$ admits a nontrivial isometric $S^1$-action, i.e. is a surface of revolution. (Necessary condition, Sogge-Zelditch 2016: $M$ has a pole $p$, meaning all geodesics from $p$ return smoothly closed at a common time $2T_p$.)
+
+**Credit:** C. D. Sogge and S. Zelditch, 'Focal points and sup-norms of eigenfunctions' (arXiv:1311.3999) and its two-dimensional addendum (arXiv:1409.2063, Rev. Mat. Iberoam. 2016).
+
+**References:**
+- https://arxiv.org/abs/1311.3999
+- https://arxiv.org/abs/1409.2063
+
+Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N626.Claim` or a proof of `¬ OpenProblems.N626.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-626/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N626.Claim` or a proof of `¬ OpenProblems.N626.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-626/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs real-analytic Riemannian surfaces, the Laplace-Beltrami spectral theory, and isometric circle actions.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-626` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

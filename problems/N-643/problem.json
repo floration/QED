@@ -1,11 +1,19 @@
 {
  "id": "N-643",
- "title": "Critical NLS mass on the cube",
+ "title": "Critical NLS blow-up threshold on the cube surface",
  "area": "PDE",
  "difficulty": 3.5,
- "plain": "Focusing cubic Schrödinger blow-up in 2D needs the ground-state mass. On a cube surface the corners should lower the threshold to three quarters of it.",
- "math": "On the flat unit-cube surface $S$, consider $iu_t+\\Delta u+|u|^2u=0$. Prove: $H^1$ data with $\\|u_0\\|_2^2<\\tfrac34\\|Q\\|_{L^2(\\mathbb R^2)}^2$ give global solutions, and for every $m>\\tfrac34\\|Q\\|_2^2$ there is $H^1$ data of mass $m$ blowing up in finite time.",
- "novelty": 7,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Extension of Weinstein (Comm. Math. Phys. 1983) mass-critical threshold; related Strichartz work on flat cones by Ford and by Blair-Ford-Marzuola.",
+ "plain": "In the plane, the focusing cubic Schrödinger equation needs at least the ground-state mass to blow up. On the surface of a cube, each corner is a cone with total angle 3π/2, which can hold a 'three-quarter' ground state. So the blow-up threshold should drop to three quarters of the planar one, and the claim is that it does exactly that.",
+ "math": "Let $S$ be the surface of the unit cube with its flat metric, and let $\\Delta$ be the Friedrichs extension of the Laplace–Beltrami operator on $C_c^\\infty(S\\setminus\\{\\text{vertices}\\})$. Let $Q$ be the ground state of $\\Delta Q-Q+Q^3=0$ on $\\mathbb R^2$, and put $m_*=\\tfrac34\\|Q\\|_{L^2(\\mathbb R^2)}^2$. For $iu_t+\\Delta u+|u|^2u=0$ on $S$, prove: (i) every $u_0\\in H^1(S)$ with $\\|u_0\\|_2^2<m_*$ gives a global $H^1$ solution; (ii) for every $\\varepsilon>0$ there is $u_0\\in H^1(S)$ with $m_*<\\|u_0\\|_2^2<m_*+\\varepsilon$ whose solution blows up in finite time. (Stronger, optional: blow-up data exist for every mass $m>m_*$; also decide whether there is blow-up at mass exactly $m_*$.)",
+ "novelty": 6,
  "importance": 5,
- "value": 7
+ "value": 6,
+ "formal_status": "not_formalized",
+ "lean_gap": "Statement left as sorry by design. Literature check was not done by the original reviewer (search budget exhausted); worth a novelty search before publishing.",
+ "refs": [
+  "https://arxiv.org/html/2503.15142v3"
+ ]
 }

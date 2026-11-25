@@ -3,14 +3,22 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** The planar double pendulum with equal masses and arms is chaotic at moderate energies. Prove it is chaotic at every energy above the rest state, however small.
+Grade B · QED Original · Dynamics
 
-**Math:** Let $H$ be the Hamiltonian of the planar double pendulum with $m_1=m_2=\ell_1=\ell_2=g=1$, with minimum $E_0$. Prove that for every $E>E_0$ the flow on $\{H=E\}$ has positive topological entropy.
+**Plain words:** The planar double pendulum with equal masses and equal arms looks chaotic at moderate energies but almost regular at very low and very high energies. Prove that it has genuine (positive-entropy) chaos at every energy above the rest state.
 
-Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**Math:** Let $H(\theta_1,\theta_2,p_1,p_2)$ be the Hamiltonian of the planar double pendulum with $m_1=m_2=\ell_1=\ell_2=g=1$ on $T^*\mathbb T^2$, with minimum value $E_0$ (the hanging rest state). Prove that for every $E>E_0$ the Hamiltonian flow restricted to $\{H=E\}$ has positive topological entropy.
+
+**References:**
+- https://arxiv.org/pdf/2312.13436
+- https://arxiv.org/pdf/2403.07000
+
+Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N652.Claim` or a proof of `¬ OpenProblems.N652.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-652/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N652.Claim` or a proof of `¬ OpenProblems.N652.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-652/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-652` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

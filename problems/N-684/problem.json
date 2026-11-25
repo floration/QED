@@ -1,0 +1,18 @@
+{
+ "id": "N-684",
+ "title": "The complex of planar graphs",
+ "area": "Combinatorics",
+ "difficulty": 3.0,
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "Planar graphs on n labelled vertices form a simplicial complex, because deleting an edge keeps a graph planar. It is pure, since every maximal planar graph has 3n-6 edges. Its homology turns out not to be that of a wedge of top-dimensional spheres: already for n=6 it is concentrated two degrees lower and has 2-torsion. Determine its homology.",
+ "math": "Let $\\Pi_n$ be the simplicial complex on vertex set $E(K_n)$ whose faces are edge sets of planar graphs; it is pure of dimension $3n-7$. Determine $\\tilde H_*(\\Pi_n;\\mathbb Z)$, or at least $\\tilde H_*(\\Pi_n;\\mathbb Q)$, for all $n$. Known: $\\Pi_4$ is a simplex, $\\Pi_5=\\partial\\Delta^9\\cong S^8$. For $n=6$ (computed exactly): $\\tilde H_*(\\Pi_6;\\mathbb Q)$ is $\\mathbb Q^{15}$ in degree $9=3n-9$ and $0$ elsewhere; $\\tilde H_*(\\Pi_6;\\mathbb F_2)$ is $\\mathbb F_2^{15},\\mathbb F_2,\\mathbb F_2$ in degrees $9,10,11$, so $\\tilde H_{10}(\\Pi_6;\\mathbb Z)$ has $2$-torsion and $\\Pi_6$ is not a wedge of spheres. The mod-2 top class is the sum of all triangulations: every face of dimension $3n-8$ of $\\Pi_6$ lies in an even number (2 or 4) of facets. Questions: (a) is $\\tilde H_*(\\Pi_n;\\mathbb Q)$ concentrated in degree $3n-9$ for all $n\\ge6$, and what is its rank and $S_n$-module structure? (b) Is $\\tilde H_{3n-7}(\\Pi_n;\\mathbb F_2)\\ne0$ for all $n\\ge5$? Is all torsion 2-torsion?",
+ "novelty": 7,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2012.01679",
+  "https://doi.org/10.1007/978-3-540-75859-4_7"
+ ]
+}

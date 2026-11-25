@@ -1,16 +1,31 @@
-# N-151 — Geodesic squares on surfaces
+# N-151 — Geodesic squares on convex surfaces
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-**Plain words:** Every smooth closed curve on a convex surface should pass through the corners of a square made of shortest paths.
+Grade B · QED Extension · Geometry
 
-**Math:** Prove every smooth simple closed curve on a smooth convex surface inscribes a geodesic quadrilateral with equal sides and equal diagonals.
+**Plain words:** On a smooth convex surface, measure distance by the length of the shortest path on the surface. Every smooth simple closed curve on the surface should contain four points that form a 'square' in this sense: four equal sides and two equal diagonals.
+
+**Math:** Let $S=\partial K$ for a convex body $K\subset\mathbb R^3$ with smooth boundary and positive Gaussian curvature, and let $d$ be the intrinsic distance on $S$. Prove that every smooth simple closed curve $\gamma\subset S$ contains four distinct points $p_1,p_2,p_3,p_4$, in this cyclic order along $\gamma$, with $d(p_1,p_2)=d(p_2,p_3)=d(p_3,p_4)=d(p_4,p_1)>0$ and $d(p_1,p_3)=d(p_2,p_4)$.
+
+**Credit:** Toeplitz 1911 (square peg problem); Schnirelmann 1944 (smooth case); constant-curvature surfaces: arXiv:2507.07945 (Naseri Sadr 2025)
+
+**Rests on recent unrefereed work. Check these premises first:**
+- arXiv:2507.07945 (2025 preprint, refereeing unclear): results for spheres and the hyperbolic plane; context only, Claim does not depend on it.
+
+**References:**
+- https://arxiv.org/abs/2507.07945
+- https://arxiv.org/abs/1001.0186
+- https://arxiv.org/abs/2103.13848
+- https://arxiv.org/html/2507.07945v1
 
 Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.N151.Claim` or a proof of `¬ OpenProblems.N151.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-151/Statement.lean`. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+Either a proof of `OpenProblems.N151.Claim` or a proof of `¬ OpenProblems.N151.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/N-151/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
 1. Claim it (optional but encouraged): open an issue titled `Claim N-151` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.

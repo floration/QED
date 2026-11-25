@@ -2,10 +2,22 @@
  "id": "N-636",
  "title": "Euler with reversed stretching",
  "area": "PDE",
- "difficulty": 6.0,
- "plain": "Flip the sign of the vortex-stretching term in the 3D Euler equations, keeping the usual Biot–Savart law. Do smooth solutions stay smooth forever?",
- "math": "Consider $\\omega_t+(u\\cdot\\nabla)\\omega=-S\\omega$ on $\\mathbb T^3$, where $u=\\nabla\\times(-\\Delta)^{-1}\\omega$ and $S=\\tfrac12(\\nabla u+\\nabla u^{T})$. Decide whether every $\\omega_0\\in C^\\infty(\\mathbb T^3)$ with mean zero yields a global smooth solution.",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Original",
+ "premise_risks": [
+  "arXiv:2602.13963 (2026 preprint, cited in refs): background on 1D/sign-of-stretching models only; the statement does not depend on it."
+ ],
+ "plain": "Flip the sign of the vortex-stretching term in the 3D Euler vorticity equation and keep advection and the Biot-Savart law. Do smooth solutions stay smooth forever, or can they blow up in finite time?",
+ "math": "On $\\mathbb T^3$ let $\\omega:\\mathbb T^3\\times[0,T)\\to\\mathbb R^3$ solve $\\partial_t\\omega+(u\\cdot\\nabla)\\omega=-S\\omega$, where $u=\\nabla\\times(-\\Delta)^{-1}(\\omega-\\langle\\omega\\rangle)$, $S=\\tfrac12(\\nabla u+\\nabla u^{T})$ and $\\langle\\omega\\rangle$ is the spatial mean. Decide whether every $\\omega_0\\in C^\\infty(\\mathbb T^3;\\mathbb R^3)$ with $\\nabla\\cdot\\omega_0=0$ generates a global smooth solution.",
  "novelty": 7,
  "importance": 5,
- "value": 6
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1701.04050",
+  "https://arxiv.org/abs/1905.06387",
+  "https://arxiv.org/abs/1203.5151",
+  "https://arxiv.org/pdf/2602.13963"
+ ]
 }
