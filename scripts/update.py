@@ -10,7 +10,8 @@ S={}
 for sol in glob.glob('solutions/*/*/Solution.lean'):
     d=os.path.dirname(sol); pid,user=d.split('/')[1:3]
     m=json.load(open(d+'/meta.json'))
-    S.setdefault(pid,[]).append(dict(user=user,model=m['model'],kind=m['kind'],size=size(sol),time=merged_time(sol)))
+    total=sum(size(x) for x in glob.glob(d+'/**/*.lean',recursive=True))   # all files of a multi-file solution
+    S.setdefault(pid,[]).append(dict(user=user,model=m['model'],kind=m['kind'],size=total,time=merged_time(sol)))
 out={}
 for pid,L in S.items():
     first=min(L,key=lambda x:x['time']); small=min(L,key=lambda x:(x['size'],x['time']))

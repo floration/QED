@@ -26,7 +26,7 @@ jobs:
           OK=1
           while read -r ST FN; do
             [ -z "$FN" ] && continue
-            if [ "$ST" = "added" ] && echo "$FN" | grep -Eq "^solutions/$ID/$AUTHOR/(Solution\.lean|meta\.json|README\.md)$"; then continue; fi
+            if [ "$ST" = "added" ] && echo "$FN" | grep -Eq "^solutions/$ID/$AUTHOR/(meta\.json|README\.md|([A-Za-z0-9][A-Za-z0-9_-]*/)*[A-Za-z0-9][A-Za-z0-9_.-]*\.lean)$"; then continue; fi
             if { [ "$ST" = "added" ] || [ "$ST" = "modified" ]; } && echo "$FN" | grep -Eq "^problems/$ID/partial/$AUTHOR/[A-Za-z0-9._-]+\.(md|txt|lean)$"; then continue; fi
             echo "Not auto-mergeable: $ST $FN"; OK=0
           done <<< "$FILES"
