@@ -1,0 +1,797 @@
+[
+ {
+  "assumption": "Unique Games Conjecture / Small-Set Expansion Hypothesis",
+  "title": "A super-constant-degree SoS integrality gap for Unique Games",
+  "W": "Construct Unique Games instances with value <= eps on which degree-d Sum-of-Squares has value >= 1-eps, for some d = omega(1) (any slowly growing function of n), or show degree-O(1) SoS achieves a (1-eps, delta) distinguishing guarantee on all UG instances.",
+  "M": "(Gap) For every eps>0 there is q=q(eps) (independent of n) and an n-variable Unique Games instance over alphabet [q] with optimum value <=eps on which the degree-d SoS relaxation has value >=1-eps, for some d=d(n)=omega(1). Or (algorithm) there exist eps,delta>0 such that for every q a degree-d(q) SoS relaxation (d independent of n) distinguishes UG instances of value >=1-eps from value <=delta; this refutes UGC unless P=NP.",
+  "why": "Known gap instances (short code, noisy hypercube) are solved by constant-degree SoS (Barak et al. 2012), so the canonical lower-bound evidence for UGC is missing; this is the sharpest SoS-side test of the conjecture.",
+  "status_notes": "UGC open; 2-to-2 Games theorem proved (Khot-Minzer-Safra 2018). Subexponential algorithm 2^{n^{poly(eps)}} (Arora-Barak-Steurer). To our knowledge no omega(1)-degree SoS integrality gap for UG is known (listed in Barak's SoS open problems). Not verified for 2025-26 developments.",
+  "grade": "A",
+  "refs": [
+   "Barak, Brandão, Harrow, Kelner, Steurer, Zhou, Hypercontractivity, sum-of-squares proofs, and their applications, STOC 2012, arXiv:1205.4484",
+   "Khot, Minzer, Safra, Pseudorandom sets in Grassmann graph have near-perfect expansion, FOCS 2018",
+   "Barak, Sum of Squares: open problems (lecture notes)"
+  ],
+  "id": "AS0-11",
+  "red_notes": "Posed by Barak (SoS open problems; Barak-Steurer survey arXiv:1404.5236). No superconstant-degree SoS gap for UG found in fresh searches through 2026; known gap instances fall to constant degree (BBHKSZ 2012, O-Donnell-Zhou arXiv:1211.1958). Original M fix: fixed alphabet q(eps), and an algorithm refutes UGC assuming P!=NP (not a quasi-poly 2-to-2 assumption).",
+  "red_refs": [
+   "arXiv:1205.4484",
+   "arXiv:1211.1958",
+   "arXiv:1404.5236",
+   "Khot-Minzer-Safra FOCS 2018"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "assumption": "Sunflower conjecture (Erdős-Rado)",
+  "title": "Breaking the log k barrier for 3-petal sunflowers",
+  "W": "Show every family of more than (o(log k))^k sets of size k (e.g. (log k)^{(1-c)k} or (log log k)^{O(k)}) contains a sunflower with 3 petals.",
+  "M": "Let f(k,3) be the least m such that every family of m distinct k-element sets contains a 3-petal sunflower. Known: f(k,3) <= (C log k)^k (ALWZ, Rao, Bell-Chueluecha-Warnke). Prove f(k,3) <= (eps(k) log k)^k for some eps(k)->0, e.g. f(k,3) <= (log k)^{(1-c)k} for a constant c>0.",
+  "why": "The robust-sunflower method is provably stuck at (O(w log k))^k; w=3 is the smallest open case of the Erdős-Rado conjecture and the most-studied.",
+  "status_notes": "Best bound O(w log k)^k (Alweiss-Lovett-Wu-Zhang 2020; Rao; Bell-Chueluecha-Warnke), with a matching Omega(log k)^{k-sqrt k} lower bound for robust sunflowers; a 2025 survey (arXiv:2509.14790) states the conjecture open. A 2026 claim for shifted families (arXiv:2606.02667) appears to have a gap and does not cover general families.",
+  "grade": "A",
+  "refs": [
+   "Alweiss, Lovett, Wu, Zhang, Improved bounds for the sunflower lemma, Annals of Math 2021",
+   "The Story of Sunflowers (survey), arXiv:2509.14790",
+   "Bell, Chueluecha, Warnke, Note on sunflowers, Discrete Math 2021"
+  ],
+  "id": "AS0-18",
+  "red_notes": "No 2025-26 general improvement found; Mishra arXiv:2606.02667 (v2, Jun 2026) claims only shifted families. The log k barrier for spread/robust methods is stated in Lovett PCMI notes (Ex. 2.2, (log k)^{(1-o(1))k}) and Rao survey (JLMS 2026). Category fit is weak: sunflower is a conjecture, not a widely used assumption, but the target is a real weakening, not a restatement.",
+  "red_refs": [
+   "Alweiss-Lovett-Wu-Zhang, Annals 2021",
+   "Rao, The story of sunflowers, JLMS 2026 / arXiv:2509.14790",
+   "Lovett, PCMI lecture notes: from sunflowers to thresholds",
+   "arXiv:2606.02667"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "id": "N-656",
+  "title": "Spikes at the squares",
+  "grade": "A",
+  "importance": 6,
+  "novelty": 7,
+  "value": 7,
+  "W": "On the half-line lattice, add a fixed spike of height λ at every perfect square. The free band (-2,2) then has no absolutely continuous spectrum, by Remling's theorem. Decide whether the spectrum inside the band is pure point (localized states) or singular continuous. A heuristic in the physics literature predicts singular continuous.",
+  "M": "Let $(Hu)(n)=u(n+1)+u(n-1)+\\lambda\\,\\mathbf 1_{\\{m^2:m\\ge1\\}}(n)\\,u(n)$ on $\\ell^2(\\mathbb N)$, $u(0)=0$, $\\lambda\\ne0$ fixed, and let $\\mu$ be the spectral measure of $\\delta_1$. Determine the spectral type of $\\mu|_{(-2,2)}$: is it pure point, purely singular continuous, or mixed? (Known: $\\mu_{ac}=0$ by Remling's theorem. Cheon–Exner–Šeba heuristically predict purely singular continuous spectrum for the continuum analogue; positive Lyapunov exponents of the spike-to-spike cocycle suggest pure point.)",
+  "why": "Sparse potentials with super-geometric gaps (x_{n+1}/x_n -> infinity) are a standard source of singular continuous spectrum (Pearson, Kiselev–Last–Simon). Polynomially sparse spikes are the untouched regime between those and periodic or random potentials. Taking the transfer matrices from one spike to the next turns this operator into a quasi-periodic SL(2,R) cocycle with rotation 2k, where E = 2 cos k. So the frequency of the cocycle depends on the energy, and the existing localization machinery does not apply directly. Cheon–Exner–Šeba conjectured singular continuous spectrum for the continuum analogue, whereas positive Lyapunov exponents point to localization. Deciding which is right tests the methods in a new way.",
+  "issues": "I defined the Laplacian convention, the boundary condition and the spectral measure. I changed 'prove pure point' to 'determine the spectral type', with pure point as the conjecture, because the answer is not certain. Attack: with E=2cos k, the spike-to-spike cocycle is C·diag(e^{ik(2n+1)},e^{-ik(2n+1)}) with a fixed matrix C. Herman's subharmonicity bound gives a Lyapunov exponent (per spike) of at least log sqrt(1+λ²/(4 sin²k)). Numerics with λ=1 and 20000 spikes match this bound to 3 digits at E=0.3, -1.3, 1.7, 0.05, and give exponent 0 at E=1, where k/π is rational. So generalized eigenfunctions should decay like exp(-γ√x), which is square-summable. Two things stand in the way of a proof: the frequency is tied to the energy, and the phase is fixed at k = ω/2, which is a reflection-symmetric phase. Gordon-type arguments rule out eigenvalues at Liouville k, but that set has measure zero. I found no paper that settles the case x_n=n^2. Kiselev–Last–Simon require x_n/x_{n+1}->0, and Cheon–Exner–Šeba is heuristic and numerical only.",
+  "refs": [
+   "https://arxiv.org/pdf/quant-ph/0004058",
+   "https://ar5iv.labs.arxiv.org/html/2110.08684",
+   "https://arxiv.org/pdf/math-ph/0210054"
+  ],
+  "red_notes": "No paper settles x_n=n². Cheon–Exner–Šeba (quant-ph/0004058) use x_n=n² explicitly and claim singular continuous spectrum conditionally, backed only by numerics. Arxiv 2110.08684 and 2508.18599 are off-target. The old M said 'conjecturally pure point', which contradicts W's 'heuristic predicts sc', so I made M neutral.",
+  "red_refs": [
+   "https://arxiv.org/abs/quant-ph/0004058",
+   "https://arxiv.org/abs/2110.08684",
+   "https://arxiv.org/abs/2508.18599"
+  ],
+  "partial": "Correct with a caveat. The spike gaps are 2m+1, so the spike-to-spike map is C·R(k(2m+1)), a one-frequency analytic cocycle over rotation by 2k. Herman's subharmonicity gives L ≥ log|C_11| = log sqrt(1+λ²/(4sin²k)). This bounds the phase-averaged exponent only: at the fixed phase θ=k (coupled to the frequency) the limit is not guaranteed, so eigenfunction decay is heuristic. The Remling argument (every right limit is 0 or a single non-reflectionless bump) is correct.",
+  "track": "core"
+ },
+ {
+  "id": "C-100",
+  "title": "Is the measure of the hyperbolic real quadratic parameters computable?",
+  "grade": "A",
+  "importance": 6,
+  "novelty": 6,
+  "value": 7,
+  "W": "For real c between −2 and 1/4, the map x ↦ x²+c has an attracting cycle for an open dense set of c, yet the chaotic parameters have positive length (Jakobson). Is the total length of the parameters with an attracting cycle a computable number? It can be approximated from below by listing windows, but no known method approximates it from above.",
+  "M": "Let $H=\\{c\\in[-2,1/4]:\\ x\\mapsto x^2+c\\text{ has an attracting periodic orbit}\\}$. Is the Lebesgue measure $\\lambda(H)$ a computable real number? ($H$ is open and its components can be certified by interval arithmetic, so $\\lambda(H)$ is lower semicomputable; Jakobson's theorem gives $\\lambda(H)<9/4$.) Equivalently: is the measure of the set of stochastic (Collet–Eckmann) parameters lower semicomputable?",
+  "why": "This is a basic constant of one-dimensional dynamics, and no rigorous nontrivial upper bound on it is known. Computer-assisted Jakobson-type schemes (Luzzatto–Takahashi; Golmakani–Koudjinan–Luzzatto–Pilarczyk) certify expansion, not stochasticity. A positive answer would give a certified two-sided estimate; a negative one would be a striking non-computability result for a natural dynamical quantity.",
+  "issues": "Checked the reduction: the stochastic set is a countable union over CE constants of intersections of finite-time conditions. That makes each piece upper semicomputable, which is the wrong direction, so the answer does not follow from the obvious approach. Golmakani et al. (2020) certify an escape-time property on about 90% of a parameter piece but explicitly do not prove stochasticity. Found no paper on computability of λ(H). Statement is precise (parabolic parameters have measure zero).",
+  "refs": [
+   "https://arxiv.org/abs/math/0508302",
+   "https://arxiv.org/abs/2004.13444",
+   "https://arxiv.org/pdf/1504.00116",
+   "https://annals.math.princeton.edu/2002/156-1/p01"
+  ],
+  "red_notes": "Open: I found no computability result for λ(H). Correction to 'why': a rigorous nontrivial upper bound does exist. Luzzatto–Takahashi (math/0508302) prove that the stochastic set has measure ≥10^-5000, so λ(H) ≤ 9/4−10^-5000. Golmakani et al. (2505.20495) explicitly do not bound the measure. The answer is borderline A and the fix to 'why' is needed.",
+  "red_refs": [
+   "https://arxiv.org/abs/math/0508302",
+   "https://arxiv.org/abs/2505.20495",
+   "https://arxiv.org/abs/2501.00006"
+  ],
+  "partial": "The first reviewer's semicomputability check is correct. λ(H) is lower semicomputable. Each CE(C,γ) piece is an intersection of finite-time conditions, so it is only upper semicomputable, which is the wrong direction. The 'equivalently' clause is valid through Lyubich's regular-or-stochastic theorem and Avila–Moreira (almost every stochastic parameter is CE).",
+  "track": "core"
+ },
+ {
+  "id": "N-427",
+  "title": "Forced Navier–Stokes blow-up at a no-slip wall",
+  "grade": "A",
+  "importance": 7,
+  "novelty": 7,
+  "value": 7,
+  "W": "In 2026 it was shown that a smooth, compactly supported force can drive the 3D Navier–Stokes equations, started from rest, to blow up in finite time. Inside a domain this can simply be copied away from any wall. Show that blow-up can also happen at the wall itself: in a half-space with the no-slip condition, the velocity becomes unbounded at a point of the boundary.",
+  "M": "Let $\\mathbb R^3_+=\\{x_3>0\\}$, $\\nu>0$. Construct $f\\in C^\\infty_c(\\overline{\\mathbb R^3_+}\\times(0,\\infty);\\mathbb R^3)$ and a solution $(u,p)$ of $\\partial_t u-\\nu\\Delta u+(u\\cdot\\nabla)u+\\nabla p=f$, $\\nabla\\cdot u=0$ in $\\mathbb R^3_+\\times(0,T)$, $u|_{x_3=0}=0$, $u(\\cdot,0)=0$, with $u\\in C^\\infty(\\overline{\\mathbb R^3_+}\\times[0,T))$, $\\sup_{t<T}\\|u(t)\\|_{L^2}<\\infty$ and $\\limsup_{t\\uparrow T}\\|u(t)\\|_{L^\\infty}=\\infty$, such that $u$ stays bounded on $\\{x_3>r\\}\\times[0,T)$ for every $r>0$ (all singular points lie on the wall).",
+  "why": "The 2026 forced blow-up of Navier–Stokes is an interior, axisymmetric-vortex construction; inside a domain it can be placed in a ball away from the boundary, so interior blow-up in bounded domains or half-spaces is already essentially available. The no-slip wall is where real flows generate vorticity (boundary layers, Prandtl theory) and where regularity theory is weakest (e.g. Seregin–Šverák boundary criteria), so a boundary singularity would test whether the mechanism survives the vanishing of velocity on the wall.",
+  "issues": "Original M allowed interior blow-up, which follows from Cao–Chi–Nie (arXiv 2609.10262, Sect. 3.7: blow-up balls inside bounded domains with no-slip) by placing the OpenAI construction away from the wall; tightened to require the singular set on the boundary. Specified force class (smooth up to the wall, compact support in time positive), solution class, finite energy, and meaning of blow-up. No paper found constructing a boundary singularity; related work (Kang, Chang–Kang on singular velocity near boundary for localized forces) gives non-blow-up boundary singular behaviour for weak solutions.",
+  "refs": [
+   "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+   "https://arxiv.org/pdf/2609.10262",
+   "https://arxiv.org/pdf/2405.00369",
+   "https://arxiv.org/pdf/2303.05746",
+   "https://arxiv.org/pdf/1508.05313"
+  ],
+  "red_notes": "Cited sources check out. The OpenAI construction is on R³ and T³ with a C_c^∞ force and finite energy. Cao–Chi–Nie (2609.10262, Cor. 3.14 and Prop. 3.16) place blow-up only in interior balls and have no half-space and no boundary singularity. Lei–Ren (2609.35406) work on R³ only. Old M forced the singular set to be one point, which is needlessly strict for an axisymmetric mechanism (it could be a ring on the wall). Risk: an obvious follow-up that may be solved soon.",
+  "red_refs": [
+   "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+   "https://arxiv.org/abs/2609.10262",
+   "https://arxiv.org/abs/2609.35406"
+  ],
+  "partial": null,
+  "track": "core"
+ },
+ {
+  "id": "N-266",
+  "title": "Codes avoiding square distances",
+  "grade": "A",
+  "importance": 7,
+  "novelty": 8,
+  "value": 7,
+  "W": "Find the largest set of binary strings of length n in which no two differ in a perfect-square number of positions. Does it grow exponentially in n, and if so at what rate? This is a hypercube version of Sarkozy's theorem on square differences.",
+  "M": "Let $A(n)=\\max\\{|C|: C\\subseteq\\{0,1\\}^n,\\ d_H(x,y)\\notin\\{1,4,9,16,\\dots\\}\\ \\forall x\\ne y\\in C\\}$. Decide whether $A(n)=2^{o(n)}$. More precisely, determine $\\liminf_n\\frac1n\\log_2A(n)$ and $\\limsup_n\\frac1n\\log_2A(n)$ (in particular whether they are equal).",
+  "why": "It is a Sarkozy-Furstenberg question (sets with no square difference) moved to the Hamming cube, sitting between Frankl-Rodl (forbid one distance, giving (2-delta)^n) and Frankl-Wilson-type modular bounds (forbidding residue classes gives polynomial size). Squares avoid no residue class yet are sparse, so neither tool settles it, and the answer decides whether exponential codes must realize square distances.",
+  "issues": "Original asked for lim, whose existence is unclear (concatenation does not preserve square-freeness of distances), so it was replaced with liminf/limsup plus the yes/no core. Attack: Frankl-Rodl with an even square in [eps n,(1-eps)n] gives a rate below 1. Natural constructions fail: product codes give subset sums of distances, which hit squares; mod-4 codes (distances 2,3 mod 4) reduce to Oddtown/Frankl-Wilson and have polynomial size; codes with all distances between two consecutive squares are near-equidistant and polynomial by Alon's rank lemma. So the rate might be 0, and it is open either way. Exact small values computed: A(1..7)=1,2,4,5,10,12,14. No literature found on infinite forbidden sets such as the squares; recent work covers single distances and arithmetic progressions (Dong-Gao-Liu-Ouyang-Zhou).",
+  "refs": [
+   "https://arxiv.org/pdf/2504.12296v3",
+   "https://arxiv.org/pdf/1402.6294",
+   "https://people.maths.ox.ac.uk/keevash/papers/franklrodl-journal.pdf",
+   "https://arxiv.org/pdf/2604.05607",
+   "https://arxiv.org/pdf/2305.00433"
+  ],
+  "red_notes": "No literature on forbidding square (or any infinite sparse) distance sets. The new arXiv 2611.04523 treats only one forbidden distance. The exponential-vs-subexponential core is open. Fix the 'issues' text: the true bounds are exp(c n^{1/3}) <= A(n) <= (2-delta)^n, not 'possibly polynomial'.",
+  "red_refs": [
+   "https://arxiv.org/pdf/2611.04523",
+   "https://arxiv.org/pdf/2604.05607",
+   "https://arxiv.org/pdf/2506.18782",
+   "https://people.maths.ox.ac.uk/keevash/papers/franklrodl-journal.pdf"
+  ],
+  "partial": "Small values A(1..7)=1,2,4,5,10,12,14 re-verified by exact max-clique. Frankl-Rodl rate<1 argument is correct. The claim that codes with all distances between consecutive squares are polynomial is only correct for windows at linear distance. Constant-weight codes with w~k^2/2, w~n^{2/3}, and pairwise intersections <k have all distances in (k^2,(k+1)^2). Gilbert-Varshamov then gives A(n)>=exp(c n^{1/3}), which is superpolynomial. Alon's lemma caps this window method at 2^{O(n^{1/3} log n)}.",
+  "track": "core"
+ },
+ {
+  "id": "C-102",
+  "title": "Deciding limit cycles",
+  "grade": "A",
+  "importance": 7,
+  "novelty": 5,
+  "value": 7,
+  "W": "Given a polynomial vector field in the plane with rational coefficients, is there an algorithm that decides whether it has a limit cycle, that is, an isolated closed orbit? Hilbert's 16th problem asks how many limit cycles there can be. This asks only whether their existence is algorithmically decidable. The same question can be asked for closed orbits of any kind, including those in period annuli around centres.",
+  "M": "Let $\\mathcal L=\\{(P,Q)\\in\\mathbb Q[x,y]^2:\\ \\dot x=P,\\dot y=Q$ has a limit cycle, i.e. a non-constant periodic orbit that has a neighbourhood containing no other periodic orbit$\\}$ and $\\mathcal P=\\{(P,Q):$ the system has a non-constant periodic orbit in $\\mathbb R^2\\}$, with inputs given by their rational coefficient lists (degree unbounded). (a) Is $\\mathcal L$ decidable? (b) Is $\\mathcal P$ decidable? (c) Are $\\mathcal L,\\mathcal P$ or their complements recursively enumerable? (d) Same questions restricted to degree 2.",
+  "why": "Poincare-Bendixson confines planar dynamics so strongly that undecidability constructions which work in dimension 3 and higher (polynomial ODEs simulating Turing machines) do not apply. Known noncomputability results for counting periodic orbits (Graca-Zhong) use real computable coefficients and discontinuity, not exact rational input. So decidability of existence is a sharp test of whether planar polynomial dynamics is 'algorithmically tame'. Part (b) is tied to the center-focus problem, which Il'yashenko showed is not algebraically solvable.",
+  "issues": "Literature: Graca-Zhong (Computing the exact number of periodic orbits for planar flows) show that the map from a polynomial field to its number of periodic orbits is noncomputable. But their families have computable real, not rational, coefficients, and the result concerns counting, not existence. Earlier Graca-Buescu-Campagnolo give semi-decidability of hyperbolic periodic orbits for structurally stable systems and leave decidability open. I found no paper settling (a) or (b) for rational input. Not tied to a specific degree, so (a) and (b) are uniform questions. Note that for each fixed degree, center conditions are given by a finitely generated Bautin ideal, so non-uniform questions can become trivially 'decidable'. Hence the uniform encoding matters. I added (c) as a natural weaker form. Hyperbolic limit cycles can be certified by interval methods, so 'has a hyperbolic limit cycle' is r.e. The hard cases are non-hyperbolic cycles and proving non-existence.",
+  "refs": [
+   "https://arxiv.org/abs/2101.07701",
+   "https://core.ac.uk/download/61500783.pdf",
+   "https://encyclopediaofmath.org/wiki/Algebraic_decidability_of_local_classification_problems",
+   "https://arxiv.org/abs/1602.00113"
+  ],
+  "red_notes": "Still open. Graca-Zhong (2101.07701) get undecidable existence only with computable-real coefficients. The new 2609.22058 proves Lyapunov stability undecidable for rational fields in dimension 5 and says the general N=2 case remains open, which supports novelty. Define 'limit cycle' explicitly; I added a quadratic sub-question.",
+  "red_refs": [
+   "https://arxiv.org/abs/2101.07701",
+   "https://arxiv.org/pdf/2609.22058",
+   "https://core.ac.uk/download/61500783.pdf"
+  ],
+  "partial": "The claim that hyperbolic limit cycles are r.e. via interval certification is correct. The remark that fixed-degree versions 'can become trivially decidable' is wrong. Each fixed-degree set is still infinite. Bautin's finite generation only gives non-uniform decidability of the local center condition, not of whether cycles exist.",
+  "track": "core"
+ },
+ {
+  "id": "N-661",
+  "title": "Hearing tetrahedra",
+  "grade": "A",
+  "importance": 7,
+  "novelty": 3,
+  "value": 7,
+  "W": "Triangles can be heard: their Dirichlet spectrum determines them up to congruence (Durso 1988; Grieser–Maronna 2013). Show the same for tetrahedra.",
+  "M": "Let $T_1,T_2\\subset\\mathbb R^3$ be (nondegenerate) tetrahedra whose Dirichlet Laplacian eigenvalues, counted with multiplicity, coincide. Prove that $T_1$ and $T_2$ are congruent.",
+  "why": "This is the natural next case of Kac's question after triangles. The heat-trace invariants of a polyhedron (volume, surface area, an edge sum weighted by dihedral angles, vertex terms) give about four numbers, but a tetrahedron has six degrees of freedom, so a proof would need new input from the wave trace or periodic billiard orbits in 3D polyhedra. It would be the first 'hearable' class of 3D polyhedra with more than a few parameters.",
+  "issues": "Tried the heat-invariant count: 4 invariants against 6 parameters, so the heat trace cannot be enough; the problem is not trivial. Found no proof and no isospectral counterexample. The surveys found (Grieser–Maronna, Rowlett et al.) state the polygon/triangle results and do not list tetrahedra as solved. Likely a known folklore question, so novelty is low. Added 'with multiplicity'.",
+  "refs": [
+   "https://arxiv.org/abs/1208.3163",
+   "https://arxiv.org/pdf/2406.18369",
+   "https://arxiv.org/pdf/1911.06758",
+   "https://arxiv.org/pdf/2009.00714"
+  ],
+  "red_notes": "No proof or isospectral tetrahedron pair found. Grieser-Maronna mention higher dimensions only in passing, not as a problem, and recent surveys (Mardby/Rowlett 2023, Krejcirik 2609.28602) do not settle it. Folklore with low novelty, and the wave-trace route meets the open existence problem for periodic billiards in tetrahedra. M is fine; congruence correctly includes reflections.",
+  "red_refs": [
+   "https://arxiv.org/abs/1208.3163",
+   "https://arxiv.org/pdf/1911.06758",
+   "https://arxiv.org/pdf/2012.06465",
+   "https://arxiv.org/pdf/2609.28602"
+  ],
+  "partial": "The heat-invariant count is correct. The polyhedral Dirichlet heat trace gives volume, surface area, the edge sum of L_e times a function of the dihedral angle, and a vertex term (not explicit for general solid angles): 4 numbers against 6 congruence parameters. So the heat trace alone is insufficient.",
+  "track": "core"
+ },
+ {
+  "id": "N-653",
+  "title": "Ising spin at a cube corner",
+  "grade": "A",
+  "importance": 5,
+  "novelty": 7,
+  "value": 7,
+  "W": "Glue three quarter-planes of the square grid into the surface of an infinite cube corner (a flat cone of angle 3π/2) and run the critical Ising model. Prove that the spin at the corner decorrelates with the exponent 7/24 predicted by conformal field theory.",
+  "M": "Let $\\Gamma$ be the union of the three quadrant lattices $\\mathbb Z_{\\ge0}^2$ on the faces of $\\partial\\mathbb R_{\\ge0}^3$, glued along the coordinate axes, with apex $o$ (degree 3; every other vertex has degree 4). Let $\\langle\\cdot\\rangle$ be the infinite-volume limit of the nearest-neighbour Ising model at $\\beta_c=\\tfrac12\\log(1+\\sqrt2)$ with free boundary conditions on $\\Gamma\\cap\\{\\|x\\|_\\infty\\le n\\}$. Prove $\\langle\\sigma_o\\sigma_x\\rangle\\asymp|x|^{-7/24}$ as $|x|\\to\\infty$.",
+  "why": "Rigorous conformal invariance of Ising spin correlations (Chelkak–Hongler–Izyurov) is proved for planar domains, and a conical point is the simplest source of curvature. Under $w=z^{4/3}$ the apex spin acquires scaling dimension $\\tfrac{2\\pi}{\\alpha}\\cdot\\tfrac18=\\tfrac16$, so the two-point exponent is $\\tfrac16+\\tfrac18=\\tfrac7{24}$. This exponent depends on the geometry and differs from both the bulk value $1/4$ and the corner values. Proving it would extend discrete complex analysis to cone singularities.",
+  "issues": "I checked the CFT computation: $|w|^{-1/4}|w'(x)|^{1/8}$ with $w=z^{4/3}$ gives $|x|^{-1/3+1/24}=|x|^{-7/24}$. Physics papers confirm CFT predictions numerically for conical lattices (Costa-Santos, free-energy log terms), but I found no rigorous spin-exponent result on cones. Chelkak–Izyurov–Mahfouf (arXiv:2104.12858) and CHI cover only planar or isoradial planar settings. I specified β_c and the infinite-volume measure, which were missing, and noted that the gluing is a locally flat square lattice away from $o$. Risk: this may be within reach of existing spinor and s-holomorphic methods.",
+  "refs": [
+   "https://arxiv.org/pdf/2103.10263",
+   "https://arxiv.org/abs/2104.12858",
+   "https://arxiv.org/abs/cond-mat/0306396",
+   "https://ar5iv.arxiv.org/html/1712.04192"
+  ],
+  "red_notes": "No rigorous cone-apex spin result found. Chelkak's survey (1712.04192, Rem. 3.4) mentions only cone angles in 2pi+4piZ as natural for the spinor and harmonicity tools; 3pi/2 is outside that class, so the problem is non-routine. Gamma is an abstract planar graph, but a flat isoradial or s-embedding with critical weights is not obvious. It may still yield to spinor methods.",
+  "red_refs": [
+   "https://arxiv.org/pdf/1712.04192",
+   "https://arxiv.org/abs/2104.12858",
+   "https://arxiv.org/abs/cond-mat/0306396",
+   "https://arxiv.org/abs/2006.14559"
+  ],
+  "partial": "The CFT step is correct. With w=z^{4/3}, the apex spin has dimension (2pi/alpha)(1/8)=1/6, and 1/6+1/8=7/24. For alpha=2pi the formula gives back 1/4. The lattice description is right: the apex has degree 3 and axis vertices have degree 4. The beta_c value is right. The free-boundary infinite-volume limit exists by GKS monotonicity. The apex defect is irrelevant (energy dimension >0), so 7/24 should be universal.",
+  "track": "core"
+ },
+ {
+  "id": "N-106",
+  "title": "A strongly aperiodic monotile in four dimensions",
+  "grade": "A",
+  "importance": 6,
+  "novelty": 5,
+  "value": 7,
+  "W": "The hat (2023) is a single shape that tiles the plane only non-periodically, and in 2026 a 3D analogue was announced (Chair44, a decorated chair-shaped polycube). Find one connected 4D shape whose copies fill 4D space, where no tiling by it is left unchanged by any translation.",
+  "M": "Find a compact set $T\\subset\\mathbb R^4$ homeomorphic to a closed 4-ball such that (i) $\\mathbb R^4$ admits a tiling by isometric copies of $T$ (reflections allowed; copies cover $\\mathbb R^4$ with pairwise disjoint interiors), and (ii) no such tiling is invariant under any nonzero translation. (Drop the weak variant (ii'), or flag it as possibly easy via prisms over a 3D monotile.)",
+  "why": "Aperiodic monotiles are now known in dimension 2 (Smith–Myers–Kaplan–Goodman-Strauss) and claimed in dimension 3 (Tsiokos's Chair44, 2026, in the strong sense), and Greenfeld–Tao give translational tiles that cannot tile periodically in very high dimension. Whether a single connected tile can force aperiodicity in every dimension, and in particular in R^4, is the next natural step. Kamenetsky's 2026 computer search for 4D chair markings came up empty, which suggests the 3D method does not simply extend.",
+  "issues": "Original M ('admits no periodic tiling') was ambiguous between weak and strong aperiodicity. The weak form may be close to routine: the prism Chair44 × [0,1] tiles R^4 with a period only in the last direction, so one only has to rule out non-layered tilings by it. Strengthened to strong aperiodicity, which a prism cannot achieve. Literature: 3D strong monotile claimed (arXiv 2609.19214; matching rules arXiv 2609.23783; notes 2609.24779). Kamenetsky (arXiv 2610.00916, AI-assisted) poses a 4D marked-chair problem (Problem 9.1) and conjectures unmarked polyhedral prototiles for every N ≥ 4 (Conj. 9.2), so the problem has been posed but is open, and not novel.",
+  "refs": [
+   "https://arxiv.org/pdf/2303.10798",
+   "https://arxiv.org/pdf/2609.19214",
+   "https://arxiv.org/pdf/2609.23783",
+   "https://arxiv.org/pdf/2609.24779",
+   "https://arxiv.org/pdf/2610.00916"
+  ],
+  "red_notes": "Sources verified. Tsiokos 2609.19214 (Chair44: 7-cube carrier, decorated, Per(T)={0}, Lean-checked) is still unrefereed, but Goodman-Strauss 2609.24779 gives an independent Berger-style proof. Kamenetsky 2610.00916 says 'We do not claim a 4-dimensional monotile' and poses Problem 9.1. Open, low novelty. Greenfeld-Kolountzakis connected tiles cover translations only.",
+  "red_refs": [
+   "https://arxiv.org/abs/2609.19214",
+   "https://arxiv.org/abs/2609.24779",
+   "https://arxiv.org/pdf/2610.00916",
+   "https://arxiv.org/pdf/2303.10798"
+  ],
+  "partial": null,
+  "track": "core"
+ },
+ {
+  "id": "N-180",
+  "outcome": "UPGRADED",
+  "title": "Smallest dimension of a cubic-homogeneous Jacobian counterexample",
+  "W": "The Jacobian conjecture is now known to fail. A classical reduction says that if it fails at all, it fails for maps of the special form x + (cubic homogeneous terms), but the reduction pays for this by raising the number of variables. Such a cubic counterexample is now known in 18 variables, and none exists in 4 or fewer. What is the smallest number of variables in which one exists?",
+  "M": "Let $N_3$ be the least $n$ such that there is $H=(H_1,\\dots,H_n)$, each $H_i\\in\\mathbb C[x_1,\\dots,x_n]$ homogeneous of degree 3, with $JH$ nilpotent (equivalently, for homogeneous $H$, $\\det(I+JH)=1$) and $x+H$ not an automorphism of $\\mathbb C^n$. Hubbers' classification of cubic homogeneous nilpotent Jacobians for $n\\le4$ gives $N_3\\ge5$ ($n=5$ is open as far as we know). De Bondt (arXiv:2610.24889, unrefereed), building on Alp\\\"oge's map and improving Van Rijn's 19, gives $N_3\\le18$. Determine $N_3$; in particular, decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5. Companion: let $d_3$ be the least $\\max_i\\deg F_i$ over non-invertible Keller maps $F:\\mathbb C^3\\to\\mathbb C^3$ ($\\det JF\\in\\mathbb C^*$). Wang's theorem gives $d_3\\ge3$ and Alp\\\"oge's map gives $d_3\\le7$.",
+  "why": "The Bass-Connell-Wright/Yagzhev reduction to cubic homogeneous maps (and Druzkowski's to cubic-linear) organized forty years of work on the Jacobian conjecture: small-n classifications of nilpotent cubic Jacobians (Hubbers, de Bondt, van den Essen), quasi-translations, Zhao's vanishing conjecture. With the conjecture refuted, N_3 is the canonical measure of where that whole structural program actually breaks, and it is testable against the existing classification machinery from below and explicit constructions from above.",
+  "diagnosis": "B because the minimal degree in dimension 3 is one numeric invariant of one dimension; the reviewer noted the newer families might already lower it. The canonical boundary is the one in the cubic-homogeneous normal form that the field was built around.",
+  "what_changed": "Replaced 'minimal degree in dimension 3' by the minimal dimension of a cubic-homogeneous counterexample (the reduction's canonical form), with explicit bounds 5<=N_3<=18; kept d_3 as a companion. Status of n=5 (de Bondt) not verified.",
+  "refs": [
+   "https://arxiv.org/abs/2610.24889",
+   "https://arxiv.org/abs/2608.00222",
+   "https://arxiv.org/abs/2609.17795",
+   "https://www.cs.ru.nl/E.Hubbers/pubs/nilpotent_jacobians_112500.pdf",
+   "https://isa-afp.org/entries/Jacobian_Counterexample.html"
+  ],
+  "red_notes": "Status checked. De Bondt 2610.24889 (Oct 2026, unrefereed, partly AI-written) gives HJC(18,3) via JC(12,3) and says Van Rijn reached 19. 18 is an 'absolute limit' only for that method. de Bondt-van den Essen 1609.09753 covers n<=4 and rk JH<=2; no HJC(5,3) proof found. Lower bound contains the classical open HJC(5,3). Upper bound may keep falling.",
+  "red_refs": [
+   "https://arxiv.org/abs/2610.24889",
+   "https://arxiv.org/abs/2608.00222",
+   "https://arxiv.org/abs/2609.17795",
+   "https://arxiv.org/abs/1609.09753",
+   "https://arxiv.org/pdf/1501.04845"
+  ],
+  "partial": null,
+  "track": "core"
+ },
+ {
+  "id": "N-625",
+  "outcome": "UPGRADED",
+  "title": "Outer billiards around analytic tables with flat points",
+  "W": "Outer billiards around a smooth convex shape with positive curvature has only bounded orbits (Moser-Douady). Polygons, semicircles and generic C^1 shapes can have orbits that escape to infinity. What if the table is analytic and strictly convex, but its curvature vanishes at a few points, like the superellipse x^4+y^4 ≤ 1? Decide whether every orbit stays bounded.",
+  "M": "Let $K\\subset\\mathbb R^2$ be a strictly convex body whose boundary is a real-analytic closed curve with curvature vanishing at at least one point (hence, by analyticity, at finitely many). For $p\\in\\mathbb R^2\\setminus K$, let $T(p)=2q-p$, where $q\\in\\partial K$ is the tangency point of the tangent line from $p$ that has $K$ on its left. Is every $T$-orbit bounded, for every such $K$? If not, characterize the $K$ with unbounded orbits, e.g. by the vanishing orders of the curvature or by symmetry. First test case: $K=\\{x^4+y^4\\le1\\}$.",
+  "why": "Moser's question about which tables confine all orbits now has sharp answers at both extremes: Douady's positive-curvature C^6 theorem, and C^1-generic escape (2026), which relies on a purely singular radius-of-curvature measure. Analytic tables with isolated flat points sit in between. The boundary is as smooth as possible, but the radius of curvature has integrable singularities ~|θ|^{-k/(k+1)} at a point of curvature vanishing order k (|θ|^{-2/3} for x^4+y^4), so the twist map at infinity is only Hölder and KAM does not apply. This isolates curvature degeneracy, rather than lack of smoothness, as the possible cause of escape.",
+  "diagnosis": "B because x^4+y^4 is one arbitrary instance. The canonical question is the class: analytic strictly convex tables with isolated zero-curvature points. Neither the generic C^1 result nor Douady's theorem covers it, and I found nothing that treats it.",
+  "what_changed": "Generalized from the single superellipse to all analytic strictly convex tables with finitely many flat points, and asked whether boundedness depends on the vanishing order. Kept x^4+y^4 as the test case.",
+  "refs": [
+   "https://arxiv.org/pdf/2610.06418",
+   "https://www.math.umd.edu/~dolgop/outer15.pdf",
+   "https://arxiv.org/abs/math/0702073",
+   "https://arxiv.org/pdf/math/9408216"
+  ],
+  "red_notes": "Not found solved. Sorrentino 2610.06418 is C^1-generic and centrally symmetric only (the why should say so) and never mentions analytic tables or flat points. Dolgopyat-Fayad, Amiran, Boyland, and 2508.15142 all assume positive curvature or deal with corners or segments. A natural intermediate case for Moser's question.",
+  "red_refs": [
+   "https://arxiv.org/abs/2610.06418",
+   "https://www.math.umd.edu/~dolgop/outer15.pdf",
+   "https://arxiv.org/abs/math/9408216",
+   "https://arxiv.org/html/2508.15142v1",
+   "https://cedar.wwu.edu/math_facpubs/14"
+  ],
+  "partial": "I checked the singularity claim. At a flat point of order k the radius of curvature satisfies rho(theta)~|theta|^{-k/(k+1)} (|theta|^{-2/3} for x^4+y^4), and the tangency point q(p) is only C^{1/(k+1)} across the tangent lines at the flat points. So T and the limiting map at infinity are genuinely non-smooth, and KAM does not apply directly. The claim is correct.",
+  "track": "core"
+ },
+ {
+  "assumption": "3SUM hypothesis (and its geometric consequences)",
+  "title": "Three collinear points after the fall of 3SUM",
+  "W": "Given n points in the plane (integer coordinates poly(n), or real RAM), decide whether three are collinear in O(n^{2-eps}) time for some eps>0; or give a fine-grained reduction showing Collinearity is hard under a hypothesis not refuted by Alman-Vassilevska Williams (e.g. 4SUM, 3SUM-Indexing, or a new geometric hypothesis).",
+  "M": "Let P be a set of n points in Z^2 with coordinates in [-n^c,n^c] (c a large constant; small grids are trivial since a k x k grid holds at most 2k points with no three collinear), or in R^2 on the real RAM. Is there eps>0 and an algorithm deciding in O(n^{2-eps}) time whether three points of P are collinear? Alternatively: prove no O(n^{2-eps}) algorithm exists under a hypothesis not refuted by AVW (e.g. k-AP Hypothesis, 4SUM, OV).",
+  "why": "3SUM reduces TO collinearity, not back; once 3SUM is subquadratic, collinearity's n^2 lower bound has no support. AVW explicitly say it is now open. Sharp, single problem, and meaningful either way.",
+  "status_notes": "AVW (arXiv:2610.06783, Oct 2026, preprint) give deterministic O(n^1.9992) integer 3SUM and claim to refute real 3SUM via Las Vegas algorithms; they state that truly subquadratic collinearity is now open. Majdoddin (arXiv:2610.17420) improves 3SUM to n^{1.9945+o(1)}.",
+  "grade": "A",
+  "refs": [
+   "Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",
+   "Majdoddin, Thin matrix products up to D<=N^0.172 and lossless reductions for 3SUM, Exact Triangle and APSP, arXiv:2610.17420 (Oct 2026)",
+   "Gajentaan, Overmars, On a class of O(n^2) problems in computational geometry, CGTA 1995"
+  ],
+  "id": "AS0-00",
+  "red_notes": "Posed by AVW (arXiv:2610.06783, Sec. 1 and Sec. 6): 'now open whether ... three collinear points ... truly subquadratic'. Verified AVW/Majdoddin claims (real 3SUM Las Vegas, since derandomized by Chan-Itakura-Ma-Yu 2610.42012). Fischer 2610.32162 recovers many GeomBase lower bounds under k-AP but explicitly not 3-points-on-a-line. Original M was not a statement; fixed.",
+  "red_refs": [
+   "arXiv:2610.06783",
+   "arXiv:2610.17420",
+   "arXiv:2610.32162",
+   "arXiv:2610.42012"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "assumption": "APSP / Exact Triangle hypothesis",
+  "title": "All-Edges Triangle in the (n, n, sqrt n) tripartite regime",
+  "W": "Given a tripartite graph with parts of sizes n, n, sqrt(n) and O(n^{3/2}) edges, determine for every edge whether it lies in a triangle in O(n^{2-eps}) time (combinatorial or algebraic).",
+  "M": "Given a tripartite graph on A,B,C with |A|=|B|=n, |C|=ceil(sqrt n) and O(n^{3/2}) edges, decide for every edge whether it lies in a triangle. Bitsets give O(n^2/log n). Is there eps>0 and an O(n^{2-eps})-time (randomized allowed) algorithm? Or: show this case is as hard as balanced All-Edges Sparse Triangle (m^{4/3-o(1)}), noting m^{4/3}=n^2 here.",
+  "why": "Explicit open regime named in AVW; it is precisely the boundary of the refuted APSP-type hardness, with a concrete application.",
+  "status_notes": "AVW's method needs the middle part to have at most ~n^{0.12} vertices; the sqrt(n) case is stated open (arXiv:2610.06783, Oct 2026). Prior hardness for such regimes came from 3SUM/APSP, both now refuted (claimed).",
+  "grade": "A",
+  "refs": [
+   "Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)"
+  ],
+  "id": "AS0-03",
+  "red_notes": "Posed by AVW (2610.06783, Sec. 1.1 and Sec. 6, motivated by girth approximation). AVW method needs middle part <= n^{0.1204}; Majdoddin 2610.17420 extends thin products to D<=N^{0.172}, still far below 1/2. No newer preprint found. Ties directly to AVW's question whether lopsided can be easier than balanced. Original M was not a statement.",
+  "red_refs": [
+   "arXiv:2610.06783",
+   "arXiv:2610.17420"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "assumption": "Planted clique / low-degree conjecture",
+  "title": "A uniformly samplable counterexample to the poly-time low-degree conjecture",
+  "W": "Mao's counterexample (permutation-invariant graph distributions with zero low-degree advantage up to degree Theta(log^{r-1} n) that a linear-time rank test detects after constant-rate resampling) needs non-uniform advice for its Reed-Muller subspace / evaluation-point seed. Find a polynomial-time algorithm that outputs a good seed, giving a uniformly poly-time samplable counterexample; or show that every uniformly samplable permutation-invariant distribution with vanishing degree-polylog advantage is hard for poly-time noise-robust tests (a repaired conjecture).",
+  "M": "For some fixed r>=3, give a single randomized algorithm that, given 1^n, samples in expected poly(n) time from a permutation-invariant distribution P_n on n-vertex graphs whose low-degree advantage over G(n,1/2) vanishes up to degree D_n=Theta((log n)^{r-1}), while after independent edge resampling at a fixed rate delta>0 a poly-time test distinguishes it from G(n,1/2) w.p. 1-o(1). Equivalently for Mao's construction: find in poly(n) time evaluation points with every <=L of the vectors phi(x_i) linearly independent.",
+  "why": "Stated open by Mao (Jul 2026); it is the single remaining gap between the polynomial-time counterexample and a fully satisfying refutation.",
+  "status_notes": "Buhai-Hsieh-Jain-Kothari (arXiv:2505.17360, 2025) refuted the quasi-polynomial low-degree conjecture; Mao (arXiv:2607.20318, Jul 2026) refuted the polynomial-time graph version, leaving uniform samplability and a natural repair open. Planted clique itself (k = n^{1/2-delta}) remains believed hard.",
+  "grade": "A",
+  "refs": [
+   "Mao, The Polynomial-Time Low-Degree Conjecture is False, arXiv:2607.20318",
+   "Buhai, Hsieh, Jain, Kothari, The Quasi-Polynomial Low-Degree Conjecture is False, arXiv:2505.17360",
+   "Hopkins, Statistical inference and the sum of squares method, PhD thesis 2018"
+  ],
+  "id": "AS0-13",
+  "red_notes": "Posed by Mao (arXiv:2607.20318v2, Sec. 4): sampler needs O(n log n+(log n)^{2r}) advice; subspace made explicit via trace functions, but poly-time seed for points 'remains open'; brute force exp(O((log n)^r)). Drop the 'prove every samplable distribution is hard' disjunct: unprovable without major separations. No newer solution found.",
+  "red_refs": [
+   "arXiv:2607.20318",
+   "arXiv:2505.17360"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "assumption": "Elliott–Halberstam conjecture (level of distribution of primes)",
+  "title": "Break the 5/8 barrier for primes with triply well-factorable weights",
+  "W": "The primes are known to be evenly spread over residue classes, on average over moduli up to x^{5/8}, if the average is weighted by triply well-factorable weights. Push the exponent past 5/8, or show the dispersion method cannot.",
+  "M": "Say (lambda_q)_{q<=Q} is triply well-factorable of level Q if for all Q1Q2Q3=Q there are 1-bounded alpha,beta,gamma supported on q_i<=Q_i with lambda=alpha*beta*gamma (Dirichlet convolution). Let theta* = sup of theta such that for all eps,A>0, fixed a!=0, and every such lambda of level Q=x^{theta-eps}: sum_{q<=Q,(q,a)=1} lambda_q(pi(x;q,a)-pi(x)/phi(q)) <<_{eps,A,a} x(log x)^{-A}. Known theta*>=5/8 (Pascadi). Prove theta*>5/8.",
+  "why": "Exponents past 1/2 are the only unconditional form of Elliott–Halberstam usable in sieves; each step (4/7, 3/5, 66/107, 5/8) improved twin-prime upper bounds and Goldbach-type results. Pascadi states that 5/8 seems to be the limit of current Kloosterman/large-sieve technology in every sieve-relevant setting, so passing it would need a new idea, and a proven barrier would be informative too.",
+  "status_notes": "EH open. Level beyond 1/2 known only for well-factorable weights: BFI 4/7; Maynard 3/5; Lichtman 66/107 (5/8 under Selberg's eigenvalue conjecture); Pascadi 2025 reached 5/8 unconditionally (arXiv 2505.00653), noting quadruply well-factorable weights do not help.",
+  "grade": "A",
+  "refs": [
+   "https://arxiv.org/abs/2505.00653",
+   "https://arxiv.org/abs/2309.08522",
+   "https://arxiv.org/abs/2404.04239"
+  ],
+  "id": "AS1-00",
+  "red_notes": "Verified: Pascadi 2505.00653 Thm 1.3 gives x^{5/8-eps} unconditionally, removing Selberg dependence from Lichtman's 5/8 (unconditional 66/107). Pascadi says no more flexible setting beats 5/8 with current methods, citing quadruply well-factorable weights (heuristic remark, not a barrier theorem). No newer preprint passes 5/8 (Li 2602.20917, 2608.13299 checked). Fixed M to Pascadi's Def 1.1.",
+  "red_refs": [
+   "arXiv:2505.00653",
+   "arXiv:2309.08522",
+   "arXiv:2404.04239",
+   "arXiv:2602.20917",
+   "arXiv:2608.13299"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "assumption": "Positive metric entropy / ergodicity of conservative systems (Sinai's standard-map conjecture)",
+  "title": "Positive metric entropy of the Chirikov standard map at an explicit moderate parameter",
+  "W": "Sinai conjectured that the standard map has positive metric entropy for every parameter k>0. After a 2026 AI-generated non-effective proof for large k, Slijepčević proved it for every k ≥ exp(2^{50000}). Bring the threshold down to a physically meaningful range, e.g. all k ≥ 10^6, or even a single explicit k ≤ 100.",
+  "M": "Let f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)) on T^2=R^2/Z^2 (Slijepcevic's normalization; Chirikov's K equals 2 pi k), and h_m(f_k) the metric entropy w.r.t. area. Known: log(2 pi k+4)-2^{430} <= h_m(f_k) <= log(2 pi k+4) for k>=exp(2^{50000}) (Slijepcevic 2026). Prove h_m(f_k)>0 for all k>=10^6, or for at least one explicit k<=100.",
+  "why": "This is the most famous instance of the Lyapunov/ergodicity assumption used throughout conservative dynamics and physics: positive exponents on a positive-measure set. The proof now exists for huge k, so the remaining gap is quantitative and well defined, and computer-assisted methods are plausible. Either success, or a mechanism showing the threshold cannot be lowered by these techniques, would be informative.",
+  "status_notes": "Open for decades (Sinai, Herman). An OpenAI preprint (2026) proved positivity for all sufficiently large k (non-effective). Slijepčević (arXiv 2611.09361, Nov 2026) made it effective: h_m(f_k)=log k+O(1) for k≥exp(2^50000). Berger–Turaev (2019) proved Herman's positive-entropy conjecture for C^∞-perturbations.",
+  "grade": "A",
+  "refs": [
+   "https://arxiv.org/abs/2611.09361",
+   "https://arxiv.org/abs/2507.11375",
+   "https://arxiv.org/abs/2003.09329"
+  ],
+  "id": "AS1-10",
+  "red_notes": "Verified 2611.09361 (Nov 9 2026): bound and threshold exactly as cited; abstract credits a recent OpenAI preprint for non-effective large-k positivity. Original M used sin x without saying which torus while quoting Slijepcevic's 2 pi-normalized bound, a factor-2 pi mismatch in k; fixed. Ref 2507.11375 is a Kolmogorov-typicality paper, not the OpenAI preprint.",
+  "red_refs": [
+   "arXiv:2611.09361",
+   "arXiv:2003.09329",
+   "arXiv:2507.11375"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "assumption": "Sparse triangle / k-Clique-type hypotheses (Patrascu balanced instances)",
+  "title": "All-Edges Sparse Triangle below m^{4/3} on balanced instances",
+  "W": "Solve All-Edges Sparse Triangle (for each of m edges, report whether it is in a triangle) in O(m^{4/3-eps}) time on general (balanced) sparse graphs, or derive an m^{4/3-o(1)} lower bound from a hypothesis that survives AVW (e.g. 4SUM, OV/SETH, or combinatorial BMM).",
+  "M": "Let G be tripartite on parts A,B,C, each of size N, with m=Theta(N^{3/2}) edges and all degrees O(sqrt N) (Patrascu's balanced regime, AVW Sec. 6). Either decide for every edge whether it lies in a triangle in O(m^{4/3-eps}) time for some eps>0, or show that such an algorithm refutes a hypothesis still standing after AVW (e.g. 4SUM, OV, or combinatorial BMM for combinatorial algorithms).",
+  "why": "AVW handle only lopsided instances and explicitly leave Patrascu's balanced instances open; dozens of dynamic lower bounds rest on m^{4/3}.",
+  "status_notes": "m^{4/3} lower bounds (Patrascu STOC 2010; Kopelowitz-Pettie-Porat SODA 2016) came from 3SUM, now refuted (AVW arXiv:2610.06783, Oct 2026). AVW state balanced sparse instances are not addressed. Best known upper bound O(m^{2omega/(omega+1)}).",
+  "grade": "A",
+  "refs": [
+   "Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",
+   "Patrascu, Towards polynomial lower bounds for dynamic problems, STOC 2010",
+   "Kopelowitz, Pettie, Porat, Higher lower bounds from the 3SUM conjecture, SODA 2016"
+  ],
+  "id": "AS0-04",
+  "red_notes": "Posed by Alman-Vassilevska Williams, arXiv:2610.06783, Sec. 6 (balanced AE-Sparse-Triangle hypothesis; 'lopsided faster but balanced not?'). Fixed M defines 'balanced'; the original left it undefined. Real-3SUM-based hardness (CVWX 2022) also fell with AVW. Note m^{4/3-eps} beats even the omega=2 Alon-Yuster-Zwick bound. No newer solution found.",
+  "red_refs": [
+   "arXiv:2610.06783",
+   "arXiv:2203.08356",
+   "Patrascu STOC 2010"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "assumption": "ETH (fine-grained lattice hardness)",
+  "title": "2^{Omega(n)} hardness of Euclidean SVP under ETH",
+  "W": "Show that approximate SVP in the l_2 norm (some constant gamma>1) has no 2^{o(n)}-time algorithm unless (randomized) ETH fails; or identify an obstruction (e.g. for the Z^n-based gadget) showing the l_p, p>2 technique cannot reach p=2.",
+  "M": "Prove there is a constant gamma>1 such that, unless randomized ETH fails, no 2^{o(n)}-time randomized algorithm solves gamma-GapSVP in the l_2 norm on rank-n lattices. Alternatively, prove that the AGMZ approach (Z^n gadget + Theta-function inequality, valid for p>2) provably fails at p=2.",
+  "why": "Stated as Open Problem 1 (p in [1,2], specifically p=2) in the ICALP 2026 paper; the most cryptographically relevant case.",
+  "status_notes": "Aggarwal-Gupta-Morolia-Zhang (ICALP 2026) prove ETH-hardness for CVP_p (all p>=1) and SVP_p (p>2); p in [1,2] incl. p=2 left open. Earlier SVP_2 2^{Omega(n)} hardness required Gap-ETH-type assumptions.",
+  "grade": "A",
+  "refs": [
+   "Aggarwal, Gupta, Morolia, Zhang, Mind the Gap? Not for SVP Hardness under ETH!, ICALP 2026, arXiv:2504.02695",
+   "Aggarwal, Stephens-Davidowitz, (Gap-)ETH-hardness of SVP, STOC 2018"
+  ],
+  "id": "AS0-10",
+  "red_notes": "Posed by Aggarwal-Gupta-Morolia-Zhang, ICALP 2026 (LIPIcs 374, paper 8), Open Problem 1; verified, p>2 only. Status fix: prior l_2 hardness (AS18) needs non-uniform Gap-ETH plus exponential-kissing-number lattices, near-exact gamma. ABGS21 Gap-SETH covers only p>2.14. Per AGMZ, p in [1,2) follows from p=2. Not solved as of Nov 2026.",
+  "red_refs": [
+   "arXiv:2504.02695v2",
+   "LIPIcs.ICALP.2026.8",
+   "arXiv:1712.00942",
+   "arXiv:2109.04025"
+  ],
+  "partial": null,
+  "track": "assumption"
+ },
+ {
+  "id": "C-99",
+  "outcome": "UPGRADED",
+  "title": "Periodic optimal colourings of Cayley graphs of Z^2",
+  "W": "Join two points of the integer grid when their difference lies in a fixed finite set D. If this graph can be properly coloured with k colours, can it always be coloured with k colours in a repeating, wallpaper-like pattern? On a line the answer is yes. For some infinite graphs built from trees it is no. The plane is the first open case, and a yes would also give an algorithm for the chromatic number.",
+  "M": "For finite symmetric $D\\subset\\mathbb Z^2\\setminus\\{0\\}$ let $G_D=\\mathrm{Cay}(\\mathbb Z^2,D)$ with $\\chi(G_D)=k<\\infty$. Must $G_D$ have a proper $k$-colouring invariant under a finite-index subgroup of $\\mathbb Z^2$? Equivalently, does the $k$-colouring subshift $X_{D,k}\\subset\\{1..k\\}^{\\mathbb Z^2}$ always contain a periodic point? (A yes makes $\\{(D,k):\\chi(G_D)\\le k\\}$ decidable via compactness plus enumeration of periodic colourings. A no gives the first weakly aperiodic colouring subshift on $\\mathbb Z^2$.) Same question for $\\mathbb Z^d$, $d\\ge3$.",
+  "why": "Proper colourings of $G_D$ form a 2D subshift of finite type of a special kind. Its constraints are only of the form 'different colours at difference d', and they are symmetric under permuting the colours. General 2D SFTs can be aperiodic (Berger). Recent work on periodic colourings of quasi-transitive graphs (arXiv:2411.01951) proves that 2-ended graphs have periodic chi-colourings. The same paper builds a tree-like quasi-transitive graph with no periodic chi-colouring and leaves 1-ended graphs open. Z^2 is the canonical 1-ended amenable case. The question mirrors the periodic tiling conjecture, which holds in Z^2 (Bhattacharya) and fails in high dimension (Greenfeld-Tao), so the same dimensional dichotomy may appear here.",
+  "diagnosis": "B mostly because it was never literature-checked, and because the decidability question (a) was the headline when it is really a corollary. The structural periodicity question (b) is the real problem.",
+  "what_changed": "The periodicity question is now the headline and decidability a corollary. Added Z^d. Placed it in the 2024 periodic-colouring programme (2-ended solved, tree-like counterexample). No source found that settles Z^2.",
+  "refs": [
+   "https://arxiv.org/pdf/2411.01951",
+   "https://arxiv.org/pdf/2511.03028",
+   "https://arxiv.org/pdf/2312.08911"
+  ],
+  "red_notes": "No resolution found. 2407.03513 (4-dim lattices) poses the same question as open for lattice Cayley graphs (periodic optimal colouring, computability of chi). Fix in 'why': 2411.01951 does NOT leave 1-ended graphs open. Thompson V GRRs are 1-ended with no periodic nontrivial colouring. Its open Problem 6.6 is 1-ended planar only, and Z^2 is never posed there.",
+  "red_refs": [
+   "https://arxiv.org/abs/2411.01951",
+   "https://arxiv.org/html/2407.03513v3",
+   "https://arxiv.org/abs/2511.03028",
+   "https://arxiv.org/pdf/2607.26942"
+  ],
+  "partial": "No proof is claimed. The decidability corollary is correct: compactness (de Bruijn-Erdos) semi-decides chi>k, and enumerating periodic colourings (torus quotients) semi-decides chi<=k if the answer is yes. A Z^2 SFT with one period also has a fully periodic point, so 'periodic point' is unambiguous here.",
+  "track": "core"
+ },
+ {
+  "id": "N-655",
+  "outcome": "UPGRADED",
+  "title": "Ten Martini for every periodic planar lattice",
+  "W": "A tight-binding electron on any doubly periodic planar network in a uniform magnetic field: is the energy spectrum always a Cantor set when the flux per cell is irrational? This is known for the square lattice (Ten Martini), the honeycomb lattice and the Lieb lattice, each by a reduction to a one-dimensional operator. Flat-band eigenvalues that persist in any field can sit isolated, so they must be set aside. The question is whether what remains is always a Cantor set, or at least never contains an interval.",
+  "M": "Let $G\\subset\\mathbb R^2$ be a connected planar graph with straight edges that is invariant under a lattice $L\\cong\\mathbb Z^2$ and has finitely many $L$-orbits of vertices. For a constant field $B$ with vector potential $A$, set $(H_B\\psi)(x)=\\sum_{y\\sim x}e^{i\\int_{[x,y]}A}\\psi(y)$ on $\\ell^2(V(G))$, and let $2\\pi\\alpha=B\\cdot\\mathrm{covol}(L)$. Let $\\Sigma'$ be the derived set of $\\sigma(H_B)$, i.e. $\\sigma(H_B)$ minus its isolated points (eigenvalues of infinite multiplicity, i.e. flat bands). Prove or disprove: for every such $G$ and every irrational $\\alpha$, $\\Sigma'$ is a nonempty Cantor set. At minimum, decide whether $\\sigma(H_B)$ is always nowhere dense. The first open instance is the kagome lattice in a uniform field. (The pure line-graph flux pattern, with no flux through the triangles, reduces to the honeycomb case.)",
+  "why": "Cantor spectrum is known only lattice by lattice: square (Avila-Jitomirskaya), honeycomb (Becker-Han-Jitomirskaya-Zworski) and Lieb (2024). Each proof reduces the problem to a scalar or one-dimensional quasi-periodic operator. The general case concerns self-adjoint matrix-valued noncommutative trigonometric polynomials in the irrational rotation algebra coming from planar graphs. The question is whether Cantor structure comes from magnetic translation symmetry itself or from special reductions. A counterexample (a band of positive length at irrational flux) would be equally striking.",
+  "diagnosis": "Kagome is just one more lattice after square, honeycomb and Lieb. The structural question is whether every periodic planar magnetic graph has Cantor spectrum. I checked it against a counterexample: pendant twin vertices give flux-independent isolated eigenvalues, so isolated points must be excluded.",
+  "what_changed": "Replaced the single kagome instance by all Z^2-periodic planar graphs. Removed isolated (flat-band) points after finding a counterexample to the naive statement. Added a minimal yes/no (nowhere dense). Kagome is kept as the first open case.",
+  "refs": [
+   "https://arxiv.org/abs/1408.2814",
+   "https://arxiv.org/pdf/1404.0642",
+   "https://arxiv.org/pdf/1803.00988",
+   "https://www.imo.universite-paris-saclay.fr/~bernard.helffer/helfferharpercambridge2015.pdf",
+   "https://arxiv.org/abs/2401.11405",
+   "https://arxiv.org/abs/math-ph/0511057",
+   "https://arxiv.org/abs/2609.15812"
+  ],
+  "red_notes": "No result for kagome or general periodic graphs found. Helffer's Hou/kagome notes cover rational flux and flat bands only. 2609.15812 is 1D Robust Ten Martini, a tool, not kagome. BHJZ also prove the discrete honeycomb case (Thm 3). Their Jacobi reduction is the isotropic triangular operator, so W should list triangular as known. Nonempty edge case added.",
+  "red_refs": [
+   "https://arxiv.org/html/1803.00988",
+   "https://arxiv.org/abs/2401.11405",
+   "https://arxiv.org/abs/1408.2814",
+   "https://www.imo.universite-paris-saclay.fr/~bernard.helffer/helfferharperbucarest.pdf",
+   "https://arxiv.org/abs/2609.15812",
+   "https://arxiv.org/abs/2611.10767"
+  ],
+  "partial": "The pendant-twin counterexample is correct. Attach two pendant vertices x,x' to each vertex of Z^2. Then delta_x - (phase) delta_x' is an eigenvector with eigenvalue 0 for every B. For E nonzero, E is in sigma iff E-2/E is in sigma(H_sq), which lies in [-4,4]. So a punctured neighbourhood of 0 is a gap, 0 is isolated, and the naive statement fails.",
+  "track": "core"
+ },
+ {
+  "id": "N-134",
+  "outcome": "UPGRADED",
+  "title": "A monotile that forces quasicrystalline symmetry",
+  "W": "Every aperiodic monotile known (Socolar-Taylor, the hat, the spectre, and the 3D examples) has tilings with only crystallographic rotational structure: 2-, 3-, 4- or 6-fold. Is there a single tile in the plane whose tilings are all forced to be quasicrystalline with fivefold symmetry, as Penrose tilings are? Or is non-crystallographic symmetry something only two or more tiles can enforce?",
+  "M": "Call a compact set $T\\subset\\mathbb R^2$ homeomorphic to a closed disc a monotile if it tiles $\\mathbb R^2$ by isometric copies, reflections allowed. Does there exist a monotile $T$ such that (i) every tiling by copies of $T$ uses only finitely many orientations of $T$ (so has finite local complexity), and (ii) for every such tiling $\\mathcal T$, the translation hull $\\Omega(\\mathcal T)$ (closure of the translation orbit in the local topology) is invariant under rotation by $2\\pi/5$? Condition (ii) forces strong aperiodicity. The analogous question in $\\mathbb R^3$, with the icosahedral group $A_5$, is a secondary target.",
+  "why": "Penrose and Ammann showed that non-crystallographic order can be forced locally with two tiles, and the Einstein problem has now been solved for crystallographic-type hulls. It is open whether one tile with no markings suffices to force the symmetry seen in real quasicrystals. Gummelt's decagon does this only with overlaps (a covering, not a tiling). A positive answer would make the single-tile quasicrystal model of Steinhardt-Jeong exact, and a negative answer would be a new rigidity phenomenon separating one tile from two.",
+  "diagnosis": "The 3D icosahedral version is an arbitrary harder instance. The reviewer notes the 2D fivefold analogue is open and more natural, but the original framed it as a mere first step.",
+  "what_changed": "Moved to the plane with 5-fold hull symmetry, which is the canonical non-crystallographic case and directly answers 'can one tile force Penrose-type order?'. Disc topology and no markings keep it honest, and the 3D icosahedral version is kept as secondary.",
+  "refs": [
+   "https://arxiv.org/pdf/2303.10798",
+   "https://arxiv.org/pdf/1009.1419",
+   "https://arxiv.org/abs/2609.19214",
+   "https://arxiv.org/pdf/1003.4909",
+   "https://collaborate.princeton.edu/en/publications/constructing-penrose-like-tilings-from-a-single-prototile-and-the/",
+   "https://en.wikipedia.org/wiki/Einstein_problem"
+  ],
+  "red_notes": "No construction or impossibility result found (Grimm et al. open-problem list, 2409.15880 survey, Walton-Whittaker; Penrose-extracted 2106.08155 is only approximate, with gaps). M fixes: (1) without FLC, a pinwheel-type monotile with dense orientations would satisfy hull invariance trivially; (2) the 'Equivalently...same LI class' clause is not equivalent, so drop it. W fix: the Schmitt-Conway-Danzer biprism has irrational screw (non-crystallographic) structure.",
+  "red_refs": [
+   "https://arxiv.org/pdf/1604.06280",
+   "https://arxiv.org/pdf/2409.15880",
+   "https://arxiv.org/abs/1907.10139",
+   "https://arxiv.org/abs/2106.08155",
+   "https://arxiv.org/abs/2609.19214",
+   "https://arxiv.org/pdf/1009.1419"
+  ],
+  "partial": null,
+  "track": "core"
+ },
+ {
+  "id": "N-637",
+  "outcome": "UPGRADED",
+  "title": "Does an oscillating source lower the Strauss exponent?",
+  "W": "For the 3D wave equation with source |u|^p, small smooth data give global solutions exactly when p > 1+√2 (Strauss). Multiply the source by a factor that oscillates periodically in time with average zero, such as cos t. The global-existence proof still works above 1+√2. Every blow-up proof below it breaks, because they all need the source to be positive. Is the true threshold strictly smaller?",
+  "M": "Let $g$ be smooth, $2\\pi$-periodic, $\\int_0^{2\\pi}g=0$, $g\\not\\equiv0$ (model $g=\\cos t$). For $u_{tt}-\\Delta u=g(t)|u|^p$ on $\\mathbb R^{1+3}$ with data $\\varepsilon(f,h)$, $f,h\\in C_c^\\infty$ (solutions in the usual weak/mild sense, e.g. $C([0,T);H^1)$ with John-type weighted bounds), let $p_c(g)=\\inf\\{p>1:\\forall f,h\\ \\exists\\varepsilon_0>0$ such that the solution is global for all $0<\\varepsilon<\\varepsilon_0\\}$. Since John/Zhou/Glassey global existence uses only $|g|u|^p|\\lesssim|u|^p$ and the matching Lipschitz bound, $p_c(g)\\le1+\\sqrt2$. Is $p_c(g)<1+\\sqrt2$? Determine $p_c(g)$ and whether it depends on $g$ (a heuristic predicts 2). For $1<p<p_c(g)$, determine the lifespan $T_\\varepsilon$ as $\\varepsilon\\to0$ for suitable data.",
+  "why": "The Strauss exponent is a central small-data threshold for nonlinear waves. Every proof of the blow-up half (John, Glassey, Sideris, Zhou, Yordanov-Zhang) uses the positivity of the source, while the global half uses only its size. A mean-zero oscillating factor separates the two. Either the threshold is robust, which would need a new blow-up mechanism, or the iteration along the light cone is suppressed by cancellation and the threshold is set by parametric resonance. In the second case u decays like 1/t near the cone, so |u|^{p-1} acts as a time-periodic potential of size t^{1-p}. Its Mathieu-type amplification is exp(c∫t^{1-p}dt), which diverges iff p<=2. The literature on g(t)|u|^p treats g>=0 or g of power type. Time-oscillating nonlinearities are studied for NLS (Cazenave-Scialom type averaging) but not, as far as I could find, at fixed frequency for the Strauss problem.",
+  "diagnosis": "The original was one arbitrary coefficient (cos t) with an open-ended 'determine p_c'. Its novelty had not been checked against the literature.",
+  "what_changed": "Generalised to any smooth periodic mean-zero g. Noted the free bound p_c<=1+√2 and made the headline the yes/no 'is p_c<1+√2?'. Searches on oscillating time-dependent coefficients in the Strauss problem found no prior treatment.",
+  "refs": [
+   "https://arxiv.org/pdf/1705.03965",
+   "https://ricerca.uniba.it/retrieve/df4c0680-37be-4856-a2cb-00c79cabccc2/Postprint%20DAbbiccoLucenteReissig2015%20JDE.pdf",
+   "https://arxiv.org/pdf/2306.11471"
+  ],
+  "red_notes": "New searches (oscillating/periodic/mean-zero coefficient, Tricomi oscillatory regime, Strauss surveys) found no prior work. Oscillatory-regime Tricomi papers concern the operator coefficient, not the source. It is a natural, decisive question that separates positivity from size. Made the solution notion explicit, put the epsilon quantifier in, and turned the redundant sub-question into a lifespan rate.",
+  "red_refs": [
+   "https://arxiv.org/pdf/1110.4454",
+   "https://arxiv.org/pdf/2306.11471",
+   "https://arxiv.org/html/2609.28389",
+   "https://arxiv.org/pdf/1705.03965"
+  ],
+  "partial": "Bound p_c<=1+sqrt2 is correct: John/Zhou iteration uses only |F(u)|<=C|u|^p and |F(u)-F(v)|<=C(|u|+|v|)^{p-1}|u-v|, both hold for g(t)|u|^p. The 'resonance predicts 2' heuristic (exp of int t^{1-p}) is arithmetically right but not an argument; a normal-form attempt (H''=g) just recycles the oscillating factor, so nothing is proved. Original 'finite lifespan for p<p_c' is tautological from the inf definition, so it is replaced by a lifespan-rate question.",
+  "track": "core"
+ },
+ {
+  "id": "C-98",
+  "outcome": "UPGRADED",
+  "title": "First-order convergence law for random Latin squares",
+  "W": "Pick a Latin square of order n uniformly at random and read it as a multiplication table x∘y on n symbols. Does every first-order statement about this table have a limiting probability as n grows? A zero-one law fails: the number of x with x∘x=x should be asymptotically Poisson(1), so the probability that one exists should tend to 1−1/e rather than 0 or 1.",
+  "M": "Let $L_n$ be uniform among Latin squares on $[n]$ and $\\mathcal Q_n=([n],\\circ)$ with $x\\circ y=L_n(x,y)$. Prove or disprove: for every first-order sentence $\\varphi$ in the language $\\{\\circ,=\\}$, $\\lim_{n\\to\\infty}\\Pr[\\mathcal Q_n\\models\\varphi]$ exists. (A 0-1 law should fail: by symbol-relabelling symmetry, $\\mathbb E\\#\\{x:x\\circ x=x\\}=1$ exactly, and this count is conjecturally Poisson(1).) Expected route, as for Lynch's random unary functions: (i) w.h.p. the bounded-depth term closure of any bounded tuple is free except for coincidences counted by balanced configurations ($v$ elements, $v$ independent equations); (ii) a joint Poisson limit for the counts of all such balanced configurations, e.g. cycles of $x\\mapsto x\\circ x$. A disproof would need a definable sparse statistic with no limit law.",
+  "why": "Convergence laws are known for G(n,p), sparse random graphs, random functions and permutations, all of which have independence or exchangeable structure. A uniform Latin square is the canonical dense random algebraic object with rigid global constraints, where such tools fail. New 'independent model' approximations (Kwan-Sah-Sawhney-Simkin; Parities in random Latin squares, 2509.13125, resolving Cameron's conjecture) make it timely. The answer would say what first-order logic can see of a random quasigroup.",
+  "diagnosis": "Marked B mainly because the literature check was incomplete. The question itself is natural (the canonical random dense algebraic structure), decisive (a convergence law, yes or no), not found posed, and hard. Recent independent-model approximations make it timely.",
+  "what_changed": "Searches found no FO-law work on Latin squares or quasigroups. Sharpened it into a decisive convergence-law question and named the expected mechanism: an extension property plus a Poisson limit for sparse definable configurations.",
+  "refs": [
+   "https://arxiv.org/abs/2509.13125",
+   "https://arxiv.org/pdf/2011.07572",
+   "https://arxiv.org/pdf/2106.11932",
+   "https://arxiv.org/abs/2402.02567"
+  ],
+  "red_notes": "No prior FO-law work on Latin squares or quasigroups was found. Verified that 2509.13125 is Kwan-Petrova-Sawhney and resolves Cameron's row-parity conjecture. Even the Poisson(1) idempotent law looks unproved: the best general tool, Allsop-Morris 2606.18174, gives (δ/n)^k to (Δ/n)^k bounds, not (1+o(1))n^{-k}. So the problem is hard but well-posed.",
+  "red_refs": [
+   "https://arxiv.org/abs/2509.13125",
+   "https://arxiv.org/abs/2606.18174",
+   "https://arxiv.org/pdf/2202.05088",
+   "https://arxiv.org/pdf/2106.11932"
+  ],
+  "partial": "There is a flaw in the first reviewer's route (i). The extension property 'every finite partial configuration extends in every consistent way w.h.p.' is false. A new x with x∘a1=b1 and x∘a2=b2 has expected count n·n^{-2}→0, because x∘a=b already determines x. The structure is functionally sparse (Lynch-type), not G(n,1/2)-type, so the route was rewritten.",
+  "track": "core"
+ },
+ {
+  "id": "N-647",
+  "outcome": "UPGRADED",
+  "title": "Mass-critical scattering on flat cones",
+  "W": "Dodson proved that the defocusing cubic Schrodinger equation in the plane scatters for every finite-mass initial state. Prove the same on every flat cone, a plane with a single conical singularity of total angle alpha. For alpha = 2pi/k it follows from Dodson by symmetry, and radial data are also easy. Every other angle, such as the surface of a cube corner (alpha = 3pi/2) or alpha > 2pi, is open.",
+  "M": "For $\\alpha>0$ let $\\mathcal C_\\alpha=(0,\\infty)\\times(\\mathbb R/\\alpha\\mathbb Z)$ with metric $dr^2+r^2d\\theta^2$ and $\\Delta$ the Friedrichs extension of the Laplacian on $C_c^\\infty(\\mathcal C_\\alpha)$. Prove that for every $\\alpha>0$ and every $u_0\\in L^2(\\mathcal C_\\alpha)$ the solution of $iu_t+\\Delta u=|u|^2u$, $u(0)=u_0$, is global with $\\|u\\|_{L^4_{t,x}(\\mathbb R\\times\\mathcal C_\\alpha)}<\\infty$, hence scatters in $L^2$. (Known: $\\alpha=2\\pi/k$, since $\\mathcal C_{2\\pi/k}=\\mathbb R^2/\\mathbb Z_k$ and Dodson applies to $\\mathbb Z_k$-invariant data. Radial data for any $\\alpha$, since the radial equation coincides with the 2D one.)",
+  "why": "Dodson's theorem uses Euclidean translation and Galilean symmetry. On a cone with angle not of the form 2pi/k, translations and Galilean boosts are lost, waves diffract at the apex, and concentration at the apex rescales back to the same cone. The flat-cone family is the simplest geometry testing whether concentration-compactness and rigidity survive a genuine singularity at the mass-critical level. Known results on cones (Zhang-Zheng, Blair-Ford-Marzuola) give only small data or energy-space results.",
+  "diagnosis": "The angle 3pi/2 was cosmetic and the trivial cases were not identified, so the problem read as an isolated instance with no literature check.",
+  "what_changed": "Extended to all cone angles. Identified the solved cases: alpha=2pi/k by the quotient R^2/Z_k, and radial data. The open set is now exactly the non-quotient angles. Literature check found only small-data or H^1 results on cones.",
+  "refs": [
+   "https://arxiv.org/abs/1702.05813",
+   "https://arxiv.org/pdf/1105.5410",
+   "https://arxiv.org/pdf/2504.06045",
+   "https://arxiv.org/pdf/0707.3188",
+   "https://ar5iv.arxiv.org/html/1909.03572"
+  ],
+  "red_notes": "Searches turned up only Ford and Blair-Ford-Marzuola Strichartz estimates, Zhang-Zheng (3D cones, H^1 small-data cubic), Gao-Wang-Xu-Zhang 2504.06045 (magnetic Strichartz on cones) and Gao-Xu 2D inverse-square (mass-supercritical). No large-L^2 mass-critical result exists on cones, AB or inverse-square 2D. 2610.29265 concerns spacetime cones and is unrelated. M is precise. This is a natural rigidity test, though somewhat incremental.",
+  "red_refs": [
+   "https://arxiv.org/abs/1702.05813",
+   "https://arxiv.org/abs/2504.06045",
+   "https://arxiv.org/abs/1909.03572",
+   "https://arxiv.org/pdf/1105.5410",
+   "https://arxiv.org/pdf/2610.29265"
+  ],
+  "partial": "Both trivial cases check out. For alpha=2pi/k, C_alpha=R^2/Z_k: the Friedrichs modes e^{ikmθ} with Bessel order k|m| match the Z_k-invariant plane functions, and Dodson applies for any mass, with mass scaled by k. For radial data the m=0 mode on the cone is the 2D radial Laplacian. The sign convention iu_t+Δu=+|u|^2u is defocusing.",
+  "track": "core"
+ },
+ {
+  "id": "C-T3",
+  "title": "Alternating quotients of knot groups",
+  "grade": "A",
+  "importance": 7,
+  "novelty": 4,
+  "value": 7,
+  "W": "The trefoil's group maps onto every alternating group A_n with n>=9, because modulo its centre it is the modular group. Show that every nontrivial knot group maps onto A_n for all large n, or at least for infinitely many n, and bound the last exception in terms of the knot.",
+  "M": "Let $K\\subset S^3$ be a nontrivial knot and $G_K=\\pi_1(S^3\\setminus K)$. (a) Prove that $G_K$ surjects onto $A_n$ for all $n\\ge N(K)$, and bound $N(K)$ in terms of the crossing number. (b) Weaker: prove that $G_K$ surjects onto $A_n$ for infinitely many $n$, or even for one $n\\ge5$. Data (exhaustive search over pairs of conjugate even permutations, meridians $x,y$ with $wx=yw$): for the trefoil ($w=xy$) a surjection exists exactly for $n=5$ and $n\\ge9$, since every surjection kills the centre and factors through $\\mathrm{PSL}_2(\\mathbb Z)\\cong C_2*C_3$, and Miller proved $(2,3)$-generation of $A_n$ for $n\\ne3,6,7,8$. For the figure-eight knot ($w=x^{-1}yxy^{-1}$) a surjection exists for $n=6,9,10$ and not for $n=5,7,8$. Is $N(4_1)=9$, i.e. does $G_{4_1}$ surject onto $A_n$ for every $n\\ge9$?",
+  "why": "Dunfield and Thurston asked whether every finite-volume hyperbolic 3-manifold group has an alternating quotient; whether this holds for infinitely many or all large n is also open, and Fuchsian groups are known to have all large alternating quotients (Everitt, Liebeck-Shalev). Knot complements are the most concrete test case: their groups are normally generated by a meridian and are strongly constrained, and an answer would clarify what finite quotients knot groups have, which matters for profinite rigidity.",
+  "issues": "Special case of open questions: Dunfield-Thurston Question 7.6 (existence of an A_n quotient for hyperbolic 3-manifolds), and Button (arXiv 1010.2726) notes it is unknown whether such manifolds have A_n quotients for infinitely many or all but finitely many n. So it is not fully novel, but the knot-group formulation with an effective N(K) does not appear in what I found. Verified by computer: the trefoil gives n=5 yes, n=6,7 no; the figure-eight gives n=5,7,8 no and n=6,9 yes. Checked the trefoil argument (the centre (xy)^3 must map trivially). Torus knots follow from Everitt's theorem on free products of cyclic groups. Added the weaker form (b), since even it appears open for hyperbolic knots.",
+  "refs": [
+   "https://arxiv.org/pdf/math/0502567",
+   "https://arxiv.org/pdf/1010.2726",
+   "https://arxiv.org/abs/math/9907148v1",
+   "https://www.ams.org/proc/1980-078-01/S0002-9939-1980-0548101-9/"
+  ],
+  "red_notes": "Found no resolution of Dunfield-Thurston Q7.6 or of the infinitely-many-n version, for knots or for hyperbolic 3-manifolds. Sawin-Wood (2022) handle random 3-manifolds, not fixed groups. Baader-Kjuchukova cover S_n quotients with transposition meridians only, which gives A_n quotients of the commutator subgroup, not of G_K. Long-Reid give PSL2(p) quotients, not A_n. Minor: W omits n=5 for the trefoil.",
+  "red_refs": [
+   "https://arxiv.org/pdf/math/0502567",
+   "https://arxiv.org/pdf/1010.2726",
+   "https://arxiv.org/abs/2203.01140",
+   "https://arxiv.org/abs/1505.06364",
+   "https://doi.org/10.1017/S0305004119000173"
+  ],
+  "partial": "Computer-verified in a fresh script: trefoil (xyx=yxy) surjects onto A5 but not A6 or A7. Figure-eight (w=x^-1yxy^-1) surjects onto A4 and A6 but not A5, A7 or A8, and has no S3 quotient, as det=5 requires. n>=9 not rerun (would take more than 30s). The trefoil argument (centre maps trivially, factor through C2*C3, Miller's (2,3)-generation) is correct.",
+  "track": "core"
+ },
+ {
+  "id": "C-94",
+  "title": "Finding Huang's vertex",
+  "grade": "A",
+  "importance": 5,
+  "novelty": 7,
+  "value": 7,
+  "W": "Huang's theorem says that any set of more than half the corners of the n-cube contains a corner with at least √n neighbours in the set. When the set is listed by a small circuit, how hard is it to find such a corner, or a flaw in the listing? The problem is easily shown to be at least as hard as the pigeonhole class PPP. Is it in PPP, so that it is PPP-complete, or does Huang's linear-algebra proof make it harder?",
+  "M": "$\\mathrm{HUANG}$: given a Boolean circuit $f:\\{0,1\\}^{n}\\to\\{0,1\\}^n$, with inputs read as elements of $[2^{n-1}+1]$ and inputs beyond $2^{n-1}+1$ ignored, output either $i\\ne j$ with $f(i)=f(j)$, or $i,j_1,\\dots,j_m$ with $m=\\lceil\\sqrt n\\rceil$ such that $f(j_1),\\dots,f(j_m)$ are distinct and each is at Hamming distance $1$ from $f(i)$. By Huang's theorem this problem is total. It is PPP-hard: embed a PIGEON instance so that every image has even weight, which forces every solution to be a collision. Is $\\mathrm{HUANG}\\in\\mathrm{PPP}$? If not, which standard TFNP class (for example one defined by a linear-algebra principle) contains it, and is it complete for that class?",
+  "why": "Huang's proof of the sensitivity conjecture is purely spectral, and no combinatorial proof is known. Placing the associated search problem in PPP would amount to a pigeonhole-style, efficiently checkable version of the argument. Showing it lies outside PPP in the black-box model would separate the theorem from counting principles. It is a natural test case for the recent programme of classifying TFNP problems that come from extremal combinatorics (Ramsey, iterated pigeonhole, linear-algebra classes).",
+  "issues": "My attack: HUANG is PPP-hard. Pad a PIGEON instance with 2^m pigeons and 2^m-1 holes to 2^{n-1}+1 pigeons and 2^{n-1} holes (n-1=m+1, dummy pigeons mapped injectively to dummy holes), and send the holes to even-weight strings. The image then has no cube edges, so every solution is a collision. So 'Is HUANG in FP?' is answered (no, unless PPP is in FP). The question is really about membership in PPP, and I rewrote M around that. Containment in PPA or PLS would put PPP inside those classes, which is unlikely. I found no paper on the TFNP complexity of Huang's theorem. Laplante–Naserasr–Sunny–Wang (2026) give a linear-dependence proof, which may suggest a linear-algebra class.",
+  "refs": [
+   "https://arxiv.org/pdf/1907.00847",
+   "https://api.crossref.org/works/10.1145%2F3777401",
+   "https://arxiv.org/html/2401.12604v2",
+   "https://arxiv.org/pdf/2209.07625"
+  ],
+  "red_notes": "Found no TFNP or complexity treatment of Huang's theorem. Jain-Li-Robere-Xun (Ramsey/t-PPP) and Laplante et al. (TOCT 2026, linear-dependence proof) do not address it. The crux is the sqrt(n) threshold: degree >=1 follows from pigeonhole on a coordinate matching, and the older combinatorial bounds of about (1/2)log n may be in PPP. Suggest adding this to the why.",
+  "red_refs": [
+   "https://arxiv.org/abs/2401.12604",
+   "https://doi.org/10.1145/3777401",
+   "https://arxiv.org/abs/1907.00847"
+  ],
+  "partial": "The PPP-hardness reduction is correct. Take n=m+2. Pad 2^m real pigeons with 2^m+1 dummies, mapped injectively to the 2^m+1 dummy holes. Send the pigeon with C(x)=0 to dummy hole #1, so a collision with dummy #1 decodes to a zero-solution. Embed holes as h -> (h, parity h), which gives even weight. No two even-weight strings are adjacent, so every solution is a collision that decodes to a PIGEON solution.",
+  "track": "core"
+ },
+ {
+  "id": "N-418",
+  "title": "Forced blow-up up to the Lions threshold",
+  "grade": "A",
+  "importance": 7,
+  "novelty": 6,
+  "value": 7,
+  "W": "With an ordinary Laplacian, a smooth compactly supported push can make a fluid at rest blow up in finite time (OpenAI, 2026). With dissipation (-Δ)^α for α ≥ 5/4, Lions proved that solutions stay smooth. Does forced blow-up from rest still happen for every α strictly between 1 and 5/4?",
+  "M": "For $\\alpha\\in(1,5/4)$ consider $\\partial_tu+(u\\cdot\\nabla)u+\\nabla p=-(-\\Delta)^{\\alpha}u+f$, $\\nabla\\cdot u=0$ on $\\mathbb R^3$, $u(\\cdot,0)=0$. Determine the set of $\\alpha\\in(1,5/4)$ for which there exists $f\\in C_c^\\infty(\\mathbb R^3\\times(0,\\infty);\\mathbb R^3)$ whose unique smooth solution satisfies $\\limsup_{t\\uparrow T}\\|u(t)\\|_{L^\\infty}=\\infty$ for some $T<\\infty$. In particular, is it all of $(1,5/4)$, or is it nonempty?",
+  "why": "Lions' threshold $\\alpha=5/4$ is exactly where energy-level dissipation becomes critical, so it is the natural candidate for the sharp boundary between regularity and singularity. The 2026 construction of forced blow-up at $\\alpha=1$ makes the forced form of this question meaningful. Pushing it to every $\\alpha<5/4$ would show that the energy-critical exponent is the true dividing line, at least when forcing is allowed.",
+  "issues": "As written the range '$\\alpha<5/4$' included $\\alpha=1$, which is a form of Clay's forced statement and was claimed in 2026 by OpenAI. That paper proves smooth, compactly supported, time-dependent force, zero data, all $\\nu>0$, not yet refereed. Cao–Chi–Nie use it as a black box. I restricted to $\\alpha\\in(1,5/4)$ and changed 'construct' to 'decide'. Hypodissipative forced blow-up is known for $\\alpha<\\alpha_0\\approx0.093$ with a rougher force (arXiv:2407.06776). None of the sources treat $\\alpha>1$ or mention Lions' threshold. Breakdown is defined via $L^\\infty$.",
+  "refs": [
+   "https://openai.com/index/navier-stokes-solution/",
+   "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+   "https://arxiv.org/pdf/2609.10262",
+   "https://arxiv.org/abs/2407.06776"
+  ],
+  "red_notes": "Sources checked. The OpenAI paper (Sep 2026, unrefereed, Lean-formalized) proves Laplacian forced blow-up with an L-infinity norm and does not discuss alpha>1. Cao-Chi-Nie use only the Laplacian. Cordoba-Martinez-Zoroa-Zheng cover alpha<~0.093. Tao (footnote 10) and Coiculescu prove averaged-model blowup for alpha<5/4, which supports the question. Replaced 'decide whether for every alpha' (quantifier ambiguity) with 'determine the set'.",
+  "red_refs": [
+   "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+   "https://arxiv.org/abs/2609.10262",
+   "https://arxiv.org/abs/2407.06776",
+   "https://arxiv.org/abs/1402.0290",
+   "https://arxiv.org/abs/2307.15986"
+  ],
+  "partial": null,
+  "track": "core"
+ },
+ {
+  "id": "C-95",
+  "title": "Is the Mandelbrot set decidable at Gaussian rationals?",
+  "grade": "A",
+  "importance": 7,
+  "novelty": 3,
+  "value": 7,
+  "W": "Is there an algorithm that takes a complex number with rational real and imaginary parts and decides whether it lies in the Mandelbrot set? Escaping points can be confirmed, and so can points that have an attracting or neutral cycle of some period, since for each period that is an exact algebraic check. The trouble is points on the boundary where every cycle repels. No such Gaussian rational is known, but none has been ruled out.",
+  "M": "Let $M=\\{c\\in\\mathbb C:(f_c^{n}(0))_{n\\ge0}\\text{ bounded}\\}$, $f_c(z)=z^2+c$. Prove or disprove that $M\\cap\\mathbb Q(i)$ is a decidable subset of $\\mathbb Q(i)$. $\\mathbb Q(i)\\setminus M$ is r.e. For each $n$, the existence of an $n$-cycle with multiplier of modulus $\\le1$ is decidable for algebraic $c$ (Tarski), and such a cycle forces $c\\in M$. $M\\cap\\mathbb Z[i]$ is a finite, explicitly computable set (it contains the Misiurewicz points $-2,\\pm i$, whose cycles are all repelling). So a positive answer would follow from (*): every $c\\in(M\\cap\\mathbb Q(i))\\setminus\\mathbb Z[i]$ has a non-repelling cycle. Prove or disprove (*). (Example: $c=(37+16i)/100$ lies on the main cardioid with multiplier $(3+4i)/5$, a Siegel parameter.)",
+  "why": "M is not decidable in the Blum–Shub–Smale model, and its computability as a set (Hertling) is tied to the density-of-hyperbolicity conjecture. Restricting to exact rational inputs gives the most concrete version of 'can a computer decide the Mandelbrot set?', and leads to an arithmetic-dynamics question: can a non-escaping Gaussian rational have only repelling cycles (be non-hyperbolic, e.g. infinitely renormalizable or Collet–Eckmann-like)?",
+  "issues": "Not novel: Potgieter, 'Hypercomputing the Mandelbrot set?' (arXiv cs/0604003, Sect. 2.3 'A rational refuge?') asks exactly whether M ∩ Q^2 is decidable, leaves it open and guesses no. Found no later resolution. Added the reduction to (*) (escape semi-decidable; non-repelling cycle of given period decidable for algebraic c), which shows the real difficulty. Verified the example computation. Real rationals are trivial (M ∩ R = [-2, 1/4]), so only non-real Gaussian rationals matter. The multiplier (3+4i)/5 = e^{2πiθ} has θ Diophantine by Baker's theorem, so that example is a Siegel parameter.",
+  "refs": [
+   "https://arxiv.org/pdf/cs/0604003",
+   "https://arxiv.org/pdf/1703.06459",
+   "https://arxiv.org/pdf/cs/0509042",
+   "https://en.wikipedia.org/wiki/Mandelbrot_set"
+  ],
+  "red_notes": "Not novel: Potgieter (arXiv cs/0604003, Sec. 2.3) asks exactly this and leaves it open. Found no later resolution. Stays A only because of its importance and the sharpened (*). Could fairly be downgraded on novelty.",
+  "red_refs": [
+   "https://arxiv.org/abs/cs/0604003",
+   "https://arxiv.org/pdf/1703.06459"
+  ],
+  "partial": "The reduction is correct apart from one flaw. A non-repelling cycle implies c in M, since by Fatou all cycles are repelling when c is outside M. The example arithmetic checks out: mu/2-mu^2/4=(37+16i)/100. But (*) as stated is FALSE. c=-2 and c=+-i are Gaussian-integer Misiurewicz parameters in M with all cycles repelling (c=i: 0->i->-1+i->-i->-1+i). The fix excludes Z[i], where membership is a finite check.",
+  "track": "core"
+ },
+ {
+  "id": "N-428",
+  "title": "Superlinear unit distances on the unit sphere",
+  "grade": "A",
+  "importance": 6,
+  "novelty": 4,
+  "value": 7,
+  "W": "In 2026 a number-field construction showed that points in the plane can have n^(1+c) unit distances, disproving Erdos's conjecture. On a sphere of radius 1/sqrt2 an n^(4/3) construction is classical, but on the unit sphere only n·sqrt(log n) is known. Can the new ideas give a power gain there?",
+  "M": "Prove or disprove: there is $c>0$ such that for infinitely many $n$ there exist $P\\subset S^2=\\{x\\in\\mathbb{R}^3:|x|=1\\}$ with $|P|=n$ and $\\#\\{\\{p,q\\}\\subset P:|p-q|=1\\}\\ge n^{1+c}$.",
+  "why": "On S^2, distance 1 means angle 60 degrees, an inhomogeneous condition that lattice constructions only give n^(1+o(1)) for. The orthogonality trick that gives n^{4/3} at radius 1/sqrt2 has no analogue. A power gain would show the 2026 planar phenomenon is robust, while a matching n^{1+o(1)} upper bound would show the sphere behaves like the conjectured old plane.",
+  "issues": "Known: radius 1/sqrt2 gives Theta(n^{4/3}) (Erdos-Hickerson-Pach), any radius has upper bound O(n^{4/3}), and general radius >1/2 has lower bound Omega(n sqrt(log n)) (Swanepoel-Valtr 2004). The question of power gains for other radii goes back to EHP, so it is not novel. The 2026 planar disproof (OpenAI; Sawin arXiv 2605.20579 with n^{1.014}; Alon et al. remarks arXiv 2605.20695) treats only the plane, and Sawin notes serious obstacles in R^3. My quick lattice heuristic (directions v/|v| with |v|^2 in s·squares) gives only linear counts. M is unchanged apart from 'prove or disprove'.",
+  "refs": [
+   "https://arxiv.org/abs/2605.20579",
+   "https://arxiv.org/html/2605.20695",
+   "https://web.math.princeton.edu/~nalon/PDFS/udremarks.pdf",
+   "https://researchonline.lse.ac.uk/id/eprint/25462",
+   "https://ar5iv.arxiv.org/html/0707.0213"
+  ],
+  "red_notes": "No 2026 work on spheres found; Sawin and the Alon et al. remarks discuss only plane and full R^3 (beating n^{4/3}), so 'Sawin notes obstacles in R^3' refers to a different problem. Swanepoel-Valtr Omega(n sqrt log n) for all D>1 confirmed; they say nothing more is known for D != sqrt2. Posed by EHP (not novel) but natural; M correct.",
+  "red_refs": [
+   "https://kam.mff.cuni.cz/kamserie/clanky/2004/s673.pdf",
+   "https://arxiv.org/abs/2605.20579",
+   "https://arxiv.org/html/2605.20695",
+   "https://arxiv.org/abs/2606.03419"
+  ],
+  "partial": null,
+  "track": "core"
+ },
+ {
+  "id": "N-649",
+  "title": "Paley spin glass",
+  "grade": "A",
+  "importance": 6,
+  "novelty": 7,
+  "value": 7,
+  "W": "Place a ±1 spin at each element of F_p, and let each pair interact through the Legendre symbol of their difference. Equivalently, this is the max-cut problem for the Paley graph. The eigenvalue bound caps the ground-state energy at p^{3/2}/2. Simple square-wave configurations reach this bound along special primes, but heuristic search for typical primes stalls around 0.46. Is the eigenvalue bound asymptotically sharp for all primes?",
+  "M": "For primes $p\\equiv1\\pmod4$ let $E_p=\\max_{\\sigma\\in\\{\\pm1\\}^{\\mathbb F_p}}\\sum_{i<j}\\left(\\frac{j-i}{p}\\right)\\sigma_i\\sigma_j$. The circulant matrix $Q=\\big(\\big(\\frac{j-i}p\\big)\\big)_{i,j\\in\\mathbb F_p}$ is symmetric with eigenvalues $\\pm\\sqrt p$ (each with multiplicity $\\frac{p-1}2$) and $0$, so $E_p\\le\\frac12p^{3/2}$. (For the Paley graph $P_p$, $\\mathrm{surp}(P_p)=\\mathrm{maxcut}(P_p)-\\frac12|E(P_p)|\\le \\frac14E_p+\\frac p8$.) It is known that $\\limsup_p E_p/p^{3/2}=\\frac12$: if $(\\frac qp)=1$ for all primes $q\\le y$, then $\\sigma_x=\\operatorname{sgn}\\cos(2\\pi x/p)$ has ratio $\\frac12-o_y(1)$; and the same $\\sigma$ gives $E_p/p^{3/2}\\ge\\frac4{\\pi^2}\\big(2-\\frac{\\pi^2}8\\big)-o(1)\\approx0.31$ for every $p$. Determine $\\liminf_{p}E_p/p^{3/2}$; in particular, is it $\\frac12$?",
+  "why": "The question is whether the spectral (Hoffman/Alon) bound for max-cut is asymptotically attained by the most classical quasirandom graph. For random graphs this bound is tight only up to a constant factor. In Fourier terms it asks for ±1 sequences on Z/p whose spectral mass lies almost entirely on the quadratic residues. That makes it an arithmetic question about how the Legendre symbol behaves on small integers, with a Liouville-function-like obstruction at primes where χ(q)=-1 for every small prime q.",
+  "issues": "Q is symmetric because p≡1 mod 4, so the bound is correct. Attack: with Fourier weights, ratio = Σ_a |σ̂(a)|² χ(a)/(2p²). A square wave dilated by any a gives ratio (4/π²)·Σ_{m odd} χ(m)/m², which tends to 1/2 along primes with χ(q)=1 for all small q. Check: p=53881, where χ(q)=1 for every prime q≤19, gives ratio 0.4925. So limsup=1/2 is easy, and I rewrote the question to ask for the liminf, which is the real content. Simulated annealing gave 0.461, 0.463, 0.464 for p=101, 197, 401, compared with 0.37–0.39 for the best square waves. I found no literature determining the Paley max-cut constant. Recent work on cut surplus versus smallest eigenvalue (arXiv 2509.03490) proves surplus ≤ |λ_min|n/4 but does not treat Paley graphs.",
+  "refs": [
+   "https://arxiv.org/pdf/2509.03490",
+   "https://arxiv.org/pdf/2610.01657",
+   "https://en.wikipedia.org/wiki/Paley_graph",
+   "https://arxiv.org/pdf/math/0503745"
+  ],
+  "red_notes": "No literature on Paley max-cut/this ground state found (Alon-Sudakov, Jin-Milojevic-Tomon-Zhang do not treat Paley). Natural, clean, connects to Boolean functions with Fourier support in the quadratic residues. Fixed the incorrect surplus normalisation in M and added the easy 0.31 lower bound.",
+  "red_refs": [
+   "https://arxiv.org/abs/2509.03490",
+   "https://web.math.princeton.edu/~nalon/PDFS/eigsmall6.pdf",
+   "https://arxiv.org/pdf/math/0503745"
+  ],
+  "partial": "Correct. Q is circulant with eigenvalues chi(a)sqrt p (Gauss sums), so E_p<=p^{3/2}/2. Square-wave ratio is (4/pi^2)sum_{m odd}chi(m)/m^2 + o(1); taking p=1 mod 8 and p=1 mod q for odd q<=y (reciprocity + Dirichlet) gives limsup=1/2. Recomputed p=53881: 0.4925. Bonus: the sum is >=2-pi^2/8 so liminf>=0.31. But the side claim '2E_p = max-cut surplus up to O(p)' is wrong: surp = -(s^2-p)/8 + E/4 (after dilating by a nonresidue), so surp<=E_p/4+p/8; equality up to O(p) needs balanced optimisers, not shown.",
+  "track": "core"
+ }
+]
