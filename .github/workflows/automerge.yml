@@ -8,18 +8,28 @@ permissions: { contents: write, pull-requests: write, actions: write }
 
 jobs:
   merge:
-    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request'
+    # Only the canonical verify workflow file counts (a PR that edits workflows is never auto-merged anyway).
+    if: >-
+      github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.path == '.github/workflows/verify.yml'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       R: ${{ github.repository }}
       SHA: ${{ github.event.workflow_run.head_sha }}
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
     steps:
       - name: Find the PR, re-check its files independently (fail closed), merge, rebuild board
         run: |
           PR=$(gh api "repos/$R/pulls?state=open&per_page=100" --jq ".[] | select(.head.sha==\"$SHA\") | .number" | head -1)
           [ -z "$PR" ] && { echo "No open PR at $SHA"; exit 0; }
           AUTHOR=$(gh api "repos/$R/pulls/$PR" --jq '.user.login')
+          # Only PRs into the default branch: a PR into some other (possibly stale) branch would have been
+          # checked by that branch's older checker.
+          PRBASE=$(gh api "repos/$R/pulls/$PR" --jq '.base.ref')
+          [ "$PRBASE" = "$DEFAULT_BRANCH" ] || { echo "PR targets $PRBASE, not $DEFAULT_BRANCH"; exit 0; }
+          # Login must be a plain GitHub username before it is used inside a regex.
+          echo "$AUTHOR" | grep -Eq '^[A-Za-z0-9](-?[A-Za-z0-9]){0,38}$' || { echo "Unexpected author $AUTHOR"; exit 0; }
           FILES=$(gh api --paginate "repos/$R/pulls/$PR/files?per_page=100" --jq '.[] | "\(.status) \(.filename)"')
           # Fail closed: every file must be an addition of a solution file, or an add/modify inside the
           # author's own partial-work folder. Anything else (deletions, renames, statements, data, CI) is left for a maintainer.

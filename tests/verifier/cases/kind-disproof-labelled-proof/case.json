@@ -1,0 +1,1 @@
+{"id": "QED-Q9", "statement": "Statement.lean", "expect": "fail", "raw": "reject", "note": "correct proof of not-Claim, meta.json says proof"}

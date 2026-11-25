@@ -1,0 +1,1 @@
+{"id": "N-000", "expect": "fail", "raw": "reject", "note": "native_decide (Lean.ofReduceBool)"}
