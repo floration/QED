@@ -1,0 +1,41 @@
+You are formalizing open math problems for QED, a public solve board (GitHub floration/QED). Solvers submit Lean 4 + Mathlib proofs of `Claim` or `¬ Claim`; CI accepts any proof that typechecks. So a sloppy statement is worse than none: if `Claim` is accidentally trivial (true or false for a silly reason), someone gets credit for nothing.
+
+INPUT: /home/claude/vet/main.json (a list). Handle ONLY the entries whose "id" is in your list (given below). Fields: id (public id, e.g. N-266), qid (internal id), grade, title, W (plain statement), M (precise statement; the authoritative one), why, notes (reviewer notes), partial, bound, refs, assumption (for "assumptions on trial" problems: the hypothesis being tested).
+
+For EACH problem, do four things.
+
+1. PROVENANCE. Pick exactly one:
+   - "Original": the question itself was formulated by QED; no source in refs/notes poses it.
+   - "Extension": a substantive new variant/strengthening of a known problem or theorem (new setting, new parameter, new regime).
+   - "Curated": the question (or essentially it) is already posed in the literature; give the source to credit (author, year, arXiv id if known).
+   Base this on refs/notes/why; a reviewer note like "already posed in essence by X" or "stated in Sogge-Zelditch" means Curated. Use at most 2 web searches per problem, only when genuinely unsure. Give a one-sentence reason and, for Curated/Extension, the credit line.
+
+2. PREMISE RISK. List any reference the statement depends on that is a 2026 preprint or otherwise unrefereed (e.g. arXiv 26xx.xxxxx, company PDFs). One line each: what the problem assumes from it. Empty list if none.
+
+3. STATEMENT CHECK. If M is false, trivially true, ill-posed, or ambiguous as written, give a corrected M ("M_fix") and say why. Otherwise M_fix = null. Also give "area" (one of: Number theory, Combinatorics, Graph theory, Geometry, Analysis, PDE, Dynamics, Probability, Algebra, Topology, Logic & computability, Complexity, Mathematical physics) and "difficulty" on 0-10 (Collatz 5.5, twin primes 5.0).
+
+4. LEAN. Write the full contents of problems/<id>/Statement.lean, in exactly this shape:
+
+import Mathlib
+/-! <id>: <title>
+<one-paragraph plain statement>
+Informal statement: <M or M_fix>
+Formalization notes: <definitions introduced, conventions, anything a solver must know; what proving Claim means and what proving ¬Claim means>
+-/
+namespace OpenProblems.<id without the dash, e.g. N266>
+<helper defs if needed>
+def Claim : Prop := <statement>
+end OpenProblems.<id without dash>
+
+Rules for the Lean:
+- Lean 4, Mathlib (late 2026). No sorry, admit, axiom, opaque constants, or set_option in the statement. Helper `def`s and `structure`s are fine; give them clear names and docstrings.
+- Use only Mathlib API you are confident exists, and prefer stable, basic names (Finset, SimpleGraph, Matrix, Real, MeasureTheory.volume, EuclideanSpace ℝ (Fin n), Nat.Prime, Polynomial, MvPolynomial, Filter.Tendsto, Asymptotics). If unsure of a name, define what you need yourself from basics. You cannot compile here; CI will typecheck, so write carefully, fully elaborated, with explicit types; avoid fragile notation and tactic blocks inside defs.
+- "Prove or disprove X" → Claim := X. "Determine the value" → turn it into the precise conjecture the problem is really about (e.g. the conjectured value, or the sharpest yes/no question it asks) and say so in the notes. A bound problem → Claim := the open target inequality (e.g. the conjectured strict improvement), with known bounds recorded in the notes. "At least decide whether…" fallbacks → formalize the main question only.
+- Faithfulness audit before you finish each file. Check: quantifier order; vacuous hypotheses (empty types, n = 0, sets that cannot exist); junk values (ℕ subtraction, x/0, Real.sqrt of negatives, Real.log 0, sSup of unbounded or empty sets, iSup over ℕ∞); coercions ℕ→ℝ; strict vs non-strict; "infinitely many" encoded correctly (Set.Infinite, or ∀ N, ∃ n > N); asymptotic statements encoded with explicit ε/N or Asymptotics. Could Claim be proved or refuted by a short argument that ignores the real mathematics? If so, fix it.
+- If the problem cannot be faithfully stated with reasonable effort, because it needs a theory Mathlib lacks and that would take hundreds of lines to build (e.g. Navier–Stokes weak solutions, circuit complexity classes, Turing-machine time bounds, Gibbs measures, Sobolev spaces on singular surfaces), do NOT write a fake or weakened statement. Instead set formal_status "not_formalized", keep `def Claim : Prop := sorry` in the shape above with STATUS: NOT YET FORMALIZED in the header, and write in the notes exactly which missing pieces are needed. A faithful statement of a weaker-looking but EQUIVALENT form is fine. A statement that only covers a special case is NOT fine unless the problem itself asks for that case.
+- Self-contained computational definitions (counting, graphs, finite structures, polynomials, real inequalities, integrals over boxes) are usually doable: do them.
+
+OUTPUT: append ONE JSON object per problem, on one line, to /home/claude/vet/lean/out<K>.jsonl as soon as that problem is done (do not batch; work in your list order). Keys:
+{"id","qid","provenance","prov_reason","credit","premise_risks":[...],"M_fix","M_fix_reason","area","difficulty","formal_status":"formalized"|"not_formalized","lean":"<full file contents>","lean_notes":"<what to double-check when CI runs; any API names you were unsure of>"}
+Write the jsonl with a small Python helper (json.dumps) so escaping is correct; keep helper scripts in /home/claude/vet/lean/tmp<K>/ only.
+When finished, reply with a short summary: counts formalized / not, any M_fix you made, any problem you think should be removed (false, solved, or trivial) and why.
