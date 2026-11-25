@@ -1,7 +1,7 @@
 import Mathlib
 /-! QED-E049: Ropelength lower bound for the trefoil
 Tie a knot in a rope of thickness 1 using as little rope as possible. For the simplest knot, the trefoil, computer experiments find tight knots using about 16.37 units of rope. The last refereed proof shows that every knotted rope needs at least 15.66 units, and a 2026 computer-assisted preprint claims 15.76. Raise the proven lower bound for the trefoil substantially, ideally to 16.
-Informal statement: For a $C^{1,1}$ simple closed curve $\gamma\subset\mathbb R^3$ let $\mathrm{Rop}(\gamma)=\mathrm{length}(\gamma)/(2\,\mathrm{reach}(\gamma))$ (length over tube diameter), and $R(3_1)=\inf\{\mathrm{Rop}(\gamma):\gamma\text{ a trefoil}\}$ (attained). Known: $15.66\le R(3_1)\lesssim16.372$ (refereed lower bound; numerical upper value), with an unrefereed claim $R(K)>15.7561$ for all nontrivial $K$. Formal target: a lower bound strictly beyond 15.7561, i.e. $R(3_1)>15.7561$, with a verifiable (here: Lean) proof; ideally $R(3_1)\ge16$.
+Informal statement: For a $C^{1,1}$ simple closed curve $\gamma\subset\mathbb R^3$ let $\mathrm{Rop}(\gamma)=\mathrm{length}(\gamma)/(2\,\mathrm{reach}(\gamma))$ (length over tube diameter), and $R(3_1)=\inf\{\mathrm{Rop}(\gamma):\gamma\text{ a trefoil}\}$ (attained). Known: $15.66\le R(3_1)\lesssim16.372$ (refereed lower bound; numerical upper value), with an unrefereed 2026 computer-assisted claim $R(K)>15.7561$ for all nontrivial $K$. Formal target: $R(3_1)\ge16$.
 Formalization notes:
 * Curves: `γ : ℝ → ℝ³`, 1-periodic, C¹ with nowhere-vanishing derivative, injective on [0,1)
   (a regular embedded closed C¹ curve). Its image is `γ '' [0,1]`.
@@ -32,11 +32,12 @@ Formalization notes:
   numerically: the polygon is embedded (minimum distance between non-adjacent edges ≈ 12.8,
   much larger than the rounding error) and a generic projection has 5 crossings with knot
   determinant 3; the only knot of crossing number ≤ 5 with determinant 3 is the trefoil.
-* The infimum R(3₁) is attained, so "a bound beyond 15.7561" means exactly R(3₁) > 15.7561;
-  `Claim` says: some L > 15.7561 bounds the ropelength of every trefoil from below. (This is the
-  2026 preprint's claimed inequality specialised to the trefoil; a formal proof of it, or of
-  anything stronger such as L = 16, is what is asked.) The best refereed bound is 15.66.
-  Proving `Claim` = R(3₁) > 15.7561. Proving `¬Claim` = R(3₁) ≤ 15.7561 (refuting the preprint).
+* Choice of target: a bound just beyond 15.7561 might already be settled by the unrefereed 2026
+  preprint (which claims Rop > 15.7561 for every nontrivial knot), so the formal target is the
+  substantial bound R(3₁) ≥ 16. Known bounds: 15.66 ≤ R(3₁) (refereed), unrefereed claim
+  R(3₁) > 15.7561, and numerically R(3₁) ≈ 16.372. The infimum R(3₁) is attained, so R(3₁) ≥ 16
+  is exactly "every trefoil has ropelength ≥ 16". Proving `Claim` = R(3₁) ≥ 16. Proving `¬Claim`
+  = some trefoil has ropelength < 16 (which would contradict the numerics, ≈ 16.372).
 -/
 namespace OpenProblems.QEDE049
 noncomputable section
@@ -100,13 +101,12 @@ def curveLength (γ : ℝ → E3) : ℝ := ∫ t in (0 : ℝ)..1, ‖deriv γ t�
 
 /-- The curve has the knot type of the trefoil. -/
 def IsTrefoil (γ : ℝ → E3) : Prop :=
-  ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → Iso (List.ofFn fun k : Fin N => γ ((k : ℝ) / (N : ℝ))) trefoil
+  ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → Iso (List.ofFn fun k : Fin N => γ (((k : ℕ) : ℝ) / (N : ℝ))) trefoil
 
-/-- `R(3₁) > 15.7561`. -/
+/-- `R(3₁) ≥ 16`: every (thick) trefoil has ropelength at least 16. -/
 def Claim : Prop :=
-  ∃ L : ℝ, (157561 / 10000 : ℝ) < L ∧
-    ∀ γ : ℝ → E3, IsClosedCurve γ → IsTrefoil γ → 0 < reach (γ '' Set.Icc (0 : ℝ) 1) →
-      L ≤ curveLength γ / (2 * reach (γ '' Set.Icc (0 : ℝ) 1))
+  ∀ γ : ℝ → E3, IsClosedCurve γ → IsTrefoil γ → 0 < reach (γ '' Set.Icc (0 : ℝ) 1) →
+    (16 : ℝ) ≤ curveLength γ / (2 * reach (γ '' Set.Icc (0 : ℝ) 1))
 
 end
 end OpenProblems.QEDE049

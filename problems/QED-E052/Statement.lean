@@ -14,11 +14,12 @@ Formalization notes:
   the previous patch, in particular surrounds it), and every new copy in A (i+1) \ A i touches
   U_i (corona tiles are adjacent to the previous patch).
 * `HasCoronas T k` is monotone (drop the outer coronas), so H(T) = sup {k : HasCoronas T k}.
-  "7 ≤ H(T) < ∞" is then `HasCoronas T 7 ∧ ∃ k, ¬ HasCoronas T k`; no definition of tiling
-  is needed (a tile of the plane admits coronas of every order, so H < ∞ implies T does not
-  tile).
-* Proving `Claim` = a closed disk with finite Heesch number ≥ 7 exists. Proving `¬Claim` = every
-  closed disk with finite Heesch number has H ≤ 6.
+  "7 ≤ H(T) < ∞" is then `HasCoronas T 7 ∧ ∃ k, ¬ HasCoronas T k`. Non-tiling is required
+  explicitly (`¬ TilesPlane T`): it is not proved here that every tile of the plane admits
+  hole-free coronas of every order, so without it a plane-tiling shape whose hole-free
+  coronas stop could witness `Claim` without answering Heesch's problem.
+* Proving `Claim` = a non-tiling closed disk with finite Heesch number ≥ 7 exists. Proving
+  `¬Claim` = every non-tiling closed disk with finite Heesch number has H ≤ 6.
 -/
 namespace OpenProblems.QEDE052
 noncomputable section
@@ -44,9 +45,17 @@ def HasCoronas (T : Set E) (k : ℕ) : Prop :=
       patchUnion T (A i) ⊆ interior (patchUnion T (A (i + 1))) ∧
       ∀ g ∈ A (i + 1) \ A i, (g '' T ∩ patchUnion T (A i)).Nonempty)
 
-/-- A closed disk with finite Heesch number at least 7. -/
+/-- Congruent copies of `T` tile the plane: they cover it and have pairwise disjoint
+interiors (copies with equal images are identified). -/
+def TilesPlane (T : Set E) : Prop :=
+  ∃ G : Set (E ≃ᵢ E), patchUnion T G = Set.univ ∧
+    ∀ g ∈ G, ∀ h ∈ G, g '' T ≠ h '' T →
+      Disjoint (interior (g '' T)) (interior (h '' T))
+
+/-- A non-tiling closed disk with finite Heesch number at least 7. -/
 def Claim : Prop :=
-  ∃ T : Set E, IsClosedDisk T ∧ HasCoronas T 7 ∧ ∃ k : ℕ, ¬ HasCoronas T k
+  ∃ T : Set E, IsClosedDisk T ∧ ¬ TilesPlane T ∧ HasCoronas T 7 ∧
+    ∃ k : ℕ, ¬ HasCoronas T k
 
 end
 end OpenProblems.QEDE052
