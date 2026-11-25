@@ -1,0 +1,163 @@
+[
+{
+"id": "N-626",
+"outcome": "C_TO_B",
+"title": "Maximal eigenfunction growth beyond surfaces of revolution",
+"W": "On the round sphere, some eigenfunctions are as peaked as theory allows, because every geodesic leaving the pole comes back to it. Sogge and Zelditch proved that on any real-analytic surface, maximally peaked eigenfunctions force such a 'pole'. Is rotational symmetry also forced: must such a surface be a surface of revolution?",
+"M": "Let $(M,g)$ be a compact boundaryless real-analytic Riemannian surface with $\\Delta_g e_j=-\\lambda_j^2e_j$, $\\|e_j\\|_{L^2}=1$. Say $g$ has maximal eigenfunction growth if $\\limsup_j \\|e_j\\|_{L^\\infty}/\\lambda_j^{1/2}>0$ for some orthonormal eigenbasis. Decide whether every such $(M,g)$ admits a nontrivial isometric $S^1$-action, i.e. is a surface of revolution. (Necessary condition, Sogge-Zelditch 2016: $M$ has a pole $p$, meaning all geodesics from $p$ return smoothly closed at a common time $2T_p$.)",
+"why": "This is the question Sogge and Zelditch leave open after their pole theorem (arXiv 1409.2063). They note that many non-rotational metrics have a pole, for example real-analytic Zoll-type deformations, so the dynamics alone do not settle it. The answer needs eigenfunction input beyond the pole condition: either a non-rotational analytic surface with peaked eigenfunctions (e.g. via spectral degeneracies on a Zoll metric), or a rigidity theorem. Either answer would essentially close the classification of maximal sup-norm growth in dimension 2.",
+"notes": "Replaces the arbitrary Fermat-quartic instance with the open question stated in Sogge-Zelditch II (1409.2063, Rev. Mat. Iberoam.). I found no later resolution in 2 searches; this should be re-checked. Exponent convention: lambda = frequency, so lambda^{1/2} matches the original lambda^{1/4} in the eigenvalue convention."
+},
+{
+"id": "N-628",
+"outcome": "BOUND_B",
+"title": "Gromov width of the 4D l^4 ball",
+"quantity": "Gromov width c_G(U) of U={x1^4+y1^4+x2^4+y2^4<=1} in (R^4, dx1^dy1+dx2^dy2)",
+"lower": "c_G(U) >= pi: U contains the Euclidean unit ball, since sum x_i^4 <= (sum x_i^2)^2. (Trivial.)",
+"upper": "c_G(U) <= c_Z(U) = c_EHZ(U) = c0 = 4Gamma(5/4)^2/Gamma(3/2) ~ 3.7081 (arXiv 2609.37794, Thm 2 with n=2, p=4, B=D=I). Gromov width is <= every normalized capacity. The volume bound sqrt(2 Vol U) ~ 4.65 is weaker.",
+"W": "The 4D superball x1^4+y1^4+x2^4+y2^4 <= 1 contains the round unit ball, so it holds a symplectic ball of capacity pi. Its cylindrical capacity is about 3.708, and no symplectic ball can be bigger than that. Narrow the gap: embed a bigger ball, or show that no ball of capacity close to 3.708 fits.",
+"M": "Let $U=\\{x_1^4+y_1^4+x_2^4+y_2^4\\le1\\}\\subset(\\mathbb R^4,\\omega_0)$ and $c_G(U)=\\sup\\{\\pi r^2: B^4(r)\\hookrightarrow U\\text{ symplectically}\\}$. Known: $\\pi\\le c_G(U)\\le c_0:=4\\Gamma(5/4)^2/\\Gamma(3/2)\\approx3.7081$ (the upper bound is $c_Z(U)=c_{EHZ}(U)=c_0$). Improve either bound: give an explicit symplectic embedding of $B^4(r)$ with $\\pi r^2>\\pi$, or prove $c_G(U)<c_0$.",
+"why": "Strong Viterbo (all normalized capacities agree on convex bodies) is false in general, but it is open for centrally symmetric bodies. The l^4 ball is the simplest non-toric centrally symmetric body whose EHZ and cylindrical capacities are known exactly. Any upper bound below c0 would give a centrally symmetric counterexample, and each lower-bound improvement is a checkable construction.",
+"refs": [
+"https://arxiv.org/pdf/2609.37794",
+"https://arxiv.org/pdf/2203.02294",
+"https://arxiv.org/pdf/2402.07709"
+],
+"notes": "Verified Thm 2 of 2609.37794; that paper says the centrally symmetric case is unclear and never mentions Gromov width. A quick numerical search over linear symplectic ellipsoids found nothing above pi. The upper side is hard, so this is graded B."
+},
+{
+"id": "N-594",
+"outcome": "BOUND_B",
+"title": "Critical linear firefighter rate on Z^3",
+"quantity": "c* = inf{c: floor(ct) firefighters at step t contain every finite outbreak on Z^3}",
+"lower": "c* >= 8/243 (~0.033), elementary: Loomis-Whitney gives |vertex boundary of B| >= |B|^{2/3}; for c<2a^2-6a^3 with a=2/9, a large initial cube burns forever by induction b_t >= (a(t+T0))^3. Using the asymptotically sharp Wang-Wang vertex isoperimetry (l1-balls, constant 4(3/4)^{2/3}) the same argument heuristically gives ~32/27, not checked rigorously",
+"upper": "c* <= 8, elementary: protect the l1-sphere |x|_1=D (4D^2+2 vertices) before step D-R; c>8 suffices for large D. Finiteness was known (Dyer-Martinez-Pedroza-Thorne, arXiv:1507.03050, Cor. 4, constant not explicit); o(t) fails (arXiv:2002.11205)",
+"W": "On the 3D grid, a finite fire spreads to all unprotected neighbours each step, and at step t you may protect about ct new vertices. It is known that linear growth is the right order. Elementary arguments show that rate c>8 always contains the fire and that c<8/243 does not. Narrow this gap, or find the exact critical rate.",
+"M": "Firefighter game on $\\mathbb Z^3$: a finite $X_0$ burns at time 0; at step $t\\ge1$ first protect $\\lfloor ct\\rfloor$ unburnt vertices (permanently), then fire spreads to all unprotected neighbours of burning vertices. Let $c^*=\\inf\\{c>0:$ for every finite $X_0$ the fire is contained$\\}$. Known: $8/243\\le c^*\\le 8$ (elementary isoperimetric and l1-sphere wall arguments). Improve either bound; e.g. prove $c^*<8$ by a strategy that beats a static wall, or $c^*\\ge 1$.",
+"why": "This is the 3D analogue of the Z^2 question of how many firefighters per turn contain any finite outbreak (Fogarty: 2 suffice; Feldheim-Hod: 3/2 do not suffice in general). The order t^{d-2} is settled, but no constant has been studied. The lower bound is pure isoperimetry, and beating the static l1-wall would show that dynamic blocking helps.",
+"refs": [
+"https://arxiv.org/abs/1507.03050",
+"https://arxiv.org/abs/2002.11205",
+"https://arxiv.org/abs/math/0409195"
+],
+"notes": "Both bounds derived by me (proof sketches in the lower/upper fields; discrete recursion checked numerically). No literature constant found. Fogarty/Feldheim-Hod Z^2 facts from memory, not re-verified."
+},
+{
+"id": "N-161",
+"outcome": "BOUND_B",
+"title": "Wind-driven fire confinement threshold",
+"quantity": "sigma*(a,b): infimum of barrier construction speeds that can confine a fire spreading with speed profile rho(theta)=a+b cos(theta)",
+"lower": "sigma*(a,b) >= Lambda*(a-b), Lambda ~ 1.62621 (isotropic lower bound, arXiv 2610.36919, Thm 4.1). Proof: F contains the disc of radius a-b. Bressan's comparison lemma moves blocking from F to that disc, and rescaling time reduces to unit speed.",
+"upper": "sigma*(a,b) <= 2 max_{theta in [0,pi]} (a+b cos theta) sin theta (Bressan, Thm 5, non-isotropic case; applies because rho is even and nonincreasing on [0,pi]). This equals 2a at b=0 and tends to (3 sqrt3/2) a as b->a.",
+"W": "A fire spreads from a point, faster downwind: speed a + b cos(theta) in direction theta (0<=b<a). Firefighters build a barrier at speed sigma. Let sigma*(a,b) be the smallest speed that can confine the fire. Known: 1.626(a-b) <= sigma* <= 2 max (a+b cos theta) sin theta. Improve either bound, especially in the strong-wind limit b/a -> 1, where the lower bound tends to 0 but the upper bound stays near 2.6a.",
+"M": "With $F=\\{r(\\cos\\theta,\\sin\\theta):0\\le r\\le a+b\\cos\\theta\\}$ (convexified if $b>a/2$), $R_0=\\{0\\}$, and Bressan-admissible barriers ($\\mathcal H^1(\\gamma(t))\\le\\sigma t$), let $\\sigma^*(a,b)$ be the infimum of the $\\sigma$ that allow bounded $\\bigcup_tR(t)$. Known: $\\Lambda(a-b)\\le\\sigma^*\\le2\\max_{\\theta}(a+b\\cos\\theta)\\sin\\theta$ with $\\Lambda\\approx1.6262$. Prove $\\liminf_{b\\to a}\\sigma^*(a,b)/a>0$, or improve either bound for some fixed $b/a\\in(0,1)$.",
+"why": "This is the anisotropic version of Bressan's fire confinement problem. Wind is the realistic case. The only lower bound comes from comparison with the upwind (slowest) speed, so it collapses in strong wind, while the upper bound comes from the crosswind width. Whether confinement cost scales with the crosswind width or the upwind speed is a clean, checkable question. For each fixed b, it contains the open isotropic gap (b=0).",
+"refs": [
+"https://arxiv.org/pdf/2610.36919",
+"https://beckassets.blob.core.windows.net/product/readingsample/11192202/9781461453888_excerpt_001.pdf",
+"https://www.math.uzh.ch/en/fileadmin/user/delellis/publikation/FireCPAM.pdf"
+],
+"notes": "I derived the lower bound myself by comparison and scaling, not from the literature. I found no anisotropic necessary condition published. Grade B, not A: it derives from the famous isotropic problem, and the strong-wind regime may give way to a simple width argument."
+},
+{
+"id": "N-126",
+"outcome": "BOUND_B",
+"title": "Translative Lebesgue covering: area constant",
+"quantity": "alpha = least area of a convex set containing a translate of every planar set of diameter 1",
+"lower": "alpha >= sqrt(3)/2 ~ 0.8660 (new, self-contained): K contains translates R+a and -R+b of the Reuleaux triangle R; f(t)=area conv(R u (-R+t)) is convex in t (Rogers-Shephard 1958, Lemma 1, linear parameter systems) and even (f(-t)=f(t) by x->-x then translation), so min at t=0, where conv(R u -R) is the regular hexagon of width 1, area sqrt(3)/2. Beats trivial pi/4 (disc of diameter 1).",
+"upper": "alpha <= pi/3 ~ 1.0472: disc of radius 1/sqrt3 (Jung's theorem); this disc is the unique minimum-perimeter translation cover (Bezdek-Connelly), but nothing better for area is known.",
+"W": "Only translations allowed: find the least area of a convex shape that contains a translated copy of every planar set of diameter 1. It is known that this area lies between sqrt(3)/2 ~ 0.866 (the regular hexagon of width 1 is forced) and pi/3 ~ 1.047 (Jung's disc). Improve either bound.",
+"M": "Let $\\alpha=\\min\\{\\mathrm{area}(K):K\\subset\\mathbb R^2$ convex, every $X\\subset\\mathbb R^2$ with $\\mathrm{diam}X\\le1$ has a translate in $K\\}$. Known: $\\tfrac{\\sqrt3}{2}\\le\\alpha\\le\\tfrac{\\pi}{3}$. (Upper: Jung's disc of radius $1/\\sqrt3$. Lower: $K\\supseteq (R+a)\\cup(-R+b)$ for the Reuleaux triangle $R$; $t\\mapsto\\mathrm{area}\\,\\mathrm{conv}(R\\cup(-R+t))$ is convex (Rogers–Shephard) and even, hence $\\ge\\mathrm{area}\\,\\mathrm{conv}(R\\cup -R)=\\sqrt3/2$.) Prove $\\alpha<\\pi/3$ (by an explicit cover) or $\\alpha>\\sqrt3/2$ (by a better lower bound), or determine $\\alpha$.",
+"why": "Translation-only analogue of Lebesgue's universal cover problem, parallel to Pal's convex Kakeya theorem and Bezdek-Connelly's perimeter theorem. A cover below pi/3 would show area and perimeter optimisers differ; a lower bound above sqrt3/2 needs handling the continuum of rotated Reuleaux triangles.",
+"refs": [
+"https://arxiv.org/pdf/1209.2171",
+"https://pi.math.cornell.edu/~connelly/pdf/10.2307_2324841.pdf",
+"https://arxiv.org/pdf/1509.08859",
+"https://arxiv.org/pdf/2608.30538"
+],
+"notes": "No prior area result for translation covers of diameter-1 sets found (2608.30538 treats rigid motions only). Lower bound sqrt3/2 derived here, numerically checked (hull of R and -R = hexagon). Earlier numerics suggest alpha<pi/3."
+},
+{
+"id": "N-624",
+"outcome": "BOUND_B",
+"title": "How nearly can tetrahedra close up: the exponent",
+"quantity": "kappa = liminf_{n} -(1/n) log_3 g(n), g(n)= min Hausdorff distance between T_n and T_0 over non-backtracking face-reflection chains of length n",
+"lower": "g(n) >= c*3^{-n/2} for all n (new, short proof): g_n = s_{i1}...s_{in}, linear part = ±R_q, q = v_{i1}...v_{in}, v_i the pure quaternions ±i±j±k (norm 3); non-backtracking => q primitive in the Hurwitz order (unique factorisation; checked by computer to n=11). If T_n is near T_0 the linear part is near a symmetry ±R_u; q*conj(u) cannot be real (primitivity / 2*3^n not a square), so its vector part has length >=1/2 while |q u| <= sqrt2*3^{n/2}, giving rotation error >> 3^{-n/2}. Hence kappa <= 1/2.",
+"upper": "pigeonhole: 4*3^{m-1} chains of length m have endpoint isometries in a 6-dim region of volume poly(m); two lie within 3^{-m/6+o(m)}; A followed by reversed B is a reduced nonempty chain of length <=2m (nonzero by Swierczkowski/Dekker/Mason non-closure). So g(n) <= 3^{-n/12+o(n)} for infinitely many n, i.e. kappa >= 1/12.",
+"W": "Glue regular tetrahedra face to face in a chain of length n; it can never close exactly. How close to closing can it get? Short arguments show the best gap is at least about 3^{-n/2} and, for infinitely many n, at most about 3^{-n/12}; counting suggests 3^{-n/6}. Narrow the exponent range [1/12, 1/2].",
+"M": "Let $T_0=\\mathrm{conv}\\{(1,1,1),(1,-1,-1),(-1,1,-1),(-1,-1,1)\\}$ and $s_1,\\dots,s_4$ the reflections in its faces. For a reduced word $w=s_{i_1}\\cdots s_{i_n}$ ($i_{k+1}\\ne i_k$) put $T_w=wT_0$ and $g(n)=\\min_{|w|=n} d_H(T_w,T_0)$. Let $\\kappa=\\liminf_n -\\frac1n\\log_3 g(n)$. Known: $\\tfrac1{12}\\le\\kappa\\le\\tfrac12$ (lower: pigeonhole in the 6-dimensional isometry group; upper: $g(n)\\ge c3^{-n/2}$ because the linear part is conjugation by a primitive Hurwitz quaternion of norm $3^n$). Improve either bound; conjecturally $\\kappa=\\tfrac16$ (and $\\lim$ exists).",
+"why": "Steinhaus' tetrahedral chain problem: rings never close (Swierczkowski). The rate of near-closure is an optimal strong approximation question for an explicit S-arithmetic subgroup (rotation parts are LPS-type quaternions of norm 3^n, translations in Z[1/3]^3). Elgersma-Wagon observed gaps ~e^{-n/10} experimentally and the Quadrahelix paper (arXiv 1610.00280) asks for O(log 1/eps) embedded constructions; the exponent is the clean quantity.",
+"refs": [
+"https://arxiv.org/pdf/1610.00280",
+"https://portal.mardi4nfdi.de/wiki/Item:Q2354124"
+],
+"notes": "Both bounds derived here (lower improves the q0 record's 3^{-n}); primitivity verified numerically to n=11. Literature gives only qualitative non-closure and experiments (Elgersma-Wagon: eps with ~10 log(1/eps) tetrahedra, i.e. kappa>~0.09, consistent)."
+},
+{
+"id": "N-644",
+"outcome": "C_TO_B",
+"title": "Liouville theorem for Lane-Emden with a shifted nonlinearity",
+"quantity": "",
+"lower": "",
+"upper": "",
+"W": "Gidas-Spruck: -Delta u = u^p has no positive solution on R^n for subcritical p. Replace u^p by the value of u^p at a shifted point x+e. Is there still no positive solution, for every subcritical p?",
+"M": "Let $n\\ge3$, $1<p<\\frac{n+2}{n-2}$, $e\\in\\mathbb R^n\\setminus\\{0\\}$. Prove or disprove: there is no positive $u\\in C^2(\\mathbb R^n)$ with $-\\Delta u(x)=u(x+e)^p$ for all $x$. (For $1<p<\\frac n{n-2}$ the standard Mitidieri–Pohozaev test-function argument applies, since the shift is negligible at large scales; the open range is $\\frac n{n-2}\\le p<\\frac{n+2}{n-2}$. One may also ask whether positive solutions exist for $p\\ge\\frac{n+2}{n-2}$.)",
+"why": "All known proofs of the sharp subcritical Liouville theorem (Gidas-Spruck integral identities, moving planes/spheres, Kelvin transform) use locality of the nonlinearity; blow-up/doubling rescaling sends the shift to infinity rather than zero, so it does not reduce to the local case. The question isolates whether sharp Liouville survives a rigid nonlocal coupling.",
+"refs": [
+"https://www.arxiv.org/abs/1706.03467"
+],
+"notes": "Fix: removes the arbitrary n=5,p=2 instance, states general subcritical range, and separates the easy range p<n/(n-2). No literature on shifted-argument Lane-Emden found (two searches)."
+},
+{
+"id": "N-646",
+"outcome": "BOUND_B",
+"title": "Derivative loss in L4 Strichartz on the cube surface",
+"quantity": "s* = inf{s>=0 : ||e^{itDelta}f||_{L^4([0,1]xS)} <= C||f||_{H^s(S)}} for S the flat cube surface (Friedrichs Laplacian)",
+"lower": "s* >= 0 (trivial). No positive lower bound known.",
+"upper": "s* <= 1/4: Blair-Ford-Marzuola, Thm 1.5 (arXiv 1003.0666), loss 1/p for compact Euclidean surfaces with conical singularities, p=q=4; authors call the loss an artifact of the method.",
+"W": "On the flat torus, the L4 space-time estimate for Schrodinger waves loses only epsilon derivatives (Bourgain). On the surface of a cube, which has eight cone points that diffract waves, only a loss of 1/4 derivative is known. Find the true loss: prove any loss below 1/4, or show some loss is necessary.",
+"M": "Let $S$ be the unit cube surface, $\\Delta$ the Friedrichs extension from $C_c^\\infty(S\\setminus\\text{vertices})$, and $s^*=\\inf\\{s\\ge0:\\|e^{it\\Delta}f\\|_{L^4([0,1]\\times S)}\\le C_s\\|f\\|_{H^s(S)}\\}$. Known: $0\\le s^*\\le\\tfrac14$ (Blair–Ford–Marzuola). Prove $s^*<\\tfrac14$, or $s^*>0$; ideally determine $s^*$ (conjecturally $0$).",
+"why": "Cube surface combines arithmetic (nonsingular eigenfunctions lift to torus trigonometric polynomials) with diffraction at cone angle 3pi/2. Any s<1/4 would be the first improvement over the universal 1/p loss on a flat surface with non-2pi/k cone points.",
+"refs": [
+"https://arxiv.org/pdf/1003.0666",
+"https://arxiv.org/abs/1809.09909",
+"https://arxiv.org/pdf/1105.5410"
+],
+"notes": "Bound version gives partial-progress target; upper bound verified in BFM Thm 1.5. Lower bound only trivial, so gap is the whole interval [0,1/4]."
+},
+{
+"id": "N-553",
+"outcome": "BOUND_A",
+"title": "Minimal degree of a three-variable Jacobian counterexample",
+"quantity": "d_3 = least max-component degree of a non-injective Keller map C^3 -> C^3",
+"lower": "d_3 >= 3: Wang (1980), every Keller map of degree <= 2 is invertible in any dimension (restated in arXiv 2608.00222).",
+"upper": "d_3 <= 7: Alpoge's map, component degrees (7,6,4), det JF = -2 (arXiv 2608.00222 Thm 3.3; elementary rederivation arXiv 2609.17795; Isabelle AFP Jacobian_Counterexample).",
+"W": "The 2026 counterexamples to the Jacobian conjecture in three variables have degree 7 at best (Alpoge's map has component degrees 7, 6, 4), and Wang's theorem rules out degree 2. Determine the smallest possible degree, or at least narrow the range 3 to 7: either find a counterexample of degree at most 6, or prove that every counterexample has degree at least 4 (every cubic Keller map of C^3 is invertible).",
+"M": "Call $F\\in\\mathbb C[x,y,z]^3$ a Keller map if $\\det JF\\in\\mathbb C^{\\times}$, and set $\\deg F=\\max_i\\deg F_i$. Let $d_3=\\min\\{\\deg F: F\\text{ Keller, not injective on }\\mathbb C^3\\}$. Known: $3\\le d_3\\le 7$. Improve either bound: exhibit a non-injective Keller map with $\\deg F\\le 6$, or prove $d_3\\ge 4$ (equivalently, every Keller map $\\mathbb C^3\\to\\mathbb C^3$ of degree $\\le3$ is invertible), or determine $d_3$.",
+"why": "Now that JC_3 fails, the size of the smallest failure separates the low-degree range where invertibility can still be proved (Wang's degree 2; cubic-homogeneous x+H in dimension 3) from the range where counterexamples live. Bass-Connell-Wright reductions raise the dimension, so degree in dimension 3 is a separate question. Both directions are checkable: an explicit map is verified by computer algebra, and a lower bound is a theorem.",
+"refs": [
+"https://arxiv.org/pdf/2608.00222",
+"https://arxiv.org/pdf/2609.17795",
+"https://isa-afp.org/entries/Jacobian_Counterexample.html",
+"https://arxiv.org/pdf/2607.18186",
+"https://en.wikipedia.org/wiki/Jacobian_conjecture"
+],
+"notes": "Searched 2026 papers (2608.00222, 2609.17795, 2607.18186, 2607.22198, 2610.35918): none gives a degree <7 example in C^3 or settles the cubic case. 2607.18186 says its 79-variable cubic bound is not an optimization. Risk: computer search might settle quickly."
+},
+{
+"id": "C-93",
+"outcome": "BOUND_B",
+"title": "Additive excess for sorting pattern-avoiding sequences",
+"quantity": "delta_tau = limsup_n (C_tau(n) - log2|Av_n(tau)|)/n, e.g. tau=1324",
+"lower": "delta_tau >= 0: information-theoretic bound C_tau(n) >= log2|Av_n(tau)| (trivial).",
+"upper": "delta_tau <= 2: Fredman (1976), any set G of permutations can be sorted with log2|G| + 2n comparisons. Opler (arXiv 2409.07868) gives O((log c_tau +1)n), optimal only up to a constant factor. delta_tau = 0 is known for tau of length 3 in the 132-class (stack sorting, <=2n vs log2 C_n = 2n - O(log n)).",
+"W": "Sorting an array promised to avoid a fixed pattern needs at least log2 of the number of allowed orders comparisons, and Fredman's theorem says 2n more always suffice. How many extra comparisons per element are really needed? Show that fewer than 2n extra suffice for 1324-avoiding inputs, or show that a linear excess is necessary for some pattern.",
+"M": "For a permutation $\\tau$ let $C_\\tau(n)$ be the minimum worst-case number of comparisons of a decision tree (knowing $\\tau$) that sorts $a_1,\\dots,a_n$ under the promise that their order pattern lies in $\\mathrm{Av}_n(\\tau)$. Let $\\delta_\\tau=\\limsup_n (C_\\tau(n)-\\log_2|\\mathrm{Av}_n(\\tau)|)/n$. Known: $0\\le\\delta_\\tau\\le2$ (Fredman). Improve either bound for some $\\tau$ of length 4, in particular prove $\\delta_{1324}<2$, or find $\\tau$ with $\\delta_\\tau>0$. Is $\\delta_\\tau=0$ for every $\\tau$?",
+"why": "The comparison model is one of the few places where information-theoretic lower bounds are nearly exact, yet even for unrestricted sorting it is unknown whether log2 n! + o(n) suffices. Pattern classes give a structured family where the excess is quantifiable. Upper-side progress needs a structure-aware algorithm beating the generic Fredman bound, and lower-side progress would need a new adversary technique.",
+"refs": [
+"https://arxiv.org/abs/2409.07868",
+"https://drops.dagstuhl.de/storage/00lipics/lipics-vol351-esa2025/html/LIPIcs.ESA.2025.104/LIPIcs.ESA.2025.104.html"
+],
+"notes": "Opler's abstract checked: it gives no additive-excess constant. Generic Fredman excess cannot be improved for arbitrary sets of permutations, so any delta<2 needs class structure. The upper side for specific length-4 patterns may be moderately accessible."
+}
+]

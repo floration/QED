@@ -1,0 +1,5 @@
+Independent checker. /home/claude/vet/bounds_found.json lists problems recast as bound problems or lifted from C to B. Several reviewers DERIVED bounds themselves (not from literature). Your job: for every item, check each stated lower and upper bound.
+- If cited: open the source (or search) and confirm the bound is stated there as claimed.
+- If derived: check the argument step by step; quick python (<20 s each) is fine. Say CORRECT, FIXABLE (give the corrected bound/argument), or WRONG.
+- Also confirm the gap is not already closed by known work (1–2 searches).
+Append one JSON line per item immediately to /home/claude/vet/cb.jsonl: {"id","lower_check","upper_check","gap_open":true/false/"unsure","verdict":"OK"|"FIX"|"REJECT","fixed_bounds":null or "...","notes":"≤60 words"}. Private scripts under /home/claude/cb/. End with counts.
