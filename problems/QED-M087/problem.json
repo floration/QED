@@ -1,0 +1,26 @@
+{
+ "id": "QED-M087",
+ "legacy_id": "N-360",
+ "set": "main",
+ "title": "Blow-up under a steady force",
+ "area": "PDE",
+ "difficulty": 5.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Fefferman, Clay Millennium problem statement (forced breakdown on R^3); OpenAI forced blow-up claim (2026, unrefereed)",
+ "premise_risks": [
+  "OpenAI company PDF (cdn.openai.com navier-stokes.pdf, unrefereed): claimed time-dependent forced blow-up. This is motivation only and Claim does not depend on it.",
+  "arXiv:2609.10262 (2026 preprint): cited for context (possibly the source of the Cao-Chi-Nie gradient-force remark); Claim does not depend on it."
+ ],
+ "plain": "The 2026 forced Navier–Stokes blow-up uses a push that varies in time and is switched on and off. Can a smooth, compactly supported push that never changes in time also drive a fluid at rest to a singularity?",
+ "math": "Decide whether there is $f\\in C_c^\\infty(\\mathbb R^3;\\mathbb R^3)$, independent of $t$, such that the solution of $\\partial_tu+(u\\cdot\\nabla)u+\\nabla p=\\Delta u+f$, $\\nabla\\cdot u=0$, $u(\\cdot,0)=0$ on $\\mathbb R^3$ loses smoothness in finite time.",
+ "novelty": 6,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "https://arxiv.org/pdf/2609.10262",
+  "https://openai.com/index/navier-stokes-solution/"
+ ]
+}

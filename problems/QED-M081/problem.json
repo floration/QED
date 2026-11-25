@@ -1,0 +1,27 @@
+{
+ "id": "QED-M081",
+ "legacy_id": "N-691",
+ "set": "main",
+ "title": "Lower the exponent 0.7785 for A4-quartic fields",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Bhargava, Shankar, Taniguchi, Thorne, Tsimerman, Zhao, 'Bounds on 2-torsion in class groups of number fields and integral points on elliptic curves', JAMS 2020 (arXiv:1701.02458, Thm 1.4); Loughran-Paterson arXiv:2510.05248",
+ "premise_risks": [
+  "arXiv:2510.05248 (Loughran-Paterson, 2025 preprint): lower bound X^{1/2} log X and the statement that 0.7784... is the current record; the Claim itself depends only on the refereed BSTTTZ exponent.",
+  "arXiv:2602.23619 (Alberts-Bucur, 2026 preprint): cited only for the status 'no 2026 improvement'."
+ ],
+ "plain": "Malle predicts about X^{1/2} log X quartic fields with Galois group A4 and discriminant up to X. Loughran–Paterson (2025) proved the matching lower bound. The best upper bound is still about X^{0.7785}. Lower the exponent.",
+ "math": "Let N_{A4}(X) count quartic L/Q with Gal(L~/Q)=A4 and |Delta_L|<=X. Known: X^{1/2} log X << N_{A4}(X) << X^{0.7784...+eps} (Loughran-Paterson arXiv:2510.05248 Thm 1.1; BSTTTZ JAMS 2020 Thm 1.4). Prove N_{A4}(X) << X^{beta} for some beta<0.7784 (ideally beta=1/2+eps).",
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2510.05248",
+  "https://arxiv.org/abs/2501.18574",
+  "https://arxiv.org/abs/2502.04261",
+  "arXiv:2510.05248",
+  "arXiv:1701.02458 (BSTTTZ Thm 1.4)",
+  "arXiv:2502.04261",
+  "arXiv:2602.23619"
+ ]
+}

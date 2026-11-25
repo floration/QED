@@ -1,0 +1,24 @@
+{
+ "id": "QED-M068",
+ "legacy_id": "N-685",
+ "set": "main",
+ "title": "Computable connective constants",
+ "area": "Logic & computability",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "Count the self-avoiding walks of length n on the Cayley graph of a finitely generated group. Their n-th roots decrease to the connective constant, so it can always be approximated from above. For groups with a solvable word problem, can it always be computed to any precision, i.e. also approximated from below?",
+ "math": "Let $G$ be a finitely generated group with solvable word problem, $S=S^{-1}$ a finite generating set, $c_n$ the number of $n$-step self-avoiding walks from $e$ in $\\mathrm{Cay}(G,S)$, and $\\mu(G,S)=\\lim_n c_n^{1/n}=\\inf_n c_n^{1/n}$ (a right-computable real). Is $\\mu(G,S)$ always a computable real? If not, construct $(G,S)$ with solvable word problem and $\\mu(G,S)$ non-computable. If so, is the map (word-problem algorithm, $S$) $\\mapsto\\mu(G,S)$ uniformly computable?",
+ "novelty": 7,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/html/2402.13944v2",
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v31i4p24",
+  "https://arxiv.org/pdf/2307.12655.pdf",
+  "https://arxiv.org/pdf/1501.00476",
+  "https://arxiv.org/pdf/1412.0150v5",
+  "https://arxiv.org/pdf/1304.7216"
+ ]
+}

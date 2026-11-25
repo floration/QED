@@ -1,0 +1,21 @@
+{
+ "id": "QED-E019",
+ "legacy_id": "N-618",
+ "set": "extended",
+ "title": "Period-doubling torus bundles",
+ "area": "Topology",
+ "difficulty": 2.2,
+ "grade": "C",
+ "plain": "Build a once-punctured torus bundle by reading the period-doubling word as a product of the two basic shear matrices. Show its hyperbolic volume per letter settles to a limit as the word grows.",
+ "math": "Let $W_n\\in\\{a,b\\}^{2^n}$ be the length-$2^n$ prefix of the fixed point of $a\\mapsto ab,\\ b\\mapsto aa$ ($n\\ge1$). Let $\\phi_n\\in SL_2(\\mathbb{Z})$ be the product obtained from $W_n$ via $a\\mapsto R=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$, $b\\mapsto L=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}$, and let $M_n$ be the once-punctured torus bundle with monodromy $\\phi_n$ (hyperbolic since $W_n$ contains both letters). Prove that $\\lim_{n\\to\\infty}\\mathrm{vol}(M_n)/2^n$ exists.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 3,
+ "formal_status": "not_formalized",
+ "review_note": "L",
+ "refs": [
+  "https://web3.arxiv.org/abs/1905.04935",
+  "https://msp.org/gt/2006/10-3/gt-v10-n3-p01-p.pdf",
+  "https://arxiv.org/abs/2607.25319"
+ ]
+}

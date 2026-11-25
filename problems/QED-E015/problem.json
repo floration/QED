@@ -1,0 +1,16 @@
+{
+ "id": "QED-E015",
+ "legacy_id": "N-634",
+ "set": "extended",
+ "title": "Riesz-transform Schrodinger equation",
+ "area": "PDE",
+ "difficulty": 4.2,
+ "grade": "C",
+ "plain": "Couple a 2D Schrodinger wave to the Riesz transform of its own density. Mass is conserved, but there is no energy. Do smooth solutions live forever?",
+ "math": "Consider $iu_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb{R}\\times\\mathbb{R}^2$, $\\widehat{R_1f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. Decide whether every $u_0\\in H^1(\\mathbb{R}^2)$ gives a global solution in $C(\\mathbb{R},H^1)$.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 3,
+ "formal_status": "not_formalized",
+ "review_note": "C"
+}

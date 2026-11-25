@@ -5,4 +5,4 @@
 4. Issues → Labels → create label `claim`.
 5. Settings → Branches → protect `main`: require the `verify-solution` check and one review before merge (you review statement PRs for faithfulness).
 6. Run the `update-site-data` workflow once (Actions tab → Run workflow) to publish the board.
-If the repo name differs, change `REPO` in `site/index.html` and `scripts/gen.py`, then rerun `python3 scripts/gen.py D2.json`.
+If the repo name differs, change `REPO` in `site/index.html` and `scripts/gen_main.py`, then rerun `python3 scripts/gen_main.py`.

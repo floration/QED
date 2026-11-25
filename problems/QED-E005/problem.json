@@ -1,0 +1,20 @@
+{
+ "id": "QED-E005",
+ "legacy_id": "N-629",
+ "set": "extended",
+ "title": "Drum tones of superellipses",
+ "area": "Analysis",
+ "difficulty": 2.9,
+ "grade": "C",
+ "plain": "Take the region |x|^p + |y|^p <= r^p, scaled to have area 1. At p = 2 it is a disk, which has the lowest possible bass note of any region of that area (Faber–Krahn). As p grows to infinity it becomes a square, whose note is higher. Show that the note rises steadily the whole way from p = 2 to infinity.",
+ "math": "For $p\\in[2,\\infty)$ let $D_p=\\{(x,y):|x|^p+|y|^p\\le r_p^p\\}$ with $r_p$ chosen so that $|D_p|=1$, and let $\\lambda_1(p)$ be the first Dirichlet eigenvalue of $-\\Delta$ on $D_p$. Prove that $\\lambda_1$ is strictly increasing on $[2,\\infty)$, with $\\lambda_1(2)=\\pi j_{0,1}^2$ and $\\lambda_1(p)\\uparrow2\\pi^2$ as $p\\to\\infty$.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 4,
+ "formal_status": "not_formalized",
+ "review_note": "I",
+ "refs": [
+  "https://arxiv.org/abs/2108.04039",
+  "https://legacy-www.math.harvard.edu/~knill/offprints/lpbilliards.pdf"
+ ]
+}

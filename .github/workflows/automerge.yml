@@ -18,7 +18,7 @@ jobs:
         run: |
           PR=$(gh api "repos/$R/pulls?state=open&per_page=100" --jq ".[] | select(.head.sha==\"$SHA\") | .number" | head -1)
           [ -z "$PR" ] && { echo "No open PR at $SHA"; exit 0; }
-          BAD=$(gh api "repos/$R/pulls/$PR/files?per_page=100" --jq '.[] | select(.status!="added" or (.filename | test("^solutions/N-[0-9]{3,4}/[A-Za-z0-9-]+/(Solution\\.lean|meta\\.json|README\\.md)$") | not)) | .filename')
+          BAD=$(gh api "repos/$R/pulls/$PR/files?per_page=100" --jq '.[] | select(.status!="added" or (.filename | test("^solutions/(QED-[ME][0-9]{3}|QED-Q[0-9]|N-000)/[A-Za-z0-9-]+/(Solution\\.lean|meta\\.json|README\\.md)$") | not)) | .filename')
           [ -n "$BAD" ] && { echo "Not a pure solution PR: $BAD"; exit 0; }
           gh pr merge "$PR" -R "$R" --squash --match-head-commit "$SHA"
           gh pr comment "$PR" -R "$R" --body "✅ Verified by Lean and merged automatically. The board will update in a minute."

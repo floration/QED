@@ -1,0 +1,20 @@
+{
+ "id": "QED-M010",
+ "legacy_id": "N-658",
+ "set": "main",
+ "title": "Jacobi matrix of primes",
+ "area": "Analysis",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "Build an infinite tridiagonal (Jacobi) matrix with zero diagonal and the primes 2, 3, 5, 7, ... on the off-diagonals. The standard criteria for purely absolutely continuous spectrum need the off-diagonal sequence to vary regularly, and they just fail because prime gaps fluctuate. Decide whether the spectrum is nevertheless purely absolutely continuous on the whole real line.",
+ "math": "Let $J$ be the self-adjoint Jacobi operator on $\\ell^2(\\mathbb N)$ given by $(Ju)_n=p_{n-1}u_{n-1}+p_nu_{n+1}$ (with $p_0u_0:=0$), where $p_n$ is the $n$-th prime. It is self-adjoint by Carleman's criterion, since $\\sum1/p_n=\\infty$. Decide whether $\\sigma(J)=\\sigma_{ac}(J)=\\mathbb R$ with no singular part.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://ar5iv.labs.arxiv.org/html/0711.4035",
+  "https://web.ma.utexas.edu/mp_arc-bin/mpa?yn=03-378"
+ ]
+}

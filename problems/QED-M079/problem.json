@@ -1,0 +1,17 @@
+{
+ "id": "QED-M079",
+ "legacy_id": "N-704",
+ "set": "main",
+ "title": "Interval-sieve extremal bounds behind the Banks–Ford–Tao gap prediction",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Banks, Ford, Tao, Large prime gaps and probabilistic models, Invent. Math. 2023 (arXiv:1908.08613)",
+ "plain": "Banks, Ford and Tao showed that a random sieve model of the primes predicts the largest prime gap below x is about g(ξ log²x), where g is controlled by an extremal sieve quantity W_y. W_y is the fewest survivors in [0,y] after one residue class is removed for each prime up to √(y/log y). Narrow the bounds on W_y.",
+ "math": "Let W_y = min over residue choices (a_p) of #{n ∈ [0,y] ∩ ℤ : n ≢ a_p (mod p) for all primes p <= (y/log y)^{1/2}}. Known (Banks-Ford-Tao): (4+o(1)) y log log y/log^2 y <= W_y <= y/log y + O(y log log y/log^2 y). Prove or disprove: there is an absolute c > 0 with W_y >= c·y/log y for all sufficiently large y.",
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1908.08613"
+ ]
+}

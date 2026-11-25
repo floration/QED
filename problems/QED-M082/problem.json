@@ -1,0 +1,22 @@
+{
+ "id": "QED-M082",
+ "legacy_id": "N-707",
+ "set": "main",
+ "title": "Lower the exponent 1/2 in Pasten's subexponential abc bound",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Extends H. Pasten, Invent. Math. 2024 (arXiv:2312.03566), Thm 1.4.",
+ "premise_risks": [
+  "arXiv:2609.01327 (2026 preprint): cited in refs; M does not depend on it."
+ ],
+ "plain": "Unconditionally, abc is known only in very weak forms. Pasten (2024) proved that if a ≤ c^{1−η} then log c ≤ η^{-1} exp(κ√(log R · log log R)), with R = rad(abc). abc predicts log c ≤ (1+ε) log R + O(1). Replace the square root by any smaller power of log R.",
+ "math": "For coprime $a+b=c$ with $R=\\mathrm{rad}(abc)$, Pasten (Invent. Math. 2024, Thm 1.4) proves: if $a\\le c^{1-\\eta}$ then $\\log c\\le \\eta^{-1}\\exp\\big(\\kappa\\sqrt{\\log R\\,\\log_2 R}\\big)$; and $\\log c\\le q\\exp(\\kappa\\sqrt{\\log R\\log_2R})$ with $q=\\min\\{P(a),P(b),P(c)\\}$. Prove either statement with $\\exp((\\log R)^{\\theta})$ for some fixed $\\theta<1/2$, or $\\exp(O(\\sqrt{\\log R}))$.",
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2312.03566",
+  "https://arxiv.org/abs/2609.01327",
+  "https://arxiv.org/abs/2505.10568"
+ ]
+}

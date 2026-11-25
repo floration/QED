@@ -1,0 +1,26 @@
+{
+ "id": "QED-M063",
+ "legacy_id": "N-189",
+ "set": "main",
+ "title": "Sofa stability",
+ "area": "Geometry",
+ "difficulty": 3.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Baek (2024), 'Optimality of Gerver's Sofa', arXiv:2411.19826.",
+ "premise_risks": [
+  "arXiv:2411.19826 (Baek 2024; refereeing status unclear): the problem assumes Gerver's sofa is the maximizer. The formal Claim avoids this by quantifying over an unspecified stable sofa G, so it does not depend on Baek's result.",
+  "arXiv:2610.13955 (2026 preprint, cited in refs): context only; nothing in the statement depends on it."
+ ],
+ "plain": "Baek (2024) proved that Gerver's sofa has the largest area among shapes that can be moved around a right-angled corner in a hallway of width 1. Show that any movable sofa whose area is nearly Gerver's must be nearly Gerver's sofa in shape (which in particular gives uniqueness).",
+ "math": "A moving sofa is a compact connected $S\\subset\\mathbb R^2$ that can be moved by a continuous rigid motion from $(-\\infty,0]\\times[0,1]$ to $[0,1]\\times(-\\infty,0]$ inside $L=((-\\infty,1]\\times[0,1])\\cup([0,1]\\times(-\\infty,1])$. Let $G$ be Gerver's sofa, of area $A_G\\approx2.21953$. Prove that there are $C,\\alpha>0$ such that every moving sofa $S$ with $|S|\\ge A_G-\\varepsilon$ satisfies $\\min_{g}|gS\\,\\triangle\\,G|\\le C\\varepsilon^{\\alpha}$, the minimum over rigid motions $g$ of the plane.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2411.19826",
+  "https://arxiv.org/pdf/2610.13955",
+  "https://en.wikipedia.org/wiki/Moving_sofa_problem"
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "id": "QED-E014",
+ "legacy_id": "N-638",
+ "set": "extended",
+ "title": "Minimal-mass blow-up with reflection",
+ "area": "PDE",
+ "difficulty": 2.5,
+ "grade": "C",
+ "plain": "Consider the 2D Schrödinger equation in which the self-interaction at each point uses the density at the mirror point -x. Below the ground-state mass, solutions exist forever. Show that the only solutions that blow up with exactly the ground-state mass are the explicit pseudo-conformal ground-state solutions centred at the origin.",
+ "math": "Let $Q>0$ be the radial solution of $\\Delta Q-Q+Q^3=0$ on $\\mathbb R^2$. Consider $iu_t+\\Delta u+|u(-x,t)|^2u=0$ with $u_0\\in H^1(\\mathbb R^2)$ and $\\|u_0\\|_{L^2}=\\|Q\\|_{L^2}$. Prove that if $u$ blows up at a finite time $T$, then there are $\\theta\\in\\mathbb R$ and $\\lambda>0$ with $u(t,x)=e^{i\\theta}\\frac{\\lambda}{T-t}\\,Q\\!\\Big(\\frac{\\lambda x}{T-t}\\Big)\\exp\\!\\Big(i\\frac{\\lambda^2}{T-t}-i\\frac{|x|^2}{4(T-t)}\\Big)$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 3,
+ "formal_status": "not_formalized",
+ "review_note": "T",
+ "refs": [
+  "https://arxiv.org/abs/0804.1124",
+  "https://arxiv.org/abs/2311.04443",
+  "https://arxiv.org/abs/2201.04500"
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "id": "QED-M013",
+ "legacy_id": "N-657",
+ "set": "main",
+ "title": "Spikes at the primes",
+ "area": "Analysis",
+ "difficulty": 5.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "C. R. de Oliveira and G. Q. Pellegrino, '(De)Localization in the Prime Schrodinger Operator', 2001, arXiv:cond-mat/0103313.",
+ "plain": "Put a bump of fixed height at every prime on the half-line lattice and study the electron (discrete Schrodinger operator). What kind of spectrum does it have inside the free band (-2,2)? If the primes behaved like a random sparse set (Cramer model), the states would be localized (pure point spectrum); is that true for the actual primes?",
+ "math": "Let $(Hu)(n)=u(n+1)+u(n-1)+\\lambda\\mathbf 1_{\\mathbb P}(n)u(n)$ on $\\ell^2(\\mathbb N)$ with Dirichlet condition $u(0)=0$, $\\lambda\\ne0$. Determine the spectral type of $H$ on $(-2,2)$. In particular: is the spectral measure restricted to $(-2,2)$ pure point (with exponentially or sub-exponentially decaying eigenfunctions), or does it have a singular continuous part, e.g. near $E=0$?",
+ "novelty": 4,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/cond-mat/0103313",
+  "https://ar5iv.arxiv.org/html/cond-mat/0103313",
+  "https://arxiv.org/pdf/1107.1094",
+  "https://arxiv.org/abs/1012.5217"
+ ]
+}

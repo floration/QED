@@ -5,7 +5,7 @@ R=os.environ['GITHUB_REPOSITORY']
 def gh(*a): return json.loads(subprocess.run(['gh','api','--paginate',*a],capture_output=True,text=True,check=True).stdout or '[]')
 now=dt.datetime.now(dt.timezone.utc); C={}
 for iss in gh(f'repos/{R}/issues?state=open&labels=claim&per_page=100'):
-    m=re.search(r'N-\d{3,4}',iss['title'])
+    m=re.search(r'QED-[ME]\d{3}|QED-Q\d|N-000',iss['title'])
     if not m: continue
     user=iss['user']['login']; last=iss['created_at']
     for c in gh(iss['comments_url']+'?per_page=100'):

@@ -1,0 +1,23 @@
+{
+ "id": "QED-M028",
+ "legacy_id": "N-666",
+ "set": "main",
+ "title": "A super-constant-degree SoS integrality gap for Unique Games",
+ "area": "Complexity",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Barak, Sum-of-Squares open problems (lecture notes); Barak & Steurer 2014, arXiv:1404.5236",
+ "plain": "Construct Unique Games instances with value <= eps on which degree-d Sum-of-Squares has value >= 1-eps, for some d = omega(1) (any slowly growing function of n), or show degree-O(1) SoS achieves a (1-eps, delta) distinguishing guarantee on all UG instances.",
+ "math": "(Gap) For every eps>0 there is q=q(eps) such that for every degree D there is a Unique Games instance over [q] with optimum <= eps whose degree-2D SoS (Lasserre) value is >= 1-eps. Claim := Gap; ¬Claim is exactly the algorithmic alternative.",
+ "formal_status": "formalized",
+ "refs": [
+  "Barak, Brandão, Harrow, Kelner, Steurer, Zhou, Hypercontractivity, sum-of-squares proofs, and their applications, STOC 2012, arXiv:1205.4484",
+  "Khot, Minzer, Safra, Pseudorandom sets in Grassmann graph have near-perfect expansion, FOCS 2018",
+  "Barak, Sum of Squares: open problems (lecture notes)",
+  "arXiv:1205.4484",
+  "arXiv:1211.1958",
+  "arXiv:1404.5236",
+  "Khot-Minzer-Safra FOCS 2018"
+ ]
+}

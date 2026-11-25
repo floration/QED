@@ -1,0 +1,31 @@
+{
+ "id": "QED-M004",
+ "legacy_id": "N-024",
+ "set": "main",
+ "title": "Smallest degree of a Keller counterexample in dimension 3",
+ "area": "Algebra",
+ "difficulty": 3.0,
+ "grade": "B",
+ "provenance": "Original",
+ "premise_risks": [
+  "Alpöge counterexample (2026 preprints in refs, e.g. arXiv:2608.00222; formally checked in Isabelle AFP 'Jacobian_Counterexample'): gives d_3 <= 7, i.e. that d_3 is finite. The Claim (d_3 <= 5) does not depend on it.",
+  "Other 2026 preprints (2609.17795, 2607.20210, 2607.22198, 2610.24889, 2607.21572, 2609.33491): further counterexamples of degree >= 7 in dim 3 and low-degree ones in dims 4-12; background."
+ ],
+ "plain": "In 2026 the Jacobian conjecture was refuted in three variables. The first explicit counterexample (Alpöge's map) has polynomial degree 7. Wang's theorem says degree 2 is impossible. What is the smallest degree a counterexample in three variables can have? In particular, is there one of degree 3, 4 or 5?",
+ "math": "Let $d_3$ be the least $d$ such that some polynomial map $F:\\mathbb C^3\\to\\mathbb C^3$ with $\\max_i\\deg F_i=d$ and $\\det DF\\in\\mathbb C^\\times$ is not an automorphism. Wang's theorem gives $d_3\\ge3$, and Alpöge's map gives $d_3\\le7$. Determine $d_3$. In particular, decide whether $d_3\\le5$.",
+ "novelty": 5,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2608.00222",
+  "https://arxiv.org/pdf/2609.17795",
+  "https://arxiv.org/pdf/2607.20210",
+  "https://arxiv.org/pdf/2607.22198",
+  "https://isa-afp.org/entries/Jacobian_Counterexample.html",
+  "https://en.wikipedia.org/wiki/Jacobian_conjecture",
+  "https://arxiv.org/pdf/2610.24889",
+  "https://arxiv.org/pdf/2607.21572",
+  "https://arxiv.org/pdf/2609.33491"
+ ]
+}

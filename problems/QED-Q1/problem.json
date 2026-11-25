@@ -1,0 +1,15 @@
+{
+ "id": "QED-Q1",
+ "set": "test",
+ "title": "Odd plus odd is even",
+ "area": "Test",
+ "difficulty": 0.1,
+ "grade": "Q",
+ "provenance": "Curated",
+ "credit": "classical result with known proof",
+ "plain": "The sum of two odd natural numbers is even.",
+ "math": "For all $a,b\\in\\mathbb N$, if $a$ and $b$ are odd then $a+b$ is even.",
+ "formal_status": "formalized",
+ "review_note": "Submission test. Estimated proof length about 2 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.",
+ "est_lines": 2
+}

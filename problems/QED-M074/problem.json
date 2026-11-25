@@ -1,0 +1,36 @@
+{
+ "id": "QED-M074",
+ "legacy_id": "N-655",
+ "set": "main",
+ "title": "Ten Martini for every periodic planar lattice",
+ "area": "Mathematical physics",
+ "difficulty": 3.5,
+ "grade": "A",
+ "provenance": "Extension",
+ "credit": "Extends Avila–Jitomirskaya (Ten Martini, Annals 2009) and Becker–Han–Jitomirskaya–Zworski (honeycomb, arXiv:1803.00988).",
+ "results": "The pendant-twin counterexample is correct. Attach two pendant vertices x,x' to each vertex of Z^2. Then delta_x - (phase) delta_x' is an eigenvector with eigenvalue 0 for every B. For E nonzero, E is in sigma iff E-2/E is in sigma(H_sq), which lies in [-4,4]. So a punctured neighbourhood of 0 is a gap, 0 is isolated, and the naive statement fails.",
+ "premise_risks": [
+  "arXiv:2609.15812 (2026 preprint): 1D Robust Ten Martini; cited as a possible tool only, M does not depend on it.",
+  "arXiv:2611.10767 (2026 preprint): cited; M does not depend on it."
+ ],
+ "plain": "A tight-binding electron on any doubly periodic planar network in a uniform magnetic field: is the energy spectrum always a Cantor set when the flux per cell is irrational? This is known for the square lattice (Ten Martini), the honeycomb lattice and the Lieb lattice, each by a reduction to a one-dimensional operator. Flat-band eigenvalues that persist in any field can sit isolated, so they must be set aside. The question is whether what remains is always a Cantor set, or at least never contains an interval.",
+ "math": "Let $G\\subset\\mathbb R^2$ be a connected planar graph with straight edges that is invariant under a lattice $L\\cong\\mathbb Z^2$ and has finitely many $L$-orbits of vertices. For a constant field $B$ with vector potential $A$, set $(H_B\\psi)(x)=\\sum_{y\\sim x}e^{i\\int_{[x,y]}A}\\psi(y)$ on $\\ell^2(V(G))$, and let $2\\pi\\alpha=B\\cdot\\mathrm{covol}(L)$. Let $\\Sigma'$ be the derived set of $\\sigma(H_B)$, i.e. $\\sigma(H_B)$ minus its isolated points (eigenvalues of infinite multiplicity, i.e. flat bands). Prove or disprove: for every such $G$ and every irrational $\\alpha$, $\\Sigma'$ is a nonempty Cantor set. At minimum, decide whether $\\sigma(H_B)$ is always nowhere dense. The first open instance is the kagome lattice in a uniform field. (The pure line-graph flux pattern, with no flux through the triangles, reduces to the honeycomb case.)",
+ "novelty": 6,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1408.2814",
+  "https://arxiv.org/pdf/1404.0642",
+  "https://arxiv.org/pdf/1803.00988",
+  "https://www.imo.universite-paris-saclay.fr/~bernard.helffer/helfferharpercambridge2015.pdf",
+  "https://arxiv.org/abs/2401.11405",
+  "https://arxiv.org/abs/math-ph/0511057",
+  "https://arxiv.org/abs/2609.15812",
+  "https://arxiv.org/html/1803.00988",
+  "https://arxiv.org/abs/2401.11405",
+  "https://arxiv.org/abs/1408.2814",
+  "https://www.imo.universite-paris-saclay.fr/~bernard.helffer/helfferharperbucarest.pdf",
+  "https://arxiv.org/abs/2609.15812"
+ ]
+}

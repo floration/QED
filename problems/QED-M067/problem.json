@@ -1,0 +1,24 @@
+{
+ "id": "QED-M067",
+ "legacy_id": "N-148",
+ "set": "main",
+ "title": "Ringel for forests",
+ "area": "Graph theory",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Ringel (1963); Montgomery-Pokrovskiy-Sudakov (arXiv:2001.02665); Keevash-Staden (arXiv:2004.09947); Barrientos-Minion, EJGTA 4(2) 2016 (ρ-labelled forests)",
+ "plain": "Ringel's conjecture, now a theorem for large n, says the complete graph on 2m+1 vertices splits into 2m+1 copies of any tree with m edges. Show the same holds for every forest with m edges. A stronger form asks that every such forest have a rho-labelling, which gives a cyclic decomposition.",
+ "math": "Prove that for every m ≥ 1 and every forest F with m edges and no isolated vertices, E(K_{2m+1}) can be partitioned into 2m+1 subgraphs each isomorphic to F. Stronger form: every such F admits a ρ-labelling.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2001.02665",
+  "https://arxiv.org/abs/2004.09947",
+  "https://arxiv.org/abs/2202.03178",
+  "https://arxiv.org/abs/1803.03316",
+  "https://ejgta.org/index.php/ejgta/article/view/132"
+ ]
+}

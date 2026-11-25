@@ -1,0 +1,19 @@
+{
+ "id": "QED-M042",
+ "legacy_id": "N-702",
+ "set": "main",
+ "title": "Sparse 3-LPN at noise n^{-1/2}: beating Gaussian elimination",
+ "area": "Complexity",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Chen, Shu, Zhou, 'Algorithms for Sparse LPN and LSPN Against Low-noise', COLT 2025, arXiv:2407.19215; Applebaum, FOCS 2017.",
+ "plain": "For 3-sparse LPN with m = n^{1.4} samples and noise rate eta = n^{-0.6} (or any eta in [n^{-0.7}, n^{-0.5}]), give an algorithm running in time exp(o(eta*n)), or prove a lower bound (e.g. for low-degree/SoS or statistical-query-like models) showing exp(Omega(eta*n)) is needed in this regime.",
+ "math": "Fix k = 3, m = ⌊n^{1.4}⌋ and η = n^{-0.6}. In the 3-sparse LPN problem a secret s ∈ F_2^n is uniform, each sample is (a_i, ⟨a_i,s⟩ + e_i) with a_i uniform among weight-3 vectors of F_2^n and e_i ~ Bernoulli(η) independent, i = 1..m. Prove or disprove: there is a (classical, randomized) algorithm that, given the m samples, outputs s with probability ≥ 2/3 in time exp(o(ηn)) = exp(o(n^{0.4})).",
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: needs a time-bounded model of (randomized) computation. Consider removing or splitting into an algorithmic problem and a separate low-degree lower-bound problem with a precise model.",
+ "refs": [
+  "Chen, Shu, Zhou, Algorithms for Sparse LPN and LSPN Against Low-noise, COLT 2025, arXiv:2407.19215",
+  "Applebaum, Exponentially-hard Gap-CSP and local PRG via local hardcore functions, FOCS 2017"
+ ]
+}

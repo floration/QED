@@ -1,0 +1,20 @@
+{
+ "id": "QED-E013",
+ "legacy_id": "N-641",
+ "set": "extended",
+ "title": "Burgers with degenerate critical dissipation",
+ "area": "PDE",
+ "difficulty": 3.8,
+ "grade": "C",
+ "plain": "Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off quadratically at one point of the circle. Do shocks form there?",
+ "math": "Let $a(x)=1-\\cos x$ and consider $u_t+uu_x+\\Lambda^{1/2}\\big(a\\,\\Lambda^{1/2}u\\big)=0$ on $\\mathbb{T}$, $\\Lambda=(-\\partial_x^2)^{1/2}$. Decide whether every real $u_0\\in C^\\infty(\\mathbb{T})$ yields a global smooth solution.",
+ "novelty": 7,
+ "importance": 3,
+ "value": 3,
+ "formal_status": "not_formalized",
+ "review_note": "L",
+ "refs": [
+  "https://ar5iv.labs.arxiv.org/html/0804.3549",
+  "https://arxiv.org/abs/2104.10759"
+ ]
+}
