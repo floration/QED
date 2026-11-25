@@ -1,0 +1,24 @@
+{
+ "id": "QED-E036",
+ "set": "extended",
+ "title": "Integer complexity of powers of two",
+ "area": "Number theory",
+ "difficulty": 5.5,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "D. Rawsthorne; R. K. Guy; H. Altman; J. Zelinsky",
+ "premise_risks": [
+  "He's 2^126 verification is in an arXiv appendix (unrefereed computation)",
+  "may require a qualitatively new idea; known defect theory handles only finitely many k"
+ ],
+ "plain": "The complexity of a positive integer n is the fewest 1's needed to write n using only +, × and parentheses. Writing 2^k as (1+1)(1+1)...(1+1) uses 2k ones. Is that always optimal? It has been checked by computer for every 2^k up to 2^126, but no proof is known.",
+ "math": "Let $\\|n\\|$ be the least number of $1$'s in an expression for $n$ built from $1$, $+$, $\\times$ and parentheses. Prove or disprove: $\\|2^k\\|=2k$ for all $k\\ge1$ (more strongly, $\\|2^k3^\\ell\\|=2k+3\\ell$ for $(k,\\ell)\\ne(0,0)$).",
+ "formal_status": "formalized",
+ "review_note": "Known: Verified $\\|2^k3^\\ell\\|=2k+3\\ell$ for $k\\le48$ and all $\\ell$: Altman, 'Integer complexity: algorithms and computational results', Integers 18 (2018), arXiv:1606.03635 (earlier $k\\le21$, Altman–Zelinsky arXiv:1207.4841). Pure powers of 2: no counterexample for $2^k\\le 2^{126}\\approx10^{38}$, and $\\|2^i3^j5^k\\|=2i+3j+5k$ checked for $2^i3^j5^k\\le10^{36}$, $k\\le5$ (Q. He, 'Improved algorithms for integer complexity', arXiv:2308.10301). Question attributed to Rawsthorne (in Guy, UPINT F26). Konyagin–Oganesyan arXiv:2603.20876 (2026): average-case estimates, not this question.",
+ "refs": [
+  "https://arxiv.org/abs/1606.03635",
+  "https://arxiv.org/abs/2308.10301",
+  "https://arxiv.org/abs/1207.4841",
+  "https://arxiv.org/abs/2603.20876"
+ ]
+}

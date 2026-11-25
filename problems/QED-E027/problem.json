@@ -1,0 +1,23 @@
+{
+ "id": "QED-E027",
+ "set": "extended",
+ "title": "Largest cap set in F_3^7",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "grade": "C",
+ "provenance": "Curated",
+ "credit": "Edel; Potechin; Thackeray (2022).",
+ "premise_risks": [
+  "Thackeray's no-289 result is an arXiv paper with computer-assisted counting; refereed status unclear",
+  "Large gap; exact value may be out of reach"
+ ],
+ "plain": "A cap set is a set of points in the 7-dimensional grid {0,1,2}^7 (arithmetic mod 3) containing no three points on a line. The biggest known one has 236 points, and it is known that 289 points is impossible. Find a bigger cap or prove a better upper bound.",
+ "math": "Let $r_3(7)$ be the maximum size of $A\\subseteq\\mathbb F_3^7$ containing no three distinct points $x,y,z$ with $x+y+z=0$ (equivalently, no three collinear points). Known: $236\\le r_3(7)\\le 288$. Improve either bound; in particular, is there a cap of size $237$? Ultimately determine $r_3(7)$.",
+ "formal_status": "formalized",
+ "review_note": "Known: Lower 236: Edel et al. construction (Edel's cap tables), matched but not beaten by FunSearch (Romera-Paredes et al., Nature 2023) and X-evolve (arXiv:2508.07932, best known 236 in dimension 7, 512 in dimension 8). Upper 288: Thackeray, 'The cap set problem: up to dimension 7', arXiv:2206.09804, Theorem 4.2 (no 289-cap 7-flat, hence no larger cap). Exact values known through dimension 6 (r_3(6)=112, Potechin 2008).",
+ "refs": [
+  "https://arxiv.org/abs/2206.09804",
+  "https://arxiv.org/abs/2508.07932",
+  "https://en.wikipedia.org/wiki/Cap_set"
+ ]
+}

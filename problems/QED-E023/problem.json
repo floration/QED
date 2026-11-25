@@ -1,0 +1,23 @@
+{
+ "id": "QED-E023",
+ "set": "extended",
+ "title": "Does the Steiner system S(2,6,51) exist?",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Handbook of Combinatorial Designs (Abel-Greig table); Banakh-Hetman-Ravsky (2025).",
+ "premise_risks": [
+  "Exact open list taken from arXiv:2511.05191 as summarised; 51 being open should be double-checked against Abel's latest tables",
+  "Exhaustive search may be far harder than v=46 so the problem could be practically intractable"
+ ],
+ "plain": "Can you choose 6-element groups from 51 objects so that every pair of objects lies together in exactly one group (that would take 85 groups)? The arithmetic allows it, but no one has built one or proved it impossible. This is the smallest such undecided case for groups of size 6.",
+ "math": "Decide whether there is a family $\\mathcal B$ of $6$-subsets of a $51$-set $V$ such that every $2$-subset of $V$ lies in exactly one member of $\\mathcal B$ (a $2$-$(51,6,1)$ design; necessarily $|\\mathcal B|=85$ and each point is in $10$ blocks).",
+ "formal_status": "formalized",
+ "review_note": "Known: Necessary conditions v ≡ 1, 6 (mod 15). The Handbook of Combinatorial Designs (Abel-Greig) listed 29 undecided v. Banakh-Hetman-Ravsky, arXiv:2511.05191 (2025), construct S(2,6,226) and S(2,6,441), leaving 27 open: 51, 61, 81, 166, 231, 256, 261, 286, 316, 321, 346, 351, 376, 406, 411, 436, 471, 501, 561, 591, 616, 646, 651, 676, 771, 796, 801. S(2,6,46) does not exist (Houghten-Thiel-Janssen-Lam, 2001, exhaustive computation).",
+ "refs": [
+  "https://arxiv.org/abs/2511.05191v2",
+  "https://arxiv.org/html/2504.04293v2",
+  "https://arxiv.org/abs/2401.08274v2"
+ ]
+}
