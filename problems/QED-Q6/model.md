@@ -9,7 +9,7 @@ Submission test · QED Curated · Test
 
 **Math:** Every simple graph on 6 vertices contains a triangle or an independent set of size 3.
 
-**Reviewer note:** Submission test. Estimated proof length about 64 lines; using Mathlib lemmas is allowed.
+**Reviewer note:** Submission test. Estimated proof length about 64 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.
 
 **Credit:** classical result with known proof
 

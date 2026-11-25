@@ -9,7 +9,7 @@ Submission test · QED Curated · Test
 
 **Math:** For all $a,b\in\mathbb N$, if $a$ and $b$ are odd then $a+b$ is even.
 
-**Reviewer note:** Submission test. Estimated proof length about 2 lines; using Mathlib lemmas is allowed.
+**Reviewer note:** Submission test. Estimated proof length about 2 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.
 
 **Credit:** classical result with known proof
 

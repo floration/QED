@@ -9,7 +9,7 @@ Submission test · QED Curated · Test
 
 **Math:** For every $n\ge 8$ there are $a,b\in\mathbb N$ with $n=3a+5b$.
 
-**Reviewer note:** Submission test. Estimated proof length about 32 lines; using Mathlib lemmas is allowed.
+**Reviewer note:** Submission test. Estimated proof length about 32 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.
 
 **Credit:** classical result with known proof
 

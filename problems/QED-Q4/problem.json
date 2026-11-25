@@ -10,6 +10,6 @@
  "plain": "The sum of the first n cubes equals the square of the sum of the first n numbers.",
  "math": "For all $n$, $\\sum_{i=0}^{n} i^3=\\left(\\sum_{i=0}^{n} i\\right)^2$.",
  "formal_status": "formalized",
- "review_note": "Submission test. Estimated proof length about 16 lines; using Mathlib lemmas is allowed.",
+ "review_note": "Submission test. Estimated proof length about 16 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.",
  "est_lines": 16
 }

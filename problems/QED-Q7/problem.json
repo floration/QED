@@ -10,6 +10,6 @@
  "plain": "Any list of rs + 1 distinct real numbers has an increasing run of r + 1 of them or a decreasing run of s + 1 of them (not necessarily consecutive).",
  "math": "For $f:\\{0,\\dots,rs\\}\\to\\mathbb R$ injective there is a set of $r+1$ indices on which $f$ is strictly increasing, or a set of $s+1$ indices on which it is strictly decreasing.",
  "formal_status": "formalized",
- "review_note": "Submission test. Estimated proof length about 128 lines; using Mathlib lemmas is allowed.",
+ "review_note": "Submission test. Estimated proof length about 128 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.",
  "est_lines": 128
 }

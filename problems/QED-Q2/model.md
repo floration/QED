@@ -9,7 +9,7 @@ Submission test · QED Curated · Test
 
 **Math:** For all $n\in\mathbb Z$, $2\mid n^2+n$.
 
-**Reviewer note:** Submission test. Estimated proof length about 4 lines; using Mathlib lemmas is allowed.
+**Reviewer note:** Submission test. Estimated proof length about 4 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.
 
 **Credit:** classical result with known proof
 

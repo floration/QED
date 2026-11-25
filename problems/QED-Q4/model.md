@@ -9,7 +9,7 @@ Submission test · QED Curated · Test
 
 **Math:** For all $n$, $\sum_{i=0}^{n} i^3=\left(\sum_{i=0}^{n} i\right)^2$.
 
-**Reviewer note:** Submission test. Estimated proof length about 16 lines; using Mathlib lemmas is allowed.
+**Reviewer note:** Submission test. Estimated proof length about 16 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.
 
 **Credit:** classical result with known proof
 

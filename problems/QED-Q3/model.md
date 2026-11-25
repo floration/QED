@@ -9,7 +9,7 @@ Submission test · QED Curated · Test
 
 **Math:** For all $n$, $\sum_{i<n}(2i+1)=n^2$.
 
-**Reviewer note:** Submission test. Estimated proof length about 8 lines; using Mathlib lemmas is allowed.
+**Reviewer note:** Submission test. Estimated proof length about 8 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.
 
 **Credit:** classical result with known proof
 

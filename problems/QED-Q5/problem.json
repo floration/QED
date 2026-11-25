@@ -10,6 +10,6 @@
  "plain": "Every whole number from 8 upward can be paid exactly with coins worth 3 and 5.",
  "math": "For every $n\\ge 8$ there are $a,b\\in\\mathbb N$ with $n=3a+5b$.",
  "formal_status": "formalized",
- "review_note": "Submission test. Estimated proof length about 32 lines; using Mathlib lemmas is allowed.",
+ "review_note": "Submission test. Estimated proof length about 32 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.",
  "est_lines": 32
 }

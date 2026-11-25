@@ -9,7 +9,7 @@ Submission test · QED Curated · Test
 
 **Math:** For every finite poset $P$ there are $k$, an antichain of size $k$, and a partition of $P$ into $k$ chains.
 
-**Reviewer note:** Submission test. Estimated proof length about 256 lines; using Mathlib lemmas is allowed.
+**Reviewer note:** Submission test. Estimated proof length about 256 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.
 
 **Credit:** classical result with known proof
 

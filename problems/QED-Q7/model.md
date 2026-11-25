@@ -9,7 +9,7 @@ Submission test · QED Curated · Test
 
 **Math:** For $f:\{0,\dots,rs\}\to\mathbb R$ injective there is a set of $r+1$ indices on which $f$ is strictly increasing, or a set of $s+1$ indices on which it is strictly decreasing.
 
-**Reviewer note:** Submission test. Estimated proof length about 128 lines; using Mathlib lemmas is allowed.
+**Reviewer note:** Submission test. Estimated proof length about 128 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.
 
 **Credit:** classical result with known proof
 

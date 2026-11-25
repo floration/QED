@@ -10,6 +10,6 @@
  "plain": "In any finite partially ordered set, the largest number of pairwise incomparable elements equals the smallest number of chains needed to cover everything.",
  "math": "For every finite poset $P$ there are $k$, an antichain of size $k$, and a partition of $P$ into $k$ chains.",
  "formal_status": "formalized",
- "review_note": "Submission test. Estimated proof length about 256 lines; using Mathlib lemmas is allowed.",
+ "review_note": "Submission test. Estimated proof length about 256 lines; using Mathlib lemmas is allowed. Test problems do not count toward the leaderboards.",
  "est_lines": 256
 }
