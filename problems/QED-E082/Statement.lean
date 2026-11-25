@@ -11,7 +11,12 @@ distinguisher has non-negligible advantage) assuming standard decision LWE is ha
 parameter family (dimension n' polynomially related to n, modulus and sample count poly(n), discrete
 Gaussian error of width αq' ≥ 2√n'). Known: Arora-Ge linearization solves it in poly time for m ≈ n²;
 Micciancio-Peikert prove (b) for m = n(1+O(1/log n)).
+NARROWED (referee): only moduli q(n) all of whose prime factors are at most n^{1/2+o(1)} (e.g. q ≤ √n, or q a
+power of 2). For q with a prime factor p = n^{a+o(1)}, a > 1/2, (a) already follows: reduce mod p, pass to
+normal form (binary secret, (C-1)n samples) and apply the distinguisher of ePrint 2026/2289.
 Formalization notes:
+* Narrowing: `SmallPrimes q` = there is g(n) → 0 with every prime p ∣ q(n) satisfying p ≤ n^{1/2 + g(n)}
+  for all n ≥ 2 (exactly "all prime factors ≤ n^{1/2+o(1)}").
 * Machine model: the board's canonical word-RAM block (pasted verbatim below). A distinguisher is a
   `WRAlgo`; it accepts when it halts within the budget with output `[1]` (non-halting runs reject, so the
   budget is a worst-case clock). `wrProb` is the exact probability over a uniform random tape.
@@ -355,10 +360,15 @@ def LWEHard (P : LWEParams) : Prop :=
             (P.width n) -
           accUnif A.prog (P.dim n) (P.samples n) (P.modulus n) w (wrBudget Cst ((n : ℝ) ^ c))|)
 
+/-- Every prime factor of `q n` is at most `n^{1/2 + o(1)}`. -/
+def SmallPrimes (q : ℕ → ℕ) : Prop :=
+  ∃ g : ℕ → ℝ, Filter.Tendsto g Filter.atTop (nhds 0) ∧
+    ∀ n : ℕ, 2 ≤ n → ∀ p : ℕ, p.Prime → p ∣ q n → (p : ℝ) ≤ (n : ℝ) ^ ((1 : ℝ) / 2 + g n)
+
 /-- Dichotomy for binary-error LWE with `m = ⌈C n⌉` samples: for every `C > 1` and polynomially bounded
-modulus, either a `2^{o(n)}` attack exists, or hardness follows from standard LWE. -/
+modulus whose prime factors are all ≤ `n^{1/2+o(1)}`, either a `2^{o(n)}` attack exists, or hardness follows from standard LWE. -/
 def Claim : Prop :=
-  ∀ C : ℝ, 1 < C → ∀ q : ℕ → ℕ, (∃ c : ℕ, ∀ n : ℕ, 2 ≤ q n ∧ q n ≤ n ^ c + c) →
+  ∀ C : ℝ, 1 < C → ∀ q : ℕ → ℕ, (∃ c : ℕ, ∀ n : ℕ, 2 ≤ q n ∧ q n ≤ n ^ c + c) → SmallPrimes q →
     BinEasy C q ∨ ∃ P : LWEParams, StdParams P ∧ (LWEHard P → BinHard C q)
 
 end

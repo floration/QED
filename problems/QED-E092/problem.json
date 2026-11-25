@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Geodesic squares on convex surfaces",
  "area": "Geometry",
- "difficulty": 3.0,
+ "difficulty": 5.0,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Toeplitz 1911 (square peg problem); Schnirelmann 1944 (smooth case); constant-curvature surfaces: arXiv:2507.07945 (Naseri Sadr 2025)",

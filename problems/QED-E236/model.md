@@ -5,7 +5,7 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade C · QED Original · Analysis
 
-**Plain words:** A quantum walker on the integers flips one of two rotation coins at each site, chosen by the Thue–Morse sequence. Previous work shows its spread is at least close to linear in time on average. Decide whether it actually spreads linearly in time (ballistically).
+**Plain words:** A quantum walker on the integers flips one of two rotation coins at each site, chosen by the Thue–Morse sequence. Previous work (Damanik–Fillman–Ong) shows the time-averaged p-th moment transport exponent is at least 1 − 1/p, so high moments spread almost linearly, but for the mean-square displacement (p = 2) only exponent ≥ 1/2 is known. Decide whether it actually spreads linearly in time (ballistically).
 
 **Math:** For $\gamma\in(0,\pi/2)$ let $R_\gamma=\begin{pmatrix}\cos\gamma&-\sin\gamma\\ \sin\gamma&\cos\gamma\end{pmatrix}$. Let $x\in\{0,1\}^{\mathbb Z}$ be the two-sided Thue--Morse sequence $x_n=t_n$ ($n\ge0$), $x_n=t_{-n-1}$ ($n<0$), where $t_n=s_2(n)\bmod 2$. On $\ell^2(\mathbb Z)\otimes\mathbb C^2$ let $U=SC$, $(C\psi)(n)=R_{\gamma_{x_n}}\psi(n)$ with fixed $\gamma_0\neq\gamma_1$ in $(0,\pi/2)$, and $S$ shifting the first component by $+1$ and the second by $-1$. For $\psi_0=\delta_0\otimes e_1$ let $\tilde\beta^+=\limsup_{T\to\infty}\frac{\log\big(\frac1T\sum_{t<T}\sum_n|n|^2\|(U^t\psi_0)(n)\|^2\big)}{2\log T}$. It is known that $\tilde\beta^+\ge 1/2$. Decide whether $\tilde\beta^+=1$.
 
@@ -15,7 +15,7 @@ Extended set · Grade C · QED Original · Analysis
 - https://arxiv.org/abs/1704.07328
 - https://arxiv.org/abs/1505.07292
 
-Difficulty estimate: 2.8/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 5.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE236.Claim` or a proof of `¬ OpenProblems.QEDE236.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E236/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

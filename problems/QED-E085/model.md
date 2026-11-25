@@ -5,7 +5,7 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade B · QED Extension · Complexity
 
-**Plain words:** Dürr-Kipouridis-Lampis-Węgrzycki show k-OV is solvable in O(2^{(1-eps_k)d} n) for every fixed k, and that eps_k -> 0 is forced by the Set Cover Conjecture. Determine the decay rate: prove eps_k >= c/log k (or c/k), or show that eps_k >= omega(1/k) would refute the Set Cover Conjecture.
+**Plain words:** Dürr-Kipouridis-Lampis-Węgrzycki show k-OV is solvable in O(2^{(1-eps_k)d} n) for every fixed k, and that eps_k -> 0 is forced by the Set Cover Conjecture. Determine the decay rate: prove eps_k >= c/log k (eps_k >= 1/k - o(1) with a poly(n) factor is elementary: guess the solution vector with >= d/k zeros and solve the rest by a subset zeta transform), or show that eps_k >= omega(1/k) would refute the Set Cover Conjecture.
 
 **Math:** Prove or disprove: there are absolute constants c > 0 and p ∈ ℕ such that for every k ≥ 2, k-OV on k sets of n vectors in {0,1}^d is solvable by a deterministic word-RAM algorithm in time O_k(2^{(1 - c/ln k) d} · n^p). (The exponent p must not depend on k: otherwise brute force n^k·d makes the statement trivial. Companion SCC direction is separate.)
 
@@ -15,7 +15,7 @@ Extended set · Grade B · QED Extension · Complexity
 - Dürr, Kipouridis, Lampis, Węgrzycki, Faster algorithms for k-Orthogonal Vectors in low dimension, ICALP 2026, arXiv:2507.11098
 - Björklund, Kaski, The Asymptotic Rank Conjecture and the Set Cover Conjecture are not both true, STOC 2024, arXiv:2310.11926
 
-Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 3.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE085.Claim` or a proof of `¬ OpenProblems.QEDE085.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E085/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

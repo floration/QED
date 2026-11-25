@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "First-order convergence law for random Latin squares",
  "area": "Logic & computability",
- "difficulty": 3.5,
+ "difficulty": 5.5,
  "grade": "A",
  "provenance": "Original",
  "results": "Caution: route (i) as originally proposed has a flaw. The extension property 'every finite partial configuration extends in every consistent way w.h.p.' is false. A new x with x∘a1=b1 and x∘a2=b2 has expected count n·n^{-2}→0, because x∘a=b already determines x. The structure is functionally sparse (Lynch-type), not G(n,1/2)-type, so the route was rewritten.",

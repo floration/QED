@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Strong edge colouring with maximum degree 4: 20 or 21 colours?",
  "area": "Graph theory",
- "difficulty": 4.0,
+ "difficulty": 4.5,
  "grade": "B-",
  "provenance": "Curated",
  "credit": "Erdos-Nesetril conjecture; Cranston; Huang-Santana-Yu.",

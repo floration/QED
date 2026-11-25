@@ -3,15 +3,18 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · PDE
+Extended set · Grade C · QED Original · PDE
 
-**Plain words:** Couple a 2D Schrodinger wave to the Riesz transform of its own density. Mass is conserved, but there is no energy. Do smooth solutions live forever?
+**Plain words:** Couple a 2D Schrodinger wave to the Riesz transform of its own density. Mass is conserved, but there is no energy. Do smooth solutions live forever? R_1 is real and antisymmetric, so the potential is real, mass is conserved, there is no conserved energy, and the momentum P_1 = Im ∫ ū ∂_1 u is monotone. Data with small L^2 norm are global by Strichartz estimates; the question concerns large data.
 
-**Math:** Consider $iu_t+\Delta u=u\,R_1(|u|^2)$ on $\mathbb{R}\times\mathbb{R}^2$, $\widehat{R_1f}(\xi)=-i\frac{\xi_1}{|\xi|}\hat f(\xi)$. Decide whether every $u_0\in H^1(\mathbb{R}^2)$ gives a global solution in $C(\mathbb{R},H^1)$.
+**Math:** Consider $iu_t+\Delta u=u\,R_1(|u|^2)$ on $\mathbb{R}\times\mathbb{R}^2$, $\widehat{R_1f}(\xi)=-i\frac{\xi_1}{|\xi|}\hat f(\xi)$. $R_1$ is real and antisymmetric, so mass is conserved and there is no conserved energy; small-mass data are global by Strichartz. Decide whether every Schwartz datum $u_0\in\mathcal S(\mathbb R^2)$ gives a global solution $u\in C(\mathbb R,\mathcal S(\mathbb R^2))$ (classical, $u(0)=u_0$), or some datum blows up in finite time.
 
-**Reviewer note:** C
+**Reviewer note:** L^2-critical, non-Hamiltonian model: small mass is global, large data open.
 
-Difficulty estimate: 4.2/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**References:**
+- J.-M. Ghidaglia and J.-C. Saut, On the initial value problem for the Davey-Stewartson systems, Nonlinearity 3 (1990) (closest Hamiltonian analogue)
+
+Difficulty estimate: 5.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE015.Claim` or a proof of `¬ OpenProblems.QEDE015.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E015/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

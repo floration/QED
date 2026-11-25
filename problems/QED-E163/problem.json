@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Planar graphs with no cycles of length 4, 5 or 6: always 3-colourable?",
  "area": "Graph theory",
- "difficulty": 5.0,
+ "difficulty": 5.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Question of Erdős (relaxation of Steinberg's problem); listed as open by Dvořák et al., arXiv:2203.08136; partial results Borodin et al. 2005, Liang-Liao-Bai 2026.",

@@ -22,7 +22,7 @@ Main set · Grade B · QED Extension · Combinatorics
 - https://math.mit.edu/research/highschool/primes/materials/2024/Mani-Zhang.pdf
 - https://arxiv.org/pdf/2510.18064
 
-Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 3.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDM120.Claim` or a proof of `¬ OpenProblems.QEDM120.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M120/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

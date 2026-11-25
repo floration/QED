@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Proof complexity of the sensitivity theorem",
  "area": "Complexity",
- "difficulty": 3.5,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Original",
  "plain": "Huang proved that any set of more than half the corners of the n-cube contains a corner with at least √n neighbours inside the set. Write this as a propositional formula with one variable per corner. Do polynomial-size proofs exist in resolution, cutting planes or sum-of-squares, measured against the 2^n variables?",

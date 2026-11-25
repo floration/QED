@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Sudoku resolution bounds",
  "area": "Computation",
- "difficulty": 1.6,
+ "difficulty": 1.5,
  "grade": "C",
  "provenance": "Original",
  "credit": "QED original (archived Nov 2026, restored after re-review).",

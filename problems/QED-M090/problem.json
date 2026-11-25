@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Does an oscillating source lower the Strauss exponent?",
  "area": "PDE",
- "difficulty": 3.2,
+ "difficulty": 4.0,
  "grade": "A",
  "provenance": "Original",
  "results": "Bound p_c<=1+sqrt2 is correct: John/Zhou iteration uses only |F(u)|<=C|u|^p and |F(u)-F(v)|<=C(|u|+|v|)^{p-1}|u-v|, both hold for g(t)|u|^p. The 'resonance predicts 2' heuristic (exp of int t^{1-p}) is arithmetically right but not an argument; a normal-form attempt (H''=g) just recycles the oscillating factor, so nothing is proved.",

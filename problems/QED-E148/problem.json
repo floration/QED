@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Largest lattice 4-polytope with one interior lattice point",
  "area": "Geometry",
- "difficulty": 4.0,
+ "difficulty": 4.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Conjecture 1.7 in Nill's paper on reflexive simplices; proved for simplices and the reflexive case (Balletti–Kasprzyk–Nill, Forum Math. Sigma 2022, arXiv:1611.02455); the extremal simplex is due to Zaks–Perles–Wills.",

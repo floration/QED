@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Forced Navier–Stokes blow-up at a no-slip wall",
  "area": "PDE",
- "difficulty": 4.0,
+ "difficulty": 4.5,
  "grade": "A",
  "provenance": "Extension",
  "credit": "Extends the OpenAI 2026 forced Navier–Stokes blow-up (cdn.openai.com navier-stokes.pdf) and Cao–Chi–Nie, arXiv:2609.10262.",

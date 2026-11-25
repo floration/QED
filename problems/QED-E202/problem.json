@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "A positive proportion of integers are sums of three cubes",
  "area": "Number theory",
- "difficulty": 5.5,
+ "difficulty": 6.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Folklore density form of the sums-of-three-cubes problem; conditional results by Diaconu (2019) and V. Y. Wang (2021-23)",
@@ -21,7 +21,6 @@
   "https://arxiv.org/abs/1502.01944",
   "https://web.math.princeton.edu/~vywang/2021-10-13_BGWS_slides_with_notes.pdf",
   "https://epoch.ai/files/open-problems/sum-of-three-cubes.pdf",
-  "https://arxiv.org/abs/1404.3846",
-  "https://arxiv.org/abs/2608.19262"
+  "https://arxiv.org/abs/1404.3846"
  ]
 }

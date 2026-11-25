@@ -5,9 +5,9 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Main set · Grade B · QED Original · PDE
 
-**Plain words:** Flip the sign of the vortex-stretching term in the 3D Euler vorticity equation and keep advection and the Biot-Savart law. Do smooth solutions stay smooth forever, or can they blow up in finite time?
+**Plain words:** Flip the sign of the vortex-stretching term in the 3D Euler vorticity equation and keep advection and the Biot-Savart law. Do smooth solutions stay smooth forever, or can they blow up in finite time? Unlike Euler, this equation does not preserve div ω = 0, so for t > 0 the vorticity ω need not equal curl u. The velocity u is always given by the stated Biot-Savart law (which sees only the divergence-free part of ω), and the question concerns this system as written.
 
-**Math:** On $\mathbb T^3$ let $\omega:\mathbb T^3\times[0,T)\to\mathbb R^3$ solve $\partial_t\omega+(u\cdot\nabla)\omega=-S\omega$, where $u=\nabla\times(-\Delta)^{-1}(\omega-\langle\omega\rangle)$, $S=\tfrac12(\nabla u+\nabla u^{T})$ and $\langle\omega\rangle$ is the spatial mean. Decide whether every $\omega_0\in C^\infty(\mathbb T^3;\mathbb R^3)$ with $\nabla\cdot\omega_0=0$ generates a global smooth solution.
+**Math:** On $\mathbb T^3$ let $\omega:\mathbb T^3\times[0,T)\to\mathbb R^3$ solve $\partial_t\omega+(u\cdot\nabla)\omega=-S\omega$, where $u=\nabla\times(-\Delta)^{-1}(\omega-\langle\omega\rangle)$, $S=\tfrac12(\nabla u+\nabla u^{T})$ and $\langle\omega\rangle$ is the spatial mean. Decide whether every $\omega_0\in C^\infty(\mathbb T^3;\mathbb R^3)$ with $\nabla\cdot\omega_0=0$ generates a global smooth solution. (Unlike Euler, this equation does not preserve $\nabla\cdot\omega=0$; for $t>0$, $\omega$ need not equal $\nabla\times u$. The velocity $u$ is always given by the stated Biot–Savart law, which sees only the divergence-free part of $\omega$, and the question concerns this system as written.)
 
 **Rests on recent unrefereed work. Check these premises first:**
 - arXiv:2602.13963 (2026 preprint, cited in refs): background on 1D/sign-of-stretching models only; the statement does not depend on it.
@@ -18,7 +18,7 @@ Main set · Grade B · QED Original · PDE
 - https://arxiv.org/abs/1203.5151
 - https://arxiv.org/pdf/2602.13963
 
-Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 5.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDM091.Claim` or a proof of `¬ OpenProblems.QEDM091.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M091/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

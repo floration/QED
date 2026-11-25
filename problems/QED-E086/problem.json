@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Matching lower bound for OMv on low-VC-dimension matrices",
  "area": "Complexity",
- "difficulty": 4.5,
+ "difficulty": 5.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Anand, van den Brand, McCarty, 'The Structural Complexity of Matrix-Vector Multiplication', NeurIPS 2025, arXiv:2502.21240; OMv conjecture: Henzinger, Krinninger, Nanongkai, Saranurak (STOC 2015).",

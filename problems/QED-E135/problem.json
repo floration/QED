@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Property B: beat the square-root exponent",
  "area": "Combinatorics",
- "difficulty": 4.5,
+ "difficulty": 7.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Classical problem (Property B, named for F. Bernstein's property; studied by Erdős and Hajnal). Bounds by Erdős, Beck, Radhakrishnan–Srinivasan, Cherkashin–Kozik.",

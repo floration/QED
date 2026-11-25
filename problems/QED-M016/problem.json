@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Additive excess for sorting pattern-avoiding sequences",
  "area": "Combinatorics",
- "difficulty": 3.5,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Fredman 1976 (sorting with partial information); Opler, arXiv:2409.07868 (ESA 2025), sorting pattern-avoiding permutations",

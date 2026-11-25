@@ -5,14 +5,14 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Main set · Grade A · QED Extension · Combinatorics
 
-**Plain words:** Take a finite partial order and pick one of its linear extensions (total orders compatible with it) uniformly at random. The 1/3–2/3 conjecture says that, unless the order is already total, some pair x, y has probability between 1/3 and 2/3 that x comes before y. It is known for width 2 (no three pairwise incomparable elements) and, since 2026, for all posets of width above some unspecified constant. Prove it for every poset of width 3.
+**Plain words:** Take a finite partial order and pick one of its linear extensions (total orders compatible with it) uniformly at random. The 1/3–2/3 conjecture says that, unless the order is already total, some pair x, y has probability between 1/3 and 2/3 that x comes before y. It is known for width 2 (no three pairwise incomparable elements) and, asymptotically, for large posets whose width grows faster than the square root of their size (arXiv:2509.11549, 2025); a 2026 preprint (arXiv:2609.30888) improves the general balance constant only slightly above 0.2764. Prove it for every poset of width 3.
 
 **Math:** For a finite poset $P$, let $e(P)$ be its number of linear extensions and, for $x\ne y$, let $p(x\prec y)$ be the fraction of linear extensions in which $x$ precedes $y$. Prove that every finite poset of width exactly $3$ contains $x,y$ with $\tfrac13\le p(x\prec y)\le\tfrac23$.
 
 **Credit:** 1/3–2/3 conjecture: S. S. Kislitsyn (1968), M. Fredman (1975), N. Linial (1984); width-3 subcase singled out as the first open bounded-width case after the 2026 large-width results of Aires, Chan, Kahn, Pak, Panova.
 
 **Rests on recent unrefereed work. Check these premises first:**
-- The 'large width is settled' framing rests on unrefereed 2026 preprints (Aires; Aires-Chan-Pak-Panova); the width-3 question itself is open independent of them
+- Large-width background rests on arXiv:2509.11549 (asymptotic: delta(P) >= 1/e − o(1) for width omega(sqrt n)) and arXiv:2609.30888 (unrefereed 2026 epsilon-improvement of the Brightwell–Felsner–Trotter constant); the width-3 question itself is open independent of them.
 - Must double-check no explicit-threshold bounded-width result (e.g. in arXiv:2609.30888 Thm 1.5 or 2510.26134) covers width 3 with all ranges
 
 **References:**
@@ -22,7 +22,7 @@ Main set · Grade A · QED Extension · Combinatorics
 - https://en.wikipedia.org/wiki/1/3%E2%80%932/3_conjecture
 - https://arxiv.org/abs/1706.04985
 
-Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 4.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDM124.Claim` or a proof of `¬ OpenProblems.QEDM124.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M124/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

@@ -1,26 +1,27 @@
-# QED-M077 — Do GRH and Elliott–Halberstam together refute the Alternative Hypothesis?
+# QED-M077 — Does Elliott–Halberstam refute the Alternative Hypothesis, now that RH and GRH are theorems?
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
 Main set · Grade B · QED Extension · Number theory
 
-**Plain words:** The Alternative Hypothesis says normalized gaps between zeta zeros are almost all near half-integers. It contradicts GUE, but no proven hypothesis is known to rule it out. Decide whether GRH plus Elliott–Halberstam (strong statements about primes, not zeros) is incompatible with it.
+**Plain words:** The Alternative Hypothesis says normalized gaps between zeta zeros are almost all near half-integers. It contradicts GUE. RH and GRH for Dirichlet L-functions are now theorems (Alpöge, Nov 2026), and they alone are not known to rule AH out. Decide whether adding the Elliott–Halberstam conjecture (a strong statement about primes, not zeros) makes AH impossible.
 
-**Math:** Let AH be as in arXiv:2508.10857. Does RH + GRH for Dirichlet L-functions + the Elliott–Halberstam conjecture (or GEH) imply that AH fails? (The 'equivalently' clause is a research route, not an equivalent statement, and is dropped.)
+**Math:** Let AH be as in arXiv:2508.10857. Does RH + GRH for Dirichlet L-functions + the Elliott–Halberstam conjecture EH imply that AH fails? (RH and GRH-Dirichlet are now theorems, Alpöge 2026, so this asks whether EH alone implies ¬AH; they are kept as hypotheses to match the Lean statement. The GEH variant is weaker and not part of the claim. The 'equivalently' clause is a research route, not an equivalent statement, and is dropped.)
 
 **Credit:** Baluyot, Goldston, Suriajaya, Turnage-Butterbaugh, The Alternative Hypothesis for zeros of the Riemann zeta-function, arXiv:2508.10857 (2025); Goldston et al., arXiv:2507.06823; Lagarias–Rodgers arXiv:1905.12123.
 
 **Rests on recent unrefereed work. Check these premises first:**
 - arXiv:2508.10857 (2025 preprint, unrefereed as far as known): the problem takes its precise definition of AH, and the claimed explicit limit of F(α) under RH + AH, from this paper.
 - arXiv:2507.06823 (2025 preprint): background on F(α) under AH.
+- RH is a theorem (Alpöge, Lean library released 20 Nov 2026, certified 21 Nov 2026 by the Lean FRO/Mathlib Initiative against Mathlib's RiemannHypothesis). GRH for Dirichlet L-functions is treated as proved on the strength of Alpöge's announcement (alpo.ge/remark.pdf) and his Lean archive; the public certification names only RH, so the Dirichlet part has not yet been certified independently. Hecke, Dedekind and other L-functions remain open.
 
 **References:**
 - https://arxiv.org/abs/1905.12123
 - https://arxiv.org/abs/2508.10857
 - https://arxiv.org/abs/2507.06823
 
-Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 6.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDM077.Claim` or a proof of `¬ OpenProblems.QEDM077.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M077/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

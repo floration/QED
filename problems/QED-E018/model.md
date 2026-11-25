@@ -7,11 +7,11 @@ Extended set · Grade C · Probability
 
 **Plain words:** (Corrected.) Draw n Wang tiles whose four edge colours are chosen uniformly at random from c colours, and let c grow with n ≈ λc². How likely is the set to tile the plane? Show the probability has a limit F(λ) and find the critical λ above which tiling is almost certain.
 
-**Math:** Let $T_1,\dots,T_n$ be i.i.d. Wang tiles, each with its four edge colours i.i.d. uniform in $[c]$ and no rotations allowed. Let $n=\lfloor\lambda c^2\rfloor$ and $c\to\infty$. Prove that $F(\lambda)=\lim_{c\to\infty}\Pr(\{T_i\}\text{ tiles }\mathbb Z^2)$ exists for every $\lambda>0$. Determine $\lambda_c=\inf\{\lambda:F(\lambda)=1\}$; a first-moment heuristic suggests $\lambda_c=1$. Also determine $F$ on $(0,\lambda_c)$.
+**Math:** Let $T_1,\dots,T_n$ be i.i.d. Wang tiles, each with its four edge colours i.i.d. uniform in $[c]$ and no rotations allowed. Let $n=\lfloor\lambda c^2\rfloor$ and $c\to\infty$. Prove or disprove: $F(\lambda)=\lim_{c\to\infty}\Pr(\{T_i\}\text{ tiles }\mathbb Z^2)$ exists for every $\lambda>0$, and $\lambda_c=\inf\{\lambda:F(\lambda)=1\}=1$, i.e. $F(\lambda)=1$ for $\lambda>1$ and $F(\lambda)<1$ for $0<\lambda<1$ (as the first-moment heuristic suggests). Further goal: determine $F$ on $(0,\lambda_c)$.
 
 **Reviewer note:** A
 
-Difficulty estimate: 1.6/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 4.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE018.Claim` or a proof of `¬ OpenProblems.QEDE018.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E018/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

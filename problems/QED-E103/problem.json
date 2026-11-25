@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Lower the exponent 0.7785 for A4-quartic fields",
  "area": "Number theory",
- "difficulty": 4.0,
+ "difficulty": 5.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Bhargava, Shankar, Taniguchi, Thorne, Tsimerman, Zhao, 'Bounds on 2-torsion in class groups of number fields and integral points on elliptic curves', JAMS 2020 (arXiv:1701.02458, Thm 1.4); Loughran-Paterson arXiv:2510.05248",

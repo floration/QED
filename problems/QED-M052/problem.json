@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Outer billiards around analytic tables with flat points",
  "area": "Dynamics",
- "difficulty": 4.5,
+ "difficulty": 5.0,
  "grade": "A",
  "provenance": "Extension",
  "credit": "Moser's boundedness question (J. Moser, Stable and Random Motions, 1973); Douady (thesis, 1982); Sorrentino arXiv:2610.06418 (2026) for the C^1-generic case.",

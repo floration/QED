@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Sofa stability",
  "area": "Geometry",
- "difficulty": 3.0,
+ "difficulty": 3.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Baek (2024), 'Optimality of Gerver's Sofa', arXiv:2411.19826.",

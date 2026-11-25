@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Wind-driven fire confinement threshold",
  "area": "Analysis",
- "difficulty": 3.3,
+ "difficulty": 3.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "A. Bressan, Differential inclusions and the control of forest fires, J. Differential Equations 2007 (non-isotropic Thm 5)",

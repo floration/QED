@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Blow-up under a steady force",
  "area": "PDE",
- "difficulty": 5.5,
+ "difficulty": 7.0,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Fefferman, Clay Millennium problem statement (forced breakdown on R^3); OpenAI forced blow-up claim (2026, unrefereed)",

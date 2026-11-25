@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Largest prime factor of Markov numbers",
  "area": "Number theory",
- "difficulty": 4.5,
+ "difficulty": 5.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Extends Corvaja–Zannier, 'On the greatest prime factor of Markov pairs', Rend. Sem. Mat. Univ. Padova 116 (2006).",

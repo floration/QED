@@ -20,9 +20,8 @@ Extended set · Grade A · QED Curated · Number theory
 - https://web.math.princeton.edu/~vywang/2021-10-13_BGWS_slides_with_notes.pdf
 - https://epoch.ai/files/open-problems/sum-of-three-cubes.pdf
 - https://arxiv.org/abs/1404.3846
-- https://arxiv.org/abs/2608.19262
 
-Difficulty estimate: 5.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 6.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE202.Claim` or a proof of `¬ OpenProblems.QEDE202.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E202/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

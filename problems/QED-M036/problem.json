@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Finding Huang's vertex",
  "area": "Complexity",
- "difficulty": 4.0,
+ "difficulty": 4.5,
  "grade": "A",
  "provenance": "Original",
  "results": "The PPP-hardness reduction is correct. Take n=m+2. Pad 2^m real pigeons with 2^m+1 dummies, mapped injectively to the 2^m+1 dummy holes. Send the pigeon with C(x)=0 to dummy hole #1, so a collision with dummy #1 decodes to a zero-solution. Embed holes as h -> (h, parity h), which gives even weight. No two even-weight strings are adjacent, so every solution is a collision that decodes to a PIGEON solution.",

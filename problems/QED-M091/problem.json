@@ -9,8 +9,8 @@
  "premise_risks": [
   "arXiv:2602.13963 (2026 preprint, cited in refs): background on 1D/sign-of-stretching models only; the statement does not depend on it."
  ],
- "plain": "Flip the sign of the vortex-stretching term in the 3D Euler vorticity equation and keep advection and the Biot-Savart law. Do smooth solutions stay smooth forever, or can they blow up in finite time?",
- "math": "On $\\mathbb T^3$ let $\\omega:\\mathbb T^3\\times[0,T)\\to\\mathbb R^3$ solve $\\partial_t\\omega+(u\\cdot\\nabla)\\omega=-S\\omega$, where $u=\\nabla\\times(-\\Delta)^{-1}(\\omega-\\langle\\omega\\rangle)$, $S=\\tfrac12(\\nabla u+\\nabla u^{T})$ and $\\langle\\omega\\rangle$ is the spatial mean. Decide whether every $\\omega_0\\in C^\\infty(\\mathbb T^3;\\mathbb R^3)$ with $\\nabla\\cdot\\omega_0=0$ generates a global smooth solution.",
+ "plain": "Flip the sign of the vortex-stretching term in the 3D Euler vorticity equation and keep advection and the Biot-Savart law. Do smooth solutions stay smooth forever, or can they blow up in finite time? Unlike Euler, this equation does not preserve div ω = 0, so for t > 0 the vorticity ω need not equal curl u. The velocity u is always given by the stated Biot-Savart law (which sees only the divergence-free part of ω), and the question concerns this system as written.",
+ "math": "On $\\mathbb T^3$ let $\\omega:\\mathbb T^3\\times[0,T)\\to\\mathbb R^3$ solve $\\partial_t\\omega+(u\\cdot\\nabla)\\omega=-S\\omega$, where $u=\\nabla\\times(-\\Delta)^{-1}(\\omega-\\langle\\omega\\rangle)$, $S=\\tfrac12(\\nabla u+\\nabla u^{T})$ and $\\langle\\omega\\rangle$ is the spatial mean. Decide whether every $\\omega_0\\in C^\\infty(\\mathbb T^3;\\mathbb R^3)$ with $\\nabla\\cdot\\omega_0=0$ generates a global smooth solution. (Unlike Euler, this equation does not preserve $\\nabla\\cdot\\omega=0$; for $t>0$, $\\omega$ need not equal $\\nabla\\times u$. The velocity $u$ is always given by the stated Biot–Savart law, which sees only the divergence-free part of $\\omega$, and the question concerns this system as written.)",
  "novelty": 7,
  "importance": 5,
  "value": 5,

@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Is the order of vanishing at 1 of a ±1 polynomial O(log n)?",
  "area": "Analysis",
- "difficulty": 6.0,
+ "difficulty": 7.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Byrnes's question (N(m)=2^m?) answered negatively by Boyd; growth-rate question implicit in Boyd 1997 and Borwein–Erdélyi–Kós (1999); formulated here as ρ>1.",

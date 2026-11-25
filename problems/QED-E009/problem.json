@@ -5,11 +5,18 @@
  "area": "Geometry",
  "difficulty": 3.0,
  "grade": "C",
- "plain": "In a round ball the only free-boundary minimal disks are flat slices through the centre (Nitsche). The superball x^4+y^4+z^4 <= 1 has nine flat ones, cut by its mirror planes. Is there also one that is not flat? A natural candidate has threefold symmetry about the diagonal (1,1,1).",
+ "provenance": "Original",
+ "plain": "In a round ball the only free-boundary minimal disks are flat slices through the centre (Nitsche). The superball x^4+y^4+z^4 <= 1 has nine flat ones, cut by its mirror planes. Is there also one that is not flat? A natural candidate has threefold symmetry about the diagonal (1,1,1). Such a symmetric disk cannot be flat: the only plane invariant under both symmetries is x+y+z=0, and it meets the boundary orthogonally only where xyz=0.",
  "math": "For $p>2$ let $B_p=\\{|x|^p+|y|^p+|z|^p\\le1\\}$. Decide whether $B_4$ (more generally $B_p$) contains an embedded minimal disk $\\Sigma$ with $\\partial\\Sigma\\subset\\partial B_p$, meeting $\\partial B_p$ orthogonally, that is not contained in a plane. Specifically, show that there is one invariant under the rotation by $2\\pi/3$ about the axis $\\mathbb R(1,1,1)$ and under $v\\mapsto-v$.",
  "novelty": 5,
  "importance": 3,
  "value": 4,
- "formal_status": "not_formalized",
- "review_note": "W"
+ "formal_status": "formalized",
+ "review_note": "Open; equivariant free-boundary min-max (Ketover) is the natural route, but producing a disk with the required symmetry is not routine.",
+ "refs": [
+  "J.C.C. Nitsche, Stationary partitioning of convex bodies, Arch. Rational Mech. Anal. 89 (1985)",
+  "M. Grüter and J. Jost, On embedded minimal disks in convex bodies, Ann. Inst. H. Poincaré Anal. Non Linéaire 3 (1986)",
+  "D. Ketover, Equivariant min-max theory, arXiv:1612.08692",
+  "https://arxiv.org/abs/2307.01828"
+ ]
 }

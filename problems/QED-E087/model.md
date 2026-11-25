@@ -5,7 +5,7 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade B · QED Extension · Dynamics
 
-**Plain words:** Berger and Turaev showed that families of area-preserving surface maps having positive metric entropy at every parameter are dense among smooth families. Show this is typical, i.e. holds for a Kolmogorov-generic (prevalent) set of families, or find a robust obstruction.
+**Plain words:** Berger and Turaev showed that families of area-preserving surface maps having positive metric entropy at every parameter are dense among smooth families. Show this is typical, i.e. holds for a Kolmogorov-typical set of families (a residual set of families, each having positive entropy for Lebesgue-a.e. parameter, in the sense of Berger-Turaev), or find a robust obstruction.
 
 **Math:** Take Σ = 𝕋² = ℝ²/ℤ² with the standard area form. For k ≥ 1 let 𝓕_k be the space of C^∞ families (f_p)_{p∈[0,1]^k} of symplectic diffeomorphisms of 𝕋² such that every f_p has an elliptic periodic point, with the C^∞ topology on (p,x) ↦ f_p(x), and 𝓕_+ = {families with h_Leb(f_p) > 0 for Lebesgue-a.e. p}. Prove or disprove: for every k ≥ 1, 𝓕_+ contains a countable intersection of open subsets dense in 𝓕_k (Kolmogorov typicality in the sense of Berger–Turaev). ¬Claim: for some k, 𝓕_+ contains no residual subset of 𝓕_k.
 
@@ -18,7 +18,7 @@ Extended set · Grade B · QED Extension · Dynamics
 - https://arxiv.org/abs/2507.11375
 - https://arxiv.org/abs/2003.09329
 
-Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 4.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE087.Claim` or a proof of `¬ OpenProblems.QEDE087.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E087/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

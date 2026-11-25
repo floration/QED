@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Beat (3+√2)/2 for diamond-free families",
  "area": "Combinatorics",
- "difficulty": 3.5,
+ "difficulty": 4.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Problem line from Griggs–Lu and Griggs–Li–Lu. Upper bound (3+√2)/2 by Grósz, Methuku, Tompkins (2018). Lower bound 2.1479 by Tompkins (2026). Three-layer bound by Balogh, Hu, Lidický, Liu.",

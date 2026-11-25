@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Cyclic perfect difference sets exist only for prime-power orders",
  "area": "Combinatorics",
- "difficulty": 5.5,
+ "difficulty": 8.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Folklore conjecture going back to Singer (1938) and Hall (1947); standard formulation in Jungnickel's and Beth–Jungnickel–Lenz's design theory texts; asymptotic version by S. Peluse.",

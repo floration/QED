@@ -5,7 +5,7 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade B · QED Extension · Mathematical physics
 
-**Plain words:** Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid. Prove it.
+**Plain words:** Put an Ising magnet on each tile of a hat tiling, with neighbouring tiles interacting. Show that there is one critical temperature shared by all hat tilings, and that near it the magnetisation, susceptibility and correlation length follow the square-lattice laws with exponents 1/8, 7/4 and 1. Part (i) of QED-M148 (the common critical temperature) is the first step of both problems.
 
 **Math:** Let T be any hat tiling (tiling of ℂ by isometric copies, reflections allowed, of the Smith–Myers–Kaplan–Goodman-Strauss hat; all such tilings form the hull) and G its tile-adjacency graph (tiles sharing a boundary segment), with the J=1 ferromagnetic Ising model. Prove: there is β_c ∈ (0,∞), the same for all T, such that, with constants c, C, δ > 0 depending only on T: (a) the plus-state magnetization M_T(β,x) = 0 for all tiles x and 0 ≤ β ≤ β_c, and c(β−β_c)^{1/8} ≤ M_T(β,x) ≤ C(β−β_c)^{1/8} uniformly in x for β_c < β < β_c+δ; (b) for β_c−δ < β < β_c, χ_T(β) = sup_x Σ_y ⟨σ_xσ_y⟩_β satisfies c(β_c−β)^{−7/4} ≤ χ_T(β) ≤ C(β_c−β)^{−7/4}; (c) for β_c−δ < β < β_c, the inverse correlation length 1/ξ_T(β) = liminf_{|x−y|→∞} (−log⟨σ_xσ_y⟩_β/|x−y|) satisfies c(β_c−β) ≤ 1/ξ_T(β) ≤ C(β_c−β).
 
@@ -15,7 +15,7 @@ Extended set · Grade B · QED Extension · Mathematical physics
 - https://arxiv.org/abs/2402.11331
 - https://arxiv.org/pdf/2307.11054
 
-Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 7.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE096.Claim` or a proof of `¬ OpenProblems.QEDE096.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E096/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

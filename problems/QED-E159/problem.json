@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Are the edges of a uniformly random forest negatively correlated?",
  "area": "Probability",
- "difficulty": 3.5,
+ "difficulty": 6.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Posed by Kahn and by Grimmett-Winkler (also in Pemantle, 'Towards a theory of negative dependence'); Branden-Huh factor-2 bound.",

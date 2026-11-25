@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Forced blow-up up to the Lions threshold",
  "area": "PDE",
- "difficulty": 4.5,
+ "difficulty": 6.0,
  "grade": "A",
  "provenance": "Extension",
  "credit": "OpenAI, forced Navier–Stokes blow-up (Sep 2026, unrefereed PDF); Lions (1969) for α ≥ 5/4; Tao, averaged Navier–Stokes (arXiv:1402.0290).",

@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Are graphs with no K7 minor 7-colourable?",
  "area": "Graph theory",
- "difficulty": 4.5,
+ "difficulty": 7.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Open question recorded in arXiv:2609.17760 and earlier (Albar-Gonçalves 2018); weaker unnamed sub-question of the t=7 case of Hadwiger's conjecture.",

@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Linear arboricity of graphs with maximum degree 7",
  "area": "Graph theory",
- "difficulty": 5.0,
+ "difficulty": 3.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Akiyama–Exoo–Harary (conjecture); small-case history in Christoph et al. (2025)",

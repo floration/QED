@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Monochromatic square-sum triangles, many colours",
  "area": "Combinatorics",
- "difficulty": 4.5,
+ "difficulty": 6.0,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Khalfalah–Szemerédi (2006), monochromatic x+y = z² for finite colourings.",

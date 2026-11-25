@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Can 3x3 matrices be multiplied with 22 multiplications over the complex numbers?",
  "area": "Algebra",
- "difficulty": 6.5,
+ "difficulty": 7.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Classical (Laderman 1976; Bläser 2003); framing after the 2026 F_2 resolution claims",

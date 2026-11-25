@@ -7,7 +7,7 @@ Extended set · Grade C · Analysis
 
 **Plain words:** Smooth compactly supported starting data for the 3D Euler equations that blow up in finite time are now known to exist, but the construction is an infinite iterative series. Give such data as an explicit formula.
 
-**Math:** Find an explicit divergence-free $u_0=\nabla\times\big(P(x)e^{-|x|^2}\big)$ with $P\in\mathbb{Q}[x_1,x_2,x_3]^3$ (or another explicitly specified finite closed-form class) such that the unforced 3D incompressible Euler solution on $\mathbb{R}^3$ with $u(0)=u_0$ has finite maximal smooth lifespan.
+**Math:** Find $P\in\mathbb{Q}[x_1,x_2,x_3]^3$ such that the unforced 3D incompressible Euler solution on $\mathbb{R}^3$ with $u(0)=\nabla\times\big(P(x)e^{-|x|^2}\big)$ has finite maximal smooth lifespan, i.e. $\sup_{x}|\nabla u(x,t)|\to\infty$ as $t\uparrow T^*<\infty$.
 
 **Reviewer note:** T
 
@@ -17,7 +17,7 @@ Extended set · Grade C · Analysis
 - https://raw.githubusercontent.com/openai/NavierStokesAndEuler/main/README.md
 - https://arxiv.org/abs/2308.12197
 
-Difficulty estimate: 5.1/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 5.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE004.Claim` or a proof of `¬ OpenProblems.QEDE004.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E004/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

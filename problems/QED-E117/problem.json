@@ -3,14 +3,15 @@
  "set": "extended",
  "title": "Does a Moore graph of degree 57 exist?",
  "area": "Graph theory",
- "difficulty": 7.5,
+ "difficulty": 6.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Hoffman and Singleton (1960); recent restrictions by Mačaj–Širáň, Smith–Montemanni, and others",
  "premise_risks": [
   "Very famous problem: low novelty, high difficulty",
   "'Moore graph' is a person-named object, but the question is not a named conjecture",
-  "Two 2026 partial-result papers are recent (one arXiv only); they do not affect the open status"
+  "Two 2026 partial-result papers are recent (one arXiv only); they do not affect the open status",
+  "Makhnev (arXiv:2010.13443, unrefereed) claims nonexistence; this is disputed in arXiv:2210.09577 (\"Existence of a Moore graph of degree 57 is still open\"), and the problem is generally regarded as open."
  ],
  "plain": "A Moore graph of diameter 2 is a regular graph in which any two vertices are either adjacent or have exactly one common neighbour; with degree k it has k^2+1 vertices, the most a diameter-2 graph of degree k can have. Hoffman and Singleton (1960) showed such graphs can exist only for k = 2, 3, 7, 57, and the first three exist (pentagon, Petersen graph, Hoffman-Singleton graph). Does one exist for degree 57, with 3250 vertices?",
  "math": "Decide whether there exists a simple graph $G$ on $3250$ vertices that is $57$-regular, triangle-free, and in which every two distinct non-adjacent vertices have exactly one common neighbour; equivalently, whether a strongly regular graph with parameters $(3250,57,0,1)$ exists.",

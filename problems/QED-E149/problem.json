@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Every centrally symmetric 5-polytope has at least 243 faces",
  "area": "Geometry",
- "difficulty": 4.5,
+ "difficulty": 6.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Kalai (1989); d = 4 case Sanyal-Werner-Ziegler (2009)",

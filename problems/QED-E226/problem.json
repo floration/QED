@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Prime Nim losing positions are not automatic",
  "area": "Logic",
- "difficulty": 3.0,
+ "difficulty": 4.0,
  "grade": "C",
  "provenance": "Original",
  "credit": "QED original (archived Nov 2026, restored after re-review).",

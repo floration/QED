@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Smallest dimension of a cubic-homogeneous Jacobian counterexample",
  "area": "Algebra",
- "difficulty": 4.0,
+ "difficulty": 4.5,
  "grade": "A",
  "provenance": "Extension",
  "credit": "Classical HJC(n,3) program: Bass–Connell–Wright (1982), Yagzhev; Hubbers (n ≤ 4 classification); de Bondt–van den Essen arXiv:1609.09753; upper bound de Bondt arXiv:2610.24889.",
@@ -12,7 +12,7 @@
   "arXiv:2608.00222 / arXiv:2609.17795 (2026 preprints, Alpöge's map and follow-up): the premise that the Jacobian conjecture is false at all; the formal Claim (dimension 5) does not depend on it."
  ],
  "plain": "The Jacobian conjecture is now known to fail. A classical reduction says that if it fails at all, it fails for maps of the special form x + (cubic homogeneous terms), but the reduction pays for this by raising the number of variables. Such a cubic counterexample is now known in 18 variables, and none exists in 4 or fewer. What is the smallest number of variables in which one exists?",
- "math": "Let $N_3$ be the least $n$ such that there is $H=(H_1,\\dots,H_n)$, each $H_i\\in\\mathbb C[x_1,\\dots,x_n]$ homogeneous of degree 3, with $JH$ nilpotent (equivalently, for homogeneous $H$, $\\det(I+JH)=1$) and $x+H$ not an automorphism of $\\mathbb C^n$. Hubbers' classification of cubic homogeneous nilpotent Jacobians for $n\\le4$ gives $N_3\\ge5$ ($n=5$ is open as far as we know). De Bondt (arXiv:2610.24889, unrefereed), building on Alp\\\"oge's map and improving Van Rijn's 19, gives $N_3\\le18$. Determine $N_3$; in particular, decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5. Companion: let $d_3$ be the least $\\max_i\\deg F_i$ over non-invertible Keller maps $F:\\mathbb C^3\\to\\mathbb C^3$ ($\\det JF\\in\\mathbb C^*$). Wang's theorem gives $d_3\\ge3$ and Alp\\\"oge's map gives $d_3\\le7$.",
+ "math": "Let N_3 be the least n such that there is H=(H_1,...,H_n), each H_i in C[x_1..x_n] homogeneous of degree 3, with JH nilpotent and x+H not an automorphism of C^n. Hubbers (n<=4) gives N_3>=5; de Bondt (arXiv:2610.24889, unrefereed) gives N_3<=18. Determine N_3; in particular decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5.",
  "novelty": 6,
  "importance": 6,
  "value": 6,

@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Only 2^{O(n^2)} triangulated 3-spheres on n vertices?",
  "area": "Topology",
- "difficulty": 4.5,
+ "difficulty": 6.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Gap stated by Kalai (1988), Pfeifle–Ziegler (2004), Nevo–Wilson (2013), Nevo–Santos–Wilson (2016).",

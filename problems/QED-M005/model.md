@@ -7,7 +7,7 @@ Main set · Grade A · QED Extension · Algebra
 
 **Plain words:** The Jacobian conjecture is now known to fail. A classical reduction says that if it fails at all, it fails for maps of the special form x + (cubic homogeneous terms), but the reduction pays for this by raising the number of variables. Such a cubic counterexample is now known in 18 variables, and none exists in 4 or fewer. What is the smallest number of variables in which one exists?
 
-**Math:** Let $N_3$ be the least $n$ such that there is $H=(H_1,\dots,H_n)$, each $H_i\in\mathbb C[x_1,\dots,x_n]$ homogeneous of degree 3, with $JH$ nilpotent (equivalently, for homogeneous $H$, $\det(I+JH)=1$) and $x+H$ not an automorphism of $\mathbb C^n$. Hubbers' classification of cubic homogeneous nilpotent Jacobians for $n\le4$ gives $N_3\ge5$ ($n=5$ is open as far as we know). De Bondt (arXiv:2610.24889, unrefereed), building on Alp\"oge's map and improving Van Rijn's 19, gives $N_3\le18$. Determine $N_3$; in particular, decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5. Companion: let $d_3$ be the least $\max_i\deg F_i$ over non-invertible Keller maps $F:\mathbb C^3\to\mathbb C^3$ ($\det JF\in\mathbb C^*$). Wang's theorem gives $d_3\ge3$ and Alp\"oge's map gives $d_3\le7$.
+**Math:** Let N_3 be the least n such that there is H=(H_1,...,H_n), each H_i in C[x_1..x_n] homogeneous of degree 3, with JH nilpotent and x+H not an automorphism of C^n. Hubbers (n<=4) gives N_3>=5; de Bondt (arXiv:2610.24889, unrefereed) gives N_3<=18. Determine N_3; in particular decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5.
 
 **Credit:** Classical HJC(n,3) program: Bass–Connell–Wright (1982), Yagzhev; Hubbers (n ≤ 4 classification); de Bondt–van den Essen arXiv:1609.09753; upper bound de Bondt arXiv:2610.24889.
 
@@ -27,7 +27,7 @@ Main set · Grade A · QED Extension · Algebra
 - https://arxiv.org/abs/1609.09753
 - https://arxiv.org/pdf/1501.04845
 
-Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 4.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDM005.Claim` or a proof of `¬ OpenProblems.QEDM005.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M005/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

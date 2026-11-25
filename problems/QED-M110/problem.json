@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Logarithmically many conjugacy classes",
  "area": "Algebra",
- "difficulty": 6.5,
+ "difficulty": 7.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Unnamed open question (the c·log|G| conjecture as stated in Baumeister–Maróti–Tong-Viet 2017, following Pyber 1992). A sharper log_3 variant is attributed to Bertram, but it is background only and not the posed question.",

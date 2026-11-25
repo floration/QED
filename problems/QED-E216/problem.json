@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "A biplane with more than 13 points per block",
  "area": "Combinatorics",
- "difficulty": 4.0,
+ "difficulty": 7.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Classical open problem on biplanes (Hussain 1945, Cameron 1973 survey 'Biplanes'); smallest open case per Alavi–Daneshkhah–Praeger and Crnković et al.",

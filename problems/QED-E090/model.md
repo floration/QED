@@ -7,7 +7,7 @@ Extended set · Grade B · QED Curated · Dynamics
 
 **Plain words:** On a flat torus, three point vortices with total circulation zero form an integrable system (Stremler-Aref), but for vortices of equal strength even three are believed chaotic, from numerics only. Prove that three identical point vortices on the square torus are not integrable; the same question is open for four.
 
-**Math:** For N = 3 the reduced flow on M_3 has no real-analytic first integral functionally independent of H (Claim); the N = 4 analogue is a separate proposition ClaimN4, not part of Claim.
+**Math:** Let $\mathbb T=\mathbb C/(\mathbb Z+i\mathbb Z)$ and $G$ the Green function of the torus Laplacian ($\Delta G=\delta_0-1$, unique up to an additive constant, which does not affect the dynamics). Three unit vortices $z_1,z_2,z_3\in\mathbb T$ evolve by the Hamiltonian flow of $H=-\sum_{j<k}G(z_j-z_k)$ for the symplectic form $\sum_k dx_k\wedge dy_k$ on the collision-free set $\{z_j\ne z_k\}$. By translation invariance the flow descends to the reduced space $M_3=\{z_j\ne z_k\}/\mathbb T$ (diagonal translations; equivalently the relative positions $w_1=z_2-z_1$, $w_2=z_3-z_1$ with $w_1,w_2,w_1-w_2\ne0$), a 4-manifold with the reduced symplectic structure, on which $H$ is a function. Claim: there is no real-analytic $F:M_3\to\mathbb R$, constant along the reduced flow, with $dF\wedge dH\not\equiv0$. (Four vortices: the same statement on the 6-dimensional reduced space, asking for no two additional independent commuting integrals, is a separate proposition ClaimN4, not part of Claim.)
 
 **Credit:** Borisov, Mamaev, Kilin, Regul. Chaotic Dyn. (2019); survey arXiv:2003.00716 (Thm 7); Stremler-Aref (1999, chao-dyn/9907038) for the zero-circulation integrable case
 
@@ -18,7 +18,7 @@ Extended set · Grade B · QED Curated · Dynamics
 - https://arxiv.org/pdf/chao-dyn/9907038
 - https://mathnet.ru/eng/rcd392
 
-Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 4.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE090.Claim` or a proof of `¬ OpenProblems.QEDE090.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E090/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

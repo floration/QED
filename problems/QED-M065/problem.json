@@ -3,7 +3,7 @@
  "set": "main",
  "title": "An explicit, checkable counterexample to Hadwiger's conjecture",
  "area": "Graph theory",
- "difficulty": 5.0,
+ "difficulty": 6.0,
  "grade": "B",
  "provenance": "Original",
  "premise_risks": [

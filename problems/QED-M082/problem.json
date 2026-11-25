@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Lower the exponent 1/2 in Pasten's subexponential abc bound",
  "area": "Number theory",
- "difficulty": 4.0,
+ "difficulty": 7.0,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Extends H. Pasten, Invent. Math. 2024 (arXiv:2312.03566), Thm 1.4.",

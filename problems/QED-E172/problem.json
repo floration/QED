@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Six cubes suffice for all large integers",
  "area": "Number theory",
- "difficulty": 8.0,
+ "difficulty": 8.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Classical sub-question of Waring's problem for cubes (Linnik 1943 bound; see Vaughan–Wooley survey 'Waring's problem: a survey', 2002).",

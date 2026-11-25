@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Rotor-router discs: logarithmic outer error",
  "area": "Probability",
- "difficulty": 6.0,
+ "difficulty": 6.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Propp's roundness question; inner/outer bounds and constant-error question from Levine & Peres (2009). The specific O(log r) outer target is my framing as the natural matching step.",

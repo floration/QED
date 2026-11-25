@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Solve x^2 + y^5 = z^7, the smallest open generalized Fermat equation",
  "area": "Number theory",
- "difficulty": 3.5,
+ "difficulty": 6.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Sub-case of the generalized Fermat (Fermat–Catalan) problem; identification of (2,5,7) as smallest open case from Grechuk et al. survey arXiv:2412.11933",

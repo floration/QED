@@ -5,7 +5,7 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Main set · Grade B · QED Curated · Complexity
 
-**Plain words:** AVW's core subroutine computes requested entries of XY (N x D times D x N, D <= N^{eps}) in N^2/D^{c} operations; Majdoddin extends the regime to eps < ln4/(5 ln5) ~ 0.17227, matching Coppersmith's 1982 exponent for the same tensor. Either (a) extend the thin-product theorem to some eps > 0.17227 (e.g. via a different base identity, or settle Majdoddin's open thin product <34,2,35>), giving 3SUM/APSP exponents below 1.9945 / 2.9945; or (b) prove that every partial-product-tensor/Coppersmith-style scheme is limited to eps <= 0.17227.
+**Plain words:** AVW's core subroutine computes requested entries of XY (N x D times D x N, D <= N^{eps}) in N^2/D^{c} operations; Majdoddin extends the regime to eps < ln4/(5 ln5) ~ 0.17227, matching Coppersmith's 1982 exponent for the same tensor. Either (a) extend the thin-product theorem to some eps > 0.17227 (e.g. via a different base identity, or settle Majdoddin's open thin product <34,2,35>), improving the APSP exponent below 2.9945 via the Alman–Vassilevska Williams/Majdoddin reductions (the 3SUM consequence is superseded: Chan–Itakura–Ma–Yu, arXiv:2610.42012, already give 3SUM in O(n^1.965) by other means); or (b) prove that every partial-product-tensor/Coppersmith-style scheme is limited to eps <= 0.17227.
 
 **Math:** Call ε good if there is γ > 0 such that for every constant K some deterministic word-RAM algorithm, given 1 ≤ D ≤ N^ε, X ∈ ℤ^{N×D}, Y ∈ ℤ^{D×N} with |entries| ≤ N^K and a list of at most N²/√D index pairs, outputs those entries of XY in O(N²/D^γ) time. Let ε* = sup of good ε. Is ε* > ln4/(5 ln5)? (Barrier version (b) is a separate question.)
 
@@ -26,7 +26,7 @@ Main set · Grade B · QED Curated · Complexity
 - arXiv:2610.42012 (Chan, Itakura, Ma, Yu, Nov 2026)
 - github.com/shreshth-s/thin-matrix-results
 
-Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 3.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDM032.Claim` or a proof of `¬ OpenProblems.QEDM032.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M032/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
