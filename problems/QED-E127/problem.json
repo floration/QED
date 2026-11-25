@@ -14,8 +14,8 @@
  "plain": "Hindman's theorem says that for any finite colouring of the positive integers there is an infinite set H all of whose finite sums have one colour. Restrict this to sums of one or two distinct elements. A computable 4-colouring is known to force every such H to compute the halting problem, but with only 2 colours (and no extra 'apartness' condition) nobody knows. Decide whether some computable 2-colouring forces every solution to compute the halting problem.",
  "math": "For $H\\subseteq\\mathbb N_{>0}$ let $FS^{\\le2}(H)=H\\cup\\{x+y:x,y\\in H,\\ x\\ne y\\}$. Decide whether there exists a computable $c:\\mathbb N_{>0}\\to\\{0,1\\}$ such that every infinite $H\\subseteq\\mathbb N_{>0}$ on which $FS^{\\le2}(H)$ is $c$-monochromatic satisfies $\\emptyset'\\le_T H$. Either answer is a solution. (A relativizable positive answer gives $\\mathsf{RCA}_0\\vdash\\mathsf{HT}^{\\le2}_2\\to\\mathsf{ACA}_0$.)",
  "novelty": 3,
- "importance": 4,
- "value": 5,
+ "importance": 5,
+ "value": 6,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/1603.08249",

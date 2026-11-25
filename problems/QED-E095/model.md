@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade A · QED Original · Logic & computability
+Main set · Grade A · QED Original · Logic & computability
 
 **Plain words:** Pick a Latin square of order n uniformly at random and read it as a multiplication table x∘y on n symbols. Does every first-order statement about this table have a limiting probability as n grows? A zero-one law fails: the number of x with x∘x=x should be asymptotically Poisson(1), so the probability that one exists should tend to 1−1/e rather than 0 or 1.
 

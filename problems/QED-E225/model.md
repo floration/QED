@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · QED Original · Physics
+Extended set · Grade C · QED Original · Mathematical physics
 
 **Plain words:** Put a quantum particle on the vertices of a hat tiling, hopping along tile edges with equal amplitude. Decide whether the set of allowed energies is a Cantor set (closed, with no intervals); if it is, decide whether it has Lebesgue measure zero.
 

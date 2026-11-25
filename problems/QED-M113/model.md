@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Geometry
+Extended set · Grade B · QED Curated · Geometry
 
 **Plain words:** Two points of a finite set in the plane see each other if the segment between them passes through no other point of the set. Prove that for every l there is an N such that any N points in the plane contain either l points on a line or 6 points that all see each other. This is known for 5 points that all see each other (for every l), and since 2026 for 6 such points when l = 4.
 

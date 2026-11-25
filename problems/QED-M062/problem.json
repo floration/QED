@@ -1,6 +1,6 @@
 {
  "id": "QED-M062",
- "set": "main",
+ "set": "extended",
  "title": "How nearly can tetrahedra close up: the exponent",
  "area": "Geometry",
  "difficulty": 4.0,
@@ -13,9 +13,9 @@
  ],
  "plain": "Glue regular tetrahedra face to face in a chain of length n; it can never close exactly. How close to closing can it get? Short arguments show the best gap is at least about 3^{-n/2} and, for infinitely many n, at most about 3^{-n/12}; counting suggests 3^{-n/6}. Narrow the exponent range [1/12, 1/2].",
  "math": "Let g(k) be the minimal Hausdorff distance between T_k and T_0 over non-backtracking face-reflection chains of length k, and κ := liminf_{n→∞} −(1/n) log₃ min_{1≤k≤n} g(k). Known: 1/12 ≤ κ ≤ 1/2 (heuristic κ = 1/6). Prove κ > 1/12, i.e. there are δ > 0 and N such that for every n ≥ N some non-backtracking chain of length between 1 and n ends within 3^{−(1/12+δ)n} of T_0.",
- "novelty": 6,
- "importance": 5,
- "value": 6,
+ "novelty": 7,
+ "importance": 3,
+ "value": 5,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/1610.00280",

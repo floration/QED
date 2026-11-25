@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade A · QED Curated · Coding theory
+Extended set · Grade A · QED Curated · Coding & information theory
 
 **Plain words:** A 3-query locally decodable code encodes k bits into n bits so that any single message bit can be recovered with probability 1/2+eps by reading just 3 randomly chosen positions, even after a delta fraction of the codeword has been corrupted. The shortest known such codes have length exp(exp(O(sqrt(log k loglog k)))), while the best lower bound (2023) is n >= k^3/polylog(k). Prove n >= k^{3+c} for some fixed c>0.
 

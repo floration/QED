@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade A · QED Curated · Coding theory
+Extended set · Grade A · QED Curated · Coding & information theory
 
 **Plain words:** A set of binary strings of length n corrects one deletion if no two of its strings can become the same string when each loses one symbol. The Varshamov-Tenengolts code VT_0(n), the strings whose position-weighted sum of 1s is divisible by n+1, is such a code, with about 2^n/(n+1) words. Is VT_0(n) a largest single-deletion-correcting code for every length n?
 

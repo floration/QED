@@ -927,7 +927,7 @@
   "premise_risks": [],
   "plain": "Every aperiodic monotile known (Socolar-Taylor, the hat, the spectre, and the 3D examples) has tilings with only crystallographic rotational structure: 2-, 3-, 4- or 6-fold. Is there a single tile in the plane whose tilings are all forced to be quasicrystalline with fivefold symmetry, as Penrose tilings are? Or is non-crystallographic symmetry something only two or more tiles can enforce?",
   "math": "Call a compact set T ⊂ ℝ² homeomorphic to a closed disc a monotile if it tiles ℝ² by isometric copies, reflections allowed. Does there exist a monotile T such that (i) every tiling by copies of T uses only finitely many orientations of T (up to translation), and (ii) for every such tiling 𝒯 the translation hull Ω(𝒯), the closure of {𝒯 + v} in the standard local topology (agreement on B(0,1/ε) after a translation of size < ε), is invariant under rotation by 2π/5? (Equivalently, the rotated tiling R𝒯 lies in Ω(𝒯).) The R³ icosahedral analogue is a secondary target.",
-  "novelty": 5,
+  "novelty": 7,
   "importance": 6,
   "value": 6,
   "formal_status": "formalized",
@@ -953,45 +953,6 @@
   "set": "main"
  },
  {
-  "id": "QED-M057",
-  "review_id": "N-106",
-  "title": "A strongly aperiodic monotile in four dimensions",
-  "area": "Geometry",
-  "difficulty": 4.0,
-  "grade": "A",
-  "provenance": "Curated",
-  "credit": "Kamenetsky 2026, arXiv:2610.00916, Problem 9.1 (context: Smith-Myers-Kaplan-Goodman-Strauss 2023, arXiv:2303.10798; Tsiokos 2026, arXiv:2609.19214)",
-  "results": null,
-  "premise_risks": [
-   "arXiv:2609.19214 (Tsiokos, 2026, unrefereed): the claimed strongly aperiodic 3D monotile Chair44 that motivates the question; Claim does not depend on it.",
-   "arXiv:2609.24779 (Goodman-Strauss, 2026, unrefereed): independent proof for Chair44; context only.",
-   "arXiv:2610.00916 (Kamenetsky, 2026, unrefereed): reports a failed 4D search and poses the problem; context only."
-  ],
-  "plain": "The hat (2023) is a single shape that tiles the plane only non-periodically, and in 2026 a 3D analogue was announced (Chair44, a decorated chair-shaped polycube). Find one connected 4D shape whose copies fill 4D space, where no tiling by it is left unchanged by any translation.",
-  "math": "Find a compact set $T\\subset\\mathbb R^4$ homeomorphic to a closed 4-ball such that (i) $\\mathbb R^4$ admits a tiling by isometric copies of $T$ (reflections allowed; copies cover $\\mathbb R^4$ with pairwise disjoint interiors), and (ii) no such tiling is invariant under any nonzero translation. (Drop the weak variant (ii'), or flag it as possibly easy via prisms over a 3D monotile.)",
-  "novelty": 5,
-  "importance": 6,
-  "value": 7,
-  "formal_status": "formalized",
-  "lean_gap": null,
-  "refs": [
-   "https://arxiv.org/pdf/2303.10798",
-   "https://arxiv.org/pdf/2609.19214",
-   "https://arxiv.org/pdf/2609.23783",
-   "https://arxiv.org/pdf/2609.24779",
-   "https://arxiv.org/pdf/2610.00916",
-   "https://arxiv.org/abs/2609.19214",
-   "https://arxiv.org/abs/2609.24779",
-   "https://arxiv.org/pdf/2610.00916",
-   "https://arxiv.org/pdf/2303.10798"
-  ],
-  "lean": "import Mathlib\n/-! QED-M057: A strongly aperiodic monotile in four dimensions\nFind a single shape in four-dimensional space, homeomorphic to a closed 4-ball, whose congruent\ncopies (rotations and reflections allowed) tile R^4, but such that no tiling by it is invariant\nunder any nonzero translation. Aperiodic monotiles are known in the plane (the hat/spectre) and\nhave been claimed in dimension 3 (Chair44, 2026).\nInformal statement: Find a compact set T ⊂ R^4 homeomorphic to a closed 4-ball such that\n(i) R^4 admits a tiling by isometric copies of T (reflections allowed; copies cover R^4 with\npairwise disjoint interiors), and (ii) no such tiling is invariant under any nonzero translation.\nFormalization notes: R^4 is modelled as `Fin 4 → ℝ` (product topology = Euclidean topology).\nIsometries of R^4 are written explicitly as rigid motions x ↦ A x + b with Aᵀ A = 1 (so\nreflections are allowed). The closed unit ball is {x | Σ x_i^2 <= 1}. A tiling by T is a set 𝒯\nof subsets of R^4, each the image of T under a rigid motion, whose union is all of R^4 and whose\ndistinct members have disjoint interiors. A tiling is translation-invariant if some nonzero v\nsatisfies P ∈ 𝒯 ↔ P + v ∈ 𝒯 for every P. Proving Claim means exhibiting such a T together with\na proof that it tiles and that every tiling by it is non-periodic; proving ¬Claim means showing\nthat every topological-ball tile of R^4 that tiles admits some tiling with a nonzero translational\nsymmetry (i.e. no strongly aperiodic topological-ball monotile exists in R^4).\n-/\nnamespace OpenProblems.QEDM057\n\n/-- Four-dimensional real space as a function type. -/\nabbrev R4 : Type := Fin 4 → ℝ\n\n/-- The closed Euclidean unit ball in R^4. -/\ndef closedUnitBall : Set R4 := {x | (∑ i : Fin 4, x i ^ 2) ≤ 1}\n\n/-- A rigid motion (isometry) of R^4: x ↦ A x + b with A orthogonal (reflections allowed). -/\nstructure RigidMotion where\n  A : Matrix (Fin 4) (Fin 4) ℝ\n  b : R4\n  orth : Matrix.transpose A * A = 1\n\n/-- Apply a rigid motion to a point. -/\ndef RigidMotion.apply (g : RigidMotion) (x : R4) : R4 := Matrix.mulVec g.A x + g.b\n\n/-- `𝒯` is a tiling of R^4 by congruent copies of `T`. -/\ndef IsTilingBy (T : Set R4) (𝒯 : Set (Set R4)) : Prop :=\n  (∀ P ∈ 𝒯, ∃ g : RigidMotion, P = g.apply '' T) ∧\n  (⋃₀ 𝒯 = Set.univ) ∧\n  (∀ P ∈ 𝒯, ∀ Q ∈ 𝒯, P ≠ Q → Disjoint (interior P) (interior Q))\n\n/-- A tiling is invariant under some nonzero translation. -/\ndef IsTranslationInvariant (𝒯 : Set (Set R4)) : Prop :=\n  ∃ v : R4, v ≠ 0 ∧ ∀ P : Set R4, P ∈ 𝒯 ↔ (fun x : R4 => x + v) '' P ∈ 𝒯\n\ndef Claim : Prop :=\n  ∃ T : Set R4, IsCompact T ∧ Nonempty (↥T ≃ₜ ↥closedUnitBall) ∧\n    (∃ 𝒯 : Set (Set R4), IsTilingBy T 𝒯) ∧\n    ∀ 𝒯 : Set (Set R4), IsTilingBy T 𝒯 → ¬ IsTranslationInvariant 𝒯\n\nend OpenProblems.QEDM057\n",
-  "M_fix_reason": null,
-  "prov_reason": "The 4D aperiodic monotile question is posed explicitly as Problem 9.1 by Kamenetsky (2026), as the next step after the 2D hat and the claimed 3D Chair44; it is also a natural part of the folklore einstein problem.",
-  "legacy_id": "N-106",
-  "set": "main"
- },
- {
   "id": "QED-M058",
   "review_id": "AS1-15",
   "title": "Beat the (1-o(1)) log2 d exponent in quasi-polynomial polytope diameter bounds",
@@ -1006,8 +967,8 @@
   ],
   "plain": "All known bounds on the diameter of a d-dimensional polyhedron with n facets have the form (n−d)^{log₂ d − O(log log d)}. The latest (Liu–Ge–Ye 2026) is (n−d)^{log₂ G_d} with G_d ~ (4 ln 2) d/(ln d)². Get an exponent at most (1−ε) log₂ d.",
   "math": "Let $\\Delta_u(d,n)$ be the maximum graph diameter of a pointed $d$-polyhedron with $n$ facets. Known: $\\Delta_u(d,n)\\le (n-d)^{\\log_2 G_d}$, $G_d=(4\\ln2+o(1))d/(\\ln d)^2$ (Liu–Ge–Ye 2026), after Kalai–Kleitman, Todd, Sukegawa. Prove $\\Delta_u(d,n)\\le (n-d)^{(1-\\varepsilon)\\log_2 d}$ for some fixed $\\varepsilon>0$ and all large $d$.",
-  "novelty": 5,
-  "importance": 7,
+  "novelty": 4,
+  "importance": 8,
   "value": 6,
   "formal_status": "formalized",
   "lean_gap": null,
@@ -1037,8 +998,8 @@
   ],
   "plain": "The 4D superball x1^4+y1^4+x2^4+y2^4 <= 1 contains the round unit ball, so it holds a symplectic ball of capacity pi. Its cylindrical capacity is about 3.708, and no symplectic ball can be bigger than that. Narrow the gap: embed a bigger ball, or show that no ball of capacity close to 3.708 fits.",
   "math": "Let U = {x1^4+y1^4+x2^4+y2^4 <= 1} ⊂ (R^4, ω0) and c_G(U) = sup{πr^2 : B^4(r) embeds symplectically in U}. Known: π <= c_G(U) <= c0 := 4Γ(5/4)^2/Γ(3/2) ≈ 3.7081 (= c_Z(U) = c_EHZ(U)). Prove or disprove: c_G(U) = c0 (i.e. U satisfies the strong Viterbo equality between Gromov width and cylindrical capacity).",
-  "novelty": 6,
-  "importance": 6,
+  "novelty": 7,
+  "importance": 4,
   "value": 6,
   "formal_status": "formalized",
   "lean_gap": null,
@@ -1055,72 +1016,6 @@
   "M_fix_reason": "'Improve either bound' is, read as a proposition, trivially true: since π < c0, at least one of c_G(U) > π and c_G(U) < c0 always holds. The fix asks the sharp yes/no question c_G(U) = c0, which is the one tied to the strong Viterbo conjecture.",
   "prov_reason": "Notes say the source paper (arXiv:2609.37794) computes c_Z = c_EHZ for l^p balls but never mentions Gromov width; the Gromov width question for this body was formulated by QED.",
   "legacy_id": "N-628",
-  "set": "main"
- },
- {
-  "id": "QED-M062",
-  "review_id": "N-624",
-  "title": "How nearly can tetrahedra close up: the exponent",
-  "area": "Geometry",
-  "difficulty": 4.0,
-  "grade": "B",
-  "provenance": "Extension",
-  "credit": "Steinhaus problem; Świerczkowski (1959) non-closure; Elgersma & Wagon (2016), arXiv:1610.00280.",
-  "results": "g(n) >= c*3^{-n/2} for all n (new, short proof): g_n = s_{i1}...s_{in}, linear part = ±R_q, q = v_{i1}...v_{in}, v_i the pure quaternions ±i±j±k (norm 3); non-backtracking => q primitive in the Hurwitz order (unique factorisation; checked by computer to n=11). If T_n is near T_0 the linear part is near a symmetry ±R_u; q*conj(u) cannot be real (primitivity / 2*3^n not a square), so its vector part has length >=1/2 while |q u| <= sqrt2*3^{n/2}, giving rotation error >> 3^{-n/2}.",
-  "premise_risks": [
-   "QED-internal derivation (unrefereed): the bounds 1/12 ≤ κ ≤ 1/2 (Hurwitz-order primitivity checked by computer only to n = 11). The formal Claim only uses the definitions, not these bounds."
-  ],
-  "plain": "Glue regular tetrahedra face to face in a chain of length n; it can never close exactly. How close to closing can it get? Short arguments show the best gap is at least about 3^{-n/2} and, for infinitely many n, at most about 3^{-n/12}; counting suggests 3^{-n/6}. Narrow the exponent range [1/12, 1/2].",
-  "math": "Let g(k) be the minimal Hausdorff distance between T_k and T_0 over non-backtracking face-reflection chains of length k, and κ := liminf_{n→∞} −(1/n) log₃ min_{1≤k≤n} g(k). Known: 1/12 ≤ κ ≤ 1/2 (heuristic κ = 1/6). Prove κ > 1/12, i.e. there are δ > 0 and N such that for every n ≥ N some non-backtracking chain of length between 1 and n ends within 3^{−(1/12+δ)n} of T_0.",
-  "novelty": 6,
-  "importance": 5,
-  "value": 6,
-  "formal_status": "formalized",
-  "lean_gap": null,
-  "refs": [
-   "https://arxiv.org/abs/1610.00280",
-   "https://arxiv.org/pdf/1610.00280",
-   "https://portal.mardi4nfdi.de/wiki/Item:Q2354124"
-  ],
-  "lean": "import Mathlib\n/-! QED-M062: How nearly can tetrahedra close up: the exponent\nGlue regular tetrahedra face to face in a chain of length n; it never closes exactly. Let g(n) be the best gap after n\nsteps and κ the exponential rate of the running minimum, in base 3. Short arguments give 1/12 ≤ κ ≤ 1/2; counting\nheuristics suggest κ = 1/6. The task is to narrow the range; Claim is the strict improvement of the lower bound.\nInformal statement (corrected): Let g(k) be the minimal distance between T_k and T_0 over non-backtracking face-reflection\nchains of length k, and κ := liminf_n −(1/n) log₃ min_{1≤k≤n} g(k). Known: 1/12 ≤ κ ≤ 1/2. Prove κ > 1/12.\nFormalization notes: The tetrahedron is stored as a labelled vertex tuple P : Fin 4 → ℝ³, starting from the regular\ntetrahedron P0 with vertices (1,1,1), (1,−1,−1), (−1,1,−1), (−1,−1,1). Reflecting across the face opposite vertex i\nreplaces Pᵢ by (2/3)·Σ_{j≠i} Pⱼ − Pᵢ (twice the face centroid minus Pᵢ; exact for regular tetrahedra, and every Tₖ\nis regular). The new vertex keeps label i, so crossing the same face twice in a row undoes the step: chains are\nlists of labels with no two consecutive equal (`NonBacktracking`), applied left to right. Distance between Tₖ and T₀\nis `matchDist`: the minimum over relabellings σ of max_i ‖Pᵢ − P0_{σ(i)}‖_∞ (sup norm on Fin 3 → ℝ). For congruent\nregular tetrahedra this is comparable, up to absolute constants, to the Hausdorff distance between the solids used\nin the problem, and the edge length is fixed (2√2 instead of 1); neither affects κ. The liminf condition κ > 1/12 is\nencoded with explicit δ, N: for all large n some chain of length between 1 and n has distance ≤ 3^{−(1/12+δ)n}.\nProving Claim = κ > 1/12; proving ¬Claim = κ = 1/12 exactly (by the known lower bound), i.e. for every δ > 0 there are\ninfinitely many n where every chain of length ≤ n stays at distance > 3^{−(1/12+δ)n}.\n-/\nnamespace OpenProblems.QEDM062\n\n/-- The initial regular tetrahedron `T₀` (edge length `2√2`). -/\nnoncomputable def P0 : Fin 4 → (Fin 3 → ℝ) :=\n  ![![1, 1, 1], ![1, -1, -1], ![-1, 1, -1], ![-1, -1, 1]]\n\n/-- Reflect the (regular) tetrahedron `P` across the face opposite vertex `i`. -/\nnoncomputable def reflectStep (P : Fin 4 → (Fin 3 → ℝ)) (i : Fin 4) : Fin 4 → (Fin 3 → ℝ) :=\n  Function.update P i ((2 / 3 : ℝ) • (∑ j ∈ Finset.univ.erase i, P j) - P i)\n\n/-- The last tetrahedron of the chain with face labels `l`, starting from `T₀`. -/\nnoncomputable def chainEnd (l : List (Fin 4)) : Fin 4 → (Fin 3 → ℝ) := l.foldl reflectStep P0\n\n/-- No two consecutive face labels are equal. -/\ndef NonBacktracking : List (Fin 4) → Prop\n  | [] => True\n  | [_] => True\n  | a :: b :: l => a ≠ b ∧ NonBacktracking (b :: l)\n\n/-- Distance between two labelled tetrahedra as unlabelled vertex sets (best matching, sup norm). -/\nnoncomputable def matchDist (P Q : Fin 4 → (Fin 3 → ℝ)) : ℝ :=\n  ⨅ σ : Equiv.Perm (Fin 4), ⨆ i : Fin 4, dist (P i) (Q (σ i))\n\ndef Claim : Prop :=\n  ∃ δ : ℝ, 0 < δ ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n →\n    ∃ l : List (Fin 4), NonBacktracking l ∧ 1 ≤ l.length ∧ l.length ≤ n ∧\n      matchDist (chainEnd l) P0 ≤ (3 : ℝ) ^ (-(1 / 12 + δ) * (n : ℝ))\n\nend OpenProblems.QEDM062\n",
-  "M_fix_reason": "As written, M is just the known range '1/12 ≤ κ ≤ 1/2', which the short arguments already prove (a trivial claim), and it leaves the definition of κ ambiguous ('or limsup with exact length'). Replaced by a single open strict improvement with the running-minimum liminf definition (the one for which 1/12 is actually proved). The other direction, κ < 1/2, is an equally natural target and could be a sibling problem.",
-  "prov_reason": "Steinhaus's tetrahedral-chain problem (non-closure, Świerczkowski) and Elgersma–Wagon's experiments are known; the quantitative near-closure exponent κ and its bounds are QED's new question.",
-  "legacy_id": "N-624",
-  "set": "main"
- },
- {
-  "id": "QED-M064",
-  "review_id": "N-428",
-  "title": "Superlinear unit distances on the unit sphere",
-  "area": "Geometry",
-  "difficulty": 5.0,
-  "grade": "A",
-  "provenance": "Curated",
-  "credit": "Erdős, Hickerson, Pach, 'A problem of Leo Moser about repeated distances on the sphere', Amer. Math. Monthly 96 (1989); Swanepoel-Valtr (2004)",
-  "results": null,
-  "premise_risks": [],
-  "plain": "In 2026 a number-field construction showed that points in the plane can have n^(1+c) unit distances, disproving Erdos's conjecture. On a sphere of radius 1/sqrt2 an n^(4/3) construction is classical, but on the unit sphere only n·sqrt(log n) is known. Can the new ideas give a power gain there?",
-  "math": "Prove or disprove: there is $c>0$ such that for infinitely many $n$ there exist $P\\subset S^2=\\{x\\in\\mathbb{R}^3:|x|=1\\}$ with $|P|=n$ and $\\#\\{\\{p,q\\}\\subset P:|p-q|=1\\}\\ge n^{1+c}$.",
-  "novelty": 4,
-  "importance": 6,
-  "value": 7,
-  "formal_status": "formalized",
-  "lean_gap": null,
-  "refs": [
-   "https://arxiv.org/abs/2605.20579",
-   "https://arxiv.org/html/2605.20695",
-   "https://web.math.princeton.edu/~nalon/PDFS/udremarks.pdf",
-   "https://researchonline.lse.ac.uk/id/eprint/25462",
-   "https://ar5iv.arxiv.org/html/0707.0213",
-   "https://kam.mff.cuni.cz/kamserie/clanky/2004/s673.pdf",
-   "https://arxiv.org/abs/2605.20579",
-   "https://arxiv.org/html/2605.20695",
-   "https://arxiv.org/abs/2606.03419"
-  ],
-  "lean": "import Mathlib\n/-! QED-M064: Superlinear unit distances on the unit sphere\nOn the sphere of radius 1/√2 in ℝ³ there are n-point sets with ≫ n^{4/3} unit distances, but on\nthe unit sphere S² the best known construction gives only ≫ n √(log n) (Swanepoel-Valtr). Is\nthere a power gain n^{1+c} on the unit sphere?\nInformal statement: Prove or disprove: there is c > 0 such that for infinitely many n there exist\nP ⊂ S² = {x ∈ ℝ³ : |x| = 1} with |P| = n and #{{p,q} ⊂ P : |p − q| = 1} ≥ n^{1+c}.\nFormalization notes: Points are in `EuclideanSpace ℝ (Fin 3)` with the Euclidean norm, so\n`dist p q = ‖p - q‖`. `unitPairs P` (an ncard of a finite subset of P × P) counts ORDERED pairs (p, q) ∈ P × P with dist p q = 1; since\ndist p p = 0 ≠ 1, this is exactly twice the number of unordered unit-distance pairs, hence the\nfactor 2 in the claim. \"Infinitely many n\" is encoded as ∀ N, ∃ n > N. Proving `Claim` gives a\npower gain; proving `¬Claim` shows that for every c > 0, all sufficiently large n-point sets on\nS² have fewer than n^{1+c} unit distances (i.e. u_{S²}(n) = n^{1+o(1)}). Known: Ω(n √log n)\nlower bound (Swanepoel-Valtr), O(n^{4/3}) upper bound.\n-/\nnamespace OpenProblems.QEDM064\n\n/-- Number of ordered pairs of points of `P` at Euclidean distance exactly `1`. -/\nnoncomputable def unitPairs (P : Finset (EuclideanSpace ℝ (Fin 3))) : ℕ :=\n  Set.ncard {pq : EuclideanSpace ℝ (Fin 3) × EuclideanSpace ℝ (Fin 3) |\n    pq.1 ∈ P ∧ pq.2 ∈ P ∧ dist pq.1 pq.2 = 1}\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 0 < c ∧ ∀ N : ℕ, ∃ n : ℕ, N < n ∧\n    ∃ P : Finset (EuclideanSpace ℝ (Fin 3)), P.card = n ∧ (∀ p ∈ P, ‖p‖ = 1) ∧\n      2 * (n : ℝ) ^ (1 + c) ≤ (unitPairs P : ℝ)\n\nend OpenProblems.QEDM064\n",
-  "M_fix_reason": null,
-  "prov_reason": "Reviewer notes: the unit-distance problem on spheres (including the unit sphere, where distance 1 corresponds to angle 60 degrees) was posed by Erdős-Hickerson-Pach; Swanepoel-Valtr record the n√log n bound and that nothing more is known for radius ≠ 1/√2.",
-  "legacy_id": "N-428",
   "set": "main"
  },
  {
@@ -1205,8 +1100,8 @@
   "premise_risks": [],
   "plain": "Count the self-avoiding walks of length n on the Cayley graph of a finitely generated group. Their n-th roots decrease to the connective constant, so it can always be approximated from above. For groups with a solvable word problem, can it always be computed to any precision, i.e. also approximated from below?",
   "math": "Let $G$ be a finitely generated group with solvable word problem, $S=S^{-1}$ a finite generating set, $c_n$ the number of $n$-step self-avoiding walks from $e$ in $\\mathrm{Cay}(G,S)$, and $\\mu(G,S)=\\lim_n c_n^{1/n}=\\inf_n c_n^{1/n}$ (a right-computable real). Is $\\mu(G,S)$ always a computable real? If not, construct $(G,S)$ with solvable word problem and $\\mu(G,S)$ non-computable. If so, is the map (word-problem algorithm, $S$) $\\mapsto\\mu(G,S)$ uniformly computable?",
-  "novelty": 7,
-  "importance": 5,
+  "novelty": 8,
+  "importance": 4,
   "value": 6,
   "formal_status": "formalized",
   "lean_gap": null,
@@ -1239,9 +1134,9 @@
   ],
   "plain": "Given a polynomial vector field in the plane with rational coefficients, is there an algorithm that decides whether it has a limit cycle, that is, an isolated closed orbit? Hilbert's 16th problem asks how many limit cycles there can be. This asks only whether their existence is algorithmically decidable. The same question can be asked for closed orbits of any kind, including those in period annuli around centres.",
   "math": "Let $\\mathcal L=\\{(P,Q)\\in\\mathbb Q[x,y]^2:\\ \\dot x=P,\\dot y=Q$ has a limit cycle, i.e. a non-constant periodic orbit that has a neighbourhood containing no other periodic orbit$\\}$ and $\\mathcal P=\\{(P,Q):$ the system has a non-constant periodic orbit in $\\mathbb R^2\\}$, with inputs given by their rational coefficient lists (degree unbounded). (a) Is $\\mathcal L$ decidable? (b) Is $\\mathcal P$ decidable? (c) Are $\\mathcal L,\\mathcal P$ or their complements recursively enumerable? (d) Same questions restricted to degree 2.",
-  "novelty": 5,
-  "importance": 7,
-  "value": 7,
+  "novelty": 6,
+  "importance": 6,
+  "value": 6,
   "formal_status": "formalized",
   "lean_gap": null,
   "refs": [
@@ -2005,122 +1900,6 @@
   "lean_gap": null
  },
  {
-  "id": "QED-M112",
-  "set": "main",
-  "title": "Word problem for one-relation monoids",
-  "area": "Logic & computability",
-  "difficulty": 8.0,
-  "grade": "A",
-  "provenance": "Curated",
-  "credit": "S. I. Adian (posed c. 1960); reduction by Adian and G. U. Oganesyan",
-  "premise_risks": [
-   "the precise form of the Adian-Oganesyan reduction (bUa=a) was taken from secondary knowledge of the survey, not verified from the full text in this check",
-   "famous within combinatorial semigroup theory; vetter should judge 'famous problem in disguise' (it is stated directly, not disguised)"
-  ],
-  "plain": "Take a monoid with a single defining relation u = v between two words. Is its word problem always decidable: for each such monoid, is there an algorithm that, given two words, decides whether they are equal in it? This is open even though the corresponding question for one-relator groups was settled long ago.",
-  "math": "For a finite alphabet $A$ and $u,v\\in A^*$, let $\\equiv_{u,v}$ be the smallest congruence on $A^*$ containing $(u,v)$. Problem: does every one-relation monoid $\\mathrm{Mon}\\langle A\\mid u=v\\rangle$ have decidable word problem, i.e. is $\\{(w_1,w_2): w_1\\equiv_{u,v}w_2\\}$ decidable for every fixed $A,u,v$? Board Claim: yes. (Uniform variant: the set of all $(A,u,v,w_1,w_2)$ with $w_1\\equiv_{u,v}w_2$ is decidable. By Adian--Oganesyan (1978; two-generator form 1987) it suffices to treat $\\mathrm{Mon}\\langle a,b\\mid bUa=aVa\\rangle$ and $\\mathrm{Mon}\\langle a,b\\mid bUa=a\\rangle$, $U,V\\in\\{a,b\\}^*$; both cases remain open. Undecidability for one fixed such monoid settles the problem negatively.)",
-  "review_note": "Known: Decidable for special monoids <A|r=1> (Adian 1960; Makanin's reduction to the group of units), for Adian's left- or right-cycle-free presentations (u and v differ in first letter, or in last letter), and many subcases (Adian-Oganesyan 1987, Lallement 1974, Kobayashi, and Nyberg-Brodda's monadic results). Adian-Oganesyan reduced the general problem to <a,b | bUa = a>. Surveys: Nyberg-Brodda, 'The word problem for one-relation monoids: a survey', Semigroup Forum 103 (2021), arXiv:2105.02853. Related undecidability: one-relator inverse monoids (R. D. Gray, Invent. Math. 2020). Status reconfirmed open in Gray-Steinberg arXiv:2507.04819 (v2 March 2026) and Foniqi-Gray-Nyberg-Brodda (Canad. J. Math. 2024, arXiv:2305.15672), where the related prefix-membership problem is shown undecidable for some positive one-relator groups.",
-  "refs": [
-   "https://arxiv.org/abs/2105.02853",
-   "https://arxiv.org/html/2507.04819v2",
-   "https://www.cambridge.org/core/product/E2D6486D62B9833E797A2D4E9814707D"
-  ],
-  "novelty": 2,
-  "importance": 9,
-  "value": 8,
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-M112: Word problem for one-relation monoids\nTake a finite alphabet and two words u and v, and declare u = v. Two words are then equal in the monoid if you can turn one into the other by repeatedly swapping a copy of u for v, or v for u, somewhere inside the word. Magnus showed in 1932 that groups with one relation always have a solvable word problem. Is there an algorithm that, given u, v and two more words, decides whether those two words are equal in this monoid?\nInformal statement: For a finite alphabet $A$ and $u,v\\in A^*$, let $\\equiv_{u,v}$ be the smallest congruence on $A^*$ containing $(u,v)$. Does every one-relation monoid $\\mathrm{Mon}\\langle A\\mid u=v\\rangle$ have decidable word problem, i.e. is $\\{(w_1,w_2): w_1\\equiv_{u,v}w_2\\}$ decidable for every fixed $A,u,v$? Board Claim: yes.\nFormalization notes:\n* Words are `List ℕ` (letters are natural numbers). For FIXED `u, v`, the predicate below is the\n  word problem of `⟨ℕ | u = v⟩`. Letters not occurring in `u`, `v` are inert: no rewriting step\n  creates, destroys or moves them, and every occurrence of `u` (also the empty word) sits inside one\n  maximal inert-free segment. Hence `w₁ ≡ w₂` iff the two words have the same sequence of inert\n  letters and corresponding segments are equivalent in `⟨A | u = v⟩`, `A` = letters of `u, v`.\n  So this word problem is decidable iff that of `⟨A | u = v⟩` is (for any finite `A ⊇` letters of\n  `u, v`: restriction gives one direction, segment splitting the other). Quantifying over all\n  `u v : List ℕ` covers every finite alphabet up to renaming letters.\n* `OneStep u v x y` : `y` is obtained from `x` by replacing one occurrence of `u` by `v`.\n  `Relation.EqvGen (OneStep u v)` is exactly the congruence generated by `(u, v)` on the free\n  monoid (the closure is compatible with concatenation; every congruence containing `(u,v)`\n  contains each step). Empty `u` or `v` is allowed (special monoids `⟨A | r = 1⟩`).\n* `Claim` (the board claim, NON-uniform): for every fixed `u, v`, the set of pairs `(w₁, w₂)` with\n  `w₁ ≡_{u,v} w₂` is computable (Mathlib's `ComputablePred` on `List ℕ × List ℕ`). This is a\n  genuine computability statement about each fixed set, not a classical triviality.\n  `¬Claim` = some one-relation monoid has undecidable word problem.\n* `ClaimUniform` (stronger variant, for reference only): one algorithm for all `(u, v, w₁, w₂)`.\n-/\nnamespace OpenProblems.QEDM112\nnoncomputable section\n\n/-- One rewriting step with the relation `u = v`: replace one occurrence of `u` by `v`. -/\ndef OneStep (u v : List ℕ) (x y : List ℕ) : Prop :=\n  ∃ a b : List ℕ, x = a ++ u ++ b ∧ y = a ++ v ++ b\n\n/-- `w₁ ≡ w₂` in the monoid `⟨ℕ | u = v⟩`: the congruence generated by `(u, v)`, i.e. the\nequivalence closure of single rewriting steps. -/\ndef OneRelEquiv (u v w₁ w₂ : List ℕ) : Prop :=\n  Relation.EqvGen (OneStep u v) w₁ w₂\n\n/-- Every one-relation monoid has decidable word problem. -/\ndef Claim : Prop :=\n  ∀ u v : List ℕ, ComputablePred (fun p : List ℕ × List ℕ => OneRelEquiv u v p.1 p.2)\n\n/-- Uniform variant (stronger; not the board claim). -/\ndef ClaimUniform : Prop :=\n  ComputablePred (fun p : List ℕ × List ℕ × List ℕ × List ℕ =>\n    OneRelEquiv p.1 p.2.1 p.2.2.1 p.2.2.2)\n\nend\nend OpenProblems.QEDM112\n",
-  "lean_gap": null
- },
- {
-  "id": "QED-M113",
-  "set": "main",
-  "title": "Big line or six visible points",
-  "area": "Geometry",
-  "difficulty": 5.0,
-  "grade": "B",
-  "provenance": "Curated",
-  "credit": "J. Kara, A. Por, D. R. Wood (2005); row clique=6 framed after Abel et al. 2011 and Bonnet/Cambie 2026",
-  "premise_risks": [
-   "very active area in 2026 (four unrefereed preprints); could be resolved soon",
-   "the l=4 results it builds on are unrefereed 2026 preprints, though the Claim itself does not depend on them"
-  ],
-  "plain": "Two points of a finite set in the plane see each other if the segment between them passes through no other point of the set. Prove that for every l there is an N such that any N points in the plane contain either l points on a line or 6 points that all see each other. This is known for 5 points that all see each other (for every l), and since 2026 for 6 such points when l = 4.",
-  "math": "For finite $P\\subset\\mathbb R^2$, call $p,q\\in P$ visible if $[p,q]\\cap P=\\{p,q\\}$. Claim: for every $\\ell\\ge 3$ there is $N(\\ell)$ such that every $P\\subset\\mathbb R^2$ with $|P|\\ge N(\\ell)$ contains $\\ell$ collinear points or $6$ pairwise visible points.",
-  "review_note": "Known: Clique <=4, every l: Kara-Por-Wood (Discrete Comput. Geom. 2005). Clique 5, line 4: Addario-Berry et al.; clique 5, every l: Abel, Ballinger, Bose, Collette, Dujmovic, Hurtado, Kominers, Langerman, Por, Wood, Graphs Combin. 27 (2011). Clique 6, line 4: Bonnet arXiv:2608.19468 (N ~ 10^11055931), improved to N<=880 by Cambie arXiv:2609.21035 (v2 Nov 2026). Bhattacharya-Das-Islam-Mohapatra-Sen arXiv:2609.25727: no 4 collinear forces 7 points missing at most one visibility. Structured regimes (points on a cubic, few ordinary lines, irreducible curves): Sarkar arXiv:2605.00918. All other (line, clique) pairs with clique>=6 open, per Bonnet's introduction.",
-  "refs": [
-   "https://arxiv.org/abs/2608.19468",
-   "https://arxiv.org/abs/2609.21035",
-   "https://arxiv.org/abs/2609.25727",
-   "https://arxiv.org/abs/2605.00918",
-   "https://wikipedia.com/wiki/Big-line-big-clique_conjecture"
-  ],
-  "novelty": 4,
-  "importance": 7,
-  "value": 7,
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-M113: Big line or six visible points\nTwo points of a finite set in the plane see each other if the segment between them passes through no other point of the set. Prove that for every l there is an N such that any N points in the plane contain either l points on a line or 6 points that all see each other. This is known for 5 points that all see each other (for every l), and since 2026 for 6 such points when l = 4.\nInformal statement: For finite $P\\subset\\mathbb R^2$, call $p,q\\in P$ visible if $[p,q]\\cap P=\\{p,q\\}$. Claim: for every $\\ell\\ge 3$ there is $N(\\ell)$ such that every $P\\subset\\mathbb R^2$ with $|P|\\ge N(\\ell)$ contains $\\ell$ collinear points or $6$ pairwise visible points.\nFormalization notes:\n* The plane is `ℝ × ℝ` (an affine space over itself); collinearity (`Collinear ℝ`) and closed\n  segments (`segment ℝ p q`) are affine notions, so no Euclidean structure is needed.\n* `Visible P p q` : every point of `P` on the closed segment `[p, q]` is an endpoint. For `p = q`\n  this holds trivially; it only matters for distinct points of the 6-set `C`, which has 6 distinct\n  elements because `C.card = 6`.\n* \"Contains `ℓ` collinear points\": a subset `L ⊆ P` with `|L| = ℓ` that is collinear (equivalent to\n  \"at least `ℓ`\", by taking subsets). \"6 pairwise visible points\": `C ⊆ P`, `|C| = 6`, all pairs\n  visible with respect to the whole set `P` (not just `C`), as in the big-line-big-clique conjecture.\n* `Claim` = the clique-6 row of the big-line-big-clique conjecture for every line size `ℓ ≥ 3`.\n  `¬Claim` = some `ℓ` and arbitrarily large point sets with no `ℓ` collinear and no 6 mutually\n  visible points. The hypothesis `3 ≤ ℓ` only excludes trivial cases (for `ℓ ≤ 2` any 2 points are\n  collinear).\n-/\nnamespace OpenProblems.QEDM113\nnoncomputable section\n\n/-- `p` and `q` see each other in `P`: no point of `P` other than `p`, `q` lies on `[p, q]`. -/\ndef Visible (P : Finset (ℝ × ℝ)) (p q : ℝ × ℝ) : Prop :=\n  ∀ r ∈ P, r ∈ segment ℝ p q → r = p ∨ r = q\n\n/-- Every sufficiently large finite planar set has `ℓ` collinear points or 6 pairwise visible points. -/\ndef Claim : Prop :=\n  ∀ ℓ : ℕ, 3 ≤ ℓ → ∃ N : ℕ, ∀ P : Finset (ℝ × ℝ), N ≤ P.card →\n    (∃ L : Finset (ℝ × ℝ), L ⊆ P ∧ L.card = ℓ ∧ Collinear ℝ (L : Set (ℝ × ℝ))) ∨\n    (∃ C : Finset (ℝ × ℝ), C ⊆ P ∧ C.card = 6 ∧ ∀ p ∈ C, ∀ q ∈ C, Visible P p q)\n\nend\nend OpenProblems.QEDM113\n",
-  "lean_gap": null
- },
- {
-  "id": "QED-M114",
-  "set": "main",
-  "title": "Is there an aperiodic polyomino?",
-  "area": "Geometry",
-  "difficulty": 5.0,
-  "grade": "A",
-  "provenance": "Curated",
-  "credit": "Open problem as posed in A. Winslow, 'Some open problems in polyomino tilings' (DLT 2018); long-standing folklore (Golomb)",
-  "premise_risks": [
-   "'Polyomino' may be required to be simply connected in some sources; the Claim allows holes, which only makes the existence claim easier, so the vetter may prefer the simply connected version",
-   "existence proofs would likely be computer-assisted substitution arguments, heavy but finite in Lean",
-   "related to existing board items on hat/spectre tilings (M056, M057, N-117) but about a different tile class"
-  ],
-  "plain": "A polyomino is a shape made of unit squares glued edge to edge with no holes. In 2023 a single tile was found that tiles the plane only non-periodically, but it is built from kites, not squares. Is there a polyomino that tiles the plane (rotations and reflections allowed) but has no tiling that a translation maps onto itself?",
-  "math": "A polyomino is a finite $P\\subset\\mathbb Z^2$ such that the union of the closed unit squares $c+[0,1]^2$, $c\\in P$, is a closed topological disk. A tiling by $P$ is a set $\\mathcal T$ of tiles $g(P)$, with $g(x)=Ax+b$, $A\\in D_4\\subset GL_2(\\mathbb Z)$ and $b\\in\\mathbb Z^2$, that partition $\\mathbb Z^2$. $P$ is aperiodic if some tiling exists but no tiling satisfies $\\mathcal T+v=\\mathcal T$ for any $v\\in\\mathbb Z^2\\setminus\\{0\\}$. Problem: does an aperiodic polyomino exist? Board Claim: yes. A proof that every polyomino that tiles also has a periodic tiling settles the problem negatively. (Variant: allow holes, i.e. require only that $P$ is edge-connected.)",
-  "review_note": "Known: Translations only: a polyomino tiles iff it tiles isohedrally/periodically (Wijshoff-van Leeuwen 1984; Beauquier-Nivat 1991). k-anisohedral polyominoes known for k<=6 (Winslow survey, Open Problem 6 asks for k>=7). Aperiodic sets of 3 polyominoes (with isometries) known; aperiodic sets of 2 polyominoes unknown (Winslow, Open Problem 8); translational aperiodic sets of 7 polyominoes (Yang-Zhang arXiv:2412.17382). Undecidability for sets of 5 polyominoes (Ollinger 2009). Non-polyomino aperiodic monotiles: hat and spectre (Smith-Myers-Kaplan-Goodman-Strauss 2023/24, Combinatorial Theory). Survey: A. Winslow, 'Some open problems in polyomino tilings', DLT 2018.",
-  "refs": [
-   "https://andrewwinslow.com/papers/polyprobs-dlt18.pdf",
-   "https://arxiv.org/abs/2412.17382",
-   "https://arxiv.org/abs/2303.10798",
-   "https://arxiv.org/abs/2305.17743"
-  ],
-  "novelty": 3,
-  "importance": 8,
-  "value": 8,
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-M114: Is there an aperiodic polyomino?\nA polyomino is a shape made of unit squares glued edge to edge with no holes. In 2023 a single tile was found that tiles the plane only non-periodically, but it is built from kites, not squares. Is there a polyomino that tiles the plane (rotations and reflections allowed) but has no tiling that a translation maps onto itself?\nInformal statement: A polyomino is a finite $P\\subset\\mathbb Z^2$ such that the union of the closed unit squares $c+[0,1]^2$, $c\\in P$, is a closed topological disk. A tiling by $P$ is a set $\\mathcal T$ of tiles $g(P)$, with $g(x)=Ax+b$, $A\\in D_4\\subset GL_2(\\mathbb Z)$ and $b\\in\\mathbb Z^2$, that partition $\\mathbb Z^2$. $P$ is aperiodic if some tiling exists but no tiling satisfies $\\mathcal T+v=\\mathcal T$ for any $v\\in\\mathbb Z^2\\setminus\\{0\\}$. Board Claim: an aperiodic polyomino exists.\nFormalization notes:\n* Cells are `ℤ × ℤ` (cell `c` is the closed square `c + [0,1]²`). Two cells are 4-adjacent\n  (`Adj4`) if they share an edge (`|Δx| + |Δy| = 1`). `Conn4 S`: any two cells of `S` are joined by\n  a path of 4-adjacent cells inside `S`.\n* Polyomino (`IsPolyomino`): `P` finite (a `Finset`), nonempty, `P` 4-connected, and the complement\n  `ℤ² \\ P` 4-connected. This is the standard combinatorial characterization of \"the union of the\n  squares is a closed topological disk\": if both are 4-connected then there are no holes (a bounded\n  complement component would be a separate 4-component) and no pinch points (two diagonal cells of\n  `P` whose other two neighbours at that corner are outside `P`: a 4-path in `P` joining the two\n  diagonal cells closes up, with the diagonal, into an 8-connected closed curve of cells, which\n  encloses one of the two outside corner cells and so cuts it off from the infinite complement,\n  since 4-paths cannot cross 8-closed curves). Without holes or pinches the union is a compact\n  connected 2-manifold with boundary in the plane with connected complement, hence a disk; the\n  converse is immediate. (Using a homeomorphism to the closed disk directly would make\n  any existence proof require a Schoenflies-type argument for the specific tile, so the\n  combinatorial form is used.)\n* `D₄` is enumerated as `Bool × Bool × Bool`: optionally swap coordinates, then optionally negate\n  each coordinate. These are exactly the 8 signed permutation matrices, i.e. the full dihedral\n  group `D₄ ⊂ GL₂(ℤ)` of the square lattice. Placed copy: `place P g b = {d4 g c + b | c ∈ P}`.\n  (Applying `A` to cell labels rather than to squares just reindexes the cells of the image\n  square set by a fixed lattice translation, which is absorbed into `b`.)\n* A tiling is a SET of placed copies (sets of cells), not a family of placements, so a tile with\n  symmetries is not counted twice; every cell lies in exactly one tile. Tiling `ℤ²` by cells is the\n  same as tiling the plane by the closed unit squares (with interiors disjoint).\n* Periodic: `T + v = T` for some `v ≠ 0` (translation of the set of tiles). `Aperiodic P`: some\n  tiling exists and no tiling has any nonzero period (as in the informal statement). For a single\n  tile in `ℤ²` (a 2D shift of finite type) this coincides with \"no doubly periodic tiling\", since\n  a tiling with one period yields a doubly periodic one.\n* `Claim` = an aperiodic polyomino exists. `¬Claim` = every polyomino that tiles the plane with\n  rotations/reflections also admits a tiling with a nonzero translational period. Neither is\n  vacuous: `IsTiling` is satisfiable (e.g. the monomino) and forces all tiles to be copies of `P`.\n  The variant allowing holes (dropping the complement condition) is not encoded.\n-/\nnamespace OpenProblems.QEDM114\nnoncomputable section\n\n/-- Edge adjacency of cells. -/\ndef Adj4 (a b : ℤ × ℤ) : Prop := |a.1 - b.1| + |a.2 - b.2| = 1\n\n/-- `S` is 4-connected: any two of its cells are joined by an edge-adjacent path inside `S`. -/\ndef Conn4 (S : Set (ℤ × ℤ)) : Prop :=\n  ∀ a ∈ S, ∀ b ∈ S,\n    Relation.ReflTransGen (fun x y : ℤ × ℤ => x ∈ S ∧ y ∈ S ∧ Adj4 x y) a b\n\n/-- Polyomino (simply connected): nonempty, 4-connected, with 4-connected complement. -/\ndef IsPolyomino (P : Finset (ℤ × ℤ)) : Prop :=\n  P.Nonempty ∧ Conn4 (P : Set (ℤ × ℤ)) ∧ Conn4 ((P : Set (ℤ × ℤ))ᶜ)\n\n/-- The 8 elements of `D₄ ⊂ GL₂(ℤ)`: optional coordinate swap, then optional sign changes. -/\ndef d4 (g : Bool × Bool × Bool) (c : ℤ × ℤ) : ℤ × ℤ :=\n  let s : ℤ × ℤ := if g.1 then (c.2, c.1) else c\n  ((if g.2.1 then -s.1 else s.1), (if g.2.2 then -s.2 else s.2))\n\n/-- The copy `g(P) + b` of `P`. -/\ndef place (P : Finset (ℤ × ℤ)) (g : Bool × Bool × Bool) (b : ℤ × ℤ) : Set (ℤ × ℤ) :=\n  {z : ℤ × ℤ | ∃ c ∈ P, z = d4 g c + b}\n\n/-- `T` is a tiling of `ℤ²` by isometric copies of `P`. -/\ndef IsTiling (P : Finset (ℤ × ℤ)) (T : Set (Set (ℤ × ℤ))) : Prop :=\n  (∀ t ∈ T, ∃ g : Bool × Bool × Bool, ∃ b : ℤ × ℤ, t = place P g b) ∧\n    ∀ z : ℤ × ℤ, ∃! t : Set (ℤ × ℤ), t ∈ T ∧ z ∈ t\n\n/-- Translate every tile of `T` by `v`. -/\ndef translateTiling (v : ℤ × ℤ) (T : Set (Set (ℤ × ℤ))) : Set (Set (ℤ × ℤ)) :=\n  {t : Set (ℤ × ℤ) | ∃ s ∈ T, t = (fun z : ℤ × ℤ => z + v) '' s}\n\n/-- `P` tiles, but no tiling by `P` has a nonzero translational period. -/\ndef Aperiodic (P : Finset (ℤ × ℤ)) : Prop :=\n  (∃ T : Set (Set (ℤ × ℤ)), IsTiling P T) ∧\n    ∀ T : Set (Set (ℤ × ℤ)), IsTiling P T → ∀ v : ℤ × ℤ, v ≠ 0 → translateTiling v T ≠ T\n\n/-- There exists an aperiodic (simply connected) polyomino. -/\ndef Claim : Prop :=\n  ∃ P : Finset (ℤ × ℤ), IsPolyomino P ∧ Aperiodic P\n\nend\nend OpenProblems.QEDM114\n",
-  "lean_gap": null
- },
- {
-  "id": "QED-M115",
-  "set": "main",
-  "title": "Returning to the identity in SL(3,Z)",
-  "area": "Logic & computability",
-  "difficulty": 7.5,
-  "grade": "A",
-  "provenance": "Curated",
-  "credit": "Open problem as recorded by I. Potapov and coauthors and in R. Dong's survey (2023)",
-  "premise_risks": [
-   "Lean decidability statement via ComputablePred on lists of Fin 3 → Fin 3 → ℤ is easy to state; undecidability would need Turing-reduction infrastructure"
-  ],
-  "plain": "You are given finitely many 3x3 integer matrices with determinant 1. Can some nonempty product of them (in any order, with repetition) equal the identity matrix? For 2x2 matrices there is an algorithm, and for 4x4 matrices it is known that none exists. Decide whether an algorithm exists for 3x3.",
-  "math": "Let $\\mathcal I_3=\\{(M_1,\\dots,M_k): k\\ge1,\\ M_i\\in SL(3,\\mathbb Z),\\ \\exists\\, m\\ge1,\\ i_1,\\dots,i_m\\in\\{1,\\dots,k\\}:\\ M_{i_1}\\cdots M_{i_m}=I_3\\}$, with instances given as finite lists of integer matrices. Problem: is $\\mathcal I_3$ decidable? Board Claim: $\\mathcal I_3$ is decidable. A proof of undecidability settles the problem negatively.",
-  "review_note": "Known: SL(2,Z): identity and membership decidable (Choffrut-Karhumaki 2005; Bell-Potapov; Potapov-Semukhin for nonsingular 2x2 integer matrices, SODA 2017). 3x3: mortality (zero matrix) undecidable for Z^{3x3} (Paterson 1970), but the identity problem is not covered. SL(4,Z): identity problem undecidable (Bell-Potapov 2010, via F2 x F2). Identity problem decidable for the Heisenberg group H(3,Z) (Ko-Niskanen-Potapov, ICALP 2018, arXiv:1706.04166), for SA(2,Z) (Dong, arXiv:2301.09502), and for 4x4 unitriangular matrices (arXiv:2202.05225). Survey: R. Dong, 'Recent advances in algorithmic problems for semigroups', arXiv:2309.10943 (ACM SIGLOG News 2023): status of all listed problems open for SL(3,Z).",
-  "refs": [
-   "https://arxiv.org/abs/1706.04166",
-   "https://arxiv.org/abs/2309.10943",
-   "https://arxiv.org/abs/2301.09502",
-   "https://arxiv.org/abs/2202.05225"
-  ],
-  "novelty": 3,
-  "importance": 8,
-  "value": 8,
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-M115: Returning to the identity in SL(3,Z)\nYou are given finitely many 3x3 integer matrices with determinant 1. Can some nonempty product of them (in any order, with repetition) equal the identity matrix? For 2x2 matrices there is an algorithm, and for 4x4 matrices it is known that none exists. Decide whether an algorithm exists for 3x3.\nInformal statement: Let $\\mathcal I_3=\\{(M_1,\\dots,M_k): k\\ge1,\\ M_i\\in SL(3,\\mathbb Z),\\ \\exists\\, m\\ge1,\\ i_1,\\dots,i_m\\in\\{1,\\dots,k\\}:\\ M_{i_1}\\cdots M_{i_m}=I_3\\}$, with instances given as finite lists of integer matrices. Is $\\mathcal I_3$ decidable? Board Claim: $\\mathcal I_3$ is decidable.\nFormalization notes:\n* Instances are `List (Fin 3 → Fin 3 → ℕ)`: a list of 3×3 arrays of natural numbers, each entry\n  decoded to an integer by the zig-zag bijection `zz : ℕ → ℤ` (`2n ↦ n`, `2n+1 ↦ -(n+1)`). This is a\n  computable bijection, so it is just a `Primcodable` encoding of lists of integer matrices (it\n  avoids relying on a `Primcodable ℤ` / `Matrix` instance). `toMat` turns an array into a\n  `Matrix (Fin 3) (Fin 3) ℤ`.\n* `Ident3 L`: every matrix in `L` has determinant 1 (membership in `SL(3,ℤ)`), and some NONEMPTY\n  word `w` in the indices of `L` (repetition allowed, any order) has product `1`. The empty list\n  is automatically a no-instance (`Fin 0` admits no nonempty word), matching `k ≥ 1`. Lists\n  containing a matrix of determinant `≠ 1` are no-instances; since the determinant test is\n  computable this does not change decidability (it is the language $\\mathcal I_3$ literally).\n* `List.prod` multiplies left to right, `M_{i_1} ⋯ M_{i_m}`; the order convention is irrelevant\n  for the identity problem anyway (reverse words).\n* Decidability is Mathlib's `ComputablePred`. `Claim` = the identity problem for `SL(3,ℤ)` is\n  decidable; `¬Claim` = it is undecidable. The predicate is r.e. (enumerate words), so the content\n  is co-r.e.-ness / an algorithm; neither side is trivial.\n-/\nnamespace OpenProblems.QEDM115\nnoncomputable section\n\n/-- Zig-zag bijection `ℕ → ℤ`: `2n ↦ n`, `2n+1 ↦ -(n+1)`. -/\ndef zz (n : ℕ) : ℤ :=\n  if n % 2 = 0 then ((n / 2 : ℕ) : ℤ) else -((n / 2 : ℕ) : ℤ) - 1\n\n/-- The integer matrix encoded by a 3×3 array of codes. -/\ndef toMat (A : Fin 3 → Fin 3 → ℕ) : Matrix (Fin 3) (Fin 3) ℤ :=\n  Matrix.of (fun i j : Fin 3 => zz (A i j))\n\n/-- `L` is a list of `SL(3,ℤ)` matrices some nonempty product of which is the identity. -/\ndef Ident3 (L : List (Fin 3 → Fin 3 → ℕ)) : Prop :=\n  (∀ A ∈ L, (toMat A).det = 1) ∧\n    ∃ w : List (Fin L.length), w ≠ [] ∧\n      (w.map (fun i : Fin L.length => toMat (L.get i))).prod = 1\n\n/-- The identity problem for `SL(3,ℤ)` is decidable. -/\ndef Claim : Prop :=\n  ComputablePred Ident3\n\nend\nend OpenProblems.QEDM115\n",
-  "lean_gap": null
- },
- {
   "id": "QED-M116",
   "review_id": "R3-H03",
   "title": "Spectral gap of the spin-2 valence-bond-solid (AKLT) model on the square lattice",
@@ -2198,9 +1977,9 @@
   "premise_risks": [],
   "plain": "In high dimension n the best sphere packings known have density only about n²·2^{-n} (up to log factors), barely above the trivial 2^{-n} from greedy/saturated packings, while the best upper bound is about 2^{-0.599n}. Is there a constant c>1 with packings of density at least c^n·2^{-n} in all large dimensions?",
   "math": "Let $\\Delta_n$ be the supremum of upper densities of packings of congruent balls in $\\mathbb{R}^n$. Prove or disprove: there exist $c>1$ and $N$ such that $\\Delta_n\\ge c^n2^{-n}$ for all $n\\ge N$.",
-  "novelty": 1,
+  "novelty": 2,
   "importance": 9,
-  "value": 7,
+  "value": 6,
   "formal_status": "formalized",
   "lean_gap": null,
   "refs": [
@@ -2305,65 +2084,6 @@
    "https://arxiv.org/pdf/0812.2613"
   ],
   "lean": "import Mathlib\n/-! QED-M121: Additive basis conjecture: a constant number of bases suffices\nTake several bases of the vector space (Z/p)^n and pool all their vectors into one list. Can every vector of the space be written as the sum of some sub-list, using each pooled vector at most once? The conjecture says a fixed number c(p) of bases always suffices, independent of the dimension n. The best proven bound grows like log n.\nInformal statement: For a prime $p$, a finite multiset $B$ of vectors in $\\mathbb{F}_p^n$ is an additive basis if $\\{\\sum_{b\\in B}\\varepsilon_b b : \\varepsilon\\in\\{0,1\\}^B\\}=\\mathbb{F}_p^n$. Prove that for every prime $p$ there is $c(p)$ such that for every $n\\ge1$ and all bases $B_1,\\dots,B_{c(p)}$ of $\\mathbb{F}_p^n$, the multiset union $B_1\\uplus\\cdots\\uplus B_{c(p)}$ is an additive basis.\nFormalization notes:\n* 𝔽_p^n is `Fin n → ZMod p`. A basis is an indexed family `B a : Fin n → (Fin n → ZMod p)` that\n  is linearly independent over `ZMod p`; since the space has dimension n, n linearly independent\n  vectors are exactly a basis (we avoid the `Basis` structure, whose namespace has moved).\n* The multiset union of c bases is the family indexed by `Fin c × Fin n`; repeated vectors across\n  bases are separate members, as in a multiset. A 0/1 choice is `ε : Fin c → Fin n → Bool`, and\n  the subset sum is `∑ a, ∑ i, if ε a i then B a i else 0`.\n* Claim: for every prime p there is c such that for every n ≥ 1, every c-tuple of bases, and\n  every target vector v, some subset sum equals v. n ≥ 1 rules out the trivial n = 0 case (it\n  is harmless anyway); c = 0 never works for n ≥ 1, so the existential is not vacuous.\n  ¬Claim: for some prime p, for every c there is a dimension and c bases whose union is not an\n  additive basis.\n-/\nnamespace OpenProblems.QEDM121\n\ndef Claim : Prop :=\n  ∀ p : ℕ, p.Prime → ∃ c : ℕ, ∀ n : ℕ, 1 ≤ n →\n    ∀ B : Fin c → Fin n → (Fin n → ZMod p),\n      (∀ a : Fin c, LinearIndependent (ZMod p) (B a)) →\n      ∀ v : Fin n → ZMod p, ∃ ε : Fin c → Fin n → Bool,\n        v = ∑ a : Fin c, ∑ i : Fin n, (if ε a i then B a i else 0)\n\nend OpenProblems.QEDM121\n",
-  "set": "main"
- },
- {
-  "id": "QED-M122",
-  "review_id": "R4-J18",
-  "title": "The widest hollow body in 3-space",
-  "area": "Geometry",
-  "difficulty": 4.5,
-  "grade": "A",
-  "provenance": "Curated",
-  "credit": "Codenotti and Santos (2019), Conjecture 1.2; Averkov, Codenotti, Macchia, Santos (2021)",
-  "results": null,
-  "premise_risks": [
-   "Listed on Tao's optimization-constants page (73a), but not moving there; no updates since 2021",
-   "Conjecture is attributed to two people but is not commonly called by their names"
-  ],
-  "plain": "A convex body is hollow if no point with all-integer coordinates lies strictly inside it. Hollow bodies must be thin in some integer direction (the flatness theorem). In the plane the largest guaranteed thinness is known exactly, 1+2/sqrt(3). In 3-space a hollow tetrahedron of lattice width 2+sqrt(2) is known: is that the widest possible?",
-  "math": "For a convex body (compact, convex, nonempty interior) $K\\subset\\mathbb{R}^3$ and $u\\in\\mathbb{Z}^3\\setminus\\{0\\}$ let $w_u(K)=\\max_{x\\in K}\\langle u,x\\rangle-\\min_{x\\in K}\\langle u,x\\rangle$ and $w(K)=\\min_{u\\neq0}w_u(K)$. Call $K$ hollow if $\\operatorname{int}K\\cap\\mathbb{Z}^3=\\emptyset$. Prove or disprove: every hollow convex body $K\\subset\\mathbb{R}^3$ satisfies $w(K)\\le 2+\\sqrt2$. (Equivalently $\\mathrm{Flt}(3)=2+\\sqrt2$; known: $2+\\sqrt2\\le\\mathrm{Flt}(3)<3.972$.)",
-  "novelty": 4,
-  "importance": 6,
-  "value": 7,
-  "formal_status": "formalized",
-  "lean_gap": null,
-  "refs": [
-   "https://teorth.github.io/optimizationproblems/constants/73a.html",
-   "https://arxiv.org/abs/1907.06199",
-   "https://arxiv.org/abs/1812.00916",
-   "https://arxiv.org/pdf/2604.27260"
-  ],
-  "lean": "import Mathlib\n/-! QED-M122: The widest hollow body in 3-space\nA convex body is hollow if no point with all-integer coordinates lies strictly inside it. Hollow bodies must be thin in some integer direction (the flatness theorem). In the plane the largest guaranteed thinness is known exactly, 1+2/sqrt(3). In 3-space a hollow tetrahedron of lattice width 2+sqrt(2) is known: is that the widest possible?\nInformal statement: For a convex body (compact, convex, nonempty interior) $K\\subset\\mathbb{R}^3$ and $u\\in\\mathbb{Z}^3\\setminus\\{0\\}$ let $w_u(K)=\\max_{x\\in K}\\langle u,x\\rangle-\\min_{x\\in K}\\langle u,x\\rangle$ and $w(K)=\\min_{u\\neq0}w_u(K)$. Call $K$ hollow if $\\operatorname{int}K\\cap\\mathbb{Z}^3=\\emptyset$. Prove or disprove: every hollow convex body $K\\subset\\mathbb{R}^3$ satisfies $w(K)\\le 2+\\sqrt2$. (Equivalently $\\mathrm{Flt}(3)=2+\\sqrt2$; known: $2+\\sqrt2\\le\\mathrm{Flt}(3)<3.972$.)\nFormalization notes:\n* ℝ³ is modelled as Fin 3 → ℝ; its product topology is the Euclidean one, so `interior` is the usual interior.\n  A convex body is K convex, compact, with nonempty interior. Hollow: no integer point (fun i => (z i : ℝ)) lies in\n  interior K.\n* w_u(K) = max_K ⟨u,·⟩ − min_K ⟨u,·⟩ = sup_{x,y∈K} ⟨u, x−y⟩, so w_u(K) ≤ c ⇔ ∀ x y ∈ K, ⟨u,x−y⟩ ≤ c. The lattice width\n  w(K) = min over u ∈ ℤ³∖{0} is attained (w_u is a norm of u when K has interior, so only finitely many u give\n  w_u below any bound). Hence w(K) ≤ 2+√2 ⇔ ∃ u ≠ 0 with w_u(K) ≤ 2+√2, which is what `Claim` states.\n* `Claim`: every hollow convex body in ℝ³ has lattice width ≤ 2+√2, i.e. Flt(3) ≤ 2+√2; with the known hollow\n  tetrahedron, Claim ⇔ Flt(3) = 2+√2. ¬Claim = a hollow convex body of lattice width > 2+√2 exists.\n-/\nnamespace OpenProblems.QEDM122\nnoncomputable section\n\ndef Claim : Prop :=\n  ∀ K : Set (Fin 3 → ℝ), Convex ℝ K → IsCompact K → (interior K).Nonempty →\n    (∀ z : Fin 3 → ℤ, (fun i : Fin 3 => (z i : ℝ)) ∉ interior K) →\n    ∃ u : Fin 3 → ℤ, u ≠ 0 ∧\n      ∀ x ∈ K, ∀ y ∈ K, ∑ i : Fin 3, (u i : ℝ) * (x i - y i) ≤ 2 + Real.sqrt 2\n\nend\nend OpenProblems.QEDM122\n",
-  "set": "main"
- },
- {
-  "id": "QED-M123",
-  "review_id": "R4-J24",
-  "title": "Halving planes in 3-space: beat n^{5/2}",
-  "area": "Geometry",
-  "difficulty": 5.0,
-  "grade": "A",
-  "provenance": "Curated",
-  "credit": "Problem of bounding halving planes / k-sets in R^3 (Barany-Furedi-Lovasz 1990, Dey-Edelsbrunner, Sharir-Smorodinsky-Tardos)",
-  "results": null,
-  "premise_risks": [
-   "OpenAI's unrefereed 2026 preprint claims a power saving for planar halving lines; if its method extends, 3D could fall quickly"
-  ],
-  "plain": "Take n points in 3-space, with n odd and no four on a common plane. A halving triangle is a triple of the points whose plane splits the remaining n-3 points evenly, half on each side. The best upper bound on the number of halving triangles, about n^{5/2}, has not been improved since 2001. Show that the exponent 5/2 can be lowered.",
-  "math": "For $S\\subset\\mathbb{R}^3$ with $|S|=n$ odd and no four points coplanar, let $h(S)$ be the number of $3$-subsets $T\\subseteq S$ such that each open half-space bounded by $\\operatorname{aff}(T)$ contains exactly $(n-3)/2$ points of $S$. Prove that there exist $\\varepsilon>0$ and $C$ with $h(S)\\le C\\,n^{5/2-\\varepsilon}$ for all such $S$.",
-  "novelty": 2,
-  "importance": 8,
-  "value": 7,
-  "formal_status": "formalized",
-  "lean_gap": null,
-  "refs": [
-   "https://dl.acm.org/doi/10.1007/s00454-001-0005-3",
-   "https://arxiv.org/abs/2403.00412",
-   "https://arxiv.org/abs/1903.07196",
-   "https://jeffe.cs.illinois.edu/open/ksets.html"
-  ],
-  "lean": "import Mathlib\n/-! QED-M123: Halving planes in 3-space: beat n^{5/2}\nTake n points in 3-space, with n odd and no four on a common plane. A halving triangle is a triple of the points whose plane splits the remaining n-3 points evenly, half on each side. The best upper bound on the number of halving triangles, about n^{5/2}, has not been improved since 2001. Show that the exponent 5/2 can be lowered.\nInformal statement: For $S\\subset\\mathbb{R}^3$ with $|S|=n$ odd and no four points coplanar, let $h(S)$ be the number of $3$-subsets $T\\subseteq S$ such that each open half-space bounded by $\\operatorname{aff}(T)$ contains exactly $(n-3)/2$ points of $S$. Prove that there exist $\\varepsilon>0$ and $C$ with $h(S)\\le C\\,n^{5/2-\\varepsilon}$ for all such $S$.\nFormalization notes:\n* E = `EuclideanSpace ℝ (Fin 3)`. \"No four coplanar\": every 4-subset T has vector span of\n  dimension 3 (`Module.finrank ℝ (vectorSpan ℝ T) = 3`), i.e. is affinely spanning.\n  Consequently every 3-subset is affinely independent and spans a unique plane, and no\n  fourth point of S lies on it.\n* A plane is {x | ⟪a,x⟫ = b} with a ≠ 0. T is halving if some such plane contains T and\n  has exactly (n−3)/2 points of S strictly on each side. Since aff(T) is the unique plane\n  through T, this is exactly the informal definition. (n−3)/2 is natural division; n is odd\n  and n ≥ 3 whenever a 3-subset exists, so it is exact.\n* The bound is C·n^{5/2−ε} with real exponent (`Real.rpow`); C and ε are uniform in S.\n  For n = 1 the count is 0, so small cases impose no extra constraint.\n* `Claim` is the power-saving improvement of Sharir–Smorodinsky–Tardos. `¬Claim` says for every\n  ε > 0 the exponent 5/2 − ε fails (the O(n^{5/2}) bound is tight up to n^{o(1)}).\n-/\nnamespace OpenProblems.QEDM123\nnoncomputable section\nopen scoped InnerProductSpace RealInnerProductSpace\n\nabbrev E := EuclideanSpace ℝ (Fin 3)\n\n/-- No four points of `S` are coplanar. -/\ndef NoFourCoplanar (S : Finset E) : Prop :=\n  ∀ T : Finset E, T ⊆ S → T.card = 4 → Module.finrank ℝ (vectorSpan ℝ (T : Set E)) = 3\n\n/-- `T` is a halving triangle of `S`. -/\ndef IsHalving (S T : Finset E) : Prop :=\n  ∃ (a : E) (b : ℝ), a ≠ 0 ∧ (∀ x ∈ T, ⟪a, x⟫_ℝ = b) ∧\n    (S.filter (fun x : E => b < ⟪a, x⟫_ℝ)).card = (S.card - 3) / 2 ∧\n    (S.filter (fun x : E => ⟪a, x⟫_ℝ < b)).card = (S.card - 3) / 2\n\nopen Classical in\n/-- Number of halving triangles. -/\ndef h (S : Finset E) : ℕ :=\n  ((S.powersetCard 3).filter (fun T : Finset E => IsHalving S T)).card\n\ndef Claim : Prop :=\n  ∃ ε : ℝ, 0 < ε ∧ ∃ C : ℝ, ∀ S : Finset E, Odd S.card → NoFourCoplanar S →\n    (h S : ℝ) ≤ C * (S.card : ℝ) ^ ((5 : ℝ) / 2 - ε)\n\nend\nend OpenProblems.QEDM123\n",
   "set": "main"
  },
  {
@@ -2678,7 +2398,7 @@
   "id": "QED-M134",
   "review_id": "R6-L08",
   "title": "Binary codes near distance 1/2: remove the logarithm",
-  "area": "Coding theory",
+  "area": "Coding & information theory",
   "difficulty": 8.0,
   "grade": "A",
   "provenance": "Curated",
@@ -2708,7 +2428,7 @@
   "id": "QED-M135",
   "review_id": "R6-L10",
   "title": "Is the Shannon capacity of a graph computable?",
-  "area": "Information theory",
+  "area": "Coding & information theory",
   "difficulty": 8.5,
   "grade": "A",
   "provenance": "Curated",
@@ -2847,32 +2567,6 @@
    "https://arxiv.org/html/2512.01739v1"
   ],
   "lean": "import Mathlib\n/-! QED-M139: Three consecutive integers with large prime factors\nShow that for every exponent θ below 1 there are infinitely many n such that n, n+1 and n+2 each\nhave a prime factor larger than n^θ (for instance θ = 0.9).\nInformal statement: Let P(m) be the largest prime factor of m. Prove that for every θ < 1 there\nare infinitely many n with min{P(n), P(n+1), P(n+2)} > n^θ. (Benchmark case θ = 0.9. Stronger\ntarget, not part of `Claim`: for 1/2 ≤ θ < 1 the set has lower density ≥ c(θ) > 0, conjecturally\n(log(1/θ))³.)\nFormalization notes: `lpf m` is the maximum of the finset of prime factors of m (`Nat.primeFactors`),\nwith the convention lpf 0 = lpf 1 = 0; for m ≥ 2 it is the largest prime factor. n^θ is the real\npower `(n : ℝ) ^ θ`. Junk values at n = 0 (0^θ, lpf 0 = 0) affect at most finitely many n and\nhence not infiniteness. For θ ≤ 0 the condition is easy (n^θ ≤ 1 < P), so the content is θ close\nto 1. Proving `Claim` = the statement for every θ < 1; proving `¬Claim` = some θ < 1 for which\nonly finitely many such n exist.\n-/\nnamespace OpenProblems.QEDM139\nnoncomputable section\n\n/-- Largest prime factor of `m` (0 for `m ≤ 1`). -/\ndef lpf (m : ℕ) : ℕ := (Nat.primeFactors m).sup id\n\n/-- For every θ < 1, infinitely many n have P(n), P(n+1), P(n+2) all exceeding n^θ. -/\ndef Claim : Prop :=\n  ∀ θ : ℝ, θ < 1 →\n    Set.Infinite {n : ℕ | (n : ℝ) ^ θ < (lpf n : ℝ) ∧ (n : ℝ) ^ θ < (lpf (n + 1) : ℝ) ∧\n      (n : ℝ) ^ θ < (lpf (n + 2) : ℝ)}\n\nend\nend OpenProblems.QEDM139\n",
-  "set": "main"
- },
- {
-  "id": "QED-M140",
-  "review_id": "RA-N-144",
-  "title": "Least volume of a Kakeya set for discs",
-  "area": "Geometry",
-  "difficulty": 4.5,
-  "grade": "B",
-  "provenance": "Original",
-  "credit": "QED original (archived Nov 2026, restored after re-review).",
-  "results": null,
-  "premise_risks": [],
-  "plain": "A set in space contains a flat unit disc in every orientation. How small can its volume be? Such sets cannot have zero volume, unlike sets containing a needle in every direction.",
-  "math": "For a unit vector ν let D_ν = {x ∈ ℝ³ : x·ν = 0, |x| ≤ 1}, and c_* = inf{|E| : E ⊂ ℝ³ compact, ∀ν ∃x_ν, x_ν + D_ν ⊂ E} (c_* > 0 by Marstrand/Falconer). Decide whether c_* < (4/3)π, i.e. whether some compact set containing a translate of every D_ν has smaller volume than the unit ball. (Determining c_* exactly and whether the infimum is attained are further questions.)",
-  "novelty": 7,
-  "importance": 4,
-  "value": 6,
-  "formal_status": "formalized",
-  "lean_gap": null,
-  "refs": [
-   "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/abs/some-remarks-on-the-kakeya-problem/F994CB74D52930B6A0209D8F52B66627",
-   "https://arxiv.org/abs/2610.33734",
-   "https://en.wikipedia.org/wiki/Kakeya_set"
-  ],
-  "lean": "import Mathlib\n/-! QED-M140: Least volume of a Kakeya set for discs\nA set in space contains a flat unit disc in every orientation. How small can its volume be? Such sets\ncannot have zero volume, unlike sets containing a needle in every direction.\nInformal statement: For a unit vector ν let D_ν = {x ∈ ℝ³ : x·ν = 0, |x| ≤ 1}. Let\nc_* = inf{|E| : E ⊂ ℝ³ compact, ∀ν ∃x_ν, x_ν + D_ν ⊂ E}. By Marstrand and Falconer's L² bound for the\n2-plane maximal operator, c_* > 0. Determine c_*. The Claim formalized here is the sharp sub-question\n\"is the unit ball beaten?\": c_* < (4/3)π, i.e. there is a compact set containing a translate of every\nD_ν whose Lebesgue measure is less than that of the unit ball.\nFormalization notes: ℝ³ is modelled as `Fin 3 → ℝ` with its product Lebesgue measure `volume`; the\nEuclidean structure is written out explicitly (dot product `∑ i, x i * ν i`, squared norm `∑ i, x i ^ 2`),\navoiding the sup-norm that Mathlib puts on `Fin 3 → ℝ`. A set E is a \"disc Kakeya set\" if it is compact\nand for every unit vector ν some translate x + D_ν lies in E. Since c_* is an infimum over these sets\nand the unit ball (all x_ν = 0) is admissible with volume 4π/3, \"c_* < 4π/3\" is equivalent to the\nexistence of an admissible E with volume < 4π/3, which is how `Claim` is stated (no `sInf` needed).\nProving `Claim` = exhibiting a disc Kakeya set beating the ball; `¬Claim` = the ball is optimal\n(c_* = 4π/3, attained). The other sub-questions (exact value of c_* if < 4π/3; whether the infimum is\nattained) are not captured by this Claim.\n-/\nnamespace OpenProblems.QEDM140\n\nnoncomputable section\n\n/-- Euclidean dot product on `ℝ³ = Fin 3 → ℝ`. -/\ndef dot (x y : Fin 3 → ℝ) : ℝ := ∑ i : Fin 3, x i * y i\n\n/-- The unit disc through the origin perpendicular to `ν`. -/\ndef disc (ν : Fin 3 → ℝ) : Set (Fin 3 → ℝ) :=\n  {y | dot y ν = 0 ∧ dot y y ≤ 1}\n\n/-- `E` is compact and contains a translate of the unit disc perpendicular to every unit vector. -/\ndef IsDiscKakeya (E : Set (Fin 3 → ℝ)) : Prop :=\n  IsCompact E ∧ ∀ ν : Fin 3 → ℝ, dot ν ν = 1 → ∃ x : Fin 3 → ℝ, ∀ y ∈ disc ν, x + y ∈ E\n\ndef Claim : Prop :=\n  ∃ E : Set (Fin 3 → ℝ), IsDiscKakeya E ∧\n    MeasureTheory.volume E < ENNReal.ofReal (4 / 3 * Real.pi)\n\nend\n\nend OpenProblems.QEDM140\n",
   "set": "main"
  },
  {
@@ -3070,7 +2764,7 @@
   "id": "QED-M148",
   "review_id": "RA-N-564",
   "title": "Critical Ising interfaces on the hat tiling converge to SLE(3)",
-  "area": "Physics",
+  "area": "Mathematical physics",
   "difficulty": 7.5,
   "grade": "B",
   "provenance": "Original",
@@ -3092,6 +2786,42 @@
    "https://arxiv.org/abs/2604.21165"
   ],
   "lean": "import Mathlib\n/-! QED-M148: Critical Ising interfaces on the hat tiling converge to SLE(3)\nPut an Ising spin on every tile of a hat tiling, with neighbouring tiles (sharing an edge segment) interacting, at the critical temperature. Take a large simply connected region with plus spins forced on one boundary arc and minus spins on the other. Show that, as the tiles shrink, the interface between the plus and minus clusters converges to the random curve SLE(3), just as on the square lattice, although the hat graph is neither periodic nor isoradial.\nInformal statement: Let $G_T$ be the tile-adjacency graph of a hat tiling $T$ (Smith–Myers–Kaplan–Goodman-Strauss hat, reflections allowed; tiles adjacent iff they share a boundary segment of positive length), with the ferromagnetic nearest-neighbour Ising model, $J\\equiv1$. Prove: (i) there is $\\beta_c\\in(0,\\infty)$, independent of $T$, such that the plus-state magnetisation of every tile vanishes for $0<\\beta\\le\\beta_c$ and is positive for $\\beta>\\beta_c$; (ii) for every hat tiling $T$, every Jordan domain $\\Omega$ with distinct boundary points $a,b$, and all discretisations $(\\Omega_\\delta,a_\\delta,b_\\delta)$ by simply connected unions of tiles of $\\delta T$ whose boundary curves converge to $\\partial\\Omega$ uniformly up to reparametrisation, with $a_\\delta\\to a$, $b_\\delta\\to b$: with Dobrushin boundary conditions ($+$ on the boundary arc from $a_\\delta$ to $b_\\delta$, $-$ on the other) at $\\beta=\\beta_c$, the interface from $a_\\delta$ to $b_\\delta$ (any interface path, whatever choice is made at vertices where several interface edges meet) converges in law, in the topology of curves up to reparametrisation, to chordal $\\mathrm{SLE}_3$ in $(\\Omega,a,b)$.\nFormalization notes:\n* Hat tilings, as in the AKLT problem of the same batch: the hat polygon (lattice coordinates from\n  Kaplan's `hatviz`, checked: area `8√3` = 8 kites) as a union of 11 closed triangles; a tiling is a\n  set of isometric copies (`ℂ ≃ᵢ ℂ`, reflections allowed) covering `ℂ` with disjoint interiors.\n  `Vert` = points in ≥ 3 tiles; `ArcOf 𝒯 A B u w` = `u, w` are the ends of a common boundary arc\n  of the distinct tiles `A, B` (same connected component of `A ∩ B`). Tiles are Ising sites;\n  `tAdj A B` iff `A ∩ B` is infinite, i.e. they share a segment of positive length (two polygons\n  with disjoint interiors meet in finitely many points otherwise).\n* (i) Critical point. Plus-state magnetisation at tile `x`: `⟨σ_x⟩^+_Λ` in finite `Λ ∋ x` with all\n  tiles outside `Λ` fixed to `+` (each outside neighbour contributes field 1). By GKS it is\n  non-increasing in `Λ`, so the infinite-volume value is the infimum over finite `Λ ∋ x`\n  (`mPlus`). The problem allowed assuming or proving the existence of a `T`-independent `β_c`; we\n  require proving it (asserted inside `Claim` with `∃ β_c`), which avoids an implication that\n  would be vacuous if no such `β_c` existed.\n* Domain. A Jordan domain with two marked points is given by `f`, continuous and injective on the\n  closed unit disc and holomorphic on the open disc (Carathéodory: every Jordan domain arises so),\n  `Ω = f(𝔻)`, `a = f(-1)`, `b = f(1)`. Restricting from general bounded simply connected domains\n  with Carathéodory convergence to Jordan domains with uniform (Fréchet) convergence of boundary\n  curves is the one sharpening made; by Radó's theorem this convergence implies Carathéodory\n  convergence with the marked points converging as prime ends, so it is a special case of the\n  original.\n* Discrete domain (`DiscDomain`, `IsDisc`), in units of the unscaled tiling `𝒯` (positions are\n  multiplied by `δ`): a finite set `D` of tiles and a simple cycle `v_0, …, v_{L+2}` of vertices\n  that lists every boundary edge (arc between a tile in `D` and one outside) exactly as consecutive\n  pairs; hence `D` is the set of tiles enclosed by a simple closed curve (simply connected).\n  `a = v_0`, `b = v_j`. Dobrushin boundary condition per boundary arc: `+1` on arcs\n  `v_i v_{i+1}` with `i < j`, else `-1` (edge-based, so a tile meeting both arcs is not ambiguous).\n  Energy: `-Σ_{tAdj pairs in D} σσ' - Σ_{boundary arcs} σ_{inner tile}·bc`. Convergence: the\n  closed polygon through `δ v_i` is `ε`-close to `s ↦ f(e^{2πis})` after an increasing or\n  decreasing reparametrisation of the circle, and `δ v_0 → a`, `δ v_j → b`. Replacing arcs by\n  chords moves curves by `O(δ)`, which is invisible in the limit.\n* Interface. A disagreement edge joins `u, w` along an arc of tiles `A ∈ D` and `B` where the\n  spins differ (for `B ∉ D` the \"spin\" of `B` is the boundary value). All vertices other than\n  `a, b` meet an even number of disagreement edges, `a, b` an odd number, so trails from `a` to\n  `b` (walks using each edge at most once) exist. At vertices where 4 or more interface edges meet\n  the interface is ambiguous; `Claim` requires convergence for every selection rule `sel` (any\n  deterministic choice of a valid trail per configuration). The curve is the\n  polygon through `δ`·(trail vertices), parametrised by `[0,1]`.\n* Convergence in law in the space of curves modulo increasing reparametrisation (metric\n  `reparamDist`): by the portmanteau theorem it suffices, and is necessary, to have convergence of\n  expectations of all `F` with `|F| ≤ 1` that are 1-Lipschitz for `reparamDist` (such `F` are\n  reparametrisation-invariant; bounded Lipschitz functions on the subspace of continuous curves\n  extend to all functions with the same bounds, so quantifying over functions on all maps\n  `[0,1] → ℂ` is equivalent).\n* SLE₃. A process `W` is `√κ·`(standard Brownian motion) if `W_0 = 0`, its paths are continuous\n  on `[0,∞)`, and the increments over any partition `0 = τ_0 < … < τ_k` are independent centred\n  Gaussians with variances `κ(τ_{i+1} - τ_i)` (joint law = product measure). A curve `η` in `ℍ`\n  from `0` is driven by `W` if it is simple, `η(t) ∈ ℍ` for `t > 0`, and for each `t` there is a\n  conformal map `g_t : ℍ \\ η(0,t] → ℍ` with hydrodynamic normalisation\n  `g_t(z) = z + 2t/z + o(1/z)` (half-plane capacity parametrisation) and `g_t(η(t)) = W_t` as a\n  boundary limit. This is the Loewner characterisation; for `κ = 3 ≤ 4` the SLE trace is a.s. a\n  simple curve (Rohde–Schramm), so this describes chordal SLE₃ in `ℍ`, which is transient\n  (`|η(t)| → ∞`). The curve in `(Ω, a, b)` is `f ∘ m ∘ η` with `m(z) = (z - i)/(z + i)`\n  (`ℍ → 𝔻`, `0 ↦ -1`, `∞ ↦ 1`), reparametrised to `[0,1]`; this law does not depend on the choice\n  of `f` (scale invariance of SLE). `IsSLE3Setup` asks for a probability space with such `W` and a\n  Borel-measurable random continuous curve `Γ` that is a.s. this curve; `Claim` asserts such a\n  setup exists (no vacuity) and the convergence holds for every one.\n* Proving `Claim` = (i) and (ii). Proving `¬Claim` = no `T`-independent critical point, or failure\n  of convergence for some hat tiling, Jordan domain, discretisation and interface selection.\n-/\nnamespace OpenProblems.QEDM148\nnoncomputable section\nopen scoped Classical\nopen MeasureTheory Filter Topology\n\n/-- The point `x + y·e^{iπ/3}` of the triangular lattice. -/\ndef hp (x y : ℤ) : ℂ := ⟨(x : ℝ) + (y : ℝ) / 2, Real.sqrt 3 / 2 * (y : ℝ)⟩\n\n/-- A triangulation (11 triangles) of the hat polygon with vertices, in lattice coordinates,\n(0,0),(-1,-1),(0,-2),(2,-2),(2,-1),(4,-2),(5,-1),(4,0),(3,0),(2,2),(0,3),(0,2),(-1,2). -/\ndef hatTriangles : List ((ℤ × ℤ) × (ℤ × ℤ) × (ℤ × ℤ)) :=\n  [((0, 0), (-1, -1), (0, -2)), ((0, 0), (0, -2), (2, -2)), ((-1, 2), (0, 0), (2, -2)),\n   ((-1, 2), (2, -2), (2, -1)), ((-1, 2), (2, -1), (4, -2)), ((4, -2), (5, -1), (4, 0)),\n   ((4, -2), (4, 0), (3, 0)), ((-1, 2), (4, -2), (3, 0)), ((3, 0), (2, 2), (0, 3)),\n   ((3, 0), (0, 3), (0, 2)), ((3, 0), (0, 2), (-1, 2))]\n\n/-- The closed hat tile (Smith–Myers–Kaplan–Goodman-Strauss), as the union of the closed\ntriangles of a triangulation of its boundary polygon. -/\ndef hat : Set ℂ :=\n  ⋃ t ∈ hatTriangles,\n    convexHull ℝ ({hp t.1.1 t.1.2, hp t.2.1.1 t.2.1.2, hp t.2.2.1 t.2.2.2} : Set ℂ)\n\n/-- `𝒯` is a hat tiling of the plane: every tile is an isometric copy of the hat (reflections\nallowed), the tiles cover `ℂ`, and distinct tiles have disjoint interiors. -/\ndef IsHatTiling (𝒯 : Set (Set ℂ)) : Prop :=\n  (∀ A ∈ 𝒯, ∃ g : ℂ ≃ᵢ ℂ, A = g '' hat) ∧\n  ⋃₀ 𝒯 = Set.univ ∧\n  (∀ A ∈ 𝒯, ∀ B ∈ 𝒯, A ≠ B → interior A ∩ interior B = ∅)\n\n/-- Vertices of the tiling graph: points lying in at least three tiles. -/\ndef Vert (𝒯 : Set (Set ℂ)) : Set ℂ := {p : ℂ | (3 : ℕ∞) ≤ {A : Set ℂ | A ∈ 𝒯 ∧ p ∈ A}.encard}\n\n/-- `u, w` are joined by an edge of the tiling graph along the common boundary of tiles `A ≠ B`:\nboth are vertices and lie in the same connected component of `A ∩ B` (a common boundary arc;\ninterior points of such an arc lie in exactly two tiles, so its endpoints are consecutive\nvertices). -/\ndef ArcOf (𝒯 : Set (Set ℂ)) (A B : Set ℂ) (u w : ℂ) : Prop :=\n  u ∈ Vert 𝒯 ∧ w ∈ Vert 𝒯 ∧ u ≠ w ∧ A ≠ B ∧ w ∈ connectedComponentIn (A ∩ B) u\n\n/-- The planar graph `G_𝒯` on the vertex set of the tiling. -/\ndef tilingGraph (𝒯 : Set (Set ℂ)) : SimpleGraph (Vert 𝒯) :=\n  SimpleGraph.fromRel (fun u w : Vert 𝒯 => ∃ A ∈ 𝒯, ∃ B ∈ 𝒯, ArcOf 𝒯 A B u.1 w.1)\n\n/-! ### Ising model on tiles -/\n\n/-- Tiles sharing a boundary segment of positive length. -/\ndef tAdj (𝒯 : Set (Set ℂ)) (A B : 𝒯) : Prop := A ≠ B ∧ (A.1 ∩ B.1).Infinite\n\n/-- Spin value `±1`. -/\ndef spinv (b : Bool) : ℝ := if b then 1 else -1\n\n/-- Number of neighbours of `A` outside `Λ`. -/\ndef outDeg (𝒯 : Set (Set ℂ)) (Λ : Finset 𝒯) (A : 𝒯) : ℕ :=\n  {B : 𝒯 | B ∉ Λ ∧ tAdj 𝒯 A B}.ncard\n\n/-- Energy in `Λ` with plus boundary condition. -/\ndef energyPlus (𝒯 : Set (Set ℂ)) (Λ : Finset 𝒯) (σ : Λ → Bool) : ℝ :=\n  -(1 / 2) * ∑ p ∈ (Finset.univ : Finset (Λ × Λ)).filter (fun p : Λ × Λ => tAdj 𝒯 p.1.1 p.2.1),\n      spinv (σ p.1) * spinv (σ p.2)\n  - ∑ A : Λ, spinv (σ A) * (outDeg 𝒯 Λ A.1 : ℝ)\n\n/-- `⟨σ_x⟩` in `Λ ∋ x` with plus boundary condition at inverse temperature `β`. -/\ndef magPlus (𝒯 : Set (Set ℂ)) (β : ℝ) (Λ : Finset 𝒯) (x : 𝒯) (hx : x ∈ Λ) : ℝ :=\n  (∑ σ : Λ → Bool, spinv (σ ⟨x, hx⟩) * Real.exp (-β * energyPlus 𝒯 Λ σ)) /\n    ∑ σ : Λ → Bool, Real.exp (-β * energyPlus 𝒯 Λ σ)\n\n/-- Infinite-volume plus-state magnetisation at `x` (monotone limit = infimum, by GKS). -/\ndef mPlus (𝒯 : Set (Set ℂ)) (β : ℝ) (x : 𝒯) : ℝ :=\n  ⨅ Λ : {Λ : Finset 𝒯 // x ∈ Λ}, magPlus 𝒯 β Λ.1 x Λ.2\n\n/-! ### Discrete Dobrushin domains and interfaces -/\n\n/-- A finite set of tiles with a boundary cycle `v`, `a = v 0`, `b = v j`. -/\nstructure DiscDomain (𝒯 : Set (Set ℂ)) where\n  D : Finset 𝒯\n  L : ℕ\n  v : Fin (L + 3) → ℂ\n  j : ℕ\n\nnamespace DiscDomain\nvariable {𝒯 : Set (Set ℂ)} (Dd : DiscDomain 𝒯)\n\n/-- Cyclic indexing of the boundary cycle. -/\ndef vAt (k : ℕ) : ℂ := Dd.v ⟨k % (Dd.L + 3), Nat.mod_lt k (by omega)⟩\n\n/-- `u w` is a boundary arc: between a tile of `D` and a tile outside `D`. -/\ndef BEdge (u w : ℂ) : Prop :=\n  ∃ A : 𝒯, A ∈ Dd.D ∧ ∃ B : 𝒯, B ∉ Dd.D ∧ ArcOf 𝒯 A.1 B.1 u w\n\n/-- Well-formed discrete domain: `v` is a simple cycle listing exactly the boundary arcs. -/\ndef IsDisc : Prop :=\n  Function.Injective Dd.v ∧ 0 < Dd.j ∧ Dd.j < Dd.L + 3 ∧\n  (∀ i : ℕ, i < Dd.L + 3 → Dd.BEdge (Dd.vAt i) (Dd.vAt (i + 1))) ∧\n  (∀ u w : ℂ, Dd.BEdge u w → ∃ i : ℕ, i < Dd.L + 3 ∧\n      ((Dd.vAt i = u ∧ Dd.vAt (i + 1) = w) ∨ (Dd.vAt i = w ∧ Dd.vAt (i + 1) = u)))\n\n/-- Dobrushin boundary value of the boundary arc `u w`: `+1` on the arc from `a` to `b`. -/\ndef bcVal (u w : ℂ) : ℝ :=\n  if ∃ i : ℕ, i < Dd.j ∧ s(Dd.vAt i, Dd.vAt (i + 1)) = s(u, w) then 1 else -1\n\n/-- Ising energy with Dobrushin boundary conditions. -/\ndef energy (σ : Dd.D → Bool) : ℝ :=\n  -(1 / 2) * ∑ p ∈ (Finset.univ : Finset (Dd.D × Dd.D)).filter\n      (fun p : Dd.D × Dd.D => tAdj 𝒯 p.1.1 p.2.1), spinv (σ p.1) * spinv (σ p.2)\n  - ∑ i ∈ Finset.range (Dd.L + 3), ∑ A : Dd.D,\n      (if ∃ B : 𝒯, B ∉ Dd.D ∧ ArcOf 𝒯 A.1.1 B.1 (Dd.vAt i) (Dd.vAt (i + 1))\n        then spinv (σ A) * (if i < Dd.j then 1 else -1) else 0)\n\n/-- `u w` is an interface (disagreement) edge for `σ`. -/\ndef Disagree (σ : Dd.D → Bool) (u w : ℂ) : Prop :=\n  ∃ A : Dd.D, ∃ B : 𝒯, ArcOf 𝒯 A.1.1 B.1 u w ∧\n    (if hB : B ∈ Dd.D then σ A ≠ σ ⟨B, hB⟩ else spinv (σ A) ≠ Dd.bcVal u w)\n\n/-- `l` is an interface trail from `a` to `b`: consecutive vertices joined by disagreement edges,\nno edge used twice. -/\ndef ValidTrail (σ : Dd.D → Bool) (l : List ℂ) : Prop :=\n  2 ≤ l.length ∧ l.getD 0 0 = Dd.vAt 0 ∧ l.getD (l.length - 1) 0 = Dd.vAt Dd.j ∧\n  (∀ i : ℕ, i + 1 < l.length → Dd.Disagree σ (l.getD i 0) (l.getD (i + 1) 0)) ∧\n  (∀ i k : ℕ, i < k → k + 1 < l.length →\n    s(l.getD i 0, l.getD (i + 1) 0) ≠ s(l.getD k 0, l.getD (k + 1) 0))\n\n/-- Closed boundary polygon through `δ v_i`, 1-periodic in `s`. -/\ndef cyclePoly (δ : ℝ) (s : ℝ) : ℂ :=\n  let x : ℝ := Int.fract s * ((Dd.L : ℝ) + 3)\n  let k : ℕ := ⌊x⌋₊\n  (δ : ℂ) * (Dd.vAt k + ((x - k : ℝ) : ℂ) * (Dd.vAt (k + 1) - Dd.vAt k))\n\nend DiscDomain\n\n/-- Polygonal curve on `[0,1]` through the points of `l` (at least two points). -/\ndef polyCurve (l : List ℂ) (t : unitInterval) : ℂ :=\n  let m : ℕ := l.length - 1\n  let s : ℝ := (t : ℝ) * (m : ℝ)\n  let k : ℕ := min ⌊s⌋₊ (m - 1)\n  l.getD k 0 + ((s - k : ℝ) : ℂ) * (l.getD (k + 1) 0 - l.getD k 0)\n\n/-- Expectation of `F(δ · interface)` under the Dobrushin Ising measure at `β`. -/\ndef expect {𝒯 : Set (Set ℂ)} (β : ℝ) (Dd : DiscDomain 𝒯) (δ : ℝ)\n    (sel : (Dd.D → Bool) → List ℂ) (F : (unitInterval → ℂ) → ℝ) : ℝ :=\n  (∑ σ : Dd.D → Bool, Real.exp (-β * Dd.energy σ) *\n      F (fun t : unitInterval => (δ : ℂ) * polyCurve (sel σ) t)) /\n    ∑ σ : Dd.D → Bool, Real.exp (-β * Dd.energy σ)\n\n/-! ### Curves, domains, SLE -/\n\n/-- Distance between curves up to increasing reparametrisation. -/\ndef reparamDist (γ₁ γ₂ : unitInterval → ℂ) : ENNReal :=\n  ⨅ (φ : unitInterval ≃ₜ unitInterval) (_ : Monotone φ), ⨆ t : unitInterval, edist (γ₁ t) (γ₂ (φ t))\n\n/-- Test functions: bounded by 1 and 1-Lipschitz for `reparamDist`. -/\ndef TestFn (F : (unitInterval → ℂ) → ℝ) : Prop :=\n  (∀ γ : unitInterval → ℂ, |F γ| ≤ 1) ∧\n  ∀ γ₁ γ₂ : unitInterval → ℂ, ENNReal.ofReal |F γ₁ - F γ₂| ≤ reparamDist γ₁ γ₂\n\n/-- `f` maps the closed disc homeomorphically onto the closure of a Jordan domain, conformally on\nthe open disc. -/\ndef IsJordanMap (f : ℂ → ℂ) : Prop :=\n  ContinuousOn f (Metric.closedBall 0 1) ∧ Set.InjOn f (Metric.closedBall 0 1) ∧\n  DifferentiableOn ℂ f (Metric.ball 0 1)\n\n/-- `p` and `q` (1-periodic closed curves) are `ε`-close up to reparametrisation of the circle. -/\ndef FrechetClose (ε : ℝ) (p q : ℝ → ℂ) : Prop :=\n  ∃ φ : ℝ → ℝ, Continuous φ ∧\n    ((StrictMono φ ∧ ∀ s : ℝ, φ (s + 1) = φ s + 1) ∨\n     (StrictAnti φ ∧ ∀ s : ℝ, φ (s + 1) = φ s - 1)) ∧\n    ∀ s : ℝ, ‖p (φ s) - q s‖ ≤ ε\n\n/-- The scaled discrete domains converge to `(f(𝔻), f(-1), f(1))`. -/\ndef DomConv {𝒯 : Set (Set ℂ)} (f : ℂ → ℂ) (δ : ℕ → ℝ) (Dd : ℕ → DiscDomain 𝒯) : Prop :=\n  ∀ ε : ℝ, 0 < ε → ∀ᶠ n : ℕ in atTop,\n    FrechetClose ε ((Dd n).cyclePoly (δ n))\n        (fun s : ℝ => f (Complex.exp (((2 * Real.pi * s : ℝ) : ℂ) * Complex.I))) ∧\n    ‖(δ n : ℂ) * (Dd n).vAt 0 - f (-1)‖ ≤ ε ∧ ‖(δ n : ℂ) * (Dd n).vAt (Dd n).j - f 1‖ ≤ ε\n\n/-- `W = √κ ·` standard Brownian motion. -/\ndef IsBM {Ω' : Type} [MeasurableSpace Ω'] (P : Measure Ω') (W : ℝ → Ω' → ℝ) (κ : ℝ) : Prop :=\n  (∀ ω : Ω', W 0 ω = 0) ∧ (∀ ω : Ω', ContinuousOn (fun t : ℝ => W t ω) (Set.Ici 0)) ∧\n  (∀ t : ℝ, Measurable (W t)) ∧\n  ∀ (k : ℕ) (τ : Fin (k + 1) → ℝ), τ 0 = 0 → StrictMono τ →\n    P.map (fun ω : Ω' => fun i : Fin k => W (τ i.succ) ω - W (τ (Fin.castSucc i)) ω) =\n      Measure.pi (fun i : Fin k =>\n        ProbabilityTheory.gaussianReal 0 (Real.toNNReal (κ * (τ i.succ - τ (Fin.castSucc i)))))\n\n/-- Upper half-plane. -/\ndef UHP : Set ℂ := {z : ℂ | 0 < z.im}\n\n/-- `ℍ \\ η(0,t]`. -/\ndef slitDomain (η : ℝ → ℂ) (t : ℝ) : Set ℂ := UHP \\ η '' Set.Ioc 0 t\n\n/-- `η` is the simple chordal Loewner curve in `ℍ` from `0` with driving function `W`\n(half-plane capacity parametrisation). -/\ndef DrivenBy (η : ℝ → ℂ) (W : ℝ → ℝ) : Prop :=\n  ContinuousOn η (Set.Ici 0) ∧ η 0 = 0 ∧ Set.InjOn η (Set.Ici 0) ∧\n  (∀ t : ℝ, 0 < t → 0 < (η t).im) ∧\n  ∀ t : ℝ, 0 ≤ t → ∃ g : ℂ → ℂ,\n    DifferentiableOn ℂ g (slitDomain η t) ∧ Set.InjOn g (slitDomain η t) ∧\n    g '' slitDomain η t = UHP ∧\n    Tendsto (fun z : ℂ => z * (g z - z - 2 * (t : ℂ) / z))\n      (Bornology.cobounded ℂ ⊓ 𝓟 (slitDomain η t)) (𝓝 0) ∧\n    Tendsto g (𝓝[slitDomain η t] (η t)) (𝓝 (W t : ℂ))\n\n/-- Möbius map `ℍ → 𝔻`, `0 ↦ -1`, `∞ ↦ 1`. -/\ndef mob (z : ℂ) : ℂ := (z - Complex.I) / (z + Complex.I)\n\n/-- `Γ` is a reparametrisation to `[0,1]` of `f ∘ mob ∘ η` (ending at `f 1 = b`). -/\ndef IsSLECurve (f : ℂ → ℂ) (η : ℝ → ℂ) (Γ : unitInterval → ℂ) : Prop :=\n  ∃ θ : ℝ → ℝ, θ 0 = 0 ∧ ContinuousOn θ (Set.Ico 0 1) ∧ StrictMonoOn θ (Set.Ico 0 1) ∧\n    Tendsto θ (𝓝[<] 1) atTop ∧\n    (∀ s : unitInterval, (s : ℝ) < 1 → Γ s = f (mob (η (θ s)))) ∧ Γ 1 = f 1\n\n/-- A probability space with `W = √3 B` and a Borel random curve `Γ` that is a.s. chordal SLE₃ in\n`(f(𝔻), f(-1), f(1))`. -/\ndef IsSLE3Setup (f : ℂ → ℂ) {Ω' : Type} [MeasurableSpace Ω'] (P : Measure Ω')\n    (W : ℝ → Ω' → ℝ) (Γ : Ω' → C(unitInterval, ℂ)) : Prop :=\n  IsProbabilityMeasure P ∧ IsBM P W 3 ∧\n  @Measurable Ω' C(unitInterval, ℂ) _ (borel C(unitInterval, ℂ)) Γ ∧\n  ∀ᵐ ω ∂P, ∃ η : ℝ → ℂ, DrivenBy η (fun t : ℝ => W t ω) ∧\n    Tendsto (fun t : ℝ => ‖η t‖) atTop atTop ∧ IsSLECurve f η (Γ ω)\n\ndef Claim : Prop :=\n  ∃ βc : ℝ, 0 < βc ∧ (∃ 𝒯 : Set (Set ℂ), IsHatTiling 𝒯) ∧\n  (∀ 𝒯 : Set (Set ℂ), IsHatTiling 𝒯 → ∀ (x : 𝒯) (β : ℝ), 0 < β →\n      (β ≤ βc → mPlus 𝒯 β x = 0) ∧ (βc < β → 0 < mPlus 𝒯 β x)) ∧\n  ∀ 𝒯 : Set (Set ℂ), IsHatTiling 𝒯 → ∀ f : ℂ → ℂ, IsJordanMap f →\n    (∃ (Ω' : Type) (_ : MeasurableSpace Ω') (P : Measure Ω') (W : ℝ → Ω' → ℝ)\n        (Γ : Ω' → C(unitInterval, ℂ)), IsSLE3Setup f P W Γ) ∧\n    ∀ (Ω' : Type) [MeasurableSpace Ω'] (P : Measure Ω') (W : ℝ → Ω' → ℝ)\n      (Γ : Ω' → C(unitInterval, ℂ)), IsSLE3Setup f P W Γ →\n    ∀ (δ : ℕ → ℝ) (Dd : ℕ → DiscDomain 𝒯), (∀ n : ℕ, 0 < δ n) → Tendsto δ atTop (𝓝 0) →\n      (∀ n : ℕ, (Dd n).IsDisc) → DomConv f δ Dd →\n    ∀ sel : (n : ℕ) → ((Dd n).D → Bool) → List ℂ,\n      (∀ (n : ℕ) (σ : (Dd n).D → Bool), (Dd n).ValidTrail σ (sel n σ)) →\n    ∀ F : (unitInterval → ℂ) → ℝ, TestFn F →\n      Tendsto (fun n : ℕ => expect βc (Dd n) (δ n) (sel n) F) atTop\n        (𝓝 (∫ ω, F (Γ ω) ∂P))\n\nend\nend OpenProblems.QEDM148\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-E095",
+  "review_id": "C-98",
+  "title": "First-order convergence law for random Latin squares",
+  "area": "Logic & computability",
+  "difficulty": 5.5,
+  "grade": "A",
+  "provenance": "Original",
+  "credit": null,
+  "results": "Caution: route (i) as originally proposed has a flaw. The extension property 'every finite partial configuration extends in every consistent way w.h.p.' is false. A new x with x∘a1=b1 and x∘a2=b2 has expected count n·n^{-2}→0, because x∘a=b already determines x. The structure is functionally sparse (Lynch-type), not G(n,1/2)-type, so the route was rewritten.",
+  "premise_risks": [
+   "arXiv:2606.18174 (Allsop-Morris, 2026 preprint): cited only as evidence that even the Poisson(1) idempotent law is unproved; the statement assumes nothing from it."
+  ],
+  "plain": "Pick a Latin square of order n uniformly at random and read it as a multiplication table x∘y on n symbols. Does every first-order statement about this table have a limiting probability as n grows? A zero-one law fails: the number of x with x∘x=x should be asymptotically Poisson(1), so the probability that one exists should tend to 1−1/e rather than 0 or 1.",
+  "math": "Let $L_n$ be uniform among Latin squares on $[n]$ and $\\mathcal Q_n=([n],\\circ)$ with $x\\circ y=L_n(x,y)$. Prove or disprove: for every first-order sentence $\\varphi$ in the language $\\{\\circ,=\\}$, $\\lim_{n\\to\\infty}\\Pr[\\mathcal Q_n\\models\\varphi]$ exists. (A 0-1 law should fail: by symbol-relabelling symmetry, $\\mathbb E\\#\\{x:x\\circ x=x\\}=1$ exactly, and this count is conjecturally Poisson(1).) Expected route, as for Lynch's random unary functions: (i) w.h.p. the bounded-depth term closure of any bounded tuple is free except for coincidences counted by balanced configurations ($v$ elements, $v$ independent equations); (ii) a joint Poisson limit for the counts of all such balanced configurations, e.g. cycles of $x\\mapsto x\\circ x$. A disproof would need a definable sparse statistic with no limit law.",
+  "novelty": 8,
+  "importance": 4,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2509.13125",
+   "https://arxiv.org/pdf/2011.07572",
+   "https://arxiv.org/pdf/2106.11932",
+   "https://arxiv.org/abs/2402.02567",
+   "https://arxiv.org/abs/2509.13125",
+   "https://arxiv.org/abs/2606.18174",
+   "https://arxiv.org/pdf/2202.05088",
+   "https://arxiv.org/pdf/2106.11932"
+  ],
+  "lean": "import Mathlib\n/-! QED-E095: First-order convergence law for random Latin squares\nPick a Latin square of order n uniformly at random and read it as a multiplication table x∘y on n\nsymbols. Does every first-order sentence about this quasigroup have a limiting probability as n → ∞?\n(A zero-one law fails: the number of idempotents x∘x = x has mean exactly 1 and is conjecturally\nPoisson(1).)\nInformal statement: Let L_n be uniform among Latin squares on [n] and Q_n = ([n], ∘) with\nx∘y = L_n(x,y). Prove or disprove: for every first-order sentence φ in the language {∘, =},\nlim_{n→∞} Pr[Q_n ⊨ φ] exists.\nFormalization notes: The language `qLang` has a single binary function symbol and no relation\nsymbols; equality is built into Mathlib's first-order logic (`FirstOrder.Language.Sentence`). A Latin\nsquare of order n is a map L : Fin n → Fin n → Fin n whose rows and columns are bijections. The\nstructure `QG n L` is `Fin n` with `x ∘ y := L x y`. `satProb n φ` is the fraction of Latin squares of\norder n satisfying φ (computed with `Set.ncard` on finite sets of functions; for n = 0 there is one\nempty Latin square). `Claim` says every sentence has a real limit probability. Proving `¬ Claim`\nmeans exhibiting a sentence whose satisfaction probability does not converge.\n-/\nnamespace OpenProblems.QEDE095\n\nopen FirstOrder FirstOrder.Language\n\n/-- Function symbols: one binary operation. -/\ninductive QFunc : ℕ → Type\n  | mul : QFunc 2\n\n/-- The language `{∘}` of quasigroup multiplication tables (equality is built in). -/\ndef qLang : FirstOrder.Language where\n  Functions := QFunc\n  Relations := fun _ => Empty\n\n/-- `L` is a Latin square: every row and every column is a bijection. -/\ndef IsLatin {n : ℕ} (L : Fin n → Fin n → Fin n) : Prop :=\n  (∀ x : Fin n, Function.Bijective (L x)) ∧ (∀ y : Fin n, Function.Bijective (fun x => L x y))\n\n/-- Carrier of the quasigroup given by the table `L` (a type synonym for `Fin n`). -/\ndef QG (n : ℕ) (_L : Fin n → Fin n → Fin n) : Type := Fin n\n\n/-- Interpretation of the function symbols. -/\ndef QFunc.interp {n : ℕ} (L : Fin n → Fin n → Fin n) : {k : ℕ} → QFunc k → (Fin k → Fin n) → Fin n\n  | _, QFunc.mul, xs => L (xs 0) (xs 1)\n\ninstance qgStructure (n : ℕ) (L : Fin n → Fin n → Fin n) : qLang.Structure (QG n L) where\n  funMap := fun f xs => QFunc.interp L f xs\n  RelMap := fun r _ => Empty.elim r\n\n/-- Probability that a uniformly random Latin square of order `n` satisfies `φ`. -/\nnoncomputable def satProb (n : ℕ) (φ : qLang.Sentence) : ℝ :=\n  (Set.ncard {L : Fin n → Fin n → Fin n | IsLatin L ∧ φ.Realize (QG n L)} : ℝ) /\n    (Set.ncard {L : Fin n → Fin n → Fin n | IsLatin L} : ℝ)\n\ndef Claim : Prop :=\n  ∀ φ : qLang.Sentence, ∃ ℓ : ℝ, Filter.Tendsto (fun n : ℕ => satProb n φ) Filter.atTop (nhds ℓ)\n\nend OpenProblems.QEDE095\n",
+  "M_fix_reason": null,
+  "prov_reason": "Reviewers found no prior work posing first-order convergence/zero-one laws for random Latin squares or quasigroups; the question is QED's own, modeled on Lynch-type laws.",
+  "legacy_id": "N-678",
   "set": "main"
  }
 ]

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Coding theory
+Main set · Grade A · QED Curated · Coding & information theory
 
 **Plain words:** Let A(n,d) be the largest number of binary strings of length n that pairwise differ in at least d positions. When d=(1/2-eps)n, random codes give about 2^{(2/ln 2) eps^2 n} strings, but the best upper bounds (the 1977 linear-programming bound and its 2026 refinements) give only 2^{O(eps^2 log(1/eps)) n}. Show that the logarithm is not needed: the rate is at most a constant times eps^2.
 

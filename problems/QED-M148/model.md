@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Physics
+Main set · Grade B · QED Original · Mathematical physics
 
 **Plain words:** Put an Ising spin on every tile of a hat tiling, with neighbouring tiles (sharing an edge segment) interacting, at the critical temperature. Take a large simply connected region with plus spins forced on one boundary arc and minus spins on the other. Show that, as the tiles shrink, the interface between the plus and minus clusters converges to the random curve SLE(3), just as on the square lattice, although the hat graph is neither periodic nor isoradial.
 

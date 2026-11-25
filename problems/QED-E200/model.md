@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade A · QED Curated · Coding theory
+Extended set · Grade A · QED Curated · Coding & information theory
 
 **Plain words:** A binary code of length n can correct pn adversarial deletions if no two codewords share a common subsequence of length (1−p)n. Let p* be the largest fraction for which there are codes of exponential size (positive rate). Simple pigeonhole shows p* ≤ 1/2. The best known constructions (Bukh-Guruswami-Håstad, 2015) give p* ≥ √2−1 ≈ 0.414, and the best upper bound is 1/2 − δ for a tiny unspecified δ. Decide whether p* > √2−1, i.e. whether there are positive-rate binary codes that correct more than a √2−1 fraction of deletions.
 

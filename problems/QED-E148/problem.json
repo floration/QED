@@ -14,8 +14,8 @@
  "plain": "Take a polytope in 4-dimensional space whose corners all have integer coordinates and which contains exactly one integer point in its interior. How large can its volume be? The best known example is the simplex with vertices 0, 2e1, 3e2, 7e3, 84e4, of volume 147, and it is known to be the largest among simplices. Is it the largest among all such polytopes?",
  "math": "Let $P=\\operatorname{conv}(V)\\subset\\mathbb{R}^4$ with $V\\subset\\mathbb{Z}^4$ finite and $|\\operatorname{int}(P)\\cap\\mathbb{Z}^4|=1$. Prove that $\\operatorname{vol}_4(P)\\le 147=\\tfrac{2(s_4-1)^2}{4!}$, where $s_1=2,s_2=3,s_3=7,s_4=43$ are the Sylvester numbers. Equality holds for $\\operatorname{conv}(0,2e_1,3e_2,7e_3,84e_4)$. (Here vol is Euclidean volume, so normalized volume is $3528$. The same bound $2(s_d-1)^2/d!$ is conjectured for every $d\\ge4$.)",
  "novelty": 4,
- "importance": 5,
- "value": 6,
+ "importance": 4,
+ "value": 5,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/1611.02455",

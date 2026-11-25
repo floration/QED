@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · QED Original · Physics
+Extended set · Grade C · QED Original · Mathematical physics
 
 **Plain words:** The AKLT model is a standard quantum spin model built on a graph, with a spin of size (degree)/2 at each vertex. Proofs that it has an energy gap exist for the honeycomb and several other periodic planar lattices, by computer-assisted finite-size criteria. Show the AKLT model on the graph of a hat tiling, which is not periodic, also has a gap that does not depend on which hat tiling or how large a region is taken.
 

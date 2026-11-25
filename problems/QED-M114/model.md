@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Geometry
+Extended set · Grade A · QED Curated · Geometry
 
 **Plain words:** A polyomino is a shape made of unit squares glued edge to edge with no holes. In 2023 a single tile was found that tiles the plane only non-periodically, but it is built from kites, not squares. Is there a polyomino that tiles the plane (rotations and reflections allowed) but has no tiling that a translation maps onto itself?
 

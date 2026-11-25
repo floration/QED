@@ -1,6 +1,6 @@
 {
  "id": "QED-M114",
- "set": "main",
+ "set": "extended",
  "title": "Is there an aperiodic polyomino?",
  "area": "Geometry",
  "difficulty": 5.0,
@@ -15,8 +15,8 @@
  "plain": "A polyomino is a shape made of unit squares glued edge to edge with no holes. In 2023 a single tile was found that tiles the plane only non-periodically, but it is built from kites, not squares. Is there a polyomino that tiles the plane (rotations and reflections allowed) but has no tiling that a translation maps onto itself?",
  "math": "A polyomino is a finite $P\\subset\\mathbb Z^2$ such that the union of the closed unit squares $c+[0,1]^2$, $c\\in P$, is a closed topological disk. A tiling by $P$ is a set $\\mathcal T$ of tiles $g(P)$, with $g(x)=Ax+b$, $A\\in D_4\\subset GL_2(\\mathbb Z)$ and $b\\in\\mathbb Z^2$, that partition $\\mathbb Z^2$. $P$ is aperiodic if some tiling exists but no tiling satisfies $\\mathcal T+v=\\mathcal T$ for any $v\\in\\mathbb Z^2\\setminus\\{0\\}$. Problem: does an aperiodic polyomino exist? Board Claim: yes. A proof that every polyomino that tiles also has a periodic tiling settles the problem negatively. (Variant: allow holes, i.e. require only that $P$ is edge-connected.)",
  "novelty": 3,
- "importance": 8,
- "value": 8,
+ "importance": 6,
+ "value": 6,
  "formal_status": "formalized",
  "review_note": "Known: Translations only: a polyomino tiles iff it tiles isohedrally/periodically (Wijshoff-van Leeuwen 1984; Beauquier-Nivat 1991). k-anisohedral polyominoes known for k<=6 (Winslow survey, Open Problem 6 asks for k>=7). Aperiodic sets of 3 polyominoes (with isometries) known; aperiodic sets of 2 polyominoes unknown (Winslow, Open Problem 8); translational aperiodic sets of 7 polyominoes (Yang-Zhang arXiv:2412.17382). Undecidability for sets of 5 polyominoes (Ollinger 2009). Non-polyomino aperiodic monotiles: hat and spectre (Smith-Myers-Kaplan-Goodman-Strauss 2023/24, Combinatorial Theory). Survey: A. Winslow, 'Some open problems in polyomino tilings', DLT 2018.",
  "refs": [

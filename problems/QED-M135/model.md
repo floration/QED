@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Information theory
+Main set · Grade A · QED Curated · Coding & information theory
 
 **Plain words:** The Shannon capacity Theta(G) of a finite graph is the limit of alpha(G^k)^{1/k}, where alpha is the independence number of the k-th strong power. Every alpha(G^k) is computable, so one can list ever better lower bounds, but no algorithm is known that produces upper bounds converging to Theta(G). Decide whether some algorithm, given G and a rational q, halts exactly when Theta(G) < q (equivalently, whether Theta is a computable function).
 

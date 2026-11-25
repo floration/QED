@@ -1,6 +1,6 @@
 {
  "id": "QED-M140",
- "set": "main",
+ "set": "extended",
  "title": "Least volume of a Kakeya set for discs",
  "area": "Geometry",
  "difficulty": 4.5,
@@ -11,7 +11,7 @@
  "math": "For a unit vector ν let D_ν = {x ∈ ℝ³ : x·ν = 0, |x| ≤ 1}, and c_* = inf{|E| : E ⊂ ℝ³ compact, ∀ν ∃x_ν, x_ν + D_ν ⊂ E} (c_* > 0 by Marstrand/Falconer). Decide whether c_* < (4/3)π, i.e. whether some compact set containing a translate of every D_ν has smaller volume than the unit ball. (Determining c_* exactly and whether the infimum is attained are further questions.)",
  "novelty": 7,
  "importance": 4,
- "value": 6,
+ "value": 5,
  "formal_status": "formalized",
  "refs": [
   "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/abs/some-remarks-on-the-kakeya-problem/F994CB74D52930B6A0209D8F52B66627",

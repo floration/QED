@@ -14,8 +14,8 @@
  "plain": "Scatter n points in the plane with no three on a line. A triangle with corners among the points is empty if no other point is inside it. Every such configuration has at least about n^2 empty triangles, and the best constructions have about 1.62 n^2. Show that every configuration actually has at least (1+c) n^2 empty triangles for some fixed c > 0.",
  "math": "For a finite $S\\subset\\mathbb{R}^2$ with no three points collinear, let $e(S)$ be the number of 3-subsets $T\\subseteq S$ with $\\operatorname{conv}(T)\\cap S=T$. Let $h_3(n)=\\min_{|S|=n}e(S)$. Prove that there is $c>0$ with $h_3(n)\\ge(1+c)\\,n^2$ for all sufficiently large $n$. (Known: $n^2-\\tfrac{32}{7}n+\\tfrac{22}{7}\\le h_3(n)\\le(1.6195\\ldots+o(1))\\,n^2$.)",
  "novelty": 3,
- "importance": 5,
- "value": 7,
+ "importance": 4,
+ "value": 6,
  "formal_status": "formalized",
  "refs": [
   "https://kam.mff.cuni.cz/kamserie/clanky/2004/s674.pdf",

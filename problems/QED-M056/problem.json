@@ -9,7 +9,7 @@
  "credit": "Einstein problem: Socolar-Taylor (2011, arXiv:1009.1419); Smith-Myers-Kaplan-Goodman-Strauss (2023, arXiv:2303.10798); Gummelt decagon covering (1996); Steinhardt-Jeong quasi-unit-cell model",
  "plain": "Every aperiodic monotile known (Socolar-Taylor, the hat, the spectre, and the 3D examples) has tilings with only crystallographic rotational structure: 2-, 3-, 4- or 6-fold. Is there a single tile in the plane whose tilings are all forced to be quasicrystalline with fivefold symmetry, as Penrose tilings are? Or is non-crystallographic symmetry something only two or more tiles can enforce?",
  "math": "Call a compact set T ⊂ ℝ² homeomorphic to a closed disc a monotile if it tiles ℝ² by isometric copies, reflections allowed. Does there exist a monotile T such that (i) every tiling by copies of T uses only finitely many orientations of T (up to translation), and (ii) for every such tiling 𝒯 the translation hull Ω(𝒯), the closure of {𝒯 + v} in the standard local topology (agreement on B(0,1/ε) after a translation of size < ε), is invariant under rotation by 2π/5? (Equivalently, the rotated tiling R𝒯 lies in Ω(𝒯).) The R³ icosahedral analogue is a secondary target.",
- "novelty": 5,
+ "novelty": 7,
  "importance": 6,
  "value": 6,
  "formal_status": "formalized",
