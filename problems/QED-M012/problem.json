@@ -11,8 +11,7 @@
  "novelty": 6,
  "importance": 4,
  "value": 5,
- "formal_status": "not_formalized",
- "lean_gap": "Not formalized: needs H¹ on a flat cone surface, Dirichlet forms / Friedrichs extension, and spectral theory of the resulting operator; none are in Mathlib.",
+ "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/1809.09909",
   "https://www.numdam.org/item/CRMATH_2002__335_12_1047_0"

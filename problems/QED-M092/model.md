@@ -29,7 +29,7 @@ Main set · Grade A · QED Extension · PDE
 Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM092.Claim` or a proof of `¬ OpenProblems.QEDM092.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M092/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs fractional Navier–Stokes solution theory.
+Either a proof of `OpenProblems.QEDM092.Claim` or a proof of `¬ OpenProblems.QEDM092.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M092/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

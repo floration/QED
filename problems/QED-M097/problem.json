@@ -13,8 +13,7 @@
  "novelty": 6,
  "importance": 5,
  "value": 5,
- "formal_status": "not_formalized",
- "lean_gap": "Not formalized: it needs the Friedrichs extension, Stone's theorem / the Schrodinger group on L^2 of the cone, mild L^2 solutions of NLS, and space-time Lebesgue norms.",
+ "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/1702.05813",
   "https://arxiv.org/pdf/1105.5410",
