@@ -1,6 +1,6 @@
 # QED
 
-**Every dot is an open problem. Make them all QED.** A curated, adversarially audited set of open math problems: 102 in the main set (`QED-M001`–`QED-M102`: 31 grade A, 71 grade B) and 20 in the extended set (`QED-E001`–`QED-E020`: grade C, valid but weaker), with quality over quantity and no target count. 590 retired problems are kept in `archive/` and `data/archive.json` with the reason each was cut. Each dot on the live board is a problem:
+**Every dot is an open problem. Make them all QED.** A curated, adversarially audited set of open math problems: 102 in the main set (`QED-M001`–`QED-M102`: 31 grade A, 71 grade B) and an extended set (`QED-Exxx`: valid but weaker problems; directly named conjectures are excluded), with quality over quantity and no target count. 590 retired problems are kept in `archive/` and `data/archive.json` with the reason each was cut. Each dot on the live board is a problem:
 green = solved or disproved, yellow = someone is working on it, red = no attempts yet.
 
 Every problem carries two labels:
