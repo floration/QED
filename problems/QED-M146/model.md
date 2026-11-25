@@ -7,7 +7,7 @@ Main set · Grade B · QED Original · Number theory
 
 **Plain words:** Are there infinitely many primes that have no digit 9 when written in base 10 and also no digit 10 (the digit 'A') when written in base 11?
 
-**Math:** Let $\mathcal A=\{n\ge1:\ 9\text{ is not a base-}10\text{ digit of }n\text{ and }10\text{ is not a base-}11\text{ digit of }n\}$. Prove that $\mathcal A$ contains infinitely many primes; more strongly, prove $\#\{p\le x: p\in\mathcal A\}=x^{\gamma+o(1)}$ with $\gamma=\frac{\log 9}{\log 10}+\frac{\log 10}{\log 11}-1\approx0.9145$.
+**Math:** Let $\mathcal A=\{n\ge1:\ 9\text{ is not a base-}10\text{ digit of }n\text{ and }10\text{ is not a base-}11\text{ digit of }n\}$. Prove that $\mathcal A$ contains infinitely many primes; more strongly, prove $\#\{p\le x: p\in\mathcal A\}=x^{\gamma+o(1)}$ with $\gamma=\frac{\log 9}{\log 10}+\frac{\log 10}{\log 11}-1\approx0.9145$. Board target (the Lean Claim): infinitude only; the exponent $\gamma$ is conjectural.
 
 **Credit:** QED original (archived Nov 2026, restored after re-review).
 

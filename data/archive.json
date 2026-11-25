@@ -8656,5 +8656,33 @@
   "value": 5,
   "family": null,
   "note": null
+ },
+ {
+  "id": "QED-M061",
+  "title": "Gromov width of the 4D l^4 ball",
+  "area": "Geometry",
+  "plain": "The 4D superball x1^4+y1^4+x2^4+y2^4 <= 1 contains the round unit ball, so it holds a symplectic ball of capacity pi. Its cylindrical capacity is about 3.708, and no symplectic ball can be bigger than that. Narrow the gap: embed a bigger ball, or show that no ball of capacity close to 3.708 fits.",
+  "math": "Let U = {x1^4+y1^4+x2^4+y2^4 <= 1} ⊂ (R^4, ω0) and c_G(U) = sup{πr^2 : B^4(r) embeds symplectically in U}. Known: π <= c_G(U) <= c0 := 4Γ(5/4)^2/Γ(3/2) ≈ 3.7081 (= c_Z(U) = c_EHZ(U)). Prove or disprove: c_G(U) = c0 (i.e. U satisfies the strong Viterbo equality between Gromov width and cylindrical capacity).",
+  "difficulty": 4.5,
+  "reason": "Resolved affirmatively (external audit, 25 Nov 2026): c_G(U)=c0. Planar action coordinates for a smoothing of h=sqrt(x^4+y^4) give area-preserving maps phi with h(phi(w))<=pi|w|^2/A+delta, so phi x phi sends a ball of capacity b<c0 into {h(z1)+h(z2)<1}, which lies in U since h1^2+h2^2<=(h1+h2)^2; the cylinder bound gives the reverse inequality.",
+  "novelty": 7,
+  "importance": 4,
+  "value": 6,
+  "family": null,
+  "note": null
+ },
+ {
+  "id": "QED-E002",
+  "title": "Keller maps injective on integer points",
+  "area": "Algebra",
+  "plain": "Take a polynomial map of 3-space with integer coefficients whose Jacobian determinant is identically 1 (a Keller map). Prove or disprove: if it never sends two different integer points to the same point, then it is a polynomial automorphism. Caution: if some 3D Keller counterexample with F(0)=0 has only finitely many colliding integer pairs, then F(Nx)/N for suitable N is an integer Keller map injective on Z^3 that is not an automorphism.",
+  "math": "Let $F\\in\\mathbb{Z}[x,y,z]^3$ with $\\det JF\\equiv 1$. Prove or disprove: if $F|_{\\mathbb{Z}^3}$ is injective, then $F$ has a polynomial inverse (equivalently, by Bia{\\l}ynicki-Birula--Rosenlicht, $F$ is injective on $\\mathbb{C}^3$). Caution: if some 3D Keller counterexample with $F(0)=0$ has only finitely many colliding integer pairs, then $F(Nx)/N$ for suitable $N$ is an integer Keller map injective on $\\mathbb{Z}^3$ that is not an automorphism.",
+  "difficulty": 3.5,
+  "reason": "Disproved (external audit, 25 Nov 2026). Normalise a rational 3D Keller counterexample to G=x+H (H of degree >=2, det JG=1); with D clearing denominators and p prime, K(x)=G(pDx)/(pD)=x+pR has integer coefficients, det JK=1 and is not an automorphism. If K(a)=K(b) then a-b=-p(R(a)-R(b)), so a=b mod p^j implies a=b mod p^(j+1); hence K is injective on Z^3.",
+  "novelty": 5,
+  "importance": 3,
+  "value": 3,
+  "family": null,
+  "note": null
  }
 ]

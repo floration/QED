@@ -11,6 +11,8 @@ Main set · Grade B · QED Curated · Number theory
 
 **Credit:** QED original (archived Nov 2026, restored after re-review).
 
+**QED results so far (reviewer-derived; check before relying on them):** Elementary partial result (external audit, Nov 2026): the Claim holds for every theta<1/3. Pick distinct primes p1,p2,p3 in [X,2X] and by CRT choose n in [P,2P], P=p1p2p3, with p1|n, p2|n+1, p3|n+2; then each of P(n),P(n+1),P(n+2) is at least X >> n^{1/3-o(1)}.
+
 **References:**
 - https://arxiv.org/abs/1904.05096
 - https://arxiv.org/abs/2607.16032

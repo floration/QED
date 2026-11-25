@@ -7,7 +7,7 @@ Main set · Grade B · QED Original · Combinatorics
 
 **Plain words:** Cut a deck of 3n cards into three equal piles and interleave them, choosing any of the 6 orders of the piles at each step. When n is not a power of 3 these moves can produce every (even) arrangement. How many shuffles are needed, in the worst case, to reach every reachable arrangement? Is it of order n log n, as counting suggests, or polynomially larger?
 
-**Math:** For $\sigma\in S_3$ let $g_\sigma\in S_{3n}$ map position $kn+j$ ($k\in\{0,1,2\}$, $0\le j<n$) to $3j+\sigma(k)$, and let $G_{3,3n}=\langle g_\sigma:\sigma\in S_3\rangle$. For $n$ not a power of $3$ (where $G_{3,3n}\supseteq A_{3n}$), let $D(n)$ be the diameter of the (undirected) Cayley graph $\mathrm{Cay}(G_{3,3n},\{g_\sigma^{\pm1}\})$. Counting gives $D(n)=\Omega(n\log n)$. Determine whether $D(n)=O(n\log n)$; failing that, determine the growth exponent $\lim\log D(n)/\log n$ (in particular, prove $D(n)\le n^{C}$ for an absolute $C$).
+**Math:** For $\sigma\in S_3$ let $g_\sigma\in S_{3n}$ map position $kn+j$ ($k\in\{0,1,2\}$, $0\le j<n$) to $3j+\sigma(k)$, and let $G_{3,3n}=\langle g_\sigma:\sigma\in S_3\rangle$. For $n$ not a power of $3$ (where $G_{3,3n}\supseteq A_{3n}$), let $D(n)$ be the diameter of the (undirected) Cayley graph $\mathrm{Cay}(G_{3,3n},\{g_\sigma^{\pm1}\})$. Counting gives $D(n)=\Omega(n\log n)$. Determine whether $D(n)=O(n\log n)$; failing that, determine the growth exponent $\lim\log D(n)/\log n$ (in particular, prove $D(n)\le n^{C}$ for an absolute $C$). Board target (the Lean Claim): $D(n)=O(n\log n)$; a polynomial bound $D(n)\le n^C$ is a secondary milestone.
 
 **Credit:** QED original (archived Nov 2026, restored after re-review).
 

@@ -7,7 +7,7 @@ Main set · Grade A · QED Extension · Algebra
 
 **Plain words:** The Jacobian conjecture is now known to fail. A classical reduction says that if it fails at all, it fails for maps of the special form x + (cubic homogeneous terms), but the reduction pays for this by raising the number of variables. Such a cubic counterexample is now known in 18 variables, and none exists in 4 or fewer. What is the smallest number of variables in which one exists?
 
-**Math:** Let N_3 be the least n such that there is H=(H_1,...,H_n), each H_i in C[x_1..x_n] homogeneous of degree 3, with JH nilpotent and x+H not an automorphism of C^n. Hubbers (n<=4) gives N_3>=5; de Bondt (arXiv:2610.24889, unrefereed) gives N_3<=18. Determine N_3; in particular decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5.
+**Math:** Let N_3 be the least n such that there is H=(H_1,...,H_n), each H_i in C[x_1..x_n] homogeneous of degree 3, with JH nilpotent and x+H not an automorphism of C^n. Hubbers (n<=4) gives N_3>=5; de Bondt (arXiv:2610.24889, unrefereed) gives N_3<=18. Determine N_3; in particular decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5. Board target (the Lean Claim): dimension 5, i.e. prove that every such $x+H$ in dimension 5 is an automorphism (so $N_3>5$); the exact value of $N_3$ is a further question.
 
 **Credit:** Classical HJC(n,3) program: Bass–Connell–Wright (1982), Yagzhev; Hubbers (n ≤ 4 classification); de Bondt–van den Essen arXiv:1609.09753; upper bound de Bondt arXiv:2610.24889.
 
