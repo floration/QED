@@ -9,6 +9,8 @@ Main set · Grade B · QED Extension · Geometry
 
 **Math:** Let $\Delta_u(d,n)$ be the maximum graph diameter of a pointed $d$-polyhedron with $n$ facets. Known: $\Delta_u(d,n)\le (n-d)^{\log_2 G_d}$, $G_d=(4\ln2+o(1))d/(\ln d)^2$ (Liu–Ge–Ye 2026), after Kalai–Kleitman, Todd, Sukegawa. Prove $\Delta_u(d,n)\le (n-d)^{(1-\varepsilon)\log_2 d}$ for some fixed $\varepsilon>0$ and all large $d$.
 
+**Reviewer note:** Context (AI-lab announcement, treated as correct): OpenAI 380, Superpolynomial graph diameter of simple polytopes (polynomial Hirsch refuted). Gives bounded simple polytopes with n facets, d=n^{o(1)}, diameter n^{omega(1)}, and Thm 1.2 lower bound cE*min{E^a,d^b}. Unquantified superpolynomial growth does not reach (n-d)^{(1-eps)log2 d}, so the upper-bound target stays open. The board's 'Known' line should add the new superpolynomial lower bound.
+
 **Credit:** Kalai-Kleitman 1992; Todd 2014 (arXiv:1402.3579); Sukegawa; Liu-Ge-Ye 2026 (arXiv:2609.33434)
 
 **Rests on recent unrefereed work. Check these premises first:**

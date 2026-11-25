@@ -9,6 +9,8 @@ Extended set · Grade A · QED Curated · Logic & computability
 
 **Math:** Generalized regular expressions over a finite alphabet $\Sigma$ are built from $\emptyset,\{\varepsilon\},a\ (a\in\Sigma)$ by $E\cup F$, $EF$, $\Sigma^*\setminus E$ and $E^*$, with height $h(E^*)=1+h(E)$, $h$ of atoms $=0$, and $h$ of the other operations the maximum of the arguments' heights. For regular $L\subseteq\Sigma^*$ let $h_\Sigma(L)=\min\{h(E):\mathcal L(E)=L\}$. Decide whether there exist a finite $\Sigma$ and a regular $L\subseteq\Sigma^*$ with $h_\Sigma(L)\ge2$; equivalently, whether $h_\Sigma(L)\le1$ for every regular $L$. Either answer solves the problem.
 
+**Reviewer note:** Context (AI-lab announcement, treated as correct): OpenAI 134: Generalized star height at most three. Every regular language has generalized star height <=3, so the uniform-boundedness question is settled. The board question (does any L have height >=2, i.e. is the maximum 1 or in {2,3}) is still open. Update the known-bounds context.
+
 **Credit:** Classical problem (Eggan 1963 for ordinary star height; generalized version promoted by Brzozowski, Pin, Straubing, Thérien).
 
 **Rests on recent unrefereed work. Check these premises first:**

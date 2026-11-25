@@ -17,6 +17,7 @@
  "importance": 8,
  "value": 6,
  "formal_status": "formalized",
+ "review_note": "Context (AI-lab announcement, treated as correct): OpenAI 378, The Exponential Time Hypothesis is False. Claims superlinear circuit lower bounds for a language in E^NP on infinitely many lengths, which is new for E^NP. Superlinear is far below the board's 2^{eps n} target, so this does not resolve it, but it changes the stated best-known E^NP lower bound.",
  "refs": [
   "Chen, Hirahara, Ren, Symmetric exponential time requires near-maximum circuit size, STOC 2024, arXiv:2309.12912",
   "Li, Symmetric exponential time requires near-maximum circuit size: simplified, truly uniform, STOC 2024, arXiv:2310.17762",

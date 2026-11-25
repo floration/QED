@@ -16,7 +16,7 @@
  "importance": 7,
  "value": 7,
  "formal_status": "formalized",
- "review_note": "Context: the OpenAI Hadwiger counterexample (preprint dated 2026-09-23, released 2026-10-06) is non-explicit (random graphs on 2^{1000·(10^9+1)·N} vertices); this problem asks for an explicit one.",
+ "review_note": "Context: the OpenAI Hadwiger counterexample (preprint dated 2026-09-23, released 2026-10-06) is non-explicit (random graphs on 2^{1000·(10^9+1)·N} vertices); this problem asks for an explicit one. Context (AI-lab announcement, treated as correct): OpenAI 157: Graph coloring, clique minors, and Colin de Verdiere invariants (A counterexample to Hadwiger's conjecture). Hadwiger is now disproved (alpha<=2 graphs with cm(G)<m/100, h<26m/75+2/3<m/2<=chi). But the construction is probabilistic (sampled configurations, unbounded parameter n), so it gives no explicit graph with <10^6 vertices and a checkable proof. The board target is unmet; premise (a counterexample exists) is confirmed. Reframe as 'explicit/small' only.",
  "refs": [
   "https://arxiv.org/pdf/2610.17090",
   "https://en.wikipedia.org/wiki/Hadwiger_conjecture_(graph_theory)",

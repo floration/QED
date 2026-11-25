@@ -9,6 +9,8 @@ Main set · Grade B · QED Curated · Complexity
 
 **Math:** Prove that for some ε > 0 there is L ∈ E^NP such that for infinitely many n, L ∩ {0,1}^n has no circuit of size 2^{εn} (stronger: for all large n). Related target (not claimed equivalent at this size): AVOID ∈ FP^NP, which by Korten (2021) implies E^NP ⊄ SIZE[2^n/n].
 
+**Reviewer note:** Context (AI-lab announcement, treated as correct): OpenAI 378, The Exponential Time Hypothesis is False. Claims superlinear circuit lower bounds for a language in E^NP on infinitely many lengths, which is new for E^NP. Superlinear is far below the board's 2^{eps n} target, so this does not resolve it, but it changes the stated best-known E^NP lower bound.
+
 **Credit:** Korten (FOCS 2021); Chen, Hirahara, Ren (STOC 2024), arXiv:2309.12912; Li (STOC 2024), arXiv:2310.17762.
 
 **Rests on recent unrefereed work. Check these premises first:**

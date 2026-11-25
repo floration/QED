@@ -16,6 +16,7 @@
  "importance": 7,
  "value": 6,
  "formal_status": "formalized",
+ "review_note": "Context (AI-lab announcement, treated as correct): OpenAI 380, Superpolynomial graph diameter of simple polytopes (polynomial Hirsch refuted). Gives bounded simple polytopes with n facets, d=n^{o(1)}, diameter n^{omega(1)}, and Thm 1.2 lower bound cE*min{E^a,d^b}. Unquantified superpolynomial growth does not reach (n-d)^{(1-eps)log2 d}, so the upper-bound target stays open. The board's 'Known' line should add the new superpolynomial lower bound.",
  "refs": [
   "https://arxiv.org/abs/2609.33434",
   "https://arxiv.org/abs/1402.3579"
