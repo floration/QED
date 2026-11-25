@@ -8298,15 +8298,6 @@
 "reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Schur–Siegel–Smyth trace problem)"
 },
 {
-"id": "QED-E038",
-"title": "Squeezing the square-lattice site percolation threshold",
-"area": "Probability",
-"plain": "Colour each square of an infinite chessboard black independently with probability p. There is a critical p above which an infinite connected black cluster appears; simulations put it at about 0.5927, but nobody has a formula. The best proved statements only say it lies between 0.556 and 0.6669. Prove a tighter bound on either side.",
-"math": "Let $p_c=p_c^{\\mathrm{site}}(\\mathbb Z^2)$. Known rigorously $0.556<p_c<0.666894$. Formal target: improve the upper bound at its published precision, $p_c<0.6668$ (more generally improve either endpoint rigorously).",
-"difficulty": 4.0,
-"reason": "withdrawn Nov 2026 for refactoring: rescored 9/30 (target 0.6668 is too small a step); will return with a stronger target after review"
-},
-{
 "id": "QED-E039",
 "title": "Cover any 3D convex body with 13 smaller copies",
 "area": "Geometry",

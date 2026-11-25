@@ -1,0 +1,25 @@
+{
+ "id": "QED-E038",
+ "set": "extended",
+ "title": "The first decimal digit of the square-lattice site percolation threshold",
+ "area": "Probability",
+ "difficulty": 6.0,
+ "grade": "C",
+ "provenance": "Extension",
+ "credit": "Wierman–Oberly 2024 (upper bound 0.666894); van den Berg–Ermakov 1996 (lower bound 0.556); Riordan–Walters 2007 (high-confidence numerics)",
+ "plain": "Colour each square of an infinite chessboard black independently with probability p. Above a critical value p_c an infinite connected black region appears. Simulations put p_c at 0.592746..., and a randomised computer method certifies 0.5925 <= p_c <= 0.5930 with 99.9999% confidence. The best proved bounds, though, are only 0.556 < p_c < 0.666894, which do not even settle the first decimal digit. Prove that p_c < 0.6, so that p_c = 0.5...",
+ "math": "Let $p_c=p_c^{\\mathrm{site}}(\\mathbb Z^2)=\\sup\\{p:\\theta(p)=0\\}$, where $\\theta(p)$ is the probability under product Bernoulli($p$) site percolation on $\\mathbb Z^2$ (nearest-neighbour adjacency) that the origin lies in an infinite open cluster. Prove, by a deterministic argument (computer assistance with exact or interval arithmetic allowed, statistical sampling not), that $p_c<3/5$. With the known $p_c>0.556$, this gives $p_c\\in(0.5,0.6)$.",
+ "novelty": 2,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "review_note": "Known: Lower bound: p_c > 0.556 (van den Berg-Ermakov 1996), with no improvement found since. Upper bounds: 0.679492 (Wierman 1995, substitution method, CPC 4), then 0.666894 (Wierman-Oberly 2024, substitution method on self-matching lattices, the first improvement since 1995). Oberly-Wierman describe ongoing work on further small improvements by the same method. Non-rigorous: p_c = 0.59274605... from high-precision numerics (e.g. Jacobsen 2015 transfer matrices; Newman-Ziff Monte Carlo). Statistical: Riordan-Walters 2007, using the Balister-Bollobas-Walters 1-independent comparison method with Monte Carlo evaluation of a finite-box event, give [0.5925, 0.5930] at 99.9999% confidence. They note that exact enumeration of the needed box probabilities is impractical. Also p_c^site(Z^2) > 1/2 strictly (Higuchi) and p_c^site(Z^2) + p_c^site(matching lattice) = 1.",
+ "refs": [
+  "J. C. Wierman, Substitution method critical probability bounds for the square lattice site percolation model, Combin. Probab. Comput. 4 (1995) 181-188.",
+  "J. C. Wierman, S. P. Oberly, A new upper bound for the site percolation threshold of the square lattice, in Combinatorics, Graph Theory and Computing (Springer, 2024), doi:10.1007/978-3-031-62166-6_9.",
+  "J. van den Berg, A. Ermakov, A new lower bound for the critical probability of site percolation on the square lattice, Random Structures Algorithms 8 (1996) 199-212.",
+  "O. Riordan, M. Walters, Rigorous confidence intervals for critical probabilities, Phys. Rev. E 76 (2007) 011110, arXiv:math/0702232.",
+  "P. Balister, B. Bollobas, M. Walters, Continuum percolation with steps in the square or the disc, Random Structures Algorithms 26 (2005) 392-403.",
+  "J. L. Jacobsen, Critical points of Potts and O(N) models from eigenvalue identities in periodic Temperley-Lieb algebras, J. Phys. A 48 (2015) 454003."
+ ]
+}
