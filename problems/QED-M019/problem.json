@@ -1,0 +1,28 @@
+{
+ "id": "QED-M019",
+ "legacy_id": "N-266",
+ "set": "main",
+ "title": "Codes avoiding square distances",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Original",
+ "results": "Small values A(1..7)=1,2,4,5,10,12,14 re-verified by exact max-clique. Frankl-Rodl rate<1 argument is correct. The claim that codes with all distances between consecutive squares are polynomial is only correct for windows at linear distance. Constant-weight codes with w~k^2/2, w~n^{2/3}, and pairwise intersections <k have all distances in (k^2,(k+1)^2).",
+ "plain": "Find the largest set of binary strings of length n in which no two differ in a perfect-square number of positions. Does it grow exponentially in n, and if so at what rate? This is a hypercube version of Sarkozy's theorem on square differences.",
+ "math": "Let $A(n)=\\max\\{|C|: C\\subseteq\\{0,1\\}^n,\\ d_H(x,y)\\notin\\{1,4,9,16,\\dots\\}\\ \\forall x\\ne y\\in C\\}$. Decide whether $A(n)=2^{o(n)}$. More precisely, determine $\\liminf_n\\frac1n\\log_2A(n)$ and $\\limsup_n\\frac1n\\log_2A(n)$ (in particular whether they are equal).",
+ "novelty": 8,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2504.12296v3",
+  "https://arxiv.org/pdf/1402.6294",
+  "https://people.maths.ox.ac.uk/keevash/papers/franklrodl-journal.pdf",
+  "https://arxiv.org/pdf/2604.05607",
+  "https://arxiv.org/pdf/2305.00433",
+  "https://arxiv.org/pdf/2611.04523",
+  "https://arxiv.org/pdf/2604.05607",
+  "https://arxiv.org/pdf/2506.18782",
+  "https://people.maths.ox.ac.uk/keevash/papers/franklrodl-journal.pdf"
+ ]
+}

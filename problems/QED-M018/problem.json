@@ -1,0 +1,23 @@
+{
+ "id": "QED-M018",
+ "legacy_id": "N-667",
+ "set": "main",
+ "title": "Breaking the log k barrier for 3-petal sunflowers",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Erdős-Rado 1960 (sunflower conjecture); log k barrier discussed in Alweiss-Lovett-Wu-Zhang, Annals 2021, and Rao, The story of sunflowers, JLMS 2026 (arXiv:2509.14790)",
+ "plain": "Show every family of more than (o(log k))^k sets of size k (e.g. (log k)^{(1-c)k} or (log log k)^{O(k)}) contains a sunflower with 3 petals.",
+ "math": "Let f(k,3) be the least m such that every family of m distinct k-element sets contains a 3-petal sunflower. Known: f(k,3) <= (C log k)^k (ALWZ, Rao, Bell-Chueluecha-Warnke). Prove f(k,3) <= (eps(k) log k)^k for some eps(k)->0, e.g. f(k,3) <= (log k)^{(1-c)k} for a constant c>0.",
+ "formal_status": "formalized",
+ "refs": [
+  "Alweiss, Lovett, Wu, Zhang, Improved bounds for the sunflower lemma, Annals of Math 2021",
+  "The Story of Sunflowers (survey), arXiv:2509.14790",
+  "Bell, Chueluecha, Warnke, Note on sunflowers, Discrete Math 2021",
+  "Alweiss-Lovett-Wu-Zhang, Annals 2021",
+  "Rao, The story of sunflowers, JLMS 2026 / arXiv:2509.14790",
+  "Lovett, PCMI lecture notes: from sunflowers to thresholds",
+  "arXiv:2606.02667"
+ ]
+}

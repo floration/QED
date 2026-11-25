@@ -1,0 +1,22 @@
+{
+ "id": "QED-E017",
+ "legacy_id": "N-610",
+ "set": "extended",
+ "title": "Unforced blow-up near the forced one",
+ "area": "PDE",
+ "difficulty": 6.8,
+ "grade": "C",
+ "plain": "The 2026 forced Navier–Stokes blow-up uses a force that is smooth through the blow-up time. Can the force be made to vanish identically at the blow-up instant while staying smooth up to and including that instant?",
+ "math": "Do there exist $T>0$ and $f\\in C_c^\\infty(\\mathbb R^3\\times(0,\\infty))$ with $f(\\cdot,T)\\equiv0$ such that the 3D Navier–Stokes solution on $\\mathbb R^3$ with $u_0=0$ and force $f$ satisfies $\\limsup_{t\\uparrow T}\\|u(t)\\|_{L^\\infty}=\\infty$? (Requiring $f\\equiv0$ on $[T-\\delta,T]$ for some $\\delta>0$ instead would be equivalent to unforced blow-up from smooth data, which is the Millennium problem.)",
+ "novelty": 4,
+ "importance": 4,
+ "value": 3,
+ "formal_status": "not_formalized",
+ "review_note": "A",
+ "refs": [
+  "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "https://arxiv.org/pdf/2609.10262",
+  "https://arxiv.org/pdf/2609.35406",
+  "https://arxiv.org/pdf/2611.06869"
+ ]
+}

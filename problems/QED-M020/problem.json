@@ -1,0 +1,24 @@
+{
+ "id": "QED-M020",
+ "legacy_id": "N-594",
+ "set": "main",
+ "title": "Critical linear firefighter rate on Z^3",
+ "area": "Combinatorics",
+ "difficulty": 2.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Extension of Develin-Hartke (arXiv:math/0409195) and Dyer-Martinez-Pedroza-Thorne (arXiv:1507.03050, Cor. 4); o(t) failure from arXiv:2002.11205.",
+ "results": "c* >= 8/243 (~0.033), elementary: Loomis-Whitney gives |vertex boundary of B| >= |B|^{2/3}; for c<2a^2-6a^3 with a=2/9, a large initial cube burns forever by induction b_t >= (a(t+T0))^3. Using the asymptotically sharp Wang-Wang vertex isoperimetry (l1-balls, constant 4(3/4)^{2/3}) the same argument heuristically gives ~32/27, not checked rigorously c* <= 8, elementary: protect the l1-sphere |x|_1=D (4D^2+2 vertices) before step D-R; c>8 suffices for large D.",
+ "plain": "On the 3D grid, a finite fire spreads to all unprotected neighbours each step, and at step t you may protect about ct new vertices. It is known that linear growth is the right order. Elementary arguments show that rate c>8 always contains the fire and that c<8/243 does not. Narrow this gap, or find the exact critical rate.",
+ "math": "Let c* = inf{c : for every finite initial fire B_0 ⊂ Z^3 there is a protection schedule with at most ⌊c t⌋ newly protected vertices at step t that keeps the total burnt set finite}. Known (QED-derived, elementary): 8/243 ≤ c* ≤ 8 (bound field and W); M additionally records 64/243 ≤ c* ≤ 48/7 (not independently checked here; numerics suggest a static ℓ^4-ball wall gives ≈ 6.4). Target: prove c* > 64/243, i.e. some rate c > 64/243 fails to contain some finite outbreak.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/math/0409195",
+  "https://arxiv.org/abs/1507.03050",
+  "https://arxiv.org/abs/2002.11205",
+  "https://arxiv.org/pdf/2307.10081"
+ ]
+}

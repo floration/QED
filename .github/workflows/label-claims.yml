@@ -3,7 +3,7 @@ on: { issues: { types: [opened] } }
 permissions: { issues: write }
 jobs:
   label:
-    if: startsWith(github.event.issue.title, 'Claim N-')
+    if: startsWith(github.event.issue.title, 'Claim ')
     runs-on: ubuntu-latest
     steps:
       - run: gh issue edit ${{ github.event.issue.number }} -R ${{ github.repository }} --add-label claim

@@ -1,0 +1,26 @@
+{
+ "id": "QED-M089",
+ "legacy_id": "N-646",
+ "set": "main",
+ "title": "Derivative loss in L4 Strichartz on the cube surface",
+ "area": "PDE",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Blair, Ford, Marzuola, Strichartz estimates for the wave equation on flat cones / Euclidean surfaces with conical singularities, arXiv:1003.0666.",
+ "results": "s* >= 0 (trivial). No positive lower bound known. s* <= 1/4: Blair-Ford-Marzuola, Thm 1.5 (arXiv 1003.0666), loss 1/p for compact Euclidean surfaces with conical singularities, p=q=4; authors call the loss an artifact of the method.",
+ "plain": "On the flat torus, the L4 space-time estimate for Schrodinger waves loses only epsilon derivatives (Bourgain). On the surface of a cube, which has eight cone points that diffract waves, only a loss of 1/4 derivative is known. Find the true loss: prove any loss below 1/4, or show some loss is necessary.",
+ "math": "Let $S$ be the unit cube surface, $\\Delta$ the Friedrichs extension from $C_c^\\infty(S\\setminus\\text{vertices})$, and $s^*=\\inf\\{s\\ge0:\\|e^{it\\Delta}f\\|_{L^4([0,1]\\times S)}\\le C_s\\|f\\|_{H^s(S)}\\}$. Known: $0\\le s^*\\le\\tfrac14$ (Blair–Ford–Marzuola). Prove $s^*<\\tfrac14$, or $s^*>0$; ideally determine $s^*$ (conjecturally $0$).",
+ "novelty": 7,
+ "importance": 5,
+ "value": 7,
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: needs Friedrichs Laplacian and Sobolev spaces on a cone surface.",
+ "refs": [
+  "https://arxiv.org/abs/1003.0666",
+  "https://arxiv.org/abs/1809.09909",
+  "https://arxiv.org/pdf/0910.1795",
+  "https://arxiv.org/pdf/1105.5410",
+  "https://arxiv.org/pdf/1003.0666"
+ ]
+}

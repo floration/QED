@@ -1,0 +1,33 @@
+{
+ "id": "QED-M092",
+ "legacy_id": "N-418",
+ "set": "main",
+ "title": "Forced blow-up up to the Lions threshold",
+ "area": "PDE",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Extension",
+ "credit": "OpenAI, forced Navier–Stokes blow-up (Sep 2026, unrefereed PDF); Lions (1969) for α ≥ 5/4; Tao, averaged Navier–Stokes (arXiv:1402.0290).",
+ "premise_risks": [
+  "OpenAI Navier–Stokes PDF (Sep 2026, company PDF, unrefereed, reportedly Lean-formalized): the problem assumes forced blow-up from rest is known at α = 1.",
+  "arXiv:2609.10262 (2026 preprint): cited as related forced-blow-up work for the Laplacian; motivation only."
+ ],
+ "plain": "With an ordinary Laplacian, a smooth compactly supported push can make a fluid at rest blow up in finite time (OpenAI, 2026). With dissipation (-Δ)^α for α ≥ 5/4, Lions proved that solutions stay smooth. Does forced blow-up from rest still happen for every α strictly between 1 and 5/4?",
+ "math": "For $\\alpha\\in(1,5/4)$ consider $\\partial_tu+(u\\cdot\\nabla)u+\\nabla p=-(-\\Delta)^{\\alpha}u+f$, $\\nabla\\cdot u=0$ on $\\mathbb R^3$, $u(\\cdot,0)=0$. Determine the set of $\\alpha\\in(1,5/4)$ for which there exists $f\\in C_c^\\infty(\\mathbb R^3\\times(0,\\infty);\\mathbb R^3)$ whose unique smooth solution satisfies $\\limsup_{t\\uparrow T}\\|u(t)\\|_{L^\\infty}=\\infty$ for some $T<\\infty$. In particular, is it all of $(1,5/4)$, or is it nonempty?",
+ "novelty": 6,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: needs fractional Navier–Stokes solution theory.",
+ "refs": [
+  "https://openai.com/index/navier-stokes-solution/",
+  "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "https://arxiv.org/pdf/2609.10262",
+  "https://arxiv.org/abs/2407.06776",
+  "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "https://arxiv.org/abs/2609.10262",
+  "https://arxiv.org/abs/2407.06776",
+  "https://arxiv.org/abs/1402.0290",
+  "https://arxiv.org/abs/2307.15986"
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "id": "QED-M053",
+ "legacy_id": "N-631",
+ "set": "main",
+ "title": "Positive metric entropy for the x^4+y^4 billiard",
+ "area": "Dynamics",
+ "difficulty": 6.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "O. Knill et al., billiards in l^p unit balls (lpbilliards.pdf, Harvard); positive metric entropy for smooth convex billiards / standard-map-type problem (classical open problem)",
+ "plain": "The billiard table x^4 + y^4 <= 1 is smooth and convex, but its curvature vanishes at four points, so (by Mather) it has no caustics. Its phase space mixes stable islands with apparently chaotic regions. Prove that the chaos is real: on a set of positive measure, nearby trajectories separate exponentially fast.",
+ "math": "Let $\\Phi$ be the billiard map of $\\Omega=\\{x^4+y^4\\le1\\}$, preserving the Liouville measure $\\nu=\\sin\\theta\\,ds\\,d\\theta$. Prove that $h_\\nu(\\Phi)>0$; equivalently, by Pesin's formula, that $\\Phi$ has a nonzero Lyapunov exponent on a set of positive $\\nu$-measure.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 5,
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: billiard map construction on a quartic curve plus Kolmogorov-Sinai entropy or Lyapunov/Pesin theory is not in Mathlib. 2026 refs (2605.19897, 2610.28247) are background progress on topological entropy and lemons, not premises.",
+ "refs": [
+  "https://legacy-www.math.harvard.edu/~knill/offprints/lpbilliards.pdf",
+  "https://arxiv.org/abs/2605.19897",
+  "https://arxiv.org/abs/2201.01362",
+  "https://arxiv.org/abs/2610.28247",
+  "https://arxiv.org/abs/1301.2547",
+  "https://arxiv.org/pdf/1301.2547"
+ ]
+}

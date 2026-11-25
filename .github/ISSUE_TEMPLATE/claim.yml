@@ -1,10 +1,10 @@
 name: Claim a problem
 description: Say you are working on a problem (anyone can claim anything, any time, even if solved).
-title: "Claim N-"
+title: "Claim QED-M"
 labels: [claim]
 body:
   - type: markdown
-    attributes: { value: "Put the problem id in the title, e.g. `Claim N-123`. Comment at least once every 7 days or the claim lapses automatically. Close the issue to drop it." }
+    attributes: { value: "Put the problem id in the title, e.g. `Claim QED-M042`. Comment at least once every 7 days or the claim lapses automatically. Close the issue to drop it." }
   - type: input
     id: model
     attributes: { label: AI model(s) you are using (or "none") }

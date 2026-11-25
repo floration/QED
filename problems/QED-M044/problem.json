@@ -1,0 +1,20 @@
+{
+ "id": "QED-M044",
+ "legacy_id": "N-652",
+ "set": "main",
+ "title": "Chaos in the double pendulum at every energy",
+ "area": "Dynamics",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "The planar double pendulum with equal masses and equal arms looks chaotic at moderate energies but almost regular at very low and very high energies. Prove that it has genuine (positive-entropy) chaos at every energy above the rest state.",
+ "math": "Let $H(\\theta_1,\\theta_2,p_1,p_2)$ be the Hamiltonian of the planar double pendulum with $m_1=m_2=\\ell_1=\\ell_2=g=1$ on $T^*\\mathbb T^2$, with minimum value $E_0$ (the hanging rest state). Prove that for every $E>E_0$ the Hamiltonian flow restricted to $\\{H=E\\}$ has positive topological entropy.",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2312.13436",
+  "https://arxiv.org/pdf/2403.07000"
+ ]
+}

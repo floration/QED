@@ -1,0 +1,22 @@
+{
+ "id": "QED-M048",
+ "legacy_id": "N-710",
+ "set": "main",
+ "title": "From density to Kolmogorov typicality of positive entropy in symplectic families",
+ "area": "Dynamics",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "P. Berger and D. Turaev, arXiv:2507.11375 (2025), Thm B; P. Berger, arXiv:2003.09329 (Kolmogorov typicality / emergence).",
+ "premise_risks": [
+  "arXiv:2507.11375 (Berger-Turaev, 2025 preprint, refereeing status unverified): the problem assumes its Thm B (density of families with positive metric entropy at every parameter) and borrows its definition of Kolmogorov typicality."
+ ],
+ "plain": "Berger and Turaev showed that families of area-preserving surface maps having positive metric entropy at every parameter are dense among smooth families. Show this is typical, i.e. holds for a Kolmogorov-generic (prevalent) set of families, or find a robust obstruction.",
+ "math": "Fix a compact surface Σ with area form ω and k ≥ 1. Let F be the space of C^∞ families (f_p)_{p∈[0,1]^k} of ω-preserving diffeomorphisms of Σ (C^∞ topology on (p,x) ↦ f_p(x)) such that f_p has an elliptic periodic point for every p, and let F_+ = {families with h_Leb(f_p) > 0 for Lebesgue-a.e. p}. Prove or disprove: F_+ contains a Baire-generic (countable intersection of open dense) subset of an open set U ⊂ F on which Berger-Turaev's density theorem applies; equivalently disprove by exhibiting a nonempty open U ⊂ F such that for every family in a dense subset of U, {p : h_Leb(f_p) = 0} has positive Lebesgue measure. (Here 'Kolmogorov typical' must be replaced by the exact notion in Berger-Turaev, arXiv:2507.11375, if it differs from Baire genericity in the family space.)",
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: needs C^∞ family spaces of symplectic surface diffeomorphisms, Kolmogorov-Sinai entropy, and the Berger-Turaev typicality notion. The M_fix's genericity notion should be verified against arXiv:2507.11375 before use.",
+ "refs": [
+  "https://arxiv.org/abs/2507.11375",
+  "https://arxiv.org/abs/2003.09329"
+ ]
+}

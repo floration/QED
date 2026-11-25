@@ -1,0 +1,19 @@
+{
+ "id": "QED-M096",
+ "legacy_id": "N-644",
+ "set": "main",
+ "title": "Liouville theorem for Lane-Emden with a shifted nonlinearity",
+ "area": "PDE",
+ "difficulty": 3.0,
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "Gidas-Spruck: -Delta u = u^p has no positive solution on R^n for subcritical p. Replace u^p by the value of u^p at a shifted point x+e. Is there still no positive solution, for every subcritical p?",
+ "math": "Let $n\\ge3$, $1<p<\\frac{n+2}{n-2}$, $e\\in\\mathbb R^n\\setminus\\{0\\}$. Prove or disprove: there is no positive $u\\in C^2(\\mathbb R^n)$ with $-\\Delta u(x)=u(x+e)^p$ for all $x$. (For $1<p<\\frac n{n-2}$ the standard Mitidieri–Pohozaev test-function argument applies, since the shift is negligible at large scales; the open range is $\\frac n{n-2}\\le p<\\frac{n+2}{n-2}$. One may also ask whether positive solutions exist for $p\\ge\\frac{n+2}{n-2}$.)",
+ "novelty": 6,
+ "importance": 3,
+ "value": 4,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.arxiv.org/abs/1706.03467"
+ ]
+}

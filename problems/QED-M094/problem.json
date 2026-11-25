@@ -1,0 +1,23 @@
+{
+ "id": "QED-M094",
+ "legacy_id": "N-640",
+ "set": "main",
+ "title": "Heat with a cosine reaction",
+ "area": "PDE",
+ "difficulty": 3.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "H. Fujita 1966 (critical exponent); R. Pinsky 1997 (weighted Fujita problem, a >= 0)",
+ "plain": "In u_t = u_xx + cos(x) u^2 the reaction term averages to zero over a period, but a second-order (homogenization) effect produces an effective +u^3 term, which in one dimension is exactly Fujita's borderline exponent where every positive solution of u_t = u_xx + u^3 blows up. Does every positive solution of the cosine equation blow up in finite time?",
+ "math": "Let $d\\ge1$, $a\\in C^\\infty(\\mathbb R^d)$ be $\\mathbb Z^d$-periodic with $\\int_{[0,1]^d}a=0$, $a\\not\\equiv0$. Consider $u_t=\\Delta u+a(x)u^p$, $u(\\cdot,0)=u_0\\in C_c(\\mathbb R^d)$, $u_0\\ge0$, $u_0\\not\\equiv0$. Prove: (i) if $1<p\\le1+1/d$, every such solution blows up in finite time; (ii) if $p>1+1/d$, solutions with sufficiently small $u_0$ are global. Test case: $d=1$, $p=2$, $a=\\cos(2\\pi x)$ (equivalently $a=\\cos x$ with $2\\pi$-periodicity).",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://portal.mardi4nfdi.de/wiki/Publication:678039",
+  "https://arxiv.org/pdf/2212.12491",
+  "https://arxiv.org/pdf/0805.1313",
+  "https://par.nsf.gov/servlets/purl/10513150"
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "id": "QED-E018",
+ "legacy_id": "N-113",
+ "set": "extended",
+ "title": "Random Wang tiles",
+ "area": "Probability",
+ "difficulty": 1.6,
+ "grade": "C",
+ "plain": "(Corrected.) Draw n Wang tiles whose four edge colours are chosen uniformly at random from c colours, and let c grow with n ≈ λc². How likely is the set to tile the plane? Show the probability has a limit F(λ) and find the critical λ above which tiling is almost certain.",
+ "math": "Let $T_1,\\dots,T_n$ be i.i.d. Wang tiles, each with its four edge colours i.i.d. uniform in $[c]$ and no rotations allowed. Let $n=\\lfloor\\lambda c^2\\rfloor$ and $c\\to\\infty$. Prove that $F(\\lambda)=\\lim_{c\\to\\infty}\\Pr(\\{T_i\\}\\text{ tiles }\\mathbb Z^2)$ exists for every $\\lambda>0$. Determine $\\lambda_c=\\inf\\{\\lambda:F(\\lambda)=1\\}$; a first-moment heuristic suggests $\\lambda_c=1$. Also determine $F$ on $(0,\\lambda_c)$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 4,
+ "formal_status": "not_formalized",
+ "review_note": "A"
+}

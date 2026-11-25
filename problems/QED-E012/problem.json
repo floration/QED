@@ -1,0 +1,16 @@
+{
+ "id": "QED-E012",
+ "legacy_id": "N-341",
+ "set": "extended",
+ "title": "Prime Markov triples",
+ "area": "Number theory",
+ "difficulty": 7.5,
+ "grade": "C",
+ "plain": "Markov triples are positive integer solutions of x^2+y^2+z^2=3xyz. Are there infinitely many in which all three numbers are prime?",
+ "math": "Decide whether infinitely many solutions $(x,y,z)\\in\\mathbb Z_{>0}^3$ of $x^2+y^2+z^2=3xyz$ have $x,y,z$ all prime.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 3,
+ "formal_status": "not_formalized",
+ "review_note": "W"
+}

@@ -4,8 +4,8 @@ import sys,os,re,json,subprocess
 files=[f for f in sys.argv[1:] if f.strip()]
 def fail(msg): json.dump({'ok':False,'error':msg},open('check_result.json','w')); print('FAIL:',msg); sys.exit(1)
 dirs={os.path.dirname(f) for f in files}
-if not files or any(not re.fullmatch(r'solutions/N-\d{3,4}/[A-Za-z0-9-]+/(Solution\.lean|meta\.json|README\.md)',f) for f in files):
-    fail('A solution PR may only add solutions/N-xxx/<username>/{Solution.lean,meta.json,README.md}')
+if not files or any(not re.fullmatch(r'solutions/(?:QED-[ME]\d{3}|N-000)/[A-Za-z0-9-]+/(Solution\.lean|meta\.json|README\.md)',f) for f in files):
+    fail('A solution PR may only add solutions/QED-Mxxx/<username>/{Solution.lean,meta.json,README.md}')
 if len(dirs)!=1: fail('One solution per PR')
 d=dirs.pop(); pid,user=d.split('/')[1:3]
 author=os.environ.get('PR_AUTHOR','')

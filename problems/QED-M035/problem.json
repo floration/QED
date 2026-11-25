@@ -1,0 +1,20 @@
+{
+ "id": "QED-M035",
+ "legacy_id": "N-700",
+ "set": "main",
+ "title": "Does UGC imply SSEH?",
+ "area": "Complexity",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Raghavendra, Steurer, 'Graph expansion and the Unique Games Conjecture', STOC 2010; Raghavendra, Steurer, Tulsiani, 'Reductions between expansion problems', CCC 2012 (arXiv:1011.2586)",
+ "plain": "Give a polynomial-time reduction from Small-Set Expansion to Unique Games' hardness direction, i.e. prove UGC => SSEH (Raghavendra-Steurer proved SSEH => UGC), or exhibit an oracle/algorithmic separation (e.g. an algorithm for SSE on a class of graphs where UG remains as hard as in general).",
+ "math": "Prove that Unique Games reduces to Small-Set Expansion: for every η > 0 there is δ > 0 and a polynomial-time reduction showing Gap-SSE(η, δ) is UG-hard, so that UGC implies SSEH (Raghavendra-Steurer proved SSEH ⇒ UGC). A separation is to be shown relative to an explicit model (oracle, or an algorithm family such as low-degree SoS that solves SSE on instances where UG remains hard).",
+ "formal_status": "not_formalized",
+ "lean_gap": "Not formalized: needs polynomial-time reductions, NP-hardness and gap promise problems, none in Mathlib.",
+ "refs": [
+  "Raghavendra, Steurer, Graph expansion and the Unique Games Conjecture, STOC 2010",
+  "Raghavendra, Steurer, Tulsiani, Reductions between expansion problems, CCC 2012, arXiv:1011.2586",
+  "Bafna, Barak, Kothari, Schramm, Steurer, Playing Unique Games on certified small-set expanders, STOC 2021, arXiv:2006.09969"
+ ]
+}

@@ -1036,20 +1036,6 @@
 "note": "Reasonable strengthening of forced blow-up; one of several similar variants."
 },
 {
-"id": "N-077",
-"title": "Closed-form Euler blow-up",
-"area": "Analysis",
-"plain": "Give smooth starting data for frictionless 3D fluid, written as an explicit formula, that blows up.",
-"math": "Find closed-form smooth finite-energy $u_0$ on $\\mathbb{R}^3$ whose unforced Euler solution blows up in finite time.",
-"difficulty": 5.1,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 7,
-"value": 7,
-"family": "fluid-blowup",
-"note": "Explicit smooth finite-energy Euler blow-up is a deep, natural goal."
-},
-{
 "id": "N-078",
 "title": "Tangent-sweep Keller maps",
 "area": "Algebra",
@@ -1524,20 +1510,6 @@
 "value": 3,
 "family": "sofa",
 "note": "Likely easy: some arcs are circle involutes, non-algebraic."
-},
-{
-"id": "N-113",
-"title": "Random Wang tiles",
-"area": "Probability",
-"plain": "Pick n random tile types with colored edges. How likely are they to tile the plane?",
-"math": "For $n$ Wang tiles with edge colours i.i.d. uniform in $[c]$, find the asymptotics of $\\Pr(\\text{tiles }\\mathbb{Z}^2)$ as $n\\to\\infty$.",
-"difficulty": 1.6,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "Random Wang tile sets tiling probability; natural, connects undecidability and probability."
 },
 {
 "id": "N-114",
@@ -4014,20 +3986,6 @@
 "note": "Isospectral aperiodic monotiles; mash-up of two famous themes."
 },
 {
-"id": "N-300",
-"title": "Rotation-proof lattice-point-poor shapes",
-"area": "Geometry",
-"plain": "Find the shape in the plane with given area that contains the fewest integer lattice points after any rotation, asymptotically.",
-"math": "Determine the convex $K$ of area $A$ minimising $\\sup_{\\theta}\\#(\\rho_\\theta K\\cap\\mathbb{Z}^2)$, asymptotically as $A\\to\\infty$, to second-order term.",
-"difficulty": 6.5,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "Rotation-uniform lattice-point minimizing shapes; fresh lattice-point problem."
-},
-{
 "id": "N-301",
 "title": "Moser's worm in the sphere",
 "area": "Geometry",
@@ -4588,20 +4546,6 @@
 "note": "Cutoff for square-sum transposition shuffle; real random-walk content."
 },
 {
-"id": "N-341",
-"title": "Prime Markov triples",
-"area": "Number theory",
-"plain": "Show only finitely many Markov triples consist of three primes, or infinitely many.",
-"math": "Decide whether infinitely many solutions of $x^2+y^2+z^2=3xyz$ have $x,y,z$ all prime.",
-"difficulty": 7.5,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "All-prime Markov triples; natural, crisp, connects tree growth to prime sieving."
-},
-{
 "id": "N-342",
 "title": "SOF Collatz orbits are bounded",
 "area": "Dynamics",
@@ -5078,20 +5022,6 @@
 "note": "First-passage percolation in disguise; closed-form time constant unrealistic."
 },
 {
-"id": "N-378",
-"title": "Galois groups of Keller fibers",
-"area": "Algebra",
-"plain": "Find the symmetry group of the preimages of a point under the 2026 Keller maps.",
-"math": "Compute the Galois group of the generic fiber of Gallagher's degree-$n$ Keller family for each $n\\ge3$.",
-"difficulty": 1.9,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 5,
-"value": 6,
-"family": "keller",
-"note": "Natural monodromy question for new Keller family; concrete and computable."
-},
-{
 "id": "N-379",
 "title": "Palindromic Carmichael numbers",
 "area": "Number theory",
@@ -5314,20 +5244,6 @@
 "value": 4,
 "family": "hyperop",
 "note": "Depends on undefined 'unique analytic family'; vague target set, modest interest."
-},
-{
-"id": "N-397",
-"title": "Keller maps with integer fibers",
-"area": "Algebra",
-"plain": "Show no Jacobian-conjecture counterexample with integer coefficients is injective on integer points but not invertible.",
-"math": "Prove every Keller map $F\\in\\mathbb{Z}[x,y,z]^3$ injective on $\\mathbb{Z}^3$ is a polynomial automorphism of $\\mathbb{C}^3$.",
-"difficulty": 3.6,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 5,
-"value": 6,
-"family": "keller",
-"note": "Integer-injectivity implies automorphism: clean arithmetic Jacobian question."
 },
 {
 "id": "N-398",
@@ -5846,20 +5762,6 @@
 "value": 2,
 "family": "seven-free",
 "note": "Linnik bound for 7-free primes; mechanical Maynard-style mash-up."
-},
-{
-"id": "N-439",
-"title": "Keller monodromy is everything",
-"area": "Algebra",
-"plain": "Show every symmetric group appears as the hidden symmetry group of the fibres of some 3D Jacobian-conjecture counterexample.",
-"math": "Prove that for each $n\\ge3$ there is a non-invertible Keller map $\\mathbb{C}^3\\to\\mathbb{C}^3$ of geometric degree $n$ whose generic monodromy group is $S_n$.",
-"difficulty": 2.5,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 5,
-"value": 6,
-"family": "keller",
-"note": "Monodromy of Keller maps; concrete, structural, clearly stated."
 },
 {
 "id": "N-440",
@@ -8186,20 +8088,6 @@
 "note": "Irrationality of hat SAW constant; hopeless, template 'X on hat irrational'."
 },
 {
-"id": "N-610",
-"title": "Unforced blow-up near the forced one",
-"area": "PDE",
-"plain": "Show the known forced Navier–Stokes blow-up can be made to work with forcing that decays to zero at the blow-up time.",
-"math": "Prove there exist smooth $u_0$ and $f\\in L^1_tL^2_x\\cap C^\\infty$ with $\\|f(t)\\|_{L^2}\\to0$ as $t\\to T^-$ such that the forced 3D NS solution blows up at $T$.",
-"difficulty": 6.8,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 5,
-"importance": 6,
-"value": 6,
-"family": "fluid-blowup",
-"note": "Decaying-force NS blow-up; meaningful step toward unforced blow-up."
-},
-{
 "id": "N-611",
 "title": "Prime Nim complexity",
 "area": "Computation",
@@ -8298,34 +8186,6 @@
 "note": "Irrationality of non-explicit fractal dimension; hopeless, little payoff."
 },
 {
-"id": "N-618",
-"title": "Period-doubling torus bundles",
-"area": "Topology",
-"plain": "Build a once-punctured torus bundle by reading the period-doubling word as a product of the two basic shear matrices. Show its hyperbolic volume per letter settles to a limit as the word grows.",
-"math": "Let $W_n\\in\\{a,b\\}^{2^n}$ be the length-$2^n$ prefix of the fixed point of $a\\mapsto ab,\\ b\\mapsto aa$, let $\\phi_n$ be $W_n$ with $a\\mapsto R=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$, $b\\mapsto L=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}$, and let $M_n$ be the (hyperbolic) once-punctured torus bundle with monodromy $\\phi_n$. Prove that $\\lim_{n\\to\\infty}\\mathrm{vol}(M_n)/2^n$ exists.",
-"difficulty": 2.2,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 4,
-"value": 6,
-"family": "topology",
-"note": "Volume growth of substitution-word torus bundles; fresh, concrete."
-},
-{
-"id": "N-619",
-"title": "Thue–Morse Lorenz knots",
-"area": "Topology",
-"plain": "Turn the first 2^n letters of the Thue–Morse word into a periodic orbit of the Lorenz template. Show these knots are eventually hyperbolic and their volume grows proportionally to the word length.",
-"math": "Let $K_n$ be the Lorenz knot whose Lorenz word is the length-$2^n$ Thue–Morse prefix $t_0\\cdots t_{2^n-1}$ with $0\\mapsto x$, $1\\mapsto y$ (this word is primitive). Prove that $S^3\\setminus K_n$ is hyperbolic for all sufficiently large $n$ and that $\\lim_{n\\to\\infty}\\mathrm{vol}(S^3\\setminus K_n)/2^n$ exists and is positive.",
-"difficulty": 3.4,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 4,
-"value": 6,
-"family": "knots",
-"note": "Lorenz knots from Thue-Morse; concrete hyperbolic volume growth question."
-},
-{
 "id": "N-623",
 "title": "Simple closed geodesics on the Fermat quartic",
 "area": "Geometry",
@@ -8340,104 +8200,6 @@
 "note": "Concrete natural geodesic finiteness question on a classic surface."
 },
 {
-"id": "N-627",
-"title": "Rupert superballs",
-"area": "Geometry",
-"plain": "The cube can pass through a hole drilled in a copy of itself; the round ball cannot. Show every superball between them, |x|^p+|y|^p+|z|^p ≤ 1 with p > 2, can.",
-"math": "Let $B_p=\\{|x|^p+|y|^p+|z|^p\\le1\\}$. Prove that for every $p\\in(2,\\infty)$ there are orthogonal projections $\\pi_1,\\pi_2$ onto planes and a rigid motion $\\rho$ of the plane with $\\rho(\\pi_1(B_p))\\subset\\operatorname{int}\\pi_2(B_p)$.",
-"difficulty": 3.0,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 3,
-"value": 6,
-"family": "other",
-"note": "Rupert property interpolating ball and cube; clean, fresh, well-posed."
-},
-{
-"id": "N-629",
-"title": "Drum tones of superellipses",
-"area": "Analysis",
-"plain": "Among regions x^p + y^p ≤ r of unit area, the circle (p = 2) has the lowest tone and the square (p = ∞) is back up high. Show the tone rises steadily as p goes from 2 to infinity.",
-"math": "Let $D_p=\\{|x|^p+|y|^p\\le r_p^p\\}$ with $r_p$ chosen so $|D_p|=1$, and let $\\lambda_1(p)$ be its first Dirichlet eigenvalue. Prove $\\lambda_1$ is strictly increasing on $[2,\\infty)$.",
-"difficulty": 2.9,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 3,
-"value": 6,
-"family": "other",
-"note": "Clean monotonicity of eigenvalue in superellipse family; natural, crisp."
-},
-{
-"id": "N-632",
-"title": "Free-boundary disks in a superball",
-"area": "Geometry",
-"plain": "In a round ball the only free-boundary minimal disks are flat. In the superball x⁴+y⁴+z⁴ ≤ 1, is there one that is not a flat slice?",
-"math": "Let $B=\\{x^4+y^4+z^4\\le1\\}$. Decide whether there is an embedded minimal disk $\\Sigma\\subset B$ with $\\partial\\Sigma\\subset\\partial B$ meeting $\\partial B$ orthogonally that is not contained in a plane.",
-"difficulty": 3.0,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "Nitsche-type uniqueness for free-boundary disks beyond the round ball."
-},
-{
-"id": "N-634",
-"title": "Riesz-transform Schrödinger equation",
-"area": "PDE",
-"plain": "Couple a 2D Schrödinger wave to the Riesz transform of its own density. Mass is conserved but there is no energy. Do smooth solutions live forever?",
-"math": "Consider $i u_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb R\\times\\mathbb R^2$, where $\\widehat{R_1 f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. Decide whether every $u_0\\in H^1(\\mathbb R^2)$ gives a global solution in $C(\\mathbb R,H^1)$.",
-"difficulty": 4.2,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "Riesz-coupled NLS without energy; natural, well-posed global existence question."
-},
-{
-"id": "N-635",
-"title": "Shifted Fujita equation",
-"area": "PDE",
-"plain": "In the plane, every positive solution of u_t = Δu + u² blows up. Does this survive when the square is replaced by the product of values one unit to the left and right?",
-"math": "Let $e=(1,0)$. Prove or disprove: every solution of $u_t=\\Delta u+u(x-e,t)\\,u(x+e,t)$ on $\\mathbb R^2$ with $0\\le u_0\\in C_c(\\mathbb R^2)$, $u_0\\not\\equiv0$, blows up in finite time.",
-"difficulty": 2.2,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "Nonlocal shifted Fujita blow-up; crisp, genuinely new twist."
-},
-{
-"id": "N-638",
-"title": "Minimal-mass blow-up with reflection",
-"area": "PDE",
-"plain": "In the 2D Schrödinger equation where each point feels the density at its mirror point, blow-up needs at least the ground-state mass. Classify the solutions that blow up with exactly that mass.",
-"math": "For $i u_t+\\Delta u+|u(-x,t)|^2u=0$ on $\\mathbb R^2$ with $\\|u_0\\|_{L^2}=\\|Q\\|_{L^2}$ ($Q$ the cubic ground state), prove that every $H^1$ solution blowing up in finite time equals, up to phase and scaling, the pseudo-conformal transform of $Q$ centred at the origin.",
-"difficulty": 2.5,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 4,
-"value": 6,
-"family": "PDE",
-"note": "Merle-type minimal-mass classification for nonlocal parity NLS."
-},
-{
-"id": "N-641",
-"title": "Burgers with degenerate critical dissipation",
-"area": "PDE",
-"plain": "Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off at one point of the circle. Do shocks form there?",
-"math": "Let $a(x)=1-\\cos x$ and consider $u_t+uu_x+\\Lambda^{1/2}\\big(a\\,\\Lambda^{1/2}u\\big)=0$ on $\\mathbb T$, $\\Lambda=(-\\partial_x^2)^{1/2}$. Decide whether every $u_0\\in C^\\infty(\\mathbb T)$ yields a global smooth solution.",
-"difficulty": 3.8,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "Degenerate critical dissipation for Burgers; sharp, natural PDE test."
-},
-{
 "id": "N-648",
 "title": "Thue–Morse quantum walk",
 "area": "Analysis",
@@ -8450,48 +8212,6 @@
 "value": 5,
 "family": "other",
 "note": "Thue-Morse coined quantum walk transport; specific but natural aperiodic-order question."
-},
-{
-"id": "N-650",
-"title": "Two vortices on a cube",
-"area": "Dynamics",
-"plain": "Two identical point vortices on the surface of a cube have no symmetry to make them integrable. Show their motion is chaotic.",
-"math": "Let $G$ be the Green function of the flat unit-cube surface $S$ and $R$ its Robin function. Show the Hamiltonian $H(z_1,z_2)=G(z_1,z_2)+\\tfrac12(R(z_1)+R(z_2))$ on $S\\times S\\setminus\\Delta$, with symplectic form $dA_1+dA_2$, has an energy level on which the flow has positive topological entropy.",
-"difficulty": 4.0,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "Non-integrability of vortex pair on flat cube surface; fresh, well-posed."
-},
-{
-"id": "N-663",
-"title": "Multiplicities on the Fermat quartic",
-"area": "Analysis",
-"plain": "The surface x⁴+y⁴+z⁴ = 1 has the symmetries of a cube. Show its Laplace eigenvalues never repeat more than symmetry forces, except perhaps finitely often.",
-"math": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the induced metric. Prove that all but finitely many Laplace eigenvalues of $S$ have multiplicity at most $3$.",
-"difficulty": 6.5,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 7,
-"importance": 5,
-"value": 6,
-"family": "other",
-"note": "Generic simplicity of spectrum on explicit symmetric surface; natural, hard."
-},
-{
-"id": "N-665",
-"title": "Frozen vortices for Kuramoto on a cube",
-"area": "Dynamics",
-"plain": "Identical Kuramoto oscillators on the grid of a cube surface tend to synchronize. Show that for large grids a stable state that is not synchronized also exists.",
-"math": "Let $Q_n$ be the vertex–edge graph of the $n\\times n$ subdivided cube surface and $\\dot\\theta_i=\\sum_{j\\sim i}\\sin(\\theta_j-\\theta_i)$. Prove that for all large $n$ there is a linearly stable equilibrium that is not of the form $\\theta_i\\equiv c$.",
-"difficulty": 2.5,
-"reason": "graded C in Nov 2026 deep review (kept for reference)",
-"novelty": 6,
-"importance": 4,
-"value": 6,
-"family": "other",
-"note": "Stable twisted states for Kuramoto on cube-surface graph; natural, concrete."
 },
 {
 "id": "N-690",

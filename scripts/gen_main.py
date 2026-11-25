@@ -1,22 +1,36 @@
-"""Generate problems/<id>/{problem.json,model.md,Statement.lean} and data/problems.json from data/main.json.
+"""Generate problems/<id>/{problem.json,model.md,Statement.lean} and data/problems.json from
+data/main.json (QED-Mxxx, the main set) and data/extended.json (QED-Exxx, the extended set).
 Usage: python3 scripts/gen_main.py [--statements]
   --statements  also (re)write Statement.lean from the `lean` field of each entry.
 Without it, an existing Statement.lean is never overwritten."""
 import json,sys,os
 REPO=os.environ.get('REPO','floration/qed')
-D=json.load(open('data/main.json'))
+D=json.load(open('data/main.json'))+json.load(open('data/extended.json'))
 WRITE_LEAN='--statements' in sys.argv
-PUB=('id','title','area','difficulty','grade','provenance','credit','results','premise_risks','plain','math',
-     'novelty','importance','value','formal_status','lean_gap','refs')
+PUB=('id','legacy_id','set','title','area','difficulty','grade','provenance','credit','results','premise_risks','plain','math',
+     'novelty','importance','value','formal_status','lean_gap','review_note','refs')
 out=[]
 for m in D:
     pid=m['id']; ns=pid.replace('-',''); d=f'problems/{pid}'; os.makedirs(d,exist_ok=True)
     p={k:m.get(k) for k in PUB if m.get(k) not in (None,[],'')}
     json.dump(p,open(f'{d}/problem.json','w'),ensure_ascii=False,indent=1); out.append(p)
     sp=f'{d}/Statement.lean'
-    if (WRITE_LEAN or not os.path.exists(sp)) and m.get('lean'):
-        open(sp,'w').write(m['lean'].rstrip()+'\n')
+    if m.get('lean'):
+        if WRITE_LEAN or not os.path.exists(sp): open(sp,'w').write(m['lean'].rstrip()+'\n')
+    elif WRITE_LEAN or not os.path.exists(sp) or f'namespace OpenProblems.{ns}' not in open(sp).read():
+        open(sp,'w').write(f"""import Mathlib
+/-! {pid}: {m['title']}
+{m['plain']}
+Informal statement: {m['math']}
+STATUS: NOT YET FORMALIZED. Replace `sorry` in `Claim` with a faithful Lean statement
+(open a PR touching only this file, from a branch named `statement-{pid}`). Solutions are accepted only
+after the statement PR is merged. -/
+namespace OpenProblems.{ns}
+def Claim : Prop := sorry
+end OpenProblems.{ns}
+""")
     extra=''
+    if m.get('review_note'): extra+=f"\n**Reviewer note:** {m['review_note']}\n"
     if m.get('credit'): extra+=f"\n**Credit:** {m['credit']}\n"
     if m.get('results'): extra+=f"\n**QED results so far (reviewer-derived; check before relying on them):** {m['results']}\n"
     if m.get('premise_risks'): extra+='\n**Rests on recent unrefereed work. Check these premises first:**\n'+''.join(f'- {r}\n' for r in m['premise_risks'])
@@ -28,7 +42,7 @@ for m in D:
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Grade {m['grade']} · QED {m['provenance']} · {m.get('area','')}
+{'Main set' if m['set']=='main' else 'Extended set'} · Grade {m['grade']}{' · QED '+m['provenance'] if m.get('provenance') else ''} · {m.get('area','')}{' · formerly '+m['legacy_id'] if m.get('legacy_id') else ''}
 
 **Plain words:** {m['plain']}
 

@@ -1,0 +1,22 @@
+{
+ "id": "QED-E004",
+ "legacy_id": "N-077",
+ "set": "extended",
+ "title": "Closed-form Euler blow-up",
+ "area": "Analysis",
+ "difficulty": 5.1,
+ "grade": "C",
+ "plain": "Smooth compactly supported starting data for the 3D Euler equations that blow up in finite time are now known to exist, but the construction is an infinite iterative series. Give such data as an explicit formula.",
+ "math": "Find an explicit divergence-free $u_0=\\nabla\\times\\big(P(x)e^{-|x|^2}\\big)$ with $P\\in\\mathbb{Q}[x_1,x_2,x_3]^3$ (or another explicitly specified finite closed-form class) such that the unforced 3D incompressible Euler solution on $\\mathbb{R}^3$ with $u(0)=u_0$ has finite maximal smooth lifespan.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 3,
+ "formal_status": "not_formalized",
+ "review_note": "T",
+ "refs": [
+  "https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf",
+  "https://arxiv.org/abs/2610.02509",
+  "https://raw.githubusercontent.com/openai/NavierStokesAndEuler/main/README.md",
+  "https://arxiv.org/abs/2308.12197"
+ ]
+}

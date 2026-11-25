@@ -1,0 +1,22 @@
+{
+ "id": "QED-E008",
+ "legacy_id": "N-650",
+ "set": "extended",
+ "title": "Two vortices on a cube",
+ "area": "Dynamics",
+ "difficulty": 4.0,
+ "grade": "C",
+ "plain": "Two identical point vortices moving on the surface of a cube form a two-degree-of-freedom Hamiltonian system with no continuous symmetry, so there is no second conserved quantity to make it integrable. Prove their motion is genuinely chaotic.",
+ "math": "Let $S$ be the boundary of the unit cube with its flat cone metric (eight cone points $v_i$ of angle $3\\pi/2$), area $A=6$. Let $G$ solve $-\\Delta_zG(z,w)=\\delta_w-1/A$ with $\\int_SG(\\cdot,w)\\,dA=0$, and let $R(z)=\\lim_{w\\to z}\\big[G(z,w)+\\tfrac1{2\\pi}\\log d(z,w)\\big]$ for $z\\notin\\{v_i\\}$. On $M=\\{(z_1,z_2):z_1\\ne z_2,\\ z_j\\notin\\{v_i\\}\\}$ with $\\omega=dA(z_1)+dA(z_2)$, let $H=G(z_1,z_2)+\\tfrac12(R(z_1)+R(z_2))$. Prove that the Hamiltonian flow has a compact invariant set, inside one energy level, on which its topological entropy is positive.",
+ "novelty": 6,
+ "importance": 3,
+ "value": 4,
+ "formal_status": "not_formalized",
+ "review_note": "T",
+ "refs": [
+  "https://arxiv.org/abs/2201.00528",
+  "https://digitalcommons.njit.edu/fac_pubs/12905",
+  "https://arxiv.org/abs/2003.00716",
+  "https://arxiv.org/abs/2512.05574"
+ ]
+}

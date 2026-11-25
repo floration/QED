@@ -1,0 +1,23 @@
+{
+ "id": "QED-M017",
+ "legacy_id": "N-022",
+ "set": "main",
+ "title": "Blank jigsaw with few edge shapes",
+ "area": "Combinatorics",
+ "difficulty": 2.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Mossel & Ross (shotgun assembly); Bordenave, Feige, Mossel 2016, arXiv:1605.03086; Nenadov, Pfister, Steger 2017, arXiv:1701.04813",
+ "plain": "A jigsaw with no picture can only be solved from the shapes of its pieces. Each internal edge is one of k shapes (a tab that fits only its own matching blank), and pieces may be turned. How small can k be if some n×n blank jigsaw still goes together in exactly one way? Counting shows k must be at least about √n, and random puzzles need about n.",
+ "math": "An $n\\times n$ jigsaw with $k$ edge types is a map assigning to each internal edge of the $n\\times n$ grid a type in $[k]$ and an orientation (which side carries the tab); border edges are flat. Its pieces are the $n^2$ unit squares, each regarded as a distinct physical object carrying its four (type, tab/blank) labels up to rotation. An assembly is a placement of all pieces bijectively on the cells, each rotated by a multiple of $90^\\circ$, so that every internal edge joins a tab and a blank of the same type and all flat edges lie on the border. Let $k(n)$ be the least $k$ for which some $n\\times n$ jigsaw with $k$ edge types has exactly one assembly up to the four rotations of the whole square. Determine the order of $k(n)$; in particular, is $k(n)=\\Theta(\\sqrt n)$?",
+ "novelty": 7,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/1605.03086",
+  "https://arxiv.org/abs/1605.03043",
+  "https://arxiv.org/pdf/1701.04813",
+  "https://arxiv.org/pdf/1707.04730"
+ ]
+}

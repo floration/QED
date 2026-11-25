@@ -1,0 +1,26 @@
+{
+ "id": "QED-M050",
+ "legacy_id": "N-681",
+ "set": "main",
+ "title": "Is the Mandelbrot set decidable at Gaussian rationals?",
+ "area": "Dynamics",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "P. Potgieter, arXiv:cs/0604003 (2006), Sec. 2.3.",
+ "results": "The reduction is correct apart from one flaw. A non-repelling cycle implies c in M, since by Fatou all cycles are repelling when c is outside M. The example arithmetic checks out: mu/2-mu^2/4=(37+16i)/100. But (*) as stated is FALSE. c=-2 and c=+-i are Gaussian-integer Misiurewicz parameters in M with all cycles repelling (c=i: 0->i->-1+i->-i->-1+i). The fix excludes Z[i], where membership is a finite check.",
+ "plain": "Is there an algorithm that takes a complex number with rational real and imaginary parts and decides whether it lies in the Mandelbrot set? Escaping points can be confirmed, and so can points that have an attracting or neutral cycle of some period, since for each period that is an exact algebraic check. The trouble is points on the boundary where every cycle repels. No such Gaussian rational is known, but none has been ruled out.",
+ "math": "Let $M=\\{c\\in\\mathbb C:(f_c^{n}(0))_{n\\ge0}\\text{ bounded}\\}$, $f_c(z)=z^2+c$. Prove or disprove that $M\\cap\\mathbb Q(i)$ is a decidable subset of $\\mathbb Q(i)$. $\\mathbb Q(i)\\setminus M$ is r.e. For each $n$, the existence of an $n$-cycle with multiplier of modulus $\\le1$ is decidable for algebraic $c$ (Tarski), and such a cycle forces $c\\in M$. $M\\cap\\mathbb Z[i]$ is a finite, explicitly computable set (it contains the Misiurewicz points $-2,\\pm i$, whose cycles are all repelling). So a positive answer would follow from (*): every $c\\in(M\\cap\\mathbb Q(i))\\setminus\\mathbb Z[i]$ has a non-repelling cycle. Prove or disprove (*). (Example: $c=(37+16i)/100$ lies on the main cardioid with multiplier $(3+4i)/5$, a Siegel parameter.)",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/cs/0604003",
+  "https://arxiv.org/pdf/1703.06459",
+  "https://arxiv.org/pdf/cs/0509042",
+  "https://en.wikipedia.org/wiki/Mandelbrot_set",
+  "https://arxiv.org/abs/cs/0604003",
+  "https://arxiv.org/pdf/1703.06459"
+ ]
+}

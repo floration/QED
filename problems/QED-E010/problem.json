@@ -1,0 +1,16 @@
+{
+ "id": "QED-E010",
+ "legacy_id": "N-300",
+ "set": "extended",
+ "title": "Rotation-proof lattice-point-poor shapes",
+ "area": "Geometry",
+ "difficulty": 6.5,
+ "grade": "C",
+ "plain": "Among convex shapes of area A, how few lattice points can a shape be guaranteed to contain under every rotation about the origin? Can any shape do much better than a disc centred at the origin?",
+ "math": "For $A>0$ let $m(A)=\\inf\\{\\sup_{\\theta}\\#(\\rho_\\theta K\\cap\\mathbb Z^2): K\\subset\\mathbb R^2\\text{ compact convex},\\ |K|=A\\}$. Decide whether $m(A)\\ge A-O_\\varepsilon(A^{1/4+\\varepsilon})$.",
+ "novelty": 5,
+ "importance": 3,
+ "value": 3,
+ "formal_status": "not_formalized",
+ "review_note": "T"
+}

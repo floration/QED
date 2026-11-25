@@ -7,7 +7,7 @@ def size(sol):
     s=re.sub(r'/-.*?-/','',open(sol).read(),flags=re.S)
     return len([l for l in s.splitlines() if l.strip() and not l.strip().startswith('--') and not l.startswith('import ')])
 S={}
-for sol in glob.glob('solutions/N-*/*/Solution.lean'):
+for sol in glob.glob('solutions/*/*/Solution.lean'):
     d=os.path.dirname(sol); pid,user=d.split('/')[1:3]
     m=json.load(open(d+'/meta.json'))
     S.setdefault(pid,[]).append(dict(user=user,model=m['model'],kind=m['kind'],size=size(sol),time=merged_time(sol)))

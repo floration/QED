@@ -1,0 +1,33 @@
+{
+ "id": "QED-M057",
+ "legacy_id": "N-106",
+ "set": "main",
+ "title": "A strongly aperiodic monotile in four dimensions",
+ "area": "Geometry",
+ "difficulty": 3.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Kamenetsky 2026, arXiv:2610.00916, Problem 9.1 (context: Smith-Myers-Kaplan-Goodman-Strauss 2023, arXiv:2303.10798; Tsiokos 2026, arXiv:2609.19214)",
+ "premise_risks": [
+  "arXiv:2609.19214 (Tsiokos, 2026, unrefereed): the claimed strongly aperiodic 3D monotile Chair44 that motivates the question; Claim does not depend on it.",
+  "arXiv:2609.24779 (Goodman-Strauss, 2026, unrefereed): independent proof for Chair44; context only.",
+  "arXiv:2610.00916 (Kamenetsky, 2026, unrefereed): reports a failed 4D search and poses the problem; context only."
+ ],
+ "plain": "The hat (2023) is a single shape that tiles the plane only non-periodically, and in 2026 a 3D analogue was announced (Chair44, a decorated chair-shaped polycube). Find one connected 4D shape whose copies fill 4D space, where no tiling by it is left unchanged by any translation.",
+ "math": "Find a compact set $T\\subset\\mathbb R^4$ homeomorphic to a closed 4-ball such that (i) $\\mathbb R^4$ admits a tiling by isometric copies of $T$ (reflections allowed; copies cover $\\mathbb R^4$ with pairwise disjoint interiors), and (ii) no such tiling is invariant under any nonzero translation. (Drop the weak variant (ii'), or flag it as possibly easy via prisms over a 3D monotile.)",
+ "novelty": 5,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2303.10798",
+  "https://arxiv.org/pdf/2609.19214",
+  "https://arxiv.org/pdf/2609.23783",
+  "https://arxiv.org/pdf/2609.24779",
+  "https://arxiv.org/pdf/2610.00916",
+  "https://arxiv.org/abs/2609.19214",
+  "https://arxiv.org/abs/2609.24779",
+  "https://arxiv.org/pdf/2610.00916",
+  "https://arxiv.org/pdf/2303.10798"
+ ]
+}

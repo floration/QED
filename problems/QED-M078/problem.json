@@ -1,0 +1,18 @@
+{
+ "id": "QED-M078",
+ "legacy_id": "N-703",
+ "set": "main",
+ "title": "Improve H_1 <= 12 under EH alone",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "D.H.J. Polymath 2014, arXiv:1407.4897; J. Maynard 2015, arXiv:1311.4600",
+ "plain": "Assuming Elliott–Halberstam, Maynard's sieve gives infinitely many pairs of primes at distance at most 12. The generalized conjecture GEH gives 6. Lower 12 using EH alone.",
+ "math": "Let $H_1=\\liminf_{n}(p_{n+1}-p_n)$. Assuming EH (level $\\theta=1-\\varepsilon$ for all $\\varepsilon>0$, for the von Mangoldt function only, not GEH), prove $H_1\\le 10$, or prove that no Selberg/Maynard-type sieve weight using EH alone can give $H_1<12$.",
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1407.4897",
+  "https://arxiv.org/abs/1311.4600"
+ ]
+}
