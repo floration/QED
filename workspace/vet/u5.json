@@ -1,0 +1,155 @@
+[
+{
+"id": "N-180",
+"title": "Smallest-degree Keller counterexamples in dimension 3",
+"grade": "B",
+"importance": 6,
+"novelty": 6,
+"value": 6,
+"W": "In 2026 the Jacobian conjecture was shown false in dimension 3: there are polynomial maps C^3 -> C^3 with constant nonzero Jacobian that are not invertible, and the known examples have degree 7. Decide whether such a map can have degree at most 4. More generally, find the smallest degree a counterexample in dimension 3 can have.",
+"M": "Let $d_3=\\min\\{\\deg F: F\\in\\mathbb C[x,y,z]^3,\\ \\det DF\\in\\mathbb C^\\times,\\ F\\notin\\mathrm{Aut}(\\mathbb C^3)\\}$, where $\\deg F=\\max_i\\deg F_i$. By Wang's theorem $d_3\\ge3$, and the 2026 examples (Alp\\\"oge; van den Essen) give $d_3\\le7$. Decide whether $d_3\\le4$, i.e. whether every Keller map $\\mathbb C^3\\to\\mathbb C^3$ of degree $\\le4$ is an automorphism. Ultimately, determine $d_3$.",
+"why": "Once the Jacobian conjecture failed in dimension 3, the natural next question is where exactly it fails. The minimal degree of a counterexample tells us how far the classical positive results (Wang for degree 2, the reductions to cubic maps) can be pushed in a fixed dimension, and a degree-3 or degree-4 counterexample would bear on the cubic-homogeneous reduction.",
+"issues": "The original M asked to PROVE degree <=4 Keller maps on C^3 are automorphisms. In this period the Jacobian conjecture has been refuted in dimension 3 (Alpöge, July 2026; van den Essen's elementary version has component degrees 7,6,4; Gao/Gallagher families; Isabelle/AFP formal verification). The degree-<=4 case does not appear settled in what I found, but its truth value is now unclear, so the statement was changed from 'prove' to 'decide', with the minimal degree d_3 as the real target. Not checked: whether some of the newer families (Gallagher H_d, Gao) already reach polynomial degree <=6 or <=5; their papers mostly report geometric degree (fibre size), not polynomial degree. Whether degree-3 maps in dimension 3 are settled classically is also unverified, so d_3>=3 is the only safe lower bound.",
+"refs": [
+"https://arxiv.org/abs/2608.00222",
+"https://arxiv.org/abs/2609.17795",
+"https://arxiv.org/abs/2607.20210",
+"https://isa-afp.org/entries/Jacobian_Counterexample.html",
+"https://arxiv.org/abs/1203.6605"
+]
+},
+{
+"id": "N-360",
+"title": "Blow-up under a steady force",
+"grade": "B",
+"importance": 6,
+"novelty": 6,
+"value": 6,
+"W": "The 2026 forced Navier–Stokes blow-up uses a push that varies in time and is switched on and off. Can a smooth, compactly supported push that never changes in time also drive a fluid at rest to a singularity?",
+"M": "Decide whether there is $f\\in C_c^\\infty(\\mathbb R^3;\\mathbb R^3)$, independent of $t$, such that the solution of $\\partial_tu+(u\\cdot\\nabla)u+\\nabla p=\\Delta u+f$, $\\nabla\\cdot u=0$, $u(\\cdot,0)=0$ on $\\mathbb R^3$ loses smoothness in finite time.",
+"why": "Steady stirring is the physically basic forcing, and a time-independent force cannot be tuned to the scales of a developing singularity. A positive answer would mean the singularity is produced by the nonlinearity alone under a fixed energy input. A negative answer would show that the time-dependent forcing in known constructions is essential.",
+"issues": "Before 2026 this was a strengthening of Clay's forced statement. After OpenAI's claimed time-dependent forced blow-up (force supported away from $t=0$, not yet refereed) it is the natural next step. Only gradient forces are excluded trivially, since they give the zero solution (Cao–Chi–Nie Prop. 3.17), so $f$ must have a nontrivial solenoidal part. Heuristic: a bounded steady force is subcritical at small scales, so near the singular point the blow-up is essentially unforced. This is probably far harder than the time-dependent case and close to Millennium level, which limits its value as a list item. I changed the wording to 'decide'.",
+"refs": [
+"https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+"https://arxiv.org/pdf/2609.10262",
+"https://openai.com/index/navier-stokes-solution/"
+]
+},
+{
+"id": "N-631",
+"title": "Positive metric entropy for the x^4+y^4 billiard",
+"grade": "B",
+"importance": 6,
+"novelty": 3,
+"value": 5,
+"W": "The billiard table x^4 + y^4 <= 1 is smooth and convex, but its curvature vanishes at four points, so (by Mather) it has no caustics. Its phase space mixes stable islands with apparently chaotic regions. Prove that the chaos is real: on a set of positive measure, nearby trajectories separate exponentially fast.",
+"M": "Let $\\Phi$ be the billiard map of $\\Omega=\\{x^4+y^4\\le1\\}$, preserving the Liouville measure $\\nu=\\sin\\theta\\,ds\\,d\\theta$. Prove that $h_\\nu(\\Phi)>0$; equivalently, by Pesin's formula, that $\\Phi$ has a nonzero Lyapunov exponent on a set of positive $\\nu$-measure.",
+"why": "Proving positive metric entropy for any smooth, area-preserving twist map with coexisting KAM islands, such as the Chirikov standard map, is a central and notoriously hard open problem. No smooth (C^2 or better) convex billiard is known to have positive metric entropy: the known examples, like stadiums and lemons, have boundary singularities. The analytic table x^4 + y^4 = 1 is the most natural concrete test case, and numerics show entropy of about 0.65 there.",
+"issues": "Not novel. Knill and coauthors studied exactly the family of billiards in l^p unit balls. They proved positive TOPOLOGICAL entropy for p not in {1, 2, infinity} and found elliptic periodic orbits, so the billiard is not ergodic. Their metric entropy estimates are numerical only, with a peak near p = 4 to 6 of about 0.65. Positive metric entropy is left open there and is a well-known open problem type. Recent progress covers topological entropy (generic analytic convex billiards, 2026; generic convex bodies, 2022) and ergodicity of asymmetric lemons (strictly convex but with corners), none of which settles this. The statement is well-posed; I made the invariant measure explicit and noted the Pesin equivalence. W's 'positive fraction is chaotic' matches 'positive Lyapunov exponent on positive measure'. One URL (Knill's html page) was blocked; the PDF was read.",
+"refs": [
+"https://legacy-www.math.harvard.edu/~knill/offprints/lpbilliards.pdf",
+"https://arxiv.org/abs/2605.19897",
+"https://arxiv.org/abs/2201.01362",
+"https://arxiv.org/abs/2610.28247",
+"https://arxiv.org/abs/1301.2547"
+]
+},
+{
+"id": "N-640",
+"title": "Heat with a cosine reaction",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "In u_t = u_xx + cos(x) u^2 the reaction term averages to zero over a period, but a second-order (homogenization) effect produces an effective +u^3 term, which in one dimension is exactly Fujita's borderline exponent where every positive solution of u_t = u_xx + u^3 blows up. Does every positive solution of the cosine equation blow up in finite time?",
+"M": "Prove or disprove: for every $u_0\\in C_c(\\mathbb R)$ with $u_0\\ge0$, $u_0\\not\\equiv0$, the classical solution of $u_t=u_{xx}+\\cos(x)\\,u^2$, $u(\\cdot,0)=u_0$, blows up in finite time. (More generally, for $a\\in C^\\infty(\\mathbb T^d)$ with $\\int a=0$, $a\\not\\equiv0$, show the Fujita exponent of $u_t=\\Delta u+a(x)u^p$ is $p^*=1+1/d$: all positive solutions blow up for $1<p\\le p^*$, small ones are global for $p>p^*$.)",
+"why": "Fujita's theorem is the prototype of 'all solutions blow up vs. small data global' thresholds; with a sign-changing, mean-zero weight the first-order effect cancels and the threshold is set by a homogenized second-order term $c\\,v^{2p-1}$ with $c=\\langle a,(-\\Delta)^{-1}a\\rangle>0$, predicting $p^*=1+1/d$. The posed equation is exactly the critical case $d=1,p=2$, where standard test-function/Kaplan arguments fail because the weight changes sign.",
+"issues": "Well-posed: positivity is preserved (linear comparison with coefficient cos(x)u), and large data blow up by comparison with the Dirichlet problem on (-pi/3,pi/3) where cos >= 1/2, so only small/spread data matter. Checked the homogenization: u ~ v + cos(x)v^2 gives effective v_t = v_xx + v^3 (coefficient 2<cos^2>=1), first-order oscillatory corrections average out, and next-order terms are integrable in time against the t^{-1} log-divergence of the critical case, so the conjectured answer is 'yes, all blow up'. Added the general-d, general-p formulation. Known results I recall (Pinsky 1997 for a(x) ~ |x|^m >= 0; Meier on bounded domains) do not cover periodic mean-zero weights; literature check was limited because the search budget ran out, so novelty is moderately uncertain.",
+"refs": []
+},
+{
+"id": "N-625",
+"title": "Outer billiards around a superellipse",
+"grade": "B",
+"importance": 5,
+"novelty": 7,
+"value": 6,
+"W": "Outer billiards around a smooth convex shape with positive curvature has only bounded orbits (Moser–Douady). Polygons and generic C¹ shapes can have unbounded orbits. Decide what happens for the analytic shape x⁴+y⁴ ≤ 1, whose curvature vanishes at four points.",
+"M": "Let $K=\\{x^4+y^4\\le1\\}$ and let $T:\\mathbb R^2\\setminus K\\to\\mathbb R^2\\setminus K$ be the outer billiard map: $T(p)=2q-p$, where $q\\in\\partial K$ is the point of tangency of the right-hand tangent line from $p$. Decide whether every $T$-orbit is bounded.",
+"why": "Douady's proof needs $C^6$ and positive curvature. At a flat point the inverse Gauss map is only Hölder (the support function here is $C^{1,1/3}$), so the twist map at infinity is not smooth enough for KAM. Unbounded orbits are known for some polygons (Schwartz), semicircles (Dolgopyat–Fayad) and generic $C^1$ symmetric tables. This analytic example tests whether isolated flat points alone can destroy confinement.",
+"issues": "I found no treatment of tables with isolated zero-curvature points. The 2026 $C^1$-generic result (arXiv:2610.06418) covers tables whose radius-of-curvature measure is purely singular, which is not this case: here it is absolutely continuous with integrable singularities $\\sim|\\theta|^{-2/3}$. T is well defined because $K$ is strictly convex. Numerical check: one orbit starting at $\\ell^4$-gauge 30.7, run for $1.18\\times10^6$ steps, stayed in gauge [21.55, 30.82] with no drift, which is weak evidence for boundedness. The statement is unchanged.",
+"refs": [
+"https://www.math.umd.edu/~dolgop/outer15.pdf",
+"https://arxiv.org/pdf/2610.06418",
+"https://arxiv.org/abs/math/0702073",
+"https://arxiv.org/pdf/math/9408216"
+]
+},
+{
+"id": "N-664",
+"title": "Infinitely many knot types in the symmetric ABC flow",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Steady Euler flows can carry knotted streamlines, and generic high-frequency Beltrami fields on the torus contain every knot. Show that the most-studied explicit example, the ABC flow with A = B = C = 1, has closed streamlines tied in infinitely many different knots.",
+"M": "Let $X=(\\sin z+\\cos y,\\ \\sin x+\\cos z,\\ \\sin y+\\cos x)$ on $\\mathbb T^3=(\\mathbb R/2\\pi\\mathbb Z)^3$ (a curl eigenfield, $\\nabla\\times X=X$). Prove that the periodic orbits of $X$ that lie in some embedded 3-ball $B\\subset\\mathbb T^3$ realize infinitely many distinct knot types (as knots in $B\\cong$ a ball in $\\mathbb R^3$). Stronger: every knot type is realized.",
+"why": "The ABC flow with A=B=C=1 is the standard model of Lagrangian chaos in steady Euler flows and of fast-dynamo theory, yet rigorous results on its dynamics are mostly perturbative (near integrable parameters) or about non-contractible orbits. Etnyre–Ghrist and Enciso–Peralta-Salas proved that some steady Euler or Beltrami flows realize all knots, using perturbations or random high-frequency fields. Proving it for this explicit lowest-frequency field would most likely need a computer-assisted horseshoe plus template theory (Birman–Williams), turning numerical evidence of chaos into topological information.",
+"issues": "Clarified knot type for orbits in T^3 by requiring them to lie in an embedded ball (null-homotopy alone does not give a well-defined classical knot type). Literature: Etnyre–Ghrist (math-ph/9906021) start from the ABC field with A=1, B=1/2, C=0 perturbed, and transplant a horseshoe to a metric on S^3, not the symmetric ABC on T^3. Dombre et al. and arXiv 1601.02724 give periodic orbits with rotation vectors along the axes (non-contractible). Szumiński–Llibre (2609.17449) is perturbative near the axes. Enciso–Peralta-Salas–Romaniega (2006.15033) handle random high-frequency Beltrami fields. Found no result on knotted contractible orbits of the A=B=C=1 flow. Likely approachable by rigorous numerics, so more a hard technical target than a conceptual breakthrough.",
+"refs": [
+"https://arxiv.org/pdf/math-ph/9906021",
+"https://arxiv.org/pdf/1601.02724",
+"https://arxiv.org/pdf/2609.17449",
+"https://arxiv.org/pdf/2006.15033",
+"https://www2.math.upenn.edu/%7Eghrist/preprints/beltrami.pdf"
+]
+},
+{
+"id": "N-151",
+"title": "Geodesic squares on convex surfaces",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 5,
+"W": "On a smooth convex surface, measure distance by the length of the shortest path on the surface. Every smooth simple closed curve on the surface should contain four points that form a 'square' in this sense: four equal sides and two equal diagonals.",
+"M": "Let $S=\\partial K$ for a convex body $K\\subset\\mathbb R^3$ with smooth boundary and positive Gaussian curvature, and let $d$ be the intrinsic distance on $S$. Prove that every smooth simple closed curve $\\gamma\\subset S$ contains four distinct points $p_1,p_2,p_3,p_4$, in this cyclic order along $\\gamma$, with $d(p_1,p_2)=d(p_2,p_3)=d(p_3,p_4)=d(p_4,p_1)>0$ and $d(p_1,p_3)=d(p_2,p_4)$.",
+"why": "This is the Toeplitz square peg problem moved from the plane to intrinsic geometry. In the plane the smooth case is classical (Schnirelmann), and there are strong recent results (Greene-Lobb rectangles). Recent work extends inscription theorems to constant-curvature surfaces: the hyperbolic plane, and spheres for curves disjoint from their antipodal image. A general convex surface tests whether the topological parity argument survives variable curvature and a non-smooth distance function (cut loci).",
+"issues": "Original M said 'geodesic quadrilateral' without defining it, and it did not exclude degenerate squares or fix the cyclic order. I fixed all three. I found no paper treating general convex surfaces. Naseri Sadr 2025 covers the constant-curvature cases (could not open the page to check details). For curves inside a strongly convex geodesic ball the standard Schnirelmann parity argument probably adapts. The real difficulty is long curves whose would-be diagonals cross the cut locus, where d is not smooth. Likely true. Moderate interest.",
+"refs": [
+"https://arxiv.org/abs/2507.07945",
+"https://arxiv.org/abs/1001.0186",
+"https://arxiv.org/abs/2103.13848"
+]
+},
+{
+"id": "N-620",
+"title": "Knotted billiards in a regular tetrahedron",
+"grade": "B",
+"importance": 4,
+"novelty": 6,
+"value": 5,
+"W": "A billiard ball bouncing periodically inside a regular tetrahedron, without hitting edges or corners, traces a closed polygon in space. Is any such polygon knotted, and do infinitely many different knot types occur?",
+"M": "Call a periodic billiard trajectory in a regular tetrahedron $T\\subset\\mathbb R^3$ admissible if it never meets an edge or vertex of $T$ and its image is an embedded closed polygon. (a) Does some admissible trajectory form a nontrivial knot? (b) Prove that the set of knot types of admissible periodic trajectories is infinite.",
+"why": "In the cube, periodic billiard trajectories are exactly the Lissajous knots (Jones-Przytycki), and infinitely many knot types occur because the cube unfolds to a lattice. The regular tetrahedron does not tile space and its dihedral angle arccos(1/3) is an irrational multiple of pi, so its unfolding group is not discrete. Even the existence of periodic orbits in tetrahedra is subtle, and knot types are an untouched invariant here.",
+"issues": "Added part (a), because even one knotted orbit is not obviously known. A trajectory may traverse its image twice (odd periods), so the knot type is defined from the image. I did not do a numerical periodic-orbit search. Literature check incomplete (search budget exhausted); possible prior work on billiard knots in polyhedra other than the cube and cylinder should be checked.",
+"refs": []
+},
+{
+"id": "N-659",
+"title": "Fibonacci-modulated growing Jacobi matrix",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "Take a Jacobi matrix with zero diagonal and off-diagonal weights sqrt(n). Double the weight at every position where the Fibonacci word has a 1. Periodic modulations of power-growing weights are known to produce spectral phase transitions. Determine the spectral type for this aperiodic modulation.",
+"M": "Let $f=f_1f_2f_3\\cdots=0100101001001\\cdots\\in\\{0,1\\}^{\\mathbb N}$ be the Fibonacci word, the fixed point of $0\\mapsto01,\\ 1\\mapsto0$. Let $J$ be the Jacobi operator on $\\ell^2(\\mathbb N)$ with $(Ju)_n=a_{n-1}u_{n-1}+a_nu_{n+1}$, where $a_n=\\sqrt n\\,(1+f_n)$ and $a_0u_0:=0$. Since $\\sum 1/a_n=\\infty$, $J$ is self-adjoint (Carleman). Determine the spectral type of $J$. In particular: is $\\sigma_{ac}(J)\\neq\\emptyset$? Is $\\sigma_{ac}(J)=\\mathbb R$? Is the spectrum on some interval pure point or singular continuous?",
+"why": "Janas, Naboko, Swiderski and others classified unbounded Jacobi matrices with periodically modulated power-growing weights. Whether the spectrum is absolutely continuous, a gap, or point spectrum is decided by the trace of a single period's transfer matrix. A Fibonacci modulation joins this theory to the trace-map dynamics of quasicrystal Schrodinger operators. In that setting the period matrix is replaced by a hierarchy of block products.",
+"issues": "I found no literature on aperiodic or Sturmian modulations of unbounded weights, only periodic ones (Janas-Naboko, Swiderski, Naboko-Simonov). Heuristic: with b=0 and lambda/a_n -> 0, two-step transfer matrices are close to diag(-a_{n-1}/a_n, -a_{n-2}/a_{n-1}). Their products are governed by D_N=sum_{k<=N}(f_{2k-1}-f_{2k}). Numerically |D_N| grows like log N (records +-10 by N=10^6, about one unit per factor phi^3), so 2^{D_N} is roughly N^{0.47}. That is close to the l^2 borderline, and it competes with the O(sqrt N) phase rotation from lambda/a_n. So the answer is not obvious. I fixed the indexing and the convention for the Fibonacci word, and added the self-adjointness remark. The choices of exponent 1/2 and factor 2 are somewhat arbitrary.",
+"refs": [
+"https://arxiv.org/abs/1003.3597",
+"https://arxiv.org/abs/math/0605593",
+"https://arxiv.org/abs/1707.06486",
+"https://arxiv.org/abs/0711.4035"
+]
+}
+]

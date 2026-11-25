@@ -1,0 +1,169 @@
+[
+{
+"id": "N-133",
+"title": "Hadwiger's true constant",
+"grade": "B",
+"importance": 9,
+"novelty": 1,
+"value": 4,
+"W": "Among graphs whose chromatic number is at least t, what is the largest complete-graph minor they are all guaranteed to contain, as a fraction of t, when t is large? Hadwiger's conjecture says the fraction is 1. It is not even known to be bounded away from 0.",
+"M": "Let $h(G)$ be the Hadwiger number (largest $s$ with $K_s\\preceq G$). Determine $c^*=\\liminf_{t\\to\\infty}\\ \\inf\\{h(G)/t:\\ \\chi(G)\\ge t\\}$. Trivially $c^*\\le 1$, and Hadwiger's conjecture gives $c^*=1$. The known bound $\\chi=O(t\\log\\log\\log t)$ on $K_t$-minor-free graphs still only gives $c^*\\ge 0$. In particular, is $c^*>0$?",
+"why": "This is the linear (asymptotic) form of Hadwiger's conjecture, one of the central problems in graph theory. The question c*>0 is the well-known Linear Hadwiger Conjecture.",
+"issues": "NOT NOVEL. This is a restatement of a famous open problem. 'Is c*>0' is exactly the linear Hadwiger conjecture, and 'c*=1' is the asymptotic Hadwiger conjecture. The original W presupposed that Hadwiger is false, so I rewrote it. 'min' should be 'inf'. Current record: chi(G)=O(t log log log t) for K_t-minor-free graphs (Liu-Luo 2026), improving Delcourt-Postle O(t log log t). Include only if the list allows classic problems. Otherwise drop.",
+"refs": [
+"https://arxiv.org/abs/2609.06867",
+"https://arxiv.org/abs/2108.01633",
+"https://arxiv.org/abs/2109.02302"
+]
+},
+{
+"id": "N-657",
+"title": "Spikes at the primes",
+"grade": "B",
+"importance": 6,
+"novelty": 4,
+"value": 6,
+"W": "Put a bump of fixed height at every prime on the half-line lattice and study the electron (discrete Schrodinger operator). What kind of spectrum does it have inside the free band (-2,2)? If the primes behaved like a random sparse set (Cramer model), the states would be localized (pure point spectrum); is that true for the actual primes?",
+"M": "Let $(Hu)(n)=u(n+1)+u(n-1)+\\lambda\\mathbf 1_{\\mathbb P}(n)u(n)$ on $\\ell^2(\\mathbb N)$ with Dirichlet condition $u(0)=0$, $\\lambda\\ne0$. Determine the spectral type of $H$ on $(-2,2)$. In particular: is the spectral measure restricted to $(-2,2)$ pure point (with exponentially or sub-exponentially decaying eigenfunctions), or does it have a singular continuous part, e.g. near $E=0$?",
+"why": "It is the cleanest deterministic test of whether the primes are 'pseudo-random' for spectral theory: the random sparse model with site density 1/log n localizes, while deterministic sparse potentials typically produce singular continuous spectrum. The answer must use arithmetic input (distribution of primes in residue classes and gaps), linking Schrodinger operators to analytic number theory.",
+"issues": "No absolutely continuous spectrum is automatic: 1_P takes finitely many values and is not eventually periodic, so Remling's theorem (Annals 2011) gives Sigma_ac = empty; hence the content is pure point vs singular continuous. The conjectured pure-point answer is doubtful: numerics in the 2001 study 'De(Localization) in the Prime Schrodinger Operator' (cond-mat/0103313) report a persistent delocalized band near E=0 of width ~1/lambda. Simple check: at E=0 the recursion decouples by parity and, since all primes but 2 are odd, solutions grow only like partial sums of chi_4(p) (polynomially), not like the random model; analogous arithmetic resonances occur at E=2cos(pi a/q). So 'prove pure point' was replaced by 'determine the spectral type'. The question is posed (numerically) in the literature, so novelty is low; difficulty likely very high. Literature search for rigorous results was cut short by the search budget.",
+"refs": [
+"https://arxiv.org/abs/cond-mat/0103313",
+"https://ar5iv.arxiv.org/html/cond-mat/0103313",
+"https://arxiv.org/pdf/1107.1094"
+]
+},
+{
+"id": "N-070",
+"title": "Square-sum cliques",
+"grade": "B",
+"importance": 6,
+"novelty": 1,
+"value": 5,
+"W": "How many distinct positive integers can have every pairwise sum a perfect square? Five are known (Nicolas 1971); six is unknown. Decide whether the size is bounded.",
+"M": "Let $s=\\sup\\{|X|: X\\subset\\mathbb Z_{>0}\\text{ finite},\\ a+b\\in\\{k^2\\}\\ \\forall a\\ne b\\in X\\}$. Decide whether $s<\\infty$ (the first open case: does a 6-element set exist?).",
+"why": "A classical Diophantine problem in the line of Diophantine m-tuples. The k-element sets are integral points on varieties that become of general type as k grows, so conjectures of Bombieri-Lang type predict a bound, but no unconditional bound is known.",
+"issues": "M referred to an undefined $\\omega(S_N)$; rewritten to be self-contained. Not novel: an old, well-known problem (Thatcher, Math. Gazette 1978; Prime Puzzles Problem 70; the largest known set is 5, {7442, 28658, 148583, 177458, 763442}). Valuable but known, so it does not belong on a novel-problems list unless the list is labelled as classic.",
+"refs": [
+"https://www.primepuzzles.net/problems/prob_070.htm",
+"https://arxiv.org/pdf/2508.07806",
+"https://oeis.org/A195854"
+]
+},
+{
+"id": "N-438",
+"title": "Monochromatic square-sum triangles, many colours",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Colour the positive integers with finitely many colours. Show there are always three different numbers of the same colour whose three pairwise sums are all perfect squares.",
+"M": "Prove that for every $r\\ge1$ and every colouring $\\chi:\\mathbb N\\to\\{1,\\dots,r\\}$ there exist distinct $a,b,c\\in\\mathbb N$ with $\\chi(a)=\\chi(b)=\\chi(c)$ and $a+b,\\ a+c,\\ b+c$ all perfect squares. (Equivalently: the triangle hypergraph of the graph on $\\mathbb N$ with $a\\sim b\\iff a+b=\\square$ has infinite chromatic number.)",
+"why": "Khalfalah and Szemeredi proved that every finite colouring has a monochromatic pair x != y with x+y a square; this asks for the next configuration, a monochromatic triangle in the 'square-sum graph'. Density arguments fail (residue classes such as n = 1 mod 3 contain no such triangle), so a proof must be genuinely Ramsey-theoretic, in the same family as the open Pythagorean-triple and {x,y,x+y,xy} problems.",
+"issues": "Statement clean; colouring renamed to chi to avoid a clash with the element c. Not found posed in the literature (checked Khalfalah-Szemeredi line, Pach's x+y=z^2 work, Di Nasso-Luperi Baglini style surveys). Local (p-adic) obstructions do not kill it: for each prime one residue/valuation class survives. Quick SAT check (CaDiCaL): a 2-colouring of {1..8000} avoiding such triangles exists, but none exists for {1..10000}, so the r=2 case holds with threshold in (8000,10000]; r>=3 is open computationally. Natural but somewhat specialised; B.",
+"refs": [
+"https://arxiv.org/pdf/1608.08374",
+"https://arxiv.org/pdf/1805.06279",
+"https://arxiv.org/pdf/2501.17203",
+"https://arxiv.org/pdf/1806.05002"
+]
+},
+{
+"id": "C-96",
+"title": "Proof complexity of the sensitivity theorem",
+"grade": "B",
+"importance": 5,
+"novelty": 7,
+"value": 6,
+"W": "Huang proved that any set of more than half the corners of the n-cube contains a corner with at least √n neighbours inside the set. Write this as a propositional formula with one variable per corner. Do polynomial-size proofs exist in resolution, cutting planes or sum-of-squares, measured against the 2^n variables?",
+"M": "Let $N=2^n$, $d=\\lceil\\sqrt n\\rceil-1$. $\\mathrm{SENS}_n$ is the CNF on variables $x_v$ ($v\\in\\{0,1\\}^n$) plus sequential-counter variables encoding $\\sum_v x_v\\ge 2^{n-1}+1$, together with the clauses $\\neg x_v\\vee\\bigvee_{u\\in U}\\neg x_u$ for every $v$ and every $(d+1)$-set $U$ of neighbours of $v$ (size $N\\cdot n^{O(\\sqrt n)}=N^{1+o(1)}$). It is unsatisfiable by Huang's theorem. Does $\\mathrm{SENS}_n$ have refutations of size $N^{O(1)}$ in (a) resolution, (b) cutting planes, (c) sum-of-squares of degree $O(\\log N)$? Lower bounds $2^{N^{\\Omega(1)}}$ are equally of interest.",
+"why": "Huang's proof is a short spectral argument, interlacing for a signed adjacency matrix. Asking whether weak proof systems can capture it tests how much linear algebra cutting planes and SOS can simulate. It belongs to the programme of locating famous combinatorial theorems in the proof-complexity hierarchy.",
+"issues": "Checked the sizes: the formula has size N^{1+o(1)}, and Huang's bound gives unsatisfiability exactly at d=ceil(sqrt n)-1. Part (a) is probably 'no' for routine pigeonhole/matching reasons: even the d=0 case (an independent set larger than N/2) is a matching-type principle that is hard for resolution. That case is easy in cutting planes via a perfect matching. So (b) and (c) are the real content, and the W wording should stress them. Found no prior work on this.",
+"refs": [
+"https://arxiv.org/abs/1907.00847",
+"https://arxiv.org/pdf/1912.05406"
+]
+},
+{
+"id": "N-148",
+"title": "Ringel for forests",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Ringel's conjecture, now a theorem for large n, says the complete graph on 2m+1 vertices splits into 2m+1 copies of any tree with m edges. Show the same holds for every forest with m edges. A stronger form asks that every such forest have a rho-labelling, which gives a cyclic decomposition.",
+"M": "Prove that for every $m\\ge1$ and every forest $F$ with $m$ edges, $E(K_{2m+1})$ can be partitioned into $2m+1$ subgraphs each isomorphic to $F$. Stronger form: every such $F$ admits an injective map $f:V(F)\\to\\mathbb Z_{2m+1}$ whose edge lengths $\\min(|f(u)-f(v)|,\\,2m+1-|f(u)-f(v)|)$ are exactly $1,\\dots,m$ (a $\\rho$-labelling).",
+"why": "Montgomery-Pokrovskiy-Sudakov and Keevash-Staden proved Ringel's conjecture for large trees. Their rainbow-copy and cyclic-shift framework does not need connectivity, but the embedding steps do. So the question is whether connectivity is essential to Ringel-type decompositions. A positive answer would be a natural forest analogue of the Kotzig-Ringel-Rosa theorem.",
+"issues": "No counterexample found. A backtracking search found rho-labellings (and hence cyclic decompositions of K_{2m+1}) for all forests without isolated vertices with m<=9 edges (2, 4, 8, 16, 34, 71, 154, 341 forests). I found no paper stating or proving the forest version: MPS, Keevash-Staden and the Glock-Kuhn-Osthus survey treat only trees. A large-m proof may be an adaptation of the existing machinery, which caps the importance. The M was made precise and the rho-labelling strengthening added.",
+"refs": [
+"https://arxiv.org/abs/2001.02665",
+"https://arxiv.org/abs/2004.09947",
+"https://arxiv.org/abs/2202.03178",
+"https://arxiv.org/abs/1803.03316"
+]
+},
+{
+"id": "C-T0",
+"title": "Singularities of the permanental hypersurface",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 5,
+"W": "The hypersurface where the n x n determinant vanishes has rational singularities, the mildest kind that matters for much of its geometry. Decide whether the hypersurface where the n x n permanent vanishes has rational singularities for every n, and compute its minimal exponent, a finer measure of how mild a singularity is.",
+"M": "Let $X_n=\\{\\operatorname{per}_n=0\\}\\subset\\mathbb A^{n^2}_{\\mathbb C}$ and let $\\tilde\\alpha(X_n)$ be Saito's minimal exponent (the smallest root of $b_{\\operatorname{per}_n}(-s)/(1-s)$), so that $\\operatorname{lct}(\\mathbb A^{n^2},X_n)=\\min\\{1,\\tilde\\alpha(X_n)\\}$ and $X_n$ has rational singularities iff $\\tilde\\alpha(X_n)>1$. For $n=2$, $X_2$ is a nondegenerate quadric cone in $\\mathbb A^4$ and $\\tilde\\alpha=2$. For $\\det_n$ the Bernstein--Sato polynomial is $\\prod_{i=1}^n(s+i)$, so $\\tilde\\alpha(\\{\\det_n=0\\})=2$ for all $n$. Determine $\\tilde\\alpha(X_n)$ for all $n\\ge3$ (in particular for $n=3$), and decide whether $X_n$ has rational singularities for every $n$.",
+"why": "Determinantal varieties are the model case of a well-understood singular variety; permanental varieties, which are central in algebraic complexity (Valiant's VP vs VNP, geometric complexity theory), have almost no geometric results. The minimal exponent is a single number that would quantify how differently the two polynomials behave geometrically.",
+"issues": "No literature found computing lct, b-function, minimal exponent or rationality for per_n (n>=3); 2402.17839 says geometric results on permanental varieties are essentially absent and only bounds on the codimension of the singular locus are known (von zur Gathen 1987, improved there). Fix: asking for lct is redundant, since lct = min(1, minimal exponent) and lct is 1 whenever the singularities are rational; reframed around the minimal exponent and rationality, and added the det_n benchmark. A large codimension of Sing(X_n) does not by itself imply rational singularities, so the question is not trivial, but it is fairly narrow. The case n=3 (a cubic in 9 variables) should be within reach of computer algebra.",
+"refs": [
+"https://arxiv.org/abs/2402.17839",
+"https://arxiv.org/html/2603.15579v1",
+"https://arxiv.org/pdf/2105.01245"
+]
+},
+{
+"id": "C-98",
+"title": "Logic of random Latin squares",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 5,
+"W": "Pick a Latin square of order n uniformly at random and read it as a multiplication table x∘y on n symbols. Does every first-order statement about this structure have a limiting probability as n grows? A zero-one law fails. For example, the number of idempotents x∘x=x should be asymptotically Poisson(1), so the chance that one exists should tend to 1-1/e.",
+"M": "Let $L_n$ be a uniformly random Latin square on $[n]$ and $\\mathcal Q_n=([n],\\circ)$ with $x\\circ y=L_n(x,y)$. Prove or disprove the first-order convergence law: for every first-order sentence $\\varphi$ in the language $\\{\\circ\\}$ (binary function symbol, with equality), $\\lim_{n\\to\\infty}\\Pr[\\mathcal Q_n\\models\\varphi]$ exists. A natural first step: $|\\{x:x\\circ x=x\\}|\\to\\mathrm{Poisson}(1)$ in distribution, so $\\Pr[\\exists x\\,(x\\circ x=x)]\\to1-e^{-1}$. More generally, for every fixed finite partial quasigroup configuration, the count of copies with bounded expectation should have a Poisson limit.",
+"why": "Zero-one and convergence laws are known for random graphs, random unary functions (Lynch) and sparse random graphs. Random Latin squares are a natural dense algebraic model with heavy global constraints, where independence-based methods fail. Recent progress on the structure of random Latin squares (Kwan–Sah–Sawhney–Simkin and others) makes a logical limit law a plausible but nontrivial target. It would show which finite configurations the first-order theory can 'see'.",
+"issues": "The question is well posed. Definable sparse relations, such as the diagonal map x↦x∘x or the relation x∘y=y, behave like random functions or permutations with Poisson statistics, so the 'first step' captures the expected mechanism. I made the language and the reading of the structure explicit. I could not finish the literature check because the web-search budget ran out. I believe results on Poisson limits for small substructures of random Latin squares may already exist (possibly including idempotents on the diagonal), so the 'first step' may be known. I found no reference posing the convergence-law question itself, but that is unverified.",
+"refs": []
+},
+{
+"id": "C-T1",
+"title": "Distinct character degrees of the symmetric group",
+"grade": "B",
+"importance": 4,
+"novelty": 3,
+"value": 5,
+"W": "Conjugate partitions always give representations of S_n of the same dimension, so at most about half of the p(n) irreducible representations can have distinct dimensions. Decide whether the fraction of distinct dimensions tends to a limit, and whether that limit is positive.",
+"M": "Let $d(n)=\\#\\{f^\\lambda:\\lambda\\vdash n\\}$ be the number of distinct irreducible character degrees of $S_n$, so $d(n)\\le (p(n)+sc(n))/2$, where $sc(n)$ is the number of self-conjugate partitions. Determine whether $\\lim_{n\\to\\infty}d(n)/p(n)$ exists and, if so, find it; in particular decide whether $\\liminf_n d(n)/p(n)>0$. (Hook-length data: $d(n)/p(n)\\in[0.40,0.47]$ for $20\\le n\\le45$, e.g. $d(40)=16216$, $p(40)=37338$; computations up to $n=129$ in arXiv:2410.01726 show the average multiplicity $p(n)/d(n)$ with no clear limit, possibly near $2.5$.)",
+"why": "Degrees of S_n are products of hook lengths, and coincidences between them beyond conjugation are a basic but poorly understood arithmetic phenomenon. Whether the average degree multiplicity stays bounded says how much of the information in a partition is lost in its dimension.",
+"issues": "Already posed in essence: arXiv:2410.01726 (On the irreducible character degrees of symmetric groups and their multiplicities) plots p(n)/|cd(S_n)| for n<=129, says it is far from clear whether a limit exists (maybe about 2.5), and records a referee's suggestion of pi*sqrt(2/3)~2.565. Not novel, but still open. Statement fine; added the upper bound with self-conjugate partitions and the reference data. The given data is consistent with the paper.",
+"refs": [
+"https://arxiv.org/abs/2410.01726v3",
+"https://arxiv.org/html/2410.01726v3"
+]
+},
+{
+"id": "N-022",
+"title": "Blank jigsaw with few edge shapes",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "A jigsaw with no picture can only be solved from the shapes of its pieces. Each internal edge is one of k shapes (a tab that fits only its own matching blank), and pieces may be turned. How small can k be if some n×n blank jigsaw still goes together in exactly one way? Counting shows k must be at least about √n, and random puzzles need about n.",
+"M": "An $n\\times n$ jigsaw with $k$ edge types is a map assigning to each internal edge of the $n\\times n$ grid a type in $[k]$ and an orientation (which side carries the tab); border edges are flat. Its pieces are the $n^2$ unit squares, each regarded as a distinct physical object carrying its four (type, tab/blank) labels up to rotation. An assembly is a placement of all pieces bijectively on the cells, each rotated by a multiple of $90^\\circ$, so that every internal edge joins a tab and a blank of the same type and all flat edges lie on the border. Let $k(n)$ be the least $k$ for which some $n\\times n$ jigsaw with $k$ edge types has exactly one assembly up to the four rotations of the whole square. Determine the order of $k(n)$; in particular, is $k(n)=\\Theta(\\sqrt n)$?",
+"why": "Uniqueness of jigsaw reconstruction is a well-studied model problem for shotgun assembly (Mossel–Ross; Bordenave–Feige–Mossel; Nenadov–Pfister–Steger), but all known thresholds concern random puzzles, where about n edge types are needed. Since unique assembly forces all n^2 pieces to be distinct, a simple count gives k(n) ≥ c√n, so the question is whether designed puzzles can beat random ones by a polynomial factor, a rigidity/design question in the spirit of de Bruijn tori.",
+"issues": "Original M was ambiguous: whether identical pieces count as interchangeable (unlabelled multiset, where swapping identical pieces is not a new assembly) changes the answer completely; fixed to distinct physical pieces, which forces all pieces distinct and gives the counting lower bound k(n) ≥ c n^{1/2}. Random-puzzle results give k(n) ≤ (1+o(1))n. Found no deterministic-design result. The unlabelled variant (constant k possible?) is a separate, also interesting question, related to tile-complexity results in self-assembly. Risk: an explicit coordinate-encoding construction may give Θ(√n) fairly routinely.",
+"refs": [
+"https://arxiv.org/pdf/1605.03086",
+"https://arxiv.org/abs/1605.03043",
+"https://arxiv.org/pdf/1701.04813",
+"https://arxiv.org/pdf/1707.04730"
+]
+}
+]

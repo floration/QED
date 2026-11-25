@@ -1,0 +1,179 @@
+[
+{
+"id": "N-621",
+"title": "Chaos in the symmetric ABC flow",
+"grade": "B",
+"importance": 6,
+"novelty": 4,
+"value": 7,
+"W": "The ABC flow with all three coefficients equal to 1 is the classical steady Euler flow on the 3-torus that is believed to be chaotic. Prove that it really is: show it has positive topological entropy.",
+"M": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb{T}^3=(\\mathbb{R}/2\\pi\\mathbb{Z})^3$ has positive topological entropy (e.g. by exhibiting a transversal homoclinic orbit to a hyperbolic periodic orbit, or a horseshoe for a Poincare map).",
+"why": "The 1:1:1 ABC flow is the standard example of Lagrangian chaos in a steady Beltrami (Euler) flow, and of fast-dynamo and mixing studies since Arnold and Henon. The numerical evidence for chaos since Dombre et al. (1986) is overwhelming, yet only non-integrability (Ziglin) and existence of particular periodic or ballistic orbits are proved. A proof, likely computer-assisted, would close a forty-year gap.",
+"issues": "Literature: Ziglin proved analytic non-integrability for A=B=C. Xin-Yu-Zlatos (arXiv 1601.02724) proved existence of periodic orbits. Lessard et al. (arXiv 1704.03128) gave computer-assisted proofs of ballistic orbits and stated that further ABC work was planned. A 2026 paper (arXiv 2609.17449) gives C^1 non-integrability only in a small-parameter regime. I found no proof of positive entropy or a horseshoe at A=B=C=1. The statement is clean and the system matches the standard ABC form. It is likely tractable by CAPD-style validated numerics, which lowers 'depth' but not interest. | RED TEAM: Still open: no proof of positive entropy or a horseshoe at A=B=C=1. Arxiv 2609.17449 (Szumiński–Llibre) is perturbative near the axes only, as the first reviewer said. M is precise. But nobody doubts the answer, and a CAPD or topological-horseshoe proof looks like routine engineering. It is valuable but not elite-deep.",
+"refs": [
+"https://arxiv.org/abs/1601.02724",
+"https://arxiv.org/abs/1704.03128",
+"https://arxiv.org/abs/2609.17449",
+"https://www.mathnet.ru/eng/faa525",
+"https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/chaotic-streamlines-in-the-abc-flows/7139EDCF0CC8A9B4D9D749B1FAA6CE54"
+]
+},
+{
+"id": "N-553",
+"title": "Minimal degree of a Jacobian counterexample",
+"grade": "B",
+"importance": 6,
+"novelty": 5,
+"value": 6,
+"W": "The 2026 counterexamples to the Jacobian conjecture in three variables have degree 7 at best (Alpöge's map has component degrees 7,6,4). Wang's theorem says degree 2 is impossible. Find the smallest degree a three-variable counterexample can have: some number from 3 to 7.",
+"M": "Call $F=(F_1,F_2,F_3)\\in\\mathbb C[x,y,z]^3$ a Keller map if $\\det JF\\in\\mathbb C^{\\times}$, and set $\\deg F=\\max_i\\deg F_i$. Determine $d_3=\\min\\{\\deg F: F \\text{ a Keller map that is not injective on }\\mathbb C^3\\}$. Known: $3\\le d_3\\le 7$ (Wang: degree $\\le2$ Keller maps are invertible in every dimension; Alpöge, van den Essen: explicit degree-7 examples). In particular, is every cubic Keller map $\\mathbb C^3\\to\\mathbb C^3$ invertible?",
+"why": "Now that the Jacobian conjecture is known to fail in dimension 3, the obvious next question is how small a failure can be. The minimal degree marks the line between low-degree regimes where invertibility can still be proved (Wang's degree-2 theorem, cubic-homogeneous results in small dimension) and the region where counterexamples exist. Because the Bass–Connell–Wright reduction raises the dimension, the cubic case in dimension 3 is a genuinely separate question.",
+"issues": "The original said 'the 2026 counterexamples have degree 7'. That is accurate for Alpöge's F (7,6,4) and van den Essen's (7,5,4), but Gallagher-type examples have higher degree, so I reworded it to 'degree 7 at best'. I defined 'Keller map' and 'degree' (max component degree, as opposed to geometric degree) and stated the known bounds 3<=d_3<=7. I found no paper that determines d_3 or settles the general cubic case in C^3, but the question is probably being actively studied. It is also a finite-dimensional algebraic problem for each degree, so computer searches may settle it soon, which lowers its long-term novelty.",
+"refs": [
+"https://en.wikipedia.org/wiki/Jacobian_conjecture",
+"https://arxiv.org/pdf/2608.00222",
+"https://arxiv.org/pdf/2609.17795",
+"https://arxiv.org/pdf/2607.22198",
+"https://isa-afp.org/entries/Jacobian_Counterexample.html"
+]
+},
+{
+"id": "N-652",
+"title": "Chaos in the double pendulum at every energy",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "The planar double pendulum with equal masses and equal arms looks chaotic at moderate energies but almost regular at very low and very high energies. Prove that it has genuine (positive-entropy) chaos at every energy above the rest state.",
+"M": "Let $H(\\theta_1,\\theta_2,p_1,p_2)$ be the Hamiltonian of the planar double pendulum with $m_1=m_2=\\ell_1=\\ell_2=g=1$ on $T^*\\mathbb T^2$, with minimum value $E_0$ (the hanging rest state). Prove that for every $E>E_0$ the Hamiltonian flow restricted to $\\{H=E\\}$ has positive topological entropy.",
+"why": "The double pendulum is the standard textbook example of chaos, yet rigorous chaos is not known uniformly in energy. Both ends are near-integrable: at low energy it is a nonresonant pair of oscillators (frequency ratio 1+sqrt2), and at high energy it is nearly free rotation. Chaos there needs exponentially small splitting estimates, and the middle range needs computer-assisted proofs, so it is a concrete test for both techniques.",
+"issues": "M was essentially correct; clarified the phase space. Main attack: the low-energy limit is linear and integrable (numerics show the chaotic fraction tends to 0 as E tends to E_0, arXiv 2312.13436), so positive entropy must come from exponentially thin stochastic layers near resonances. Note the high-energy end is also near-integrable, which W originally ignored. I found no rigorous positive-entropy result at any energy (web search budget ran out before I could confirm non-integrability references such as Morales-Ramis-type results). Natural but technical, so B rather than A.",
+"refs": [
+"https://arxiv.org/pdf/2312.13436",
+"https://arxiv.org/pdf/2403.07000"
+]
+},
+{
+"id": "C-97",
+"title": "Computable connective constants",
+"grade": "B",
+"importance": 5,
+"novelty": 7,
+"value": 6,
+"W": "Count the self-avoiding walks of length n on the Cayley graph of a finitely generated group. Their n-th roots decrease to the connective constant, so it can always be approximated from above. For groups with a solvable word problem, can it always be computed to any precision, i.e. also approximated from below?",
+"M": "Let $G$ be a finitely generated group with solvable word problem, $S=S^{-1}$ a finite generating set, $c_n$ the number of $n$-step self-avoiding walks from $e$ in $\\mathrm{Cay}(G,S)$, and $\\mu(G,S)=\\lim_n c_n^{1/n}=\\inf_n c_n^{1/n}$ (a right-computable real). Is $\\mu(G,S)$ always a computable real? If not, construct $(G,S)$ with solvable word problem and $\\mu(G,S)$ non-computable. If so, is the map (word-problem algorithm, $S$) $\\mapsto\\mu(G,S)$ uniformly computable?",
+"why": "The connective constant is the basic growth rate of self-avoiding walks; for graphs with a (unimodular) graph height function, bridge counts are supermultiplicative and give matching lower bounds, so mu is computable for e.g. solvable groups with solvable word problem. Whether this can fail when no height function exists (Higman-type groups, torsion groups such as Grigorchuk's) ties the probabilistic theory of SAWs on groups to computability and symbolic dynamics, where entropies of effective subshifts are exactly the right-computable reals.",
+"issues": "Statement precise; inf=lim holds by submultiplicativity on transitive graphs. Known: mu is right computable for recursively presented groups (Aubrun-Bitar 2023, cited as Lemma 4.11 in arXiv 2402.13944); log mu is the entropy of the SAW 'skeleton' subshift; computable (Perron-number powers) for plain groups; lower bounds via bridges for Cayley graphs with graph height functions (Grimmett-Li), covering all f.g. solvable groups. The general question (left-computability without height functions) does not appear posed. A negative answer would need a group with solvable word problem whose SAW growth encodes a non-computable left limit, plausible via Dehn-monster or torsion constructions; neither direction looks easy. Specialised audience; B.",
+"refs": [
+"https://arxiv.org/html/2402.13944v2",
+"https://www.combinatorics.org/ojs/index.php/eljc/article/view/v31i4p24",
+"https://arxiv.org/pdf/2307.12655.pdf",
+"https://arxiv.org/pdf/1501.00476",
+"https://arxiv.org/pdf/1412.0150v5",
+"https://arxiv.org/pdf/1304.7216"
+]
+},
+{
+"id": "N-344",
+"title": "Hat Ising universality",
+"grade": "B",
+"importance": 6,
+"novelty": 4,
+"value": 5,
+"W": "Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid. Prove it.",
+"M": "Let $G$ be the planar graph whose vertices are the tiles of a fixed hat tiling (Smith–Myers–Kaplan–Goodman-Strauss), with edges between tiles sharing a boundary segment. Consider the ferromagnetic nearest-neighbour Ising model on $G$ with uniform coupling $J=1$. Prove that there is a critical $\\beta_c$ (independent of the tiling in the hull), and that as $\\beta\\to\\beta_c$ the spontaneous magnetization, susceptibility and correlation length obey $M(\\beta)\\asymp(\\beta-\\beta_c)^{1/8}$, $\\chi(\\beta)\\asymp|\\beta-\\beta_c|^{-7/4}$, $\\xi(\\beta)\\asymp|\\beta-\\beta_c|^{-1}$.",
+"why": "Rigorous 2D Ising universality is known for isoradial graphs at Z-invariant weights and for periodic graphs. Uniform couplings on an aperiodic, non-isoradial graph are not covered. The hat graph is a canonical such test, and numerics (Matsubara–Suzuki) support universality.",
+"issues": "Original M did not say which graph, which couplings, or which definitions of the exponents. Fixed: tile-adjacency graph, uniform J, and asymptotics up to constants. Existing work is Monte Carlo only, with ν and β assumed rather than fitted. This is an instance of the broader open problem of universality for quasiperiodic planar Ising models.",
+"refs": [
+"https://arxiv.org/abs/2402.11331",
+"https://arxiv.org/pdf/2307.11054"
+]
+},
+{
+"id": "N-654",
+"title": "Two-frequency localization",
+"grade": "B",
+"importance": 6,
+"novelty": 3,
+"value": 5,
+"W": "Take a one-dimensional lattice Schrödinger operator whose potential is the sum of two cosines with frequencies √2 and √3, and make the coupling strong. Prove that for these specific frequencies, not just for almost every frequency pair, almost every phase gives localized eigenfunctions that decay exponentially.",
+"M": "For $\\lambda>0$ and $\\theta\\in\\mathbb T^2$ let $(H_{\\lambda,\\theta}\\psi)(n)=\\psi(n+1)+\\psi(n-1)+\\lambda\\big(\\cos2\\pi(n\\sqrt2+\\theta_1)+\\cos2\\pi(n\\sqrt3+\\theta_2)\\big)\\psi(n)$ on $\\ell^2(\\mathbb Z)$. Prove there is $\\lambda_0$ such that for all $\\lambda\\ge\\lambda_0$ and Lebesgue-a.e. $\\theta$, $H_{\\lambda,\\theta}$ has pure point spectrum with exponentially decaying eigenfunctions (Anderson localization).",
+"why": "Multi-frequency localization at large coupling is known only for a full-measure set of frequency vectors, because the proofs (Bourgain-Goldstein, Bourgain-Goldstein-Schlag) delete frequencies by semi-algebraic elimination. Proving it for one explicit Diophantine vector such as (√2,√3), which is Diophantine by Schmidt's subspace theorem, would require an arithmetic way to control double resonances, as Jitomirskaya's method does for one frequency.",
+"issues": "This is a special case of a recognised open problem (fixed-frequency localization for multi-frequency analytic potentials), not a new question. arXiv 2603.07180 says it is unknown whether some Diophantine frequency can be fixed, and solves only the dual perturbative regime on Z^d. Eliasson (Acta Math 1997) gives pure point spectrum at fixed Diophantine frequency for large Gevrey/analytic couplings, but without exponential decay of eigenfunctions, so the exponential decay is the open content. The original fixed coupling 10 was arbitrary: every known method gives an inexplicit lambda_0, so I replaced it with 'all lambda >= lambda_0'.",
+"refs": [
+"https://arxiv.org/abs/2603.07180",
+"https://arxiv.org/abs/1204.3086",
+"https://arxiv.org/abs/1610.00380",
+"https://arxiv.org/abs/2603.10649"
+]
+},
+{
+"id": "N-396",
+"title": "Graceful labellings of forests",
+"grade": "B",
+"importance": 5,
+"novelty": 5,
+"value": 5,
+"W": "A forest with m edges and c trees has m + c vertices. Label them with 0, 1, ..., m + c - 1, each label used once, so that the m edge differences |label(u) - label(v)| are all different. Show that every forest has such a labelling. The case 'a tree plus one isolated vertex' already says that every tree can be labelled gracefully if one spare label is allowed.",
+"M": "Prove that every forest $F$ with $m$ edges and $c\\ge1$ components has a bijection $\\ell:V(F)\\to\\{0,1,\\dots,m+c-1\\}$ such that the values $|\\ell(u)-\\ell(v)|$, $uv\\in E(F)$, are pairwise distinct. (Key special case: $F=T\\sqcup K_1$, i.e. every tree with $m$ edges has an injective labelling into $\\{0,\\dots,m+1\\}$ with distinct edge differences.)",
+"why": "Joining the c trees with c - 1 new edges makes a single tree, and a graceful labelling of that tree restricts to such a labelling of the forest. So this statement follows from the Graceful Tree Conjecture (Ringel–Kotzig–Rosa) but is weaker than it. The best unconditional results only give labels in {1,...,(1+eps)n}, or (1-eps)n distinct differences, so even one spare label for every tree would be new progress.",
+"issues": "The original hypothesis (c >= 2 and one tree with more than m/2 edges) is arbitrary. An exhaustive backtracking search over ALL forests with at most 11 vertices (475 forests at n=11) found a valid labelling for every one, with or without that hypothesis. So the hypothesis is not doing any work, and I replaced it with 'every forest'. The original version already contains the open T + K1 case (one spare label for every tree), so neither version is easy. Novelty is moderate: range-relaxed graceful labellings are studied (Van Bussel 2002; Adamaszek–Allen–Grosu–Hladký; the 2025 gracesize paper), and I did not find this exact forest formulation, but it is a natural reformulation that experts would likely regard as folklore-adjacent.",
+"refs": [
+"https://www.combinatorics.org/ojs/index.php/eljc/article/view/v9i1r4",
+"https://arxiv.org/abs/1608.01577",
+"https://arxiv.org/abs/2511.11331",
+"https://arxiv.org/abs/1402.0196"
+]
+},
+{
+"id": "N-118",
+"title": "Is the Petersen graph common?",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 5,
+"W": "Color the edges of a huge complete graph red and blue. Does a random coloring minimize the number of single-color copies of the Petersen graph?",
+"M": "Let $P$ be the Petersen graph ($10$ vertices, $15$ edges) and $m(P)=\\lim_{n\\to\\infty}\\min_{\\chi}\\frac{\\#\\{\\text{monochromatic copies of }P\\text{ in }(K_n,\\chi)\\}}{\\#\\{\\text{copies of }P\\text{ in }K_n\\}}$, minimum over red/blue colorings $\\chi$ of $E(K_n)$. Is $m(P)=2^{-14}$, i.e. is $P$ common? Equivalently, is $t(P,W)+t(P,1-W)\\ge 2^{-14}$ for every graphon $W$? If not, determine $m(P)$.",
+"why": "Which graphs are common (random coloring is optimal) is a central question in Ramsey multiplicity. The known obstructions (containing $K_4$, the Turán-coloring criterion of Fox–Wigderson) do not apply to the triangle-free, girth-5, 3-chromatic Petersen graph. It is a natural test case, between odd cycles (common) and graphs containing $K_4$ (uncommon).",
+"issues": "Original 'determine the constant' rewritten as the commonness question; if P is common the constant is 2^{-14}. Checks: P has no K4, so Thomason's obstruction does not apply. Its smallest even subgraph with min degree 2 is C6, and t(C6,U)>=0, so P passes the first local-commonness test. Turán colorings give 32-560 times the random value. A random search over 2- to 4-step graphons found nothing below 2^{-14} (best 1.035x). Found no paper settling P.",
+"refs": [
+"https://arxiv.org/pdf/2207.07775",
+"https://arxiv.org/pdf/2206.04036",
+"https://arxiv.org/pdf/2012.02057",
+"https://arxiv.org/pdf/2610.20149"
+]
+},
+{
+"id": "C-T2",
+"title": "The complex of planar graphs",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "Planar graphs on n labelled vertices form a simplicial complex, because deleting an edge keeps a graph planar. It is pure, since every maximal planar graph has 3n-6 edges. Its homology turns out not to be that of a wedge of top-dimensional spheres: already for n=6 it is concentrated two degrees lower and has 2-torsion. Determine its homology.",
+"M": "Let $\\Pi_n$ be the simplicial complex on vertex set $E(K_n)$ whose faces are edge sets of planar graphs; it is pure of dimension $3n-7$. Determine $\\tilde H_*(\\Pi_n;\\mathbb Z)$, or at least $\\tilde H_*(\\Pi_n;\\mathbb Q)$, for all $n$. Known: $\\Pi_4$ is a simplex, $\\Pi_5=\\partial\\Delta^9\\cong S^8$. For $n=6$ (computed exactly): $\\tilde H_*(\\Pi_6;\\mathbb Q)$ is $\\mathbb Q^{15}$ in degree $9=3n-9$ and $0$ elsewhere; $\\tilde H_*(\\Pi_6;\\mathbb F_2)$ is $\\mathbb F_2^{15},\\mathbb F_2,\\mathbb F_2$ in degrees $9,10,11$, so $\\tilde H_{10}(\\Pi_6;\\mathbb Z)$ has $2$-torsion and $\\Pi_6$ is not a wedge of spheres. The mod-2 top class is the sum of all triangulations: every face of dimension $3n-8$ of $\\Pi_6$ lies in an even number (2 or 4) of facets. Questions: (a) is $\\tilde H_*(\\Pi_n;\\mathbb Q)$ concentrated in degree $3n-9$ for all $n\\ge6$, and what is its rank and $S_n$-module structure? (b) Is $\\tilde H_{3n-7}(\\Pi_n;\\mathbb F_2)\\ne0$ for all $n\\ge5$? Is all torsion 2-torsion?",
+"why": "Simplicial complexes of monotone graph properties (matchings, forests, non-connected and non-k-connected graphs) are a well-developed area, and planarity is the most natural minor-closed property not yet treated. The non-orientable, triangulation-flip-driven top class makes it differ from the wedge-of-spheres pattern typical of such complexes.",
+"issues": "ORIGINAL STATEMENT FALSE: a quick exact computation (GF(2) and rational boundary ranks over all 2^15 subgraphs of K_6) gives rational reduced homology Q^15 in degree 9 only, and mod-2 homology F2^15, F2, F2 in degrees 9, 10, 11. So Pi_6 is not a wedge of 11-spheres; the Euler characteristic -15 is correct but misleading. Rewrote M as a homology-determination problem, keeping the n=6 data. The claimed chi(Pi_7)=177 was not re-verified; it would imply rational homology in an even degree, for example 3n-9=12. No literature found on this complex. Jonsson's LNM 1928 Table 7.1 lists monotone graph properties studied, and planarity does not appear in the sources checked.",
+"refs": [
+"https://arxiv.org/pdf/2012.01679",
+"https://doi.org/10.1007/978-3-540-75859-4_7"
+]
+},
+{
+"id": "N-642",
+"title": "A Jörgens theorem for the Hessian permanent",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "Jörgens proved that a convex function on the whole plane whose Hessian determinant is 1 must be a quadratic polynomial. Replace the determinant by the permanent, u_xx·u_yy + u_xy², and ask whether the same rigidity holds for solutions on the elliptic branch.",
+"M": "Let $u\\in C^4(\\mathbb R^2)$ satisfy $u_{xx}u_{yy}+u_{xy}^2=1$, $u_{xx}>0$ and $2u_{xy}^2<1$ on $\\mathbb R^2$ (these are exactly the conditions for the linearized operator $u_{yy}\\partial_{xx}+2u_{xy}\\partial_{xy}+u_{xx}\\partial_{yy}$ to be elliptic; they force $u$ convex with $0<\\det D^2u=1-2u_{xy}^2\\le1$). Prove or disprove that $u$ is a quadratic polynomial.",
+"why": "Jörgens' theorem and its extensions (Calabi, Pogorelov; Yuan's work on special Lagrangian equations) depend on the Monge–Ampère or Lagrangian structure, which allows Lewy or Legendre-type transformations to linear or holomorphic problems. The permanent level set {ac+b²=1} is a one-sheeted hyperboloid. It is not a symplectic Monge–Ampère equation, its ellipticity degenerates both at infinity and at the finite boundary 2b²=1, and in two dimensions Liouville theorems are known in general only for uniformly elliptic F (Nirenberg). So this is a clean test of whether 2D Bernstein–Jörgens rigidity needs the special structure.",
+"issues": "Checked ellipticity: the symbol [[u_yy,u_xy],[u_xy,u_xx]] is positive definite iff u_xx>0 and u_xx u_yy - u_xy² = 1 - 2u_xy² > 0, so the stated conditions are right and imply convexity. Ruled out simple non-quadratic candidates: separable u=f(x)+g(y)+bxy; u=φ(x)+yψ(x)+y²χ(x) (forces χ ∝ x^{1/3}, not entire); quadratic plus a plane wave f(αx+βy) (forces u_xy² = 1, not elliptic). The equation is not of symplectic Monge–Ampère type (not linear in the Plücker coordinates (1,a,b,c,ac-b²)), so no Sp(4) reduction to Jörgens. The partial Legendre transform gives 2v_py² - v_pp v_yy = v_pp², not linear. Found no literature on this equation; known 2D Liouville theorems (Li–Liang, Nirenberg) need uniform ellipticity, which fails here.",
+"refs": [
+"https://arxiv.org/pdf/2407.11903",
+"https://arxiv.org/pdf/2603.10797",
+"https://www.numdam.org/item/ASNSP_2003_5_2_1_181_0/"
+]
+}
+]

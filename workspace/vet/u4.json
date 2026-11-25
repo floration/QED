@@ -1,0 +1,146 @@
+[
+{
+"id": "N-628",
+"title": "Capacities of the 4D superball",
+"grade": "B",
+"importance": 6,
+"novelty": 6,
+"value": 6,
+"W": "Viterbo's conjecture that all symplectic capacities agree on convex bodies is false in general, but the known counterexample is not centrally symmetric. On the 4D ball x1^4+y1^4+x2^4+y2^4 <= 1 the cylindrical and Ekeland-Hofer-Zehnder capacities are both known to equal 4Gamma(5/4)^2/Gamma(3/2). Does the largest symplectically embedded round ball have the same capacity?",
+"M": "Let $U=\\{x_1^4+y_1^4+x_2^4+y_2^4\\le1\\}\\subset(\\mathbb R^4,dx_1\\wedge dy_1+dx_2\\wedge dy_2)$. It is known that $c_{EHZ}(U)=c_Z(U)=c_0:=4\\Gamma(5/4)^2/\\Gamma(3/2)\\approx3.708$. Decide whether the Gromov width $c_G(U)=\\sup\\{\\pi r^2: B^4(r)\\hookrightarrow U\\text{ symplectically}\\}$ equals $c_0$.",
+"why": "After Haim-Kislev and Ostrover disproved Viterbo's conjecture, it is open whether all normalized capacities still agree on centrally symmetric convex bodies. The l^4 ball is the simplest centrally symmetric, non-toric convex body whose EHZ and cylindrical capacities are known exactly, so its Gromov width is the sharpest remaining test: a strict inequality would give a centrally symmetric counterexample to strong Viterbo.",
+"issues": "Original M asked whether c_G = c_EHZ without noting that c_EHZ(U) = c_Z(U) was computed in 2026 (arXiv 2609.37794, Theorem 2, p=4). The problem therefore reduces to the Gromov width alone, and M was rewritten that way. Trivial bound: U contains the Euclidean unit ball, so c_G >= pi. U is not toric, so ECH and toric methods do not apply directly. No Gromov-width computation for l^p balls found (search budget exhausted before a dedicated search).",
+"refs": [
+"https://arxiv.org/pdf/2609.37794",
+"https://arxiv.org/pdf/2405.16513",
+"https://arxiv.org/pdf/2402.07709",
+"https://arxiv.org/pdf/2203.02294"
+]
+},
+{
+"id": "N-134",
+"title": "Icosahedral monotile",
+"grade": "B",
+"importance": 6,
+"novelty": 5,
+"value": 6,
+"W": "Find a single 3D tile that fills space and forces five-fold, icosahedral symmetry in every tiling, or prove that no such tile exists.",
+"M": "Does there exist a compact set $T\\subset\\mathbb R^3$ homeomorphic to a ball, which tiles $\\mathbb R^3$ by congruent copies, such that for every tiling $\\mathcal T$ by copies of $T$ the hull $\\Omega(\\mathcal T)=\\overline{\\{\\mathcal T+x:x\\in\\mathbb R^3\\}}$ (local topology) satisfies $R\\,\\Omega(\\mathcal T)=\\Omega(\\mathcal T)$ for every $R$ in some icosahedral rotation group $G\\cong A_5$? (This forces strong aperiodicity, by the crystallographic restriction.)",
+"why": "Icosahedral quasicrystals are modeled by tilings with two or more prototiles (Ammann rhombohedra, Danzer tetrahedra). The new 3D aperiodic monotiles, such as Socolar–Taylor and recent strongly aperiodic examples, all live in crystallographic orientation classes. A single tile that forces non-crystallographic symmetry would close that gap.",
+"issues": "Made precise: 'icosahedral symmetry in its hull' now means hull invariance under an A5 rotation group. Ball topology added to exclude degenerate disconnected tiles. Recent 3D strongly aperiodic monotiles (e.g. arXiv 2609.19214) use cubic frames, with symmetry order at most 24, so they do not answer this. Even the 2D analogue (a monotile forcing 5- or 10-fold symmetry) seems open and is the more natural first target, which keeps this at B.",
+"refs": [
+"https://arxiv.org/abs/2609.19214",
+"https://en.wikipedia.org/wiki/Socolar%E2%80%93Taylor_tile",
+"https://myweb.rz.uni-augsburg.de/~eschenbu/Penrose3D.pdf"
+]
+},
+{
+"id": "N-385",
+"title": "Cross-polytopes in 4D",
+"grade": "B",
+"importance": 5,
+"novelty": 4,
+"value": 6,
+"W": "Every smooth convex body in 4-space should have the eight corners of a regular cross-polytope lying on its boundary.",
+"M": "Prove that for every smooth convex body $K\\subset\\mathbb{R}^4$ there is a regular cross-polytope (a similar copy of $\\mathrm{conv}\\{\\pm e_1,\\dots,\\pm e_4\\}$) all of whose 8 vertices lie on $\\partial K$.",
+"why": "Inscribing regular octahedra and cross-polytopes (Klee-Wagon Problem 11.5) is a high-dimensional cousin of the square peg problem. Karasev settled every odd prime power dimension with equivariant topology, but the method fails in even dimensions. Dimension 4 is the first open case and needs a genuinely new obstruction computation.",
+"issues": "Makeev solved d=3 for smooth bodies, and Karasev (arXiv 0905.2671) solved odd prime powers d for non-angular bodies, noting the method does not apply to d=2. Centrally symmetric bodies are handled in all d via Yamabe-Yujobo. Akopyan-Karasev handle polytopes in R^3. I found no result for d=4. I restricted M to smooth bodies: for arbitrary convex bodies, limiting arguments can degenerate, and Karasev notes that even dropping non-angularity is unclear. Already posed implicitly, so novelty is low.",
+"refs": [
+"https://arxiv.org/abs/0905.2671",
+"https://ar5iv.arxiv.org/html/1107.4428",
+"https://mathnet.ru/eng/znsl3565"
+]
+},
+{
+"id": "N-126",
+"title": "Translative Lebesgue covering",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Find the convex shape of least area that contains a translated copy of every planar set of diameter 1, when only translations (no rotations or reflections) are allowed. Is the Jung disc of radius 1/sqrt(3), which is optimal for perimeter, also optimal for area?",
+"M": "Let $\\mathcal D$ be the family of planar sets of diameter at most $1$. Determine $\\alpha=\\min\\{\\mathrm{area}(K): K\\subset\\mathbb R^2 \\text{ convex},\\ \\forall X\\in\\mathcal D\\ \\exists t\\in\\mathbb R^2: X+t\\subseteq K\\}$ and all minimisers up to translation. In particular decide whether $\\alpha<\\pi/3$ (the area of the disc of radius $1/\\sqrt3$).",
+"why": "Lebesgue's universal-cover problem (rigid motions allowed) is a century old and still unsolved; the translation-only version is the natural rigid analogue of Pal's solution of the convex Kakeya problem (equilateral triangle of height 1) and of Bezdek-Connelly's theorem that the disc of radius 1/sqrt3 is the unique minimum-perimeter translation cover of diameter-1 sets. Its answer measures how much rotation actually helps in Lebesgue's problem.",
+"issues": "Original title 'Hexagonal' was unjustified: a fixed regular hexagon of width 1 does not contain translates of all rotated Reuleaux triangles (Pal's hexagon argument uses rotation). Uniqueness claim replaced by 'determine all minimisers up to translation' (uniqueness unproven and unmotivated). Existence of a minimiser follows from Blaschke selection. Literature: perimeter version solved (Bezdek-Connelly; cited in arXiv 1209.2171); area version for diameter-1 sets not found solved; related translation/discrete-rotation covers for curves and segments in Jung-Yoon-Ahn-Tokuyama (Adv. Geom. 2023). Bounds: alpha >= area of min translation cover of unit segments and unit disc together; alpha <= pi/3. Quick numerics: translating 6 rotated copies of the width-1 Reuleaux triangle by optimized offsets gives hull area ~0.978 < centred 1.026, so the centred disc is likely not area-optimal, i.e. the answer is probably a non-trivial shape.",
+"refs": [
+"https://ar5iv.labs.arxiv.org/html/1209.2171",
+"https://www.degruyterbrill.com/document/doi/10.1515/advgeom-2023-0021/html",
+"https://en.wikipedia.org/wiki/Lebesgue%27s_universal_covering_problem",
+"https://arxiv.org/pdf/2608.30538"
+]
+},
+{
+"id": "C-93",
+"title": "Information-tight sorting of pattern classes",
+"grade": "B",
+"importance": 5,
+"novelty": 7,
+"value": 6,
+"W": "An array is promised to avoid a fixed pattern. Counting the allowed orders gives a lower bound on the comparisons needed to sort it, and Fredman's theorem says this bound plus 2n always suffices. Opler (2024) showed the right order of magnitude is linear. Is the counting bound tight up to lower-order terms, o(n), for every pattern?",
+"M": "For a permutation $\\tau$ let $C_\\tau(n)$ be the minimum worst-case number of comparisons of a decision tree that sorts $a_1,\\dots,a_n$ under the promise that their order pattern lies in $\\mathrm{Av}_n(\\tau)$. Fredman: $\\log_2|\\mathrm{Av}_n(\\tau)|\\le C_\\tau(n)\\le\\log_2|\\mathrm{Av}_n(\\tau)|+2n$. Decide whether $C_\\tau(n)=\\log_2|\\mathrm{Av}_n(\\tau)|+o(n)$ for every $\\tau$, and in particular for $\\tau=1324$.",
+"why": "The comparison model is one of the few settings where information-theoretic lower bounds are often nearly exact. Even for unrestricted sorting it is unknown whether $\\log_2 n!+o(n)$ comparisons suffice. Pattern classes give a family where this question is harder to dismiss. A linear gap for some $\\tau$ would need a new lower-bound technique, and tightness for every $\\tau$ would need a strong structural sorting algorithm.",
+"issues": "Opler (arXiv:2409.07868) gives $O((\\log c_\\tau+1)n)$, tight up to a constant factor, but not the additive $o(n)$ question. I found nowhere that poses the additive form. Small cases: for $\\tau\\in\\{132,231,312,213\\}$ (equivalent under reversal and complement, which preserve the sorting problem; inverse does not), stack sorting uses $\\le2n$ comparisons and $\\log_2 C_n=2n-O(\\log n)$, so the answer is yes. $\\tau\\in\\{123,321\\}$ seems tractable by an adaptive merge but I did not check it. The question is substantive only for $|\\tau|\\ge4$. I stated that the decision tree knows $\\tau$.",
+"refs": [
+"https://arxiv.org/abs/2409.07868",
+"https://drops.dagstuhl.de/storage/00lipics/lipics-vol351-esa2025/html/LIPIcs.ESA.2025.104/LIPIcs.ESA.2025.104.html"
+]
+},
+{
+"id": "N-658",
+"title": "Jacobi matrix of primes",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Build an infinite tridiagonal (Jacobi) matrix with zero diagonal and the primes 2, 3, 5, 7, ... on the off-diagonals. The standard criteria for purely absolutely continuous spectrum need the off-diagonal sequence to vary regularly, and they just fail because prime gaps fluctuate. Decide whether the spectrum is nevertheless purely absolutely continuous on the whole real line.",
+"M": "Let $J$ be the self-adjoint Jacobi operator on $\\ell^2(\\mathbb N)$ given by $(Ju)_n=p_{n-1}u_{n-1}+p_nu_{n+1}$ (with $p_0u_0:=0$), where $p_n$ is the $n$-th prime. It is self-adjoint by Carleman's criterion, since $\\sum1/p_n=\\infty$. Decide whether $\\sigma(J)=\\sigma_{ac}(J)=\\mathbb R$ with no singular part.",
+"why": "Unbounded Jacobi matrices with weights $a_n\\to\\infty$ and $b_n=0$ have purely absolutely continuous spectrum under bounded-variation conditions on $a_{n+1}/a_n$ (Janas-Naboko, Clark). For the primes, the variation of $p_{n+1}/p_n$ diverges like $\\sum g_n/p_n$. A Prüfer heuristic suggests the real obstruction is the oscillatory series $\\sum(-1)^n g_n/p_n\\,e^{i\\phi_n}$ ($g_n$ the prime gaps), so the spectral type appears to encode a parity-of-index statistic of prime gaps.",
+"issues": "I did not settle it. At E=0 the eigenvector equation is solvable exactly: $u_{2k+1}/u_1=(-1)^k\\prod p_{2j-1}/p_{2j}$. The two solutions are balanced, both about $p_n^{-1/2}$, exactly when $S_N=\\sum_{n\\le N}(-1)^ng_n/p_n$ stays bounded. Numerically $S_N\\to-0.451$ (checked to $p\\approx2\\cdot10^7$), and the alternating gap sum $A_N=\\sum(-1)^ng_n$ behaves like $\\pm0.5\\sqrt N\\log p_N$. A proof probably needs $A_N=O(N^{1-\\delta})$, which looks unproven unconditionally. The answer is therefore likely 'yes', with an unconditional proof possibly out of reach. Second-order terms are controlled unconditionally by Heath-Brown's $\\sum g_n^2\\ll x^{23/18+\\epsilon}$. Literature check was limited because the web-search budget ran out: I found no paper on this matrix but could not complete the search. I rewrote the M to give the operator explicitly.",
+"refs": []
+},
+{
+"id": "N-647",
+"title": "Mass-critical scattering on the cube corner",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 5,
+"W": "Dodson proved that the defocusing cubic Schrödinger equation in the plane scatters for every finite-mass initial state. Show the same on the surface of an infinite cube corner, a flat cone with total angle 3π/2, where a singular point cannot be scaled away.",
+"M": "Let $\\mathcal C$ be the flat cone of total angle $3\\pi/2$ (isometric to the boundary of an octant), with $\\Delta$ the Friedrichs extension of the Laplacian on $C_c^\\infty(\\mathcal C\\setminus\\{o\\})$. Prove that for every $u_0\\in L^2(\\mathcal C)$ the solution of $iu_t+\\Delta u=|u|^2u$ is global, has finite $L^4_{t,x}(\\mathbb R\\times\\mathcal C)$ norm, and scatters in $L^2$ as $t\\to\\pm\\infty$: there are $u_\\pm\\in L^2$ with $\\|u(t)-e^{it\\Delta}u_\\pm\\|_2\\to0$.",
+"why": "Dodson's mass-critical scattering theorem relies on Euclidean translation and scaling symmetries. On a cone, scaling is still a symmetry but translation is not, and profiles concentrating at the apex rescale back to the same cone rather than to the plane. So the problem tests whether the concentration-compactness/rigidity method survives a geometry with diffraction and a fixed singular point, which is a natural step toward NLS on singular spaces.",
+"issues": "Web searches were unavailable for this item because the search budget was exhausted, so there is no literature check here. Ford's Strichartz estimates on flat cones supply the local and small-data theory, and I am not aware of a large-data mass-critical result on cones, but that is unverified. Fixes: specified the self-adjoint extension, and added the global L^4 spacetime bound, which is the standard form of the theorem. The statement is faithful to W. The difficulty is Dodson-level, so a proof would be a substantial paper. The specific angle 3*pi/2 is cosmetic: the natural statement is for all cone angles, possibly with a different mechanism for angle > 2*pi.",
+"refs": []
+},
+{
+"id": "N-630",
+"title": "Charge on a Fermat conductor",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "Put a unit of electric charge on a perfectly conducting solid x^4+y^4+z^4 <= 1. Show that the surface charge is thinnest exactly at the six flat points (+-1,0,0),... and thickest exactly at the eight points in the diagonal directions.",
+"M": "Let $K=\\{x^4+y^4+z^4\\le1\\}\\subset\\mathbb R^3$ and let $\\mu=\\rho\\,d\\sigma$ be its Newtonian (capacitary) equilibrium measure, $\\sigma$ surface measure on $\\partial K$ ($\\rho$ is real-analytic and positive since $\\partial K$ is analytic). Prove that $\\min_{\\partial K}\\rho$ is attained exactly at $(\\pm1,0,0),(0,\\pm1,0),(0,0,\\pm1)$ and $\\max_{\\partial K}\\rho$ exactly at $3^{-1/4}(\\pm1,\\pm1,\\pm1)$.",
+"why": "It is folklore that charge accumulates where a conductor is more curved, but the density is nonlocal and only exactly known for ellipsoids (where it is proportional to K^{1/4}). The Fermat superball is the simplest smooth convex body that is not an ellipsoid and has flat points; here Gaussian curvature K=9x^2y^2z^2/(x^6+y^6+z^6)^2 even vanishes along three whole great curves, so rho cannot be a function of K, and a proof needs a genuinely nonlocal comparison argument.",
+"issues": "Statement is well posed. Quick boundary-element check (8112 panels): rho about 0.0378 at flat points, 0.062 at (2^{-1/4},2^{-1/4},0), 0.087 at the diagonal, decreasing monotonically away from the diagonal, so the conjecture is numerically consistent (a spurious max came from badly shaped mesh cells near the cube-sphere corners). No literature found on extremal points of equilibrium density for superballs. Special-instance flavour keeps it out of A.",
+"refs": [
+"https://arxiv.org/pdf/1911.03602",
+"https://arxiv.org/pdf/1509.09252"
+]
+},
+{
+"id": "N-660",
+"title": "Irrationality of the quartic oscillator ground state",
+"grade": "B",
+"importance": 4,
+"novelty": 6,
+"value": 5,
+"W": "The lowest energy of the quartic oscillator, -d^2/dx^2 + x^4 on the line, is about 1.0603620905. Show that it is irrational.",
+"M": "Let $E_0=\\min\\sigma\\big(-\\tfrac{d^2}{dx^2}+x^4\\big)$, the operator taken self-adjoint on $L^2(\\mathbb R)$ ($E_0=1.06036209048418\\ldots$). Prove that $E_0\\notin\\mathbb Q$.",
+"why": "Irrationality and transcendence are known for spectral data of exactly solvable problems, such as Bessel zeros via Siegel's theorem. For a genuinely non-solvable Schrödinger operator, apparently nothing is known. Voros's exact WKB and spectral-determinant functional relations describe E_0 implicitly, so a proof would have to turn those relations, or a series or continued fraction for E_0, into Diophantine information.",
+"issues": "The numerical value is correct. I found no literature on the arithmetic nature of E_0; it is novel in the sense of never having been posed explicitly. The statement is precise. There is no realistic route: no available tool gives irrationality of a constant defined only implicitly through a non-solvable ODE. So this is a clean 'benchmark of ignorance' rather than an attackable problem, and the specific choice of x^4 and of E_0 is somewhat arbitrary. Graded B for cleanness, kept below A because it is likely hopeless and not tied to a broader programme.",
+"refs": [
+"https://arxiv.org/abs/math-ph/0005029",
+"https://arxiv.org/abs/2401.07131"
+]
+}
+]
