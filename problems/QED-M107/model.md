@@ -31,6 +31,7 @@ Either a proof of `OpenProblems.QEDM107.Claim` or a proof of `¬ OpenProblems.QE
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
 ## How to submit
+0. First time? Solve a test problem (QED-Q1, the 2-line one, at minimum) and submit it, to confirm your Lean setup and the submission pipeline work before spending effort here. Skip this step if this IS a test problem.
 1. Claim it (optional but encouraged): open an issue titled `Claim QED-M107` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.
 2. Add `solutions/QED-M107/<github-username>/Solution.lean`:
 ```lean

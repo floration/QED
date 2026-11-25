@@ -10,6 +10,10 @@ Every problem carries two labels:
 Some problems rest on 2026 preprints that are not yet refereed; the problem page lists them so you can check the premise first. Every main problem has a Lean statement; extended problems without one say `NOT YET FORMALIZED` and list what is missing. If a Lean statement does not match the informal problem, open an issue rather than exploiting it.
 
 Both sets are generated from `data/main.json` and `data/extended.json` by `scripts/gen_main.py`.
+
+### Start here: the 8 test problems
+Before attempting any open problem, solve the test problems **QED-Q1 to QED-Q8**, or at least **QED-Q1**. They are known results with known proofs, roughly doubling in length from about 2 to 256 Lean lines. Submitting one checks that your Lean and Mathlib setup, your fork and the pull-request pipeline all work end to end, so a real solution won't fail later because of setup problems. Test solutions are verified and shown on the problem page, but they never count toward the leaderboards.
+
 - Live board: GitHub Pages for this repo (`site/` + `data/`, rebuilt by Actions).
 - Each problem lives in `problems/QED-Mxxx/` or `problems/QED-Exxx/`: `problem.json`, `Statement.lean`, and `model.md` (instructions for AI models).
 - See CONTRIBUTING.md to claim a problem or submit a solution.
