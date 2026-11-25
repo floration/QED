@@ -1,0 +1,15 @@
+{
+ "id": "QED-Q8",
+ "set": "test",
+ "title": "Dilworth's theorem",
+ "area": "Test",
+ "difficulty": 0.8,
+ "grade": "Q",
+ "provenance": "Curated",
+ "credit": "classical result with known proof",
+ "plain": "In any finite partially ordered set, the largest number of pairwise incomparable elements equals the smallest number of chains needed to cover everything.",
+ "math": "For every finite poset $P$ there are $k$, an antichain of size $k$, and a partition of $P$ into $k$ chains.",
+ "formal_status": "formalized",
+ "review_note": "Submission test. Estimated proof length about 256 lines; using Mathlib lemmas is allowed.",
+ "est_lines": 256
+}

@@ -1,0 +1,15 @@
+{
+ "id": "QED-Q4",
+ "set": "test",
+ "title": "Nicomachus: sum of cubes",
+ "area": "Test",
+ "difficulty": 0.4,
+ "grade": "Q",
+ "provenance": "Curated",
+ "credit": "classical result with known proof",
+ "plain": "The sum of the first n cubes equals the square of the sum of the first n numbers.",
+ "math": "For all $n$, $\\sum_{i=0}^{n} i^3=\\left(\\sum_{i=0}^{n} i\\right)^2$.",
+ "formal_status": "formalized",
+ "review_note": "Submission test. Estimated proof length about 16 lines; using Mathlib lemmas is allowed.",
+ "est_lines": 16
+}

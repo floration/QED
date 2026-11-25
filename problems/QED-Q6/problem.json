@@ -1,0 +1,15 @@
+{
+ "id": "QED-Q6",
+ "set": "test",
+ "title": "Party of six (R(3,3) ≤ 6)",
+ "area": "Test",
+ "difficulty": 0.6,
+ "grade": "Q",
+ "provenance": "Curated",
+ "credit": "classical result with known proof",
+ "plain": "Among any six people, some three all know each other or some three are all strangers.",
+ "math": "Every simple graph on 6 vertices contains a triangle or an independent set of size 3.",
+ "formal_status": "formalized",
+ "review_note": "Submission test. Estimated proof length about 64 lines; using Mathlib lemmas is allowed.",
+ "est_lines": 64
+}

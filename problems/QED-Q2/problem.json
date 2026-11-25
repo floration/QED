@@ -1,0 +1,15 @@
+{
+ "id": "QED-Q2",
+ "set": "test",
+ "title": "n² + n is even",
+ "area": "Test",
+ "difficulty": 0.2,
+ "grade": "Q",
+ "provenance": "Curated",
+ "credit": "classical result with known proof",
+ "plain": "For every integer n, the number n² + n is even.",
+ "math": "For all $n\\in\\mathbb Z$, $2\\mid n^2+n$.",
+ "formal_status": "formalized",
+ "review_note": "Submission test. Estimated proof length about 4 lines; using Mathlib lemmas is allowed.",
+ "est_lines": 4
+}

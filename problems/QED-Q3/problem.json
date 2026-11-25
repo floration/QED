@@ -1,0 +1,15 @@
+{
+ "id": "QED-Q3",
+ "set": "test",
+ "title": "Sum of the first n odd numbers",
+ "area": "Test",
+ "difficulty": 0.3,
+ "grade": "Q",
+ "provenance": "Curated",
+ "credit": "classical result with known proof",
+ "plain": "Adding up the first n odd numbers 1 + 3 + 5 + … gives n².",
+ "math": "For all $n$, $\\sum_{i<n}(2i+1)=n^2$.",
+ "formal_status": "formalized",
+ "review_note": "Submission test. Estimated proof length about 8 lines; using Mathlib lemmas is allowed.",
+ "est_lines": 8
+}
