@@ -1,0 +1,94 @@
+[
+{
+"id": "N-266",
+"title": "Codes avoiding square distances",
+"grade": "A",
+"importance": 7,
+"novelty": 8,
+"value": 7,
+"W": "Find the largest set of binary strings of length n in which no two differ in a perfect-square number of positions. Does it grow exponentially in n, and if so at what rate? This is a hypercube version of Sarkozy's theorem on square differences.",
+"M": "Let $A(n)=\\max\\{|C|: C\\subseteq\\{0,1\\}^n,\\ d_H(x,y)\\notin\\{1,4,9,16,\\dots\\}\\ \\forall x\\ne y\\in C\\}$. Decide whether $A(n)=2^{o(n)}$. More precisely, determine $\\liminf_n\\frac1n\\log_2A(n)$ and $\\limsup_n\\frac1n\\log_2A(n)$ (in particular whether they are equal).",
+"why": "It is a Sarkozy-Furstenberg question (sets with no square difference) moved to the Hamming cube, sitting between Frankl-Rodl (forbid one distance, giving (2-delta)^n) and Frankl-Wilson-type modular bounds (forbidding residue classes gives polynomial size). Squares avoid no residue class yet are sparse, so neither tool settles it, and the answer decides whether exponential codes must realize square distances.",
+"issues": "Original asked for lim, whose existence is unclear (concatenation does not preserve square-freeness of distances), so it was replaced with liminf/limsup plus the yes/no core. Attack: Frankl-Rodl with an even square in [eps n,(1-eps)n] gives a rate below 1. Natural constructions fail: product codes give subset sums of distances, which hit squares; mod-4 codes (distances 2,3 mod 4) reduce to Oddtown/Frankl-Wilson and have polynomial size; codes with all distances between two consecutive squares are near-equidistant and polynomial by Alon's rank lemma. So the rate might be 0, and it is open either way. Exact small values computed: A(1..7)=1,2,4,5,10,12,14. No literature found on infinite forbidden sets such as the squares; recent work covers single distances and arithmetic progressions (Dong-Gao-Liu-Ouyang-Zhou).",
+"refs": [
+"https://arxiv.org/pdf/2504.12296v3",
+"https://arxiv.org/pdf/1402.6294",
+"https://people.maths.ox.ac.uk/keevash/papers/franklrodl-journal.pdf",
+"https://arxiv.org/pdf/2604.05607",
+"https://arxiv.org/pdf/2305.00433"
+]
+},
+{
+"id": "C-102",
+"title": "Deciding limit cycles",
+"grade": "A",
+"importance": 7,
+"novelty": 5,
+"value": 7,
+"W": "Given a polynomial vector field in the plane with rational coefficients, is there an algorithm that decides whether it has a limit cycle, that is, an isolated closed orbit? Hilbert's 16th problem asks how many limit cycles there can be. This asks only whether their existence is algorithmically decidable. The same question can be asked for closed orbits of any kind, including those in period annuli around centres.",
+"M": "Let $\\mathcal L=\\{(P,Q)\\in\\mathbb Q[x,y]^2:\\ \\dot x=P,\\ \\dot y=Q$ has a limit cycle in $\\mathbb R^2\\}$ and $\\mathcal P=\\{(P,Q)\\in\\mathbb Q[x,y]^2:$ the system has a non-constant periodic orbit in $\\mathbb R^2\\}$, with polynomials encoded by their lists of rational coefficients. (a) Is $\\mathcal L$ decidable? (b) Is $\\mathcal P$ decidable? (c) Are $\\mathcal L$, $\\mathcal P$ or their complements at least recursively enumerable?",
+"why": "Poincare-Bendixson confines planar dynamics so strongly that undecidability constructions which work in dimension 3 and higher (polynomial ODEs simulating Turing machines) do not apply. Known noncomputability results for counting periodic orbits (Graca-Zhong) use real computable coefficients and discontinuity, not exact rational input. So decidability of existence is a sharp test of whether planar polynomial dynamics is 'algorithmically tame'. Part (b) is tied to the center-focus problem, which Il'yashenko showed is not algebraically solvable.",
+"issues": "Literature: Graca-Zhong (Computing the exact number of periodic orbits for planar flows) show that the map from a polynomial field to its number of periodic orbits is noncomputable. But their families have computable real, not rational, coefficients, and the result concerns counting, not existence. Earlier Graca-Buescu-Campagnolo give semi-decidability of hyperbolic periodic orbits for structurally stable systems and leave decidability open. I found no paper settling (a) or (b) for rational input. Not tied to a specific degree, so (a) and (b) are uniform questions. Note that for each fixed degree, center conditions are given by a finitely generated Bautin ideal, so non-uniform questions can become trivially 'decidable'. Hence the uniform encoding matters. I added (c) as a natural weaker form. Hyperbolic limit cycles can be certified by interval methods, so 'has a hyperbolic limit cycle' is r.e. The hard cases are non-hyperbolic cycles and proving non-existence.",
+"refs": [
+"https://arxiv.org/abs/2101.07701",
+"https://core.ac.uk/download/61500783.pdf",
+"https://encyclopediaofmath.org/wiki/Algebraic_decidability_of_local_classification_problems",
+"https://arxiv.org/abs/1602.00113"
+]
+},
+{
+"id": "N-661",
+"title": "Hearing tetrahedra",
+"grade": "A",
+"importance": 7,
+"novelty": 3,
+"value": 7,
+"W": "Triangles can be heard: their Dirichlet spectrum determines them up to congruence (Durso 1988; Grieser–Maronna 2013). Show the same for tetrahedra.",
+"M": "Let $T_1,T_2\\subset\\mathbb R^3$ be (nondegenerate) tetrahedra whose Dirichlet Laplacian eigenvalues, counted with multiplicity, coincide. Prove that $T_1$ and $T_2$ are congruent.",
+"why": "This is the natural next case of Kac's question after triangles. The heat-trace invariants of a polyhedron (volume, surface area, an edge sum weighted by dihedral angles, vertex terms) give about four numbers, but a tetrahedron has six degrees of freedom, so a proof would need new input from the wave trace or periodic billiard orbits in 3D polyhedra. It would be the first 'hearable' class of 3D polyhedra with more than a few parameters.",
+"issues": "Tried the heat-invariant count: 4 invariants against 6 parameters, so the heat trace cannot be enough; the problem is not trivial. Found no proof and no isospectral counterexample. The surveys found (Grieser–Maronna, Rowlett et al.) state the polygon/triangle results and do not list tetrahedra as solved. Likely a known folklore question, so novelty is low. Added 'with multiplicity'.",
+"refs": [
+"https://arxiv.org/abs/1208.3163",
+"https://arxiv.org/pdf/2406.18369",
+"https://arxiv.org/pdf/1911.06758",
+"https://arxiv.org/pdf/2009.00714"
+]
+},
+{
+"id": "N-653",
+"title": "Ising spin at a cube corner",
+"grade": "A",
+"importance": 5,
+"novelty": 7,
+"value": 7,
+"W": "Glue three quarter-planes of the square grid into the surface of an infinite cube corner (a flat cone of angle 3π/2) and run the critical Ising model. Prove that the spin at the corner decorrelates with the exponent 7/24 predicted by conformal field theory.",
+"M": "Let $\\Gamma$ be the union of the three quadrant lattices $\\mathbb Z_{\\ge0}^2$ on the faces of $\\partial\\mathbb R_{\\ge0}^3$, glued along the coordinate axes, with apex $o$ (degree 3; every other vertex has degree 4). Let $\\langle\\cdot\\rangle$ be the infinite-volume limit of the nearest-neighbour Ising model at $\\beta_c=\\tfrac12\\log(1+\\sqrt2)$ with free boundary conditions on $\\Gamma\\cap\\{\\|x\\|_\\infty\\le n\\}$. Prove $\\langle\\sigma_o\\sigma_x\\rangle\\asymp|x|^{-7/24}$ as $|x|\\to\\infty$.",
+"why": "Rigorous conformal invariance of Ising spin correlations (Chelkak–Hongler–Izyurov) is proved for planar domains, and a conical point is the simplest source of curvature. Under $w=z^{4/3}$ the apex spin acquires scaling dimension $\\tfrac{2\\pi}{\\alpha}\\cdot\\tfrac18=\\tfrac16$, so the two-point exponent is $\\tfrac16+\\tfrac18=\\tfrac7{24}$. This exponent depends on the geometry and differs from both the bulk value $1/4$ and the corner values. Proving it would extend discrete complex analysis to cone singularities.",
+"issues": "I checked the CFT computation: $|w|^{-1/4}|w'(x)|^{1/8}$ with $w=z^{4/3}$ gives $|x|^{-1/3+1/24}=|x|^{-7/24}$. Physics papers confirm CFT predictions numerically for conical lattices (Costa-Santos, free-energy log terms), but I found no rigorous spin-exponent result on cones. Chelkak–Izyurov–Mahfouf (arXiv:2104.12858) and CHI cover only planar or isoradial planar settings. I specified β_c and the infinite-volume measure, which were missing, and noted that the gluing is a locally flat square lattice away from $o$. Risk: this may be within reach of existing spinor and s-holomorphic methods.",
+"refs": [
+"https://arxiv.org/pdf/2103.10263",
+"https://arxiv.org/abs/2104.12858",
+"https://arxiv.org/abs/cond-mat/0306396",
+"https://ar5iv.arxiv.org/html/1712.04192"
+]
+},
+{
+"id": "N-106",
+"title": "A strongly aperiodic monotile in four dimensions",
+"grade": "A",
+"importance": 6,
+"novelty": 5,
+"value": 7,
+"W": "The hat (2023) is a single shape that tiles the plane only non-periodically, and in 2026 a 3D analogue was announced (Chair44, a decorated chair-shaped polycube). Find one connected 4D shape whose copies fill 4D space, where no tiling by it is left unchanged by any translation.",
+"M": "Find a compact set $T\\subset\\mathbb R^4$ that is the closure of its interior and homeomorphic to a closed 4-ball (or at least connected), such that (i) $\\mathbb R^4$ admits a tiling by isometric copies of $T$ (reflections allowed), and (ii) no tiling of $\\mathbb R^4$ by isometric copies of $T$ is invariant under any nonzero translation (strong aperiodicity). (Weaker variant: (ii') no tiling is invariant under a rank-4 lattice of translations.)",
+"why": "Aperiodic monotiles are now known in dimension 2 (Smith–Myers–Kaplan–Goodman-Strauss) and claimed in dimension 3 (Tsiokos's Chair44, 2026, in the strong sense), and Greenfeld–Tao give translational tiles that cannot tile periodically in very high dimension. Whether a single connected tile can force aperiodicity in every dimension, and in particular in R^4, is the next natural step. Kamenetsky's 2026 computer search for 4D chair markings came up empty, which suggests the 3D method does not simply extend.",
+"issues": "Original M ('admits no periodic tiling') was ambiguous between weak and strong aperiodicity. The weak form may be close to routine: the prism Chair44 × [0,1] tiles R^4 with a period only in the last direction, so one only has to rule out non-layered tilings by it. Strengthened to strong aperiodicity, which a prism cannot achieve. Literature: 3D strong monotile claimed (arXiv 2609.19214; matching rules arXiv 2609.23783; notes 2609.24779). Kamenetsky (arXiv 2610.00916, AI-assisted) poses a 4D marked-chair problem (Problem 9.1) and conjectures unmarked polyhedral prototiles for every N ≥ 4 (Conj. 9.2), so the problem has been posed but is open, and not novel.",
+"refs": [
+"https://arxiv.org/pdf/2303.10798",
+"https://arxiv.org/pdf/2609.19214",
+"https://arxiv.org/pdf/2609.23783",
+"https://arxiv.org/pdf/2609.24779",
+"https://arxiv.org/pdf/2610.00916"
+]
+}
+]

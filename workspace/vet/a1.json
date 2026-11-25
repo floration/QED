@@ -1,0 +1,75 @@
+[
+{
+"id": "N-621",
+"title": "Chaos in the symmetric ABC flow",
+"grade": "A",
+"importance": 6,
+"novelty": 4,
+"value": 7,
+"W": "The ABC flow with all three coefficients equal to 1 is the classical steady Euler flow on the 3-torus that is believed to be chaotic. Prove that it really is: show it has positive topological entropy.",
+"M": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb{T}^3=(\\mathbb{R}/2\\pi\\mathbb{Z})^3$ has positive topological entropy (e.g. by exhibiting a transversal homoclinic orbit to a hyperbolic periodic orbit, or a horseshoe for a Poincare map).",
+"why": "The 1:1:1 ABC flow is the standard example of Lagrangian chaos in a steady Beltrami (Euler) flow, and of fast-dynamo and mixing studies since Arnold and Henon. The numerical evidence for chaos since Dombre et al. (1986) is overwhelming, yet only non-integrability (Ziglin) and existence of particular periodic or ballistic orbits are proved. A proof, likely computer-assisted, would close a forty-year gap.",
+"issues": "Literature: Ziglin proved analytic non-integrability for A=B=C. Xin-Yu-Zlatos (arXiv 1601.02724) proved existence of periodic orbits. Lessard et al. (arXiv 1704.03128) gave computer-assisted proofs of ballistic orbits and stated that further ABC work was planned. A 2026 paper (arXiv 2609.17449) gives C^1 non-integrability only in a small-parameter regime. I found no proof of positive entropy or a horseshoe at A=B=C=1. The statement is clean and the system matches the standard ABC form. It is likely tractable by CAPD-style validated numerics, which lowers 'depth' but not interest.",
+"refs": [
+"https://arxiv.org/abs/1601.02724",
+"https://arxiv.org/abs/1704.03128",
+"https://arxiv.org/abs/2609.17449",
+"https://www.mathnet.ru/eng/faa525",
+"https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/chaotic-streamlines-in-the-abc-flows/7139EDCF0CC8A9B4D9D749B1FAA6CE54"
+]
+},
+{
+"id": "N-656",
+"title": "Spikes at the squares",
+"grade": "A",
+"importance": 6,
+"novelty": 7,
+"value": 7,
+"W": "On the half-line lattice, add a fixed spike of height λ at every perfect square. The free band (-2,2) then has no absolutely continuous spectrum, by Remling's theorem. Decide whether the spectrum inside the band is pure point (localized states) or singular continuous. A heuristic in the physics literature predicts singular continuous.",
+"M": "Let $(Hu)(n)=u(n+1)+u(n-1)+\\lambda\\,\\mathbf 1_{\\{m^2:m\\ge1\\}}(n)\\,u(n)$ on $\\ell^2(\\mathbb N)$, $\\mathbb N=\\{1,2,\\dots\\}$, with $u(0)=0$ and $\\lambda\\ne0$ fixed. Let $\\mu$ be the spectral measure of $\\delta_1$. Determine the spectral type of $\\mu|_{(-2,2)}$; conjecturally it is pure point. (Known: $\\mu_{ac}=0$ by Remling's theorem, since every right limit is a single bump, which is not reflectionless.)",
+"why": "Sparse potentials with super-geometric gaps (x_{n+1}/x_n -> infinity) are a standard source of singular continuous spectrum (Pearson, Kiselev–Last–Simon). Polynomially sparse spikes are the untouched regime between those and periodic or random potentials. Taking the transfer matrices from one spike to the next turns this operator into a quasi-periodic SL(2,R) cocycle with rotation 2k, where E = 2 cos k. So the frequency of the cocycle depends on the energy, and the existing localization machinery does not apply directly. Cheon–Exner–Šeba conjectured singular continuous spectrum for the continuum analogue, whereas positive Lyapunov exponents point to localization. Deciding which is right tests the methods in a new way.",
+"issues": "I defined the Laplacian convention, the boundary condition and the spectral measure. I changed 'prove pure point' to 'determine the spectral type', with pure point as the conjecture, because the answer is not certain. Attack: with E=2cos k, the spike-to-spike cocycle is C·diag(e^{ik(2n+1)},e^{-ik(2n+1)}) with a fixed matrix C. Herman's subharmonicity bound gives a Lyapunov exponent (per spike) of at least log sqrt(1+λ²/(4 sin²k)). Numerics with λ=1 and 20000 spikes match this bound to 3 digits at E=0.3, -1.3, 1.7, 0.05, and give exponent 0 at E=1, where k/π is rational. So generalized eigenfunctions should decay like exp(-γ√x), which is square-summable. Two things stand in the way of a proof: the frequency is tied to the energy, and the phase is fixed at k = ω/2, which is a reflection-symmetric phase. Gordon-type arguments rule out eigenvalues at Liouville k, but that set has measure zero. I found no paper that settles the case x_n=n^2. Kiselev–Last–Simon require x_n/x_{n+1}->0, and Cheon–Exner–Šeba is heuristic and numerical only.",
+"refs": [
+"https://arxiv.org/pdf/quant-ph/0004058",
+"https://ar5iv.labs.arxiv.org/html/2110.08684",
+"https://arxiv.org/pdf/math-ph/0210054"
+]
+},
+{
+"id": "C-100",
+"title": "Is the measure of the hyperbolic real quadratic parameters computable?",
+"grade": "A",
+"importance": 6,
+"novelty": 6,
+"value": 7,
+"W": "For real c between −2 and 1/4, the map x ↦ x²+c has an attracting cycle for an open dense set of c, yet the chaotic parameters have positive length (Jakobson). Is the total length of the parameters with an attracting cycle a computable number? It can be approximated from below by listing windows, but no known method approximates it from above.",
+"M": "Let $H=\\{c\\in[-2,1/4]:\\ x\\mapsto x^2+c\\text{ has an attracting periodic orbit}\\}$. Is the Lebesgue measure $\\lambda(H)$ a computable real number? ($H$ is open and its components can be certified by interval arithmetic, so $\\lambda(H)$ is lower semicomputable; Jakobson's theorem gives $\\lambda(H)<9/4$.) Equivalently: is the measure of the set of stochastic (Collet–Eckmann) parameters lower semicomputable?",
+"why": "This is a basic constant of one-dimensional dynamics, and no rigorous nontrivial upper bound on it is known. Computer-assisted Jakobson-type schemes (Luzzatto–Takahashi; Golmakani–Koudjinan–Luzzatto–Pilarczyk) certify expansion, not stochasticity. A positive answer would give a certified two-sided estimate; a negative one would be a striking non-computability result for a natural dynamical quantity.",
+"issues": "Checked the reduction: the stochastic set is a countable union over CE constants of intersections of finite-time conditions. That makes each piece upper semicomputable, which is the wrong direction, so the answer does not follow from the obvious approach. Golmakani et al. (2020) certify an escape-time property on about 90% of a parameter piece but explicitly do not prove stochasticity. Found no paper on computability of λ(H). Statement is precise (parabolic parameters have measure zero).",
+"refs": [
+"https://arxiv.org/abs/math/0508302",
+"https://arxiv.org/abs/2004.13444",
+"https://arxiv.org/pdf/1504.00116",
+"https://annals.math.princeton.edu/2002/156-1/p01"
+]
+},
+{
+"id": "N-427",
+"title": "Forced Navier–Stokes blow-up at a no-slip wall",
+"grade": "A",
+"importance": 7,
+"novelty": 7,
+"value": 7,
+"W": "In 2026 it was shown that a smooth, compactly supported force can drive the 3D Navier–Stokes equations, started from rest, to blow up in finite time. Inside a domain this can simply be copied away from any wall. Show that blow-up can also happen at the wall itself: in a half-space with the no-slip condition, the velocity becomes unbounded at a point of the boundary.",
+"M": "Let $\\mathbb R^3_+=\\{x_3>0\\}$, $\\nu>0$. Construct $f\\in C^\\infty_c(\\overline{\\mathbb R^3_+}\\times(0,\\infty);\\mathbb R^3)$ and a solution $(u,p)$ of $\\partial_t u-\\nu\\Delta u+(u\\cdot\\nabla)u+\\nabla p=f$, $\\nabla\\cdot u=0$ in $\\mathbb R^3_+\\times(0,T)$, $u|_{x_3=0}=0$, $u(\\cdot,0)=0$, with $u\\in C^\\infty(\\overline{\\mathbb R^3_+}\\times[0,T))$, $\\sup_{t<T}\\|u(t)\\|_{L^2}<\\infty$, such that for some $x_0\\in\\partial\\mathbb R^3_+$ and every $r>0$, $\\limsup_{t\\uparrow T}\\|u(t)\\|_{L^\\infty(B_r(x_0)\\cap\\mathbb R^3_+)}=\\infty$, while $u$ stays bounded on $\\{x:|x-x_0|>r\\}\\times[0,T)$ for each $r>0$ (the singular set is $\\{x_0\\}$, on the wall).",
+"why": "The 2026 forced blow-up of Navier–Stokes is an interior, axisymmetric-vortex construction; inside a domain it can be placed in a ball away from the boundary, so interior blow-up in bounded domains or half-spaces is already essentially available. The no-slip wall is where real flows generate vorticity (boundary layers, Prandtl theory) and where regularity theory is weakest (e.g. Seregin–Šverák boundary criteria), so a boundary singularity would test whether the mechanism survives the vanishing of velocity on the wall.",
+"issues": "Original M allowed interior blow-up, which follows from Cao–Chi–Nie (arXiv 2609.10262, Sect. 3.7: blow-up balls inside bounded domains with no-slip) by placing the OpenAI construction away from the wall; tightened to require the singular set on the boundary. Specified force class (smooth up to the wall, compact support in time positive), solution class, finite energy, and meaning of blow-up. No paper found constructing a boundary singularity; related work (Kang, Chang–Kang on singular velocity near boundary for localized forces) gives non-blow-up boundary singular behaviour for weak solutions.",
+"refs": [
+"https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+"https://arxiv.org/pdf/2609.10262",
+"https://arxiv.org/pdf/2405.00369",
+"https://arxiv.org/pdf/2303.05746",
+"https://arxiv.org/pdf/1508.05313"
+]
+}
+]

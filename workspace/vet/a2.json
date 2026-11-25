@@ -1,0 +1,79 @@
+[
+{
+"id": "N-428",
+"title": "Superlinear unit distances on the unit sphere",
+"grade": "A",
+"importance": 6,
+"novelty": 4,
+"value": 7,
+"W": "In 2026 a number-field construction showed that points in the plane can have n^(1+c) unit distances, disproving Erdos's conjecture. On a sphere of radius 1/sqrt2 an n^(4/3) construction is classical, but on the unit sphere only n·sqrt(log n) is known. Can the new ideas give a power gain there?",
+"M": "Prove or disprove: there is $c>0$ such that for infinitely many $n$ there exist $P\\subset S^2=\\{x\\in\\mathbb{R}^3:|x|=1\\}$ with $|P|=n$ and $\\#\\{\\{p,q\\}\\subset P:|p-q|=1\\}\\ge n^{1+c}$.",
+"why": "On S^2, distance 1 means angle 60 degrees, an inhomogeneous condition that lattice constructions only give n^(1+o(1)) for. The orthogonality trick that gives n^{4/3} at radius 1/sqrt2 has no analogue. A power gain would show the 2026 planar phenomenon is robust, while a matching n^{1+o(1)} upper bound would show the sphere behaves like the conjectured old plane.",
+"issues": "Known: radius 1/sqrt2 gives Theta(n^{4/3}) (Erdos-Hickerson-Pach), any radius has upper bound O(n^{4/3}), and general radius >1/2 has lower bound Omega(n sqrt(log n)) (Swanepoel-Valtr 2004). The question of power gains for other radii goes back to EHP, so it is not novel. The 2026 planar disproof (OpenAI; Sawin arXiv 2605.20579 with n^{1.014}; Alon et al. remarks arXiv 2605.20695) treats only the plane, and Sawin notes serious obstacles in R^3. My quick lattice heuristic (directions v/|v| with |v|^2 in s·squares) gives only linear counts. M is unchanged apart from 'prove or disprove'.",
+"refs": [
+"https://arxiv.org/abs/2605.20579",
+"https://arxiv.org/html/2605.20695",
+"https://web.math.princeton.edu/~nalon/PDFS/udremarks.pdf",
+"https://researchonline.lse.ac.uk/id/eprint/25462",
+"https://ar5iv.arxiv.org/html/0707.0213"
+]
+},
+{
+"id": "N-649",
+"title": "Paley spin glass",
+"grade": "A",
+"importance": 6,
+"novelty": 7,
+"value": 7,
+"W": "Place a ±1 spin at each element of F_p, and let each pair interact through the Legendre symbol of their difference. Equivalently, this is the max-cut problem for the Paley graph. The eigenvalue bound caps the ground-state energy at p^{3/2}/2. Simple square-wave configurations reach this bound along special primes, but heuristic search for typical primes stalls around 0.46. Is the eigenvalue bound asymptotically sharp for all primes?",
+"M": "For primes $p\\equiv1\\pmod4$ let $E_p=\\max_{\\sigma\\in\\{\\pm1\\}^{\\mathbb F_p}}\\sum_{i<j}\\left(\\frac{j-i}{p}\\right)\\sigma_i\\sigma_j$. The matrix $Q=\\big(\\big(\\frac{j-i}p\\big)\\big)$ has eigenvalues $\\pm\\sqrt p$ (and $0$), so $E_p\\le\\frac12p^{3/2}$, and up to $O(p)$ terms $2E_p$ equals the max-cut surplus of the Paley graph. Moreover $\\limsup_p E_p/p^{3/2}=\\frac12$: if $(\\frac qp)=1$ for all primes $q\\le y$, then $\\sigma_x=\\operatorname{sgn}\\cos(2\\pi x/p)$ has ratio $\\frac12-o_y(1)$. Determine $\\liminf_{p}E_p/p^{3/2}$; in particular, is it $\\frac12$?",
+"why": "The question is whether the spectral (Hoffman/Alon) bound for max-cut is asymptotically attained by the most classical quasirandom graph. For random graphs this bound is tight only up to a constant factor. In Fourier terms it asks for ±1 sequences on Z/p whose spectral mass lies almost entirely on the quadratic residues. That makes it an arithmetic question about how the Legendre symbol behaves on small integers, with a Liouville-function-like obstruction at primes where χ(q)=-1 for every small prime q.",
+"issues": "Q is symmetric because p≡1 mod 4, so the bound is correct. Attack: with Fourier weights, ratio = Σ_a |σ̂(a)|² χ(a)/(2p²). A square wave dilated by any a gives ratio (4/π²)·Σ_{m odd} χ(m)/m², which tends to 1/2 along primes with χ(q)=1 for all small q. Check: p=53881, where χ(q)=1 for every prime q≤19, gives ratio 0.4925. So limsup=1/2 is easy, and I rewrote the question to ask for the liminf, which is the real content. Simulated annealing gave 0.461, 0.463, 0.464 for p=101, 197, 401, compared with 0.37–0.39 for the best square waves. I found no literature determining the Paley max-cut constant. Recent work on cut surplus versus smallest eigenvalue (arXiv 2509.03490) proves surplus ≤ |λ_min|n/4 but does not treat Paley graphs.",
+"refs": [
+"https://arxiv.org/pdf/2509.03490",
+"https://arxiv.org/pdf/2610.01657",
+"https://en.wikipedia.org/wiki/Paley_graph",
+"https://arxiv.org/pdf/math/0503745"
+]
+},
+{
+"id": "N-024",
+"title": "Smallest degree of a Keller counterexample in dimension 3",
+"grade": "A",
+"importance": 7,
+"novelty": 5,
+"value": 7,
+"W": "In 2026 the Jacobian conjecture was refuted in three variables. The first explicit counterexample (Alpöge's map) has polynomial degree 7. Wang's theorem says degree 2 is impossible. What is the smallest degree a counterexample in three variables can have? In particular, is there one of degree 3, 4 or 5?",
+"M": "Let $d_3$ be the least $d$ such that some polynomial map $F:\\mathbb C^3\\to\\mathbb C^3$ with $\\max_i\\deg F_i=d$ and $\\det DF\\in\\mathbb C^\\times$ is not an automorphism. Wang's theorem gives $d_3\\ge3$, and Alpöge's map gives $d_3\\le7$. Determine $d_3$. In particular, decide whether $d_3\\le5$.",
+"why": "Once the conjecture is false in dimension 3, the main remaining question is how much room counterexamples need. Wang's quadratic theorem and the Bass–Connell–Wright cubic-homogeneous reduction both point to low degree as the decisive regime. Settling $d_3$ means either proving the conjecture for all cubic, quartic or quintic maps in three variables, which would be new even for cubics, or finding a much smaller counterexample. The answer tells us whether the phenomenon is rigid or flexible.",
+"issues": "The original 'degree 5 or less' was arbitrary, so I recast it as determining the minimal degree $d_3\\in[3,7]$ and kept the $\\le5$ question as the special case. Known facts: Alpöge's map (degrees 7,6,4; Jacobian -2; generically 3-to-1), a second map G (degrees 4,11,12), and Gallagher's family of every geometric degree $\\ge3$ (polynomial degrees not stated in the sources I read). Wang excludes degree 2. 'Degree' must mean polynomial degree, not geometric/fibre degree, because the 2026 papers use both. The general (nonhomogeneous) cubic case in dimension 3 does not appear to be settled in the literature I found. Section 8 of arXiv:2607.20210 shows that for fixed bounded degrees, existence over an algebraically closed field is decidable by elimination. So small cases may be attackable by computation, which is a risk that this gets settled quickly. Wright's cubic-homogeneous result in dimension 3 is recalled from memory and was not re-checked. I found no source that poses the minimal-degree question explicitly.",
+"refs": [
+"https://arxiv.org/pdf/2608.00222",
+"https://arxiv.org/pdf/2609.17795",
+"https://arxiv.org/pdf/2607.20210",
+"https://arxiv.org/pdf/2607.22198",
+"https://isa-afp.org/entries/Jacobian_Counterexample.html",
+"https://en.wikipedia.org/wiki/Jacobian_conjecture"
+]
+},
+{
+"id": "N-139",
+"title": "An explicit, checkable counterexample to Hadwiger's conjecture",
+"grade": "A",
+"importance": 7,
+"novelty": 6,
+"value": 7,
+"W": "Hadwiger's conjecture says a graph that needs t colours contains the complete graph K_t as a minor. A disproof claimed in October 2026 (not yet peer reviewed) is non-constructive: it uses graphs with no three pairwise non-adjacent vertices, on roughly 2^(10^12) vertices or more, and never names a graph. Find one concrete graph on fewer than a million vertices for which the conjecture fails, with a proof that can be checked.",
+"M": "For a finite graph $G$ let $h(G)=\\max\\{t: K_t\\preceq G\\}$ be its Hadwiger number and $\\chi(G)$ its chromatic number. Exhibit an explicit graph $G$ with $|V(G)|<10^6$ and $h(G)<\\chi(G)$, together with a verifiable certificate of both bounds. (Equivalently decide: is $\\min\\{|V(G)|: h(G)<\\chi(G)\\}<10^6$? A natural candidate class is $\\alpha(G)\\le 2$, where $\\chi(G)\\ge |V(G)|/2$ and it suffices to show $h(G)<|V(G)|/2$.)",
+"why": "Hadwiger's conjecture (1943) is one of the central problems of graph theory, generalizing the Four Colour Theorem; a disproof would reshape the theory of minors and colouring. A non-constructive counterexample of tower-like size tells us little about where the conjecture fails, while an explicit moderate-size one would be checkable, would independently confirm the claim, and would show which structures (e.g. dense graphs with independence number 2, Seymour's test case) actually break it.",
+"issues": "Premise checked: the only claimed disproof found is in OpenAI's October 2026 bulk release (Family 157 in the survey arXiv 2610.17090): non-constructive, alpha(G)≤2, m = 2^(1000·g·M0·n) with g = 10^9+1, h(G) < 26m/75 + 2/3; not peer reviewed. The odd, list and dominating Hadwiger variants have separate disproofs, which do not refute the original. The original 'or prove every counterexample is larger' half is hopeless (it would prove HC for all graphs under 10^6 vertices, including χ up to ~10^6) and the 10^6 cutoff is arbitrary, so reframed as an explicit, certified construction. Caveat: if the claimed disproof is wrong, the problem becomes essentially Hadwiger's conjecture itself. Certifying h(G) < χ(G) for a large dense graph is itself nontrivial (Hadwiger number is NP-hard), so the certificate is part of the task. Known: HC holds for t ≤ 6 (Robertson–Seymour–Thomas), so χ(G) ≥ 7 is necessary.",
+"refs": [
+"https://arxiv.org/pdf/2610.17090",
+"https://en.wikipedia.org/wiki/Hadwiger_conjecture_(graph_theory)",
+"https://arxiv.org/abs/2512.20392v1",
+"https://arxiv.org/pdf/2609.35361",
+"https://arxiv.org/abs/2606.01586",
+"https://arxiv.org/pdf/2305.05868"
+]
+}
+]
