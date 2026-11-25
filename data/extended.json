@@ -502,32 +502,6 @@
   "reviewed": true
  },
  {
-  "id": "QED-E025",
-  "set": "extended",
-  "title": "Turán density of K_4^- (the 2/7 conjecture)",
-  "area": "Combinatorics",
-  "difficulty": 5.0,
-  "grade": "B-",
-  "provenance": "Curated",
-  "credit": "Frankl-Furedi; Mubayi; Falgas-Ravry-Vaughan.",
-  "premise_risks": [
-   "Fairly well-known conjecture",
-   "Upper bound quoted to 4 decimals (0.28689 in Falgas-Ravry-Vaughan)"
-  ],
-  "plain": "Take a collection of triples from n points such that no 4 points carry 3 or more of their 4 triples. How large a fraction of all triples can you take? A recursive construction gets 2/7 and computer-aided proofs show you can't beat about 0.2868. Prove 2/7 is right, or beat it.",
-  "math": "Let $K_4^-$ be the $3$-graph on 4 vertices with 3 edges and $\\pi(K_4^-)=\\lim_n \\mathrm{ex}(n,K_4^-)/\\binom n3$. Known: $2/7\\le \\pi(K_4^-)\\le 0.2868$. Prove $\\pi(K_4^-)=2/7$ (Frankl-Furedi/Mubayi conjecture), or improve the upper bound.",
-  "review_note": "Known: Lower 2/7: Frankl-Furedi (1984) recursive construction. Upper: Baber-Talbot about 0.2871; Falgas-Ravry-Vaughan, 'Applications of the semi-definite method to the Turán density problem for 3-graphs', Combin. Probab. Comput. 22 (2013): about 0.2868. The density is stated as still unknown in Falgas-Ravry-Pikhurko-Vaughan-Volec, J. London Math. Soc. (2023). The codegree threshold of K_4^- is solved (arXiv:2112.09396).",
-  "refs": [
-   "https://opikhurko.warwick.ac.uk/E/FalgasravryPikhurkoVaughanVolec23jlms.pdf",
-   "https://arxiv.org/abs/1110.1623",
-   "https://arxiv.org/abs/2112.09396"
-  ],
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-E025: Turán density of K_4^- (the 2/7 conjecture)\nTake a collection of triples from n points such that no 4 points carry 3 or more of their 4 triples. How large a fraction of all triples can you take? A recursive construction gets 2/7 and computer-aided proofs show you can't beat about 0.2868. Prove 2/7 is right, or beat it.\nInformal statement: Let $K_4^-$ be the $3$-graph on 4 vertices with 3 edges and $\\pi(K_4^-)=\\lim_n \\mathrm{ex}(n,K_4^-)/\\binom n3$. Known: $2/7\\le \\pi(K_4^-)\\le 0.2868$. Prove $\\pi(K_4^-)=2/7$ (Frankl-Furedi/Mubayi conjecture), or improve the upper bound.\nFormalization notes: K_4^- is the 3-graph on 4 vertices with 3 edges. H is K_4^--free iff every 4-set contains at most 2 edges of H (any 3 edges inside a 4-set form a K_4^-). Claim is the upper half of the conjecture: for every ε>0, for all large n, every K_4^--free 3-graph on Fin n has at most (2/7+ε)·C(n,3) edges, i.e. pi(K_4^-) <= 2/7. With the known lower bound, Claim ⟺ pi(K_4^-) = 2/7. ¬Claim means pi(K_4^-) > 2/7.\n-/\nnamespace OpenProblems.QEDE025\ndef IsK4MinusFree {n : ℕ} (H : Finset (Finset (Fin n))) : Prop :=\n  ∀ S : Finset (Fin n), S.card = 4 → (H.filter (fun e : Finset (Fin n) => e ⊆ S)).card ≤ 2\n\ndef Claim : Prop :=\n  ∀ ε : ℝ, 0 < ε → ∃ N : ℕ, ∀ n : ℕ, N ≤ n →\n    ∀ H : Finset (Finset (Fin n)), (∀ e ∈ H, e.card = 3) → IsK4MinusFree H →\n      (H.card : ℝ) ≤ (2 / 7 + ε) * (n.choose 3 : ℝ)\nend OpenProblems.QEDE025\n",
-  "lean_gap": null,
-  "reviewed": true
- },
- {
   "id": "QED-E026",
   "set": "extended",
   "title": "Total colouring of planar graphs with maximum degree 6",
@@ -711,34 +685,6 @@
   "reviewed": true
  },
  {
-  "id": "QED-E033",
-  "set": "extended",
-  "title": "Ideal Prouhet–Tarry–Escott solution of size 11",
-  "area": "Number theory",
-  "difficulty": 5.0,
-  "grade": "B-",
-  "provenance": "Curated",
-  "credit": "Prouhet, Tarry, Escott; frontier noted by Borwein–Lisoněk–Percival and the 2025 PTE survey",
-  "premise_risks": [
-   "the general ideal-PTE conjecture is classical; this is its smallest open case, not a new question",
-   "heuristics do not strongly favour existence at degree 10; a negative answer would need an obstruction"
-  ],
-  "plain": "Find two different lists of 11 integers whose sums agree, whose sums of squares agree, and so on all the way up to their sums of 10th powers. Such 'ideal' pairs are known for every list size up to 10 and for size 12, but size 11 has never been found, nor proved impossible.",
-  "math": "Do there exist multisets $\\{a_1,\\dots,a_{11}\\}\\neq\\{b_1,\\dots,b_{11}\\}$ of integers with $\\sum_i a_i^j=\\sum_i b_i^j$ for $j=1,\\dots,10$? Equivalently, is there an ideal PTE solution of degree $10$, i.e. $\\prod_{i=1}^{11}(x-a_i)-\\prod_{i=1}^{11}(x-b_i)$ a nonzero constant?",
-  "review_note": "Known: Ideal solutions known for degrees $n\\le 9$ and $n=11$ (sizes $\\le10$ and $12$); survey arXiv:2506.11429 (2025). Degree-11 (size-12) symmetric solution: Kuosa, Meyrignac, Chen Shuwen (1999). Borwein–Lisoněk–Percival, 'Computational investigations of the PTE problem', Math. Comp. 72 (2003): unsuccessful searches for degree 10 and 12 within their search class. Caley, PhD thesis (Waterloo 2012): constants $C_n$ and divisibility constraints. Inagaki–Matsumura–Sawa–Uchida, arXiv:2603.11100 (Mar 2026): characterization of ideal PTE_1 solutions via designs, no degree-10 solution.",
-  "refs": [
-   "https://arxiv.org/abs/2506.11429",
-   "https://www.ams.org/mcom/2003-72-244/S0025-5718-02-01504-1/",
-   "https://arxiv.org/abs/2304.11254",
-   "https://arxiv.org/abs/2603.11100",
-   "https://uwspace.uwaterloo.ca/bitstream/10012/7205/1/Caley_Timothy.pdf"
-  ],
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-E033: Ideal Prouhet–Tarry–Escott solution of size 11\nFind two different lists of 11 integers whose sums of j-th powers agree for every j = 1, ..., 10.\nInformal statement: Do there exist multisets $\\{a_1,\\dots,a_{11}\\}\\neq\\{b_1,\\dots,b_{11}\\}$ of integers with $\\sum_i a_i^j=\\sum_i b_i^j$ for $j=1,\\dots,10$?\nFormalization notes: Lists are functions `Fin 11 → ℤ`; \"different multisets\" is inequality of the image multisets of `Finset.univ`. Claim = an ideal size-11 (degree-10) PTE solution exists; ¬Claim = no such solution exists.\n-/\nnamespace OpenProblems.QEDE033\n\ndef Claim : Prop :=\n  ∃ a b : Fin 11 → ℤ,\n    Finset.univ.val.map a ≠ Finset.univ.val.map b ∧\n    ∀ j : ℕ, 1 ≤ j → j ≤ 10 → (∑ i : Fin 11, a i ^ j) = ∑ i : Fin 11, b i ^ j\n\nend OpenProblems.QEDE033\n",
-  "lean_gap": null,
-  "reviewed": true
- },
- {
   "id": "QED-E034",
   "set": "extended",
   "title": "Two sixth powers equal to four",
@@ -762,32 +708,6 @@
   ],
   "formal_status": "formalized",
   "lean": "import Mathlib\n/-! QED-E034: Two sixth powers equal to four\nCan the sum of two sixth powers of positive integers equal the sum of four sixth powers?\nInformal statement: Does $x_1^6+x_2^6=y_1^6+y_2^6+y_3^6+y_4^6$ have a solution in positive integers?\nFormalization notes: All six variables are positive naturals. No triviality loophole: with all terms positive, cancelling a common term would leave a 6.1.3 identity, which is itself a nontrivial (unknown) solution. Claim = a solution exists; ¬Claim = none exists.\n-/\nnamespace OpenProblems.QEDE034\n\ndef Claim : Prop :=\n  ∃ x₁ x₂ y₁ y₂ y₃ y₄ : ℕ,\n    0 < x₁ ∧ 0 < x₂ ∧ 0 < y₁ ∧ 0 < y₂ ∧ 0 < y₃ ∧ 0 < y₄ ∧\n    x₁ ^ 6 + x₂ ^ 6 = y₁ ^ 6 + y₂ ^ 6 + y₃ ^ 6 + y₄ ^ 6\n\nend OpenProblems.QEDE034\n",
-  "lean_gap": null,
-  "reviewed": true
- },
- {
-  "id": "QED-E035",
-  "set": "extended",
-  "title": "Pin down the Schur–Siegel–Smyth trace constant",
-  "area": "Number theory",
-  "difficulty": 5.0,
-  "grade": "B-",
-  "provenance": "Curated",
-  "credit": "Schur, Siegel, Smyth; A. Smith; Orloski–Talebizadeh Sardari–Smith; Niedbala Giraudin",
-  "premise_risks": [
-   "lower bound 1.80220 is a single-author Sept 2026 preprint, unrefereed (fall back to 1.80203 if it fails)",
-   "active area: small incremental improvements are likely, so 'improve either bound' is a moving target"
-  ],
-  "plain": "Take algebraic integers all of whose conjugates are positive real numbers, and look at the average of their conjugates (trace divided by degree). Apart from finitely many exceptions this average cannot be small, and the threshold where infinitely many examples start is a constant lambda. For decades people believed lambda = 2; Smith disproved this, and now lambda is known only to lie between 1.80220 and 1.8216. Narrow this window.",
-  "math": "Let $\\lambda_{\\mathrm{SSS}}$ be the smallest limit point of $\\operatorname{tr}(\\alpha)/\\deg(\\alpha)$ over totally positive algebraic integers. Known $1.80220\\le\\lambda_{\\mathrm{SSS}}\\le1.8216$ (lower bound stated non-strictly, arXiv:2609.29298, unrefereed). Formal target: strict improvement of the lower bound, $\\lambda_{\\mathrm{SSS}}>1.80220$.",
-  "review_note": "Known: Lower: Schur 1.6487, Siegel 1.7336, Smyth 1.7719, …, Orloski–Talebizadeh Sardari–Smith 1.80203 (arXiv:2401.03252), Niedbala Giraudin 1.80220 (arXiv:2609.29298, Sept 2026, unrefereed, computer-verified certificate). Upper: Smith, 'Algebraic numbers with small trace' (2021) $<1.8984$ (disproving $\\lambda=2$); Orloski–Talebizadeh Sardari, 'A quantitative converse of Fekete's theorem', arXiv:2304.10021: $1.8216$.",
-  "refs": [
-   "https://arxiv.org/abs/2609.29298",
-   "https://arxiv.org/abs/2401.03252",
-   "https://arxiv.org/abs/2304.10021"
-  ],
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-E035: Pin down the Schur–Siegel–Smyth trace constant\nTake algebraic integers all of whose conjugates are positive real numbers, and look at the average of their conjugates (trace divided by degree). Apart from finitely many exceptions this average cannot be small, and the threshold where infinitely many examples start is a constant lambda. For decades people believed lambda = 2; Smith disproved this, and now lambda is known only to lie between 1.80220 and 1.8216. Narrow this window.\nInformal statement: Let $\\lambda_{\\mathrm{SSS}}$ be the smallest limit point of\n$\\{\\operatorname{tr}(\\alpha)/\\deg(\\alpha)\\}$ over totally positive algebraic integers $\\alpha$\n(equivalently $\\liminf\\operatorname{tr}(\\alpha)/\\deg(\\alpha)$ as $\\deg\\alpha\\to\\infty$). Known:\n$1.80220\\le\\lambda_{\\mathrm{SSS}}\\le 1.8216$; the lower bound is stated non-strictly\n(\"λ_SSS ≥ 1.80220\", arXiv:2609.29298, unrefereed; previous refereed-track bound 1.80203 by\nOrloski–Sardari–Smith). Formal target (strict improvement of the LOWER bound): prove\n$\\lambda_{\\mathrm{SSS}} > 1.80220$.\nFormalization notes:\n* Totally positive algebraic integers up to conjugacy ↔ their minimal polynomials: monic\n  polynomials `P ∈ ℤ[X]` that are irreducible (over ℤ, equivalently over ℚ by Gauss's lemma for\n  monic polynomials) and all of whose complex roots are real and positive. For such `P` of degree\n  d, tr(α)/deg(α) = (sum of the d complex roots)/d; `mean P` computes this from the multiset of\n  complex roots of `P` (which has exactly d elements since ℂ is algebraically closed; roots are\n  simple by irreducibility/separability). Conjugate α's have the same ratio, so working with\n  minimal polynomials loses nothing.\n* For each degree and each bound on the trace there are only finitely many such `P` (all roots\n  lie in (0, trace]), so \"the ratio is < t for infinitely many α (up to conjugacy)\" is the same\n  as \"for α of arbitrarily large degree\". Hence λ_SSS = liminf ratio satisfies\n  λ_SSS > L  ⇔  ∃ t > L such that only finitely many admissible `P` have `mean P < t`.\n  `Claim` states the right-hand side with L = 1.80220.\n* Proving `Claim` = λ_SSS > 1.80220 (strictly beating the 2026 bound). Proving `¬Claim` =\n  λ_SSS ≤ 1.80220, which together with the 2026 bound means λ_SSS = 1.80220 exactly (if that\n  bound is correct; if it fails, ¬Claim just says λ_SSS ≤ 1.80220).\n-/\nnamespace OpenProblems.QEDE035\nnoncomputable section\nopen Polynomial\n\n/-- `P` is the minimal polynomial of a totally positive algebraic integer. -/\ndef IsTotPosMinpoly (P : ℤ[X]) : Prop :=\n  P.Monic ∧ Irreducible P ∧\n    ∀ z ∈ (P.map (Int.castRingHom ℂ)).roots, z.im = 0 ∧ 0 < z.re\n\n/-- Trace over degree: the average of the (complex) roots of `P`. -/\ndef mean (P : ℤ[X]) : ℝ :=\n  (((P.map (Int.castRingHom ℂ)).roots.map Complex.re).sum) / (P.natDegree : ℝ)\n\n/-- `λ_SSS > 1.80220`. -/\ndef Claim : Prop :=\n  ∃ t : ℝ, (180220 / 100000 : ℝ) < t ∧\n    {P : ℤ[X] | IsTotPosMinpoly P ∧ mean P < t}.Finite\n\nend\nend OpenProblems.QEDE035\n",
   "lean_gap": null,
   "reviewed": true
  },
@@ -875,32 +795,6 @@
   "reviewed": true
  },
  {
-  "id": "QED-E039",
-  "set": "extended",
-  "title": "Cover any 3D convex body with 13 smaller copies",
-  "area": "Geometry",
-  "difficulty": 5.0,
-  "grade": "B-",
-  "provenance": "Curated",
-  "credit": "Levi, Hadwiger (1957), Gohberg–Markus; Prymak (2023)",
-  "premise_risks": [
-   "a 2026 preprint lowering 14 could exist outside the search results"
-  ],
-  "plain": "Take any bounded convex solid in space. How many strictly smaller copies of it (scaled down, translated, not rotated) are always enough to cover it? A cube needs 8, and Hadwiger conjectured 8 always suffice. The best proved number is 14. Prove that 13 always suffice.",
-  "math": "For a convex body $K\\subset\\mathbb R^3$ let $H(K)$ be the least $m$ such that $K\\subseteq\\bigcup_{i=1}^m (\\lambda K + t_i)$ for some $0<\\lambda<1$, $t_i\\in\\mathbb R^3$ (equivalently the illumination number). Let $H_3=\\sup_K H(K)$. Known $8\\le H_3\\le 14$. Prove $H_3\\le 13$.",
-  "review_note": "Known: $H_3\\le14$: A. Prymak, 'A new bound for Hadwiger's covering problem in $\\mathbb E^3$', SIAM J. Discrete Math. 37 (2023) 17–24, arXiv:2112.10698. Earlier $H_3\\le16$: Papadoperakis, Geom. Dedicata 75 (1999); $H_3\\le20$: Lassak (1984). Lower bound 8 (cube). Centrally symmetric case $=8$ (Lassak). Cap bodies in $\\mathbb R^3$ have illumination number 6 (arXiv:2507.08712, 2025). Arman–Bondarenko–Prymak, Canad. Math. Bull. 68 (2025), arXiv:2404.00547: small dimensions $\\ge5$, no change for $n=3$.",
-  "refs": [
-   "https://arxiv.org/abs/2112.10698",
-   "https://teorth.github.io/optimizationproblems/constants/39a.html",
-   "https://arxiv.org/abs/2404.00547",
-   "https://arxiv.org/abs/2507.08712"
-  ],
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-E039: Cover any 3D convex body with 13 smaller copies\nEvery convex body in 3-space can be covered by 13 smaller positive homothetic copies of itself.\nInformal statement: For a convex body $K\\subset\\mathbb R^3$ let $H(K)$ be the least $m$ with $K\\subseteq\\bigcup_{i=1}^m(\\lambda K+t_i)$ for some $0<\\lambda<1$. Prove $\\sup_K H(K)\\le 13$.\nFormalization notes: A convex body is a compact convex set with nonempty interior in `EuclideanSpace ℝ (Fin 3)`. One common ratio r is used for all copies; this is equivalent to allowing ratios r_i < 1 (take r = max r_i, and note that for convex K, k₀ ∈ K and r_i ≤ r one has r_i K ⊆ r K + (r_i - r) k₀). Claim = H_3 ≤ 13; ¬Claim = some convex body needs at least 14 copies.\n-/\nnamespace OpenProblems.QEDE039\n\nabbrev E3 := EuclideanSpace ℝ (Fin 3)\n\ndef Claim : Prop :=\n  ∀ K : Set E3, Convex ℝ K → IsCompact K → (interior K).Nonempty →\n    ∃ (r : ℝ) (t : Fin 13 → E3), 0 < r ∧ r < 1 ∧\n      K ⊆ ⋃ i : Fin 13, (fun x : E3 => r • x + t i) '' K\n\nend OpenProblems.QEDE039\n",
-  "lean_gap": null,
-  "reviewed": true
- },
- {
   "id": "QED-E040",
   "set": "extended",
   "title": "Densest packing of regular heptagons",
@@ -956,34 +850,6 @@
   "reviewed": true
  },
  {
-  "id": "QED-E042",
-  "set": "extended",
-  "title": "Happy ending for heptagons: ES(7)=33",
-  "area": "Geometry",
-  "difficulty": 4.5,
-  "grade": "B-",
-  "provenance": "Curated",
-  "credit": "Erdős–Szekeres (1935/1961); Szekeres–Peters (2006); Mojarrad–Vlachos (2016)",
-  "premise_risks": [
-   "a special case of a famous conjecture, but the genuine first open case",
-   "an intermediate bound between 33 and 113 specific to k=7 might exist (none found)",
-   "likely to fall to a large SAT computation; check for a 2026 announcement before publishing"
-  ],
-  "plain": "Among any 17 points in the plane with no three on a line, some 6 form a convex hexagon, and 16 points are not enough; this was proved by computer in 2006. Erdős and Szekeres predicted that the right number for convex 7-gons is 33. Prove that every 33 points in general position contain 7 in convex position.",
-  "math": "Let $ES(k)$ be the least $N$ such that every set of $N$ points in $\\mathbb R^2$ with no three collinear contains $k$ points in convex position. Known $ES(k)\\ge 2^{k-2}+1$ (Erdős–Szekeres 1961) with equality for $k\\le6$; $ES(7)\\le 113$. Prove $ES(7)=33$, i.e. every 33-point set in general position contains a convex heptagon (any rigorous improvement of $113$ is also progress).",
-  "review_note": "Known: $ES(6)=17$: Szekeres & Peters, ANZIAM J. 48 (2006). Small-$k$ bound $ES(k)\\le\\binom{2k-5}{k-2}-\\binom{2k-8}{k-3}+2$ (Mojarrad & Vlachos, DCG 2016, arXiv:1510.06255), giving $ES(7)\\le113$; earlier $\\binom{2k-5}{k-2}+1=127$ (Tóth–Valtr 2005). Asymptotic $ES(k)\\le2^{k+O(\\sqrt{k\\log k})}$: Suk, JAMS 2017 (refined by Holmsen–Mojarrad–Pach–Tardos). Empty hexagon $h(6)=30$: Heule & Scheucher, arXiv:2403.00737 (SoCG 2024). Dumitru, 'Notes on the 33-point Erdős–Szekeres problem', arXiv:2512.24061 (Dec 2025): SAT encoding, partial UNSAT only.",
-  "refs": [
-   "https://arxiv.org/abs/2512.24061",
-   "https://arxiv.org/abs/1510.06255",
-   "https://arxiv.org/abs/2403.00737",
-   "https://en.wikipedia.org/wiki/Happy_ending_problem"
-  ],
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-E042: Happy ending for heptagons: ES(7)=33\nEvery 33 points in the plane with no three on a line contain 7 points in convex position.\nInformal statement: Let $ES(k)$ be the least $N$ such that every $N$-point set in general position in $\\mathbb R^2$ contains $k$ points in convex position. Prove $ES(7)=33$.\nFormalization notes: The plane is `ℝ × ℝ`; general position means no three distinct points are `Collinear ℝ`. Convex position means no point of T lies in the convex hull of the others. Since a 32-point set without a convex heptagon is known (Erdős–Szekeres 1961), Claim is equivalent to ES(7) = 33; ¬Claim means some 33-point set in general position has no convex heptagon (so ES(7) > 33).\n-/\nnamespace OpenProblems.QEDE042\n\ndef GeneralPosition (S : Finset (ℝ × ℝ)) : Prop :=\n  ∀ p ∈ S, ∀ q ∈ S, ∀ r ∈ S, p ≠ q → p ≠ r → q ≠ r →\n    ¬ Collinear ℝ ({p, q, r} : Set (ℝ × ℝ))\n\ndef ConvexPosition (T : Finset (ℝ × ℝ)) : Prop :=\n  ∀ p ∈ T, p ∉ convexHull ℝ (((T.erase p : Finset (ℝ × ℝ))) : Set (ℝ × ℝ))\n\ndef Claim : Prop :=\n  ∀ S : Finset (ℝ × ℝ), S.card = 33 → GeneralPosition S →\n    ∃ T : Finset (ℝ × ℝ), T ⊆ S ∧ T.card = 7 ∧ ConvexPosition T\n\nend OpenProblems.QEDE042\n",
-  "lean_gap": null,
-  "reviewed": true
- },
- {
   "id": "QED-E043",
   "set": "extended",
   "title": "Kissing number in five dimensions: at most 43",
@@ -1034,62 +900,6 @@
   ],
   "formal_status": "formalized",
   "lean": "import Mathlib\n/-! QED-E044: A macroscopic upper bound for tetrahedron packing\nRegular tetrahedra cannot fill space, and the best packings found fill about 85.6% of it. Yet the best proved limit only says a packing fills at most 1 − 0.00000000000000000000000026 of space. Prove a macroscopic upper bound, for instance that no packing of congruent regular tetrahedra fills more than 99% of space.\nInformal statement: Let $\\delta_T$ be the maximal packing density of congruent copies of the\nregular tetrahedron in $\\mathbb R^3$ (rotations allowed). Known:\n$4000/4671\\approx0.856347\\le\\delta_T\\le 1-2.6\\times10^{-25}$ (Gravel–Elser–Kallus). Formal\ntarget: the macroscopic upper bound $\\delta_T\\le 0.99$.\nFormalization notes:\n* Space: `EuclideanSpace ℝ (Fin 3)` with its `volume` (Lebesgue measure; the Euclidean metric\n  matters because congruent copies are images under isometries `E ≃ᵢ E` of this metric — these\n  are exactly the maps x ↦ Ax + b with A orthogonal, so rotations and reflections are allowed).\n* Packing: a sequence `g : ℕ → E ≃ᵢ E` with the copies `g i '' K` having pairwise disjoint\n  interiors (boundaries may touch). Indexing by ℕ loses nothing: a packing of copies of a convex\n  body is countable, and finite packings have density 0. Repeated copies are impossible since\n  `interior K ≠ ∅`.\n* Density: upper density = limsup over R → ∞ of vol(⋃ copies ∩ B(0,R)) / vol(B(0,R)), computed\n  in `ℝ≥0∞` (no junk values: numerator ≤ denominator < ∞, denominator > 0 for R > 0). The\n  maximal packing density δ(K) is the supremum over all packings. This is the standard\n  definition (Rogers; Fejes Tóth); taking limsup instead of lim, or balls about the origin\n  instead of arbitrary centres, does not change the supremum over packings.\n* The regular tetrahedron: convex hull of (1,1,1), (1,−1,−1), (−1,1,−1), (−1,−1,1) (edge 2√2;\n  density is similarity-invariant). It is mirror-symmetric, so allowing reflections among the\n  isometries is the same as allowing only rotations.\n* Choice of target: the problem explicitly asks for a *macroscopic* gap, and \"strictly improve\n  1 − 2.6·10⁻²⁵\" by an arbitrarily small amount would not be the intended question; we use the\n  problem's own illustrative threshold 0.99 (c = 10⁻²). This is a strict improvement over the\n  best known upper bound by 24 orders of magnitude in the gap. Proving `Claim` = δ_T ≤ 0.99.\n  Proving `¬Claim` = some tetrahedron packing has upper density > 0.99.\n-/\nnamespace OpenProblems.QEDE044\nnoncomputable section\nopen scoped ENNReal\n\n/-- Ambient Euclidean space. -/\nabbrev E : Type := EuclideanSpace ℝ (Fin 3)\n\n/-- A packing of congruent copies of `K`: a sequence of isometries of `E` (rotations,\nreflections, translations) whose images of `K` have pairwise disjoint interiors. -/\ndef IsPacking (K : Set E) (g : ℕ → (E ≃ᵢ E)) : Prop :=\n  ∀ i j : ℕ, i ≠ j → Disjoint (interior (g i '' K)) (interior (g j '' K))\n\n/-- Fraction of the ball of radius `R` about the origin covered by the packing. -/\ndef coveredFraction (K : Set E) (g : ℕ → (E ≃ᵢ E)) (R : ℝ) : ℝ≥0∞ :=\n  MeasureTheory.volume ((⋃ i : ℕ, g i '' K) ∩ Metric.ball (0 : E) R) /\n    MeasureTheory.volume (Metric.ball (0 : E) R)\n\n/-- Upper density of a packing: `limsup_{R → ∞}` of the covered fraction. -/\ndef upperDensity (K : Set E) (g : ℕ → (E ≃ᵢ E)) : ℝ≥0∞ :=\n  Filter.limsup (fun R : ℝ => coveredFraction K g R) Filter.atTop\n\n/-- Maximal packing density of congruent copies of `K`. -/\ndef packingDensity (K : Set E) : ℝ≥0∞ :=\n  ⨆ (g : ℕ → (E ≃ᵢ E)) (_ : IsPacking K g), upperDensity K g\n\n/-- A regular tetrahedron centred at the origin. -/\ndef tetrahedron : Set E :=\n  convexHull ℝ {(!₂[(1 : ℝ), 1, 1] : E), (!₂[(1 : ℝ), -1, -1] : E),\n    (!₂[(-1 : ℝ), 1, -1] : E), (!₂[(-1 : ℝ), -1, 1] : E)}\n\ndef Claim : Prop := packingDensity tetrahedron ≤ ENNReal.ofReal (99 / 100)\n\nend\nend OpenProblems.QEDE044\n",
-  "lean_gap": null,
-  "reviewed": true
- },
- {
-  "id": "QED-E045",
-  "set": "extended",
-  "title": "Dirac–Motzkin below the Green–Tao threshold",
-  "area": "Geometry",
-  "difficulty": 5.0,
-  "grade": "C",
-  "provenance": "Curated",
-  "credit": "Dirac (1951), Motzkin; Csima–Sawyer (1993); Green–Tao (2013)",
-  "premise_risks": [
-   "Green–Tao's n₀ may have been made explicit somewhere (thesis or follow-up); not found",
-   "Famous conjecture's residual range; the weaker target is the realistic extended-set ask"
-  ],
-  "plain": "Given n points in the plane, not all on one line, an ordinary line is a line through exactly two of them. Green and Tao proved that for all sufficiently large n there are at least n/2 ordinary lines, but they never made 'sufficiently large' explicit. The best bound proved for every n is 6n/13. Prove n/2 for every n except the two known exceptions, 7 and 13, or at least beat 6n/13 for all n ≥ 14.",
-  "math": "For finite non-collinear $P\\subset\\mathbb R^2$ with $|P|=n$, let $t_2(P)$ be the number of lines meeting $P$ in exactly two points. Prove $t_2(P)\\ge n/2$ for all $n\\notin\\{7,13\\}$. By Green–Tao this is known for $n\\ge n_0$, so the content is the finite range $n<n_0$ (or making $n_0$ explicit and verifying below it). Weaker target: find $c>6/13$ with $t_2(P)\\ge cn$ for all $n\\ge 14$.",
-  "review_note": "Known: $t_2\\ge 3n/7$: Kelly–Moser (1958). $t_2\\ge 6n/13$ for $n\\ne 7$: Csima–Sawyer, DCG 9 (1993). For $n\\ge n_0$: $t_2\\ge n/2$ for even $n$ and $t_2\\ge 3\\lfloor n/4\\rfloor$ for odd $n$, both sharp (Green–Tao, DCG 50 (2013), arXiv:1208.4714). Exceptions: $n=7$ ($t_2=3$, Kelly–Moser) and $n=13$ ($t_2=6$, Crowe–McKee). Recent related work, which does not improve this: arXiv:2610.21415 (2026, ordinary lines in $\\mathbb C^3$) and Dumitrescu–Pach, EJC 33(3) P3.33 (2026).",
-  "refs": [
-   "https://arxiv.org/abs/1208.4714",
-   "https://doi.org/10.1007/BF02189318",
-   "https://arxiv.org/pdf/2610.21415",
-   "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v33i3p33/pdf/"
-  ],
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-E045: Dirac–Motzkin below the Green–Tao threshold\nEvery set of n points in the plane, not all on one line, with n ≠ 7, 13, determines at least n/2 ordinary lines (lines through exactly two of the points).\nInformal statement: For finite non-collinear P ⊂ ℝ² with |P| = n ∉ {7, 13}, t₂(P) ≥ n/2. Green–Tao (2013) prove this for n ≥ n₀; the open content is the finite range n < n₀.\nFormalization notes: Points are elements of ℝ × ℝ. Collinearity is the vanishing of the 2×2 determinant. Each ordinary line {p, q} is counted by the two ordered pairs (p, q), (q, p) in `ordinaryPairs`, so `P.card ≤ (ordinaryPairs P).card` is exactly 2·t₂(P) ≥ n, i.e. t₂(P) ≥ n/2. `Claim` is the Dirac–Motzkin conjecture for all n ∉ {7, 13}; `¬Claim` is a counterexample (necessarily with n < n₀ by Green–Tao). Degenerate pairs cannot occur: `offDiag` forces p ≠ q, and `NonCollinear` forces at least three distinct points. The weaker target (t₂ ≥ c·n with c > 6/13) is not formalized here.\n-/\nnamespace OpenProblems.QEDE045\n\nopen Classical\n\n/-- `p`, `q`, `r` lie on a common line in ℝ². -/\ndef Col (p q r : ℝ × ℝ) : Prop :=\n  (q.1 - p.1) * (r.2 - p.2) - (q.2 - p.2) * (r.1 - p.1) = 0\n\n/-- `P` is not contained in a single line. -/\ndef NonCollinear (P : Finset (ℝ × ℝ)) : Prop :=\n  ∃ p ∈ P, ∃ q ∈ P, ∃ r ∈ P, ¬ Col p q r\n\n/-- Ordered pairs of distinct points of `P` whose line contains no third point of `P`;\nits cardinality is twice the number of ordinary lines. -/\nnoncomputable def ordinaryPairs (P : Finset (ℝ × ℝ)) : Finset ((ℝ × ℝ) × (ℝ × ℝ)) :=\n  P.offDiag.filter (fun x : (ℝ × ℝ) × (ℝ × ℝ) =>\n    ∀ r ∈ P, r ≠ x.1 → r ≠ x.2 → ¬ Col x.1 x.2 r)\n\ndef Claim : Prop :=\n  ∀ P : Finset (ℝ × ℝ), NonCollinear P → P.card ≠ 7 → P.card ≠ 13 →\n    P.card ≤ (ordinaryPairs P).card\n\nend OpenProblems.QEDE045\n",
-  "lean_gap": null,
-  "reviewed": true
- },
- {
-  "id": "QED-E046",
-  "set": "extended",
-  "title": "Rigorously refute Palásti's parking conjecture in the plane",
-  "area": "Probability",
-  "difficulty": 4.0,
-  "grade": "B-",
-  "provenance": "Curated",
-  "credit": "Palásti (1960); Rényi (1958); Penrose (2001)",
-  "premise_risks": [
-   "Weiner (1978) claimed a proof of a Palásti conjecture; the exchange in J. Appl. Prob. indicates it is flawed or about a different model, but I did not read the papers in full",
-   "Variants use lattice squares or random sizes; the continuum aligned unit-square version is intended"
-  ],
-  "plain": "Drop unit squares (all axis-parallel) one at a time at uniformly random positions in a huge box, keeping each one only if it does not overlap those already placed, until no more fit. In one dimension the covered fraction tends to Rényi's constant, about 0.7476. Palásti guessed the planar answer is Rényi's constant squared, about 0.5589. Simulations give about 0.5620, so the guess seems wrong, but nobody has proved it. Prove that the planar jamming density is not Rényi's constant squared.",
-  "math": "Let $\\rho_2$ be the jamming limit of random sequential adsorption of aligned unit squares in $[0,L]^2$ as $L\\to\\infty$; it exists, with $L^1$ and a.s. convergence, by Penrose (2001). Let $c_R=\\int_0^\\infty\\exp\\!\\left(-2\\int_0^t\\frac{1-e^{-u}}{u}\\,du\\right)dt\\approx0.747598$ be Rényi's constant. Prove $\\rho_2\\ne c_R^2$, for instance by proving a rigorous lower bound $\\rho_2>c_R^2\\approx0.55890$. More generally, give any rigorous non-trivial two-sided bound on $\\rho_2$.",
-  "review_note": "Known: Rényi (1958): $\\rho_1=c_R$. Palásti (1960) conjectured $\\rho_d=c_R^d$. Weiner, J. Appl. Prob. (1978), claimed a proof for a planar sequential packing model; it was disputed in J. Appl. Prob. by Hori (1979, 'On Weiner's proof of the Palásti conjecture') and in 'Has the Palásti conjecture been proved? A criticism of a paper by H. J. Weiner', and Weiner replied (1980). The modern literature treats the conjecture as numerically false. Existence of $\\rho_d$: Penrose, CMP 218 (2001). CLT: Penrose–Yukich, AAP 12 (2002). Simulations: $\\rho_2\\approx0.562009(4)$ (Brosilow–Ziff–Vigil 1991 and others; Wikipedia RSA table). Low-density availability series: arXiv:2607.05634 (2026), which gives no jamming bound.",
-  "refs": [
-   "https://en.wikipedia.org/wiki/Random_sequential_adsorption",
-   "https://link.springer.com/article/10.1007/s002200100387",
-   "https://www.cambridge.org/core/journals/journal-of-applied-probability/article/on-weiners-proof-of-the-palasti-conjecture/BDF40496AA96FDDA7DC4730E1D07B972",
-   "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/02466E85D27B52C8AE6B435A7EA86D4E/S0021900200107880a.pdf/has-the-palasti-conjecture-been-proved-a-criticism-of-a-paper-with-h-j-weiner.pdf",
-   "https://arxiv.org/pdf/cond-mat/9903139",
-   "https://arxiv.org/pdf/2607.05634"
-  ],
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-E046: Rigorously refute Palásti's parking conjecture in the plane\nDrop unit squares (all axis-parallel) one at a time at uniformly random positions in a huge box, keeping each one only if it does not overlap those already placed, until no more fit. In one dimension the covered fraction tends to Rényi's constant, about 0.7476. Palásti guessed the planar answer is Rényi's constant squared, about 0.5589. Simulations give about 0.5620, so the guess seems wrong, but nobody has proved it. Prove that the planar jamming density is not Rényi's constant squared.\nInformal statement: Let $\\rho_2$ be the jamming limit of random sequential adsorption of aligned unit squares in $[0,L]^2$ as $L\\to\\infty$; it exists, with $L^1$ and a.s. convergence, by Penrose (2001). Let $c_R=\\int_0^\\infty\\exp\\!\\left(-2\\int_0^t\\frac{1-e^{-u}}{u}\\,du\\right)dt\\approx0.747598$ be Rényi's constant. Prove $\\rho_2\\ne c_R^2$, for instance by proving a rigorous lower bound $\\rho_2>c_R^2\\approx0.55890$. More generally, give any rigorous non-trivial two-sided bound on $\\rho_2$.\nFormalization notes:\n* RSA in the box [0,L]² (L ∈ ℕ, L ≥ 2): a unit square is identified with its lower-left corner\n  p ∈ [0, L−1]², so it lies inside the box. Arrivals are i.i.d. uniform corners x₁, x₂, … in\n  [0, L−1]². The k-th arrival is accepted iff its open square is disjoint from the open squares\n  of all previously accepted ones, i.e. iff |p₁ − q₁| ≥ 1 or |p₂ − q₂| ≥ 1 for every accepted q\n  (`overlap`). `accepted` runs this rule left to right on a finite list of arrivals.\n  (The continuous-time Poisson-arrival version used by Penrose produces the same sequence of\n  accepted squares, since only the order of arrivals matters; boundary contacts have\n  probability 0 and do not matter.)\n* Jamming: the number of accepted squares after k arrivals is nondecreasing in k and bounded by\n  L², so it is eventually constant (the jammed state, reached a.s. since any region of positive\n  area where a corner could still be accepted is hit eventually); by monotone convergence the\n  expected final number is the supremum over k of the expected number after k arrivals. The\n  latter is a finite-dimensional Lebesgue integral over ([0,L−1]²)^k divided by its volume\n  (L−1)^{2k} (uniform distribution), computed with `lintegral` in `ℝ≥0∞`, so there are no\n  integrability side conditions. `rho L` = expected final number / L² = expected covered area\n  fraction (each square has area 1).\n* Penrose (2001) proves ρ_L → ρ₂ (expectations converge; indeed L¹ and a.s.). Hence\n  ρ₂ ≠ c_R² ⇔ ρ_L does not converge to c_R². `Claim` states the latter, which needs no\n  separate definition of the limit.\n* Rényi's constant is written with Mathlib's Bochner integrals; the integrands are continuous\n  on (0,∞) (the value at u = 0 is irrelevant, measure zero) and the outer integrand decays like\n  t⁻², so both integrals are genuine (no junk 0 from non-integrability).\n* Proving `Claim` = Palásti's conjecture is false. Proving `¬Claim` = it is true (ρ₂ = c_R²).\n-/\nnamespace OpenProblems.QEDE046\nnoncomputable section\nopen MeasureTheory\nopen scoped ENNReal Classical\n\n/-- Open unit squares with lower-left corners `p`, `q` overlap. -/\ndef overlap (p q : ℝ × ℝ) : Prop := |p.1 - q.1| < 1 ∧ |p.2 - q.2| < 1\n\n/-- Accepted corners after processing a list of arrivals in order (RSA rule). -/\ndef accepted (xs : List (ℝ × ℝ)) : List (ℝ × ℝ) :=\n  xs.foldl (fun acc p => if ∀ q ∈ acc, ¬ overlap p q then acc ++ [p] else acc) []\n\n/-- Admissible corners in the box `[0,L]²`. -/\ndef corners (L : ℕ) : Set (ℝ × ℝ) := Set.Icc (0 : ℝ) ((L : ℝ) - 1) ×ˢ Set.Icc (0 : ℝ) ((L : ℝ) - 1)\n\n/-- Expected number of accepted squares after `k` i.i.d. uniform arrivals. -/\ndef expectedAfter (L k : ℕ) : ℝ≥0∞ :=\n  (∫⁻ x in Set.pi Set.univ (fun _ : Fin k => corners L),\n      ((accepted (List.ofFn x)).length : ℝ≥0∞)) /\n    (volume (corners L)) ^ k\n\n/-- Expected jammed covered fraction in the box `[0,L]²`. -/\ndef rho (L : ℕ) : ℝ := ((⨆ k : ℕ, expectedAfter L k) / ((L : ℝ≥0∞) ^ 2)).toReal\n\n/-- Rényi's parking constant `c_R ≈ 0.747598`. -/\ndef renyi : ℝ :=\n  ∫ t in Set.Ioi (0 : ℝ), Real.exp (-2 * ∫ u in (0 : ℝ)..t, (1 - Real.exp (-u)) / u)\n\n/-- Palásti's conjecture `ρ₂ = c_R²` fails. -/\ndef Claim : Prop :=\n  ¬ Filter.Tendsto rho Filter.atTop (nhds (renyi ^ 2))\n\nend\nend OpenProblems.QEDE046\n",
   "lean_gap": null,
   "reviewed": true
  },
@@ -1230,34 +1040,6 @@
   ],
   "formal_status": "formalized",
   "lean": "import Mathlib\n/-! QED-E051: Translational tiling of the plane with two tiles: decidable?\nGiven two finite sets of grid cells, can translated copies (no rotations) of them tile ℤ² exactly? Is there an algorithm deciding this?\nInformal statement: Is the set of pairs (F₁, F₂) of finite subsets of ℤ² such that ℤ² = (F₁ + A₁) ⊔ (F₂ + A₂) for some A₁, A₂ ⊆ ℤ² decidable?\nFormalization notes: Tiles are given as lists of cells in ℕ × ℕ (every finite subset of ℤ² can be translated into the first quadrant, and tileability is translation invariant, so this loses nothing). Duplicates in a list are harmless (`cells` is a set). `TwoTiles F₁ F₂` says every z ∈ ℤ² lies in exactly one placed copy, where a copy is a pair (tile index, translation vector) with the vector in the corresponding Aⱼ. That is a disjoint exact cover. An empty tile is allowed (the instance then degenerates to one-tile tiling, which is decidable, so it creates no loophole). `Claim` = the problem is decidable (computable in Mathlib's Partrec sense). `¬Claim` = undecidable. The connected-polyomino variant is not encoded.\n-/\nnamespace OpenProblems.QEDE051\n\n/-- The cells of a tile, as a subset of ℤ². -/\ndef cells (F : List (ℕ × ℕ)) : Set (ℤ × ℤ) :=\n  {z | ∃ p ∈ F, z = ((p.1 : ℤ), (p.2 : ℤ))}\n\n/-- Translates of `F₁` and `F₂` tile ℤ² exactly. -/\ndef TwoTiles (F₁ F₂ : List (ℕ × ℕ)) : Prop :=\n  ∃ A₁ A₂ : Set (ℤ × ℤ), ∀ z : ℤ × ℤ, ∃! q : Bool × (ℤ × ℤ),\n    (q.1 = false ∧ q.2 ∈ A₁ ∧ z - q.2 ∈ cells F₁) ∨\n    (q.1 = true ∧ q.2 ∈ A₂ ∧ z - q.2 ∈ cells F₂)\n\n/-- Two-tile translational tiling of the plane is decidable. -/\ndef Claim : Prop :=\n  ComputablePred (fun F : List (ℕ × ℕ) × List (ℕ × ℕ) => TwoTiles F.1 F.2)\n\nend OpenProblems.QEDE051\n",
-  "lean_gap": null,
-  "reviewed": true
- },
- {
-  "id": "QED-E052",
-  "set": "extended",
-  "title": "A shape with Heesch number 7",
-  "area": "Geometry",
-  "difficulty": 4.5,
-  "grade": "B-",
-  "provenance": "Curated",
-  "credit": "Heesch (1968); Bašić (2021); posed as a target by Epoch AI FrontierMath open problems",
-  "premise_risks": [
-   "Already a public FrontierMath target, so it is curated rather than new",
-   "Corona conventions: hole-free vs holes-allowed outer corona (H_h ∈ {H_c, H_c+1}); fix hole-free",
-   "No shape with H=7 may exist; then the problem is a (hard) impossibility question"
-  ],
-  "plain": "Some shapes cannot tile the whole plane but can still be surrounded by a ring of copies of themselves, and that ring by another ring, and so on, up to some limit. The number of rings possible is the shape's Heesch number. The record is 6, found in 2021. Find a shape whose Heesch number is finite but at least 7.",
-  "math": "For a closed topological disk $T\\subset\\mathbb R^2$ that does not tile the plane, the Heesch number $H(T)$ is the largest $k$ such that there is a patch of congruent copies of $T$ made of $T$ surrounded by $k$ successive coronas. Each corona is a ring of copies covering a neighbourhood of the previous patch's boundary, and each intermediate union must be a closed disk (no holes). Exhibit $T$ with $7\\le H(T)<\\infty$. Polyform version: exhibit a polyomino, polyhex or polyiamond with $7\\le H<\\infty$.",
-  "review_note": "Known: Record $H=6$ (B. Bašić, 2021). Kaplan's SAT method ('Heesch numbers of unmarked polyforms', arXiv:2105.09438, Contrib. Discrete Math. 17 (2022)) computed Heesch numbers exhaustively for polyforms up to 19-ominoes, 17-hexes and 24-iamonds and found nothing above the record. In $\\mathbb E^3$, finite Heesch numbers are unbounded (arXiv:2610.24281, Oct 2026), which says nothing about the plane. Listed as unsolved by Epoch AI FrontierMath (hole-free $H_c$ convention, with a 200-cell polyform witness format).",
-  "refs": [
-   "https://epoch.ai/frontiermath/open-problems/heesch-number",
-   "https://arxiv.org/abs/2105.09438",
-   "https://arxiv.org/pdf/2509.12216",
-   "https://arxiv.org/pdf/2610.24281"
-  ],
-  "formal_status": "formalized",
-  "lean": "import Mathlib\n/-! QED-E052: A shape with Heesch number 7\nSome shapes cannot tile the whole plane but can still be surrounded by a ring of copies of themselves, and that ring by another ring, and so on, up to some limit. The number of rings possible is the shape's Heesch number. The record is 6, found in 2021. Find a shape whose Heesch number is finite but at least 7.\nInformal statement: For a closed topological disk $T\\subset\\mathbb R^2$ that does not tile the plane, the Heesch number $H(T)$ is the largest $k$ such that there is a patch of congruent copies of $T$ made of $T$ surrounded by $k$ successive coronas. Each corona is a ring of copies covering a neighbourhood of the previous patch's boundary, and each intermediate union must be a closed disk (no holes). Exhibit $T$ with $7\\le H(T)<\\infty$. (The polyform version — a polyomino, polyhex or polyiamond with $7\\le H<\\infty$ — is a special case: such a polyform is a closed disk $T$, so it would prove the formal `Claim`.)\nFormalization notes:\n* Plane: `EuclideanSpace ℝ (Fin 2)`; congruent copies are images `g '' T` under isometries\n  `g : E ≃ᵢ E` (reflections allowed, as in Kaplan's Heesch computations).\n* Closed topological disk: a set homeomorphic (as a subspace) to the closed unit disk. Such a set\n  is compact with nonempty interior, so interior-disjoint copies are genuinely non-overlapping.\n* k successive coronas (hole-free convention): cumulative finite patches A 0 = {T} ⊆ A 1 ⊆ … ⊆\n  A k of copies, with pairwise disjoint interiors (stated for copies with different images, so\n  symmetries of T giving the same copy are harmless), such that every union U_i of the copies in\n  A i is a closed topological disk, U_i ⊆ interior U_{i+1} (the corona covers a neighbourhood of\n  the previous patch, in particular surrounds it), and every new copy in A (i+1) \\ A i touches\n  U_i (corona tiles are adjacent to the previous patch).\n* `HasCoronas T k` is monotone (drop the outer coronas), so H(T) = sup {k : HasCoronas T k}.\n  \"7 ≤ H(T) < ∞\" is then `HasCoronas T 7 ∧ ∃ k, ¬ HasCoronas T k`. Non-tiling is required\n  explicitly (`¬ TilesPlane T`): it is not proved here that every tile of the plane admits\n  hole-free coronas of every order, so without it a plane-tiling shape whose hole-free\n  coronas stop could witness `Claim` without answering Heesch's problem.\n* Proving `Claim` = a non-tiling closed disk with finite Heesch number ≥ 7 exists. Proving\n  `¬Claim` = every non-tiling closed disk with finite Heesch number has H ≤ 6.\n-/\nnamespace OpenProblems.QEDE052\nnoncomputable section\n\n/-- The Euclidean plane. -/\nabbrev E : Type := EuclideanSpace ℝ (Fin 2)\n\n/-- `S` is a closed topological disk. -/\ndef IsClosedDisk (S : Set E) : Prop := Nonempty (Metric.closedBall (0 : E) 1 ≃ₜ S)\n\n/-- Union of the copies `g '' T`, `g ∈ A`. -/\ndef patchUnion (T : Set E) (A : Set (E ≃ᵢ E)) : Set E := ⋃ g ∈ A, g '' T\n\n/-- `T` can be surrounded by `k` successive hole-free coronas. -/\ndef HasCoronas (T : Set E) (k : ℕ) : Prop :=\n  ∃ A : ℕ → Set (E ≃ᵢ E),\n    A 0 = {IsometryEquiv.refl E} ∧\n    (∀ i : ℕ, i ≤ k → (A i).Finite ∧ IsClosedDisk (patchUnion T (A i))) ∧\n    (∀ g ∈ A k, ∀ h ∈ A k, g '' T ≠ h '' T →\n      Disjoint (interior (g '' T)) (interior (h '' T))) ∧\n    (∀ i : ℕ, i < k →\n      A i ⊆ A (i + 1) ∧\n      patchUnion T (A i) ⊆ interior (patchUnion T (A (i + 1))) ∧\n      ∀ g ∈ A (i + 1) \\ A i, (g '' T ∩ patchUnion T (A i)).Nonempty)\n\n/-- Congruent copies of `T` tile the plane: they cover it and have pairwise disjoint\ninteriors (copies with equal images are identified). -/\ndef TilesPlane (T : Set E) : Prop :=\n  ∃ G : Set (E ≃ᵢ E), patchUnion T G = Set.univ ∧\n    ∀ g ∈ G, ∀ h ∈ G, g '' T ≠ h '' T →\n      Disjoint (interior (g '' T)) (interior (h '' T))\n\n/-- A non-tiling closed disk with finite Heesch number at least 7. -/\ndef Claim : Prop :=\n  ∃ T : Set E, IsClosedDisk T ∧ ¬ TilesPlane T ∧ HasCoronas T 7 ∧\n    ∃ k : ℕ, ¬ HasCoronas T k\n\nend\nend OpenProblems.QEDE052\n",
   "lean_gap": null,
   "reviewed": true
  },
