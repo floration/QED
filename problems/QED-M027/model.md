@@ -7,7 +7,7 @@ Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Show that approximate SVP in the l_2 norm (some constant gamma>1) has no 2^{o(n)}-time algorithm unless (randomized) ETH fails; or identify an obstruction (e.g. for the Z^n-based gadget) showing the l_p, p>2 technique cannot reach p=2.
 
-**Math:** Prove there is a constant gamma>1 such that, unless randomized ETH fails, no 2^{o(n)}-time randomized algorithm solves gamma-GapSVP in the l_2 norm on rank-n lattices. Alternatively, prove that the AGMZ approach (Z^n gadget + Theta-function inequality, valid for p>2) provably fails at p=2.
+**Math:** Prove there is a constant gamma > 1 such that, if randomized ETH holds (there is delta > 0 such that no bounded-error randomized algorithm decides 3-SAT on n variables in time 2^{delta n} poly(size)), then there is delta' > 0 such that no bounded-error randomized algorithm decides gamma-GapSVP in the l_2 norm on rank-n integer lattices in time 2^{delta' n} poly(size) (2^{Omega(n)} hardness, in particular no 2^{o(n)}-time algorithm). The alternative 'technique obstruction' target is a meta-statement and is not formalized.
 
 **Credit:** Aggarwal, Gupta, Morolia, Zhang, 'Mind the Gap? Not for SVP Hardness under ETH!', ICALP 2026 (LIPIcs 374, paper 8), arXiv:2504.02695, Open Problem 1.
 
@@ -22,7 +22,7 @@ Main set · Grade A · QED Curated · Complexity
 Difficulty estimate: 5.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM027.Claim` or a proof of `¬ OpenProblems.QEDM027.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M027/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs time-bounded randomized computation, GapSVP promise problems, and randomized ETH, none in Mathlib. Only the main (hardness) question would be formalized; the 'technique obstruction' alternative is not a theorem-level statement.
+Either a proof of `OpenProblems.QEDM027.Claim` or a proof of `¬ OpenProblems.QEDM027.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M027/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

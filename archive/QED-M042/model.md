@@ -7,7 +7,7 @@ Main set · Grade B · QED Extension · Complexity
 
 **Plain words:** For 3-sparse LPN with m = n^{1.4} samples and noise rate eta = n^{-0.6} (or any eta in [n^{-0.7}, n^{-0.5}]), give an algorithm running in time exp(o(eta*n)), or prove a lower bound (e.g. for low-degree/SoS or statistical-query-like models) showing exp(Omega(eta*n)) is needed in this regime.
 
-**Math:** Fix k = 3, m = ⌊n^{1.4}⌋ and η = n^{-0.6}. In the 3-sparse LPN problem a secret s ∈ F_2^n is uniform, each sample is (a_i, ⟨a_i,s⟩ + e_i) with a_i uniform among weight-3 vectors of F_2^n and e_i ~ Bernoulli(η) independent, i = 1..m. Prove or disprove: there is a (classical, randomized) algorithm that, given the m samples, outputs s with probability ≥ 2/3 in time exp(o(ηn)) = exp(o(n^{0.4})).
+**Math:** Fix k = 3, m = floor(n^{1.4}), eta = n^{-0.6}. In 3-sparse LPN a secret s in F_2^n is uniform, each sample is (a_i, <a_i,s> + e_i) with a_i uniform among weight-3 vectors of F_2^n and e_i ~ Bernoulli(eta) independent, i = 1..m. Prove or disprove: there is a (classical, randomized) algorithm that, given the m samples, outputs s with probability >= 2/3 for all sufficiently large n, in time exp(o(eta n)) = exp(o(n^{0.4})).
 
 **Credit:** Chen, Shu, Zhou, 'Algorithms for Sparse LPN and LSPN Against Low-noise', COLT 2025, arXiv:2407.19215; Applebaum, FOCS 2017.
 
@@ -18,7 +18,7 @@ Main set · Grade B · QED Extension · Complexity
 Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM042.Claim` or a proof of `¬ OpenProblems.QEDM042.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M042/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs a time-bounded model of (randomized) computation. Consider removing or splitting into an algorithmic problem and a separate low-degree lower-bound problem with a precise model.
+Either a proof of `OpenProblems.QEDM042.Claim` or a proof of `¬ OpenProblems.QEDM042.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M042/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

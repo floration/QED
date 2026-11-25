@@ -8,12 +8,11 @@
  "provenance": "Extension",
  "credit": "Hat tiling: Smith, Myers, Kaplan, Goodman-Strauss (2023); numerics on hat-tiling Ising models as cited in the notes (arXiv:2402.11331, arXiv:2307.11054); background: Chelkak-Smirnov universality on isoradial graphs.",
  "plain": "Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid. Prove it.",
- "math": "Let G be the tile-adjacency graph of a hat tiling T in the hull. Prove: there is β_c ∈ (0,∞), the same for all T in the hull, such that (a) for β > β_c the plus-state magnetization at a tile satisfies c(β−β_c)^{1/8} ≤ M_T(β) ≤ C(β−β_c)^{1/8} uniformly in the tile, and M_T(β) = 0 for β ≤ β_c; (b) for β < β_c the susceptibility χ(β) = sup over tiles x of Σ_y ⟨σ_xσ_y⟩_β satisfies χ(β) ≍ (β_c−β)^{−7/4}; (c) for β < β_c the correlation length ξ(β), defined by −lim inf_{|x−y|→∞} log⟨σ_xσ_y⟩/|x−y| = 1/ξ, satisfies ξ(β) ≍ (β_c−β)^{−1}; all for β in a neighbourhood of β_c.",
+ "math": "Let T be any hat tiling (tiling of ℂ by isometric copies, reflections allowed, of the Smith–Myers–Kaplan–Goodman-Strauss hat; all such tilings form the hull) and G its tile-adjacency graph (tiles sharing a boundary segment), with the J=1 ferromagnetic Ising model. Prove: there is β_c ∈ (0,∞), the same for all T, such that, with constants c, C, δ > 0 depending only on T: (a) the plus-state magnetization M_T(β,x) = 0 for all tiles x and 0 ≤ β ≤ β_c, and c(β−β_c)^{1/8} ≤ M_T(β,x) ≤ C(β−β_c)^{1/8} uniformly in x for β_c < β < β_c+δ; (b) for β_c−δ < β < β_c, χ_T(β) = sup_x Σ_y ⟨σ_xσ_y⟩_β satisfies c(β_c−β)^{−7/4} ≤ χ_T(β) ≤ C(β_c−β)^{−7/4}; (c) for β_c−δ < β < β_c, the inverse correlation length 1/ξ_T(β) = liminf_{|x−y|→∞} (−log⟨σ_xσ_y⟩_β/|x−y|) satisfies c(β_c−β) ≤ 1/ξ_T(β) ≤ C(β_c−β).",
  "novelty": 4,
  "importance": 6,
  "value": 5,
- "formal_status": "not_formalized",
- "lean_gap": "Not formalized: needs hat tiling construction, infinite-volume Ising Gibbs states, and definitions of M, χ, ξ.",
+ "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/2402.11331",
   "https://arxiv.org/pdf/2307.11054"

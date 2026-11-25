@@ -8314,5 +8314,14 @@
 "math": "For a closed topological disk $T\\subset\\mathbb R^2$ that does not tile the plane, the Heesch number $H(T)$ is the largest $k$ such that there is a patch of congruent copies of $T$ made of $T$ surrounded by $k$ successive coronas. Each corona is a ring of copies covering a neighbourhood of the previous patch's boundary, and each intermediate union must be a closed disk (no holes). Exhibit $T$ with $7\\le H(T)<\\infty$. Polyform version: exhibit a polyomino, polyhex or polyiamond with $7\\le H<\\infty$.",
 "difficulty": 4.5,
 "reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Heesch's problem)"
+},
+{
+"id": "QED-M042",
+"title": "Sparse 3-LPN at noise n^{-1/2}: beating Gaussian elimination",
+"area": "Complexity",
+"plain": "For 3-sparse LPN with m = n^{1.4} samples and noise rate eta = n^{-0.6} (or any eta in [n^{-0.7}, n^{-0.5}]), give an algorithm running in time exp(o(eta*n)), or prove a lower bound (e.g. for low-degree/SoS or statistical-query-like models) showing exp(Omega(eta*n)) is needed in this regime.",
+"math": "Fix k = 3, m = floor(n^{1.4}), eta = n^{-0.6}. In 3-sparse LPN a secret s in F_2^n is uniform, each sample is (a_i, <a_i,s> + e_i) with a_i uniform among weight-3 vectors of F_2^n and e_i ~ Bernoulli(eta) independent, i = 1..m. Prove or disprove: there is a (classical, randomized) algorithm that, given the m samples, outputs s with probability >= 2/3 for all sufficiently large n, in time exp(o(eta n)) = exp(o(n^{0.4})).",
+"difficulty": 3.5,
+"reason": "retired Nov 2026: not open — a sum-of-squares algorithm in time exp(Õ(n^0.2)) (cited in Chen–Shu–Zhou, arXiv:2407.19215) already meets the target"
 }
 ]

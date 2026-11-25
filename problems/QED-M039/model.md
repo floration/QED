@@ -7,7 +7,7 @@ Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** Anand-van den Brand-McCarty give O~(n^2) preprocessing and O~(n^{2-1/d}) query time for Boolean Mv when M has VC-dimension d. Show, assuming OMv (or unconditionally in the cell-probe model), that n^{2-c/d} query time is necessary for some constant c, for d up to some omega(1) function; or improve the upper bound to n^{2-f(d)} with f(d) >> 1/d.
 
-**Math:** Assume the OMv conjecture. Prove there are c > 0 and D(n) → ∞ such that for all d ≤ D(n), every algorithm with poly(n) preprocessing for online Boolean matrix–vector multiplication on n×n Boolean matrices of VC-dimension ≤ d needs amortized query time n^{2−c/d−o(1)}. (Alternative positive target: an algorithm with query time n^{2−f(d)} where d·f(d) → ∞.)
+**Math:** Assume the OMv conjecture (no randomized word-RAM algorithm solves OMv in total time O(n^{3-ε}) for any ε > 0). Prove there are c > 0 and D(n) → ∞ such that for every d(n) with 1 ≤ d(n) ≤ D(n), every ε > 0 and every p, no randomized algorithm with O(n^p) preprocessing answers the n online Boolean matrix-vector queries for n×n matrices of VC-dimension ≤ d(n) in total query time O(n^{3-c/d(n)-ε}) (amortized n^{2-c/d(n)-ε} per query). (Positive alternative is a separate question.)
 
 **Credit:** Anand, van den Brand, McCarty, 'The Structural Complexity of Matrix-Vector Multiplication', NeurIPS 2025, arXiv:2502.21240; OMv conjecture: Henzinger, Krinninger, Nanongkai, Saranurak (STOC 2015).
 
@@ -18,7 +18,7 @@ Main set · Grade B · QED Curated · Complexity
 Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM039.Claim` or a proof of `¬ OpenProblems.QEDM039.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M039/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: requires an online algorithm/time model and the OMv conjecture as a hypothesis over all algorithms. The 'either lower or upper bound' disjunction should be split into two board entries if formalized later; as one Claim it is not a single proposition.
+Either a proof of `OpenProblems.QEDM039.Claim` or a proof of `¬ OpenProblems.QEDM039.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M039/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

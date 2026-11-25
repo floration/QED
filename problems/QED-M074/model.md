@@ -1,17 +1,17 @@
-# QED-M074 — Ten Martini for every periodic planar lattice
+# QED-M074 — Ten Martini for the kagome lattice
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
 Main set · Grade A · QED Extension · Mathematical physics
 
-**Plain words:** A tight-binding electron on any doubly periodic planar network in a uniform magnetic field: is the energy spectrum always a Cantor set when the flux per cell is irrational? This is known for the square lattice (Ten Martini), the honeycomb lattice and the Lieb lattice, each by a reduction to a one-dimensional operator. Flat-band eigenvalues that persist in any field can sit isolated, so they must be set aside. The question is whether what remains is always a Cantor set, or at least never contains an interval.
+**Plain words:** A tight-binding electron hops on the kagome lattice (corner-sharing triangles) in a uniform magnetic field. Is the energy spectrum a Cantor set whenever the flux per unit cell is irrational? This is known for the square lattice (Ten Martini), the honeycomb lattice and the Lieb lattice, each by a reduction to a one-dimensional operator. Isolated eigenvalues (flat bands) are set aside by taking the derived set. The analogous claim for every periodic planar network is false: in a square lattice whose vertical bonds are replaced by π-flux rhombi, Aharonov–Bohm caging gives spectral intervals.
 
-**Math:** Let $G\subset\mathbb R^2$ be a connected planar graph with straight edges that is invariant under a lattice $L\cong\mathbb Z^2$ and has finitely many $L$-orbits of vertices. For a constant field $B$ with vector potential $A$, set $(H_B\psi)(x)=\sum_{y\sim x}e^{i\int_{[x,y]}A}\psi(y)$ on $\ell^2(V(G))$, and let $2\pi\alpha=B\cdot\mathrm{covol}(L)$. Let $\Sigma'$ be the derived set of $\sigma(H_B)$, i.e. $\sigma(H_B)$ minus its isolated points (eigenvalues of infinite multiplicity, i.e. flat bands). Prove or disprove: for every such $G$ and every irrational $\alpha$, $\Sigma'$ is a nonempty Cantor set. At minimum, decide whether $\sigma(H_B)$ is always nowhere dense. The first open instance is the kagome lattice in a uniform field. (The pure line-graph flux pattern, with no flux through the triangles, reduces to the honeycomb case.)
+**Math:** Let K be the kagome lattice with unit edge length: vertices L + {(0,0),(1,0),(1/2,√3/2)}, L = ℤ(2,0)+ℤ(1,√3), edges = pairs at distance 1. For a constant field B with vector potential A let (H_Bψ)(x) = Σ_{y∼x} e^{i∫_{[x,y]}A} ψ(y) on ℓ²(V(K)), and 2πα = B·covol(L) = 2√3 B. Let Σ' be the derived set of σ(H_B). Prove or disprove: for every irrational α, Σ' is a Cantor set (nonempty, compact, perfect, nowhere dense). (The analogous statement for all periodic planar graphs is false: Aharonov–Bohm caging in a square lattice whose vertical edges are replaced by π-flux rhombi gives spectral intervals at irrational α.)
 
 **Credit:** Extends Avila–Jitomirskaya (Ten Martini, Annals 2009) and Becker–Han–Jitomirskaya–Zworski (honeycomb, arXiv:1803.00988).
 
-**QED results so far (reviewer-derived; check before relying on them):** The pendant-twin counterexample is correct. Attach two pendant vertices x,x' to each vertex of Z^2. Then delta_x - (phase) delta_x' is an eigenvector with eigenvalue 0 for every B. For E nonzero, E is in sigma iff E-2/E is in sigma(H_sq), which lies in [-4,4]. So a punctured neighbourhood of 0 is a gap, 0 is isolated, and the naive statement fails.
+**QED results so far (reviewer-derived; check before relying on them):** Found during review (Nov 2026): the general version fails. Replace each vertical edge of Z^2 by a rhombus (i,j)–(i±w,j+1/2)–(i,j+1) with w=1/(2√2) and take B=π/w: each rhombus carries flux π, α=√2 is irrational, and Aharonov–Bohm caging decouples the rows, giving σ(H_B)={0}∪±[√5−1,√5+1], which contains intervals. The problem is therefore restricted to the kagome lattice, a natural case where this caging cannot occur.
 
 **Rests on recent unrefereed work. Check these premises first:**
 - arXiv:2609.15812 (2026 preprint): 1D Robust Ten Martini; cited as a possible tool only, M does not depend on it.

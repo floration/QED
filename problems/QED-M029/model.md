@@ -7,7 +7,7 @@ Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Mao's counterexample (permutation-invariant graph distributions with zero low-degree advantage up to degree Theta(log^{r-1} n) that a linear-time rank test detects after constant-rate resampling) needs non-uniform advice for its Reed-Muller subspace / evaluation-point seed. Find a polynomial-time algorithm that outputs a good seed, giving a uniformly poly-time samplable counterexample; or show that every uniformly samplable permutation-invariant distribution with vanishing degree-polylog advantage is hard for poly-time noise-robust tests (a repaired conjecture).
 
-**Math:** For some fixed r>=3, give a single randomized algorithm that, given 1^n, samples in expected poly(n) time from a permutation-invariant distribution P_n on n-vertex graphs whose low-degree advantage over G(n,1/2) vanishes up to degree D_n=Theta((log n)^{r-1}), while after independent edge resampling at a fixed rate delta>0 a poly-time test distinguishes it from G(n,1/2) w.p. 1-o(1). A sufficient route via Mao's construction: find in poly(n) time evaluation points with every <=L of the vectors phi(x_i) linearly independent.
+**Math:** For some fixed r >= 3, give a single randomized algorithm that, given 1^n, samples in expected poly(n) time from a permutation-invariant distribution P_n on n-vertex graphs whose low-degree advantage over G(n,1/2) tends to 0 at degree D_n = ceil(c0 (log n)^{r-1}) (some c0 > 0), while after independent edge resampling at a fixed rate delta in (0,1) a deterministic poly-time test distinguishes it from G(n,1/2) with both error probabilities -> 0. (Sufficient route via Mao's construction: find in poly(n) time evaluation points with every <= L of the vectors phi(x_i) linearly independent.)
 
 **Credit:** Mao, The Polynomial-Time Low-Degree Conjecture is False, arXiv:2607.20318 (2026), Sec. 4.
 
@@ -25,7 +25,7 @@ Main set · Grade A · QED Curated · Complexity
 Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM029.Claim` or a proof of `¬ OpenProblems.QEDM029.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M029/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Statement left as sorry by design (no complexity-class infrastructure).
+Either a proof of `OpenProblems.QEDM029.Claim` or a proof of `¬ OpenProblems.QEDM029.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M029/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

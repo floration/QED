@@ -7,7 +7,7 @@ Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** Give a polynomial-time reduction from Small-Set Expansion to Unique Games' hardness direction, i.e. prove UGC => SSEH (Raghavendra-Steurer proved SSEH => UGC), or exhibit an oracle/algorithmic separation (e.g. an algorithm for SSE on a class of graphs where UG remains as hard as in general).
 
-**Math:** Prove that Unique Games reduces to Small-Set Expansion: for every η > 0 there is δ > 0 and a polynomial-time reduction showing Gap-SSE(η, δ) is UG-hard, so that UGC implies SSEH (Raghavendra-Steurer proved SSEH ⇒ UGC). A separation is to be shown relative to an explicit model (oracle, or an algorithm family such as low-degree SoS that solves SSE on instances where UG remains hard).
+**Math:** Prove that Small-Set Expansion is UG-hard: for every η > 0 there are δ ∈ (0,1) and ε > 0 such that for every alphabet size q there is a polynomial-time many-one reduction from Gap-UG_q(1−ε, ε) (YES: some labelling satisfies ≥ 1−ε of the constraints; NO: none satisfies more than ε) to Gap-SSE(η, δ) on regular graphs (YES: some vertex set of measure δ has expansion ≤ η; NO: every vertex set of measure δ has expansion ≥ 1−η). Such reductions give UGC ⇒ SSEH (Raghavendra–Steurer proved SSEH ⇒ UGC). Separations in restricted models (oracles, SoS) are not part of the statement.
 
 **Credit:** Raghavendra, Steurer, 'Graph expansion and the Unique Games Conjecture', STOC 2010; Raghavendra, Steurer, Tulsiani, 'Reductions between expansion problems', CCC 2012 (arXiv:1011.2586)
 
@@ -19,7 +19,7 @@ Main set · Grade B · QED Curated · Complexity
 Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM035.Claim` or a proof of `¬ OpenProblems.QEDM035.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M035/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs polynomial-time reductions, NP-hardness and gap promise problems, none in Mathlib.
+Either a proof of `OpenProblems.QEDM035.Claim` or a proof of `¬ OpenProblems.QEDM035.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M035/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
