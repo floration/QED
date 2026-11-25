@@ -1,0 +1,169 @@
+[
+{
+"id": "N-630",
+"title": "Charge on a Fermat conductor",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "Put a unit of electric charge on a perfectly conducting solid x^4+y^4+z^4 <= 1. Show that the surface charge is thinnest exactly at the six flat points (+-1,0,0),... and thickest exactly at the eight points in the diagonal directions.",
+"M": "Let $K=\\{x^4+y^4+z^4\\le1\\}\\subset\\mathbb R^3$ and let $\\mu=\\rho\\,d\\sigma$ be its Newtonian (capacitary) equilibrium measure, $\\sigma$ surface measure on $\\partial K$ ($\\rho$ is real-analytic and positive since $\\partial K$ is analytic). Prove that $\\min_{\\partial K}\\rho$ is attained exactly at $(\\pm1,0,0),(0,\\pm1,0),(0,0,\\pm1)$ and $\\max_{\\partial K}\\rho$ exactly at $3^{-1/4}(\\pm1,\\pm1,\\pm1)$.",
+"why": "It is folklore that charge accumulates where a conductor is more curved, but the density is nonlocal and only exactly known for ellipsoids (where it is proportional to K^{1/4}). The Fermat superball is the simplest smooth convex body that is not an ellipsoid and has flat points; here Gaussian curvature K=9x^2y^2z^2/(x^6+y^6+z^6)^2 even vanishes along three whole great curves, so rho cannot be a function of K, and a proof needs a genuinely nonlocal comparison argument.",
+"issues": "Statement is well posed. Quick boundary-element check (8112 panels): rho about 0.0378 at flat points, 0.062 at (2^{-1/4},2^{-1/4},0), 0.087 at the diagonal, decreasing monotonically away from the diagonal, so the conjecture is numerically consistent (a spurious max came from badly shaped mesh cells near the cube-sphere corners). No literature found on extremal points of equilibrium density for superballs. Special-instance flavour keeps it out of A.",
+"refs": [
+"https://arxiv.org/pdf/1911.03602",
+"https://arxiv.org/pdf/1509.09252"
+]
+},
+{
+"id": "N-645",
+"title": "Quintic Szego growth",
+"grade": "B",
+"importance": 5,
+"novelty": 5,
+"value": 5,
+"W": "The cubic Szego equation on the circle is completely integrable, and Gerard-Grellier showed that its smooth solutions can have Sobolev norms that are unbounded in time. Decide whether the quintic Szego equation, which is presumably not integrable, also has smooth solutions with unbounded high Sobolev norms.",
+"M": "On $L^2_+(\\mathbb T)=\\{u\\in L^2:\\hat u(k)=0\\ \\forall k<0\\}$ with Szego projector $\\Pi$, consider $i\\partial_tu=\\Pi(|u|^4u)$, which is globally well posed in $H^s_+$, $s>1/2$, with conserved $\\|u\\|_{L^2}$, $(Du,u)$ and $\\|u\\|_{L^6}$. Decide whether there exist $u_0\\in C^\\infty(\\mathbb T)\\cap L^2_+$ and $s>1/2$ with $\\limsup_{t\\to\\infty}\\|u(t)\\|_{H^s}=\\infty$.",
+"why": "Unbounded Sobolev growth (weak turbulence) is proven almost only for integrable models such as cubic Szego, using their Lax pairs. The quintic Szego equation keeps the same conservation laws and the H^{1/2} bound but loses integrability, so it is a clean model for asking whether turbulent cascades survive without integrable structure, in the spirit of Bourgain's question for NLS.",
+"issues": "Statement is well posed after recording the conservation laws and global well-posedness (H^{1/2} conservation plus a Brezis-Gallouet argument, as in the cubic case; worth double-checking). Literature check incomplete: web search budget ran out before I could search for prior work on quintic or higher-power Szego equations, so novelty is uncertain and needs a check. Hard and natural, but likely out of reach as stated.",
+"refs": []
+},
+{
+"id": "N-641",
+"title": "Burgers with degenerate critical dissipation",
+"grade": "C",
+"importance": 3,
+"novelty": 7,
+"value": 3,
+"W": "Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off quadratically at one point of the circle. Do shocks form there?",
+"M": "Let $a(x)=1-\\cos x$ and consider $u_t+uu_x+\\Lambda^{1/2}\\big(a\\,\\Lambda^{1/2}u\\big)=0$ on $\\mathbb{T}$, $\\Lambda=(-\\partial_x^2)^{1/2}$. Decide whether every real $u_0\\in C^\\infty(\\mathbb{T})$ yields a global smooth solution.",
+"why": "The question tests whether the Kiselev-Nazarov-Shterenberg regularity mechanism for critical Burgers survives a degenerate, spatially varying coefficient.",
+"issues": "Likely routine, with expected answer no. The equation preserves odd symmetry (a is even), so odd data with u_0'(0)<0 steepen at the stationary point x=0. Writing the operator as a·Lambda + [Lambda^{1/2},a]Lambda^{1/2}, the commutator is order 0. At the Burgers self-similar scale (x ~ (T-t)^{3/2}, u ~ (T-t)^{1/2}), both dissipative pieces are lower order than u_t. So stable Burgers shock formation (Buckmaster-Shkoller-Vicol style modulation, or Dong-Du-Li type arguments) should go through. Novel but narrow and probably expert-routine. Added 'real' to the data.",
+"refs": [
+"https://ar5iv.labs.arxiv.org/html/0804.3549",
+"https://arxiv.org/abs/2104.10759"
+]
+},
+{
+"id": "N-629",
+"title": "Drum tones of superellipses",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 4,
+"W": "Take the region |x|^p + |y|^p <= r^p, scaled to have area 1. At p = 2 it is a disk, which has the lowest possible bass note of any region of that area (Faber–Krahn). As p grows to infinity it becomes a square, whose note is higher. Show that the note rises steadily the whole way from p = 2 to infinity.",
+"M": "For $p\\in[2,\\infty)$ let $D_p=\\{(x,y):|x|^p+|y|^p\\le r_p^p\\}$ with $r_p$ chosen so that $|D_p|=1$, and let $\\lambda_1(p)$ be the first Dirichlet eigenvalue of $-\\Delta$ on $D_p$. Prove that $\\lambda_1$ is strictly increasing on $[2,\\infty)$, with $\\lambda_1(2)=\\pi j_{0,1}^2$ and $\\lambda_1(p)\\uparrow2\\pi^2$ as $p\\to\\infty$.",
+"why": "This is a test case for how the Dirichlet eigenvalue moves along a natural one-parameter family of convex sets joining the Faber–Krahn minimiser (the disk) to the square. Monotonicity along such families is a known hard type of question in shape optimisation, since Hadamard's formula gives the derivative but not its sign.",
+"issues": "I computed it with the method of particular solutions, using a D4-symmetric Fourier–Bessel basis. The area-normalised lambda_1 comes out at 18.168 (p=2), 18.262 (2.5), 18.431 (3), 18.752 (4), 18.991 (5), 19.159 (6), 19.367 (8), 19.482 (10), 19.614 (15), 19.666 (20), 19.727 (50), heading up to 2pi^2 = 19.739. It is cleanly increasing, so the conjecture looks true, with no counterexample. I found no literature on this exact family, so it is novel but narrow. A proof via Hadamard's shape derivative would need sign information on |du/dn|^2 tested against the normal velocity of the boundary, which looks technical rather than deep. I added the endpoint values to M. The p in [1,2] side (where the shape tends to the rotated square at p=1) is a natural companion question. Knill et al.'s paper on billiards in l^p unit balls lists the Dirichlet eigenvalues of these tables as an open topic, so the family has been looked at but this monotonicity question is not posed there.",
+"refs": [
+"https://arxiv.org/abs/2108.04039",
+"https://legacy-www.math.harvard.edu/~knill/offprints/lpbilliards.pdf"
+]
+},
+{
+"id": "N-619",
+"title": "Thue–Morse Lorenz knots",
+"grade": "C",
+"importance": 3,
+"novelty": 7,
+"value": 4,
+"W": "Turn the first 2^n letters of the Thue–Morse word into a periodic orbit of the Lorenz flow, and so into a knot K_n. For n >= 4 these knots appear to be hyperbolic. Their volume grows only in proportion to n, the logarithm of the word length, not in proportion to the length itself. Prove that, and find the constant.",
+"M": "Let $K_n$ be the Lorenz knot with Lorenz word $t_0t_1\\cdots t_{2^n-1}$ (the length-$2^n$ Thue–Morse prefix, $0\\mapsto x$, $1\\mapsto y$; this word is primitive, since Thue–Morse is overlap-free and $t_{[0,2^n)}=w\\bar w$). Prove that $S^3\\setminus K_n$ is hyperbolic for all $n\\ge4$ and that $\\lim_{n\\to\\infty}\\mathrm{vol}(S^3\\setminus K_n)/n$ exists and is positive. Determine the limit.",
+"why": "Lorenz knots, the periodic orbits of the Lorenz flow, are positive braids, so their volumes are tightly constrained. Asking how volume depends on the combinatorics of the generating word tests the bridge between symbolic dynamics and hyperbolic geometry. A self-similar word like Thue–Morse should yield a self-similar geometric decomposition, so the volume growth could plausibly be computed exactly.",
+"issues": "The ORIGINAL claim (vol/2^n tends to a positive limit) appears FALSE. I computed K_n as the closure of the Lorenz permutation braid of the sorted cyclic shifts and used SnapPy. n=2 gives the unknot and n=3 gives the torus knot T(3,4), with fundamental group <a,b | a^4=b^3>. For n=4..8 the knots are hyperbolic with all tetrahedra positively oriented, and the n=8 value is stable under randomisation. Volumes: 9.396, 16.184, 25.056, 32.991, 41.092. The ratios vol/2^n are 0.587, 0.506, 0.392, 0.258, 0.161, heading to 0. The increments are 6.79, 8.87, 7.93, 8.10, so roughly 8 per doubling, i.e. vol ~ 8n. That is linear in n = log2(length). This fits the picture that the hierarchical word makes large blocks of strands travel in parallel, giving about n twist regions. I rewrote W and M to the numerically supported conjecture (linear in n), set the hyperbolicity threshold to n >= 4, and added a primitivity justification. The increments may tend to about 8.12 (8 times the regular ideal tetrahedron volume), which is speculative. The family choice is arbitrary, hence grade C. Web searches were unavailable for this item because the search budget was exhausted, so there is no literature check.",
+"refs": []
+},
+{
+"id": "N-635",
+"title": "Shifted Fujita equation",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 3,
+"W": "In the plane, every positive solution of u_t = Delta u + u^2 blows up (u^2 is exactly Fujita-critical in dimension 2). Does this survive when u^2 is replaced by the product of the values of u one unit to the left and one unit to the right?",
+"M": "Let $e=(1,0)$. Prove or disprove: for every $0\\le u_0\\in C_c(\\mathbb R^2)$ with $u_0\\not\\equiv0$, the solution of $u_t=\\Delta u+u(x-e,t)\\,u(x+e,t)$ on $\\mathbb R^2$ blows up in finite time.",
+"why": "This tests how robust the Fujita phenomenon is at the critical exponent p=1+2/n when the nonlinearity is non-local in space. It is a small model of delayed or shifted interactions.",
+"issues": "Likely true with a routine proof. The nonlinearity is monotone in u, so comparison and Duhamel lower bounds hold. For Gaussian lower bounds u(s) >= a(s) g_s, the shift costs only the constant factor e^{-|e|^2/(2s)} >= e^{-1/2} for s >= 1, because g_s(x-e) g_s(x+e) = g_s(x)^2 e^{-1/(2s)}. The standard critical-case iteration (Weissler, Kobayashi-Sirao-Tanaka) is insensitive to constant factors in front of u^2. So the classical proof should go through with minor changes (restrict to the parabolic region |x|^2 <= t). No specific literature found, but the problem looks like an exercise.",
+"refs": [
+"https://arxiv.org/abs/2509.07405"
+]
+},
+{
+"id": "N-161",
+"title": "Firebreak with wind",
+"grade": "C",
+"importance": 3,
+"novelty": 4,
+"value": 3,
+"W": "A fire starts at a point and spreads faster downwind: its front moves at speed a + b cos(theta) in direction theta (0 <= b < a). Firefighters can build a barrier at total rate sigma (length per unit time), anywhere, and the fire cannot cross it. For which sigma can the fire be confined to a bounded region?",
+"M": "Let the reachable set of the free fire from $R_0=\\{0\\}$ be $tF$, where $F=\\{r(\\cos\\theta,\\sin\\theta): 0\\le r\\le a+b\\cos\\theta\\}$ (convexified if necessary), $0\\le b<a$. A barrier is a rectifiable set $\\Gamma=\\bigcup_t\\gamma(t)$ with $\\mathcal H^1(\\gamma(t)\\cap\\overline{R(t)})\\le\\sigma t$ (Bressan's admissibility), where $R(t)$ is the set reachable from $R_0$ by paths with velocity in $F$ avoiding $\\Gamma$. Determine $\\sigma^*(a,b)=\\inf\\{\\sigma: \\exists$ admissible $\\Gamma$ with $\\bigcup_t R(t)$ bounded$\\}$, or at least its asymptotics as $b/a\\to1$.",
+"why": "This is the anisotropic (wind-driven) version of Bressan's fire-confinement problem, whose isotropic threshold is still open (conjectured sigma* = 2, known only 1.626 <= sigma* <= 2). Wind is the realistic case for wildfires and makes the geometry of optimal barriers genuinely asymmetric.",
+"issues": "Original M was ill-posed: fire origin, wind direction relative to the town, where/when the barrier may be built, and what 'protects' means were unspecified. In its natural reading it is near-trivial: since an unconfined fire eventually covers the plane, the cheapest protection is a closed curve around the convex town, so the minimal length is essentially its perimeter whenever the time budget allows, and otherwise infeasible. Replaced by the anisotropic blocking-threshold question. That version is meaningful but derivative: it contains the open isotropic case (b=0) and anisotropic convex speed profiles are already in Bressan's framework (differential inclusions with convex velocity sets), so it is unlikely to be novel or elite.",
+"refs": [
+"https://arxiv.org/pdf/2610.36919",
+"https://cvgmt.sns.it/media/doc/paper/4904/opt-barrier.pdf",
+"https://pure.psu.edu/en/publications/dynamic-blocking-problems-for-a-model-of-fire-propagation/",
+"https://arxiv.org/pdf/2508.05324",
+"https://www.math.uzh.ch/en/fileadmin/user/delellis/publikation/FireCPAM.pdf"
+]
+},
+{
+"id": "N-639",
+"title": "KdV with a cosine coefficient",
+"grade": "B",
+"importance": 4,
+"novelty": 6,
+"value": 5,
+"W": "Put a cos x in front of the cubic term of the modified KdV equation on the circle. The energy and the mean are still conserved, but the L² norm is not, and the energy no longer has a definite sign. Can smooth solutions blow up in finite time?",
+"M": "Consider $u_t+u_{xxx}+(\\cos(x)\\,u^3)_x=0$ on $\\mathbb T=\\mathbb R/2\\pi\\mathbb Z$ with real $u_0\\in C^\\infty(\\mathbb T)$. It is Hamiltonian, $u_t=\\partial_x\\frac{\\delta H}{\\delta u}$ with $H=\\int(\\tfrac12u_x^2-\\tfrac14\\cos(x)u^4)$, and conserves $\\int u$ and $H$. However, $\\frac{d}{dt}\\int u^2=\\frac12\\int\\sin(x)u^4$. Decide whether every such $u_0$ yields a global smooth solution, or whether $\\|u(t)\\|_{H^1}\\to\\infty$ in finite time for some $u_0$.",
+"why": "Standard mKdV on the torus is globally well-posed because L² conservation and the L²-subcritical Gagliardo–Nirenberg inequality control the energy. A spatially varying coefficient breaks the translation symmetry and so the L² law, which removes the a priori bound. Any blow-up would have to come from L² growth rather than L² concentration. That is a mechanism of real interest for inhomogeneous dispersive equations, and this is about the simplest model where it could occur.",
+"issues": "I checked the conservation laws: ∫u is a Casimir and H is the Hamiltonian, while d/dt||u||² = (1/2)∫ sin x u⁴, so L² can grow. The a priori estimates close only into dM/dt ≲ M³, which does not rule out blow-up. The weighted mass ∫|cos x|^{1/3}u² cancels the quartic term in the Kato identity, but that weight is singular at the zeros of cos, so it gives no global bound. Numerics (Fourier, N=512, integrating-factor RK4, dt=1e-5, initial data 3exp(-4(x-π/2)²)) conserve H=11.28 to 4 digits while ||u||² grows from 6.4 to 12.7 by t=0.8. The coarser run dt=2e-5 reached 23.9 at t=1.0 and then lost resolution. That growth is consistent with blow-up but does not establish it. Cos x is one arbitrary choice, and the same question makes sense for any sign-changing smooth coefficient a(x). I could not finish the literature check because the web-search budget ran out; work on inhomogeneous gKdV exists, but I could not check whether this case is covered.",
+"refs": []
+},
+{
+"id": "N-344",
+"title": "Hat Ising universality",
+"grade": "B",
+"importance": 6,
+"novelty": 4,
+"value": 5,
+"W": "Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid. Prove it.",
+"M": "Let $G$ be the planar graph whose vertices are the tiles of a fixed hat tiling (Smith–Myers–Kaplan–Goodman-Strauss), with edges between tiles sharing a boundary segment. Consider the ferromagnetic nearest-neighbour Ising model on $G$ with uniform coupling $J=1$. Prove that there is a critical $\\beta_c$ (independent of the tiling in the hull), and that as $\\beta\\to\\beta_c$ the spontaneous magnetization, susceptibility and correlation length obey $M(\\beta)\\asymp(\\beta-\\beta_c)^{1/8}$, $\\chi(\\beta)\\asymp|\\beta-\\beta_c|^{-7/4}$, $\\xi(\\beta)\\asymp|\\beta-\\beta_c|^{-1}$.",
+"why": "Rigorous 2D Ising universality is known for isoradial graphs at Z-invariant weights and for periodic graphs. Uniform couplings on an aperiodic, non-isoradial graph are not covered. The hat graph is a canonical such test, and numerics (Matsubara–Suzuki) support universality.",
+"issues": "Original M did not say which graph, which couplings, or which definitions of the exponents. Fixed: tile-adjacency graph, uniform J, and asymptotics up to constants. Existing work is Monte Carlo only, with ν and β assumed rather than fitted. This is an instance of the broader open problem of universality for quasiperiodic planar Ising models.",
+"refs": [
+"https://arxiv.org/abs/2402.11331",
+"https://arxiv.org/pdf/2307.11054"
+]
+},
+{
+"id": "N-493",
+"title": "Largest prime factor of Markov numbers",
+"grade": "B",
+"importance": 5,
+"novelty": 5,
+"value": 6,
+"W": "Markov numbers are the numbers appearing in positive integer solutions of x^2+y^2+z^2=3xyz. Show that the largest prime factor of a Markov number tends to infinity. Equivalently, for any finite set of primes, only finitely many Markov numbers are built from those primes alone.",
+"M": "Let $\\mathcal M=\\{m\\ge1:\\exists\\,x,y\\in\\mathbb Z_{>0},\\ x^2+y^2+m^2=3xym\\}$ and let $P(m)$ denote the largest prime factor of $m$ (with $P(1)=1$). Prove that $P(m)\\to\\infty$ as $m\\to\\infty$ in $\\mathcal M$; equivalently, for every finite set $S$ of primes, only finitely many $m\\in\\mathcal M$ are $S$-units.",
+"why": "Corvaja and Zannier used the Subspace Theorem to show that the greatest prime factor of the product xy over Markov pairs tends to infinity. The single-number version is the natural strengthening. It sits next to the uniqueness conjecture, where Markov numbers that are prime powers are already handled, and to recent strong-approximation work on the Markoff surface.",
+"issues": "I found no proof. Single branches are easy: for example, the branch of odd-indexed Fibonacci numbers follows from primitive-divisor theorems. The difficulty is uniformity over the whole tree. Counting does not decide it: there are about (log X)^2 Markov numbers up to X but (log X)^{|S|} S-units, so counting rules out nothing once |S|>=2. A computer check of the 576 Markov numbers up to 1e24 found nothing surprising (smallest largest prime factors above 1000: 53, 61, 109, ...). I did not confirm whether Corvaja-Zannier state the single-number case as open, so novelty is uncertain. The M was made explicit (definition of the set, convention P(1)=1).",
+"refs": [
+"https://www.numdam.org/item/RSMUP_2006__116__253_0/",
+"https://arxiv.org/abs/math/0606283",
+"https://arxiv.org/abs/1607.01530"
+]
+},
+{
+"id": "N-658",
+"title": "Jacobi matrix of primes",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Build an infinite tridiagonal (Jacobi) matrix with zero diagonal and the primes 2, 3, 5, 7, ... on the off-diagonals. The standard criteria for purely absolutely continuous spectrum need the off-diagonal sequence to vary regularly, and they just fail because prime gaps fluctuate. Decide whether the spectrum is nevertheless purely absolutely continuous on the whole real line.",
+"M": "Let $J$ be the self-adjoint Jacobi operator on $\\ell^2(\\mathbb N)$ given by $(Ju)_n=p_{n-1}u_{n-1}+p_nu_{n+1}$ (with $p_0u_0:=0$), where $p_n$ is the $n$-th prime. It is self-adjoint by Carleman's criterion, since $\\sum1/p_n=\\infty$. Decide whether $\\sigma(J)=\\sigma_{ac}(J)=\\mathbb R$ with no singular part.",
+"why": "Unbounded Jacobi matrices with weights $a_n\\to\\infty$ and $b_n=0$ have purely absolutely continuous spectrum under bounded-variation conditions on $a_{n+1}/a_n$ (Janas-Naboko, Clark). For the primes, the variation of $p_{n+1}/p_n$ diverges like $\\sum g_n/p_n$. A Prüfer heuristic suggests the real obstruction is the oscillatory series $\\sum(-1)^n g_n/p_n\\,e^{i\\phi_n}$ ($g_n$ the prime gaps), so the spectral type appears to encode a parity-of-index statistic of prime gaps.",
+"issues": "I did not settle it. At E=0 the eigenvector equation is solvable exactly: $u_{2k+1}/u_1=(-1)^k\\prod p_{2j-1}/p_{2j}$. The two solutions are balanced, both about $p_n^{-1/2}$, exactly when $S_N=\\sum_{n\\le N}(-1)^ng_n/p_n$ stays bounded. Numerically $S_N\\to-0.451$ (checked to $p\\approx2\\cdot10^7$), and the alternating gap sum $A_N=\\sum(-1)^ng_n$ behaves like $\\pm0.5\\sqrt N\\log p_N$. A proof probably needs $A_N=O(N^{1-\\delta})$, which looks unproven unconditionally. The answer is therefore likely 'yes', with an unconditional proof possibly out of reach. Second-order terms are controlled unconditionally by Heath-Brown's $\\sum g_n^2\\ll x^{23/18+\\epsilon}$. Literature check was limited because the web-search budget ran out: I found no paper on this matrix but could not complete the search. I rewrote the M to give the operator explicitly.",
+"refs": []
+}
+]

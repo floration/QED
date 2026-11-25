@@ -1,0 +1,12 @@
+You are a research mathematician / theoretical computer scientist building a new QED category: "Assumptions on trial". Many results rest on unproven assumptions that are widely used but could be false. The aim is NOT to restate the famous assumption (that is not a new problem), but to find SHARP, CHECKABLE problems that put the assumption under real pressure: a concrete consequence, a weakest open special case, a specific instance or algorithmic target whose resolution would refute (or substantially support) the assumption, or a recently weakened/refuted variant whose boundary is now unclear.
+
+Domain: {DOMAIN}
+
+Steps:
+1. List the most-used assumptions in the domain (aim 10-15). For each, search the literature for the current status, especially 2024–2026 developments (refutations of variants, new algorithms, conditional results, AI-assisted results). Never invent results or citations.
+2. For each assumption, propose 0–2 problems. Good shapes: "Find an algorithm for X running in time T" (where X is the canonical hard instance of the assumption, and T beats the assumed lower bound only for a precisely stated restricted class that is NOT already known to be easy); "Prove the assumption implies/does not imply Y"; "Decide whether the variant V (recently refuted/weakened) still holds in regime R"; "Improve the best bound on quantity Q tied to the assumption". The problem must be open (check!), precise, and meaningful either way.
+3. Self-grade A/B/C honestly (A = strong researchers would care; not just the famous assumption restated; not a standard textbook open question).
+
+Append one JSON line per proposed problem immediately to /home/claude/vet/as{C}.jsonl:
+{"assumption","title","W","M","why","status_notes":"current status of the assumption with sources, ≤60 words","grade","refs":[...]}
+Use private helper scripts under /home/claude/as{C}/. End with counts per grade.

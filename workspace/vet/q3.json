@@ -1,0 +1,196 @@
+[
+{
+"id": "N-652",
+"title": "Chaos in the double pendulum at every energy",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "The planar double pendulum with equal masses and equal arms looks chaotic at moderate energies but almost regular at very low and very high energies. Prove that it has genuine (positive-entropy) chaos at every energy above the rest state.",
+"M": "Let $H(\\theta_1,\\theta_2,p_1,p_2)$ be the Hamiltonian of the planar double pendulum with $m_1=m_2=\\ell_1=\\ell_2=g=1$ on $T^*\\mathbb T^2$, with minimum value $E_0$ (the hanging rest state). Prove that for every $E>E_0$ the Hamiltonian flow restricted to $\\{H=E\\}$ has positive topological entropy.",
+"why": "The double pendulum is the standard textbook example of chaos, yet rigorous chaos is not known uniformly in energy. Both ends are near-integrable: at low energy it is a nonresonant pair of oscillators (frequency ratio 1+sqrt2), and at high energy it is nearly free rotation. Chaos there needs exponentially small splitting estimates, and the middle range needs computer-assisted proofs, so it is a concrete test for both techniques.",
+"issues": "M was essentially correct; clarified the phase space. Main attack: the low-energy limit is linear and integrable (numerics show the chaotic fraction tends to 0 as E tends to E_0, arXiv 2312.13436), so positive entropy must come from exponentially thin stochastic layers near resonances. Note the high-energy end is also near-integrable, which W originally ignored. I found no rigorous positive-entropy result at any energy (web search budget ran out before I could confirm non-integrability references such as Morales-Ramis-type results). Natural but technical, so B rather than A.",
+"refs": [
+"https://arxiv.org/pdf/2312.13436",
+"https://arxiv.org/pdf/2403.07000"
+]
+},
+{
+"id": "N-077",
+"title": "Closed-form Euler blow-up",
+"grade": "C",
+"importance": 4,
+"novelty": 4,
+"value": 3,
+"W": "Smooth compactly supported starting data for the 3D Euler equations that blow up in finite time are now known to exist, but the construction is an infinite iterative series. Give such data as an explicit formula.",
+"M": "Find an explicit divergence-free $u_0=\\nabla\\times\\big(P(x)e^{-|x|^2}\\big)$ with $P\\in\\mathbb{Q}[x_1,x_2,x_3]^3$ (or another explicitly specified finite closed-form class) such that the unforced 3D incompressible Euler solution on $\\mathbb{R}^3$ with $u(0)=u_0$ has finite maximal smooth lifespan.",
+"why": "An explicit blow-up datum would let the singularity be checked numerically and studied concretely, beyond pure existence. It is a refinement of the now-resolved existence question.",
+"issues": "The core question (smooth, finite-energy, unforced Euler blow-up on R^3) appears to be resolved in 2026: OpenAI 'Finite Time Blowup for the Euler Equation' (smooth compactly supported data, Lean-formalised) and Fan Zheng's exposition arXiv 2610.02509. That construction gives data as a limit of an iterative series, not in closed form. 'Closed-form' was undefined, so I fixed it to an explicit finite class. The residual question is fairly arbitrary. Not elite.",
+"refs": [
+"https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf",
+"https://arxiv.org/abs/2610.02509",
+"https://raw.githubusercontent.com/openai/NavierStokesAndEuler/main/README.md",
+"https://arxiv.org/abs/2308.12197"
+]
+},
+{
+"id": "N-618",
+"title": "Period-doubling torus bundles",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 3,
+"W": "Build a once-punctured torus bundle by reading the period-doubling word as a product of the two basic shear matrices. Show its hyperbolic volume per letter settles to a limit as the word grows.",
+"M": "Let $W_n\\in\\{a,b\\}^{2^n}$ be the length-$2^n$ prefix of the fixed point of $a\\mapsto ab,\\ b\\mapsto aa$ ($n\\ge1$). Let $\\phi_n\\in SL_2(\\mathbb{Z})$ be the product obtained from $W_n$ via $a\\mapsto R=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$, $b\\mapsto L=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}$, and let $M_n$ be the once-punctured torus bundle with monodromy $\\phi_n$ (hyperbolic since $W_n$ contains both letters). Prove that $\\lim_{n\\to\\infty}\\mathrm{vol}(M_n)/2^n$ exists.",
+"why": "This asks for a volume 'law of large numbers' along a deterministic, uniquely ergodic substitution sequence, the analogue of Viaggi's theorem for random mapping tori.",
+"issues": "Likely routine. For period doubling, W_{n+1}=W_nW_n with the last letter changed, so phi_{n+1}=phi_n^2·h with h in a fixed finite set. vol(phi^2)=2 vol(phi) exactly. If vol(M_{psi h}) - vol(M_psi) is bounded for bounded h, which should follow from the locality of Gueritaud's canonical layered triangulation and angle-structure maximisation (or from model-manifold almost-additivity as in Viaggi), then vol(M_n)/2^n is Cauchy with O(2^{-n}) error. The choice of period-doubling word is arbitrary. The general statement (any uniquely ergodic subshift) would be the better form but is probably also accessible.",
+"refs": [
+"https://web3.arxiv.org/abs/1905.04935",
+"https://msp.org/gt/2006/10-3/gt-v10-n3-p01-p.pdf",
+"https://arxiv.org/abs/2607.25319"
+]
+},
+{
+"id": "N-396",
+"title": "Graceful labellings of forests",
+"grade": "B",
+"importance": 5,
+"novelty": 5,
+"value": 5,
+"W": "A forest with m edges and c trees has m + c vertices. Label them with 0, 1, ..., m + c - 1, each label used once, so that the m edge differences |label(u) - label(v)| are all different. Show that every forest has such a labelling. The case 'a tree plus one isolated vertex' already says that every tree can be labelled gracefully if one spare label is allowed.",
+"M": "Prove that every forest $F$ with $m$ edges and $c\\ge1$ components has a bijection $\\ell:V(F)\\to\\{0,1,\\dots,m+c-1\\}$ such that the values $|\\ell(u)-\\ell(v)|$, $uv\\in E(F)$, are pairwise distinct. (Key special case: $F=T\\sqcup K_1$, i.e. every tree with $m$ edges has an injective labelling into $\\{0,\\dots,m+1\\}$ with distinct edge differences.)",
+"why": "Joining the c trees with c - 1 new edges makes a single tree, and a graceful labelling of that tree restricts to such a labelling of the forest. So this statement follows from the Graceful Tree Conjecture (Ringel–Kotzig–Rosa) but is weaker than it. The best unconditional results only give labels in {1,...,(1+eps)n}, or (1-eps)n distinct differences, so even one spare label for every tree would be new progress.",
+"issues": "The original hypothesis (c >= 2 and one tree with more than m/2 edges) is arbitrary. An exhaustive backtracking search over ALL forests with at most 11 vertices (475 forests at n=11) found a valid labelling for every one, with or without that hypothesis. So the hypothesis is not doing any work, and I replaced it with 'every forest'. The original version already contains the open T + K1 case (one spare label for every tree), so neither version is easy. Novelty is moderate: range-relaxed graceful labellings are studied (Van Bussel 2002; Adamaszek–Allen–Grosu–Hladký; the 2025 gracesize paper), and I did not find this exact forest formulation, but it is a natural reformulation that experts would likely regard as folklore-adjacent.",
+"refs": [
+"https://www.combinatorics.org/ojs/index.php/eljc/article/view/v9i1r4",
+"https://arxiv.org/abs/1608.01577",
+"https://arxiv.org/abs/2511.11331",
+"https://arxiv.org/abs/1402.0196"
+]
+},
+{
+"id": "N-659",
+"title": "Fibonacci-modulated growing Jacobi matrix",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "Take a Jacobi matrix with zero diagonal and off-diagonal weights sqrt(n). Double the weight at every position where the Fibonacci word has a 1. Periodic modulations of power-growing weights are known to produce spectral phase transitions. Determine the spectral type for this aperiodic modulation.",
+"M": "Let $f=f_1f_2f_3\\cdots=0100101001001\\cdots\\in\\{0,1\\}^{\\mathbb N}$ be the Fibonacci word, the fixed point of $0\\mapsto01,\\ 1\\mapsto0$. Let $J$ be the Jacobi operator on $\\ell^2(\\mathbb N)$ with $(Ju)_n=a_{n-1}u_{n-1}+a_nu_{n+1}$, where $a_n=\\sqrt n\\,(1+f_n)$ and $a_0u_0:=0$. Since $\\sum 1/a_n=\\infty$, $J$ is self-adjoint (Carleman). Determine the spectral type of $J$. In particular: is $\\sigma_{ac}(J)\\neq\\emptyset$? Is $\\sigma_{ac}(J)=\\mathbb R$? Is the spectrum on some interval pure point or singular continuous?",
+"why": "Janas, Naboko, Swiderski and others classified unbounded Jacobi matrices with periodically modulated power-growing weights. Whether the spectrum is absolutely continuous, a gap, or point spectrum is decided by the trace of a single period's transfer matrix. A Fibonacci modulation joins this theory to the trace-map dynamics of quasicrystal Schrodinger operators. In that setting the period matrix is replaced by a hierarchy of block products.",
+"issues": "I found no literature on aperiodic or Sturmian modulations of unbounded weights, only periodic ones (Janas-Naboko, Swiderski, Naboko-Simonov). Heuristic: with b=0 and lambda/a_n -> 0, two-step transfer matrices are close to diag(-a_{n-1}/a_n, -a_{n-2}/a_{n-1}). Their products are governed by D_N=sum_{k<=N}(f_{2k-1}-f_{2k}). Numerically |D_N| grows like log N (records +-10 by N=10^6, about one unit per factor phi^3), so 2^{D_N} is roughly N^{0.47}. That is close to the l^2 borderline, and it competes with the O(sqrt N) phase rotation from lambda/a_n. So the answer is not obvious. I fixed the indexing and the convention for the Fibonacci word, and added the self-adjointness remark. The choices of exponent 1/2 and factor 2 are somewhat arbitrary.",
+"refs": [
+"https://arxiv.org/abs/1003.3597",
+"https://arxiv.org/abs/math/0605593",
+"https://arxiv.org/abs/1707.06486",
+"https://arxiv.org/abs/0711.4035"
+]
+},
+{
+"id": "N-438",
+"title": "Monochromatic square-sum triangles, many colours",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Colour the positive integers with finitely many colours. Show there are always three different numbers of the same colour whose three pairwise sums are all perfect squares.",
+"M": "Prove that for every $r\\ge1$ and every colouring $\\chi:\\mathbb N\\to\\{1,\\dots,r\\}$ there exist distinct $a,b,c\\in\\mathbb N$ with $\\chi(a)=\\chi(b)=\\chi(c)$ and $a+b,\\ a+c,\\ b+c$ all perfect squares. (Equivalently: the triangle hypergraph of the graph on $\\mathbb N$ with $a\\sim b\\iff a+b=\\square$ has infinite chromatic number.)",
+"why": "Khalfalah and Szemeredi proved that every finite colouring has a monochromatic pair x != y with x+y a square; this asks for the next configuration, a monochromatic triangle in the 'square-sum graph'. Density arguments fail (residue classes such as n = 1 mod 3 contain no such triangle), so a proof must be genuinely Ramsey-theoretic, in the same family as the open Pythagorean-triple and {x,y,x+y,xy} problems.",
+"issues": "Statement clean; colouring renamed to chi to avoid a clash with the element c. Not found posed in the literature (checked Khalfalah-Szemeredi line, Pach's x+y=z^2 work, Di Nasso-Luperi Baglini style surveys). Local (p-adic) obstructions do not kill it: for each prime one residue/valuation class survives. Quick SAT check (CaDiCaL): a 2-colouring of {1..8000} avoiding such triangles exists, but none exists for {1..10000}, so the r=2 case holds with threshold in (8000,10000]; r>=3 is open computationally. Natural but somewhat specialised; B.",
+"refs": [
+"https://arxiv.org/pdf/1608.08374",
+"https://arxiv.org/pdf/1805.06279",
+"https://arxiv.org/pdf/2501.17203",
+"https://arxiv.org/pdf/1806.05002"
+]
+},
+{
+"id": "N-553",
+"title": "Minimal degree of a Jacobian counterexample",
+"grade": "B",
+"importance": 6,
+"novelty": 5,
+"value": 6,
+"W": "The 2026 counterexamples to the Jacobian conjecture in three variables have degree 7 at best (Alpöge's map has component degrees 7,6,4). Wang's theorem says degree 2 is impossible. Find the smallest degree a three-variable counterexample can have: some number from 3 to 7.",
+"M": "Call $F=(F_1,F_2,F_3)\\in\\mathbb C[x,y,z]^3$ a Keller map if $\\det JF\\in\\mathbb C^{\\times}$, and set $\\deg F=\\max_i\\deg F_i$. Determine $d_3=\\min\\{\\deg F: F \\text{ a Keller map that is not injective on }\\mathbb C^3\\}$. Known: $3\\le d_3\\le 7$ (Wang: degree $\\le2$ Keller maps are invertible in every dimension; Alpöge, van den Essen: explicit degree-7 examples). In particular, is every cubic Keller map $\\mathbb C^3\\to\\mathbb C^3$ invertible?",
+"why": "Now that the Jacobian conjecture is known to fail in dimension 3, the obvious next question is how small a failure can be. The minimal degree marks the line between low-degree regimes where invertibility can still be proved (Wang's degree-2 theorem, cubic-homogeneous results in small dimension) and the region where counterexamples exist. Because the Bass–Connell–Wright reduction raises the dimension, the cubic case in dimension 3 is a genuinely separate question.",
+"issues": "The original said 'the 2026 counterexamples have degree 7'. That is accurate for Alpöge's F (7,6,4) and van den Essen's (7,5,4), but Gallagher-type examples have higher degree, so I reworded it to 'degree 7 at best'. I defined 'Keller map' and 'degree' (max component degree, as opposed to geometric degree) and stated the known bounds 3<=d_3<=7. I found no paper that determines d_3 or settles the general cubic case in C^3, but the question is probably being actively studied. It is also a finite-dimensional algebraic problem for each degree, so computer searches may settle it soon, which lowers its long-term novelty.",
+"refs": [
+"https://en.wikipedia.org/wiki/Jacobian_conjecture",
+"https://arxiv.org/pdf/2608.00222",
+"https://arxiv.org/pdf/2609.17795",
+"https://arxiv.org/pdf/2607.22198",
+"https://isa-afp.org/entries/Jacobian_Counterexample.html"
+]
+},
+{
+"id": "N-118",
+"title": "Is the Petersen graph common?",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 5,
+"W": "Color the edges of a huge complete graph red and blue. Does a random coloring minimize the number of single-color copies of the Petersen graph?",
+"M": "Let $P$ be the Petersen graph ($10$ vertices, $15$ edges) and $m(P)=\\lim_{n\\to\\infty}\\min_{\\chi}\\frac{\\#\\{\\text{monochromatic copies of }P\\text{ in }(K_n,\\chi)\\}}{\\#\\{\\text{copies of }P\\text{ in }K_n\\}}$, minimum over red/blue colorings $\\chi$ of $E(K_n)$. Is $m(P)=2^{-14}$, i.e. is $P$ common? Equivalently, is $t(P,W)+t(P,1-W)\\ge 2^{-14}$ for every graphon $W$? If not, determine $m(P)$.",
+"why": "Which graphs are common (random coloring is optimal) is a central question in Ramsey multiplicity. The known obstructions (containing $K_4$, the Turán-coloring criterion of Fox–Wigderson) do not apply to the triangle-free, girth-5, 3-chromatic Petersen graph. It is a natural test case, between odd cycles (common) and graphs containing $K_4$ (uncommon).",
+"issues": "Original 'determine the constant' rewritten as the commonness question; if P is common the constant is 2^{-14}. Checks: P has no K4, so Thomason's obstruction does not apply. Its smallest even subgraph with min degree 2 is C6, and t(C6,U)>=0, so P passes the first local-commonness test. Turán colorings give 32-560 times the random value. A random search over 2- to 4-step graphons found nothing below 2^{-14} (best 1.035x). Found no paper settling P.",
+"refs": [
+"https://arxiv.org/pdf/2207.07775",
+"https://arxiv.org/pdf/2206.04036",
+"https://arxiv.org/pdf/2012.02057",
+"https://arxiv.org/pdf/2610.20149"
+]
+},
+{
+"id": "C-93",
+"title": "Information-tight sorting of pattern classes",
+"grade": "B",
+"importance": 5,
+"novelty": 7,
+"value": 6,
+"W": "An array is promised to avoid a fixed pattern. Counting the allowed orders gives a lower bound on the comparisons needed to sort it, and Fredman's theorem says this bound plus 2n always suffices. Opler (2024) showed the right order of magnitude is linear. Is the counting bound tight up to lower-order terms, o(n), for every pattern?",
+"M": "For a permutation $\\tau$ let $C_\\tau(n)$ be the minimum worst-case number of comparisons of a decision tree that sorts $a_1,\\dots,a_n$ under the promise that their order pattern lies in $\\mathrm{Av}_n(\\tau)$. Fredman: $\\log_2|\\mathrm{Av}_n(\\tau)|\\le C_\\tau(n)\\le\\log_2|\\mathrm{Av}_n(\\tau)|+2n$. Decide whether $C_\\tau(n)=\\log_2|\\mathrm{Av}_n(\\tau)|+o(n)$ for every $\\tau$, and in particular for $\\tau=1324$.",
+"why": "The comparison model is one of the few settings where information-theoretic lower bounds are often nearly exact. Even for unrestricted sorting it is unknown whether $\\log_2 n!+o(n)$ comparisons suffice. Pattern classes give a family where this question is harder to dismiss. A linear gap for some $\\tau$ would need a new lower-bound technique, and tightness for every $\\tau$ would need a strong structural sorting algorithm.",
+"issues": "Opler (arXiv:2409.07868) gives $O((\\log c_\\tau+1)n)$, tight up to a constant factor, but not the additive $o(n)$ question. I found nowhere that poses the additive form. Small cases: for $\\tau\\in\\{132,231,312,213\\}$ (equivalent under reversal and complement, which preserve the sorting problem; inverse does not), stack sorting uses $\\le2n$ comparisons and $\\log_2 C_n=2n-O(\\log n)$, so the answer is yes. $\\tau\\in\\{123,321\\}$ seems tractable by an adaptive merge but I did not check it. The question is substantive only for $|\\tau|\\ge4$. I stated that the decision tree knows $\\tau$.",
+"refs": [
+"https://arxiv.org/abs/2409.07868",
+"https://drops.dagstuhl.de/storage/00lipics/lipics-vol351-esa2025/html/LIPIcs.ESA.2025.104/LIPIcs.ESA.2025.104.html"
+]
+},
+{
+"id": "N-654",
+"title": "Two-frequency localization",
+"grade": "B",
+"importance": 6,
+"novelty": 3,
+"value": 5,
+"W": "Take a one-dimensional lattice Schrödinger operator whose potential is the sum of two cosines with frequencies √2 and √3, and make the coupling strong. Prove that for these specific frequencies, not just for almost every frequency pair, almost every phase gives localized eigenfunctions that decay exponentially.",
+"M": "For $\\lambda>0$ and $\\theta\\in\\mathbb T^2$ let $(H_{\\lambda,\\theta}\\psi)(n)=\\psi(n+1)+\\psi(n-1)+\\lambda\\big(\\cos2\\pi(n\\sqrt2+\\theta_1)+\\cos2\\pi(n\\sqrt3+\\theta_2)\\big)\\psi(n)$ on $\\ell^2(\\mathbb Z)$. Prove there is $\\lambda_0$ such that for all $\\lambda\\ge\\lambda_0$ and Lebesgue-a.e. $\\theta$, $H_{\\lambda,\\theta}$ has pure point spectrum with exponentially decaying eigenfunctions (Anderson localization).",
+"why": "Multi-frequency localization at large coupling is known only for a full-measure set of frequency vectors, because the proofs (Bourgain-Goldstein, Bourgain-Goldstein-Schlag) delete frequencies by semi-algebraic elimination. Proving it for one explicit Diophantine vector such as (√2,√3), which is Diophantine by Schmidt's subspace theorem, would require an arithmetic way to control double resonances, as Jitomirskaya's method does for one frequency.",
+"issues": "This is a special case of a recognised open problem (fixed-frequency localization for multi-frequency analytic potentials), not a new question. arXiv 2603.07180 says it is unknown whether some Diophantine frequency can be fixed, and solves only the dual perturbative regime on Z^d. Eliasson (Acta Math 1997) gives pure point spectrum at fixed Diophantine frequency for large Gevrey/analytic couplings, but without exponential decay of eigenfunctions, so the exponential decay is the open content. The original fixed coupling 10 was arbitrary: every known method gives an inexplicit lambda_0, so I replaced it with 'all lambda >= lambda_0'.",
+"refs": [
+"https://arxiv.org/abs/2603.07180",
+"https://arxiv.org/abs/1204.3086",
+"https://arxiv.org/abs/1610.00380",
+"https://arxiv.org/abs/2603.10649"
+]
+},
+{
+"id": "N-022",
+"title": "Blank jigsaw with few edge shapes",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "A jigsaw with no picture can only be solved from the shapes of its pieces. Each internal edge is one of k shapes (a tab that fits only its own matching blank), and pieces may be turned. How small can k be if some n×n blank jigsaw still goes together in exactly one way? Counting shows k must be at least about √n, and random puzzles need about n.",
+"M": "An $n\\times n$ jigsaw with $k$ edge types is a map assigning to each internal edge of the $n\\times n$ grid a type in $[k]$ and an orientation (which side carries the tab); border edges are flat. Its pieces are the $n^2$ unit squares, each regarded as a distinct physical object carrying its four (type, tab/blank) labels up to rotation. An assembly is a placement of all pieces bijectively on the cells, each rotated by a multiple of $90^\\circ$, so that every internal edge joins a tab and a blank of the same type and all flat edges lie on the border. Let $k(n)$ be the least $k$ for which some $n\\times n$ jigsaw with $k$ edge types has exactly one assembly up to the four rotations of the whole square. Determine the order of $k(n)$; in particular, is $k(n)=\\Theta(\\sqrt n)$?",
+"why": "Uniqueness of jigsaw reconstruction is a well-studied model problem for shotgun assembly (Mossel–Ross; Bordenave–Feige–Mossel; Nenadov–Pfister–Steger), but all known thresholds concern random puzzles, where about n edge types are needed. Since unique assembly forces all n^2 pieces to be distinct, a simple count gives k(n) ≥ c√n, so the question is whether designed puzzles can beat random ones by a polynomial factor, a rigidity/design question in the spirit of de Bruijn tori.",
+"issues": "Original M was ambiguous: whether identical pieces count as interchangeable (unlabelled multiset, where swapping identical pieces is not a new assembly) changes the answer completely; fixed to distinct physical pieces, which forces all pieces distinct and gives the counting lower bound k(n) ≥ c n^{1/2}. Random-puzzle results give k(n) ≤ (1+o(1))n. Found no deterministic-design result. The unlabelled variant (constant k possible?) is a separate, also interesting question, related to tile-complexity results in self-assembly. Risk: an explicit coordinate-encoding construction may give Θ(√n) fairly routinely.",
+"refs": [
+"https://arxiv.org/pdf/1605.03086",
+"https://arxiv.org/abs/1605.03043",
+"https://arxiv.org/pdf/1701.04813",
+"https://arxiv.org/pdf/1707.04730"
+]
+}
+]

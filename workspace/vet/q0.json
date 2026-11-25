@@ -1,0 +1,198 @@
+[
+{
+"id": "N-378",
+"title": "Galois groups of Keller fibers",
+"grade": "C",
+"importance": 4,
+"novelty": 5,
+"value": 4,
+"W": "Gallagher (2026) built, for every n>=3, a polynomial map C^3->C^3 with constant nonzero Jacobian whose general fibre has exactly n points. Determine the symmetry (monodromy/Galois) group of how those n points are permuted.",
+"M": "Let $H_n:\\mathbb C^3\\to\\mathbb C^3$ be Gallagher's Keller map of geometric degree $n$ (A. Gallagher, \\emph{An infinite family of counterexamples to the Jacobian Conjecture in dimension three}, Zenodo 2026, doi:10.5281/zenodo.21479195), so $[\\mathbb C(x,y,z):H_n^*\\mathbb C(X,Y,Z)]=n$. For each $n\\ge3$ determine the Galois group of the Galois closure of $\\mathbb C(x,y,z)/H_n^*\\mathbb C(X,Y,Z)$ (equivalently the monodromy group of the $n$-sheeted covering over a general point), as a permutation group of degree $n$; and the arithmetic group over $\\mathbb Q$.",
+"why": "The monodromy group is the first invariant distinguishing Keller counterexamples beyond fibre size; e.g. it decides whether inverse branches are expressible by radicals and separates families up to polynomial equivalence. Companion papers already compute it (S_n, A_n, wreath products) for other 2026 Keller families.",
+"issues": "Original M did not cite or define the family; fixed with reference and a definite object (permutation group, geometric and arithmetic). Closely analogous computations are already done: Kistner-Shaska get A_N/S_N for cyclic and beta-Hermite graded Keller families, Shaska gets S_3 for the degree-3 map, and a marked-root paper gets wreath products. Gallagher's fibres come from a tangency polynomial; the expected answer (S_n, possibly A_n) likely follows by a routine discriminant/Morse-specialization argument, so low depth. Could not open the Zenodo preprint (access blocked), so the exact formula was not checked.",
+"refs": [
+"https://arxiv.org/pdf/2608.00222",
+"https://arxiv.org/pdf/2608.02863",
+"https://arxiv.org/pdf/2607.20210",
+"https://arxiv.org/pdf/2609.33491",
+"https://doi.org/10.5281/zenodo.21479195"
+]
+},
+{
+"id": "N-341",
+"title": "Prime Markov triples",
+"grade": "C",
+"importance": 3,
+"novelty": 5,
+"value": 3,
+"W": "Markov triples are positive integer solutions of x^2+y^2+z^2=3xyz. Are there infinitely many in which all three numbers are prime?",
+"M": "Decide whether infinitely many solutions $(x,y,z)\\in\\mathbb Z_{>0}^3$ of $x^2+y^2+z^2=3xyz$ have $x,y,z$ all prime.",
+"why": "It combines the Markov tree, which governs the worst-approximable numbers and the Lagrange spectrum, with primality of sparse, doubly exponentially growing sequences, in the same spirit as the open question of infinitely many prime Markov numbers.",
+"issues": "Well posed but likely hopeless and heuristically settled. Search of the 3502 smallest triples (entries below 10^60) finds exactly 5 all-prime triples: (2,5,29), (5,29,433), (2,5741,33461), (5,2897,43261), and one with min 89 and two 22-25 digit entries. Prime-number heuristics give a convergent expected count: about the sum over the tree of 1/(log x log y log z), which behaves like a sum of 1/(ab(a+b)) over a 2-dimensional set of log-sizes. Fixed-small-entry branches (e.g. x=2, the odd Pell numbers) need twin-prime indices and also converge. So the expected answer is 'finitely many', and that is unprovable with current methods; no structure makes it attractive.",
+"refs": []
+},
+{
+"id": "N-385",
+"title": "Cross-polytopes in 4D",
+"grade": "B",
+"importance": 5,
+"novelty": 4,
+"value": 6,
+"W": "Every smooth convex body in 4-space should have the eight corners of a regular cross-polytope lying on its boundary.",
+"M": "Prove that for every smooth convex body $K\\subset\\mathbb{R}^4$ there is a regular cross-polytope (a similar copy of $\\mathrm{conv}\\{\\pm e_1,\\dots,\\pm e_4\\}$) all of whose 8 vertices lie on $\\partial K$.",
+"why": "Inscribing regular octahedra and cross-polytopes (Klee-Wagon Problem 11.5) is a high-dimensional cousin of the square peg problem. Karasev settled every odd prime power dimension with equivariant topology, but the method fails in even dimensions. Dimension 4 is the first open case and needs a genuinely new obstruction computation.",
+"issues": "Makeev solved d=3 for smooth bodies, and Karasev (arXiv 0905.2671) solved odd prime powers d for non-angular bodies, noting the method does not apply to d=2. Centrally symmetric bodies are handled in all d via Yamabe-Yujobo. Akopyan-Karasev handle polytopes in R^3. I found no result for d=4. I restricted M to smooth bodies: for arbitrary convex bodies, limiting arguments can degenerate, and Karasev notes that even dropping non-angularity is unclear. Already posed implicitly, so novelty is low.",
+"refs": [
+"https://arxiv.org/abs/0905.2671",
+"https://ar5iv.arxiv.org/html/1107.4428",
+"https://mathnet.ru/eng/znsl3565"
+]
+},
+{
+"id": "C-T2",
+"title": "The complex of planar graphs",
+"grade": "B",
+"importance": 4,
+"novelty": 7,
+"value": 5,
+"W": "Planar graphs on n labelled vertices form a simplicial complex, because deleting an edge keeps a graph planar. It is pure, since every maximal planar graph has 3n-6 edges. Its homology turns out not to be that of a wedge of top-dimensional spheres: already for n=6 it is concentrated two degrees lower and has 2-torsion. Determine its homology.",
+"M": "Let $\\Pi_n$ be the simplicial complex on vertex set $E(K_n)$ whose faces are edge sets of planar graphs; it is pure of dimension $3n-7$. Determine $\\tilde H_*(\\Pi_n;\\mathbb Z)$, or at least $\\tilde H_*(\\Pi_n;\\mathbb Q)$, for all $n$. Known: $\\Pi_4$ is a simplex, $\\Pi_5=\\partial\\Delta^9\\cong S^8$. For $n=6$ (computed exactly): $\\tilde H_*(\\Pi_6;\\mathbb Q)$ is $\\mathbb Q^{15}$ in degree $9=3n-9$ and $0$ elsewhere; $\\tilde H_*(\\Pi_6;\\mathbb F_2)$ is $\\mathbb F_2^{15},\\mathbb F_2,\\mathbb F_2$ in degrees $9,10,11$, so $\\tilde H_{10}(\\Pi_6;\\mathbb Z)$ has $2$-torsion and $\\Pi_6$ is not a wedge of spheres. The mod-2 top class is the sum of all triangulations: every face of dimension $3n-8$ of $\\Pi_6$ lies in an even number (2 or 4) of facets. Questions: (a) is $\\tilde H_*(\\Pi_n;\\mathbb Q)$ concentrated in degree $3n-9$ for all $n\\ge6$, and what is its rank and $S_n$-module structure? (b) Is $\\tilde H_{3n-7}(\\Pi_n;\\mathbb F_2)\\ne0$ for all $n\\ge5$? Is all torsion 2-torsion?",
+"why": "Simplicial complexes of monotone graph properties (matchings, forests, non-connected and non-k-connected graphs) are a well-developed area, and planarity is the most natural minor-closed property not yet treated. The non-orientable, triangulation-flip-driven top class makes it differ from the wedge-of-spheres pattern typical of such complexes.",
+"issues": "ORIGINAL STATEMENT FALSE: a quick exact computation (GF(2) and rational boundary ranks over all 2^15 subgraphs of K_6) gives rational reduced homology Q^15 in degree 9 only, and mod-2 homology F2^15, F2, F2 in degrees 9, 10, 11. So Pi_6 is not a wedge of 11-spheres; the Euler characteristic -15 is correct but misleading. Rewrote M as a homology-determination problem, keeping the n=6 data. The claimed chi(Pi_7)=177 was not re-verified; it would imply rational homology in an even degree, for example 3n-9=12. No literature found on this complex. Jonsson's LNM 1928 Table 7.1 lists monotone graph properties studied, and planarity does not appear in the sources checked.",
+"refs": [
+"https://arxiv.org/pdf/2012.01679",
+"https://doi.org/10.1007/978-3-540-75859-4_7"
+]
+},
+{
+"id": "N-643",
+"title": "Critical NLS blow-up threshold on the cube surface",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "In the plane, the focusing cubic Schrödinger equation needs at least the ground-state mass to blow up. On the surface of a cube, each corner is a cone with total angle 3π/2, which can hold a 'three-quarter' ground state. So the blow-up threshold should drop to three quarters of the planar one, and the claim is that it does exactly that.",
+"M": "Let $S$ be the surface of the unit cube with its flat metric, and let $\\Delta$ be the Friedrichs extension of the Laplace–Beltrami operator on $C_c^\\infty(S\\setminus\\{\\text{vertices}\\})$. Let $Q$ be the ground state of $\\Delta Q-Q+Q^3=0$ on $\\mathbb R^2$, and put $m_*=\\tfrac34\\|Q\\|_{L^2(\\mathbb R^2)}^2$. For $iu_t+\\Delta u+|u|^2u=0$ on $S$, prove: (i) every $u_0\\in H^1(S)$ with $\\|u_0\\|_2^2<m_*$ gives a global $H^1$ solution; (ii) for every $\\varepsilon>0$ there is $u_0\\in H^1(S)$ with $m_*<\\|u_0\\|_2^2<m_*+\\varepsilon$ whose solution blows up in finite time. (Stronger, optional: blow-up data exist for every mass $m>m_*$; also decide whether there is blow-up at mass exactly $m_*$.)",
+"why": "The sharp Gagliardo–Nirenberg constant on a cone of angle alpha <= 2*pi should be (alpha/2*pi) times the planar one, with the radial Q as extremiser. If so, conical singularities lower the mass threshold for collapse, and the cube surface turns this into a clean statement with an explicit constant. A proof would test the mass-critical blow-up theory (Weinstein, Merle–Raphaël, Burq–Gérard–Tzvetkov) on singular geometries, where existing Strichartz estimates come with loss.",
+"issues": "Web searches were unavailable for this item because the search budget was exhausted; prior work I know of (Strichartz estimates on flat cones by Ford and by Blair–Ford–Marzuola) was not re-checked. Fixes: specified the self-adjoint realisation, since on 2D cones the Laplacian on functions supported away from the vertex is not essentially self-adjoint because of the log r mode. Also replaced 'blow-up for EVERY m > 3/4||Q||^2' with 'blow-up for masses arbitrarily close above m_*'. That is the honest threshold statement, while arbitrarily large blow-up mass on a compact surface needs a separate argument, so I kept it as an optional strengthening. Part (i) looks fairly routine given a sharp GN inequality on the cone (cones with angle <= 2*pi have apex-centred disks as isoperimetric optimisers, so Polya–Szego symmetrisation should work) plus a local H^1 theory. Part (ii), building near-threshold blow-up concentrating at a vertex, is the real content.",
+"refs": []
+},
+{
+"id": "N-636",
+"title": "Euler with reversed stretching",
+"grade": "B",
+"importance": 5,
+"novelty": 7,
+"value": 5,
+"W": "Flip the sign of the vortex-stretching term in the 3D Euler vorticity equation and keep advection and the Biot-Savart law. Do smooth solutions stay smooth forever, or can they blow up in finite time?",
+"M": "On $\\mathbb T^3$ let $\\omega:\\mathbb T^3\\times[0,T)\\to\\mathbb R^3$ solve $\\partial_t\\omega+(u\\cdot\\nabla)\\omega=-S\\omega$, where $u=\\nabla\\times(-\\Delta)^{-1}(\\omega-\\langle\\omega\\rangle)$, $S=\\tfrac12(\\nabla u+\\nabla u^{T})$ and $\\langle\\omega\\rangle$ is the spatial mean. Decide whether every $\\omega_0\\in C^\\infty(\\mathbb T^3;\\mathbb R^3)$ with $\\nabla\\cdot\\omega_0=0$ generates a global smooth solution.",
+"why": "Advection and vortex stretching are the same size under scaling, and their competition decides regularity in 1D Euler models. In the De Gregorio, Cordoba-Cordoba-Fontelos and Okamoto-Sakajo-Wunsch models, the sign and relative weight of stretching flip the answer between blow-up and regularity (Elgindi-Jeong). This is the full 3D analogue: it isolates the sign of stretching while keeping the true nonlocal Biot-Savart structure.",
+"issues": "Fixes: (1) The reversed equation does NOT preserve div omega = 0 (one computes (d_t+u.grad)div omega = -2 d_i u_j d_j omega_i + ...), so curl u != omega in general and the system is only a model. (2) The mean of omega is not conserved (d/dt mean = -int S omega), so (-Delta)^{-1} must act on the mean-free part. I fixed M accordingly. Observation: for axisymmetric swirl-free data, div omega = 0 is preserved and r*omega_theta (not omega_theta/r as in true Euler) is transported. So omega_theta can grow as fluid moves toward the axis. This is a natural first test case, and it hints that the answer may differ from true Euler. I found no 3D paper on exactly this model, only 1D analogues.",
+"refs": [
+"https://arxiv.org/abs/1701.04050",
+"https://arxiv.org/abs/1905.06387",
+"https://arxiv.org/abs/1203.5151"
+]
+},
+{
+"id": "N-126",
+"title": "Translative Lebesgue covering",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Find the convex shape of least area that contains a translated copy of every planar set of diameter 1, when only translations (no rotations or reflections) are allowed. Is the Jung disc of radius 1/sqrt(3), which is optimal for perimeter, also optimal for area?",
+"M": "Let $\\mathcal D$ be the family of planar sets of diameter at most $1$. Determine $\\alpha=\\min\\{\\mathrm{area}(K): K\\subset\\mathbb R^2 \\text{ convex},\\ \\forall X\\in\\mathcal D\\ \\exists t\\in\\mathbb R^2: X+t\\subseteq K\\}$ and all minimisers up to translation. In particular decide whether $\\alpha<\\pi/3$ (the area of the disc of radius $1/\\sqrt3$).",
+"why": "Lebesgue's universal-cover problem (rigid motions allowed) is a century old and still unsolved; the translation-only version is the natural rigid analogue of Pal's solution of the convex Kakeya problem (equilateral triangle of height 1) and of Bezdek-Connelly's theorem that the disc of radius 1/sqrt3 is the unique minimum-perimeter translation cover of diameter-1 sets. Its answer measures how much rotation actually helps in Lebesgue's problem.",
+"issues": "Original title 'Hexagonal' was unjustified: a fixed regular hexagon of width 1 does not contain translates of all rotated Reuleaux triangles (Pal's hexagon argument uses rotation). Uniqueness claim replaced by 'determine all minimisers up to translation' (uniqueness unproven and unmotivated). Existence of a minimiser follows from Blaschke selection. Literature: perimeter version solved (Bezdek-Connelly; cited in arXiv 1209.2171); area version for diameter-1 sets not found solved; related translation/discrete-rotation covers for curves and segments in Jung-Yoon-Ahn-Tokuyama (Adv. Geom. 2023). Bounds: alpha >= area of min translation cover of unit segments and unit disc together; alpha <= pi/3. Quick numerics: translating 6 rotated copies of the width-1 Reuleaux triangle by optimized offsets gives hull area ~0.978 < centred 1.026, so the centred disc is likely not area-optimal, i.e. the answer is probably a non-trivial shape.",
+"refs": [
+"https://ar5iv.labs.arxiv.org/html/1209.2171",
+"https://www.degruyterbrill.com/document/doi/10.1515/advgeom-2023-0021/html",
+"https://en.wikipedia.org/wiki/Lebesgue%27s_universal_covering_problem",
+"https://arxiv.org/pdf/2608.30538"
+]
+},
+{
+"id": "N-624",
+"title": "How nearly can tetrahedra close up",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "A chain of regular tetrahedra glued face to face can never close up exactly (Świerczkowski). How fast can near-misses improve as the chain grows? Simple arguments show the best gap shrinks at least like 3^{-n/12} and at most like 3^{-n}. A counting heuristic predicts exactly 3^{-n/6}.",
+"M": "Let $T_0$ be a regular tetrahedron with edge $2\\sqrt2$. A chain of length $n$ is $T_0,\\dots,T_n$, where $T_{k+1}$ is the reflection of $T_k$ in a face of $T_k$, and that face is not the one shared with $T_{k-1}$. Let $g(n)=\\min_{\\text{chains}}d_H(T_n,T_0)$ (always positive). Known or easy: $g(n)\\ge c\\,3^{-n}$, because all vertices lie in $3^{-n}\\mathbb Z^3$ when $T_0$ has vertices $(\\pm1,\\pm1,\\pm1)$ with an even number of minus signs. A pigeonhole argument on pairs of half-length chains gives $\\liminf\\frac1n\\log g(n)\\le-\\frac{\\log3}{12}$ along suitable $n$. Determine $\\lim_{n\\to\\infty}\\frac1n\\log g(n)$ (or the liminf), conjecturally $-\\frac{\\log 3}{6}$.",
+"why": "Steinhaus's tetrahedral-chain problem asks whether a ring can close. It is a concrete free-product subgroup of the isometry group with all entries in Z[1/3]. The rotation parts behave like the Lubotzky–Phillips–Sarnak quaternions of norm 3^n. The near-closure rate is therefore an optimal-approximation question in an S-arithmetic group acting on R^3, combining a Ramanujan-type rotation part with a translation part that behaves like a random walk.",
+"issues": "I added the trivial bounds so that the problem has a definite target. I also made 'the exact rate' a conjecture: proving equality with log3/6 needs equidistribution of translations at scale 3^{-n/6} together with a matching Diophantine lower bound, which is probably far out of reach. A realistic target is to improve either bound. The original said the minimum is over chains 'of length n' without fixing the edge length, so I fixed coordinates. Numerics up to n=13 (531441 chains) give best distances of about 0.28–0.34. At these lengths translational spread still dominates, so the data say nothing about the exponent. Literature: my web-search budget ran out before I could search this item. I know of Świerczkowski's non-closure theorem and the Elgersma–Wagon work on near-closing tetrahedral rings from memory only, so a check is still needed for any prior statement of this rate.",
+"refs": []
+},
+{
+"id": "N-644",
+"title": "Lane–Emden with a shift",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 4,
+"W": "Replace u² in the five-dimensional Lane–Emden equation by the square of u at a shifted point. Are there still no positive solutions?",
+"M": "Let $e\\in\\mathbb R^5\\setminus\\{0\\}$. Does there exist a positive $u\\in C^2(\\mathbb R^5)$ with $-\\Delta u(x)=u(x+e)^2$ for all $x\\in\\mathbb R^5$?",
+"why": "For $p<(n+2)/(n-2)$ (here $2<7/3$), Gidas–Spruck shows $-\\Delta u=u^p$ has no positive entire solutions. Their proof, like moving planes, relies on the nonlinearity being local, so a shifted nonlinearity tests which Liouville methods survive nonlocal coupling.",
+"issues": "1D analogue is trivially impossible (positive concave on R is constant). The superharmonic-inequality threshold n/(n-2)=5/3<2 does not settle it, and |x|^{-3} decay is not excluded by crude integral estimates. Found no literature on shifted-argument Lane–Emden. The choice of n=5, p=2 is arbitrary; the natural version is 'for all n≥3, 1<p<(n+2)/(n-2)'.",
+"refs": [
+"https://www.arxiv.org/abs/1706.03467"
+]
+},
+{
+"id": "N-646",
+"title": "L⁴ Strichartz on the surface of a cube",
+"grade": "B",
+"importance": 5,
+"novelty": 7,
+"value": 7,
+"W": "On a square torus, the L⁴ Strichartz estimate for the Schrödinger equation loses only ε derivatives (Bourgain). On general flat surfaces with cone points only a 1/4-derivative loss is known. Decide whether the cube surface, with eight cone points of angle 3π/2 that diffract waves, behaves like the torus.",
+"M": "Let $S$ be the surface of the unit cube with its flat metric, and $\\Delta$ the Friedrichs extension of the Laplacian from $C_c^\\infty(S\\setminus\\{\\text{vertices}\\})$. Decide whether for every $\\varepsilon>0$ there is $C_\\varepsilon$ with $\\|e^{it\\Delta}f\\|_{L^4([0,1]\\times S)}\\le C_\\varepsilon\\|f\\|_{H^\\varepsilon(S)}$ for all $f$.",
+"why": "The cube surface is an arithmetic surface with cone points. Its 'nonsingular' eigenfunctions lift to trigonometric polynomials (Greif–Kaplan–Strichartz–Wiese), but the singular ones are not explicit, and diffraction at the vertices spoils the lattice-counting proof used on the torus. Blair–Ford–Marzuola obtain a $1/p$ loss on all compact flat cone surfaces and suggest the loss is an artefact of their method. The cube is the simplest test case where arithmetic structure and diffraction compete.",
+"issues": "Sources: Blair–Ford–Marzuola Thm 1.5 gives a $H^{1/4}$ bound for p=q=4 on compact Euclidean surfaces with conical singularities, and Remark 1.3 suggests the loss is not sharp. I found no ε-loss result for any surface whose cone angles are not of the form $2\\pi/k$; pillowcase-type quotients of tori are easy. I specified the Friedrichs extension and changed 'prove' to 'decide', since the truth is unclear. The estimate would force $\\|\\varphi\\|_{L^4}\\lesssim\\lambda^{\\varepsilon}$ for the singular eigenfunctions and needs near-coincidence counting for an irregular spectrum.",
+"refs": [
+"https://arxiv.org/abs/1003.0666",
+"https://arxiv.org/abs/1809.09909",
+"https://arxiv.org/pdf/0910.1795",
+"https://arxiv.org/pdf/1105.5410"
+]
+},
+{
+"id": "N-650",
+"title": "Two vortices on a cube",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 4,
+"W": "Two identical point vortices moving on the surface of a cube form a two-degree-of-freedom Hamiltonian system with no continuous symmetry, so there is no second conserved quantity to make it integrable. Prove their motion is genuinely chaotic.",
+"M": "Let $S$ be the boundary of the unit cube with its flat cone metric (eight cone points $v_i$ of angle $3\\pi/2$), area $A=6$. Let $G$ solve $-\\Delta_zG(z,w)=\\delta_w-1/A$ with $\\int_SG(\\cdot,w)\\,dA=0$, and let $R(z)=\\lim_{w\\to z}\\big[G(z,w)+\\tfrac1{2\\pi}\\log d(z,w)\\big]$ for $z\\notin\\{v_i\\}$. On $M=\\{(z_1,z_2):z_1\\ne z_2,\\ z_j\\notin\\{v_i\\}\\}$ with $\\omega=dA(z_1)+dA(z_2)$, let $H=G(z_1,z_2)+\\tfrac12(R(z_1)+R(z_2))$. Prove that the Hamiltonian flow has a compact invariant set, inside one energy level, on which its topological entropy is positive.",
+"why": "Point vortices on closed surfaces (Boatto-Koiller, Dritschel-Boatto, Gustafsson) are integrable for two vortices only when the surface has a continuous symmetry, as with the sphere or flat torus. Rigorous chaos proofs exist only for perturbative settings, such as Melnikov arguments for slightly perturbed half-planes. A non-perturbative symmetric-but-discrete example would show that discrete symmetry does not rescue integrability.",
+"issues": "The choice of the cube is arbitrary. It is attractive only because it is a flat surface with cone points, so the Green function is semi-explicit. A proof would almost certainly be computer-assisted (rigorous shadowing or transverse homoclinic orbit), which is technically heavy for limited insight. I tightened the M: Green-function normalisation with neutralising background, Robin-function definition, cone points removed, and 'energy level' replaced by a compact invariant set to avoid incompleteness at collisions and vertices. No literature treats this surface. Two-vortex non-integrability in perturbed half-planes was proved via Melnikov (NJIT paper).",
+"refs": [
+"https://arxiv.org/abs/2201.00528",
+"https://digitalcommons.njit.edu/fac_pubs/12905",
+"https://arxiv.org/abs/2003.00716",
+"https://arxiv.org/abs/2512.05574"
+]
+},
+{
+"id": "N-664",
+"title": "Infinitely many knot types in the symmetric ABC flow",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Steady Euler flows can carry knotted streamlines, and generic high-frequency Beltrami fields on the torus contain every knot. Show that the most-studied explicit example, the ABC flow with A = B = C = 1, has closed streamlines tied in infinitely many different knots.",
+"M": "Let $X=(\\sin z+\\cos y,\\ \\sin x+\\cos z,\\ \\sin y+\\cos x)$ on $\\mathbb T^3=(\\mathbb R/2\\pi\\mathbb Z)^3$ (a curl eigenfield, $\\nabla\\times X=X$). Prove that the periodic orbits of $X$ that lie in some embedded 3-ball $B\\subset\\mathbb T^3$ realize infinitely many distinct knot types (as knots in $B\\cong$ a ball in $\\mathbb R^3$). Stronger: every knot type is realized.",
+"why": "The ABC flow with A=B=C=1 is the standard model of Lagrangian chaos in steady Euler flows and of fast-dynamo theory, yet rigorous results on its dynamics are mostly perturbative (near integrable parameters) or about non-contractible orbits. Etnyre–Ghrist and Enciso–Peralta-Salas proved that some steady Euler or Beltrami flows realize all knots, using perturbations or random high-frequency fields. Proving it for this explicit lowest-frequency field would most likely need a computer-assisted horseshoe plus template theory (Birman–Williams), turning numerical evidence of chaos into topological information.",
+"issues": "Clarified knot type for orbits in T^3 by requiring them to lie in an embedded ball (null-homotopy alone does not give a well-defined classical knot type). Literature: Etnyre–Ghrist (math-ph/9906021) start from the ABC field with A=1, B=1/2, C=0 perturbed, and transplant a horseshoe to a metric on S^3, not the symmetric ABC on T^3. Dombre et al. and arXiv 1601.02724 give periodic orbits with rotation vectors along the axes (non-contractible). Szumiński–Llibre (2609.17449) is perturbative near the axes. Enciso–Peralta-Salas–Romaniega (2006.15033) handle random high-frequency Beltrami fields. Found no result on knotted contractible orbits of the A=B=C=1 flow. Likely approachable by rigorous numerics, so more a hard technical target than a conceptual breakthrough.",
+"refs": [
+"https://arxiv.org/pdf/math-ph/9906021",
+"https://arxiv.org/pdf/1601.02724",
+"https://arxiv.org/pdf/2609.17449",
+"https://arxiv.org/pdf/2006.15033",
+"https://www2.math.upenn.edu/%7Eghrist/preprints/beltrami.pdf"
+]
+}
+]

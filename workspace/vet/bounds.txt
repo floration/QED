@@ -1,0 +1,13 @@
+You are a research mathematician. QED (a small elite list of open problems) now also accepts QUANTITATIVE problems: not only "prove or disprove", but "improve the best known bound". A good bound problem: a natural quantity (a constant, exponent, threshold, growth rate, extremal size); the current best lower and upper bounds stated precisely WITH sources (or with a short self-contained proof of a trivial bound); a clear gap; and progress on either side would be meaningful and checkable (ideally a solver could submit "new lower bound L' > L with proof").
+
+Input: /home/claude/vet/q{C}.json — problems graded B or C (fields: id, title, W, M, why, issues, refs, grade). Many were marked down as "hopeless", "expected true so routine", "arbitrary threshold/instance", or "narrow". A bound formulation can fix several of these: a hopeless conjecture can become "improve the exponent"; an arbitrary cutoff can become "determine the constant, current bounds a ≤ c ≤ b".
+
+For EACH problem:
+1. Decide whether there is a natural quantity whose bounds are the real content. If not, outcome STAYS.
+2. If yes: find the true current best bounds by literature search (several queries) — or derive easy bounds yourself and prove them in a sentence or two. NEVER invent a bound or a citation. If you cannot pin down the current best bounds reliably, outcome STAYS.
+3. Make sure the gap is genuinely open (not closed by a known result) and that the quantity is natural (not an arbitrary instance). Famous-problem bounds (e.g. Hadwiger linear constant, random 3-SAT threshold, twin primes gaps) are allowed ONLY if the formulation is not already a standard well-known bound problem — otherwise STAYS.
+4. Grade the bound formulation honestly: A only if a strong researcher would care about improving it.
+
+Append one JSON line per problem, right after finishing it, to /home/claude/vet/bd{C}.jsonl:
+{"id","outcome":"BOUND_A"|"BOUND_B"|"STAYS","title","quantity":"name of the quantity","lower":"best lower bound + source","upper":"best upper bound + source","W","M","why","refs":[...],"notes":"≤40 words"}
+Skip ids already in the file. Use private helper scripts under /home/claude/bd{C}/ (not /tmp). End with counts per outcome.

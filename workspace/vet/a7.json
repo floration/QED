@@ -1,0 +1,20 @@
+[
+{
+"id": "N-587",
+"outcome": "UPGRADED",
+"title": "Which monodromy groups do Jacobian counterexamples have?",
+"W": "A Keller map (polynomial map with constant nonzero Jacobian) that is not invertible covers a generic point d times, and following the d preimages around loops gives a permutation group, its monodromy. Campbell's 1973 theorem says that if this group is regular (the Galois case), the map is invertible. The 2026 counterexamples realize full symmetric groups and some imprimitive groups. Is Campbell's theorem the only obstruction?",
+"M": "For a Keller map $F:\\mathbb C^n\\to\\mathbb C^n$ ($\\det JF\\in\\mathbb C^\\times$) of geometric degree $d$, let $\\mathrm{Mon}(F)\\le S_d$ be the monodromy group of a general fibre, i.e. the Galois group of the Galois closure of $\\mathbb C(x)/\\mathbb C(F)$ acting on the $d$ embeddings. It is transitive, and by Campbell's theorem it is regular only when $F$ is an automorphism ($d=1$). Determine the set $\\mathcal M$ of transitive permutation groups (up to permutation isomorphism) arising as $\\mathrm{Mon}(F)$ for non-invertible Keller maps in some dimension (stabilization $F\\times\\mathrm{id}$ preserves $\\mathrm{Mon}$). Is $\\mathcal M$ exactly the set of non-regular transitive groups? Test case: is the alternating group $A_d$ ($d\\ge4$, natural action) in $\\mathcal M$? Is every member of $\\mathcal M$ realized already in dimension $3$?",
+"why": "Since the Jacobian conjecture was refuted in 2026, the field has produced dozens of explicit counterexamples, and monodromy is the invariant used to tell them apart (S_3 for Alpöge's map, S_N for weighted lifts, the imprimitive groups G_n of marked-root maps of order m^n n!/gcd(2,m)). The geometric degree question is settled: every d >= 3 occurs. Monodromy is the next coarse invariant, and it is not settled. The only general constraint is Campbell's Galois theorem, together with older two-dimensional Galois-theoretic results (Razar, Wright). An inverse-Galois-type classification would say exactly how much of the classical Galois approach to the conjecture was ever viable. A new obstruction (for example, that alternating groups never occur) would be a structural theorem about étale maps of affine space.",
+"diagnosis": "'Classify all non-invertible Keller maps of C^3' is vague and hopeless: infinitely many families are already known, with no workable notion of complete list. Importance was high; well-posedness and attackability were missing.",
+"what_changed": "Replaced the classification by the coarse invariant that the literature actually uses, the monodromy group. Asked the inverse problem: is Campbell the only obstruction? Gave a decisive test case (A_d) and a dimension-3 refinement. Geometric degree was rejected because it is already settled.",
+"refs": [
+"https://arxiv.org/pdf/2608.00222",
+"https://arxiv.org/pdf/2607.21572",
+"https://arxiv.org/pdf/2608.02863",
+"https://arxiv.org/pdf/2609.33491",
+"https://arxiv.org/pdf/2607.20210",
+"https://www.ams.org/bull/1982-07-02/S0273-0979-1982-15032-7/"
+]
+}
+]

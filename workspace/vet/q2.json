@@ -1,0 +1,177 @@
+[
+{
+"id": "N-663",
+"title": "Multiplicities on the Fermat quartic",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 3,
+"W": "The surface x^4+y^4+z^4 = 1 has exactly the 48 symmetries of a cube. Show its Laplace eigenvalues repeat no more often than those symmetries force (at most 3 times), except possibly for finitely many eigenvalues.",
+"M": "Let $S=\\{x^4+y^4+z^4=1\\}\\subset\\mathbb R^3$ with the induced metric (isometry group the hyperoctahedral group of order 48, whose irreducible representations have dimension $\\le3$). Prove that all but finitely many eigenvalues of $\\Delta_S$ have multiplicity $\\le3$.",
+"why": "Uhlenbeck and Zelditch-type genericity results say that for a generic G-invariant metric every eigenspace is an irreducible G-module. No explicit, non-homogeneous surface is known to satisfy this, so proving it for one concrete algebraic surface would be a real step.",
+"issues": "Faithful, well posed. But it is one arbitrary instance of a genericity statement that is out of reach for every explicit surface; even simplicity of infinitely many eigenvalues for a single explicit asymmetric metric is open. Nothing makes the Fermat quartic special, and no method is in sight. Gimmicky choice of instance.",
+"refs": [
+"https://ar5iv.labs.arxiv.org/html/1804.02726",
+"https://arxiv.org/pdf/1602.04602"
+]
+},
+{
+"id": "N-620",
+"title": "Knotted billiards in a regular tetrahedron",
+"grade": "B",
+"importance": 4,
+"novelty": 6,
+"value": 5,
+"W": "A billiard ball bouncing periodically inside a regular tetrahedron, without hitting edges or corners, traces a closed polygon in space. Is any such polygon knotted, and do infinitely many different knot types occur?",
+"M": "Call a periodic billiard trajectory in a regular tetrahedron $T\\subset\\mathbb R^3$ admissible if it never meets an edge or vertex of $T$ and its image is an embedded closed polygon. (a) Does some admissible trajectory form a nontrivial knot? (b) Prove that the set of knot types of admissible periodic trajectories is infinite.",
+"why": "In the cube, periodic billiard trajectories are exactly the Lissajous knots (Jones-Przytycki), and infinitely many knot types occur because the cube unfolds to a lattice. The regular tetrahedron does not tile space and its dihedral angle arccos(1/3) is an irrational multiple of pi, so its unfolding group is not discrete. Even the existence of periodic orbits in tetrahedra is subtle, and knot types are an untouched invariant here.",
+"issues": "Added part (a), because even one knotted orbit is not obviously known. A trajectory may traverse its image twice (odd periods), so the knot type is defined from the image. I did not do a numerical periodic-orbit search. Literature check incomplete (search budget exhausted); possible prior work on billiard knots in polyhedra other than the cube and cylinder should be checked.",
+"refs": []
+},
+{
+"id": "N-634",
+"title": "Riesz-transform Schrodinger equation",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 3,
+"W": "Couple a 2D Schrodinger wave to the Riesz transform of its own density. Mass is conserved, but there is no energy. Do smooth solutions live forever?",
+"M": "Consider $iu_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb{R}\\times\\mathbb{R}^2$, $\\widehat{R_1f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. Decide whether every $u_0\\in H^1(\\mathbb{R}^2)$ gives a global solution in $C(\\mathbb{R},H^1)$.",
+"why": "This is a toy L^2-critical model whose real potential R_1(|u|^2) has an odd kernel. It keeps mass conservation but destroys the Hamiltonian structure, so energy and virial methods are unavailable.",
+"issues": "Checks: R_1 maps real functions to real ones, so the potential is real and mass is conserved. The kernel is odd, so the equation is not Hamiltonian, and momentum is not conserved either (the symbol xi_1 xi_j/|xi| is even and nonzero). The equation has cubic NLS scaling in 2D, so it is L^2-critical. Strichartz plus L^p-boundedness of R_1 gives L^2 local well-posedness and global existence for small mass. Large data look hard but the model is arbitrary, and I found no literature. Not elite.",
+"refs": []
+},
+{
+"id": "N-660",
+"title": "Irrationality of the quartic oscillator ground state",
+"grade": "B",
+"importance": 4,
+"novelty": 6,
+"value": 5,
+"W": "The lowest energy of the quartic oscillator, -d^2/dx^2 + x^4 on the line, is about 1.0603620905. Show that it is irrational.",
+"M": "Let $E_0=\\min\\sigma\\big(-\\tfrac{d^2}{dx^2}+x^4\\big)$, the operator taken self-adjoint on $L^2(\\mathbb R)$ ($E_0=1.06036209048418\\ldots$). Prove that $E_0\\notin\\mathbb Q$.",
+"why": "Irrationality and transcendence are known for spectral data of exactly solvable problems, such as Bessel zeros via Siegel's theorem. For a genuinely non-solvable Schrödinger operator, apparently nothing is known. Voros's exact WKB and spectral-determinant functional relations describe E_0 implicitly, so a proof would have to turn those relations, or a series or continued fraction for E_0, into Diophantine information.",
+"issues": "The numerical value is correct. I found no literature on the arithmetic nature of E_0; it is novel in the sense of never having been posed explicitly. The statement is precise. There is no realistic route: no available tool gives irrationality of a constant defined only implicitly through a non-solvable ODE. So this is a clean 'benchmark of ignorance' rather than an attackable problem, and the specific choice of x^4 and of E_0 is somewhat arbitrary. Graded B for cleanness, kept below A because it is likely hopeless and not tied to a broader programme.",
+"refs": [
+"https://arxiv.org/abs/math-ph/0005029",
+"https://arxiv.org/abs/2401.07131"
+]
+},
+{
+"id": "N-397",
+"title": "Keller maps injective on integer points",
+"grade": "C",
+"importance": 3,
+"novelty": 5,
+"value": 3,
+"W": "Take a polynomial map of 3-space with integer coefficients whose Jacobian determinant is identically 1 (a Keller map). Show that if it never sends two different integer points to the same point, then it is a polynomial automorphism.",
+"M": "Let $F\\in\\mathbb{Z}[x,y,z]^3$ with $\\det JF\\equiv 1$. Prove that if $F|_{\\mathbb{Z}^3}$ is injective, then $F$ has a polynomial inverse (equivalently, by Bia{\\l}ynicki-Birula--Rosenlicht, $F$ is injective on $\\mathbb{C}^3$).",
+"why": "This is a weak form of the Jacobian conjecture in dimension 3, and the conjecture itself would make it vacuous. Its interest is the arithmetic angle: Siegel's theorem on integral points has already produced invertibility criteria for Keller maps over Z, and those criteria are phrased in terms of integral points on fibres.",
+"issues": "This is strictly implied by JC(3), which is open, so it is open too, but I found no technique that uses injectivity on Z^3 at all. Reduction mod p and Ax-Grothendieck need injectivity over finite fields or algebraically closed fields, not over Z. Choosing n=3 is arbitrary, since n=2 is open as well. I found no literature that states this exact hypothesis. The nearest work gives JC criteria from integral points on fibres (Siegel's theorem). It feels like a hybrid of JC with an unmotivated extra hypothesis, with no visible route that avoids JC itself. The W wording was clarified.",
+"refs": [
+"https://arxiv.org/abs/1502.00328",
+"https://arxiv.org/abs/1712.02113",
+"https://arxiv.org/abs/1705.10921"
+]
+},
+{
+"id": "N-439",
+"title": "Keller monodromy is everything",
+"grade": "C",
+"importance": 4,
+"novelty": 4,
+"value": 4,
+"W": "Since 2026 there are polynomial maps of 3-space with constant nonzero Jacobian that are not invertible (counterexamples to the Jacobian conjecture), and every number n >= 3 of points in a generic fibre occurs. Show that for every n the fibre points can be permuted in every possible way by going around loops, i.e. the monodromy group can be the full symmetric group S_n.",
+"M": "Prove that for every $n\\ge3$ there is a polynomial map $F:\\mathbb C^3\\to\\mathbb C^3$ with $\\det JF\\in\\mathbb C^{\\times}$, of geometric degree $[\\mathbb C(x):\\mathbb C(F)]=n$, whose geometric monodromy group (the Galois group of the Galois closure of $\\mathbb C(x_1,x_2,x_3)/\\mathbb C(F_1,F_2,F_3)$, acting on the $n$ generic fibre points) is $S_n$.",
+"why": "After Alpöge's 2026 counterexample to the Jacobian conjecture in dimension 3, the natural invariants of a non-invertible Keller map are its geometric degree and the monodromy of its generic fibre; realising the full symmetric group in every degree would show these maps are as 'generic' as branched covers can be. It is a clean test of how flexible the new constructions are.",
+"issues": "Original M omitted the precise meaning of 'monodromy group' (now defined as the geometric Galois group). Literature (2026 preprints) already covers much of it: S_3 for Alpöge's map (arXiv 2607.20210, Thm 4.4); graded families with monodromy S_N for N=kd, k odd>=3, d>=3, and S_{2r-1} for r even (N = 3 mod 4), A_N in other cases, and S_12 for a quartic-seed member (arXiv 2608.02863); Gallagher's family realises every degree n>=3 but its monodromy is not computed; 'ordinary weighted lifts' have S_N monodromy by a Morse-degeneration argument (arXiv 2609.33491, Prop 7.1). Remaining cases (e.g. n=4,5,6,8,10) look routine: one transposition plus primitivity via a Morse degeneration of the fibre polynomial. Not elite; probably closes quickly.",
+"refs": [
+"https://arxiv.org/pdf/2608.02863",
+"https://arxiv.org/pdf/2609.33491",
+"https://arxiv.org/pdf/2607.20210",
+"https://arxiv.org/pdf/2608.00222",
+"https://raw.githubusercontent.com/algal/jacobianfun/main/RESEARCH.md"
+]
+},
+{
+"id": "N-657",
+"title": "Spikes at the primes",
+"grade": "B",
+"importance": 6,
+"novelty": 4,
+"value": 6,
+"W": "Put a bump of fixed height at every prime on the half-line lattice and study the electron (discrete Schrodinger operator). What kind of spectrum does it have inside the free band (-2,2)? If the primes behaved like a random sparse set (Cramer model), the states would be localized (pure point spectrum); is that true for the actual primes?",
+"M": "Let $(Hu)(n)=u(n+1)+u(n-1)+\\lambda\\mathbf 1_{\\mathbb P}(n)u(n)$ on $\\ell^2(\\mathbb N)$ with Dirichlet condition $u(0)=0$, $\\lambda\\ne0$. Determine the spectral type of $H$ on $(-2,2)$. In particular: is the spectral measure restricted to $(-2,2)$ pure point (with exponentially or sub-exponentially decaying eigenfunctions), or does it have a singular continuous part, e.g. near $E=0$?",
+"why": "It is the cleanest deterministic test of whether the primes are 'pseudo-random' for spectral theory: the random sparse model with site density 1/log n localizes, while deterministic sparse potentials typically produce singular continuous spectrum. The answer must use arithmetic input (distribution of primes in residue classes and gaps), linking Schrodinger operators to analytic number theory.",
+"issues": "No absolutely continuous spectrum is automatic: 1_P takes finitely many values and is not eventually periodic, so Remling's theorem (Annals 2011) gives Sigma_ac = empty; hence the content is pure point vs singular continuous. The conjectured pure-point answer is doubtful: numerics in the 2001 study 'De(Localization) in the Prime Schrodinger Operator' (cond-mat/0103313) report a persistent delocalized band near E=0 of width ~1/lambda. Simple check: at E=0 the recursion decouples by parity and, since all primes but 2 are odd, solutions grow only like partial sums of chi_4(p) (polynomially), not like the random model; analogous arithmetic resonances occur at E=2cos(pi a/q). So 'prove pure point' was replaced by 'determine the spectral type'. The question is posed (numerically) in the literature, so novelty is low; difficulty likely very high. Literature search for rigorous results was cut short by the search budget.",
+"refs": [
+"https://arxiv.org/abs/cond-mat/0103313",
+"https://ar5iv.arxiv.org/html/cond-mat/0103313",
+"https://arxiv.org/pdf/1107.1094"
+]
+},
+{
+"id": "N-626",
+"title": "Sup norms on the Fermat quartic",
+"grade": "C",
+"importance": 3,
+"novelty": 5,
+"value": 4,
+"W": "On a round sphere, some eigenfunctions pile up at the poles as much as is possible. Show this cannot happen on the surface x⁴+y⁴+z⁴=1.",
+"M": "Let $S=\\{x^4+y^4+z^4=1\\}\\subset\\mathbb R^3$ with the induced metric, and let $\\Delta\\varphi=-\\lambda\\varphi$, $\\|\\varphi\\|_{L^2(S)}=1$. Prove $\\sup_{\\varphi}\\|\\varphi\\|_{L^\\infty(S)}=o(\\lambda^{1/4})$ as $\\lambda\\to\\infty$. Equivalently (Sogge–Zelditch), prove that $S$ has no pole: no point $p$ such that every geodesic from $p$ comes back to $p$ as a smoothly closed geodesic.",
+"why": "Sogge–Zelditch showed that a real-analytic surface has maximal eigenfunction growth only if it has a pole. Proving that explicit surfaces have no pole is the missing step for concrete examples; the triaxial ellipsoid is already done.",
+"issues": "By Sogge–Zelditch II (arXiv 1409.2063), S is real-analytic, so the problem reduces exactly to showing S has no pole. That is a purely dynamical question about geodesics, probably checkable by rigorous numerics plus symmetry. The choice of surface is arbitrary; it is a second instance of a method already used for ellipsoids. Clarified the eigenvalue convention: λ^{1/4} with λ the eigenvalue is the sharp exponent.",
+"refs": [
+"https://arxiv.org/abs/1311.3999",
+"https://arxiv.org/abs/1409.2063"
+]
+},
+{
+"id": "N-360",
+"title": "Blow-up under a steady force",
+"grade": "B",
+"importance": 6,
+"novelty": 6,
+"value": 6,
+"W": "The 2026 forced Navier–Stokes blow-up uses a push that varies in time and is switched on and off. Can a smooth, compactly supported push that never changes in time also drive a fluid at rest to a singularity?",
+"M": "Decide whether there is $f\\in C_c^\\infty(\\mathbb R^3;\\mathbb R^3)$, independent of $t$, such that the solution of $\\partial_tu+(u\\cdot\\nabla)u+\\nabla p=\\Delta u+f$, $\\nabla\\cdot u=0$, $u(\\cdot,0)=0$ on $\\mathbb R^3$ loses smoothness in finite time.",
+"why": "Steady stirring is the physically basic forcing, and a time-independent force cannot be tuned to the scales of a developing singularity. A positive answer would mean the singularity is produced by the nonlinearity alone under a fixed energy input. A negative answer would show that the time-dependent forcing in known constructions is essential.",
+"issues": "Before 2026 this was a strengthening of Clay's forced statement. After OpenAI's claimed time-dependent forced blow-up (force supported away from $t=0$, not yet refereed) it is the natural next step. Only gradient forces are excluded trivially, since they give the zero solution (Cao–Chi–Nie Prop. 3.17), so $f$ must have a nontrivial solenoidal part. Heuristic: a bounded steady force is subcritical at small scales, so near the singular point the blow-up is essentially unforced. This is probably far harder than the time-dependent case and close to Millennium level, which limits its value as a list item. I changed the wording to 'decide'.",
+"refs": [
+"https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+"https://arxiv.org/pdf/2609.10262",
+"https://openai.com/index/navier-stokes-solution/"
+]
+},
+{
+"id": "N-148",
+"title": "Ringel for forests",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 6,
+"W": "Ringel's conjecture, now a theorem for large n, says the complete graph on 2m+1 vertices splits into 2m+1 copies of any tree with m edges. Show the same holds for every forest with m edges. A stronger form asks that every such forest have a rho-labelling, which gives a cyclic decomposition.",
+"M": "Prove that for every $m\\ge1$ and every forest $F$ with $m$ edges, $E(K_{2m+1})$ can be partitioned into $2m+1$ subgraphs each isomorphic to $F$. Stronger form: every such $F$ admits an injective map $f:V(F)\\to\\mathbb Z_{2m+1}$ whose edge lengths $\\min(|f(u)-f(v)|,\\,2m+1-|f(u)-f(v)|)$ are exactly $1,\\dots,m$ (a $\\rho$-labelling).",
+"why": "Montgomery-Pokrovskiy-Sudakov and Keevash-Staden proved Ringel's conjecture for large trees. Their rainbow-copy and cyclic-shift framework does not need connectivity, but the embedding steps do. So the question is whether connectivity is essential to Ringel-type decompositions. A positive answer would be a natural forest analogue of the Kotzig-Ringel-Rosa theorem.",
+"issues": "No counterexample found. A backtracking search found rho-labellings (and hence cyclic decompositions of K_{2m+1}) for all forests without isolated vertices with m<=9 edges (2, 4, 8, 16, 34, 71, 154, 341 forests). I found no paper stating or proving the forest version: MPS, Keevash-Staden and the Glock-Kuhn-Osthus survey treat only trees. A large-m proof may be an adaptation of the existing machinery, which caps the importance. The M was made precise and the rho-labelling strengthening added.",
+"refs": [
+"https://arxiv.org/abs/2001.02665",
+"https://arxiv.org/abs/2004.09947",
+"https://arxiv.org/abs/2202.03178",
+"https://arxiv.org/abs/1803.03316"
+]
+},
+{
+"id": "N-113",
+"title": "Random Wang tiles",
+"grade": "C",
+"importance": 4,
+"novelty": 6,
+"value": 4,
+"W": "(Corrected.) Draw n Wang tiles whose four edge colours are chosen uniformly at random from c colours, and let c grow with n ≈ λc². How likely is the set to tile the plane? Show the probability has a limit F(λ) and find the critical λ above which tiling is almost certain.",
+"M": "Let $T_1,\\dots,T_n$ be i.i.d. Wang tiles, each with its four edge colours i.i.d. uniform in $[c]$ and no rotations allowed. Let $n=\\lfloor\\lambda c^2\\rfloor$ and $c\\to\\infty$. Prove that $F(\\lambda)=\\lim_{c\\to\\infty}\\Pr(\\{T_i\\}\\text{ tiles }\\mathbb Z^2)$ exists for every $\\lambda>0$. Determine $\\lambda_c=\\inf\\{\\lambda:F(\\lambda)=1\\}$; a first-moment heuristic suggests $\\lambda_c=1$. Also determine $F$ on $(0,\\lambda_c)$.",
+"why": "Tileability by Wang tiles is undecidable in the worst case (Berger). The question here is what a typical random tile set does. Periodic tilings correspond to colour-consistent toroidal patterns, and the expected number of such patterns with k tiles is about $\\sigma(k)\\lambda^k/k$, which points to a sharp transition at $\\lambda=1$, in the spirit of random-CSP thresholds. Whether non-periodic tilings matter at criticality ties into aperiodicity.",
+"issues": "As originally stated (c fixed, n→∞) the problem is trivial. Once all c^4 tile types appear, a tile with N=S and E=W colours tiles the plane on its own, so Pr→1 and the failure probability is ≈ C(s/c^4)^n, where s is the largest number of tile types that cannot tile. That is a finite computation. I re-posed it in the scaling n≈λc², where the count of self-tiling tiles is ≈ Poisson(λ) and periodic k-tile patterns contribute ≈λ^k each. I did not verify the conjectured threshold. The grade C reflects the somewhat ad hoc model; the corrected version might reach B if the threshold proves rich. Literature not checked: web-search budget ran out.",
+"refs": []
+}
+]

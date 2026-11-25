@@ -1,0 +1,185 @@
+[
+{
+"id": "N-628",
+"title": "Capacities of the 4D superball",
+"grade": "B",
+"importance": 6,
+"novelty": 6,
+"value": 6,
+"W": "Viterbo's conjecture that all symplectic capacities agree on convex bodies is false in general, but the known counterexample is not centrally symmetric. On the 4D ball x1^4+y1^4+x2^4+y2^4 <= 1 the cylindrical and Ekeland-Hofer-Zehnder capacities are both known to equal 4Gamma(5/4)^2/Gamma(3/2). Does the largest symplectically embedded round ball have the same capacity?",
+"M": "Let $U=\\{x_1^4+y_1^4+x_2^4+y_2^4\\le1\\}\\subset(\\mathbb R^4,dx_1\\wedge dy_1+dx_2\\wedge dy_2)$. It is known that $c_{EHZ}(U)=c_Z(U)=c_0:=4\\Gamma(5/4)^2/\\Gamma(3/2)\\approx3.708$. Decide whether the Gromov width $c_G(U)=\\sup\\{\\pi r^2: B^4(r)\\hookrightarrow U\\text{ symplectically}\\}$ equals $c_0$.",
+"why": "After Haim-Kislev and Ostrover disproved Viterbo's conjecture, it is open whether all normalized capacities still agree on centrally symmetric convex bodies. The l^4 ball is the simplest centrally symmetric, non-toric convex body whose EHZ and cylindrical capacities are known exactly, so its Gromov width is the sharpest remaining test: a strict inequality would give a centrally symmetric counterexample to strong Viterbo.",
+"issues": "Original M asked whether c_G = c_EHZ without noting that c_EHZ(U) = c_Z(U) was computed in 2026 (arXiv 2609.37794, Theorem 2, p=4). The problem therefore reduces to the Gromov width alone, and M was rewritten that way. Trivial bound: U contains the Euclidean unit ball, so c_G >= pi. U is not toric, so ECH and toric methods do not apply directly. No Gromov-width computation for l^p balls found (search budget exhausted before a dedicated search).",
+"refs": [
+"https://arxiv.org/pdf/2609.37794",
+"https://arxiv.org/pdf/2405.16513",
+"https://arxiv.org/pdf/2402.07709",
+"https://arxiv.org/pdf/2203.02294"
+]
+},
+{
+"id": "N-662",
+"title": "Non-arithmetic tones of the cube",
+"grade": "B",
+"importance": 4,
+"novelty": 6,
+"value": 5,
+"W": "Many vibration frequencies of a cube's surface come from flat tori and are rational multiples of pi squared. Prove that at least one frequency is not of this form.",
+"M": "Let $S$ be the boundary of the unit cube $[0,1]^3$ with its intrinsic flat metric (8 cone points of angle $3\\pi/2$), and let $\\Delta$ be the Friedrichs extension of the Laplacian on $S$. Prove that some eigenvalue of $\\Delta$ is not in $\\pi^2\\mathbb{Q}$.",
+"why": "Flat cone surfaces whose cone angles are not of the form 2pi/k cannot be quotients of tori. Numerics show 'singular' eigenfunctions, non-smooth at the vertices, with eigenvalues that look non-arithmetic. Proving that even one of them is non-arithmetic would separate diffractive spectral geometry from lattice-arithmetic behaviour, in the simplest Platonic example.",
+"issues": "Numerical work (arXiv 1809.09909) splits cube eigenfunctions into nonsingular (torus-type) and singular ones, e.g. lambda_38 approx 8.06, with most of the spectrum singular. I found no proof of non-arithmeticity. Trace-formula and Weyl-law arguments do not obviously exclude a spectrum inside pi^2 Q with unbounded denominators, so this is genuinely transcendence-flavoured. I fixed M to specify the metric and the self-adjoint extension. Narrow but clean.",
+"refs": [
+"https://arxiv.org/abs/1809.09909",
+"https://www.numdam.org/item/CRMATH_2002__335_12_1047_0"
+]
+},
+{
+"id": "C-T0",
+"title": "Singularities of the permanental hypersurface",
+"grade": "B",
+"importance": 5,
+"novelty": 6,
+"value": 5,
+"W": "The hypersurface where the n x n determinant vanishes has rational singularities, the mildest kind that matters for much of its geometry. Decide whether the hypersurface where the n x n permanent vanishes has rational singularities for every n, and compute its minimal exponent, a finer measure of how mild a singularity is.",
+"M": "Let $X_n=\\{\\operatorname{per}_n=0\\}\\subset\\mathbb A^{n^2}_{\\mathbb C}$ and let $\\tilde\\alpha(X_n)$ be Saito's minimal exponent (the smallest root of $b_{\\operatorname{per}_n}(-s)/(1-s)$), so that $\\operatorname{lct}(\\mathbb A^{n^2},X_n)=\\min\\{1,\\tilde\\alpha(X_n)\\}$ and $X_n$ has rational singularities iff $\\tilde\\alpha(X_n)>1$. For $n=2$, $X_2$ is a nondegenerate quadric cone in $\\mathbb A^4$ and $\\tilde\\alpha=2$. For $\\det_n$ the Bernstein--Sato polynomial is $\\prod_{i=1}^n(s+i)$, so $\\tilde\\alpha(\\{\\det_n=0\\})=2$ for all $n$. Determine $\\tilde\\alpha(X_n)$ for all $n\\ge3$ (in particular for $n=3$), and decide whether $X_n$ has rational singularities for every $n$.",
+"why": "Determinantal varieties are the model case of a well-understood singular variety; permanental varieties, which are central in algebraic complexity (Valiant's VP vs VNP, geometric complexity theory), have almost no geometric results. The minimal exponent is a single number that would quantify how differently the two polynomials behave geometrically.",
+"issues": "No literature found computing lct, b-function, minimal exponent or rationality for per_n (n>=3); 2402.17839 says geometric results on permanental varieties are essentially absent and only bounds on the codimension of the singular locus are known (von zur Gathen 1987, improved there). Fix: asking for lct is redundant, since lct = min(1, minimal exponent) and lct is 1 whenever the singularities are rational; reframed around the minimal exponent and rationality, and added the det_n benchmark. A large codimension of Sing(X_n) does not by itself imply rational singularities, so the question is not trivial, but it is fairly narrow. The case n=3 (a cubic in 9 variables) should be within reach of computer algebra.",
+"refs": [
+"https://arxiv.org/abs/2402.17839",
+"https://arxiv.org/html/2603.15579v1",
+"https://arxiv.org/pdf/2105.01245"
+]
+},
+{
+"id": "N-631",
+"title": "Positive metric entropy for the x^4+y^4 billiard",
+"grade": "B",
+"importance": 6,
+"novelty": 3,
+"value": 5,
+"W": "The billiard table x^4 + y^4 <= 1 is smooth and convex, but its curvature vanishes at four points, so (by Mather) it has no caustics. Its phase space mixes stable islands with apparently chaotic regions. Prove that the chaos is real: on a set of positive measure, nearby trajectories separate exponentially fast.",
+"M": "Let $\\Phi$ be the billiard map of $\\Omega=\\{x^4+y^4\\le1\\}$, preserving the Liouville measure $\\nu=\\sin\\theta\\,ds\\,d\\theta$. Prove that $h_\\nu(\\Phi)>0$; equivalently, by Pesin's formula, that $\\Phi$ has a nonzero Lyapunov exponent on a set of positive $\\nu$-measure.",
+"why": "Proving positive metric entropy for any smooth, area-preserving twist map with coexisting KAM islands, such as the Chirikov standard map, is a central and notoriously hard open problem. No smooth (C^2 or better) convex billiard is known to have positive metric entropy: the known examples, like stadiums and lemons, have boundary singularities. The analytic table x^4 + y^4 = 1 is the most natural concrete test case, and numerics show entropy of about 0.65 there.",
+"issues": "Not novel. Knill and coauthors studied exactly the family of billiards in l^p unit balls. They proved positive TOPOLOGICAL entropy for p not in {1, 2, infinity} and found elliptic periodic orbits, so the billiard is not ergodic. Their metric entropy estimates are numerical only, with a peak near p = 4 to 6 of about 0.65. Positive metric entropy is left open there and is a well-known open problem type. Recent progress covers topological entropy (generic analytic convex billiards, 2026; generic convex bodies, 2022) and ergodicity of asymmetric lemons (strictly convex but with corners), none of which settles this. The statement is well-posed; I made the invariant measure explicit and noted the Pesin equivalence. W's 'positive fraction is chaotic' matches 'positive Lyapunov exponent on positive measure'. One URL (Knill's html page) was blocked; the PDF was read.",
+"refs": [
+"https://legacy-www.math.harvard.edu/~knill/offprints/lpbilliards.pdf",
+"https://arxiv.org/abs/2605.19897",
+"https://arxiv.org/abs/2201.01362",
+"https://arxiv.org/abs/2610.28247",
+"https://arxiv.org/abs/1301.2547"
+]
+},
+{
+"id": "N-633",
+"title": "Ergodicity of the regular tetrahedron billiard",
+"grade": "B",
+"importance": 6,
+"novelty": 6,
+"value": 6,
+"W": "A billiard ball bounces inside a regular tetrahedron. The tetrahedron does not tile space, and its dihedral angle arccos(1/3) is an irrational multiple of pi. So the billiard cannot be unfolded into a straight-line flow on a torus or a translation structure. Is the motion ergodic, so that almost every trajectory equidistributes in position and direction?",
+"M": "Let $\\Delta\\subset\\mathbb R^3$ be a regular tetrahedron and $\\phi_t$ the billiard flow on the unit tangent bundle $T^1\\Delta$, with specular reflection at faces and orbits hitting edges or vertices discarded (a null set). Prove or disprove that $\\phi_t$ is ergodic with respect to Liouville measure.",
+"why": "Ergodicity of billiards in irrational polygons is open even in the plane. No explicit irrational triangle is known to be ergodic, although Kerckhoff-Masur-Smillie and Vorobets show that generic polygons are. The regular tetrahedron is the most symmetric and canonical non-rational polyhedron, so it is the natural first test case for polyhedral billiards. In that setting the group generated by reflection linear parts is infinite, which rules out the translation-surface methods.",
+"issues": "Open as far as I can tell. The literature on tetrahedral billiards covers periodic orbits (Fagnano-type orbits, Bedaride and others) and 'uniformity' results for special polyhedra built from 2D (Beck et al.). I found nothing on ergodicity of the regular tetrahedron. The statement is clean. I added the treatment of singular orbits. Caveat: this is probably far beyond current techniques, since even a single explicit ergodic irrational triangle is unknown. A related, perhaps more tractable variant: is the flow topologically transitive, or are there only countably many periodic directions?",
+"refs": [
+"https://arxiv.org/abs/2403.19954",
+"https://arxiv.org/abs/1104.1051",
+"https://arxiv.org/abs/1910.14350"
+]
+},
+{
+"id": "C-97",
+"title": "Computable connective constants",
+"grade": "B",
+"importance": 5,
+"novelty": 7,
+"value": 6,
+"W": "Count the self-avoiding walks of length n on the Cayley graph of a finitely generated group. Their n-th roots decrease to the connective constant, so it can always be approximated from above. For groups with a solvable word problem, can it always be computed to any precision, i.e. also approximated from below?",
+"M": "Let $G$ be a finitely generated group with solvable word problem, $S=S^{-1}$ a finite generating set, $c_n$ the number of $n$-step self-avoiding walks from $e$ in $\\mathrm{Cay}(G,S)$, and $\\mu(G,S)=\\lim_n c_n^{1/n}=\\inf_n c_n^{1/n}$ (a right-computable real). Is $\\mu(G,S)$ always a computable real? If not, construct $(G,S)$ with solvable word problem and $\\mu(G,S)$ non-computable. If so, is the map (word-problem algorithm, $S$) $\\mapsto\\mu(G,S)$ uniformly computable?",
+"why": "The connective constant is the basic growth rate of self-avoiding walks; for graphs with a (unimodular) graph height function, bridge counts are supermultiplicative and give matching lower bounds, so mu is computable for e.g. solvable groups with solvable word problem. Whether this can fail when no height function exists (Higman-type groups, torsion groups such as Grigorchuk's) ties the probabilistic theory of SAWs on groups to computability and symbolic dynamics, where entropies of effective subshifts are exactly the right-computable reals.",
+"issues": "Statement precise; inf=lim holds by submultiplicativity on transitive graphs. Known: mu is right computable for recursively presented groups (Aubrun-Bitar 2023, cited as Lemma 4.11 in arXiv 2402.13944); log mu is the entropy of the SAW 'skeleton' subshift; computable (Perron-number powers) for plain groups; lower bounds via bridges for Cayley graphs with graph height functions (Grimmett-Li), covering all f.g. solvable groups. The general question (left-computability without height functions) does not appear posed. A negative answer would need a group with solvable word problem whose SAW growth encodes a non-computable left limit, plausible via Dehn-monster or torsion constructions; neither direction looks easy. Specialised audience; B.",
+"refs": [
+"https://arxiv.org/html/2402.13944v2",
+"https://www.combinatorics.org/ojs/index.php/eljc/article/view/v31i4p24",
+"https://arxiv.org/pdf/2307.12655.pdf",
+"https://arxiv.org/pdf/1501.00476",
+"https://arxiv.org/pdf/1412.0150v5",
+"https://arxiv.org/pdf/1304.7216"
+]
+},
+{
+"id": "N-610",
+"title": "Unforced blow-up near the forced one",
+"grade": "C",
+"importance": 4,
+"novelty": 4,
+"value": 3,
+"W": "The 2026 forced Navier–Stokes blow-up uses a force that is smooth through the blow-up time. Can the force be made to vanish identically at the blow-up instant while staying smooth up to and including that instant?",
+"M": "Do there exist $T>0$ and $f\\in C_c^\\infty(\\mathbb R^3\\times(0,\\infty))$ with $f(\\cdot,T)\\equiv0$ such that the 3D Navier–Stokes solution on $\\mathbb R^3$ with $u_0=0$ and force $f$ satisfies $\\limsup_{t\\uparrow T}\\|u(t)\\|_{L^\\infty}=\\infty$? (Requiring $f\\equiv0$ on $[T-\\delta,T]$ for some $\\delta>0$ instead would be equivalent to unforced blow-up from smooth data, which is the Millennium problem.)",
+"why": "Requiring the force to vanish at the blow-up time is a small step from forced blow-up toward unforced blow-up. It tests whether the OpenAI construction really needs active forcing at the singular moment. The construction's force is already flat at the singular point, so this refinement asks whether the rest of the forcing can be switched off in time as well.",
+"issues": "As originally stated (f smooth only on [0,T), with ||f(t)||_{L^2}->0), the problem is close to routine. The OpenAI force is C_c^infty in space-time and vanishes to infinite order at the singular point. Set v=u+phi(t)h with h=-P f(.,T) and phi(T)=0, phi'(T)=1. The residual of v is then a force that is smooth on [0,T), and its L^2 norm tends to 0 if tau*||grad u(t)||_2 -> 0, which the self-similar scaling should give. So I tightened M to require f smooth through T with f(.,T)=0. Even that version is a technical variant of a known construction, and it does not approach the unforced problem.",
+"refs": [
+"https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+"https://arxiv.org/pdf/2609.10262",
+"https://arxiv.org/pdf/2609.35406",
+"https://arxiv.org/pdf/2611.06869"
+]
+},
+{
+"id": "N-622",
+"title": "Integrability of the egg-crate torus",
+"grade": "B",
+"importance": 4,
+"novelty": 6,
+"value": 5,
+"W": "Put the surface z = ε sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.",
+"M": "For $\\varepsilon>0$ let $g_\\varepsilon$ be the metric on $\\mathbb T^2=\\mathbb R^2/(2\\pi\\mathbb Z)^2$ induced from the graph $z=\\varepsilon\\sin x\\sin y$, i.e. $g_\\varepsilon=dx^2+dy^2+\\varepsilon^2(\\cos x\\sin y\\,dx+\\sin x\\cos y\\,dy)^2$. Prove that for every $\\varepsilon>0$ the geodesic flow on $T^*\\mathbb T^2\\setminus0$ has no real-analytic first integral functionally independent of the Hamiltonian (for example, by showing positive topological entropy).",
+"why": "Kozlov's theorem rules out first integrals that are analytic in ε for generic trigonometric perturbations of the flat torus. Proving non-integrability at each fixed ε, uniformly down to ε→0, needs control of exponentially small splitting at resonances. This is an explicit test of that gap.",
+"issues": "Wrote out the metric explicitly. The ε-analytic (Poincaré–Kozlov) version follows from Kozlov because the Fourier spectrum of the perturbation is not on a line. The fixed-ε statement for all ε>0 seems open but is quite specific. By Paternain/Taimanov, positive topological entropy would be enough.",
+"refs": [
+"https://en.wikipedia.org/wiki/Integrable_system"
+]
+},
+{
+"id": "N-300",
+"title": "Rotation-proof lattice-point-poor shapes",
+"grade": "C",
+"importance": 3,
+"novelty": 5,
+"value": 3,
+"W": "Among convex shapes of area A, how few lattice points can a shape be guaranteed to contain under every rotation about the origin? Can any shape do much better than a disc centred at the origin?",
+"M": "For $A>0$ let $m(A)=\\inf\\{\\sup_{\\theta}\\#(\\rho_\\theta K\\cap\\mathbb Z^2): K\\subset\\mathbb R^2\\text{ compact convex},\\ |K|=A\\}$. Decide whether $m(A)\\ge A-O_\\varepsilon(A^{1/4+\\varepsilon})$.",
+"why": "It is a rotation-uniform form of the Gauss circle problem. An origin-centred disc is rotation-invariant, and its deficit $A-N(\\sqrt{A/\\pi})$ can reach order $A^{1/4}$ (Hardy–Landau). The question is whether any convex body does essentially better.",
+"issues": "The original 'determine the convex K … to second-order term' is ill-posed. The optimiser depends on A arithmetically. For discs the value is the circle-problem count $N(R)$, which oscillates, so there is no definite second-order term. I replaced it with a definite inequality question. Heuristic: sup over rotations is at least the rotation average $\\sum_n r_2(n)\\,\\theta_K(\\sqrt n)/2\\pi$, which differs from A by a small smoothed error, so a deficit much larger than $A^{1/4}$ seems unlikely. The problem stays tied to circle-problem exponents and is fairly arbitrary. My searches found no direct literature.",
+"refs": []
+},
+{
+"id": "N-627",
+"title": "Rupert superballs",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 4,
+"W": "A cube can pass through a hole drilled in a copy of itself; a round ball cannot. Show that every superball between them, |x|^p+|y|^p+|z|^p ≤ 1 with p > 2, can.",
+"M": "Let $B_p=\\{x\\in\\mathbb R^3:|x_1|^p+|x_2|^p+|x_3|^p\\le1\\}$ and $q=p/(p-1)$. Prove that for every $p\\in(2,\\infty)$ there are orthogonal projections $\\pi_1,\\pi_2$ of $\\mathbb R^3$ onto planes and a rigid motion $\\rho$ with $\\rho(\\pi_1(B_p))\\subset\\operatorname{int}\\pi_2(B_p)$. By central symmetry this is equivalent to: there are orthonormal pairs $(a_1,a_2),(b_1,b_2)$ in $\\mathbb R^3$ with $\\|\\cos t\\,b_1+\\sin t\\,b_2\\|_q>\\|\\cos t\\,a_1+\\sin t\\,a_2\\|_q$ for all $t$.",
+"why": "The Rupert property has been settled for many polyhedra, and a convex polyhedron without it was found in 2025. Smooth, strictly convex bodies are much less studied. The superball family interpolates between the Rupert cube and the non-Rupert ball, so it asks whether any loss of roundness at all creates a passage.",
+"issues": "Numerically this looks true and fairly routine. Central symmetry reduces it to comparing q-norms on two planes, with zero translation. Optimisation found positive margins of about 0.0018, 0.007, 0.027, 0.063 and 0.076 at p = 2.05, 2.2, 3, 10 and 60, with the margin growing roughly like 0.035(p-2) near p=2. A proof likely combines first-order perturbation at p=2 (an explicit configuration with positive linearised margin), continuity to the Rupert cube as p→∞, and interval arithmetic in between. That makes it computer-assisted routine work rather than a deep problem. The literature search found no prior treatment of superballs.",
+"refs": [
+"https://arxiv.org/abs/2508.18475",
+"https://arxiv.org/abs/2210.00601",
+"https://mathworld.wolfram.com/RupertsProperty.html"
+]
+},
+{
+"id": "N-623",
+"title": "Simple closed geodesics on the Fermat quartic surface",
+"grade": "C",
+"importance": 3,
+"novelty": 6,
+"value": 3,
+"W": "On the surface x⁴+y⁴+z⁴ = 1 the nine symmetry planes cut out nine simple closed geodesics, and there are at least four more: non-planar hexagonal ones that wind around the four body diagonals. Does the surface have only finitely many simple closed geodesics?",
+"M": "Let $S=\\{x^4+y^4+z^4=1\\}\\subset\\mathbb R^3$ with the induced metric (convex, Gaussian curvature $K\\ge0$ with $K=0$ exactly on $S\\cap\\{xyz=0\\}$). Besides the nine planar geodesics cut by $x=0,y=0,z=0,x=\\pm y,y=\\pm z,x=\\pm z$, $S$ carries four non-planar simple closed geodesics, the orbit under the octahedral group of a geodesic invariant under the permutations of coordinates and $-I$. Decide whether $S$ has finitely many simple closed geodesics (as unparametrized curves), and if so determine their number.",
+"why": "Lusternik–Schnirelmann guarantees three simple closed geodesics on any convex sphere, and the round sphere has infinitely many, but deciding the full count for an explicit non-round convex surface is rarely possible. This surface has large symmetry and curvature vanishing along three curves, so it is a concrete test case for counting and symmetry methods, but the specific choice is somewhat arbitrary.",
+"issues": "The original second part ('whether these nine are all') is false. Shooting numerically (RK, tol 1e-12) from {x=y}∩S orthogonally to that plane until hitting {y=z} orthogonally gives an arc from (0.38,0.38,-0.84)/norm to (0.980,-0.443,-0.443). Reflecting it closes up (closure error 7e-9) to a simple, non-planar closed geodesic of length about 7.43 that winds around the (1,1,1) axis, is invariant under S3 and -I, and has an orbit of size 4. So there are at least 13. Also K=0 along the coordinate-plane curves (K ∝ x²y²z²), worth noting. No literature found on this surface. Statement corrected; the finiteness question remains but is niche and probably hard without being illuminating.",
+"refs": []
+}
+]
