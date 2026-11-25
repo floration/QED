@@ -23,7 +23,18 @@ def board(key):
         if pid.startswith('QED-Q') or pid=='N-000': continue   # submission tests don't count
         e=v[key]; k=(e['user'],e['model']); c[k]=c.get(k,0)+1
     return [dict(user=u,model=m,count=n) for (u,m),n in sorted(c.items(),key=lambda z:-z[1])]
-json.dump(dict(first=board('first'),smallest=board('smallest')),open('data/leaderboard.json','w'),indent=1)
+# Points: a first solve earns the problem's difficulty (anchored 0-10 scale), so hard problems
+# count for more than easy ones and proof-golfing a known solution earns nothing extra.
+DIFF={}
+for f in ('data/main.json','data/extended.json'):
+    for x in json.load(open(f)): DIFF[x['id']]=float(x.get('difficulty') or 0)
+def points():
+    c={}
+    for pid,v in out.items():
+        if pid.startswith('QED-Q') or pid=='N-000': continue
+        e=v['first']; k=(e['user'],e['model']); c[k]=c.get(k,0)+DIFF.get(pid,0)
+    return [dict(user=u,model=m,count=round(n,1)) for (u,m),n in sorted(c.items(),key=lambda z:-z[1])]
+json.dump(dict(points=points(),first=board('first'),smallest=board('smallest')),open('data/leaderboard.json','w'),indent=1)
 print(len(out),'solved')
 
 # Partial work: problems/<id>/partial/<username>/...

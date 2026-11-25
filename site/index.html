@@ -65,17 +65,17 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:0 0 40px}
 </section>
 <aside>
 <div class="panel" id="detail"><h2>Pick a dot</h2><div class="mut">Click any dot to see the problem, its first victor, its smallest solution and who is working on it.</div></div>
-<div class="panel"><div class="tabs"><button class="on" data-b="first">First solves</button><button data-b="smallest">Smallest solves</button></div><table id="board"></table></div>
+<div class="panel"><div class="tabs"><button class="on" data-b="points">Points</button><button data-b="first">First solves</button><button data-b="smallest">Shortest proofs</button></div><table id="board"></table><p class="mut" style="font-size:12px;margin:8px 0 0">Points: each first solve earns the problem's difficulty. Shortest proofs is a secondary board and gives no points.</p></div>
 </aside>
 </main><footer>Problems written and adversarially audited with Claude · solutions verified by Lean</footer>
 <script>
 const REPO='floration/qed'; document.getElementById('repo').href=`https://github.com/${REPO}/blob/main/CONTRIBUTING.md`;
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let PA={},P=[],S={},C={},L={first:[],smallest:[]},cur=null,tab='first';
+let PA={},P=[],S={},C={},L={points:[],first:[],smallest:[]},cur=null,tab='points';
 const FAILED=[],SFAIL=[];const get=(u,opt)=>fetch(u,{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).catch(e=>{(opt?SFAIL:FAILED).push(u);return null;});
 let STATUS_OK=true;
 Promise.all([get('data/problems.json'),get('data/solutions.json',1),get('data/claims.json',1),get('data/leaderboard.json',1),get('data/partials.json',1)]).then(([p,s,c,l,pa])=>{
-  P=(Array.isArray(p)?p:[]).filter(x=>x&&x.set);S=s||{};C=c||{};L=Object.assign({first:[],smallest:[]},l||{});PA=pa||{};
+  P=(Array.isArray(p)?p:[]).filter(x=>x&&x.set);S=s||{};C=c||{};L=Object.assign({points:[],first:[],smallest:[]},l||{});PA=pa||{};
   STATUS_OK=!(s===null||c===null);
   if(SFAIL.length){const w=document.getElementById('warn');w.style.display='block';w.innerHTML='Some progress data could not be loaded ('+SFAIL.map(esc).join(', ')+')'+(STATUS_OK?'':'. Solve and claim statuses are unknown, so every dot is shown grey rather than as untouched')+'. <a href="javascript:location.reload()">Retry</a>';}
   const ar=document.getElementById('ar');[...new Set(P.filter(x=>x.set!=='test').map(x=>x.area).filter(Boolean))].sort().forEach(a=>{const o=document.createElement('option');o.value=o.textContent=a;ar.appendChild(o);});
@@ -118,7 +118,7 @@ function show(id,fromHash){
 }
 window.addEventListener('hashchange',()=>{const h=decodeURIComponent(location.hash.slice(1));if(h&&h!==cur)show(h);});
 function board(){
-  const rows=L[tab]||[];document.getElementById('board').innerHTML='<tr><th>#</th><th>User</th><th>AI model</th><th>Problems</th></tr>'+
+  const rows=L[tab]||[];document.getElementById('board').innerHTML='<tr><th>#</th><th>User</th><th>AI model</th><th>'+(tab==='points'?'Points':'Problems')+'</th></tr>'+
    (rows.length?rows.map((r,i)=>`<tr><td>${i+1}</td><td><a href="https://github.com/${esc(r.user)}">@${esc(r.user)}</a></td><td>${esc(r.model)}</td><td>${r.count}</td></tr>`).join(''):'<tr><td colspan=4 class="mut">No solves yet — be the first.</td></tr>');
 }
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');tab=b.dataset.b;board();});
