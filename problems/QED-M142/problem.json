@@ -1,0 +1,23 @@
+{
+ "id": "QED-M142",
+ "set": "main",
+ "title": "Lonely runner with speeds at most 2n",
+ "area": "Number theory",
+ "difficulty": 3.1,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Tao proved the lonely runner conjecture when every speed is at most 1.2 times the number of runners. Push this to speeds at most twice the number of runners (and ideally any fixed multiple).",
+ "math": "For distinct positive integers v_1,…,v_n let δ(v) = sup_{t∈ℝ} min_i ‖t v_i‖, where ‖·‖ is distance to the nearest integer. Prove that δ(v) ≥ 1/(n+1) for every n ≥ 1 and all distinct v_1,…,v_n ∈ {1,…,2n}. (Tao 2018, Prop. 1.5, proves this for speeds ≤ ⌊6n/5⌋; conjecturally there is no speed restriction.)",
+ "novelty": 4,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1701.02048",
+  "https://arxiv.org/abs/2511.16636",
+  "https://arxiv.org/pdf/2609.02604",
+  "https://arxiv.org/abs/2603.24784",
+  "https://en.wikipedia.org/wiki/Lonely_runner_conjecture"
+ ]
+}

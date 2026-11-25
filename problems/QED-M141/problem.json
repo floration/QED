@@ -1,0 +1,24 @@
+{
+ "id": "QED-M141",
+ "set": "main",
+ "title": "Forced blow-up for the surface quasi-geostrophic equation",
+ "area": "Analysis",
+ "difficulty": 2.6,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "The surface quasi-geostrophic (SQG) equation is a 2D model of geophysical flow. Whether it can blow up from smooth data is a famous open problem. Can at least a smooth, compactly supported push, applied to a fluid that starts at rest, make it blow up in finite time, as was done for 3D Navier–Stokes in 2026?",
+ "math": "Consider inviscid SQG on R^2: d_t theta + u.grad theta = f, u = grad^perp (-Delta)^{-1/2} theta, theta(.,0)=0. Decide whether there is f in C_c^infty(R^2 x (0,infty)) whose unique smooth solution on [0,T) satisfies limsup_{t->T} ||grad theta(t)||_{L^infty} = infty for some T < infty. (Variant, not part of the formal Claim: the same for supercritical dissipative SQG, + kappa(-Delta)^{alpha/2} theta with 0<alpha<1; for alpha>=1 smooth forcing gives global regularity.)",
+ "novelty": 6,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "https://arxiv.org/abs/2409.18900",
+  "https://arxiv.org/abs/2609.16470",
+  "https://arxiv.org/abs/2610.06544",
+  "https://arxiv.org/abs/2605.29866",
+  "https://arxiv.org/abs/1308.0640"
+ ]
+}

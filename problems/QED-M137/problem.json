@@ -1,0 +1,22 @@
+{
+ "id": "QED-M137",
+ "set": "main",
+ "title": "Navier–Stokes blow-up with the force kept away from the singularity",
+ "area": "Analysis",
+ "difficulty": 2.7,
+ "grade": "A",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "In 2026 OpenAI built a smooth, compactly supported force that drives the 3D Navier–Stokes equations, started from rest, to blow up in finite time. In that construction the force acts right where the singularity forms. Can it be done with a force that never acts anywhere near the blow-up point, so that the fluid near the singularity obeys the unforced equations the whole time?",
+ "math": "Let $\\nu>0$. Decide whether there exist $f\\in C_c^\\infty(\\mathbb R^3\\times(0,\\infty);\\mathbb R^3)$, $T>0$ and $x_*\\in\\mathbb R^3$ with $\\operatorname{supp}f\\cap\\big(B(x_*,1)\\times(0,\\infty)\\big)=\\emptyset$ such that the unique smooth solution of $\\partial_tu+(u\\cdot\\nabla)u+\\nabla p=\\nu\\Delta u+f$, $\\nabla\\cdot u=0$, $u(\\cdot,0)=0$ on $\\mathbb R^3\\times[0,T)$ satisfies $\\sup_{t<T}\\|u(t)\\|_{L^2}<\\infty$ and $\\limsup_{t\\uparrow T}\\|u(t)\\|_{L^\\infty(B(x_*,r))}=\\infty$ for every $r>0$. (By the scaling $u_\\lambda(x,t)=\\lambda u(\\lambda x,\\lambda^2t)$, the radius $1$ can be replaced by any $\\rho>0$.)",
+ "novelty": 7,
+ "importance": 8,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "https://arxiv.org/abs/2609.10262",
+  "https://arxiv.org/abs/2303.05746",
+  "https://arxiv.org/abs/2411.13896"
+ ]
+}

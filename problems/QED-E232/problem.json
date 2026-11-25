@@ -1,0 +1,21 @@
+{
+ "id": "QED-E232",
+ "set": "extended",
+ "title": "Bombieri–Vinogradov for primes with a missing decimal digit",
+ "area": "Number theory",
+ "difficulty": 3.1,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Maynard proved there are infinitely many primes with no digit 7 in base 10, with the expected count. Show these primes are also well spread over arithmetic progressions, on average over all moduli up to a small power of x, as the Bombieri-Vinogradov theorem says for all primes.",
+ "math": "Let $\\mathcal S$ be the set of positive integers with no digit $7$ in base $10$, and for $(a,q)=1$ let $\\pi_{\\mathcal S}(x;q,a)=\\#\\{p\\le x \\text{ prime}: p\\in\\mathcal S,\\ p\\equiv a \\ (q)\\}$, $\\pi_{\\mathcal S}(x)=\\pi_{\\mathcal S}(x;1,0)$. Prove there is $\\theta>0$ such that for every $A>0$: $\\sum_{q\\le x^{\\theta},\\,(q,10)=1}\\ \\max_{(a,q)=1}\\big|\\pi_{\\mathcal S}(x;q,a)-\\pi_{\\mathcal S}(x)/\\varphi(q)\\big|\\ll_A \\pi_{\\mathcal S}(x)(\\log x)^{-A}$.",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1604.01041",
+  "https://arxiv.org/abs/2510.13076",
+  "https://arxiv.org/abs/2409.06894"
+ ]
+}

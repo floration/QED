@@ -1,0 +1,22 @@
+{
+ "id": "QED-E231",
+ "set": "extended",
+ "title": "AKLT spectral gap on hat tilings",
+ "area": "Physics",
+ "difficulty": 6.8,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "The AKLT model is a standard quantum spin model built on a graph, with a spin of size (degree)/2 at each vertex. Proofs that it has an energy gap exist for the honeycomb and several other periodic planar lattices, by computer-assisted finite-size criteria. Show the AKLT model on the graph of a hat tiling, which is not periodic, also has a gap that does not depend on which hat tiling or how large a region is taken.",
+ "math": "For a hat tiling $\\mathcal T$ let $G_{\\mathcal T}$ be its planar graph: vertices are points lying in at least three tiles, edges are the boundary arcs between consecutive such points. Put spin $S_v=\\deg(v)/2$ at each $v$ and, for finite $\\Lambda$, $H_\\Lambda=\\sum_{uv\\in E(\\Lambda)}P^{(S_u+S_v)}_{uv}$ (projection onto total spin $S_u+S_v$). Prove there is $\\gamma>0$ such that for every hat tiling $\\mathcal T$ the infinite-volume AKLT model on $G_{\\mathcal T}$ has a unique frustration-free ground state $\\omega$, and its GNS Hamiltonian $H_\\omega$ has $\\ker H_\\omega=\\mathbb C\\Omega_\\omega$ and $\\operatorname{spec}(H_\\omega)\\setminus\\{0\\}\\subseteq[\\gamma,\\infty)$.",
+ "novelty": 7,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1910.11810",
+  "https://arxiv.org/abs/1911.01410",
+  "https://arxiv.org/abs/2010.03137",
+  "https://arxiv.org/abs/2308.02811"
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "id": "QED-E234",
+ "set": "extended",
+ "title": "Primes p with p² + p + 1 free of prime factors ≥ p",
+ "area": "Number theory",
+ "difficulty": 3.5,
+ "grade": "C",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Show that a positive proportion of primes p have every prime factor of p² + p + 1 smaller than p.",
+ "math": "Let $P^+(m)$ be the largest prime factor of $m$. Prove that $\\#\\{p\\le x\\ \\text{prime}: P^+(p^2+p+1)<p\\}\\gg x/\\log x$. (Weaker targets: infinitely many such $p$; or $P^+(p^2+p+1)<p^{\\theta}$ for a positive proportion of primes with some $\\theta<2$ as small as possible.)",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1603.07067",
+  "https://arxiv.org/abs/1710.01970",
+  "https://arxiv.org/abs/math/9807102"
+ ]
+}

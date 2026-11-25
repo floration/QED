@@ -1,0 +1,21 @@
+{
+ "id": "QED-E230",
+ "set": "extended",
+ "title": "Bounded-degree spanning trees in the prime-sum graph",
+ "area": "Combinatorics",
+ "difficulty": 3.3,
+ "grade": "B",
+ "provenance": "Original",
+ "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "plain": "Join two numbers from 1 to 2n when their sum is prime. Show that every tree on 2n vertices with bounded degree and two equal colour classes can be found inside this graph.",
+ "math": "Let $\\mathcal P_{2n}$ be the graph on $[2n]$ with $ij\\in E$ iff $i+j$ is prime ($\\mathcal P_{2n}$ is bipartite between odds and evens). Prove that for every $\\Delta$ there is $n_0(\\Delta)$ such that for all $n\\ge n_0$, every tree $T$ on $2n$ vertices with maximum degree $\\le\\Delta$ and both bipartition classes of size $n$ is isomorphic to a spanning subgraph of $\\mathcal P_{2n}$.",
+ "novelty": 6,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2306.04565",
+  "https://arxiv.org/pdf/2609.19114",
+  "https://arxiv.org/abs/2003.00729"
+ ]
+}
