@@ -51,12 +51,14 @@ def collectAxioms (env : Kernel.Environment) (root : Name) : IO (Array Name) := 
       todo := todo ++ v.ctors.toArray
   return axs
 
-/-- Returns the list of axioms used (as fresh strings), or throws. Everything that touches imported
-data happens inside `withImportModules`, because that data is freed when it returns. -/
-unsafe def check (stmtMod solMod claim : Name) (kind : String) : IO (List String) :=
-  withImportModules #[{ module := stmtMod }] {} fun envS => do
-  step "statement environment loaded"
-  withImportModules #[{ module := solMod }] {} fun envA => do
+/-- Returns the list of axioms used, or throws. The two environments are imported with `leakEnv := true`
+and never freed: this is a short-lived process, and freeing the imported regions while kernel
+objects built from them (the replayed environment) are still alive is unsafe. `loadExts := false`:
+no environment extension of the contributor module is loaded and no `initialize` code runs. -/
+def check (stmtMod solMod claim : Name) (kind : String) : IO (List String) := do
+    let envS ← importModules #[{ module := stmtMod }] {} (leakEnv := true) (loadExts := false)
+    step "statement environment loaded"
+    let envA ← importModules #[{ module := solMod }] {} (leakEnv := true) (loadExts := false)
     step "solution environment loaded"
     let some sIdx := envS.getModuleIdx? stmtMod | die "statement module not loaded"
     let some aIdx := envA.getModuleIdx? solMod | die "solution module not loaded"
@@ -98,7 +100,7 @@ unsafe def check (stmtMod solMod claim : Name) (kind : String) : IO (List String
       die s!"uses non-standard axioms: {badStr}"
     return axs.toList.map toString
 
-unsafe def main (args : List String) : IO UInt32 := do
+def main (args : List String) : IO UInt32 := do
   let [nonce, stmtMod, solMod, claim, kind] := args
     | die "usage: qed_verify <nonce> <StmtModule> <SolModule> <Claim> <proof|disproof>"
   try
@@ -107,7 +109,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     let axs ← check stmtMod.toName solMod.toName claim.toName kind
     let axStr := String.intercalate ", " axs
     IO.println s!"QED-VERIFY {nonce} OK {axStr}"
+    (← IO.getStdout).flush
     return 0
   catch e =>
     IO.println s!"QED-VERIFY {nonce} FAIL {e}"
+    (← IO.getStdout).flush
     return 1
