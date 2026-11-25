@@ -1,0 +1,27 @@
+{
+ "id": "QED-E130",
+ "set": "extended",
+ "title": "Sign uncertainty on the line: reach 1/2",
+ "area": "Analysis",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Bourgain-Clozel-Kahane sign uncertainty constant; target 1/2 chosen as first value beyond reach of the 2017 rearrangement method (QED framing).",
+ "premise_risks": [
+  "Threshold 1/2 is a round-number choice, justified only by the 2017 authors' remark that the method yields only third-decimal gains",
+  "Upper bound 0.5671 is from an unrefereed AI-search report; refereed upper bound is 0.594",
+  "Literature sometimes states the result for A(f)A(f̂) (product) vs its square root; keep the product form 1/4"
+ ],
+ "plain": "If a real even function f on the line has f(0) ≤ 0 and its Fourier transform is also ≤ 0 at the origin, then f and its transform cannot both become permanently nonnegative too soon: with A(f), A(f̂) the radii beyond which each is nonnegative, the product A(f)A(f̂) is bounded below. The best proven lower bound for the square root of this product is 0.45 (2017), while the best examples give about 0.567. Prove the bound 1/2.",
+ "math": "With $\\hat f(\\xi)=\\int_{\\mathbb{R}}f(x)e^{-2\\pi i x\\xi}dx$, let $\\mathcal{A}_+$ be the set of nonzero real-valued even continuous $f\\in L^1(\\mathbb{R})$ with $\\hat f\\in L^1(\\mathbb{R})$, $f(0)\\le0$, $\\hat f(0)\\le0$, and $f,\\hat f$ eventually nonnegative; for real $g$ put $A(g)=\\inf\\{r>0: g(x)\\ge0\\text{ for all }|x|\\ge r\\}$. Prove $A(f)A(\\hat f)\\ge 1/4$ for all $f\\in\\mathcal{A}_+$, i.e. $\\mathbb{A}_+(1):=\\inf_{f\\in\\mathcal A_+}\\sqrt{A(f)A(\\hat f)}\\ge 1/2$ (currently $0.45\\le\\mathbb{A}_+(1)\\le 0.5671$).",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1602.03366",
+  "https://arxiv.org/abs/2505.15994",
+  "https://arxiv.org/abs/2611.08224",
+  "https://arxiv.org/abs/2608.15415"
+ ]
+}

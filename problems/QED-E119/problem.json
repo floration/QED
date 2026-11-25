@@ -1,0 +1,26 @@
+{
+ "id": "QED-E119",
+ "set": "extended",
+ "title": "Maker-Breaker 7-in-a-row on the infinite grid",
+ "area": "Games",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Positional game folklore; Beck, Combinatorial Games: Tic-Tac-Toe Theory; Hollósi–Pluhár (2021)",
+ "premise_risks": [
+  "Answer could plausibly need a large computer search over strip games",
+  "Infinite-board game: formal statement needs strategies on histories"
+ ],
+ "plain": "Two players take turns claiming cells of the infinite square grid. Maker wins if she ever owns k consecutive cells in a row, column or diagonal, and Breaker wins if he stops this forever. Maker wins for k <= 5, and Breaker wins for k >= 8 with a pairing strategy. Does Breaker win for k = 7?",
+ "math": "Maker and Breaker alternately claim one unclaimed cell of $\\mathbb Z^2$, Maker first. A winning line is a set $\\{p+i d:0\\le i<7\\}$ with $p\\in\\mathbb Z^2$ and $d\\in\\{(1,0),(0,1),(1,1),(1,-1)\\}$. Decide whether Breaker has a strategy such that, against every Maker strategy, Maker never owns all cells of any winning line. (The analogous question for $k=6$ is also open.)",
+ "novelty": 3,
+ "importance": 4,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2107.05363",
+  "https://arxiv.org/abs/1004.2460",
+  "https://arxiv.org/abs/1005.5469",
+  "https://arxiv.org/abs/1501.01467"
+ ]
+}

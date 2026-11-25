@@ -1,0 +1,27 @@
+{
+ "id": "QED-E121",
+ "set": "extended",
+ "title": "Linear arboricity of graphs with maximum degree 7",
+ "area": "Graph theory",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Akiyama–Exoo–Harary (conjecture); small-case history in Christoph et al. (2025)",
+ "premise_risks": [
+  "Could not verify the content of a c.2023 Georgia State preprint 'A decomposition method on solving the linear arboricity conjecture'; it might treat D=7",
+  "The full conjecture is sometimes attributed by name (Akiyama–Exoo–Harary); the D=7 case is an unnamed sub-question",
+  "Unchecked: G. Chen (GSU, 2023 preprint) 'A decomposition method on solving the linear arboricity conjecture' may cover degree 7; a 2025 survey (arXiv:2507.20500) still lists degree 7 as open."
+ ],
+ "plain": "A linear forest is a graph whose components are paths. The linear arboricity conjecture says the edges of any graph with maximum degree D can be split into ceil((D+1)/2) linear forests. It was proved for D = 3, 4, 5, 6, 8 and 10 by 1988, but D = 7 is the smallest open case. Can the edges of every graph with maximum degree 7 be split into 4 linear forests?",
+ "math": "Prove or disprove: every finite simple graph $G$ with $\\Delta(G)\\le 7$ admits a map $c:E(G)\\to\\{1,2,3,4\\}$ such that every colour class is a linear forest (acyclic, with maximum degree at most $2$). Equivalently, $\\mathrm{la}(G)\\le 4$ whenever $\\Delta(G)\\le 7$.",
+ "novelty": 2,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2507.20500",
+  "https://arxiv.org/abs/2512.11240",
+  "https://par.nsf.gov/servlets/purl/10325836",
+  "https://arxiv.org/abs/2207.07169"
+ ]
+}

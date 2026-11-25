@@ -1,0 +1,29 @@
+{
+ "id": "QED-M116",
+ "set": "main",
+ "title": "Spectral gap of the spin-2 valence-bond-solid (AKLT) model on the square lattice",
+ "area": "Mathematical physics",
+ "difficulty": 6.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Conjectured by Affleck, Kennedy, Lieb, Tasaki (1988); status per Pomata-Wei (2020) and Jackson-Nachtergaele-Young (2026).",
+ "premise_risks": [
+  "Model named after people (AKLT), but the question is the spectral-gap property, not a named conjecture",
+  "Partly approachable by a large certified finite-size computation; could fall to a computer-assisted proof",
+  "Board already has AKLT on the hat (N-457) - related theme"
+ ],
+ "plain": "Put a quantum spin 2 (a 5-dimensional space) at every site of an L x L periodic square grid. For each edge, add the energy of projecting the two neighbouring spins onto their joint spin-4 state. The resulting Hamiltonian has ground energy 0, attained by the AKLT valence-bond state. Show that the first excited level stays a fixed distance above 0 however large L is. This gap was proved for the hexagonal lattice in 2020 and for many decorated square lattices, but not for the plain square lattice.",
+ "math": "Let $\\mathcal H_L=\\bigotimes_{x\\in(\\mathbb Z/L\\mathbb Z)^2}\\mathbb C^5$, let $\\mathbf S_x$ be the spin-2 operators at $x$, and for a nearest-neighbour edge $xy$ of the torus let $P^{(4)}_{xy}$ be the orthogonal projection onto the eigenspace $\\{(\\mathbf S_x+\\mathbf S_y)^2=20\\}$ (total spin 4). Let $H_L=\\sum_{xy}P^{(4)}_{xy}$, so $H_L\\ge0$ and $\\ker H_L\\neq\\{0\\}$. Prove there is $\\gamma>0$ with $\\mathrm{spec}(H_L)\\subset\\{0\\}\\cup[\\gamma,\\infty)$ for all $L\\ge3$.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2010.03137",
+  "https://arxiv.org/pdf/1905.01275",
+  "https://arxiv.org/pdf/1901.09297",
+  "https://pdf.arxiv.org/pdf/2212.11872",
+  "https://arxiv.org/pdf/2605.12184",
+  "https://ar5iv.labs.arxiv.org/html/1308.3631"
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "id": "QED-E115",
+ "set": "extended",
+ "title": "Rotor-router discs: logarithmic outer error",
+ "area": "Probability",
+ "difficulty": 6.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Propp's roundness question; inner/outer bounds and constant-error question from Levine & Peres (2009). The specific O(log r) outer target is my framing as the natural matching step.",
+ "premise_risks": [
+  "Target O(log r) is my framing; literature frames the question as constant error",
+  "Initial rotor configuration matters for the exact statement"
+ ],
+ "plain": "Release n chips one at a time at the origin of the square grid. Each grid point has an arrow, all initially pointing east. A chip at an occupied point turns that point's arrow a quarter turn counterclockwise and steps the way it now points, and it stops at the first empty point. The n occupied points form a strikingly round disc of radius about r = sqrt(n/pi): simulations up to about 7*10^10 chips show inner and outer radii differing by less than 1.7. It is proved that no hole lies deeper than C log r inside the circle, but the best bound for outward bulges is about sqrt(r) log r. Prove that no occupied point lies beyond r + C log r.",
+ "math": "Rotor-router aggregation on $\\mathbb Z^2$: rotors $\\rho:\\mathbb Z^2\\to\\{E,N,W,S\\}$ start identically $E$; chips are added one at a time at $0$; a chip at an occupied site advances that site's rotor one step counterclockwise ($E\\to N\\to W\\to S\\to E$) and moves one lattice step in the new direction, stopping at the first unoccupied site it reaches. Let $A_n$ be the set of occupied sites after $n$ chips and $r=\\sqrt{n/\\pi}$. Prove that there is a constant $C$ with $A_n\\subseteq\\{z\\in\\mathbb Z^2:\\|z\\|_2\\le r+C\\log(2+r)\\}$ for all $n\\ge1$. (Levine-Peres prove $\\{z:\\|z\\|_2\\le r-C\\log(2+r)\\}\\cap\\mathbb Z^2\\subseteq A_n$ and $A_n\\subseteq\\{\\|z\\|_2\\le r+C\\sqrt r\\log(2+r)\\}$ for every initial rotor configuration.)",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/0704.0688",
+  "https://arxiv.org/pdf/0712.4358",
+  "https://arxiv.org/pdf/1006.1003",
+  "https://arxiv.org/pdf/1612.03701",
+  "https://arxiv.org/pdf/1611.00411"
+ ]
+}

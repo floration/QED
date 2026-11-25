@@ -1,0 +1,26 @@
+{
+ "id": "QED-E118",
+ "set": "extended",
+ "title": "Sylver coinage: who wins after the opening 16?",
+ "area": "Games",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Conway (game and prize problem); Berlekamp–Conway–Guy, Winning Ways; Guy (1976); Sicherman (2002)",
+ "premise_risks": [
+  "Appears in Conway's prize list; it is not usually called a named conjecture, but some readers may call it 'Conway's 16 problem'",
+  "May reduce to a large but finite computation once the position becomes coprime; but the first stage is infinite-branching"
+ ],
+ "plain": "In Sylver coinage two players take turns naming positive integers. You may not name a number that can be written as a sum of numbers already named (repeats allowed), and whoever names 1 loses. Every prime 5 or larger is a winning first move. Any other winning first move must have the form 2^a 3^b, and the openings 1, 2, 3, 4, 6, 8, 9 and 12 are known to lose. Which player wins if the first player opens with 16?",
+ "math": "A position is a finite set $S\\subset\\mathbb Z_{>0}$; a legal move from $S$ is any integer $n\\ge 2$ not in the additive monoid $\\langle S\\rangle$, giving $S\\cup\\{n\\}$. Under normal play the player with no legal move loses (this matches the rule that naming $1$ loses). Every play is finite, by Dickson's lemma. Decide whether $\\{16\\}$ is a $\\mathcal P$-position (the player who named $16$ wins) or an $\\mathcal N$-position.",
+ "novelty": 2,
+ "importance": 3,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://en.wikipedia.org/wiki/Sylver_coinage",
+  "https://uq.stanford.edu/question/19",
+  "https://emis.univie.ac.at/journals/INTEGERS/papers/cg2/cg2.pdf",
+  "https://sicherman.net/sylver/20q.html"
+ ]
+}

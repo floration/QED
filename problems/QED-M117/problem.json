@@ -1,0 +1,28 @@
+{
+ "id": "QED-M117",
+ "set": "main",
+ "title": "An exponential improvement of the diagonal Ramsey lower bound",
+ "area": "Combinatorics",
+ "difficulty": 8.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Erdős (1947 bound and question); Spencer (1975)",
+ "premise_risks": [
+  "Extremely famous and hard: low novelty, may be judged a famous problem stated directly",
+  "Not a person-named conjecture (Erdős offered a prize for the limit of R(k)^{1/k}, a stronger question)",
+  "Context only: refereed status of Ma–Shen–Xie (arXiv 2025, covered by Quanta 2026) not verified; 2605.25843 is an unrefereed 2026 preprint"
+ ],
+ "plain": "The Ramsey number R(k) is the least N such that every red/blue colouring of the edges of the complete graph K_N contains a one-coloured K_k. Erdos's 1947 random-colouring argument gives R(k) > (sqrt 2)^k, and in nearly 80 years only the constant factor in front has improved. Is there a fixed eps > 0 with R(k) > (sqrt 2 + eps)^k for all large k?",
+ "math": "Prove that there exists $\\varepsilon>0$ such that $R(k,k)\\ge(\\sqrt2+\\varepsilon)^k$ for all sufficiently large $k$; equivalently, for every large $k$ there is a graph on $N\\ge(\\sqrt2+\\varepsilon)^k$ vertices with no clique and no independent set of size $k$. (Best known: $R(k,k)\\ge(1+o(1))\\frac{\\sqrt2}{e}\\,k\\,2^{k/2}$, Spencer 1975.)",
+ "novelty": 1,
+ "importance": 9,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2507.12926",
+  "https://arxiv.org/abs/2605.25843",
+  "https://arxiv.org/abs/2601.05221",
+  "https://annals.math.princeton.edu/2026/203-3/p04",
+  "https://arxiv.org/abs/2303.09521"
+ ]
+}
