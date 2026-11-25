@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Do two triangular 2×2 matrices generate a free semigroup? Decide it",
  "area": "Logic & computability",
- "difficulty": 5.0,
+ "difficulty": 8.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Cassaigne–Harju–Karhumäki (1999) and Cassaigne–Nicolas (2012), Open Question 8 and the (λ,μ) reduction.",

@@ -10,7 +10,7 @@
  "premise_risks": [
   "arXiv:2507.11375 (Berger-Turaev, 2025 preprint, refereeing status unverified): the problem assumes its Thm B (density of families with positive metric entropy at every parameter) and borrows its definition of Kolmogorov typicality."
  ],
- "plain": "Berger and Turaev showed that families of area-preserving surface maps having positive metric entropy at every parameter are dense among smooth families. Show this is typical, i.e. holds for a Kolmogorov-generic (prevalent) set of families, or find a robust obstruction.",
+ "plain": "Berger and Turaev showed that families of area-preserving surface maps having positive metric entropy at every parameter are dense among smooth families. Show this is typical, i.e. holds for a Kolmogorov-typical set of families (a residual set of families, each having positive entropy for Lebesgue-a.e. parameter, in the sense of Berger-Turaev), or find a robust obstruction.",
  "math": "Take Σ = 𝕋² = ℝ²/ℤ² with the standard area form. For k ≥ 1 let 𝓕_k be the space of C^∞ families (f_p)_{p∈[0,1]^k} of symplectic diffeomorphisms of 𝕋² such that every f_p has an elliptic periodic point, with the C^∞ topology on (p,x) ↦ f_p(x), and 𝓕_+ = {families with h_Leb(f_p) > 0 for Lebesgue-a.e. p}. Prove or disprove: for every k ≥ 1, 𝓕_+ contains a countable intersection of open subsets dense in 𝓕_k (Kolmogorov typicality in the sense of Berger–Turaev). ¬Claim: for some k, 𝓕_+ contains no residual subset of 𝓕_k.",
  "novelty": 4,
  "importance": 6,

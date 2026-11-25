@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Halving planes in 3-space: beat n^{5/2}",
  "area": "Geometry",
- "difficulty": 4.5,
+ "difficulty": 5.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Problem of bounding halving planes / k-sets in R^3 (Barany-Furedi-Lovasz 1990, Dey-Edelsbrunner, Sharir-Smorodinsky-Tardos)",

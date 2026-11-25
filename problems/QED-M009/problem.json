@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Hearing tetrahedra",
  "area": "Analysis",
- "difficulty": 4.5,
+ "difficulty": 5.5,
  "grade": "A",
  "provenance": "Extension",
  "credit": "Extends Durso (1988, MIT thesis) and Grieser-Maronna, 'Hearing the shape of a triangle' (Notices AMS 2013, arXiv:1208.3163); Kac's question.",

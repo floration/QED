@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Blank jigsaw with few edge shapes",
  "area": "Combinatorics",
- "difficulty": 2.0,
+ "difficulty": 4.0,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Mossel & Ross (shotgun assembly); Bordenave, Feige, Mossel 2016, arXiv:1605.03086; Nenadov, Pfister, Steger 2017, arXiv:1701.04813",

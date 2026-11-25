@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Is the Mandelbrot set decidable at Gaussian rationals?",
  "area": "Dynamics",
- "difficulty": 4.5,
+ "difficulty": 8.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "P. Potgieter, arXiv:cs/0604003 (2006), Sec. 2.3.",

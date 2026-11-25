@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Two-frequency localization",
  "area": "Analysis",
- "difficulty": 4.5,
+ "difficulty": 6.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Recognised open problem from the Bourgain-Goldstein / Bourgain-Goldstein-Schlag multi-frequency programme; stated open in arXiv:2603.07180 (2026). Pure point spectrum without exponential decay at fixed Diophantine frequency: Eliasson, Acta Math. 1997.",

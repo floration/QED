@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Does a triangle with integer sides, medians and area exist?",
  "area": "Number theory",
- "difficulty": 6.0,
+ "difficulty": 8.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Classical (Euler's work on rational medians; perfect-triangle problem listed in Guy, Unsolved Problems in Number Theory); Buchholz, Rathbun, Hone",

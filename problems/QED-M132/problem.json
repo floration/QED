@@ -3,7 +3,7 @@
  "set": "main",
  "title": "The 4/3 integrality gap of the subtour LP for metric TSP",
  "area": "Combinatorics",
- "difficulty": 4.5,
+ "difficulty": 8.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Folklore '4/3 conjecture' (Goemans 1995; Williamson 1990s); statement source: Karlin–Klein–Oveis Gharan 2022; Cook–Hougardy–Petrich 2026.",

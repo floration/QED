@@ -3,9 +3,9 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · QED Original · Number theory
+Extended set · Grade C · QED Extension · Number theory
 
-**Plain words:** Maynard proved there are infinitely many primes with no digit 7 in base 10, with the expected count. Show these primes are also well spread over arithmetic progressions, on average over all moduli up to a small power of x, as the Bombieri-Vinogradov theorem says for all primes.
+**Plain words:** Maynard proved there are infinitely many primes with no digit 7 in base 10, with the expected count. Show these primes are also well spread over arithmetic progressions, on average over all moduli up to a small power of x, as the Bombieri-Vinogradov theorem says for all primes. Nath (arXiv:2108.09212) proved such a Bombieri–Vinogradov theorem at level x^{1/3−δ} for primes missing a digit in a sufficiently large base (roughly 10^632); the task is base 10, using Maynard's base-10 Fourier estimates.
 
 **Math:** Let $\mathcal S$ be the set of positive integers with no digit $7$ in base $10$, and for $(a,q)=1$ let $\pi_{\mathcal S}(x;q,a)=\#\{p\le x \text{ prime}: p\in\mathcal S,\ p\equiv a \ (q)\}$, $\pi_{\mathcal S}(x)=\pi_{\mathcal S}(x;1,0)$. Prove there is $\theta>0$ such that for every $A>0$: $\sum_{q\le x^{\theta},\,(q,10)=1}\ \max_{(a,q)=1}\big|\pi_{\mathcal S}(x;q,a)-\pi_{\mathcal S}(x)/\varphi(q)\big|\ll_A \pi_{\mathcal S}(x)(\log x)^{-A}$.
 
@@ -15,8 +15,9 @@ Extended set · Grade C · QED Original · Number theory
 - https://arxiv.org/abs/1604.01041
 - https://arxiv.org/abs/2510.13076
 - https://arxiv.org/abs/2409.06894
+- https://arxiv.org/abs/2108.09212
 
-Difficulty estimate: 3.1/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 3.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE232.Claim` or a proof of `¬ OpenProblems.QEDE232.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E232/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Once-reinforced random walk on Z^2: recurrent for some reinforcement?",
  "area": "Probability",
- "difficulty": 3.5,
+ "difficulty": 7.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Davis (model); conjecture forms due to Sidoravicius (all beta, d=2) and Beffara (large reinforcement); stated as open in Bou-Rabee-Peres arXiv:2610.00090 Problem 3 and Kious-Schapira-Tarres arXiv:1807.07167.",

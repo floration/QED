@@ -7,14 +7,14 @@ Extended set · Grade A · QED Curated · Mathematical physics
 
 **Plain words:** In ice, each oxygen sits at a vertex of a 4-regular crystal lattice and the hydrogens obey the ice rule: two bonds point in and two point out at every vertex. Counting such configurations is counting Eulerian orientations of the lattice. Hexagonal ice (Ih, the lonsdaleite net) and cubic ice (Ic, the diamond net) are two different stackings of the same puckered layers and look identical locally. Onsager proved that hexagonal ice has at least as many configurations per molecule as cubic ice. Are the two per-vertex growth constants exactly equal?
 
-**Math:** Same as M, with the clarification that D_m, H_m are treated as multigraph quotients (parallel edges only for m=1) and EO counts orientations with in-degree 2 at every vertex; Claim asserts both limits exist and coincide (W_h = W_c).
+**Math:** Let $D$ be the diamond net and $H$ the lonsdaleite net (4-regular, period lattices $\Lambda_D,\Lambda_H\cong\mathbb Z^3$). For $m\ge1$ let $D_m=D/m\Lambda_D$ and $H_m=H/m\Lambda_H$ (finite 4-regular toroidal quotients, treated as multigraphs; parallel edges occur only for $m=1$). For a 4-regular multigraph $G$ let $\mathrm{EO}(G)$ be the number of orientations of $G$ with in-degree $2$ at every vertex. Prove or disprove: the limits $W_c=\lim_m|\mathrm{EO}(D_m)|^{1/|V(D_m)|}$ and $W_h=\lim_m|\mathrm{EO}(H_m)|^{1/|V(H_m)|}$ both exist and are equal. (Existence of both limits is standard, and $W_h\ge W_c$ by Onsager/Nagle, so the disproof direction amounts to $W_h>W_c$.)
 
 **Credit:** Question going back to Onsager/Nagle (1960s); restated as open in arXiv:2404.13897, 2511.22477 and 2608.07613
 
 **Rests on recent unrefereed work. Check these premises first:**
-- The claimed direction (equality) could be false: a rigorous strict inequality would refute the Claim, though it would still resolve the question. The scorer may want it phrased as 'decide'.
+- The claimed direction (equality) could be false: a rigorous strict inequality W_h > W_c would refute the Claim and still resolve the question; the problem is posed as prove-or-disprove.
 - Chen-Ran 2608.07613 (unrefereed, 2026) supplies only side bounds and is not needed for the premise. The premise W_h >= W_c rests on Onsager/Nagle 1966 plus the 2024 PRB.
-- Defining the periodic lonsdaleite quotients in Lean needs care (even number of layers, consistent registry). The limit's independence of the torus shape is standard but must either be assumed in the statement or proved.
+- Defining the periodic lonsdaleite quotients in Lean needs care (two bilayers per period, consistent registry). The limit's independence of the torus shape is standard but must either be assumed in the statement or proved.
 
 **References:**
 - https://arxiv.org/abs/2511.22477
@@ -22,7 +22,7 @@ Extended set · Grade A · QED Curated · Mathematical physics
 - https://arxiv.org/pdf/math/9810155
 - https://arxiv.org/pdf/2409.04989
 
-Difficulty estimate: 5.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 5.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE193.Claim` or a proof of `¬ OpenProblems.QEDE193.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E193/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

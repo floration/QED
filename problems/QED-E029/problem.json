@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Oriented chromatic number of planar graphs (18 vs 80)",
  "area": "Graph theory",
- "difficulty": 4.5,
+ "difficulty": 5.0,
  "grade": "C",
  "provenance": "Curated",
  "credit": "Courcelle; Raspaud-Sopena; Marshall; Sopena surveys.",

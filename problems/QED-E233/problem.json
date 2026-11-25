@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Largest prime factor of 2^n + n",
  "area": "Number theory",
- "difficulty": 7.5,
+ "difficulty": 7.0,
  "grade": "C",
  "provenance": "Original",
  "credit": "QED original (archived Nov 2026, restored after re-review).",

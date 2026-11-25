@@ -3,13 +3,17 @@
  "set": "extended",
  "title": "Riesz-transform Schrodinger equation",
  "area": "PDE",
- "difficulty": 4.2,
+ "difficulty": 5.0,
  "grade": "C",
- "plain": "Couple a 2D Schrodinger wave to the Riesz transform of its own density. Mass is conserved, but there is no energy. Do smooth solutions live forever?",
- "math": "Consider $iu_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb{R}\\times\\mathbb{R}^2$, $\\widehat{R_1f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. Decide whether every $u_0\\in H^1(\\mathbb{R}^2)$ gives a global solution in $C(\\mathbb{R},H^1)$.",
+ "provenance": "Original",
+ "plain": "Couple a 2D Schrodinger wave to the Riesz transform of its own density. Mass is conserved, but there is no energy. Do smooth solutions live forever? R_1 is real and antisymmetric, so the potential is real, mass is conserved, there is no conserved energy, and the momentum P_1 = Im ∫ ū ∂_1 u is monotone. Data with small L^2 norm are global by Strichartz estimates; the question concerns large data.",
+ "math": "Consider $iu_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb{R}\\times\\mathbb{R}^2$, $\\widehat{R_1f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. $R_1$ is real and antisymmetric, so mass is conserved and there is no conserved energy; small-mass data are global by Strichartz. Decide whether every Schwartz datum $u_0\\in\\mathcal S(\\mathbb R^2)$ gives a global solution $u\\in C(\\mathbb R,\\mathcal S(\\mathbb R^2))$ (classical, $u(0)=u_0$), or some datum blows up in finite time.",
  "novelty": 6,
  "importance": 3,
  "value": 3,
- "formal_status": "not_formalized",
- "review_note": "C"
+ "formal_status": "formalized",
+ "review_note": "L^2-critical, non-Hamiltonian model: small mass is global, large data open.",
+ "refs": [
+  "J.-M. Ghidaglia and J.-C. Saut, On the initial value problem for the Davey-Stewartson systems, Nonlinearity 3 (1990) (closest Hamiltonian analogue)"
+ ]
 }

@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Deciding limit cycles",
  "area": "Logic & computability",
- "difficulty": 6.0,
+ "difficulty": 6.5,
  "grade": "A",
  "provenance": "Extension",
  "credit": "Extension of Graca-Zhong (arXiv:2101.07701) noncomputability of planar periodic orbits; related: Hilbert's 16th problem, Il'yashenko on algebraic unsolvability of the center-focus problem.",

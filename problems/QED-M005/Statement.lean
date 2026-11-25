@@ -10,7 +10,7 @@ Determine N₃; in particular decide whether the Jacobian conjecture holds for c
 Formalization notes: Claim is HJC(5,3): every cubic homogeneous H in 5 variables over ℂ with nilpotent Jacobian matrix
 gives a polynomial automorphism x + H (a two-sided polynomial inverse G, composition via `MvPolynomial.bind₁`).
 Claim ⇔ N₃ ≥ 6; ¬Claim ⇔ N₃ = 5 (given the known bound N₃ ≥ 5). The zero polynomial counts as homogeneous of degree 3,
-which is harmless. The companion question (degree d₃ of a non-invertible Keller map ℂ³ → ℂ³) is not formalized here.
+which is harmless. The former companion question d₃ was removed from the problem (it is QED-M004).
 For homogeneous H, nilpotency of JH is equivalent to det(I + JH) = 1; we use nilpotency.
 -/
 namespace OpenProblems.QEDM005

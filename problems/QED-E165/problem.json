@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Inducibility of the 4-vertex path",
  "area": "Graph theory",
- "difficulty": 5.5,
+ "difficulty": 6.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Inducibility: Pippenger-Golumbic (1975); P4 bounds: Exoo, Even-Zohar-Linial (2015), Vaughan (flag algebras); status confirmed by Bodnár-Pikhurko (EJC 2026).",

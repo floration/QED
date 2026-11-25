@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Does the odd greedy algorithm always terminate?",
  "area": "Number theory",
- "difficulty": 5.5,
+ "difficulty": 7.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Stein, Selfridge, Graham (via Guy UPINT; Klee–Wagon 1991); erdosproblems.com #282.",

@@ -3,11 +3,13 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade B · QED Curated · Combinatorics
+Extended set · Grade B · QED Original · Combinatorics
 
-**Plain words:** Conjugate partitions always give representations of S_n of the same dimension, so at most about half of the p(n) irreducible representations can have distinct dimensions. Decide whether the fraction of distinct dimensions tends to a limit, and whether that limit is positive.
+**Plain words:** Conjugate partitions always give representations of S_n of the same dimension, so at most (p(n)+sc(n))/2 of the p(n) irreducible representations can have distinct dimensions, where sc(n) = o(p(n)) counts self-conjugate partitions; so at most half asymptotically. Decide whether the fraction of distinct dimensions tends to a limit, and whether that limit is positive.
 
 **Math:** Let d(n) = #{f^λ : λ ⊢ n} be the number of distinct irreducible character degrees of S_n and p(n) the number of partitions of n. Prove or disprove: d(n)/p(n) converges to a positive limit L as n → ∞.
+
+**Reviewer note:** arXiv:2410.01726 supplies multiplicity data only and does not pose this question.
 
 **Credit:** On the irreducible character degrees of symmetric groups and their multiplicities, arXiv:2410.01726 (2024)
 
@@ -18,7 +20,7 @@ Extended set · Grade B · QED Curated · Combinatorics
 - https://arxiv.org/abs/2410.01726v3
 - https://arxiv.org/html/2410.01726v3
 
-Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 4.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE078.Claim` or a proof of `¬ OpenProblems.QEDE078.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E078/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

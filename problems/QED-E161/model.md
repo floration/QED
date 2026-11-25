@@ -22,7 +22,7 @@ Extended set · Grade A · QED Curated · Probability
 - https://arxiv.org/pdf/2608.26707
 - https://arxiv.org/html/2603.15856v1
 
-Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 6.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE161.Claim` or a proof of `¬ OpenProblems.QEDE161.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E161/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

@@ -12,9 +12,12 @@ Main set · Grade B · QED Extension · PDE
 **Credit:** Extension of Weinstein (Comm. Math. Phys. 1983) mass-critical threshold; related Strichartz work on flat cones by Ford and by Blair-Ford-Marzuola.
 
 **References:**
-- https://arxiv.org/html/2503.15142v3
+- M.I. Weinstein, Nonlinear Schrödinger equations and sharp interpolation estimates, Comm. Math. Phys. 87 (1983)
+- N. Burq, P. Gérard, N. Tzvetkov, Strichartz inequalities and the nonlinear Schrödinger equation on compact manifolds, Amer. J. Math. 126 (2004)
+- F. Planchon, P. Raphaël, Existence and stability of the log-log blow-up dynamics for the L2-critical nonlinear Schrödinger equation in a domain, Ann. Henri Poincaré 8 (2007)
+- M. Blair, G.A. Ford, S. Herr, J. Marzuola, Strichartz estimates for the Schrödinger equation on polygonal domains, J. Geom. Anal. (2012)
 
-Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 2.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDM088.Claim` or a proof of `¬ OpenProblems.QEDM088.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M088/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

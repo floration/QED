@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Is there an aperiodic polyomino?",
  "area": "Geometry",
- "difficulty": 4.5,
+ "difficulty": 5.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Open problem as posed in A. Winslow, 'Some open problems in polyomino tilings' (DLT 2018); long-standing folklore (Golomb)",

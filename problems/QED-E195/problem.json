@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Is the Held–Karp integrality ratio for asymmetric TSP equal to 2?",
  "area": "Combinatorics",
- "difficulty": 4.0,
+ "difficulty": 8.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Open question posed in Charikar–Goemans–Karloff (2006) and repeated in Svensson–Tarnawski–Végh and Traub–Vygen.",

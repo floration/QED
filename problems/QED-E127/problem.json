@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Two colours, sums of at most two: does every solution compute the halting problem?",
  "area": "Logic & computability",
- "difficulty": 4.0,
+ "difficulty": 5.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Hindman–Leader–Strauss (2003) question; Dzhafarov, Jockusch, Solomon, Westrick; Carlucci, Kołodziejczyk, Lepore, Zdanowski.",

@@ -9,9 +9,9 @@
  "credit": "Classical (Ingham 1942; Odlyzko–te Riele 1985); see Hurst 2018 for status.",
  "premise_risks": [
   "Low novelty: well-known open problem",
-  "Under RH the problem may be as hard as proving linear independence-type statements; difficulty is high"
+  "RH is now a theorem (Alpöge, Nov 2026, Lean-certified), so the problem lives in the RH setting: boundedness of M(x)/√x would force all zeros to be simple and contradict linear independence of the ordinates (Ingham 1942), but proving unboundedness seems to need linear-independence-type information or a multiple zero; difficulty is high."
  ],
- "plain": "The Mertens function M(x) adds up the Möbius function μ(n) for n ≤ x. Mertens guessed |M(x)| < √x, which was disproved in 1985 without an explicit counterexample, and we now know M(x)/√x exceeds about 1.83 in absolute value infinitely often. Prove that M(x)/√x is unbounded.",
+ "plain": "The Mertens function M(x) adds up the Möbius function μ(n) for n ≤ x. Mertens guessed |M(x)| < √x, which was disproved in 1985 without an explicit counterexample, and we now know M(x)/√x exceeds about 1.83 in absolute value infinitely often. Prove that M(x)/√x is unbounded. Now that RH is proved (Alpöge 2026), the easy route via a zero off the critical line is closed: unboundedness would follow from a multiple zero of ζ, or from Ingham's linear independence of the zero ordinates, and neither is known.",
  "math": "Let $M(x)=\\sum_{n\\le x}\\mu(n)$. Prove $\\limsup_{x\\to\\infty}|M(x)|/\\sqrt{x}=+\\infty$; i.e. for every $C>0$ there is $x$ with $|M(x)|>C\\sqrt x$.",
  "novelty": 1,
  "importance": 7,

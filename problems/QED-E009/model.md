@@ -3,15 +3,21 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Geometry
+Extended set · Grade C · QED Original · Geometry
 
-**Plain words:** In a round ball the only free-boundary minimal disks are flat slices through the centre (Nitsche). The superball x^4+y^4+z^4 <= 1 has nine flat ones, cut by its mirror planes. Is there also one that is not flat? A natural candidate has threefold symmetry about the diagonal (1,1,1).
+**Plain words:** In a round ball the only free-boundary minimal disks are flat slices through the centre (Nitsche). The superball x^4+y^4+z^4 <= 1 has nine flat ones, cut by its mirror planes. Is there also one that is not flat? A natural candidate has threefold symmetry about the diagonal (1,1,1). Such a symmetric disk cannot be flat: the only plane invariant under both symmetries is x+y+z=0, and it meets the boundary orthogonally only where xyz=0.
 
 **Math:** For $p>2$ let $B_p=\{|x|^p+|y|^p+|z|^p\le1\}$. Decide whether $B_4$ (more generally $B_p$) contains an embedded minimal disk $\Sigma$ with $\partial\Sigma\subset\partial B_p$, meeting $\partial B_p$ orthogonally, that is not contained in a plane. Specifically, show that there is one invariant under the rotation by $2\pi/3$ about the axis $\mathbb R(1,1,1)$ and under $v\mapsto-v$.
 
-**Reviewer note:** W
+**Reviewer note:** Open; equivariant free-boundary min-max (Ketover) is the natural route, but producing a disk with the required symmetry is not routine.
 
-Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+**References:**
+- J.C.C. Nitsche, Stationary partitioning of convex bodies, Arch. Rational Mech. Anal. 89 (1985)
+- M. Grüter and J. Jost, On embedded minimal disks in convex bodies, Ann. Inst. H. Poincaré Anal. Non Linéaire 3 (1986)
+- D. Ketover, Equivariant min-max theory, arXiv:1612.08692
+- https://arxiv.org/abs/2307.01828
+
+Difficulty estimate: 3.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE009.Claim` or a proof of `¬ OpenProblems.QEDE009.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E009/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

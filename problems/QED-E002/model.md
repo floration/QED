@@ -5,18 +5,18 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade C · Algebra
 
-**Plain words:** Take a polynomial map of 3-space with integer coefficients whose Jacobian determinant is identically 1 (a Keller map). Show that if it never sends two different integer points to the same point, then it is a polynomial automorphism.
+**Plain words:** Take a polynomial map of 3-space with integer coefficients whose Jacobian determinant is identically 1 (a Keller map). Prove or disprove: if it never sends two different integer points to the same point, then it is a polynomial automorphism. Caution: if some 3D Keller counterexample with F(0)=0 has only finitely many colliding integer pairs, then F(Nx)/N for suitable N is an integer Keller map injective on Z^3 that is not an automorphism.
 
-**Math:** Let $F\in\mathbb{Z}[x,y,z]^3$ with $\det JF\equiv 1$. Prove that if $F|_{\mathbb{Z}^3}$ is injective, then $F$ has a polynomial inverse (equivalently, by Bia{\l}ynicki-Birula--Rosenlicht, $F$ is injective on $\mathbb{C}^3$).
+**Math:** Let $F\in\mathbb{Z}[x,y,z]^3$ with $\det JF\equiv 1$. Prove or disprove: if $F|_{\mathbb{Z}^3}$ is injective, then $F$ has a polynomial inverse (equivalently, by Bia{\l}ynicki-Birula--Rosenlicht, $F$ is injective on $\mathbb{C}^3$). Caution: if some 3D Keller counterexample with $F(0)=0$ has only finitely many colliding integer pairs, then $F(Nx)/N$ for suitable $N$ is an integer Keller map injective on $\mathbb{Z}^3$ that is not an automorphism.
 
-**Reviewer note:** T
+**Reviewer note:** Posed as prove-or-disprove: the scaling F(Nx)/N could turn a 3D Keller counterexample with finitely many integer collisions into a refutation.
 
 **References:**
 - https://arxiv.org/abs/1502.00328
 - https://arxiv.org/abs/1712.02113
 - https://arxiv.org/abs/1705.10921
 
-Difficulty estimate: 3.6/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 3.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE002.Claim` or a proof of `¬ OpenProblems.QEDE002.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E002/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

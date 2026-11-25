@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Break the 5/8 barrier for primes with triply well-factorable weights",
  "area": "Number theory",
- "difficulty": 4.5,
+ "difficulty": 7.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "A. Pascadi, arXiv:2505.00653 (2025), Thm 1.3 and remarks on the 5/8 limit; J. D. Lichtman, arXiv:2309.08522 (2023); triply well-factorable weights from Maynard's equidistribution papers.",

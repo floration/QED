@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "The first decimal digit of the square-lattice site percolation threshold",
  "area": "Probability",
- "difficulty": 6.0,
+ "difficulty": 4.5,
  "grade": "C",
  "provenance": "Extension",
  "credit": "Wierman–Oberly 2024 (upper bound 0.666894); van den Berg–Ermakov 1996 (lower bound 0.556); Riordan–Walters 2007 (high-confidence numerics)",

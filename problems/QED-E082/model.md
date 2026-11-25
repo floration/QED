@@ -7,7 +7,7 @@ Extended set · Grade B · QED Curated · Complexity
 
 **Plain words:** For LWE with secret in Z_q^n (q = poly(n)) and errors uniform in {0,1}, given m = C*n samples for a fixed constant C > 1, either give a polynomial-time (or 2^{o(n)}) algorithm, or prove hardness from standard LWE/worst-case lattice problems for m = C*n (beyond the n(1+O(1/log n)) samples of Micciancio-Peikert).
 
-**Math:** Fix q = q(n) with 2 <= q(n) <= poly(n) and a constant C > 1; m = ceil(Cn). Decision binary-error LWE: given (A, b), A uniform in Z_q^{m x n}, b = As + e mod q (s uniform, e uniform in {0,1}^m) or b uniform. Show that for every such C and q either (a) some randomized 2^{o(n)}-time algorithm distinguishes with non-negligible advantage, or (b) the problem is hard for polynomial time (no non-negligible advantage) assuming standard decision LWE is hard for some standard parameter family (dimension polynomially related to n, poly(n) modulus and samples, discrete Gaussian error of width alpha q' >= 2 sqrt(n')). Known: Arora-Ge solves m ~ n^2 in poly time; Micciancio-Peikert give (b) for m = n(1+O(1/log n)).
+**Math:** Fix q=q(n) with 2<=q(n)<=poly(n), all of whose prime factors are at most n^{1/2+o(1)} (e.g. q<=sqrt(n), or q a power of 2), and a constant C>1; m=ceil(Cn). Decision binary-error LWE: given (A,b), A uniform in Z_q^{m x n}, b=As+e mod q (s uniform, e uniform in {0,1}^m) or b uniform. Show that for every such C and q either (a) some randomized 2^{o(n)}-time algorithm distinguishes with non-negligible advantage, or (b) the problem is polynomial-time hard assuming standard decision LWE is hard for some standard parameter family (dimension polynomially related to n, poly(n) modulus and samples, discrete Gaussian error of width alpha q' >= 2 sqrt(n')). Known: Arora-Ge solves m ~ n^2 in poly time; Micciancio-Peikert give (b) for m = n(1+O(1/log n)); for q with a prime factor n^{a+o(1)}, a>1/2, (a) follows from reduction mod p + normal form + ePrint 2026/2289.
 
 **Credit:** Micciancio, Peikert, Hardness of SIS and LWE with small parameters, CRYPTO 2013; Arora, Ge, ICALP 2011.
 
@@ -17,7 +17,7 @@ Extended set · Grade B · QED Curated · Complexity
 - Albrecht, Cid, Faugère, Fitzpatrick, Perret, Algebraic algorithms for LWE problems, ACM CCA 2015
 - Aaronson, That IACR preprint (blog post on Chen 2024), scottaaronson.blog/?p=7946
 
-Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 4.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE082.Claim` or a proof of `¬ OpenProblems.QEDE082.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E082/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

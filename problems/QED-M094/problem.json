@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Heat with a cosine reaction",
  "area": "PDE",
- "difficulty": 3.0,
+ "difficulty": 5.0,
  "grade": "B",
  "provenance": "Extension",
  "credit": "H. Fujita 1966 (critical exponent); R. Pinsky 1997 (weighted Fujita problem, a >= 0)",

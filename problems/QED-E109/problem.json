@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Liouville theorem for Lane-Emden with a shifted nonlinearity",
  "area": "PDE",
- "difficulty": 3.0,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Original",
  "plain": "Gidas-Spruck: -Delta u = u^p has no positive solution on R^n for subcritical p. Replace u^p by the value of u^p at a shifted point x+e. Is there still no positive solution, for every subcritical p?",

@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Smallest triangle-free 6-chromatic graph: is 40 vertices optimal?",
  "area": "Graph theory",
- "difficulty": 5.5,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Problem of determining n(k): Jensen-Toft 'Graph Coloring Problems'; bounds J. Goedgebeur (JGT 2020); n(5)=22 Jensen-Royle (1995).",

@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Do minimum-order k-chromatic graphs of girth at least g have girth exactly g?",
  "area": "Graph theory",
- "difficulty": 6.0,
+ "difficulty": 5.0,
  "grade": "B",
  "provenance": "Extension",
  "credit": "G. Exoo and J. Goedgebeur (2019), Question 1; restriction to k ≥ 4 added here",

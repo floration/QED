@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Optimal dimension dependence in the smoothed complexity of the simplex method",
  "area": "Complexity",
- "difficulty": 4.0,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Bach, Huiberts, Optimal smoothed analysis of the simplex method, arXiv:2504.04197 (2025; v2 May 2026).",

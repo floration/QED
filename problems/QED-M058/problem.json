@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Beat the (1-o(1)) log2 d exponent in quasi-polynomial polytope diameter bounds",
  "area": "Geometry",
- "difficulty": 4.5,
+ "difficulty": 6.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Kalai-Kleitman 1992; Todd 2014 (arXiv:1402.3579); Sukegawa; Liu-Ge-Ye 2026 (arXiv:2609.33434)",

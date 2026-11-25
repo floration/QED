@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Total colouring of planar graphs with maximum degree 6",
  "area": "Graph theory",
- "difficulty": 4.5,
+ "difficulty": 6.0,
  "grade": "B-",
  "provenance": "Curated",
  "credit": "Behzad/Vizing Total Colouring Conjecture; planar-case literature (Sanders-Zhao, Wang, Roussel, Zhu).",

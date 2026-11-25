@@ -3,7 +3,7 @@
  "set": "main",
  "title": "All-Edges Sparse Triangle below m^{4/3} on balanced instances",
  "area": "Complexity",
- "difficulty": 4.0,
+ "difficulty": 6.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Alman, Vassilevska Williams 2026, arXiv:2610.06783, Sec. 6; Patrascu, STOC 2010",

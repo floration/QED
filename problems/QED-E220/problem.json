@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Is there a cubic graph of girth 13 with fewer than 272 vertices?",
  "area": "Graph theory",
- "difficulty": 3.0,
+ "difficulty": 3.5,
  "grade": "C",
  "provenance": "Curated",
  "credit": "Cage problem (Tutte 1947); bounds from McKay–Myrvold–Nadon (1998) and the Exoo–Jajcay dynamic survey.",

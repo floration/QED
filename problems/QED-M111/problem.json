@@ -3,7 +3,7 @@
  "set": "main",
  "title": "An APN permutation of GF(2^8)",
  "area": "Algebra",
- "difficulty": 6.0,
+ "difficulty": 7.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "The 'big APN problem' (Dillon et al.; open since the 2009 n=6 discovery). Not named after a person.",

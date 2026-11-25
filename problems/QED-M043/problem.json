@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Three collinear points after the fall of 3SUM",
  "area": "Complexity",
- "difficulty": 3.5,
+ "difficulty": 5.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Alman & Vassilevska Williams, 'Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs', arXiv:2610.06783 (2026), Sec. 1 and Sec. 6.",

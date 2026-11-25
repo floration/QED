@@ -15,6 +15,7 @@ Extended set · Grade A · QED Curated · Graph theory
 - Very famous problem: low novelty, high difficulty
 - 'Moore graph' is a person-named object, but the question is not a named conjecture
 - Two 2026 partial-result papers are recent (one arXiv only); they do not affect the open status
+- Makhnev (arXiv:2010.13443, unrefereed) claims nonexistence; this is disputed in arXiv:2210.09577 ("Existence of a Moore graph of degree 57 is still open"), and the problem is generally regarded as open.
 
 **References:**
 - https://arxiv.org/abs/2210.09577
@@ -23,7 +24,7 @@ Extended set · Grade A · QED Curated · Graph theory
 - https://iris.unimore.it/retrieve/07e178c3-caa2-4fbe-8849-884c07027c7a/axioms-15-00332-1.pdf
 - https://epoch.ai/frontiermath/open-problems/missing-moore-graph
 
-Difficulty estimate: 7.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 6.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE117.Claim` or a proof of `¬ OpenProblems.QEDE117.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E117/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

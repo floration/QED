@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Median selection in 2.5n comparisons",
  "area": "Combinatorics",
- "difficulty": 6.5,
+ "difficulty": 7.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Classical gap (Blum et al. 1973; Schönhage–Paterson–Pippenger 1976; Dor–Zwick 1999/2001); 2.5n milestone from SPP's conditional bound.",

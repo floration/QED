@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Does Antihydra halt?",
  "area": "Logic & computability",
- "difficulty": 6.5,
+ "difficulty": 9.0,
  "grade": "B-",
  "provenance": "Curated",
  "credit": "bbchallenge community (Antihydra found 2024; reformulation by mxdys et al.); Ligocki, 'BB(6) is Hard (Antihydra)'",

@@ -1,14 +1,17 @@
 {
  "id": "QED-E105",
  "set": "extended",
- "title": "Push the GRH lower bound for Montgomery's F(alpha) beyond alpha = 1",
+ "title": "Push the Goldston–Gonek–Özlük–Snyder lower bound for Montgomery's F(alpha) beyond alpha = 1",
  "area": "Number theory",
- "difficulty": 5.0,
+ "difficulty": 6.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Goldston, Gonek, Özlük, Snyder (2000), 'On the pair correlation of zeros of the Riemann zeta-function', Proc. London Math. Soc.",
- "plain": "Montgomery's function F(α) is known only for |α|≤1 (on RH). Under GRH for Dirichlet L-functions, Goldston–Gonek–Özlük–Snyder proved F(α) ≥ 3/2−|α|−ε on 1≤|α|≤3/2, while the conjecture says F(α)=1 there. Improve this lower bound.",
- "math": "Assume GRH for all Dirichlet $L$-functions. Prove that for some $\\delta>0$ and all $\\alpha\\in[1,1+\\delta]$, $\\liminf_{T\\to\\infty}F(\\alpha,T)\\ge \\tfrac32-\\alpha+\\delta$, or prove $\\liminf_T \\int_{1}^{3/2}F(\\alpha,T)\\,d\\alpha>1/8$ (the value forced by the GGOS bound).",
+ "premise_risks": [
+  "RH is a theorem (Alpöge, Lean library released 20 Nov 2026, certified 21 Nov 2026 by the Lean FRO/Mathlib Initiative against Mathlib's RiemannHypothesis). GRH for Dirichlet L-functions is treated as proved on the strength of Alpöge's announcement (alpo.ge/remark.pdf) and his Lean archive; the public certification names only RH, so the Dirichlet part has not yet been certified independently. Hecke, Dedekind and other L-functions remain open."
+ ],
+ "plain": "Montgomery's function F(α) is known for |α|≤1; his theorem assumed RH, which is now proved (Alpöge 2026), so it is unconditional. Goldston–Gonek–Özlük–Snyder proved F(α) ≥ 3/2−|α|−ε on 1≤|α|≤3/2 assuming GRH for Dirichlet L-functions, which Alpöge also proved in Nov 2026, so their bound now holds unconditionally. The conjecture says F(α)=1 there. Improve this lower bound.",
+ "math": "Assume GRH for all Dirichlet $L$-functions (now a theorem, Alpöge 2026; kept as a hypothesis to match the Lean statement). Prove that for some $\\delta>0$ and all $\\alpha\\in[1,1+\\delta]$, $\\liminf_{T\\to\\infty}F(\\alpha,T)\\ge \\tfrac32-\\alpha+\\delta$, or prove $\\liminf_T \\int_{1}^{3/2}F(\\alpha,T)\\,d\\alpha>1/8$ (the value forced by the GGOS bound).",
  "novelty": 3,
  "importance": 5,
  "value": 4,

@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Is the Ramsey number R(5,5) equal to 43?",
  "area": "Graph theory",
- "difficulty": 6.5,
+ "difficulty": 8.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Conjecture R(5,5)=43: B. McKay and S. Radziszowski (1997); bounds: Exoo (1989), Angeltveit-McKay (2018, 2024).",

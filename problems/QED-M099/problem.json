@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Ising spin at a cube corner",
  "area": "Probability",
- "difficulty": 3.0,
+ "difficulty": 4.5,
  "grade": "A",
  "provenance": "Extension",
  "credit": "Chelkak, Hongler, Izyurov, Conformal invariance of spin correlations in the planar Ising model, Ann. Math. 2015 (arXiv:1202.2838)",

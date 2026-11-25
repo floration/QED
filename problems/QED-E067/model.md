@@ -5,19 +5,20 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade B · QED Curated · Algebra
 
-**Plain words:** The worst-case complete-pivoting growth is known exactly only for n ≤ 6 (values 1, 2, 2.25, 4, 4.1325, 5). The value g_8 = 8, attained by Hadamard matrices, is conjectured but unproven, and Hadamard matrices are known not to be optimal at n = 12 and 16. Determine g_7 and decide whether g_8 = 8.
+**Plain words:** The worst-case complete-pivoting growth is known exactly only for n ≤ 4 (values 1, 2, 2.25, 4). For n = 5 the best known value 4.1325 is only conjectured optimal, with proved upper bound 4.84 (Edelman–Urschel, arXiv:2602.20390), and for n = 6 the value 5 is only a lower bound. The value g_8 = 8, attained by Hadamard matrices, is conjectured but unproven, and Hadamard matrices are known not to be optimal at n = 12 and 16. Determine g_7 and decide whether g_8 = 8.
 
-**Math:** With $g_n$ as above (real matrices, complete pivoting), prove or disprove $g_8=8$, and determine $g_7$ (known lower bounds from Edelman–Urschel Table 1).
+**Math:** With $g_n$ as above (real matrices, complete pivoting), prove or disprove $g_8=8$ (equivalently $g_8\le 8$, since an $8\times8$ Hadamard matrix has growth exactly $8$). Determining $g_7$ (known lower bounds from Edelman–Urschel Table 1) is a separate question, not part of the claim. Background: $g_n$ is known exactly only for $n\le4$; $g_5\le4.84$ (arXiv:2602.20390).
 
 **Credit:** A. Edelman & J. Urschel 2023, arXiv:2303.04892 (also Cryer 1968, Gould 1991 for the g_n <= n history)
 
 **Rests on recent unrefereed work. Check these premises first:**
-- Exact values g_n are cited as known only for n ≤ 6 (g_5 = 4.1325, g_6 = 5); check against Edelman–Urschel 2023 before relying on them.
+- Exact values g_n are known only for n ≤ 4 (Cryer; Cohen: g_3 = 2.25, g_4 = 4). g_5 = 4.1325 is only conjectured (proved g_5 ≤ 4.84, Edelman–Urschel arXiv:2602.20390, preprint) and g_6 ≥ 5 is only a lower bound. Determining g_7 is therefore much harder than an n ≤ 6 baseline suggests.
 
 **References:**
 - https://arxiv.org/abs/2303.04892
+- https://arxiv.org/abs/2602.20390
 
-Difficulty estimate: 2.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 5.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE067.Claim` or a proof of `¬ OpenProblems.QEDE067.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E067/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

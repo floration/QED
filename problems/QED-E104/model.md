@@ -5,11 +5,15 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade B · QED Curated · Number theory
 
-**Plain words:** Under GRH, the low-lying zeros of L(s,χ_d) for quadratic characters are known to follow the symplectic random-matrix law only for test functions whose Fourier transform is supported in (−2,2). Go beyond 2.
+**Plain words:** The low-lying zeros of L(s,χ_d) for quadratic characters are known to follow the symplectic random-matrix law for test functions whose Fourier transform is supported in (−2,2) (Özlük–Snyder, Rubinstein and successors). Those results assumed GRH, which Alpöge proved for Dirichlet L-functions in Nov 2026, so they now hold unconditionally. Go beyond 2.
 
-**Math:** For the family of real primitive characters $\chi_{8d}$, $d$ odd squarefree, $X<d\le 2X$, and even Schwartz $\phi$ with $\operatorname{supp}\hat\phi\subset(-\sigma,\sigma)$, prove under GRH that $\frac1{|\mathcal F|}\sum_d\sum_{\gamma_d}\phi\!\big(\gamma_d\frac{\log X}{2\pi}\big)\to\int\phi(x)\big(1-\frac{\sin 2\pi x}{2\pi x}\big)dx$ for some $\sigma>2$.
+**Math:** For the family of real primitive characters $\chi_{8d}$, $d$ odd squarefree, $X<d\le 2X$, and even Schwartz $\phi$ with $\operatorname{supp}\hat\phi\subset(-\sigma,\sigma)$, prove, assuming GRH for Dirichlet $L$-functions (now a theorem, Alpöge 2026; kept as a hypothesis to match the Lean statement), that $\frac1{|\mathcal F|}\sum_d\sum_{\gamma_d}\phi\!\big(\gamma_d\frac{\log X}{2\pi}\big)\to\int\phi(x)\big(1-\frac{\sin 2\pi x}{2\pi x}\big)dx$ for some $\sigma>2$.
 
 **Credit:** Özlük–Snyder (Canad. J. Math. 58, 2006; earlier 1999 work) and Rubinstein (Duke 2001) for support (−2,2); Katz–Sarnak (1999) density conjectures.
+
+**Rests on recent unrefereed work. Check these premises first:**
+- RH is a theorem (Alpöge, Lean library released 20 Nov 2026, certified 21 Nov 2026 by the Lean FRO/Mathlib Initiative against Mathlib's RiemannHypothesis). GRH for Dirichlet L-functions is treated as proved on the strength of Alpöge's announcement (alpo.ge/remark.pdf) and his Lean archive; the public certification names only RH, so the Dirichlet part has not yet been certified independently. Hecke, Dedekind and other L-functions remain open.
+- With GRH-Dirichlet proved, the (−2,2) results are unconditional; extending the support past 2 remains open.
 
 **References:**
 - https://arxiv.org/abs/2002.11968
@@ -19,7 +23,7 @@ Extended set · Grade B · QED Curated · Number theory
 - arXiv:1710.06834
 - arXiv:2002.11968
 
-Difficulty estimate: 5.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 7.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE104.Claim` or a proof of `¬ OpenProblems.QEDE104.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E104/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

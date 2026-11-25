@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Does the cubic-residue graph on 127 vertices force a monochromatic triangle?",
  "area": "Graph theory",
- "difficulty": 5.0,
+ "difficulty": 4.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Folkman (1970) existence; problem of bounding F_e(3,3;4): Erdős, Graham prize; G127 candidate suggested by G. Exoo; bounds by Radziszowski-Xu, Lange-Radziszowski-Xu, Bikov-Nenov.",

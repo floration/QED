@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "A regular language of generalized star height two",
  "area": "Logic & computability",
- "difficulty": 4.5,
+ "difficulty": 8.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Classical problem (Eggan 1963 for ordinary star height; generalized version promoted by Brzozowski, Pin, Straubing, Thérien).",

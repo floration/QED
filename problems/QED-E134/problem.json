@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Turán density of the tight 5-cycle",
  "area": "Combinatorics",
- "difficulty": 4.0,
+ "difficulty": 6.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Conjectured value from the Mubayi–Rödl construction (the conjecture is usually attributed to them, but the problem is not person-named). Upper bound by Razborov. Related progress by Kamčev, Letzter, Pokrovskiy and the authors of arXiv:2506.03223.",

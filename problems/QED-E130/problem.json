@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Sign uncertainty on the line: reach 1/2",
  "area": "Analysis",
- "difficulty": 3.5,
+ "difficulty": 4.0,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Bourgain-Clozel-Kahane sign uncertainty constant; target 1/2 chosen as first value beyond reach of the 2017 rearrangement method (QED framing).",

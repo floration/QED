@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Reachability for two-interval piecewise affine maps",
  "area": "Logic & computability",
- "difficulty": 5.5,
+ "difficulty": 6.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Open problem as stated by Ghahremani, Kelmendi, Ouaknine (LICS 2023); the 2-D undecidability baseline is Koiran–Cosnard–Garzon (1994).",

@@ -1,22 +1,25 @@
-# QED-E105 — Push the GRH lower bound for Montgomery's F(alpha) beyond alpha = 1
+# QED-E105 — Push the Goldston–Gonek–Özlük–Snyder lower bound for Montgomery's F(alpha) beyond alpha = 1
 
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
 Extended set · Grade B · QED Extension · Number theory
 
-**Plain words:** Montgomery's function F(α) is known only for |α|≤1 (on RH). Under GRH for Dirichlet L-functions, Goldston–Gonek–Özlük–Snyder proved F(α) ≥ 3/2−|α|−ε on 1≤|α|≤3/2, while the conjecture says F(α)=1 there. Improve this lower bound.
+**Plain words:** Montgomery's function F(α) is known for |α|≤1; his theorem assumed RH, which is now proved (Alpöge 2026), so it is unconditional. Goldston–Gonek–Özlük–Snyder proved F(α) ≥ 3/2−|α|−ε on 1≤|α|≤3/2 assuming GRH for Dirichlet L-functions, which Alpöge also proved in Nov 2026, so their bound now holds unconditionally. The conjecture says F(α)=1 there. Improve this lower bound.
 
-**Math:** Assume GRH for all Dirichlet $L$-functions. Prove that for some $\delta>0$ and all $\alpha\in[1,1+\delta]$, $\liminf_{T\to\infty}F(\alpha,T)\ge \tfrac32-\alpha+\delta$, or prove $\liminf_T \int_{1}^{3/2}F(\alpha,T)\,d\alpha>1/8$ (the value forced by the GGOS bound).
+**Math:** Assume GRH for all Dirichlet $L$-functions (now a theorem, Alpöge 2026; kept as a hypothesis to match the Lean statement). Prove that for some $\delta>0$ and all $\alpha\in[1,1+\delta]$, $\liminf_{T\to\infty}F(\alpha,T)\ge \tfrac32-\alpha+\delta$, or prove $\liminf_T \int_{1}^{3/2}F(\alpha,T)\,d\alpha>1/8$ (the value forced by the GGOS bound).
 
 **Credit:** Goldston, Gonek, Özlük, Snyder (2000), 'On the pair correlation of zeros of the Riemann zeta-function', Proc. London Math. Soc.
+
+**Rests on recent unrefereed work. Check these premises first:**
+- RH is a theorem (Alpöge, Lean library released 20 Nov 2026, certified 21 Nov 2026 by the Lean FRO/Mathlib Initiative against Mathlib's RiemannHypothesis). GRH for Dirichlet L-functions is treated as proved on the strength of Alpöge's announcement (alpo.ge/remark.pdf) and his Lean archive; the public certification names only RH, so the Dirichlet part has not yet been certified independently. Hecke, Dedekind and other L-functions remain open.
 
 **References:**
 - https://www.cambridge.org/core/journals/proceedings-of-the-london-mathematical-society/article/on-the-pair-correlation-of-zeros-of-the-riemann-zetafunction/29A91CBF07210A94E8EEFEAFFBB9FDEE
 - https://arxiv.org/abs/2508.10857
 - https://myweb.ecu.edu/baluyots24/alternativehyp.pdf
 
-Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 6.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE105.Claim` or a proof of `¬ OpenProblems.QEDE105.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E105/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

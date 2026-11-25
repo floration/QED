@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Monochromatic rectangles in low-rank Boolean matrices: beating 2^{-sqrt r}",
  "area": "Complexity",
- "difficulty": 8.0,
+ "difficulty": 7.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Weakening of the log-rank conjecture (Lovász–Saks 1988); rectangle formulation Nisan–Wigderson 1995; sqrt barrier from Lovett 2016 and Sudakov–Tomon 2024.",

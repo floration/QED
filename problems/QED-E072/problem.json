@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Non-arithmetic tones of the cube",
  "area": "Analysis",
- "difficulty": 5.0,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Original",
  "plain": "Many vibration frequencies of a cube's surface come from flat tori and are rational multiples of pi squared. Prove that at least one frequency is not of this form.",

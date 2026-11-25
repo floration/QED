@@ -3,7 +3,7 @@
  "set": "main",
  "title": "Chaos in the double pendulum at every energy",
  "area": "Dynamics",
- "difficulty": 4.5,
+ "difficulty": 6.0,
  "grade": "B",
  "provenance": "Original",
  "plain": "The planar double pendulum with equal masses and equal arms looks chaotic at moderate energies but almost regular at very low and very high energies. Prove that it has genuine (positive-entropy) chaos at every energy above the rest state.",

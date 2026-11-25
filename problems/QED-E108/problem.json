@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "KdV with a cosine coefficient",
  "area": "PDE",
- "difficulty": 4.0,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Original",
  "plain": "Put a cos x in front of the cubic term of the modified KdV equation on the circle. The energy and the mean are still conserved, but the L² norm is not, and the energy no longer has a definite sign. Can smooth solutions blow up in finite time?",

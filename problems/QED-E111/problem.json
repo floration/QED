@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Quintic Szego growth",
  "area": "PDE",
- "difficulty": 5.0,
+ "difficulty": 5.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Gérard–Grellier (cubic Szegő equation, turbulent solutions); Thirouin, quadratic Szegő equation (arXiv:1710.01512).",

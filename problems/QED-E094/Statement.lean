@@ -1,19 +1,17 @@
 import Mathlib
 /-! QED-E094: Graceful labellings of forests
-A forest with m edges and c trees has n = m + c vertices. Label them bijectively with
-0, 1, …, n − 1 so that the m edge differences |ℓ(u) − ℓ(v)| are pairwise distinct. Show that
-every forest has such a labelling. (The case tree + isolated vertex says every tree has an
-injective labelling into {0, …, m+1} with distinct edge differences.)
-Informal statement: Every forest F with m edges and c ≥ 1 components has a bijection
-ℓ : V(F) → {0, 1, …, m + c − 1} such that the values |ℓ(u) − ℓ(v)|, uv ∈ E(F), are pairwise
-distinct.
-Formalization notes: A forest on n vertices is an acyclic `SimpleGraph (Fin n)`
-(`SimpleGraph.IsAcyclic`); for a forest m + c = n, so the label set {0, …, m+c−1} is
-{0, …, n−1} and a bijective labelling is an equivalence `ℓ : Fin n ≃ Fin n`. Differences are
-computed in ℤ (no ℕ subtraction). "Pairwise distinct over edges" is: if two adjacent pairs
-(u,v), (u',v') have equal differences then they are the same unordered edge. n = 0 (c = 0) is
-included but trivial. Proving `Claim` proves the statement for all forests (it would follow
-from the Graceful Tree Conjecture); `¬Claim` = an explicit forest with no such labelling.
+Informal statement (narrowed per referee): every forest F with m edges and c ≥ 2 components
+has a bijection ℓ : V(F) → {0, 1, …, m + c − 1} such that the values |ℓ(u) − ℓ(v)|, uv ∈ E(F),
+are pairwise distinct. (Key case F = T ⊔ K₁: every tree with m edges has an injective labelling
+into {0, …, m+1} with distinct edge differences.) The case c = 1 is the graceful tree
+conjecture and is excluded.
+Formalization notes: a forest on n vertices is an acyclic `SimpleGraph (Fin n)`
+(`SimpleGraph.IsAcyclic`); for a forest m + c = n, so c ≥ 2 is m + 2 ≤ n with m the number of
+edges (`Nat.card G.edgeSet`, finite since the vertex type is finite, so no ncard junk). The
+label set {0, …, m+c−1} is {0, …, n−1} and a bijective labelling is an equivalence
+`ℓ : Fin n ≃ Fin n`. Differences are computed in ℤ. "Pairwise distinct over edges": if two
+adjacent pairs (u,v), (u',v') have equal differences then they are the same unordered edge.
+`¬Claim` = an explicit forest with ≥ 2 components and no such labelling.
 -/
 namespace OpenProblems.QEDE094
 
@@ -25,7 +23,7 @@ def DistinctDiffLabelling {n : ℕ} (G : SimpleGraph (Fin n)) (ℓ : Fin n ≃ F
     (u = u' ∧ v = v') ∨ (u = v' ∧ v = u')
 
 def Claim : Prop :=
-  ∀ (n : ℕ) (G : SimpleGraph (Fin n)), G.IsAcyclic →
+  ∀ (n : ℕ) (G : SimpleGraph (Fin n)), G.IsAcyclic → Nat.card G.edgeSet + 2 ≤ n →
     ∃ ℓ : Fin n ≃ Fin n, DistinctDiffLabelling G ℓ
 
 end OpenProblems.QEDE094

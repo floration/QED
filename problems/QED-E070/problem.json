@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Fibonacci-modulated growing Jacobi matrix",
  "area": "Analysis",
- "difficulty": 3.0,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Extension",
  "credit": "Extends Janas-Naboko (periodic modulations, e.g. arXiv:math/0605593) and Swiderski (arXiv:1707.06486) on periodically modulated Jacobi matrices.",

@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "3-query locally decodable codes: beat the cubic lower bound",
  "area": "Coding theory",
- "difficulty": 7.5,
+ "difficulty": 7.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Katz-Trevisan (2000); barrier per Alrabiah-Guruswami-Kothari-Manohar (2023)",

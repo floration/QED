@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Are VT codes optimal single-deletion-correcting codes for every length?",
  "area": "Coding theory",
- "difficulty": 7.0,
+ "difficulty": 6.5,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Varshamov-Tenengolts (1965), Levenshtein; optimality question recorded by Sloane (2002)",

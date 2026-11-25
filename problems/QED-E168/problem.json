@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Real-rooted h*-polynomials of hypersimplices",
  "area": "Combinatorics",
- "difficulty": 5.0,
+ "difficulty": 4.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "Natural surviving special case of Ferroni's matroid-polytope real-rootedness conjecture (see Ferroni–Jochemko–Schröter, arXiv:2106.08183); unimodality version from De Loera–Haws–Köppe",

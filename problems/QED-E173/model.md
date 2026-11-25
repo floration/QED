@@ -5,7 +5,7 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade A · QED Curated · Number theory
 
-**Plain words:** The Mertens function M(x) adds up the Möbius function μ(n) for n ≤ x. Mertens guessed |M(x)| < √x, which was disproved in 1985 without an explicit counterexample, and we now know M(x)/√x exceeds about 1.83 in absolute value infinitely often. Prove that M(x)/√x is unbounded.
+**Plain words:** The Mertens function M(x) adds up the Möbius function μ(n) for n ≤ x. Mertens guessed |M(x)| < √x, which was disproved in 1985 without an explicit counterexample, and we now know M(x)/√x exceeds about 1.83 in absolute value infinitely often. Prove that M(x)/√x is unbounded. Now that RH is proved (Alpöge 2026), the easy route via a zero off the critical line is closed: unboundedness would follow from a multiple zero of ζ, or from Ingham's linear independence of the zero ordinates, and neither is known.
 
 **Math:** Let $M(x)=\sum_{n\le x}\mu(n)$. Prove $\limsup_{x\to\infty}|M(x)|/\sqrt{x}=+\infty$; i.e. for every $C>0$ there is $x$ with $|M(x)|>C\sqrt x$.
 
@@ -13,7 +13,7 @@ Extended set · Grade A · QED Curated · Number theory
 
 **Rests on recent unrefereed work. Check these premises first:**
 - Low novelty: well-known open problem
-- Under RH the problem may be as hard as proving linear independence-type statements; difficulty is high
+- RH is now a theorem (Alpöge, Nov 2026, Lean-certified), so the problem lives in the RH setting: boundedness of M(x)/√x would force all zeros to be simple and contradict linear independence of the ordinates (Ingham 1942), but proving unboundedness seems to need linear-independence-type information or a multiple zero; difficulty is high.
 
 **References:**
 - https://arxiv.org/pdf/1610.08551
@@ -21,7 +21,7 @@ Extended set · Grade A · QED Curated · Number theory
 - https://arxiv.org/abs/2511.14736
 - https://arxiv.org/abs/2208.06141
 
-Difficulty estimate: 8.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+Difficulty estimate: 8.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
 Either a proof of `OpenProblems.QEDE173.Claim` or a proof of `¬ OpenProblems.QEDE173.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E173/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.

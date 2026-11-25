@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "A 3×3 magic square of distinct squares",
  "area": "Number theory",
- "difficulty": 5.5,
+ "difficulty": 8.5,
  "grade": "B",
  "provenance": "Curated",
  "credit": "LaBar (College Math. J. 1984); Gardner (Quantum 1996); Guy UPINT D15.",

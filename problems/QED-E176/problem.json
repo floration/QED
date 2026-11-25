@@ -3,7 +3,7 @@
  "set": "extended",
  "title": "Block sensitivity below the fourth power of sensitivity",
  "area": "Complexity",
- "difficulty": 7.0,
+ "difficulty": 6.0,
  "grade": "A",
  "provenance": "Curated",
  "credit": "Open question noted after Huang (2019); stated in Aaronson–Ben-David–Kothari–Rao–Tal (2021) and Chakraborty–Gál (MFCS 2026).",
