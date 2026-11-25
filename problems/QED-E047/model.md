@@ -27,7 +27,7 @@ Extended set · Grade B- · QED Extension · Topology
 Difficulty estimate: 5.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDE047.Claim` or a proof of `¬ OpenProblems.QEDE047.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E047/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Mathlib has no knot theory: no knots up to ambient isotopy, connected sum, crossing changes or unknotting number.
+Either a proof of `OpenProblems.QEDE047.Claim` or a proof of `¬ OpenProblems.QEDE047.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E047/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

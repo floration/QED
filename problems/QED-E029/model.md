@@ -7,7 +7,7 @@ Extended set · Grade C · QED Curated · Graph theory
 
 **Plain words:** Orient every edge of a planar graph. An oriented colouring colours vertices so adjacent vertices differ and all arcs between two colour classes point the same way. Every oriented planar graph can be coloured with 80 colours, and some need 18. The gap has barely moved since 1994: narrow it.
 
-**Math:** Let $\chi_o(\mathcal P)=\max\chi_o(\vec G)$ over orientations $\vec G$ of simple planar graphs, where $\chi_o(\vec G)$ is the least order of a tournament $T$ admitting a homomorphism $\vec G\to T$. Known: $18\le\chi_o(\mathcal P)\le80$. Improve either bound substantially, or at least exhibit an oriented planar graph with $\chi_o\ge19$ or prove $\chi_o(\mathcal P)\le79$.
+**Math:** Let $\chi_o(\mathcal P)=\max\chi_o(\vec G)$ over orientations of simple planar graphs ($\chi_o$ = least order of a tournament receiving a homomorphism). Known $18\le\chi_o(\mathcal P)\le80$. Formal target: strict improvement of the upper bound, $\chi_o(\mathcal P)\le79$ (the lower-bound direction, an example with $\chi_o\ge19$, is the alternative improvement and is not the formal Claim).
 
 **Reviewer note:** Known: Upper 80: Raspaud-Sopena, Inform. Process. Lett. 51 (1994), via acyclic 5-colourability (Borodin). Lower bound history: 15 (Sopena), 16 and 17 (Marshall), 18 (Marshall, Ars Combin. 2015). Clow, 'MAD phase transitions in the oriented chromatic number', arXiv:2607.22915 (2026), confirms both bounds are still current.
 
@@ -24,7 +24,7 @@ Extended set · Grade C · QED Curated · Graph theory
 Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDE029.Claim` or a proof of `¬ OpenProblems.QEDE029.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E029/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Mathlib lacks planar graphs; oriented homomorphisms to tournaments are easy to define, but planarity is not available.
+Either a proof of `OpenProblems.QEDE029.Claim` or a proof of `¬ OpenProblems.QEDE029.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E029/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

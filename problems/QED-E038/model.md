@@ -7,7 +7,7 @@ Extended set · Grade C · QED Curated · Probability
 
 **Plain words:** Colour each square of an infinite chessboard black independently with probability p. There is a critical p above which an infinite connected black cluster appears; simulations put it at about 0.5927, but nobody has a formula. The best proved statements only say it lies between 0.556 and 0.6669. Prove a tighter bound on either side.
 
-**Math:** Let $p_c=p_c^{\mathrm{site}}(\mathbb Z^2)$ be the critical probability for Bernoulli site percolation on the square lattice (nearest-neighbour adjacency). Known rigorously: $0.556 < p_c < 0.666894$. Improve either endpoint rigorously (numerically $p_c\approx0.59274605$).
+**Math:** Let $p_c=p_c^{\mathrm{site}}(\mathbb Z^2)$. Known rigorously $0.556<p_c<0.666894$. Formal target: improve the upper bound at its published precision, $p_c<0.6668$ (more generally improve either endpoint rigorously).
 
 **Reviewer note:** Known: Lower $p_c>0.556$: van den Berg & Ermakov, Random Structures Algorithms 8 (1996) 199–212. Unreviewed claim $p_c\ge0.5567$ (computer-assisted, personal page kaust-a-laut.github.io, not peer reviewed). Upper $p_c<0.666894$: Wierman & Oberly, 'A new upper bound for the site percolation threshold of the square lattice', in Combinatorics, Graph Theory and Computing (Springer, 2024), improving Wierman's 0.679492 (CPC 1995, substitution method). Numerical $p_c\approx0.59274605$ (Jacobsen 2015 and others; non-rigorous).
 
@@ -27,7 +27,7 @@ Extended set · Grade C · QED Curated · Probability
 Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDE038.Claim` or a proof of `¬ OpenProblems.QEDE038.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E038/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Mathlib lacks percolation infrastructure: the product Bernoulli measure on {0,1}^(ℤ²) together with an infinite-cluster event and its critical probability. The problem is also open-ended ('improve a bound'), so there is no single Claim.
+Either a proof of `OpenProblems.QEDE038.Claim` or a proof of `¬ OpenProblems.QEDE038.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E038/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

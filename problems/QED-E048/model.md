@@ -7,7 +7,7 @@ Extended set · Grade B- · QED Curated · Topology
 
 **Plain words:** Build a knot out of straight sticks joined end to end. The stick number of a knot is the fewest sticks that can make it. If all the sticks must also be the same length, you might need more. Is there any knot that really does need more sticks when they all have to be the same length?
 
-**Math:** For a knot type $K$ let $s(K)$ be the minimum number of edges of a polygonal knot in $\mathbb R^3$ of type $K$, and $s_{eq}(K)$ the minimum over polygons with all edges of equal length. Trivially $s_{eq}(K)\ge s(K)$. Is there a knot type $K$ with $s_{eq}(K)>s(K)$? Alternatively, prove $s_{eq}=s$ for all $K$, or for an infinite family such as all torus knots.
+**Math:** For a knot type $K$ let $s(K)$ be the minimum number of edges of a polygonal knot of type $K$, and $s_{eq}(K)$ the minimum over equilateral polygons. Formal Claim: there is a knot type $K$ with $s_{eq}(K)>s(K)$ (¬Claim: $s_{eq}=s$ for all $K$; the infinite-family variant is not formalized).
 
 **Reviewer note:** Known: Posed by Rawdon–Scharein (2002). After the equilateral 9-stick $9_{29}$ (Theorem 4, proved via a Millett–Rawdon perturbation condition), no knot with ≤10 crossings has differing best known bounds for $s$ and $s_{eq}$ (Cantarella–Rechnitzer–Schumacher–Shonkwiler, arXiv:2508.18263, Sec. 4). Lower bounds for $s$ (Calvo's crossing-number bound, superbridge index) do not depend on edge lengths. Upper bounds on $s_{eq}$ in terms of crossing number: Kim–No–Oh, arXiv:1401.7383.
 
@@ -26,7 +26,7 @@ Extended set · Grade B- · QED Curated · Topology
 Difficulty estimate: 5.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDE048.Claim` or a proof of `¬ OpenProblems.QEDE048.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E048/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Mathlib has no knot types, meaning polygonal knots up to ambient isotopy. Stick numbers need minimization over isotopy classes of polygons in ℝ³.
+Either a proof of `OpenProblems.QEDE048.Claim` or a proof of `¬ OpenProblems.QEDE048.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E048/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

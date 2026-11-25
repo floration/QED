@@ -14,8 +14,7 @@
  ],
  "plain": "Some shapes cannot tile the whole plane but can still be surrounded by a ring of copies of themselves, and that ring by another ring, and so on, up to some limit. The number of rings possible is the shape's Heesch number. The record is 6, found in 2021. Find a shape whose Heesch number is finite but at least 7.",
  "math": "For a closed topological disk $T\\subset\\mathbb R^2$ that does not tile the plane, the Heesch number $H(T)$ is the largest $k$ such that there is a patch of congruent copies of $T$ made of $T$ surrounded by $k$ successive coronas. Each corona is a ring of copies covering a neighbourhood of the previous patch's boundary, and each intermediate union must be a closed disk (no holes). Exhibit $T$ with $7\\le H(T)<\\infty$. Polyform version: exhibit a polyomino, polyhex or polyiamond with $7\\le H<\\infty$.",
- "formal_status": "not_formalized",
- "lean_gap": "Mathlib lacks closed topological disks as tiles, patches and coronas of congruent copies, and a usable 'union is a closed disk' (simple connectivity of polyform unions) predicate. The polyomino version is finitary but needs a combinatorial hole-free corona definition that is error-prone to write without a checker.",
+ "formal_status": "formalized",
  "review_note": "Known: Record $H=6$ (B. Bašić, 2021). Kaplan's SAT method ('Heesch numbers of unmarked polyforms', arXiv:2105.09438, Contrib. Discrete Math. 17 (2022)) computed Heesch numbers exhaustively for polyforms up to 19-ominoes, 17-hexes and 24-iamonds and found nothing above the record. In $\\mathbb E^3$, finite Heesch numbers are unbounded (arXiv:2610.24281, Oct 2026), which says nothing about the plane. Listed as unsolved by Epoch AI FrontierMath (hole-free $H_c$ convention, with a 200-cell polyform witness format).",
  "refs": [
   "https://epoch.ai/frontiermath/open-problems/heesch-number",

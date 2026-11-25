@@ -7,7 +7,7 @@ Extended set · Grade B- · QED Curated · Geometry
 
 **Plain words:** Regular tetrahedra cannot fill space, and the best packings found fill about 85.6% of it. Yet the best proved limit only says a packing fills at most 1 − 0.00000000000000000000000026 of space. Prove a macroscopic upper bound, for instance that no packing of congruent regular tetrahedra fills more than 99% of space.
 
-**Math:** Let $\delta_T$ be the maximal packing density of congruent copies of the regular tetrahedron in $\mathbb R^3$ (rotations allowed). Known: $4000/4671\approx0.856347\le\delta_T\le 1-2.6\times10^{-25}$. Prove an upper bound $\delta_T\le 1-c$ with $c$ macroscopic (illustratively $c=10^{-2}$, i.e. $\delta_T\le0.99$), ideally via a method that scales toward the $0.8563$ construction.
+**Math:** Let $\delta_T$ be the maximal packing density of congruent regular tetrahedra in $\mathbb R^3$. Known $0.856347\le\delta_T\le1-2.6\times10^{-25}$. Formal target: the macroscopic bound $\delta_T\le0.99$.
 
 **Reviewer note:** Known: Lower $4000/4671$: Chen, Engel, Glotzer, DCG 43 (2010), arXiv:1001.0586 (dimer packings; cf. Kallus–Elser–Gravel, Torquato–Jiao). Upper $1-2.6\times10^{-25}$: Gravel, Elser, Kallus, 'Upper bound on the packing density of regular tetrahedra and octahedra', DCG 46 (2011), arXiv:1008.2830. SDP framework for congruent copies: Dostert, Guzmán, de Oliveira Filho, Vallentin, arXiv:1308.4893 (computed for pentagons, not tetrahedra). Translative case: arXiv:1208.0420.
 
@@ -26,7 +26,7 @@ Extended set · Grade B- · QED Curated · Geometry
 Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDE044.Claim` or a proof of `¬ OpenProblems.QEDE044.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E044/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Mathlib has no definition of packing density for congruent copies (a limsup over balls of covered volume, with rotations via the Euclidean group) and no regular tetrahedron as a named object. Both could be built, but the question is open-ended ('a macroscopic bound'), and any fixed threshold is arbitrary.
+Either a proof of `OpenProblems.QEDE044.Claim` or a proof of `¬ OpenProblems.QEDE044.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E044/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

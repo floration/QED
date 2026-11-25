@@ -28,7 +28,7 @@ Extended set · Grade B- · QED Curated · Probability
 Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDE046.Claim` or a proof of `¬ OpenProblems.QEDE046.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E046/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Mathlib has no random sequential adsorption process or jamming limit. One would have to build the continuum RSA process (a Poisson arrival stream with rejection) and its L→∞ limit from measure-theoretic scratch.
+Either a proof of `OpenProblems.QEDE046.Claim` or a proof of `¬ OpenProblems.QEDE046.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E046/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
