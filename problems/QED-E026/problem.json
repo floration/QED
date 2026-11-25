@@ -13,6 +13,9 @@
  ],
  "plain": "A total colouring colours both vertices and edges so that touching objects (adjacent vertices, edges sharing an end, an edge and its endpoint) get different colours. It is conjectured that Δ+2 colours always suffice, where Δ is the maximum degree. For planar graphs this is proved for every Δ except Δ=6: show every planar graph with maximum degree 6 has a total colouring with 8 colours.",
  "math": "Prove that every simple planar graph $G$ with $\\Delta(G)=6$ satisfies $\\chi''(G)\\le 8$ (or find a counterexample).",
+ "novelty": 2,
+ "importance": 4,
+ "value": 6,
  "formal_status": "formalized",
  "review_note": "Known: Delta <= 5: Kostochka (all graphs). Planar Delta=7: Sanders-Zhao. Planar Delta >= 8: earlier results (Borodin et al.). Planar Delta=6 is known under extra hypotheses: no 4-cycles (Wang et al.), no adjacent triangles (Sun et al.), each vertex misses some k-cycle with 3<=k<=8 (Roussel), no 4-fan (Zhu-Xu), and special 4-cycle conditions (arXiv:2609.19503, 2026); see arXiv:2507.12737. E. Zhu, arXiv:2610.32717 (2026 preprint): every maximal planar graph with Delta <= 6 is totally 8-colourable; this does not cover all planar graphs because completing to a triangulation can raise Delta.",
  "refs": [

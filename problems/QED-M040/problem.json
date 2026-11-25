@@ -12,6 +12,9 @@
  ],
  "plain": "Bach and Huiberts (2025) found a simplex method with smoothed complexity O(σ^{-1/2} d^{11/4} log^{7/4} n) pivots and showed σ^{-1/2} is optimal. In the dimension d, the best lower bound is only about d^{1/2}. Close the gap in d.",
  "math": "Model: rows (ā_i, b̄_i) ∈ ℝ^{d+1}, i ≤ n, of Euclidean norm ≤ 1, each perturbed by independent N(0, σ² I), giving P = {x : ⟨a_i,x⟩ ≤ b_i}. Let diam(P) be the combinatorial diameter of its vertex-edge graph. Known (Bach–Huiberts): E[diam] = Ω(σ^{-1/2} d^{1/2} (ln 4/σ)^{-1/4}) at n = ⌊(4/σ)^d⌋, and a simplex method with O(σ^{-1/2} d^{11/4} log^{7/4} n) pivots exists. Claim: there are b > 1/2, c > 0 and K such that for all large d and all 0 < σ ≤ 1/d, some n ≤ (4/σ)^{Kd} and some unperturbed rows of norm ≤ 1 give E[diam(P)] ≥ c σ^{-1/2} d^b (log 4/σ)^{-K}. (The companion algorithmic question, whether a polynomial-time-per-pivot rule with Phase I achieves O(σ^{-1/2} d^a (log n)^{O(1)}) for some a < 11/4, has no canonical formal model and is not part of Claim.)",
+ "novelty": 6,
+ "importance": 6,
+ "value": 6,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/2504.04197",

@@ -13,6 +13,9 @@
  ],
  "plain": "Given a tripartite graph with parts of sizes n, n, sqrt(n) and O(n^{3/2}) edges, determine for every edge whether it lies in a triangle in O(n^{2-eps}) time (combinatorial or algebraic).",
  "math": "Is there ε > 0 and a randomized word-RAM algorithm that, for every tripartite graph on A, B, C with |A| = |B| = n, |C| = ceil(sqrt n) and O(n^{3/2}) edges, decides for every edge whether it lies in a triangle in time O(n^{2-ε})? (Main question; a fine-grained reduction from balanced All-Edges Sparse Triangle at m^{4/3-o(1)} would be evidence for a negative answer but is not itself a disproof.)",
+ "novelty": 6,
+ "importance": 8,
+ "value": 6,
  "formal_status": "formalized",
  "refs": [
   "Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",

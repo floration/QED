@@ -1,0 +1,23 @@
+{
+ "id": "QED-E068",
+ "set": "extended",
+ "title": "Singularities of the permanental hypersurface",
+ "area": "Algebra",
+ "difficulty": 3.0,
+ "grade": "B",
+ "provenance": "Original",
+ "premise_risks": [
+  "arXiv:2603.15579 (2026 preprint) is listed in refs and may be the source of the current Sing-codimension bounds (6 <= r <= 2n) quoted in M; these are not used by Claim."
+ ],
+ "plain": "The hypersurface where the n x n determinant vanishes has rational singularities, the mildest kind that matters for much of its geometry. Decide whether the hypersurface where the n x n permanent vanishes has rational singularities for every n, and compute its minimal exponent, a finer measure of how mild a singularity is.",
+ "math": "Let $X_n=\\{\\operatorname{per}_n=0\\}\\subset\\mathbb A^{n^2}_{\\mathbb C}$ and let $\\tilde\\alpha(X_n)$ be Saito's minimal exponent (the smallest root of $b_{\\operatorname{per}_n}(-s)/(1-s)$), so that $\\operatorname{lct}(\\mathbb A^{n^2},X_n)=\\min\\{1,\\tilde\\alpha(X_n)\\}$ and $X_n$ has rational singularities iff $\\tilde\\alpha(X_n)>1$. For $n=2$, $X_2$ is a nondegenerate quadric cone in $\\mathbb A^4$ and $\\tilde\\alpha=2$. For $\\det_n$ the Bernstein--Sato polynomial is $\\prod_{i=1}^n(s+i)$, so $\\tilde\\alpha(\\{\\det_n=0\\})=2$ for all $n$. Determine $\\tilde\\alpha(X_n)$ for all $n\\ge3$ (in particular for $n=3$), and decide whether $X_n$ has rational singularities for every $n$. Note: restricting to a generic linear subspace of dimension $r=\\operatorname{codim}\\operatorname{Sing}(X_n)$ gives an isolated homogeneous singularity, so $\\tilde\\alpha(X_n)\\ge r/n$. Since $6\\le r\\le 2n$ is known and $r=2n$ is conjectured, that conjecture would give $\\tilde\\alpha(X_n)\\ge2$ and rational singularities. Sharpened question: is $\\tilde\\alpha(X_n)=2$ for all $n$, or does $\\tilde\\alpha(X_n)\\to\\infty$?",
+ "novelty": 6,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2402.17839",
+  "https://arxiv.org/html/2603.15579v1",
+  "https://arxiv.org/pdf/2105.01245"
+ ]
+}

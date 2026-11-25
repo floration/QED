@@ -9,6 +9,9 @@
  "credit": "Erdős-Rado 1960 (sunflower conjecture); log k barrier discussed in Alweiss-Lovett-Wu-Zhang, Annals 2021, and Rao, The story of sunflowers, JLMS 2026 (arXiv:2509.14790)",
  "plain": "Show every family of more than (o(log k))^k sets of size k (e.g. (log k)^{(1-c)k} or (log log k)^{O(k)}) contains a sunflower with 3 petals.",
  "math": "Let f(k,3) be the least m such that every family of m distinct k-element sets contains a 3-petal sunflower. Known: f(k,3) <= (C log k)^k (ALWZ, Rao, Bell-Chueluecha-Warnke). Prove f(k,3) <= (eps(k) log k)^k for some eps(k)->0, e.g. f(k,3) <= (log k)^{(1-c)k} for a constant c>0.",
+ "novelty": 3,
+ "importance": 8,
+ "value": 7,
  "formal_status": "formalized",
  "refs": [
   "Alweiss, Lovett, Wu, Zhang, Improved bounds for the sunflower lemma, Annals of Math 2021",

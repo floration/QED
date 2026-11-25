@@ -13,6 +13,9 @@
  ],
  "plain": "Some shapes made of squares, like the L-tetromino, can tile a rectangle. The order of such a shape is the fewest copies that can do it. Apart from rectangles themselves (order 1), every shape with a known order needs an even number of copies, and order 3 is proved impossible. Is there a non-rectangular polyomino whose order is odd?",
  "math": "For a polyomino $P$ that tiles some rectangle with congruent copies (rotations and reflections allowed), let $\\mathrm{ord}(P)$ be the minimum number of copies in such a tiling. Does there exist a non-rectangular $P$ with $\\mathrm{ord}(P)$ odd? First test case: $\\mathrm{ord}(P)=5$.",
+ "novelty": 3,
+ "importance": 3,
+ "value": 5,
  "formal_status": "formalized",
  "review_note": "Known: Order 3 is impossible: Stewart & Wormstein, 'Polyominoes of order 3 do not exist', JCTA 61 (1992) 130–136. Maltby, 'Trisecting a rectangle', JCTA 66 (1994): no non-rectangular 3-piece congruent dissection; M. Reid noted on math-fun that the 5-, 7- and 9-piece dissection cases remain open. Odd tilings, as opposed to odd minimal tilings, exist: Reid, 'Many L-shaped polyominoes have odd rectangular packings', Ann. Comb. 18 (2014) 341–357. OEIS A126140 (maximum order for n cells): 'No example of a non-rectangular polyomino is known for which its order is odd.'",
  "refs": [

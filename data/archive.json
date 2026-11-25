@@ -8253,6 +8253,24 @@
 "reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Frankl–Füredi 2/7 conjecture)"
 },
 {
+"id": "QED-E030",
+"title": "Order of magnitude of ex(n, C_8)",
+"area": "Combinatorics",
+"plain": "How many edges can a graph on n vertices have without containing a cycle of length 8? It is known to be at most about n^{5/4}, but the best constructions are smaller by a polynomial factor, unlike lengths 4, 6 and 10 where matching constructions exist. Find a C_8-free graph with about n^{5/4} edges, or prove a smaller upper bound.",
+"math": "Determine whether $\\mathrm{ex}(n,C_8)=\\Theta(n^{5/4})$. Known: $\\Omega(n^{6/5})\\le\\mathrm{ex}(n,C_8)\\le O(n^{5/4})$. (In general $\\mathrm{ex}(n,C_{2k})=O(n^{1+1/k})$ by Bondy-Simonovits, with matching order known only for $k\\in\\{2,3,5\\}$; the lower bound $n^{6/5}$ comes from generalized hexagons and equals the Lazebnik-Ustimenko-Woldar bound $n^{1+2/(3k-3+\\epsilon)}$ with $k=4,\\epsilon=1$.) Equivalently (given the upper bound): are there $c>0$ and $N$ such that for every $n\\ge N$ some $C_8$-free graph on $n$ vertices has $\\ge c\\,n^{5/4}$ edges? Any exponent above $6/5$ would also be progress.",
+"difficulty": 6.5,
+"reason": "moved to the main set as QED-M103 (Nov 2026 rescoring: total 17 ≥ 17)"
+},
+{
+"id": "QED-E031",
+"title": "An effective bound for the sum-free excess",
+"area": "Combinatorics",
+"plain": "Every set of N nonzero integers contains a sum-free subset (no x+y=z inside it) of size a bit more than N/3; Bedert (2025) showed the excess grows at least like log log N. It is also known that you cannot always beat N/3 by more than o(N), but that proof gives no rate. Prove a quantitative version: some N-element sets have no sum-free subset larger than N/3 + N/(log N)^c.",
+"math": "Let $S(N)=\\min_{A\\subset\\mathbb Z\\setminus\\{0\\},\\,|A|=N}\\max\\{|B|:B\\subseteq A\\text{ sum-free}\\}$. Known: $N/3+c\\log\\log N\\le S(N)\\le N/3+o(N)$, with the $o(N)$ ineffective. Prove that there is $c>0$ with $S(N)\\le N/3+O\\big(N/(\\log N)^{c}\\big)$. Any explicitly quantified $o(N)$ (e.g. $N/(\\log\\log N)^{c}$) would be partial progress.",
+"difficulty": 5.0,
+"reason": "moved to the main set as QED-M104 (Nov 2026 rescoring: total 17 ≥ 17)"
+},
+{
 "id": "QED-E033",
 "title": "Ideal Prouhet–Tarry–Escott solution of size 11",
 "area": "Number theory",
@@ -8262,6 +8280,15 @@
 "reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Prouhet–Tarry–Escott problem)"
 },
 {
+"id": "QED-E034",
+"title": "Two sixth powers equal to four",
+"area": "Number theory",
+"plain": "Can the sum of two sixth powers of positive integers equal the sum of four sixth powers? For sixth powers, three-equals-three examples are plentiful and two-equals-five examples are known, but nobody has found a two-equals-four example or proved there are none.",
+"math": "Does $x_1^6+x_2^6=y_1^6+y_2^6+y_3^6+y_4^6$ have a solution in positive integers? (Any such solution is automatically nontrivial: cancelling a common term would leave a $6.1.3$ solution, itself unknown.) This is a boundary case $m+n=k$ of the Lander–Parkin–Selfridge conjecture for $k=6$, where only $6.3.3$ solutions are known.",
+"difficulty": 4.5,
+"reason": "retired Nov 2026: rescored 9/30 (a search problem with little consequence either way)"
+},
+{
 "id": "QED-E035",
 "title": "Pin down the Schur–Siegel–Smyth trace constant",
 "area": "Number theory",
@@ -8269,6 +8296,15 @@
 "math": "Let $\\lambda_{\\mathrm{SSS}}$ be the smallest limit point of $\\operatorname{tr}(\\alpha)/\\deg(\\alpha)$ over totally positive algebraic integers. Known $1.80220\\le\\lambda_{\\mathrm{SSS}}\\le1.8216$ (lower bound stated non-strictly, arXiv:2609.29298, unrefereed). Formal target: strict improvement of the lower bound, $\\lambda_{\\mathrm{SSS}}>1.80220$.",
 "difficulty": 5.0,
 "reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Schur–Siegel–Smyth trace problem)"
+},
+{
+"id": "QED-E038",
+"title": "Squeezing the square-lattice site percolation threshold",
+"area": "Probability",
+"plain": "Colour each square of an infinite chessboard black independently with probability p. There is a critical p above which an infinite connected black cluster appears; simulations put it at about 0.5927, but nobody has a formula. The best proved statements only say it lies between 0.556 and 0.6669. Prove a tighter bound on either side.",
+"math": "Let $p_c=p_c^{\\mathrm{site}}(\\mathbb Z^2)$. Known rigorously $0.556<p_c<0.666894$. Formal target: improve the upper bound at its published precision, $p_c<0.6668$ (more generally improve either endpoint rigorously).",
+"difficulty": 4.0,
+"reason": "withdrawn Nov 2026 for refactoring: rescored 9/30 (target 0.6668 is too small a step); will return with a stronger target after review"
 },
 {
 "id": "QED-E039",
@@ -8307,6 +8343,15 @@
 "reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Palásti's conjecture)"
 },
 {
+"id": "QED-E047",
+"title": "Does the trefoil have a symbiont?",
+"area": "Topology",
+"plain": "The unknotting number of a knot is the fewest crossing changes needed to turn it into an unknotted loop. In 2025 it was shown that tying two knots together end to end can need fewer changes than the two knots need separately, and in 2026 that every torus knot except possibly the trefoil has a partner like this. Does the trefoil, the simplest knot, also have such a partner? The most likely candidate is the 10-crossing knot 10_6, whose own unknotting number is still unknown (it is 2 or 3).",
+"math": "Write $u(K)$ for the unknotting number and $\\#$ for connected sum. Knots $K,K'$ are symbionts if $u(K\\#K')<u(K)+u(K')$. Is there a knot $K$, with some choice of mirror image, such that $u(3_1\\#K)<1+u(K)$? By Scharlemann's theorem any such $K$ has $u(K)\\ge2$. Concrete subquestion: is $u(10_6)=3$? Brittenham–Hermiller prove $u(3_1\\#10_6)\\le3$ for the mirror choice with $|\\sigma(3_1\\#10_6)|=2$, so $u(10_6)=3$ would give a positive answer.",
+"difficulty": 5.5,
+"reason": "moved to the main set as QED-M105 (Nov 2026 rescoring: total 17 ≥ 17)"
+},
+{
 "id": "QED-E052",
 "title": "A shape with Heesch number 7",
 "area": "Geometry",
@@ -8316,6 +8361,276 @@
 "reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Heesch's problem)"
 },
 {
+"id": "QED-E055",
+"title": "Beat the 4-cycle lower bound for cube-free graphs",
+"area": "Graph theory",
+"plain": "How many edges can an n-vertex graph have without containing the 3-dimensional cube Q3 (8 vertices, 12 edges)? Erdos and Simonovits proved about n^{8/5} is an upper bound, but the best lower bound is still about n^{3/2}, from graphs with no 4-cycle at all (every 4-cycle-free graph is cube-free). Find cube-free graphs with polynomially more edges than that, or show that no such graphs exist.",
+"math": "Let $\\mathrm{ex}(n,Q_3)$ be the maximum number of edges in an $n$-vertex simple graph with no subgraph isomorphic to the cube $Q_3$. Known: $(\\tfrac12+o(1))n^{3/2}\\le \\mathrm{ex}(n,Q_3)= O(n^{8/5})$. Decide whether $\\liminf_{n\\to\\infty}\\dfrac{\\log \\mathrm{ex}(n,Q_3)}{\\log n}>\\dfrac32$, i.e. whether there is $\\varepsilon>0$ with $\\mathrm{ex}(n,Q_3)\\ge n^{3/2+\\varepsilon}$ for all large $n$. (Erdos conjectured the stronger $\\mathrm{ex}(n,Q_3)=\\Theta(n^{8/5})$.)",
+"difficulty": 7.5,
+"reason": "moved to the main set as QED-M106 (Nov 2026 rescoring: total 18 ≥ 17)"
+},
+{
+"id": "QED-E057",
+"title": "The Thorp shuffle mixes in O(log n) steps",
+"area": "Probability",
+"plain": "Take a deck of n = 2^d cards and cut it into two equal halves. For each i, the i-th card of each half are placed next to each other, with a fair coin deciding which goes on top. Repeat. A counting argument shows about 2d shuffles are needed before the deck can be close to uniformly random. Prove that a constant times d shuffles always suffice.",
+"math": "Let $n=2^d$, $h=n/2$. For $\\xi\\in\\{0,1\\}^h$ let $\\sigma_\\xi\\in S_n$ put the cards from positions $i$ and $i+h$ into positions $2i,2i+1$, in that order if $\\xi_i=0$ and swapped if $\\xi_i=1$ ($0\\le i<h$). Let $\\mu_d$ be uniform on $\\{\\sigma_\\xi\\}$ and $t_{\\rm mix}(d)=\\min\\{t:\\|\\mu_d^{*t}-U_{S_n}\\|_{TV}\\le 1/4\\}$. Prove there is an absolute constant $C$ with $t_{\\rm mix}(d)\\le Cd$ for all $d\\ge1$. (Counting the support gives $t_{\\rm mix}(d)\\ge(2-o(1))d$.)",
+"difficulty": 6.5,
+"reason": "moved to the main set as QED-M107 (Nov 2026 rescoring: total 19 ≥ 17)"
+},
+{
+"id": "QED-E058",
+"title": "Does the variance of the LCS of two random binary strings tend to infinity?",
+"area": "Probability",
+"plain": "Pick two independent uniformly random binary strings of length n and let L_n be the length of their longest common subsequence. Its mean is about 0.81n and its variance is at most n/4. Show that the variance tends to infinity, i.e. that L_n is not concentrated within a bounded window around its mean. (Linear order of the variance is believed, but even unboundedness is open.)",
+"math": "For independent uniform $X,Y\\in\\{0,1\\}^n$ let $L_n=\\mathrm{LCS}(X,Y)$. Prove that $\\lim_{n\\to\\infty}\\mathrm{Var}(L_n)=\\infty$. (Known: $\\mathrm{Var}(L_n)\\le n/4$; the stronger $\\mathrm{Var}(L_n)\\ge cn$ is the uniform case of Waterman's conjecture.)",
+"difficulty": 6.5,
+"reason": "moved to the main set as QED-M108 (Nov 2026 rescoring: total 18 ≥ 17)"
+},
+{
+"id": "QED-E059",
+"title": "Are random Cayley graphs of S_n expanders?",
+"area": "Probability",
+"plain": "Pick two uniformly random permutations s, t of n symbols and run the random walk on the group they generate (with high probability all of S_n or A_n) that at each step multiplies by one of s, t, s^-1, t^-1 chosen uniformly. Is the spectral gap of this walk bounded below by a fixed positive constant, with probability tending to 1 as n grows? Specific bounded generating sets of S_n are known to give expanders, but for random generators the best proven gap still tends to 0 polynomially in n.",
+"math": "For $\\sigma,\\tau\\in S_n$ let $H=\\langle\\sigma,\\tau\\rangle$ and $Pf(x)=\\tfrac14\\sum_{g\\in\\{\\sigma^{\\pm1},\\tau^{\\pm1}\\}}f(xg)$ on $\\ell^2(H)$, with second-largest eigenvalue $\\lambda_2(\\sigma,\\tau)$ (largest eigenvalue on $\\{f:\\sum_x f(x)=0\\}$). Prove or disprove: there is an absolute $\\varepsilon>0$ such that, for $\\sigma,\\tau$ independent and uniform in $S_n$, $\\Pr[\\lambda_2(\\sigma,\\tau)\\le 1-\\varepsilon]\\to1$ as $n\\to\\infty$.",
+"difficulty": 7.5,
+"reason": "moved to the main set as QED-M109 (Nov 2026 rescoring: total 20 ≥ 17)"
+},
+{
+"id": "QED-E061",
+"title": "Logarithmically many conjugacy classes",
+"area": "Algebra",
+"plain": "Every finite group of order n splits into conjugacy classes. Is there one fixed constant c>0 such that every finite group of order n has at least c*log n conjugacy classes? The best known lower bounds lose a power of log log n, and the question is whether that loss is real.",
+"math": "Let $k(G)$ denote the number of conjugacy classes of a finite group $G$. Is $\\inf\\{k(G)/\\log|G| : G \\text{ finite}, |G|\\ge 2\\}>0$? Equivalently, either prove $k(G)\\ge c\\log|G|$ for an absolute $c>0$ and all finite $G$, or exhibit finite groups $G_i$ with $k(G_i)/\\log|G_i|\\to0$.",
+"difficulty": 6.5,
+"reason": "moved to the main set as QED-M110 (Nov 2026 rescoring: total 19 ≥ 17)"
+},
+{
+"id": "QED-E062",
+"title": "An APN permutation of GF(2^8)",
+"area": "Algebra",
+"plain": "A function f on the field with 256 elements is almost perfect nonlinear (APN) if, for every nonzero shift a, the difference f(x+a)+f(x) takes each value at most twice. APN bijections would be ideal S-boxes against differential attacks. In even dimension the only APN bijections known live on 64 elements (found in 2009). Does an APN bijection of GF(2^8) exist?",
+"math": "Does there exist a bijection $f:\\mathbb F_{2^8}\\to\\mathbb F_{2^8}$ such that for all $a\\in\\mathbb F_{2^8}^{\\times}$ and all $b\\in\\mathbb F_{2^8}$, $\\#\\{x\\in\\mathbb F_{2^8}: f(x+a)+f(x)=b\\}\\le 2$?",
+"difficulty": 6.0,
+"reason": "moved to the main set as QED-M111 (Nov 2026 rescoring: total 17 ≥ 17)"
+},
+{
+"id": "QED-E063",
+"title": "Word problem for one-relation monoids",
+"area": "Logic & computability",
+"plain": "Take a monoid with a single defining relation u = v between two words. Is its word problem always decidable: for each such monoid, is there an algorithm that, given two words, decides whether they are equal in it? This is open even though the corresponding question for one-relator groups was settled long ago.",
+"math": "For a finite alphabet $A$ and $u,v\\in A^*$, let $\\equiv_{u,v}$ be the smallest congruence on $A^*$ containing $(u,v)$. Problem: does every one-relation monoid $\\mathrm{Mon}\\langle A\\mid u=v\\rangle$ have decidable word problem, i.e. is $\\{(w_1,w_2): w_1\\equiv_{u,v}w_2\\}$ decidable for every fixed $A,u,v$? Board Claim: yes. (Uniform variant: the set of all $(A,u,v,w_1,w_2)$ with $w_1\\equiv_{u,v}w_2$ is decidable. By Adian--Oganesyan (1978; two-generator form 1987) it suffices to treat $\\mathrm{Mon}\\langle a,b\\mid bUa=aVa\\rangle$ and $\\mathrm{Mon}\\langle a,b\\mid bUa=a\\rangle$, $U,V\\in\\{a,b\\}^*$; both cases remain open. Undecidability for one fixed such monoid settles the problem negatively.)",
+"difficulty": 5.0,
+"reason": "moved to the main set as QED-M112 (Nov 2026 rescoring: total 19 ≥ 17)"
+},
+{
+"id": "QED-E064",
+"title": "Big line or six visible points",
+"area": "Geometry",
+"plain": "Two points of a finite set in the plane see each other if the segment between them passes through no other point of the set. Prove that for every l there is an N such that any N points in the plane contain either l points on a line or 6 points that all see each other. This is known for 5 points that all see each other (for every l), and since 2026 for 6 such points when l = 4.",
+"math": "For finite $P\\subset\\mathbb R^2$, call $p,q\\in P$ visible if $[p,q]\\cap P=\\{p,q\\}$. Claim: for every $\\ell\\ge 3$ there is $N(\\ell)$ such that every $P\\subset\\mathbb R^2$ with $|P|\\ge N(\\ell)$ contains $\\ell$ collinear points or $6$ pairwise visible points.",
+"difficulty": 3.5,
+"reason": "moved to the main set as QED-M113 (Nov 2026 rescoring: total 18 ≥ 17)"
+},
+{
+"id": "QED-E065",
+"title": "Is there an aperiodic polyomino?",
+"area": "Geometry",
+"plain": "A polyomino is a shape made of unit squares glued edge to edge with no holes. In 2023 a single tile was found that tiles the plane only non-periodically, but it is built from kites, not squares. Is there a polyomino that tiles the plane (rotations and reflections allowed) but has no tiling that a translation maps onto itself?",
+"math": "A polyomino is a finite $P\\subset\\mathbb Z^2$ such that the union of the closed unit squares $c+[0,1]^2$, $c\\in P$, is a closed topological disk. A tiling by $P$ is a set $\\mathcal T$ of tiles $g(P)$, with $g(x)=Ax+b$, $A\\in D_4\\subset GL_2(\\mathbb Z)$ and $b\\in\\mathbb Z^2$, that partition $\\mathbb Z^2$. $P$ is aperiodic if some tiling exists but no tiling satisfies $\\mathcal T+v=\\mathcal T$ for any $v\\in\\mathbb Z^2\\setminus\\{0\\}$. Problem: does an aperiodic polyomino exist? Board Claim: yes. A proof that every polyomino that tiles also has a periodic tiling settles the problem negatively. (Variant: allow holes, i.e. require only that $P$ is edge-connected.)",
+"difficulty": 4.5,
+"reason": "moved to the main set as QED-M114 (Nov 2026 rescoring: total 19 ≥ 17)"
+},
+{
+"id": "QED-E066",
+"title": "Returning to the identity in SL(3,Z)",
+"area": "Logic & computability",
+"plain": "You are given finitely many 3x3 integer matrices with determinant 1. Can some nonempty product of them (in any order, with repetition) equal the identity matrix? For 2x2 matrices there is an algorithm, and for 4x4 matrices it is known that none exists. Decide whether an algorithm exists for 3x3.",
+"math": "Let $\\mathcal I_3=\\{(M_1,\\dots,M_k): k\\ge1,\\ M_i\\in SL(3,\\mathbb Z),\\ \\exists\\, m\\ge1,\\ i_1,\\dots,i_m\\in\\{1,\\dots,k\\}:\\ M_{i_1}\\cdots M_{i_m}=I_3\\}$, with instances given as finite lists of integer matrices. Problem: is $\\mathcal I_3$ decidable? Board Claim: $\\mathcal I_3$ is decidable. A proof of undecidability settles the problem negatively.",
+"difficulty": 5.0,
+"reason": "moved to the main set as QED-M115 (Nov 2026 rescoring: total 19 ≥ 17)"
+},
+{
+"id": "QED-M001",
+"title": "Is the complete-pivoting growth factor exactly 8 for 8x8 matrices?",
+"area": "Algebra",
+"plain": "The worst-case complete-pivoting growth is known exactly only for n ≤ 6 (values 1, 2, 2.25, 4, 4.1325, 5). The value g_8 = 8, attained by Hadamard matrices, is conjectured but unproven, and Hadamard matrices are known not to be optimal at n = 12 and 16. Determine g_7 and decide whether g_8 = 8.",
+"math": "With $g_n$ as above (real matrices, complete pivoting), prove or disprove $g_8=8$, and determine $g_7$ (known lower bounds from Edelman–Urschel Table 1).",
+"difficulty": 2.5,
+"reason": "moved to the extended set as QED-E067 (Nov 2026 rescoring: total 14 < 17)"
+},
+{
+"id": "QED-M003",
+"title": "Singularities of the permanental hypersurface",
+"area": "Algebra",
+"plain": "The hypersurface where the n x n determinant vanishes has rational singularities, the mildest kind that matters for much of its geometry. Decide whether the hypersurface where the n x n permanent vanishes has rational singularities for every n, and compute its minimal exponent, a finer measure of how mild a singularity is.",
+"math": "Let $X_n=\\{\\operatorname{per}_n=0\\}\\subset\\mathbb A^{n^2}_{\\mathbb C}$ and let $\\tilde\\alpha(X_n)$ be Saito's minimal exponent (the smallest root of $b_{\\operatorname{per}_n}(-s)/(1-s)$), so that $\\operatorname{lct}(\\mathbb A^{n^2},X_n)=\\min\\{1,\\tilde\\alpha(X_n)\\}$ and $X_n$ has rational singularities iff $\\tilde\\alpha(X_n)>1$. For $n=2$, $X_2$ is a nondegenerate quadric cone in $\\mathbb A^4$ and $\\tilde\\alpha=2$. For $\\det_n$ the Bernstein--Sato polynomial is $\\prod_{i=1}^n(s+i)$, so $\\tilde\\alpha(\\{\\det_n=0\\})=2$ for all $n$. Determine $\\tilde\\alpha(X_n)$ for all $n\\ge3$ (in particular for $n=3$), and decide whether $X_n$ has rational singularities for every $n$. Note: restricting to a generic linear subspace of dimension $r=\\operatorname{codim}\\operatorname{Sing}(X_n)$ gives an isolated homogeneous singularity, so $\\tilde\\alpha(X_n)\\ge r/n$. Since $6\\le r\\le 2n$ is known and $r=2n$ is conjectured, that conjecture would give $\\tilde\\alpha(X_n)\\ge2$ and rational singularities. Sharpened question: is $\\tilde\\alpha(X_n)=2$ for all $n$, or does $\\tilde\\alpha(X_n)\\to\\infty$?",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E068 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M007",
+"title": "Charge on a Fermat conductor",
+"area": "Analysis",
+"plain": "Put a unit of electric charge on a perfectly conducting solid x^4+y^4+z^4 <= 1. Show that the surface charge is thinnest exactly at the six flat points (+-1,0,0),... and thickest exactly at the eight points in the diagonal directions.",
+"math": "Let $K=\\{x^4+y^4+z^4\\le1\\}\\subset\\mathbb R^3$ and let $\\mu=\\rho\\,d\\sigma$ be its Newtonian (capacitary) equilibrium measure, $\\sigma$ surface measure on $\\partial K$ ($\\rho$ is real-analytic and positive since $\\partial K$ is analytic). Prove that $\\min_{\\partial K}\\rho$ is attained exactly at $(\\pm1,0,0),(0,\\pm1,0),(0,0,\\pm1)$ and $\\max_{\\partial K}\\rho$ exactly at $3^{-1/4}(\\pm1,\\pm1,\\pm1)$.",
+"difficulty": 3.5,
+"reason": "moved to the extended set as QED-E069 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M008",
+"title": "Fibonacci-modulated growing Jacobi matrix",
+"area": "Analysis",
+"plain": "Take a Jacobi matrix with zero diagonal and off-diagonal weights sqrt(n). Double the weight at every position where the Fibonacci word has a 1. Periodic modulations of power-growing weights are known to produce spectral phase transitions. Determine the spectral type for this aperiodic modulation.",
+"math": "Let $f=f_1f_2f_3\\cdots=0100101001001\\cdots\\in\\{0,1\\}^{\\mathbb N}$ be the Fibonacci word, the fixed point of $0\\mapsto01,\\ 1\\mapsto0$. Let $J$ be the Jacobi operator on $\\ell^2(\\mathbb N)$ with $(Ju)_n=a_{n-1}u_{n-1}+a_nu_{n+1}$, where $a_n=\\sqrt n\\,(1+f_n)$ and $a_0u_0:=0$. Since $\\sum 1/a_n=\\infty$, $J$ is self-adjoint (Carleman). Determine the spectral type of $J$. In particular: is $\\sigma_{ac}(J)\\neq\\emptyset$? Is $\\sigma_{ac}(J)=\\mathbb R$? Is the spectrum on some interval pure point or singular continuous?",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E070 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M011",
+"title": "Maximal eigenfunction growth beyond surfaces of revolution",
+"area": "Analysis",
+"plain": "On the round sphere, some eigenfunctions are as peaked as theory allows, because every geodesic leaving the pole comes back to it. Sogge and Zelditch proved that on any real-analytic surface, maximally peaked eigenfunctions force such a 'pole'. Is rotational symmetry also forced: must such a surface be a surface of revolution?",
+"math": "Let $(M,g)$ be a compact connected boundaryless real-analytic Riemannian surface with $\\Delta_g e_j=-\\lambda_j^2e_j$, $\\|e_j\\|_{L^2}=1$. Say $g$ has maximal eigenfunction growth if $\\limsup_j \\|e_j\\|_{L^\\infty}/\\lambda_j^{1/2}>0$ for some orthonormal eigenbasis. Decide whether every such $(M,g)$ carries a nontrivial isometric $S^1$-action, i.e. is a surface of revolution. (Necessary condition, Sogge-Zelditch 2016: $M$ has a pole $p$, meaning all geodesics from $p$ return smoothly closed at a common time $2T_p$.)",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E071 (Nov 2026 rescoring: total 12 < 17)"
+},
+{
+"id": "QED-M012",
+"title": "Non-arithmetic tones of the cube",
+"area": "Analysis",
+"plain": "Many vibration frequencies of a cube's surface come from flat tori and are rational multiples of pi squared. Prove that at least one frequency is not of this form.",
+"math": "Let $S$ be the boundary of the unit cube $[0,1]^3$ with its intrinsic flat metric (8 cone points of angle $3\\pi/2$), and let $\\Delta$ be the Friedrichs extension of the Laplacian on $S$. Prove that some eigenvalue of $\\Delta$ is not in $\\pi^2\\mathbb{Q}$.",
+"difficulty": 5.0,
+"reason": "moved to the extended set as QED-E072 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M013",
+"title": "Spikes at the primes",
+"area": "Analysis",
+"plain": "Put a bump of fixed height at every prime on the half-line lattice and study the electron (discrete Schrodinger operator). What kind of spectrum does it have inside the free band (-2,2)? If the primes behaved like a random sparse set (Cramer model), the states would be localized (pure point spectrum); is that true for the actual primes?",
+"math": "Let $(Hu)(n)=u(n+1)+u(n-1)+\\lambda\\mathbf 1_{\\mathbb P}(n)u(n)$ on $\\ell^2(\\mathbb N)$ with Dirichlet condition $u(0)=0$, $\\lambda\\ne0$. Determine the spectral type of $H$ on $(-2,2)$. In particular: is the spectral measure restricted to $(-2,2)$ pure point (with exponentially or sub-exponentially decaying eigenfunctions), or does it have a singular continuous part, e.g. near $E=0$?",
+"difficulty": 5.5,
+"reason": "moved to the extended set as QED-E073 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M014",
+"title": "Two-frequency localization",
+"area": "Analysis",
+"plain": "Take a one-dimensional lattice Schrödinger operator whose potential is the sum of two cosines with frequencies √2 and √3, and make the coupling strong. Prove that for these specific frequencies, not just for almost every frequency pair, almost every phase gives localized eigenfunctions that decay exponentially.",
+"math": "For $\\lambda>0$ and $\\theta\\in\\mathbb T^2$ let $(H_{\\lambda,\\theta}\\psi)(n)=\\psi(n+1)+\\psi(n-1)+\\lambda\\big(\\cos2\\pi(n\\sqrt2+\\theta_1)+\\cos2\\pi(n\\sqrt3+\\theta_2)\\big)\\psi(n)$ on $\\ell^2(\\mathbb Z)$. Prove there is $\\lambda_0$ such that for all $\\lambda\\ge\\lambda_0$ and Lebesgue-a.e. $\\theta$, $H_{\\lambda,\\theta}$ has pure point spectrum with exponentially decaying eigenfunctions (Anderson localization).",
+"difficulty": 4.5,
+"reason": "moved to the extended set as QED-E074 (Nov 2026 rescoring: total 14 < 17)"
+},
+{
+"id": "QED-M015",
+"title": "Wind-driven fire confinement threshold",
+"area": "Analysis",
+"plain": "A fire spreads from a point, faster downwind: speed a + b cos(theta) in direction theta (0<=b<a). Firefighters build a barrier at speed sigma. Let sigma*(a,b) be the smallest speed that can confine the fire. Known: 1.626(a-b) <= sigma* <= 2 max (a+b cos theta) sin theta. Improve either bound, especially in the strong-wind limit b/a -> 1, where the lower bound tends to 0 but the upper bound stays near 2.6a.",
+"math": "With F_b = conv{r e^{i theta}: 0<=r<=1+b cos theta}, R_0 the open unit disc and Bressan-admissible barriers, prove that for some fixed b in (0,1) the fire can be confined with some sigma < 2 max_theta (1+b cos theta) sin theta, i.e. Bressan's anisotropic upper bound is not sharp.",
+"difficulty": 3.3,
+"reason": "moved to the extended set as QED-E075 (Nov 2026 rescoring: total 10 < 17)"
+},
+{
+"id": "QED-M017",
+"title": "Blank jigsaw with few edge shapes",
+"area": "Combinatorics",
+"plain": "A jigsaw with no picture can only be solved from the shapes of its pieces. Each internal edge is one of k shapes (a tab that fits only its own matching blank), and pieces may be turned. How small can k be if some n×n blank jigsaw still goes together in exactly one way? Counting shows k must be at least about √n, and random puzzles need about n.",
+"math": "An $n\\times n$ jigsaw with $k$ edge types is a map assigning to each internal edge of the $n\\times n$ grid a type in $[k]$ and an orientation (which side carries the tab); border edges are flat. Its pieces are the $n^2$ unit squares, each regarded as a distinct physical object carrying its four (type, tab/blank) labels up to rotation. An assembly is a placement of all pieces bijectively on the cells, each rotated by a multiple of $90^\\circ$, so that every internal edge joins a tab and a blank of the same type and all flat edges lie on the border. Let $k(n)$ be the least $k$ for which some $n\\times n$ jigsaw with $k$ edge types has exactly one assembly up to the four rotations of the whole square. Determine the order of $k(n)$; in particular, is $k(n)=\\Theta(\\sqrt n)$?",
+"difficulty": 2.0,
+"reason": "moved to the extended set as QED-E076 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M020",
+"title": "Critical linear firefighter rate on Z^3",
+"area": "Combinatorics",
+"plain": "On the 3D grid, a finite fire spreads to all unprotected neighbours each step, and at step t you may protect about ct new vertices. It is known that linear growth is the right order. Elementary arguments show that rate c>8 always contains the fire and that c<32/27 does not. Narrow this gap, or find the exact critical rate.",
+"math": "Let c* = inf{c : for every finite initial fire B_0 ⊂ Z^3 there is a protection schedule with at most ⌊ct⌋ newly protected vertices at step t that keeps the total burnt set finite}. Elementary: the growth recursion |B_{t+1}| ≥ |B_t| + |∂B_t| − c(t+1)(t+2)/2 with the Wang–Wang vertex-isoperimetric inequality in Z^3 gives c* ≥ 32/27; numerics suggest a static wall gives c* ≲ 6.4. Target: prove c* > 32/27, i.e. some rate c > 32/27 fails to contain some finite outbreak.",
+"difficulty": 2.5,
+"reason": "moved to the extended set as QED-E077 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M021",
+"title": "Distinct character degrees of the symmetric group",
+"area": "Combinatorics",
+"plain": "Conjugate partitions always give representations of S_n of the same dimension, so at most about half of the p(n) irreducible representations can have distinct dimensions. Decide whether the fraction of distinct dimensions tends to a limit, and whether that limit is positive.",
+"math": "Let d(n) = #{f^λ : λ ⊢ n} be the number of distinct irreducible character degrees of S_n and p(n) the number of partitions of n. Prove or disprove: d(n)/p(n) converges to a positive limit L as n → ∞.",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E078 (Nov 2026 rescoring: total 12 < 17)"
+},
+{
+"id": "QED-M022",
+"title": "Is the Petersen graph common?",
+"area": "Combinatorics",
+"plain": "Color the edges of a huge complete graph red and blue. Does a random coloring minimize the number of single-color copies of the Petersen graph?",
+"math": "Let $P$ be the Petersen graph ($10$ vertices, $15$ edges) and $m(P)=\\lim_{n\\to\\infty}\\min_{\\chi}\\frac{\\#\\{\\text{monochromatic copies of }P\\text{ in }(K_n,\\chi)\\}}{\\#\\{\\text{copies of }P\\text{ in }K_n\\}}$, minimum over red/blue colorings $\\chi$ of $E(K_n)$. Is $m(P)=2^{-14}$, i.e. is $P$ common? Equivalently, is $t(P,W)+t(P,1-W)\\ge 2^{-14}$ for every graphon $W$? If not, determine $m(P)$.",
+"difficulty": 3.5,
+"reason": "moved to the extended set as QED-E079 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M026",
+"title": "The complex of planar graphs",
+"area": "Combinatorics",
+"plain": "Planar graphs on n labelled vertices form a simplicial complex, because deleting an edge keeps a graph planar. It is pure, since every maximal planar graph has 3n-6 edges. Its homology turns out not to be that of a wedge of top-dimensional spheres: already for n=6 it is concentrated two degrees lower and has 2-torsion. Determine its homology.",
+"math": "Let $\\Pi_n$ be the simplicial complex on vertex set $E(K_n)$ whose faces are edge sets of planar graphs; it is pure of dimension $3n-7$. Determine $\\tilde H_*(\\Pi_n;\\mathbb Z)$, or at least $\\tilde H_*(\\Pi_n;\\mathbb Q)$, for all $n$. Known: $\\Pi_4$ is a simplex, $\\Pi_5=\\partial\\Delta^9\\cong S^8$. For $n=6$ (computed exactly): $\\tilde H_*(\\Pi_6;\\mathbb Q)$ is $\\mathbb Q^{15}$ in degree $9=3n-9$ and $0$ elsewhere; $\\tilde H_*(\\Pi_6;\\mathbb F_2)$ is $\\mathbb F_2^{15},\\mathbb F_2,\\mathbb F_2$ in degrees $9,10,11$, so $\\tilde H_{10}(\\Pi_6;\\mathbb Z)$ has $2$-torsion and $\\Pi_6$ is not a wedge of spheres. The mod-2 top class is the sum of all triangulations: every face of dimension $3n-8$ of $\\Pi_6$ lies in an even number (2 or 4) of facets. Questions: (a) is $\\tilde H_*(\\Pi_n;\\mathbb Q)$ concentrated in degree $3n-9$ for all $n\\ge6$, and what is its rank and $S_n$-module structure? (b) Is $\\tilde H_{3n-7}(\\Pi_n;\\mathbb F_2)\\ne0$ for all $n\\ge5$? Is all torsion 2-torsion?",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E080 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M028",
+"title": "A super-constant-degree SoS integrality gap for Unique Games",
+"area": "Complexity",
+"plain": "Construct Unique Games instances with value <= eps on which degree-d Sum-of-Squares has value >= 1-eps, for some d = omega(1) (any slowly growing function of n), or show degree-O(1) SoS achieves a (1-eps, delta) distinguishing guarantee on all UG instances.",
+"math": "(Gap) For every eps>0 there is q=q(eps) such that for every degree D there is a Unique Games instance over [q] with optimum <= eps whose degree-2D SoS (Lasserre) value is >= 1-eps. Claim := Gap; ¬Claim is exactly the algorithmic alternative.",
+"difficulty": 4.5,
+"reason": "moved to the extended set as QED-E081 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M033",
+"title": "Binary-error LWE with linearly many samples",
+"area": "Complexity",
+"plain": "For LWE with secret in Z_q^n (q = poly(n)) and errors uniform in {0,1}, given m = C*n samples for a fixed constant C > 1, either give a polynomial-time (or 2^{o(n)}) algorithm, or prove hardness from standard LWE/worst-case lattice problems for m = C*n (beyond the n(1+O(1/log n)) samples of Micciancio-Peikert).",
+"math": "Fix q = q(n) with 2 <= q(n) <= poly(n) and a constant C > 1; m = ceil(Cn). Decision binary-error LWE: given (A, b), A uniform in Z_q^{m x n}, b = As + e mod q (s uniform, e uniform in {0,1}^m) or b uniform. Show that for every such C and q either (a) some randomized 2^{o(n)}-time algorithm distinguishes with non-negligible advantage, or (b) the problem is hard for polynomial time (no non-negligible advantage) assuming standard decision LWE is hard for some standard parameter family (dimension polynomially related to n, poly(n) modulus and samples, discrete Gaussian error of width alpha q' >= 2 sqrt(n')). Known: Arora-Ge solves m ~ n^2 in poly time; Micciancio-Peikert give (b) for m = n(1+O(1/log n)).",
+"difficulty": 4.5,
+"reason": "moved to the extended set as QED-E082 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M034",
+"title": "Densest k-Subgraph and k-Biclique FPT-inapproximability from plain ETH",
+"area": "Complexity",
+"plain": "Prove, assuming only ETH, that Densest k-Subgraph cannot be approximated within k^{o(1)} (or any omega(1) factor) in f(k) n^{o(k)} time, or that k-Biclique has no f(k)n^{o(sqrt k)}-type algorithm, matching known Gap-ETH-based results.",
+"math": "Assuming only (deterministic) ETH, prove that there is a function g(k) -> infinity such that no algorithm running in time f(k) n^{O(1)} (f computable) approximates (uncolored) Densest k-Subgraph within factor g(k), i.e. outputs v with OPT/g(k) <= v <= OPT. (Gap-ETH gives every g = k^{o(1)}; the k-Biclique disjunct is already known under ETH, Lin JACM 2018.)",
+"difficulty": 3.5,
+"reason": "moved to the extended set as QED-E083 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M035",
+"title": "Does UGC imply SSEH?",
+"area": "Complexity",
+"plain": "Give a polynomial-time reduction from Small-Set Expansion to Unique Games' hardness direction, i.e. prove UGC => SSEH (Raghavendra-Steurer proved SSEH => UGC), or exhibit an oracle/algorithmic separation (e.g. an algorithm for SSE on a class of graphs where UG remains as hard as in general).",
+"math": "Prove that Small-Set Expansion is UG-hard: for every η > 0 there are δ ∈ (0,1) and ε > 0 such that for every alphabet size q there is a polynomial-time many-one reduction from Gap-UG_q(1−ε, ε) (YES: some labelling satisfies ≥ 1−ε of the constraints; NO: none satisfies more than ε) to Gap-SSE(η, δ) on regular graphs (YES: some vertex set of measure δ has expansion ≤ η; NO: every vertex set of measure δ has expansion ≥ 1−η). Such reductions give UGC ⇒ SSEH (Raghavendra–Steurer proved SSEH ⇒ UGC). Separations in restricted models (oracles, SoS) are not part of the statement.",
+"difficulty": 5.0,
+"reason": "moved to the extended set as QED-E084 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M038",
+"title": "How fast does eps_k vanish for k-OV in low dimension?",
+"area": "Complexity",
+"plain": "Dürr-Kipouridis-Lampis-Węgrzycki show k-OV is solvable in O(2^{(1-eps_k)d} n) for every fixed k, and that eps_k -> 0 is forced by the Set Cover Conjecture. Determine the decay rate: prove eps_k >= c/log k (or c/k), or show that eps_k >= omega(1/k) would refute the Set Cover Conjecture.",
+"math": "Prove or disprove: there are absolute constants c > 0 and p ∈ ℕ such that for every k ≥ 2, k-OV on k sets of n vectors in {0,1}^d is solvable by a deterministic word-RAM algorithm in time O_k(2^{(1 - c/ln k) d} · n^p). (The exponent p must not depend on k: otherwise brute force n^k·d makes the statement trivial. Companion SCC direction is separate.)",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E085 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M039",
+"title": "Matching lower bound for OMv on low-VC-dimension matrices",
+"area": "Complexity",
+"plain": "Anand-van den Brand-McCarty give O~(n^2) preprocessing and O~(n^{2-1/d}) query time for Boolean Mv when M has VC-dimension d. Show, assuming OMv (or unconditionally in the cell-probe model), that n^{2-c/d} query time is necessary for some constant c, for d up to some omega(1) function; or improve the upper bound to n^{2-f(d)} with f(d) >> 1/d.",
+"math": "Assume the OMv conjecture (no randomized word-RAM algorithm solves OMv in total time O(n^{3-ε}) for any ε > 0). Prove there are c > 0 and D(n) → ∞ such that for every d(n) with 1 ≤ d(n) ≤ D(n), every ε > 0 and every p, no randomized algorithm with O(n^p) preprocessing answers the n online Boolean matrix-vector queries for n×n matrices of VC-dimension ≤ d(n) in total query time O(n^{3-c/d(n)-ε}) (amortized n^{2-c/d(n)-ε} per query). (Positive alternative is a separate question.)",
+"difficulty": 4.5,
+"reason": "moved to the extended set as QED-E086 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
 "id": "QED-M042",
 "title": "Sparse 3-LPN at noise n^{-1/2}: beating Gaussian elimination",
 "area": "Complexity",
@@ -8323,5 +8638,239 @@
 "math": "Fix k = 3, m = floor(n^{1.4}), eta = n^{-0.6}. In 3-sparse LPN a secret s in F_2^n is uniform, each sample is (a_i, <a_i,s> + e_i) with a_i uniform among weight-3 vectors of F_2^n and e_i ~ Bernoulli(eta) independent, i = 1..m. Prove or disprove: there is a (classical, randomized) algorithm that, given the m samples, outputs s with probability >= 2/3 for all sufficiently large n, in time exp(o(eta n)) = exp(o(n^{0.4})).",
 "difficulty": 3.5,
 "reason": "retired Nov 2026: not open — a sum-of-squares algorithm in time exp(Õ(n^0.2)) (cited in Chen–Shu–Zhou, arXiv:2407.19215) already meets the target"
+},
+{
+"id": "QED-M048",
+"title": "From density to Kolmogorov typicality of positive entropy in symplectic families",
+"area": "Dynamics",
+"plain": "Berger and Turaev showed that families of area-preserving surface maps having positive metric entropy at every parameter are dense among smooth families. Show this is typical, i.e. holds for a Kolmogorov-generic (prevalent) set of families, or find a robust obstruction.",
+"math": "Take Σ = 𝕋² = ℝ²/ℤ² with the standard area form. For k ≥ 1 let 𝓕_k be the space of C^∞ families (f_p)_{p∈[0,1]^k} of symplectic diffeomorphisms of 𝕋² such that every f_p has an elliptic periodic point, with the C^∞ topology on (p,x) ↦ f_p(x), and 𝓕_+ = {families with h_Leb(f_p) > 0 for Lebesgue-a.e. p}. Prove or disprove: for every k ≥ 1, 𝓕_+ contains a countable intersection of open subsets dense in 𝓕_k (Kolmogorov typicality in the sense of Berger–Turaev). ¬Claim: for some k, 𝓕_+ contains no residual subset of 𝓕_k.",
+"difficulty": 4.5,
+"reason": "moved to the extended set as QED-E087 (Nov 2026 rescoring: total 14 < 17)"
+},
+{
+"id": "QED-M049",
+"title": "Integrability of the egg-crate torus",
+"area": "Dynamics",
+"plain": "Put the surface z = ε sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.",
+"math": "For $\\varepsilon>0$ let $g_\\varepsilon$ be the metric on $\\mathbb T^2=\\mathbb R^2/(2\\pi\\mathbb Z)^2$ induced from the graph $z=\\varepsilon\\sin x\\sin y$, i.e. $g_\\varepsilon=dx^2+dy^2+\\varepsilon^2(\\cos x\\sin y\\,dx+\\sin x\\cos y\\,dy)^2$. Prove that for every $\\varepsilon>0$ the geodesic flow on $T^*\\mathbb T^2\\setminus0$ has no real-analytic first integral functionally independent of the Hamiltonian (for example, by showing positive topological entropy).",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E088 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M053",
+"title": "Positive metric entropy for the x^4+y^4 billiard",
+"area": "Dynamics",
+"plain": "The billiard table x^4 + y^4 <= 1 is smooth and convex, but its curvature vanishes at four points, so (by Mather) it has no caustics. Its phase space mixes stable islands with apparently chaotic regions. Prove that the chaos is real: on a set of positive measure, nearby trajectories separate exponentially fast.",
+"math": "Let $\\Phi$ be the billiard map of $\\Omega=\\{x^4+y^4\\le1\\}$, preserving the Liouville measure $\\nu=\\sin\\theta\\,ds\\,d\\theta$. Prove that $h_\\nu(\\Phi)>0$; equivalently, by Pesin's formula, that $\\Phi$ has a nonzero Lyapunov exponent on a set of positive $\\nu$-measure.",
+"difficulty": 6.5,
+"reason": "moved to the extended set as QED-E089 (Nov 2026 rescoring: total 14 < 17)"
+},
+{
+"id": "QED-M055",
+"title": "Three identical vortices on a square torus are chaotic",
+"area": "Dynamics",
+"plain": "On a flat torus, three point vortices with total circulation zero form an integrable system (Stremler-Aref), but for vortices of equal strength even three are believed chaotic, from numerics only. Prove that three identical point vortices on the square torus are not integrable; the same question is open for four.",
+"math": "For N = 3 the reduced flow on M_3 has no real-analytic first integral functionally independent of H (Claim); the N = 4 analogue is a separate proposition ClaimN4, not part of Claim.",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E090 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M059",
+"title": "Cross-polytopes in 4D",
+"area": "Geometry",
+"plain": "Every smooth convex body in 4-space should have the eight corners of a regular cross-polytope lying on its boundary.",
+"math": "Prove that for every smooth convex body $K\\subset\\mathbb{R}^4$ there is a regular cross-polytope (a similar copy of $\\mathrm{conv}\\{\\pm e_1,\\dots,\\pm e_4\\}$) all of whose 8 vertices lie on $\\partial K$.",
+"difficulty": 3.5,
+"reason": "moved to the extended set as QED-E091 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M060",
+"title": "Geodesic squares on convex surfaces",
+"area": "Geometry",
+"plain": "On a smooth convex surface, measure distance by the length of the shortest path on the surface. Every smooth simple closed curve on the surface should contain four points that form a 'square' in this sense: four equal sides and two equal diagonals.",
+"math": "Let $S=\\partial K$ for a convex body $K\\subset\\mathbb R^3$ with smooth boundary and positive Gaussian curvature, and let $d$ be the intrinsic distance on $S$. Prove that every smooth simple closed curve $\\gamma\\subset S$ contains four distinct points $p_1,p_2,p_3,p_4$, in this cyclic order along $\\gamma$, with $d(p_1,p_2)=d(p_2,p_3)=d(p_3,p_4)=d(p_4,p_1)>0$ and $d(p_1,p_3)=d(p_2,p_4)$.",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E092 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M063",
+"title": "Sofa stability",
+"area": "Geometry",
+"plain": "Baek (2024) proved that Gerver's sofa has the largest area among shapes that can be moved around a right-angled corner in a hallway of width 1. Show that any movable sofa whose area is nearly Gerver's must be nearly Gerver's sofa in shape (which in particular gives uniqueness).",
+"math": "A moving sofa is a compact connected $S\\subset\\mathbb R^2$ that can be moved by a continuous rigid motion from $(-\\infty,0]\\times[0,1]$ to $[0,1]\\times(-\\infty,0]$ inside $L=((-\\infty,1]\\times[0,1])\\cup([0,1]\\times(-\\infty,1])$. Let $G$ be Gerver's sofa, of area $A_G\\approx2.21953$. Prove that there are $C,\\alpha>0$ such that every moving sofa $S$ with $|S|\\ge A_G-\\varepsilon$ satisfies $\\min_{g}|gS\\,\\triangle\\,G|\\le C\\varepsilon^{\\alpha}$, the minimum over rigid motions $g$ of the plane.",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E093 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M066",
+"title": "Graceful labellings of forests",
+"area": "Graph theory",
+"plain": "A forest with m edges and c trees has m + c vertices. Label them with 0, 1, ..., m + c - 1, each label used once, so that the m edge differences |label(u) - label(v)| are all different. Show that every forest has such a labelling. The case 'a tree plus one isolated vertex' already says that every tree can be labelled gracefully if one spare label is allowed.",
+"math": "Prove that every forest $F$ with $m$ edges and $c\\ge1$ components has a bijection $\\ell:V(F)\\to\\{0,1,\\dots,m+c-1\\}$ such that the values $|\\ell(u)-\\ell(v)|$, $uv\\in E(F)$, are pairwise distinct. (Key special case: $F=T\\sqcup K_1$, i.e. every tree with $m$ edges has an injective labelling into $\\{0,\\dots,m+1\\}$ with distinct edge differences.)",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E094 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M070",
+"title": "First-order convergence law for random Latin squares",
+"area": "Logic & computability",
+"plain": "Pick a Latin square of order n uniformly at random and read it as a multiplication table x∘y on n symbols. Does every first-order statement about this table have a limiting probability as n grows? A zero-one law fails: the number of x with x∘x=x should be asymptotically Poisson(1), so the probability that one exists should tend to 1−1/e rather than 0 or 1.",
+"math": "Let $L_n$ be uniform among Latin squares on $[n]$ and $\\mathcal Q_n=([n],\\circ)$ with $x\\circ y=L_n(x,y)$. Prove or disprove: for every first-order sentence $\\varphi$ in the language $\\{\\circ,=\\}$, $\\lim_{n\\to\\infty}\\Pr[\\mathcal Q_n\\models\\varphi]$ exists. (A 0-1 law should fail: by symbol-relabelling symmetry, $\\mathbb E\\#\\{x:x\\circ x=x\\}=1$ exactly, and this count is conjecturally Poisson(1).) Expected route, as for Lynch's random unary functions: (i) w.h.p. the bounded-depth term closure of any bounded tuple is free except for coincidences counted by balanced configurations ($v$ elements, $v$ independent equations); (ii) a joint Poisson limit for the counts of all such balanced configurations, e.g. cycles of $x\\mapsto x\\circ x$. A disproof would need a definable sparse statistic with no limit law.",
+"difficulty": 3.5,
+"reason": "moved to the extended set as QED-E095 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M071",
+"title": "Hat Ising universality",
+"area": "Mathematical physics",
+"plain": "Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid. Prove it.",
+"math": "Let T be any hat tiling (tiling of ℂ by isometric copies, reflections allowed, of the Smith–Myers–Kaplan–Goodman-Strauss hat; all such tilings form the hull) and G its tile-adjacency graph (tiles sharing a boundary segment), with the J=1 ferromagnetic Ising model. Prove: there is β_c ∈ (0,∞), the same for all T, such that, with constants c, C, δ > 0 depending only on T: (a) the plus-state magnetization M_T(β,x) = 0 for all tiles x and 0 ≤ β ≤ β_c, and c(β−β_c)^{1/8} ≤ M_T(β,x) ≤ C(β−β_c)^{1/8} uniformly in x for β_c < β < β_c+δ; (b) for β_c−δ < β < β_c, χ_T(β) = sup_x Σ_y ⟨σ_xσ_y⟩_β satisfies c(β_c−β)^{−7/4} ≤ χ_T(β) ≤ C(β_c−β)^{−7/4}; (c) for β_c−δ < β < β_c, the inverse correlation length 1/ξ_T(β) = liminf_{|x−y|→∞} (−log⟨σ_xσ_y⟩_β/|x−y|) satisfies c(β_c−β) ≤ 1/ξ_T(β) ≤ C(β_c−β).",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E096 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M072",
+"title": "Irrationality of the quartic oscillator ground state",
+"area": "Mathematical physics",
+"plain": "The lowest energy of the quartic oscillator, -d^2/dx^2 + x^4 on the line, is about 1.0603620905. Show that it is irrational.",
+"math": "Let $E_0=\\min\\sigma\\big(-\\tfrac{d^2}{dx^2}+x^4\\big)$, the operator taken self-adjoint on $L^2(\\mathbb R)$ ($E_0=1.06036209048418\\ldots$). Prove that $E_0\\notin\\mathbb Q$.",
+"difficulty": 7.5,
+"reason": "moved to the extended set as QED-E097 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M075",
+"title": "Break the 5/8 barrier for primes with triply well-factorable weights",
+"area": "Number theory",
+"plain": "The primes are known to be evenly spread over residue classes, on average over moduli up to x^{5/8}, if the average is weighted by triply well-factorable weights. Push the exponent past 5/8, or show the dispersion method cannot.",
+"math": "Say (lambda_q)_{q<=Q} is triply well-factorable of level Q if for all Q1Q2Q3=Q there are 1-bounded alpha,beta,gamma supported on q_i<=Q_i with lambda=alpha*beta*gamma (Dirichlet convolution). Let theta* = sup of theta such that for all eps,A>0, fixed a!=0, and every such lambda of level Q=x^{theta-eps}: sum_{q<=Q,(q,a)=1} lambda_q(pi(x;q,a)-pi(x)/phi(q)) <<_{eps,A,a} x(log x)^{-A}. Known theta*>=5/8 (Pascadi). Prove theta*>5/8.",
+"difficulty": 4.5,
+"reason": "moved to the extended set as QED-E098 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M076",
+"title": "Close the gap in the density of integers that are sums of two rational cubes",
+"area": "Number theory",
+"plain": "BSD plus the minimalist rank heuristic predict that exactly half of all integers are sums of two rational cubes. Proven: at least 2/21 are (Alpöge–Bhargava–Shnidman), and at least 31.95% are not (Koymans–Smith). Improve either bound.",
+"math": "Let $\\mathcal S=\\{n\\in\\mathbb Z: n=x^3+y^3,\\ x,y\\in\\mathbb Q\\}$ and $d_\\pm$ the lower densities of $\\mathcal S$ and of its complement (ordered by $|n|$). Known: $\\underline d(\\mathcal S)\\ge 2/21$, $\\underline d(\\mathcal S^c)\\ge 0.3195$. Conjecture: both densities equal $1/2$. Improve either constant.",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E099 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M078",
+"title": "Improve H_1 <= 12 under EH alone",
+"area": "Number theory",
+"plain": "Assuming Elliott–Halberstam, Maynard's sieve gives infinitely many pairs of primes at distance at most 12. The generalized conjecture GEH gives 6. Lower 12 using EH alone.",
+"math": "Let $H_1=\\liminf_{n}(p_{n+1}-p_n)$. Assuming EH (level $\\theta=1-\\varepsilon$ for all $\\varepsilon>0$, for the von Mangoldt function only, not GEH), prove $H_1\\le 10$, or prove that no Selberg/Maynard-type sieve weight using EH alone can give $H_1<12$.",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E100 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M079",
+"title": "Interval-sieve extremal bounds behind the Banks–Ford–Tao gap prediction",
+"area": "Number theory",
+"plain": "Banks, Ford and Tao showed that a random sieve model of the primes predicts the largest prime gap below x is about g(ξ log²x), where g is controlled by an extremal sieve quantity W_y. W_y is the fewest survivors in [0,y] after one residue class is removed for each prime up to √(y/log y). Narrow the bounds on W_y.",
+"math": "Let W_y = min over residue choices (a_p) of #{n ∈ [0,y] ∩ ℤ : n ≢ a_p (mod p) for all primes p <= (y/log y)^{1/2}}. Known (Banks-Ford-Tao): (4+o(1)) y log log y/log^2 y <= W_y <= y/log y + O(y log log y/log^2 y). Prove or disprove: there is an absolute c > 0 with W_y >= c·y/log y for all sufficiently large y.",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E101 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M080",
+"title": "Largest prime factor of Markov numbers",
+"area": "Number theory",
+"plain": "Markov numbers are the numbers appearing in positive integer solutions of x^2+y^2+z^2=3xyz. Show that the largest prime factor of a Markov number tends to infinity. Equivalently, for any finite set of primes, only finitely many Markov numbers are built from those primes alone.",
+"math": "Let $\\mathcal M=\\{m\\ge1:\\exists\\,x,y\\in\\mathbb Z_{>0},\\ x^2+y^2+m^2=3xym\\}$ and let $P(m)$ denote the largest prime factor of $m$ (with $P(1)=1$). Prove that $P(m)\\to\\infty$ as $m\\to\\infty$ in $\\mathcal M$; equivalently, for every finite set $S$ of primes, only finitely many $m\\in\\mathcal M$ are $S$-units.",
+"difficulty": 4.5,
+"reason": "moved to the extended set as QED-E102 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M081",
+"title": "Lower the exponent 0.7785 for A4-quartic fields",
+"area": "Number theory",
+"plain": "Malle predicts about X^{1/2} log X quartic fields with Galois group A4 and discriminant up to X. Loughran–Paterson (2025) proved the matching lower bound. The best upper bound is still about X^{0.7785}. Lower the exponent.",
+"math": "Let N_{A4}(X) count quartic L/Q with Gal(L~/Q)=A4 and |Delta_L|<=X. Known: X^{1/2} log X << N_{A4}(X) << X^{0.7784...+eps} (Loughran-Paterson arXiv:2510.05248 Thm 1.1; BSTTTZ JAMS 2020 Thm 1.4). Prove N_{A4}(X) << X^{beta} for some beta<0.7784 (ideally beta=1/2+eps).",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E103 (Nov 2026 rescoring: total 14 < 17)"
+},
+{
+"id": "QED-M083",
+"title": "One-level density of quadratic Dirichlet L-functions beyond support (−2,2)",
+"area": "Number theory",
+"plain": "Under GRH, the low-lying zeros of L(s,χ_d) for quadratic characters are known to follow the symplectic random-matrix law only for test functions whose Fourier transform is supported in (−2,2). Go beyond 2.",
+"math": "For the family of real primitive characters $\\chi_{8d}$, $d$ odd squarefree, $X<d\\le 2X$, and even Schwartz $\\phi$ with $\\operatorname{supp}\\hat\\phi\\subset(-\\sigma,\\sigma)$, prove under GRH that $\\frac1{|\\mathcal F|}\\sum_d\\sum_{\\gamma_d}\\phi\\!\\big(\\gamma_d\\frac{\\log X}{2\\pi}\\big)\\to\\int\\phi(x)\\big(1-\\frac{\\sin 2\\pi x}{2\\pi x}\\big)dx$ for some $\\sigma>2$.",
+"difficulty": 5.5,
+"reason": "moved to the extended set as QED-E104 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M084",
+"title": "Push the GRH lower bound for Montgomery's F(alpha) beyond alpha = 1",
+"area": "Number theory",
+"plain": "Montgomery's function F(α) is known only for |α|≤1 (on RH). Under GRH for Dirichlet L-functions, Goldston–Gonek–Özlük–Snyder proved F(α) ≥ 3/2−|α|−ε on 1≤|α|≤3/2, while the conjecture says F(α)=1 there. Improve this lower bound.",
+"math": "Assume GRH for all Dirichlet $L$-functions. Prove that for some $\\delta>0$ and all $\\alpha\\in[1,1+\\delta]$, $\\liminf_{T\\to\\infty}F(\\alpha,T)\\ge \\tfrac32-\\alpha+\\delta$, or prove $\\liminf_T \\int_{1}^{3/2}F(\\alpha,T)\\,d\\alpha>1/8$ (the value forced by the GGOS bound).",
+"difficulty": 5.0,
+"reason": "moved to the extended set as QED-E105 (Nov 2026 rescoring: total 12 < 17)"
+},
+{
+"id": "QED-M085",
+"title": "Second moment of 3-torsion in imaginary quadratic class groups",
+"area": "Number theory",
+"plain": "Davenport–Heilbronn showed the average of |Cl(K)[3]| over imaginary quadratic fields is 2, as Cohen–Lenstra predicts. Cohen–Lenstra also predict the average of |Cl(K)[3]|² is 6. Prove this, or at least that the average is bounded.",
+"math": "Let $K$ range over imaginary quadratic fields with $|D_K|<X$. Cohen–Lenstra ($\\mathbb E\\,\\#\\mathrm{Sur}(\\mathrm{Cl}_K,H)=1$ for $H=(\\mathbb Z/3)^2$) predict $\\frac{1}{\\#\\{K\\}}\\sum_K|\\mathrm{Cl}_K[3]|^2\\to 6$. Prove this limit, or prove $\\sum_K|\\mathrm{Cl}_K[3]|^2\\ll X$.",
+"difficulty": 5.0,
+"reason": "moved to the extended set as QED-E106 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M086",
+"title": "A Jörgens theorem for the Hessian permanent",
+"area": "PDE",
+"plain": "Jörgens proved that a convex function on the whole plane whose Hessian determinant is 1 must be a quadratic polynomial. Replace the determinant by the permanent, u_xx·u_yy + u_xy², and ask whether the same rigidity holds for solutions on the elliptic branch.",
+"math": "Let $u\\in C^4(\\mathbb R^2)$ satisfy $u_{xx}u_{yy}+u_{xy}^2=1$, $u_{xx}>0$ and $2u_{xy}^2<1$ on $\\mathbb R^2$ (these are exactly the conditions for the linearized operator $u_{yy}\\partial_{xx}+2u_{xy}\\partial_{xy}+u_{xx}\\partial_{yy}$ to be elliptic; they force $u$ convex with $0<\\det D^2u=1-2u_{xy}^2\\le1$). Prove or disprove that $u$ is a quadratic polynomial.",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E107 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M095",
+"title": "KdV with a cosine coefficient",
+"area": "PDE",
+"plain": "Put a cos x in front of the cubic term of the modified KdV equation on the circle. The energy and the mean are still conserved, but the L² norm is not, and the energy no longer has a definite sign. Can smooth solutions blow up in finite time?",
+"math": "Consider $u_t+u_{xxx}+(\\cos(x)\\,u^3)_x=0$ on $\\mathbb T=\\mathbb R/2\\pi\\mathbb Z$ with real $u_0\\in C^\\infty(\\mathbb T)$. It is Hamiltonian, $u_t=\\partial_x\\frac{\\delta H}{\\delta u}$ with $H=\\int(\\tfrac12u_x^2-\\tfrac14\\cos(x)u^4)$, and conserves $\\int u$ and $H$. However, $\\frac{d}{dt}\\int u^2=\\frac12\\int\\sin(x)u^4$. Decide whether every such $u_0$ yields a global smooth solution, or whether $\\|u(t)\\|_{H^1}\\to\\infty$ in finite time for some $u_0$.",
+"difficulty": 4.0,
+"reason": "moved to the extended set as QED-E108 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M096",
+"title": "Liouville theorem for Lane-Emden with a shifted nonlinearity",
+"area": "PDE",
+"plain": "Gidas-Spruck: -Delta u = u^p has no positive solution on R^n for subcritical p. Replace u^p by the value of u^p at a shifted point x+e. Is there still no positive solution, for every subcritical p?",
+"math": "Let $n\\ge3$, $1<p<\\frac{n+2}{n-2}$, $e\\in\\mathbb R^n\\setminus\\{0\\}$. Prove or disprove: there is no positive $u\\in C^2(\\mathbb R^n)$ with $-\\Delta u(x)=u(x+e)^p$ for all $x$. (For $1<p<\\frac n{n-2}$ the standard Mitidieri–Pohozaev test-function argument applies, since the shift is negligible at large scales; the open range is $\\frac n{n-2}\\le p<\\frac{n+2}{n-2}$. One may also ask whether positive solutions exist for $p\\ge\\frac{n+2}{n-2}$.)",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E109 (Nov 2026 rescoring: total 13 < 17)"
+},
+{
+"id": "QED-M097",
+"title": "Mass-critical scattering on flat cones",
+"area": "PDE",
+"plain": "Dodson proved that the defocusing cubic Schrodinger equation in the plane scatters for every finite-mass initial state. Prove the same on every flat cone, a plane with a single conical singularity of total angle alpha. For alpha = 2pi/k it follows from Dodson by symmetry, and radial data are also easy. Every other angle, such as the surface of a cube corner (alpha = 3pi/2) or alpha > 2pi, is open.",
+"math": "For $\\alpha>0$ let $\\mathcal C_\\alpha=(0,\\infty)\\times(\\mathbb R/\\alpha\\mathbb Z)$ with metric $dr^2+r^2d\\theta^2$ and $\\Delta$ the Friedrichs extension of the Laplacian on $C_c^\\infty(\\mathcal C_\\alpha)$. Prove that for every $\\alpha>0$ and every $u_0\\in L^2(\\mathcal C_\\alpha)$ the solution of $iu_t+\\Delta u=|u|^2u$, $u(0)=u_0$, is global with $\\|u\\|_{L^4_{t,x}(\\mathbb R\\times\\mathcal C_\\alpha)}<\\infty$, hence scatters in $L^2$. (Known: $\\alpha=2\\pi/k$, since $\\mathcal C_{2\\pi/k}=\\mathbb R^2/\\mathbb Z_k$ and Dodson applies to $\\mathbb Z_k$-invariant data. Radial data for any $\\alpha$, since the radial equation coincides with the 2D one.)",
+"difficulty": 3.8,
+"reason": "moved to the extended set as QED-E110 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M098",
+"title": "Quintic Szego growth",
+"area": "PDE",
+"plain": "The cubic Szego equation on the circle is completely integrable, and Gerard-Grellier showed that its smooth solutions can have Sobolev norms that are unbounded in time. Decide whether the quintic Szego equation, which is presumably not integrable, also has smooth solutions with unbounded high Sobolev norms.",
+"math": "On $L^2_+(\\mathbb T)=\\{u\\in L^2:\\hat u(k)=0\\ \\forall k<0\\}$ with Szego projector $\\Pi$, consider $i\\partial_tu=\\Pi(|u|^4u)$, which is globally well posed in $H^s_+$, $s>1/2$, with conserved $\\|u\\|_{L^2}$, $(Du,u)$ and $\\|u\\|_{L^6}$. Decide whether there exist $u_0\\in C^\\infty(\\mathbb T)\\cap L^2_+$ and $s>1/2$ with $\\limsup_{t\\to\\infty}\\|u(t)\\|_{H^s}=\\infty$.",
+"difficulty": 5.0,
+"reason": "moved to the extended set as QED-E111 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M102",
+"title": "Knotted billiards in a regular tetrahedron",
+"area": "Topology",
+"plain": "A billiard ball bouncing periodically inside a regular tetrahedron, without hitting edges or corners, traces a closed polygon in space. Is any such polygon knotted, and do infinitely many different knot types occur?",
+"math": "Call a periodic billiard trajectory in a regular tetrahedron $T\\subset\\mathbb R^3$ admissible if it never meets an edge or vertex of $T$ and its image is an embedded closed polygon. (a) Does some admissible trajectory form a nontrivial knot? (b) Prove that the set of knot types of admissible periodic trajectories is infinite.",
+"difficulty": 3.0,
+"reason": "moved to the extended set as QED-E112 (Nov 2026 rescoring: total 15 < 17)"
 }
 ]
