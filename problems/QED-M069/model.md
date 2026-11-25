@@ -9,6 +9,8 @@ Main set · Grade A · QED Extension · Logic & computability
 
 **Math:** Let $\mathcal L=\{(P,Q)\in\mathbb Q[x,y]^2:\ \dot x=P,\dot y=Q$ has a limit cycle, i.e. a non-constant periodic orbit that has a neighbourhood containing no other periodic orbit$\}$ and $\mathcal P=\{(P,Q):$ the system has a non-constant periodic orbit in $\mathbb R^2\}$, with inputs given by their rational coefficient lists (degree unbounded). (a) Is $\mathcal L$ decidable? (b) Is $\mathcal P$ decidable? (c) Are $\mathcal L,\mathcal P$ or their complements recursively enumerable? (d) Same questions restricted to degree 2.
 
+**Reviewer note:** Context (Nov 2026): OpenAI claims uniform bounds for Hilbert's 16th problem; that does not decide existence of limit cycles, which this problem asks.
+
 **Credit:** Extension of Graca-Zhong (arXiv:2101.07701) noncomputability of planar periodic orbits; related: Hilbert's 16th problem, Il'yashenko on algebraic unsolvability of the center-focus problem.
 
 **QED results so far (reviewer-derived; check before relying on them):** The claim that hyperbolic limit cycles are r.e. via interval certification is correct. The remark that fixed-degree versions 'can become trivially decidable' is wrong. Each fixed-degree set is still infinite. Bautin's finite generation only gives non-uniform decidability of the local center condition, not of whether cycles exist.

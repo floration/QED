@@ -9,6 +9,8 @@ Main set · Grade B · QED Original · Graph theory
 
 **Math:** For a finite graph $G$ let $h(G)=\max\{t: K_t\preceq G\}$ be its Hadwiger number and $\chi(G)$ its chromatic number. Exhibit an explicit graph $G$ with $|V(G)|<10^6$ and $h(G)<\chi(G)$, with a complete proof of both bounds that can be checked (by hand or by a computer computation of feasible size). Sufficient route (Cambie): an explicit $G$ with $\alpha(G)\le2$, $|V(G)|=4t-1$ and no connected matching of size $t$ (a matching whose edges are pairwise joined by an edge of $G$) violates Hadwiger's conjecture.
 
+**Reviewer note:** Context: the OpenAI Hadwiger counterexample (preprint dated 2026-09-23, released 2026-10-06) is non-explicit (random graphs on 2^{1000·(10^9+1)·N} vertices); this problem asks for an explicit one.
+
 **Rests on recent unrefereed work. Check these premises first:**
 - OpenAI October 2026 release (Family 157), surveyed in arXiv:2610.17090 (unrefereed): the claim that Hadwiger's conjecture is false at all. If that disproof is wrong, the problem asks for something that may not exist, and its whole motivation collapses.
 - arXiv:2609.35361 and arXiv:2606.01586 (2026 preprints): background on the α ≤ 2 / connected-matching route and the size of known counterexamples.

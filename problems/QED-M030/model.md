@@ -9,6 +9,8 @@ Main set · Grade A · QED Curated · Complexity
 
 **Math:** Model: word-RAM with Θ(log N)-bit words. Is there a fixed ε > 0 such that for all constants α, δ > 0 there is a randomized (success ≥ 2/3) algorithm that, given a tripartite graph on parts A, B, C with |A|=|B|=|C|=N, m ≥ α N^{3/2} edges and maximum degree ≤ δ√N, decides for every edge whether it lies in a triangle in time O(m^{4/3-ε})? (The conditional-hardness alternative is a separate question.)
 
+**Reviewer note:** Context (Nov 2026): the OpenAI preprint refuting ETH/SETH removes the OV-based hardness route; the algorithmic question here is unaffected.
+
 **Credit:** Alman, Vassilevska Williams 2026, arXiv:2610.06783, Sec. 6; Patrascu, STOC 2010
 
 **Rests on recent unrefereed work. Check these premises first:**
