@@ -12,8 +12,8 @@
  ],
  "plain": "The 4D superball x1^4+y1^4+x2^4+y2^4 <= 1 contains the round unit ball, so it holds a symplectic ball of capacity pi. Its cylindrical capacity is about 3.708, and no symplectic ball can be bigger than that. Narrow the gap: embed a bigger ball, or show that no ball of capacity close to 3.708 fits.",
  "math": "Let U = {x1^4+y1^4+x2^4+y2^4 <= 1} ⊂ (R^4, ω0) and c_G(U) = sup{πr^2 : B^4(r) embeds symplectically in U}. Known: π <= c_G(U) <= c0 := 4Γ(5/4)^2/Γ(3/2) ≈ 3.7081 (= c_Z(U) = c_EHZ(U)). Prove or disprove: c_G(U) = c0 (i.e. U satisfies the strong Viterbo equality between Gromov width and cylindrical capacity).",
- "novelty": 6,
- "importance": 6,
+ "novelty": 7,
+ "importance": 4,
  "value": 6,
  "formal_status": "formalized",
  "refs": [

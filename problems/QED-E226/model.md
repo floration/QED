@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · QED Original · Logic
+Extended set · Grade C · QED Original · Logic & computability
 
 **Plain words:** In Prime Nim you remove a prime number of stones; the player who cannot move loses. Show that no finite automaton reading pile sizes in any base can recognise the losing positions.
 

@@ -13,7 +13,7 @@
  ],
  "plain": "How many unit balls can touch a central unit ball in 5-dimensional space without overlapping? A configuration with 40 has been known since 1873, and the best proved upper limit, from large semidefinite computations, is 44 (the computed bound is about 44.998). Prove that 44 is impossible.",
  "math": "Let $\\tau_5$ be the maximum size of a set $X\\subset S^4$ with $\\langle x,y\\rangle\\le 1/2$ for all distinct $x,y\\in X$. Known $40\\le\\tau_5\\le44$. Prove $\\tau_5\\le 43$.",
- "novelty": 2,
+ "novelty": 3,
  "importance": 4,
  "value": 5,
  "formal_status": "formalized",

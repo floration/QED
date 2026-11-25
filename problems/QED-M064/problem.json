@@ -1,6 +1,6 @@
 {
  "id": "QED-M064",
- "set": "main",
+ "set": "extended",
  "title": "Superlinear unit distances on the unit sphere",
  "area": "Geometry",
  "difficulty": 5.0,
@@ -9,9 +9,9 @@
  "credit": "Erdős, Hickerson, Pach, 'A problem of Leo Moser about repeated distances on the sphere', Amer. Math. Monthly 96 (1989); Swanepoel-Valtr (2004)",
  "plain": "In 2026 a number-field construction showed that points in the plane can have n^(1+c) unit distances, disproving Erdos's conjecture. On a sphere of radius 1/sqrt2 an n^(4/3) construction is classical, but on the unit sphere only n·sqrt(log n) is known. Can the new ideas give a power gain there?",
  "math": "Prove or disprove: there is $c>0$ such that for infinitely many $n$ there exist $P\\subset S^2=\\{x\\in\\mathbb{R}^3:|x|=1\\}$ with $|P|=n$ and $\\#\\{\\{p,q\\}\\subset P:|p-q|=1\\}\\ge n^{1+c}$.",
- "novelty": 4,
- "importance": 6,
- "value": 7,
+ "novelty": 5,
+ "importance": 5,
+ "value": 6,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/2605.20579",

@@ -13,8 +13,8 @@
  "plain": "On a smooth convex surface, measure distance by the length of the shortest path on the surface. Every smooth simple closed curve on the surface should contain four points that form a 'square' in this sense: four equal sides and two equal diagonals.",
  "math": "Let $S=\\partial K$ for a convex body $K\\subset\\mathbb R^3$ with smooth boundary and positive Gaussian curvature, and let $d$ be the intrinsic distance on $S$. Prove that every smooth simple closed curve $\\gamma\\subset S$ contains four distinct points $p_1,p_2,p_3,p_4$, in this cyclic order along $\\gamma$, with $d(p_1,p_2)=d(p_2,p_3)=d(p_3,p_4)=d(p_4,p_1)>0$ and $d(p_1,p_3)=d(p_2,p_4)$.",
  "novelty": 6,
- "importance": 5,
- "value": 5,
+ "importance": 3,
+ "value": 4,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/2507.07945",

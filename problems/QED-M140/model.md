@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Geometry
+Extended set · Grade B · QED Original · Geometry
 
 **Plain words:** A set in space contains a flat unit disc in every orientation. How small can its volume be? Such sets cannot have zero volume, unlike sets containing a needle in every direction.
 

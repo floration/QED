@@ -1,6 +1,6 @@
 {
  "id": "QED-M115",
- "set": "main",
+ "set": "extended",
  "title": "Returning to the identity in SL(3,Z)",
  "area": "Logic & computability",
  "difficulty": 7.5,
@@ -13,8 +13,8 @@
  "plain": "You are given finitely many 3x3 integer matrices with determinant 1. Can some nonempty product of them (in any order, with repetition) equal the identity matrix? For 2x2 matrices there is an algorithm, and for 4x4 matrices it is known that none exists. Decide whether an algorithm exists for 3x3.",
  "math": "Let $\\mathcal I_3=\\{(M_1,\\dots,M_k): k\\ge1,\\ M_i\\in SL(3,\\mathbb Z),\\ \\exists\\, m\\ge1,\\ i_1,\\dots,i_m\\in\\{1,\\dots,k\\}:\\ M_{i_1}\\cdots M_{i_m}=I_3\\}$, with instances given as finite lists of integer matrices. Problem: is $\\mathcal I_3$ decidable? Board Claim: $\\mathcal I_3$ is decidable. A proof of undecidability settles the problem negatively.",
  "novelty": 3,
- "importance": 8,
- "value": 8,
+ "importance": 6,
+ "value": 6,
  "formal_status": "formalized",
  "review_note": "Known: SL(2,Z): identity and membership decidable (Choffrut-Karhumaki 2005; Bell-Potapov; Potapov-Semukhin for nonsingular 2x2 integer matrices, SODA 2017). 3x3: mortality (zero matrix) undecidable for Z^{3x3} (Paterson 1970), but the identity problem is not covered. SL(4,Z): identity problem undecidable (Bell-Potapov 2010, via F2 x F2). Identity problem decidable for the Heisenberg group H(3,Z) (Ko-Niskanen-Potapov, ICALP 2018, arXiv:1706.04166), for SA(2,Z) (Dong, arXiv:2301.09502), and for 4x4 unitriangular matrices (arXiv:2202.05225). Survey: R. Dong, 'Recent advances in algorithmic problems for semigroups', arXiv:2309.10943 (ACM SIGLOG News 2023): status of all listed problems open for SL(3,Z).",
  "refs": [

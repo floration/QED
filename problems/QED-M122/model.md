@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Geometry
+Extended set · Grade A · QED Curated · Geometry
 
 **Plain words:** A convex body is hollow if no point with all-integer coordinates lies strictly inside it. Hollow bodies must be thin in some integer direction (the flatness theorem). In the plane the largest guaranteed thinness is known exactly, 1+2/sqrt(3). In 3-space a hollow tetrahedron of lattice width 2+sqrt(2) is known: is that the widest possible?
 

@@ -4,7 +4,8 @@ import json, os, re, sys
 errs = []
 def err(m): errs.append(m)
 
-FMT = {'main': r'QED-M\d{3}', 'extended': r'QED-E\d{3}', 'test': r'QED-Q\d'}
+# IDs are permanent: a problem keeps its M/E id if it later moves between sets.
+FMT = {'main': r'QED-[ME]\d{3}', 'extended': r'QED-[ME]\d{3}', 'test': r'QED-Q\d'}
 GRADES = {'main': {'A', 'B'}, 'extended': {'A', 'B', 'B-', 'C'}, 'test': {'Q'}}  # main is capped at ~100, so strong problems can live in extended
 PROV = {None, 'Original', 'Extension', 'Curated'}
 FORMAL = {'formalized', 'not_formalized'}

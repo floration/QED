@@ -13,7 +13,7 @@
  ],
  "plain": "For rational numbers λ and μ consider the matrices D = [[λ,0],[0,1]] and T = [[μ,1],[0,1]], or equivalently the maps x -> λx and x -> μx + 1 of the line. They are called free if different finite words in D and T always multiply to different matrices. Is there an algorithm that, given λ and μ, decides whether D and T are free? Deciding freeness of any two upper-triangular 2×2 rational matrices reduces to this family, and freeness is already undecidable for 3×3 matrices of natural numbers.",
  "math": "For $\\lambda,\\mu\\in\\mathbb Q$ let $D_\\lambda=\\begin{pmatrix}\\lambda&0\\\\0&1\\end{pmatrix}$, $T_\\mu=\\begin{pmatrix}\\mu&1\\\\0&1\\end{pmatrix}$, and let $\\phi_{\\lambda,\\mu}:\\{0,1\\}^*\\to M_2(\\mathbb Q)$ be the monoid morphism with $0\\mapsto D_\\lambda$ and $1\\mapsto T_\\mu$. Let $\\Phi=\\{(\\lambda,\\mu)\\in\\mathbb Q^2:\\phi_{\\lambda,\\mu}\\text{ is injective}\\}$. Determine whether $\\Phi$ is a decidable (recursive) subset of $\\mathbb Q^2$. A proof of either answer settles the problem.",
- "novelty": 4,
+ "novelty": 3,
  "importance": 5,
  "value": 6,
  "formal_status": "formalized",

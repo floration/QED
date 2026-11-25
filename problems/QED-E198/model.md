@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade A · QED Curated · Information theory
+Extended set · Grade A · QED Curated · Coding & information theory
 
 **Plain words:** The Shannon capacity Θ(G) of a graph measures how many messages per channel use can be sent with zero error when G records which symbols can be confused. For the 7-cycle the best lower bound is about 3.2588 (2026 computer constructions) and the only upper bound is still Lovász's 1979 theta number 7cos(π/7)/(1+cos(π/7)) ≈ 3.3177. Decide whether Θ(C_7) is strictly smaller than this theta value.
 

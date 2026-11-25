@@ -9,9 +9,9 @@
  "credit": "Klee & Wagon, Old and New Unsolved Problems in Plane Geometry and Number Theory (1991), Problem 11.5; V. V. Makeev (d = 3); R. Karasev, arXiv:0905.2671 (2009).",
  "plain": "Every smooth convex body in 4-space should have the eight corners of a regular cross-polytope lying on its boundary.",
  "math": "Prove that for every smooth convex body $K\\subset\\mathbb{R}^4$ there is a regular cross-polytope (a similar copy of $\\mathrm{conv}\\{\\pm e_1,\\dots,\\pm e_4\\}$) all of whose 8 vertices lie on $\\partial K$.",
- "novelty": 4,
- "importance": 5,
- "value": 6,
+ "novelty": 3,
+ "importance": 3,
+ "value": 4,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/0905.2671",

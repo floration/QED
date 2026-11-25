@@ -14,8 +14,8 @@
  "plain": "A convex polyhedron is a space-filler if congruent copies of it fill all of 3-space with no gaps or overlaps. In the plane a convex tile has at most 6 sides, but in space the record is 38 faces (Engel, 1981). Is there any finite upper bound at all on the number of faces of a convex space-filler?",
  "math": "Call a convex polytope $P\\subset\\mathbb{R}^3$ with nonempty interior a monohedral prototile if there are isometries $g_1,g_2,\\dots$ of $\\mathbb{R}^3$ with $\\bigcup_i g_iP=\\mathbb{R}^3$ and $\\operatorname{int}(g_iP)\\cap\\operatorname{int}(g_jP)=\\emptyset$ for $i\\neq j$ (the tiling need not be face-to-face, isohedral or periodic). Decide whether there is $N<\\infty$ such that every monohedral prototile in $\\mathbb{R}^3$ has at most $N$ facets.",
  "novelty": 2,
- "importance": 5,
- "value": 6,
+ "importance": 4,
+ "value": 5,
  "formal_status": "formalized",
  "refs": [
   "https://www.ams.org/journals/bull/1980-03-03/S0273-0979-1980-14827-2/S0273-0979-1980-14827-2.pdf",

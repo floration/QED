@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · QED Original · Computation
+Extended set · Grade C · QED Original · Complexity
 
 **Plain words:** Find an explicit family of large unsolvable Sudoku puzzles (n^2 by n^2 grids with some givens) for which any resolution proof that the puzzle has no solution must be exponentially long.
 

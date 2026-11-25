@@ -9,9 +9,9 @@
  "credit": "Minkowski; Klartag; Kabatiansky–Levenshtein",
  "plain": "In high dimension n the best sphere packings known have density only about n²·2^{-n} (up to log factors), barely above the trivial 2^{-n} from greedy/saturated packings, while the best upper bound is about 2^{-0.599n}. Is there a constant c>1 with packings of density at least c^n·2^{-n} in all large dimensions?",
  "math": "Let $\\Delta_n$ be the supremum of upper densities of packings of congruent balls in $\\mathbb{R}^n$. Prove or disprove: there exist $c>1$ and $N$ such that $\\Delta_n\\ge c^n2^{-n}$ for all $n\\ge N$.",
- "novelty": 1,
+ "novelty": 2,
  "importance": 9,
- "value": 7,
+ "value": 6,
  "formal_status": "formalized",
  "refs": [
   "https://arxiv.org/abs/2610.12619",

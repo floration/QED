@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Logic & computability
+Extended set · Grade A · QED Curated · Logic & computability
 
 **Plain words:** Take a monoid with a single defining relation u = v between two words. Is its word problem always decidable: for each such monoid, is there an algorithm that, given two words, decides whether they are equal in it? This is open even though the corresponding question for one-relator groups was settled long ago.
 

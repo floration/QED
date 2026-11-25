@@ -1,6 +1,6 @@
 {
  "id": "QED-M113",
- "set": "main",
+ "set": "extended",
  "title": "Big line or six visible points",
  "area": "Geometry",
  "difficulty": 5.0,
@@ -14,8 +14,8 @@
  "plain": "Two points of a finite set in the plane see each other if the segment between them passes through no other point of the set. Prove that for every l there is an N such that any N points in the plane contain either l points on a line or 6 points that all see each other. This is known for 5 points that all see each other (for every l), and since 2026 for 6 such points when l = 4.",
  "math": "For finite $P\\subset\\mathbb R^2$, call $p,q\\in P$ visible if $[p,q]\\cap P=\\{p,q\\}$. Claim: for every $\\ell\\ge 3$ there is $N(\\ell)$ such that every $P\\subset\\mathbb R^2$ with $|P|\\ge N(\\ell)$ contains $\\ell$ collinear points or $6$ pairwise visible points.",
  "novelty": 4,
- "importance": 7,
- "value": 7,
+ "importance": 4,
+ "value": 5,
  "formal_status": "formalized",
  "review_note": "Known: Clique <=4, every l: Kara-Por-Wood (Discrete Comput. Geom. 2005). Clique 5, line 4: Addario-Berry et al.; clique 5, every l: Abel, Ballinger, Bose, Collette, Dujmovic, Hurtado, Kominers, Langerman, Por, Wood, Graphs Combin. 27 (2011). Clique 6, line 4: Bonnet arXiv:2608.19468 (N ~ 10^11055931), improved to N<=880 by Cambie arXiv:2609.21035 (v2 Nov 2026). Bhattacharya-Das-Islam-Mohapatra-Sen arXiv:2609.25727: no 4 collinear forces 7 points missing at most one visibility. Structured regimes (points on a cubic, few ordinary lines, irreducible curves): Sarkar arXiv:2605.00918. All other (line, clique) pairs with clique>=6 open, per Bonnet's introduction.",
  "refs": [

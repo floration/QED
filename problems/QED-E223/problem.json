@@ -2,7 +2,7 @@
  "id": "QED-E223",
  "set": "extended",
  "title": "Sudoku resolution bounds",
- "area": "Computation",
+ "area": "Complexity",
  "difficulty": 1.5,
  "grade": "C",
  "provenance": "Original",
