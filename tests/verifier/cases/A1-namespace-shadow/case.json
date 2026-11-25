@@ -1,0 +1,1 @@
+{"id": "QED-Q1", "expect": "fail", "raw": "reject", "note": "A1: unclosed namespace with a fake OpenProblems.QEDQ1.Claim := True"}

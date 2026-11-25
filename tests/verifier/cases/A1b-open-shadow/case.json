@@ -1,0 +1,1 @@
+{"id": "QED-Q1", "expect": "fail", "raw": "reject", "note": "A1 variant: fake Claim in another namespace, opened, so overloading picks it"}

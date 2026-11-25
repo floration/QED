@@ -1,0 +1,53 @@
+name: verifier-selftest
+# Regression test for the solution verifier. verify.yml always takes its checker from the BASE branch, so a PR
+# that changes the checker cannot test itself there; this workflow runs the checker FROM THIS COMMIT on the
+# fixtures in tests/verifier/cases/ (genuine solutions that must pass, attacks that must fail) and on every merged
+# solution, with the same two-job split as verify.yml: untrusted compile -> .olean artifact -> trusted verify.
+# Read-only token, no secrets, nothing is written back to the repository.
+on:
+  pull_request:
+    paths: ["scripts/**", ".github/workflows/**", "tests/verifier/**"]
+  workflow_dispatch:
+permissions: { contents: read }
+concurrency:
+  group: verifier-selftest-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - name: Install Lean and the pinned Mathlib cache
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+          export PATH="$HOME/.elan/bin:$PATH"
+          if [ -f lake-manifest.json ]; then lake exe cache get; else lake update && lake exe cache get; fi
+      - name: Compile every case (untrusted stage)
+        run: python3 -I tests/verifier/selftest.py compile "$RUNNER_TEMP/selftest-out"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compile-output
+          path: ${{ runner.temp }}/selftest-out
+          if-no-files-found: error
+          retention-days: 3
+
+  verify:
+    needs: compile
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - uses: actions/download-artifact@v4
+        with: { name: compile-output, path: "${{ runner.temp }}/selftest-in" }
+      - name: Install Lean and the pinned Mathlib cache
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+          export PATH="$HOME/.elan/bin:$PATH"
+          if [ -f lake-manifest.json ]; then lake exe cache get; else lake update && lake exe cache get; fi
+      - name: Verify every case (trusted stage) and check expectations
+        run: python3 -I tests/verifier/selftest.py verify "$RUNNER_TEMP/selftest-in"

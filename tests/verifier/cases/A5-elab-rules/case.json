@@ -1,0 +1,1 @@
+{"id": "QED-Q1", "expect": "fail", "raw": "reject", "note": "A5: elab_rules tactic that closes the goal with a sorry term"}
