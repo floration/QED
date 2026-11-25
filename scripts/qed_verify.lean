@@ -27,6 +27,10 @@ def allowedAxioms : List Name := [``propext, ``Classical.choice, ``Quot.sound]
 
 def die {α : Type} (msg : String) : IO α := throw (IO.userError msg)
 
+/-- Progress line on stderr (never parsed; only the nonce line on stdout counts). -/
+def step (msg : String) : IO Unit := do
+  IO.eprintln s!"[qed_verify {← IO.monoMsNow} ms] {msg}"
+
 /-- All axioms `root` depends on, walking types and values of constants in a kernel environment. -/
 def collectAxioms (env : Kernel.Environment) (root : Name) : IO (Array Name) := do
   let mut seen : NameSet := {}
@@ -50,8 +54,10 @@ def collectAxioms (env : Kernel.Environment) (root : Name) : IO (Array Name) := 
 /-- Returns the list of axioms used (as fresh strings), or throws. Everything that touches imported
 data happens inside `withImportModules`, because that data is freed when it returns. -/
 unsafe def check (stmtMod solMod claim : Name) (kind : String) : IO (List String) :=
-  withImportModules #[{ module := stmtMod }] {} fun envS =>
+  withImportModules #[{ module := stmtMod }] {} fun envS => do
+  step "statement environment loaded"
   withImportModules #[{ module := solMod }] {} fun envA => do
+    step "solution environment loaded"
     let some sIdx := envS.getModuleIdx? stmtMod | die "statement module not loaded"
     let some aIdx := envA.getModuleIdx? solMod | die "solution module not loaded"
     let sData := envS.header.moduleData[sIdx.toNat]!
@@ -71,6 +77,7 @@ unsafe def check (stmtMod solMod claim : Name) (kind : String) : IO (List String
     unless sawClaim do die s!"{claim} is missing from the compiled solution"
     unless newConsts.contains `solution do
       die "no root-level `solution` declaration (it must not be inside a namespace)"
+    step s!"{newConsts.size} new declarations; replaying"
     -- Kernel re-check of every new declaration on top of the official statement's environment.
     let kenv ← envS.toKernelEnv.replay newConsts
     let some sol := kenv.find? `solution | die "`solution` was not accepted by the kernel"
@@ -82,7 +89,9 @@ unsafe def check (stmtMod solMod claim : Name) (kind : String) : IO (List String
     let shown := if kind == "proof" then toString claim else "¬ " ++ toString claim
     unless sol.levelParams == cS.levelParams && sol.type == target do
       die s!"`solution` must have type exactly {shown}"
+    step "replayed; collecting axioms"
     let axs ← collectAxioms kenv `solution
+    step s!"{axs.size} axioms"
     let bad := axs.filter (fun a => !allowedAxioms.contains a)
     let badStr := String.intercalate ", " (bad.toList.map toString)
     unless bad.isEmpty do

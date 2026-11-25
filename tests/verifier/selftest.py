@@ -28,7 +28,7 @@ USER = 'qedselftest'
 EXCLUDE = {'case.json', 'Statement.lean'}
 
 
-def sh(args, env=None, timeout=3600):
+def sh(args, env=None, timeout=1200):
     t = time.time()
     try:
         r = subprocess.run(args, capture_output=True, text=True, timeout=timeout, env=env, cwd=ROOT)
@@ -141,7 +141,10 @@ def do_compile(out):
                           'secs': round(dt), 'log': o[-4000:]}
             if err and os.path.exists(os.path.join(rd, 'QEDSol.olean')): os.remove(os.path.join(rd, 'QEDSol.olean'))
         json.dump(res, open(os.path.join(out, c['name'], 'compile.json'), 'w'), indent=1)
-        print(f"{c['name']}: pipeline={res['pipeline']['code']} {res['pipeline']['msg'][:150]}"
+        for mode in ('pipeline', 'raw'):
+            if mode in res and res[mode]['code'] != 0:
+                print(f"::group::{c['name']} {mode} compile log\n{res[mode]['log']}\n::endgroup::")
+        print(f"[{time.strftime('%H:%M:%S')}] {c['name']}: pipeline={res['pipeline']['code']} {res['pipeline']['msg'][:150]}"
               + (f" | raw={res['raw']['code']} {res['raw']['msg'][:150]}" if 'raw' in res else ''), flush=True)
 
 
@@ -178,6 +181,7 @@ def do_verify(inp):
         good = ok_for(c['expect'], actual)
         bad += not good
         rows.append((c['name'], 'pipeline', c['expect'], actual, good, msg))
+        print(f"[{time.strftime('%H:%M:%S')}] {c['name']} pipeline: {actual} (expected {c['expect']}) {msg[:200]}", flush=True)
         if not good: print(f"::group::{c['name']} pipeline log\n{p['log']}\n{log}\n::endgroup::")
         # --- raw: structural verifier alone on an unfiltered compile ---
         if c.get('raw'):
@@ -204,6 +208,7 @@ def do_verify(inp):
             good = ok_for(c['raw'], actual)
             bad += not good
             rows.append((c['name'], 'raw', c['raw'], actual, good, msg))
+            print(f"[{time.strftime('%H:%M:%S')}] {c['name']} raw: {actual} (expected {c['raw']}) {msg[:200]}", flush=True)
             if not good: print(f"::group::{c['name']} raw log\n{r['log']}\n{log}\n::endgroup::")
     w = max(len(r[0]) for r in rows)
     lines = [f"{'case':<{w}}  {'mode':<8}  {'expected':<8}  {'actual':<14}  ok   detail", '-' * (w + 60)]
