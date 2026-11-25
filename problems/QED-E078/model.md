@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade B · QED Original · Combinatorics
+Extended set · Grade B · QED Extension · Combinatorics
 
 **Plain words:** Conjugate partitions always give representations of S_n of the same dimension, so at most (p(n)+sc(n))/2 of the p(n) irreducible representations can have distinct dimensions, where sc(n) = o(p(n)) counts self-conjugate partitions; so at most half asymptotically. Decide whether the fraction of distinct dimensions tends to a limit, and whether that limit is positive.
 

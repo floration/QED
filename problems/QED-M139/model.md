@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Number theory
+Main set · Grade B · QED Curated · Number theory
 
 **Plain words:** Show that for every exponent θ below 1 there are infinitely many n such that n, n+1 and n+2 each have a prime factor larger than n^θ (for instance θ = 0.9). The two-term analogue (n and n+1) is settled: OpenAI's 2026 joint Dickman law for consecutive integers (Erdős–Pomerance conjecture) shows that log P(n)/log n and log P(n+1)/log n are asymptotically independent, so that set has density (log(1/θ))^2 for 1/2 ≤ θ < 1. Three consecutive integers are not covered.
 

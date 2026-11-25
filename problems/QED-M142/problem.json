@@ -5,7 +5,7 @@
  "area": "Number theory",
  "difficulty": 5.0,
  "grade": "B",
- "provenance": "Original",
+ "provenance": "Curated",
  "credit": "QED original (archived Nov 2026, restored after re-review).",
  "plain": "Tao proved the lonely runner conjecture when every speed is at most 1.2 times the number of runners. Push this to speeds at most twice the number of runners (and ideally any fixed multiple).",
  "math": "For distinct positive integers v_1,…,v_n let δ(v) = sup_{t∈ℝ} min_i ‖t v_i‖, where ‖·‖ is distance to the nearest integer. Prove that δ(v) ≥ 1/(n+1) for every n ≥ 1 and all distinct v_1,…,v_n ∈ {1,…,2n}. (Tao 2018, Prop. 1.5, proves this for speeds ≤ ⌊6n/5⌋; conjecturally there is no speed restriction.)",

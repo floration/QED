@@ -91,8 +91,8 @@
    "arXiv:2608.02863 (Kistner-Shaska, 2026 preprint): source of S_d, A_d (d = 6, 12, families) as realized monodromy groups.",
    "arXiv:2609.33491 (Fonollosa, 2026 preprint): source of imprimitive wreath-type monodromy groups."
   ],
-  "plain": "A Keller map (polynomial map with constant nonzero Jacobian) that is not invertible covers a generic point d times, and following the d preimages around loops gives a permutation group, its monodromy. Campbell's 1973 theorem says that if this group is regular (the Galois case), the map is invertible. The 2026 counterexamples realize full symmetric groups and some imprimitive groups. Is Campbell's theorem the only obstruction?",
-  "math": "For a Keller map $F:\\mathbb C^n\\to\\mathbb C^n$ ($\\det JF\\in\\mathbb C^\\times$) of geometric degree $d\\ge2$, let $\\mathrm{Mon}(F)\\le S_d$ be the geometric monodromy group (Galois group of the Galois closure of $\\mathbb C(x)/\\mathbb C(F)$ acting on the $d$ embeddings). It is transitive, and by Campbell's theorem it is regular only if $d=1$. Let $\\mathcal M$ be the set of transitive groups (up to permutation isomorphism) arising as $\\mathrm{Mon}(F)$ for non-invertible Keller maps in some dimension; $\\mathcal M$ contains $S_d$, $A_d$ (e.g. $d=6,12$ and the families of Kistner-Shaska 2608.02863) and imprimitive wreath-type groups (Fonollosa 2609.33491), and is closed under direct products in product action ($F\\times G$). Is $\\mathcal M$ exactly the set of non-regular transitive groups? Test case: does some primitive group not containing $A_d$ (e.g. $\\mathrm{AGL}(1,p)$ for a prime $p\\ge5$, or $\\mathrm{PSL}(2,7)$ on 7 points) lie in $\\mathcal M$? (A negative answer to the test case means every primitive member of $\\mathcal M$ is alternating or symmetric, which would refute the first question.)",
+  "plain": "A Keller map (polynomial map with constant nonzero Jacobian) that is not invertible covers a generic point d times, and following the d preimages around loops gives a permutation group, its monodromy. Campbell's 1973 theorem says that if this group is regular (the Galois case), the map is invertible. The 2026 counterexamples realize full symmetric groups and some imprimitive groups. Is there a non-invertible Keller map whose monodromy group is primitive but does not contain the alternating group? Further questions (not part of the formal claim): is Campbell's theorem the only obstruction, i.e. does every non-regular transitive group occur?",
+  "math": "For a Keller map $F:\\mathbb C^n\\to\\mathbb C^n$ ($\\det JF\\in\\mathbb C^\\times$) of geometric degree $d$, let $\\mathrm{Mon}(F)\\le S_d$ be the geometric monodromy group (the Galois group of the Galois closure of $\\mathbb C(x)/\\mathbb C(F)$ acting on the $d$ embeddings of $\\mathbb C(x)$ over $\\mathbb C(F)$). It is transitive, and by Campbell's theorem it is regular only if $d=1$. Let $\\mathcal M$ be the set of transitive groups (up to permutation isomorphism) arising as $\\mathrm{Mon}(F)$ for non-invertible Keller maps in some dimension; $\\mathcal M$ contains $S_d$, $A_d$ (e.g. $d=6,12$ and the families of Kistner-Shaska 2608.02863) and imprimitive wreath-type groups (Fonollosa 2609.33491), and is closed under direct products in product action ($F\\times G$). Claim: there exist $n$, a non-invertible Keller map $F:\\mathbb C^n\\to\\mathbb C^n$ and a primitive group $H\\le S_d$ with $A_d\\not\\le H$ such that $\\mathrm{Mon}(F)$ is permutation-isomorphic to $H$ (necessarily $d\\ge5$; candidates: $\\mathrm{AGL}(1,p)$ for a prime $p\\ge5$, $\\mathrm{PSL}(2,7)$ on 7 points). Prove or disprove; a disproof means every primitive member of $\\mathcal M$ is alternating or symmetric. Further questions (not part of the formal claim): is $\\mathcal M$ exactly the set of non-regular transitive groups? (A disproof of the Claim answers this negatively.)",
   "novelty": 8,
   "importance": 5,
   "value": 6,
@@ -125,7 +125,7 @@
   "grade": "A",
   "provenance": "Extension",
   "credit": "Extends Durso (1988, MIT thesis) and Grieser-Maronna, 'Hearing the shape of a triangle' (Notices AMS 2013, arXiv:1208.3163); Kac's question.",
-  "results": "The heat-invariant count is correct. The polyhedral Dirichlet heat trace gives volume, surface area, the edge sum of L_e times a function of the dihedral angle, and a vertex term (not explicit for general solid angles): 4 numbers against 6 congruence parameters. So the heat trace alone is insufficient.",
+  "results": "The heat-invariant count is correct. The small-t expansion of the polyhedral Dirichlet heat trace gives volume, surface area, the edge sum of L_e times a function of the dihedral angle, and a vertex term (not explicit for general solid angles): 4 numbers against 6 congruence parameters. So the heat invariants (the asymptotic coefficients of the heat trace) cannot by themselves determine a tetrahedron. Any proof must use more of the spectrum, e.g. wave-trace / periodic-orbit data as in Durso's triangle proof.",
   "premise_risks": [
    "arXiv:2609.28602 (Krejcirik, 2026 survey): used only for the openness check (does not settle the problem); the statement itself assumes nothing from it."
   ],
@@ -892,8 +892,8 @@
    "arXiv:2611.09361 (Slijepcevic, Nov 2026 preprint): the known result h_m(f_k) >= log(2 pi k+4) - 2^430 for k >= exp(2^50000), quoted as background only.",
    "OpenAI preprint (unrefereed, credited in 2611.09361): non-effective positivity for large k, background only."
   ],
-  "plain": "Sinai conjectured that the standard map has positive metric entropy for every parameter k>0. After a 2026 AI-generated non-effective proof for large k, Slijepčević proved it for every k ≥ exp(2^{50000}). Bring the threshold down to a physically meaningful range, e.g. all k ≥ 10^6, or even a single explicit k ≤ 100.",
-  "math": "Let f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)) on T^2=R^2/Z^2 (Slijepcevic's normalization; Chirikov's K equals 2 pi k), and h_m(f_k) the metric entropy w.r.t. area. Known: log(2 pi k+4)-2^{430} <= h_m(f_k) <= log(2 pi k+4) for k>=exp(2^{50000}) (Slijepcevic 2026). Prove h_m(f_k)>0 for all k>=10^6, or for at least one explicit k<=100.",
+  "plain": "Sinai conjectured that the standard map has positive metric entropy for every parameter k>0. After a 2026 AI-generated non-effective proof for large k, Slijepčević proved it for every k ≥ exp(2^{50000}). Bring the threshold down to a physically meaningful range: prove positive entropy for every k ≥ 10^6. Further questions (not part of the formal claim): prove it for even a single explicit k ≤ 100.",
+  "math": "Let f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)) on T^2=R^2/Z^2 (Slijepcevic's normalization; Chirikov's K equals 2 pi k), and h_m(f_k) the metric entropy w.r.t. area. Known: log(2 pi k+4)-2^{430} <= h_m(f_k) <= log(2 pi k+4) for k>=exp(2^{50000}) (Slijepcevic 2026). Claim: for every real k>=10^6, h_m(f_k)>0; formally (equivalent by Pesin's formula and Oseledets), the set of p in [0,1]^2 with lambda^+(p)=limsup (1/n) log ||Df_k^n(p)|| > 0 has positive Lebesgue measure. Prove or disprove (a disproof gives some k>=10^6 with zero entropy, refuting Sinai's conjecture). Further questions (not part of the formal claim): prove h_m(f_k)>0 for at least one explicit k<=100.",
   "novelty": 4,
   "importance": 8,
   "value": 6,
@@ -1029,7 +1029,7 @@
   "area": "Geometry",
   "difficulty": 4.5,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Extension",
   "credit": null,
   "results": "c_G(U) >= pi: U contains the Euclidean unit ball, since sum x_i^4 <= (sum x_i^2)^2. (Trivial.) c_G(U) <= c_Z(U) = c_EHZ(U) = c0 = 4Gamma(5/4)^2/Gamma(3/2) ~ 3.7081 (arXiv 2609.37794, Thm 2 with n=2, p=4, B=D=I). Gromov width is <= every normalized capacity. The volume bound sqrt(2 Vol U) ~ 4.65 is weaker.",
   "premise_risks": [
@@ -1047,7 +1047,9 @@
    "https://arxiv.org/pdf/2405.16513",
    "https://arxiv.org/pdf/2402.07709",
    "https://arxiv.org/pdf/2203.02294",
-   "https://arxiv.org/pdf/2610.31906"
+   "https://arxiv.org/pdf/2610.31906",
+   "https://arxiv.org/pdf/2003.10854",
+   "https://ar5iv.arxiv.org/html/1911.06062"
   ],
   "lean": "import Mathlib\n/-! QED-M061: Gromov width of the 4D l^4 ball\nThe 4D superball U = {x1^4+y1^4+x2^4+y2^4 <= 1} contains the round unit ball, so its Gromov\nwidth is at least π; its cylindrical (= EHZ) capacity is c0 = 4Γ(5/4)^2/Γ(3/2) ≈ 3.7081, an upper\nbound. Is the Gromov width equal to c0, as strong Viterbo for centrally symmetric bodies would\npredict?\nInformal statement: Let U = {x1^4+y1^4+x2^4+y2^4 <= 1} ⊂ (R^4, ω0) and c_G(U) = sup{πr^2 : B^4(r) embeds symplectically in U}. Known: π <= c_G(U) <= c0 := 4Γ(5/4)^2/Γ(3/2) ≈ 3.7081 (= c_Z(U) = c_EHZ(U)). Prove or disprove: c_G(U) = c0 (i.e. U satisfies the strong Viterbo equality between Gromov width and cylindrical capacity).\nFormalization notes: R^4 is `Fin 4 → ℝ` with coordinates (x1,y1,x2,y2) = (x 0, x 1, x 2, x 3)\nand ω0(u,v) = u0 v1 - u1 v0 + u2 v3 - u3 v2. The open Euclidean ball of radius r is\n{x | Σ x_i^2 < r^2}. A symplectic embedding of B^4(r) into U is a C^∞ map φ on the open ball,\ninjective there, mapping it into U, whose derivative preserves ω0 at every point. Since c0 is a\nknown upper bound for c_G(U), \"c_G(U) = c0\" is encoded as: for every a < c0 there is r with\nπr^2 > a and a symplectic embedding of B^4(r) into U. Proving Claim shows c_G(U) = c0; proving\n¬Claim shows c_G(U) < c0, a centrally symmetric counterexample to the strong Viterbo\nconjecture. A mere improvement of the lower bound beyond π (the other half of the original\n'improve either bound') is NOT what Claim asks. The value c0 is taken from arXiv:2609.37794.\n-/\nnamespace OpenProblems.QEDM061\n\n/-- Four-dimensional real space, coordinates (x1, y1, x2, y2). -/\nabbrev R4 : Type := Fin 4 → ℝ\n\n/-- The standard symplectic form dx1∧dy1 + dx2∧dy2. -/\nnoncomputable def omega0 (u v : R4) : ℝ := u 0 * v 1 - u 1 * v 0 + u 2 * v 3 - u 3 * v 2\n\n/-- The open Euclidean ball of radius r centred at 0. -/\ndef euclidBall (r : ℝ) : Set R4 := {x | (∑ i : Fin 4, x i ^ 2) < r ^ 2}\n\n/-- The l^4 unit ball in R^4. -/\ndef U : Set R4 := {x | (∑ i : Fin 4, x i ^ 4) ≤ 1}\n\n/-- φ is a smooth symplectic embedding of the open ball of radius r into U. -/\ndef IsSymplecticEmbedding (r : ℝ) (φ : R4 → R4) : Prop :=\n  ContDiffOn ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) φ (euclidBall r) ∧\n  Set.InjOn φ (euclidBall r) ∧\n  Set.MapsTo φ (euclidBall r) U ∧\n  ∀ x ∈ euclidBall r, ∀ u v : R4, omega0 (fderiv ℝ φ x u) (fderiv ℝ φ x v) = omega0 u v\n\n/-- The cylindrical / EHZ capacity of U: 4 Γ(5/4)^2 / Γ(3/2). -/\nnoncomputable def c0 : ℝ := 4 * Real.Gamma (5 / 4) ^ 2 / Real.Gamma (3 / 2)\n\ndef Claim : Prop :=\n  ∀ a : ℝ, a < c0 → ∃ r : ℝ, 0 < r ∧ a < Real.pi * r ^ 2 ∧\n    ∃ φ : R4 → R4, IsSymplecticEmbedding r φ\n\nend OpenProblems.QEDM061\n",
   "M_fix_reason": "'Improve either bound' is, read as a proposition, trivially true: since π < c0, at least one of c_G(U) > π and c_G(U) < c0 always holds. The fix asks the sharp yes/no question c_G(U) = c0, which is the one tied to the strong Viterbo conjecture.",
@@ -1346,8 +1348,8 @@
    "arXiv:2507.06823 (2025 preprint): background on F(α) under AH.",
    "RH is a theorem (Alpöge, Lean library released 20 Nov 2026, certified 21 Nov 2026 by the Lean FRO/Mathlib Initiative against Mathlib's RiemannHypothesis). GRH for Dirichlet L-functions is treated as proved on the strength of Alpöge's announcement (alpo.ge/remark.pdf) and his Lean archive; the public certification names only RH, so the Dirichlet part has not yet been certified independently. Hecke, Dedekind and other L-functions remain open."
   ],
-  "plain": "The Alternative Hypothesis says normalized gaps between zeta zeros are almost all near half-integers. It contradicts GUE. RH and GRH for Dirichlet L-functions are now theorems (Alpöge, Nov 2026), and they alone are not known to rule AH out. Decide whether adding the Elliott–Halberstam conjecture (a strong statement about primes, not zeros) makes AH impossible.",
-  "math": "Let AH be as in arXiv:2508.10857. Does RH + GRH for Dirichlet L-functions + the Elliott–Halberstam conjecture EH imply that AH fails? (RH and GRH-Dirichlet are now theorems, Alpöge 2026, so this asks whether EH alone implies ¬AH; they are kept as hypotheses to match the Lean statement. The GEH variant is weaker and not part of the claim. The 'equivalently' clause is a research route, not an equivalent statement, and is dropped.)",
+  "plain": "The Alternative Hypothesis (AH) says that every gap between consecutive zeta zeros, in normalized units, is close to a multiple of one half. It contradicts GUE. RH and GRH for Dirichlet L-functions are now theorems (Alpöge, Nov 2026), and they alone are not known to rule AH out. Decide whether adding the Elliott–Halberstam conjecture (a strong statement about primes, not zeros) makes AH impossible. Further questions (not part of the formal claim): the same for the version of AH that allows an exceptional set of zeros, or with GEH in place of EH.",
+  "math": "Let $0<\\gamma_1<\\gamma_2<\\dots$ be the distinct positive ordinates of zeros of $\\zeta$ and $\\tilde\\gamma=\\frac{\\gamma}{2\\pi}\\log\\gamma$. AH (arXiv:2508.10857, §1, after Baluyot 2016): there is a positive function $\\psi$ with $\\psi(\\gamma)\\to\\infty$ and $\\psi(\\gamma)=o(\\log\\gamma)$ such that for every $n\\ge1$ there is an integer $k_n\\ge0$ with $\\tilde\\gamma_{n+1}-\\tilde\\gamma_n=\\tfrac12k_n+O(|\\gamma_{n+1}-\\gamma_n|\\,\\psi(\\gamma_n))$, with one implied constant for all $n$ (an every-gap statement, as in the paper). Claim: RH + GRH for all Dirichlet $L$-functions + the Elliott–Halberstam conjecture EH (level $1-\\varepsilon$ for every $\\varepsilon>0$, for $\\Lambda$, uniformly over coprime residues) imply that AH fails. (RH and GRH-Dirichlet are now theorems, Alpöge 2026, so this asks whether EH alone implies ¬AH; they are kept as hypotheses to match the Lean statement.) Further questions (not part of the formal claim): the same with AH weakened to allow an exceptional set of zeros (the paper's Remark 2 notes its results survive this), and the variant with GEH in place of EH (a weaker statement).",
   "novelty": 6,
   "importance": 6,
   "value": 5,
@@ -1377,8 +1379,8 @@
   "premise_risks": [
    "arXiv:2609.01327 (2026 preprint): cited in refs; M does not depend on it."
   ],
-  "plain": "Unconditionally, abc is known only in very weak forms. Pasten (2024) proved that if a ≤ c^{1−η} then log c ≤ η^{-1} exp(κ√(log R · log log R)), with R = rad(abc). abc predicts log c ≤ (1+ε) log R + O(1). Replace the square root by any smaller power of log R.",
-  "math": "For coprime $a+b=c$ with $R=\\mathrm{rad}(abc)$, Pasten (Invent. Math. 2024, Thm 1.4) proves: if $a\\le c^{1-\\eta}$ then $\\log c\\le \\eta^{-1}\\exp\\big(\\kappa\\sqrt{\\log R\\,\\log_2 R}\\big)$; and $\\log c\\le q\\exp(\\kappa\\sqrt{\\log R\\log_2R})$ with $q=\\min\\{P(a),P(b),P(c)\\}$. Prove either statement with $\\exp((\\log R)^{\\theta})$ for some fixed $\\theta<1/2$, or $\\exp(O(\\sqrt{\\log R}))$.",
+  "plain": "Unconditionally, abc is known only in very weak forms. Pasten (2024) proved that if a ≤ c^{1−η} then log c ≤ η^{-1} exp(κ√(log R · log log R)), with R = rad(abc). abc predicts log c ≤ (1+ε) log R + O(1). Replace the square root by some smaller power of log R, in this bound or in Pasten's companion bound. Further questions (not part of the formal claim): just remove the log log R factor, i.e. get exp(O(√log R)).",
+  "math": "For coprime positive $a+b=c$ with $R=\\mathrm{rad}(abc)$, Pasten (Invent. Math. 2024, Thm 1.4) proves: (1) if $a\\le c^{1-\\eta}$ then $\\log c\\le \\eta^{-1}\\exp\\big(\\kappa\\sqrt{\\log R\\,\\log_2 R}\\big)$; and (2) $\\log c\\le q\\exp(\\kappa\\sqrt{\\log R\\log_2R})$ with $q=\\min\\{P(a),P(b),P(c)\\}$. Claim: there is a fixed $\\theta\\in(0,1/2)$ such that (1) holds with $\\exp(\\kappa(\\log R)^{\\theta})$ for some $\\kappa>0$ and all $\\eta\\in(0,1)$ and all triples, or (2) holds with $\\exp(\\kappa(\\log R)^{\\theta})$ for some $\\kappa>0$ and all triples. Prove or disprove (a disproof would contradict abc). Further questions (not part of the formal claim): prove either statement with $\\exp(O(\\sqrt{\\log R}))$.",
   "novelty": 6,
   "importance": 6,
   "value": 6,
@@ -1466,7 +1468,7 @@
   "grade": "B",
   "provenance": "Extension",
   "credit": "Blair, Ford, Marzuola, Strichartz estimates for the wave equation on flat cones / Euclidean surfaces with conical singularities, arXiv:1003.0666.",
-  "results": "s* >= 0 (trivial). No positive lower bound known. s* <= 1/4: Blair-Ford-Marzuola, Thm 1.5 (arXiv 1003.0666), loss 1/p for compact Euclidean surfaces with conical singularities, p=q=4; authors call the loss an artifact of the method.",
+  "results": "s* >= 0 (trivial). No positive lower bound known. s* <= 1/4: Blair-Ford-Herr-Marzuola, Thm 1.5 (arXiv 1003.0666), loss 1/p for compact Euclidean surfaces with conical singularities, p=q=4; the authors believe the loss is an artifact of the method (Remark 1.3).",
   "premise_risks": [],
   "plain": "On the flat torus, the L4 space-time estimate for Schrodinger waves loses only epsilon derivatives (Bourgain). On the surface of a cube, which has eight cone points that diffract waves, only a loss of 1/4 derivative is known. Find the true loss: prove any loss below 1/4, or show some loss is necessary.",
   "math": "Let $S$ be the unit cube surface, $\\Delta$ the Friedrichs extension from $C_c^\\infty(S\\setminus\\text{vertices})$, and $s^*=\\inf\\{s\\ge0:\\|e^{it\\Delta}f\\|_{L^4([0,1]\\times S)}\\le C_s\\|f\\|_{H^s(S)}\\}$. Known: $0\\le s^*\\le\\tfrac14$ (Blair–Ford–Marzuola). Prove $s^*<\\tfrac14$, or $s^*>0$; ideally determine $s^*$ (conjecturally $0$). The board's target (Claim) is $s^*<\\tfrac14$.",
@@ -1530,7 +1532,7 @@
   "area": "PDE",
   "difficulty": 5.0,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Extension",
   "credit": null,
   "results": null,
   "premise_risks": [
@@ -1547,7 +1549,8 @@
    "https://arxiv.org/abs/1701.04050",
    "https://arxiv.org/abs/1905.06387",
    "https://arxiv.org/abs/1203.5151",
-   "https://arxiv.org/pdf/2602.13963"
+   "https://arxiv.org/pdf/2602.13963",
+   "https://ar5iv.labs.arxiv.org/html/2208.08974"
   ],
   "lean": "import Mathlib\n/-! QED-M091: Euler with reversed stretching\nFlip the sign of the vortex-stretching term in the 3D Euler vorticity equation on the torus, keeping advection and the\nBiot–Savart law. Do smooth solutions stay smooth forever, or can they blow up in finite time?\nInformal statement: On 𝕋³ let ω : 𝕋³ × [0,T) → ℝ³ solve ∂ₜω + (u·∇)ω = −Sω, where u = ∇ × (−Δ)⁻¹(ω − ⟨ω⟩),\nS = ½(∇u + ∇uᵀ) and ⟨ω⟩ is the spatial mean. Decide whether every ω₀ ∈ C^∞(𝕋³; ℝ³) with ∇·ω₀ = 0 generates a global\nsmooth solution.\nFormalization notes: 𝕋³ = (ℝ/2πℤ)³ is encoded by 2π-periodic functions on ℝ³ = (Fin 3 → ℝ). Spatial partial derivatives\nare Fréchet derivatives in coordinate directions (`pd i F x = ∂ᵢF(x)`), the time derivative is `deriv`. The spatial mean is\n(2π)⁻³ times the Bochner integral over the cell [0,2π]³. The Biot–Savart velocity is u = curl ψ where ψ is the\nmean-zero periodic solution of Δψ = −(ω − ⟨ω⟩) (unique; ψ is required to exist as part of the solution, and its\njoint smoothness is automatic for smooth ω, so requiring it loses nothing). We do NOT assume div ω = 0 for t > 0\n(the reversed equation does not preserve it), which is why u is defined through ψ rather than by curl u = ω.\n(Sω)ᵢ = Σⱼ ½(∂ⱼuᵢ + ∂ᵢuⱼ)ωⱼ. Smoothness is \"C^k for every k ∈ ℕ\" jointly in (t,x) on ℝ × ℝ³; since any smooth function on\n[0,∞) × ℝ³ extends smoothly to t < 0, this is the same as smoothness on [0,∞) × 𝕋³. The equation is imposed for t > 0\n(it then holds at t = 0 by continuity). Smooth solutions are unique, so existence of a global smooth solution is\nthe same as absence of finite-time blow-up. Proving Claim = global regularity for all smooth divergence-free data;\nproving ¬Claim = some smooth periodic divergence-free ω₀ with no global smooth solution (finite-time blow-up).\n-/\nnamespace OpenProblems.QEDM091\n\n/-- Partial derivative `∂ᵢ F (x)` of a vector field `F : ℝ³ → ℝ³`. -/\nnoncomputable def pd (i : Fin 3) (F : (Fin 3 → ℝ) → (Fin 3 → ℝ)) (x : Fin 3 → ℝ) : Fin 3 → ℝ :=\n  fderiv ℝ F x (Pi.single i 1)\n\n/-- Vector Laplacian. -/\nnoncomputable def lap (F : (Fin 3 → ℝ) → (Fin 3 → ℝ)) (x : Fin 3 → ℝ) : Fin 3 → ℝ :=\n  ∑ i : Fin 3, pd i (pd i F) x\n\n/-- Curl `∇ × F`. -/\nnoncomputable def curl (F : (Fin 3 → ℝ) → (Fin 3 → ℝ)) (x : Fin 3 → ℝ) : Fin 3 → ℝ :=\n  ![pd 1 F x 2 - pd 2 F x 1, pd 2 F x 0 - pd 0 F x 2, pd 0 F x 1 - pd 1 F x 0]\n\n/-- Divergence `∇ · F`. -/\nnoncomputable def divg (F : (Fin 3 → ℝ) → (Fin 3 → ℝ)) (x : Fin 3 → ℝ) : ℝ :=\n  ∑ i : Fin 3, pd i F x i\n\n/-- `F` is `2π`-periodic in each coordinate (a field on `𝕋³`). -/\ndef IsPeriodic (F : (Fin 3 → ℝ) → (Fin 3 → ℝ)) : Prop :=\n  ∀ (x : Fin 3 → ℝ) (i : Fin 3), F (x + Pi.single i (2 * Real.pi)) = F x\n\n/-- The fundamental cell `[0, 2π]³`. -/\nnoncomputable def cell : Set (Fin 3 → ℝ) := Set.Icc (0 : Fin 3 → ℝ) (fun _ => 2 * Real.pi)\n\n/-- Spatial mean over the torus. -/\nnoncomputable def mean (F : (Fin 3 → ℝ) → (Fin 3 → ℝ)) : Fin 3 → ℝ :=\n  (1 / (2 * Real.pi) ^ 3) • MeasureTheory.integral (MeasureTheory.volume.restrict cell) F\n\n/-- `(S ω)ᵢ = Σⱼ ½ (∂ⱼ uᵢ + ∂ᵢ uⱼ) ωⱼ` with `S` the symmetric gradient of `u` at `x`. -/\nnoncomputable def strainApply (u : (Fin 3 → ℝ) → (Fin 3 → ℝ)) (w : Fin 3 → ℝ) (x : Fin 3 → ℝ) : Fin 3 → ℝ :=\n  fun i => ∑ j : Fin 3, (1 / 2 : ℝ) * (pd j u x i + pd i u x j) * w j\n\n/-- Joint smoothness in `(t, x)`: `C^k` for every `k`. -/\ndef IsSmoothTX (f : ℝ → (Fin 3 → ℝ) → (Fin 3 → ℝ)) : Prop :=\n  ∀ k : ℕ, ContDiff ℝ k (fun p : ℝ × (Fin 3 → ℝ) => f p.1 p.2)\n\n/-- `(ω, ψ)` is a global smooth solution with initial vorticity `ω₀`; the velocity is `u(t) = curl ψ(t)`. -/\ndef IsGlobalSolution (ω₀ : (Fin 3 → ℝ) → (Fin 3 → ℝ)) (ω ψ : ℝ → (Fin 3 → ℝ) → (Fin 3 → ℝ)) : Prop :=\n  IsSmoothTX ω ∧ IsSmoothTX ψ ∧ ω 0 = ω₀ ∧\n  (∀ t : ℝ, 0 ≤ t →\n    IsPeriodic (ω t) ∧ IsPeriodic (ψ t) ∧ mean (ψ t) = 0 ∧\n    ∀ x : Fin 3 → ℝ, lap (ψ t) x = -(ω t x - mean (ω t))) ∧\n  (∀ t : ℝ, 0 < t → ∀ x : Fin 3 → ℝ,\n    deriv (fun s : ℝ => ω s x) t + ∑ j : Fin 3, (curl (ψ t) x j) • pd j (ω t) x\n      = -(strainApply (curl (ψ t)) (ω t x) x))\n\ndef Claim : Prop :=\n  ∀ ω₀ : (Fin 3 → ℝ) → (Fin 3 → ℝ),\n    (∀ k : ℕ, ContDiff ℝ k ω₀) → IsPeriodic ω₀ → (∀ x, divg ω₀ x = 0) →\n      ∃ ω ψ : ℝ → (Fin 3 → ℝ) → (Fin 3 → ℝ), IsGlobalSolution ω₀ ω ψ\n\nend OpenProblems.QEDM091\n",
   "M_fix_reason": null,
@@ -1608,8 +1611,8 @@
    "Cao–Chi–Nie arXiv:2609.10262 (2026 preprint): interior-ball placement of blow-up in domains; used to argue interior case is 'already available'.",
    "Lei–Ren arXiv:2609.35406 (2026 preprint): R^3 forced blow-up; background only."
   ],
-  "plain": "In 2026 it was shown that a smooth, compactly supported force can drive the 3D Navier–Stokes equations, started from rest, to blow up in finite time. Inside a domain this can simply be copied away from any wall. Show that blow-up can also happen at the wall itself: in a half-space with the no-slip condition, the velocity becomes unbounded at a point of the boundary.",
-  "math": "Let $\\mathbb R^3_+=\\{x_3>0\\}$, $\\nu>0$. Construct $f\\in C^\\infty_c(\\overline{\\mathbb R^3_+}\\times(0,\\infty);\\mathbb R^3)$ and a solution $(u,p)$ of $\\partial_t u-\\nu\\Delta u+(u\\cdot\\nabla)u+\\nabla p=f$, $\\nabla\\cdot u=0$ in $\\mathbb R^3_+\\times(0,T)$, $u|_{x_3=0}=0$, $u(\\cdot,0)=0$, with $u\\in C^\\infty(\\overline{\\mathbb R^3_+}\\times[0,T))$, $\\sup_{t<T}\\|u(t)\\|_{L^2}<\\infty$ and $\\limsup_{t\\uparrow T}\\|u(t)\\|_{L^\\infty}=\\infty$, such that $u$ stays bounded on $\\{x_3>r\\}\\times[0,T)$ for every $r>0$ (all singular points lie on the wall).",
+  "plain": "In 2026 it was shown that a smooth, compactly supported force can drive the 3D Navier–Stokes equations, started from rest, to blow up in finite time. Inside a domain this can simply be copied away from any wall. Show that blow-up can also happen at the wall itself, for every viscosity: in a half-space with the no-slip condition, the velocity becomes unbounded at points of a bounded piece of the boundary, while staying bounded away from the wall and with bounded pressure at each time.",
+  "math": "Let $\\mathbb R^3_+=\\{x_3>0\\}$. Claim: for every $\\nu>0$ there are $T>0$, $f\\in C^\\infty_c(\\overline{\\mathbb R^3_+}\\times(0,\\infty);\\mathbb R^3)$ and a solution $(u,p)$ of $\\partial_t u-\\nu\\Delta u+(u\\cdot\\nabla)u+\\nabla p=f$, $\\nabla\\cdot u=0$ in $\\mathbb R^3_+\\times(0,T)$, $u|_{x_3=0}=0$, $u(\\cdot,0)=0$, with $u,p\\in C^\\infty(\\overline{\\mathbb R^3_+}\\times[0,T))$, $\\sup_{t<T}\\|u(t)\\|_{L^2(\\mathbb R^3_+)}<\\infty$, $p(\\cdot,t)$ bounded on $\\overline{\\mathbb R^3_+}$ for each $t<T$, and $\\sup_{t<T}\\|u(t)\\|_{L^\\infty}=\\infty$, such that $u$ stays bounded on $\\{x_3>r\\}\\times[0,T)$ for every $r>0$ and on $\\{\\max(|x_1|,|x_2|)>R_0\\}\\times[0,T)$ for some $R_0$ (so all singular points lie on a bounded part of the wall). Prove or disprove (a disproof shows that for some $\\nu>0$ no such boundary blow-up exists).",
   "novelty": 7,
   "importance": 7,
   "value": 7,
@@ -1706,8 +1709,8 @@
   "credit": "Dunfield-Thurston, Finite covers of random 3-manifolds, Invent. Math. 2006 (arXiv:math/0502567), question on alternating quotients; Everitt / Liebeck-Shalev for Fuchsian groups",
   "results": "Computer-verified in a fresh script: trefoil (xyx=yxy) surjects onto A5 but not A6 or A7. Figure-eight (w=x^-1yxy^-1) surjects onto A4 and A6 but not A5, A7 or A8, and has no S3 quotient, as det=5 requires. n>=9 not rerun (would take more than 30s). The trefoil argument (centre maps trivially, factor through C2*C3, Miller's (2,3)-generation) is correct.",
   "premise_risks": [],
-  "plain": "The trefoil's group maps onto every alternating group A_n with n>=9, because modulo its centre it is the modular group. Show that every nontrivial knot group maps onto A_n for all large n, or at least for infinitely many n, and bound the last exception in terms of the knot.",
-  "math": "Let $K\\subset S^3$ be a nontrivial knot and $G_K=\\pi_1(S^3\\setminus K)$. (a) Prove that $G_K$ surjects onto $A_n$ for all $n\\ge N(K)$, and bound $N(K)$ in terms of the crossing number. (b) Weaker: prove that $G_K$ surjects onto $A_n$ for infinitely many $n$, or even for one $n\\ge5$. Data (exhaustive search over pairs of conjugate even permutations, meridians $x,y$ with $wx=yw$): for the trefoil ($w=xy$) a surjection exists exactly for $n=5$ and $n\\ge9$, since every surjection kills the centre and factors through $\\mathrm{PSL}_2(\\mathbb Z)\\cong C_2*C_3$, and Miller proved $(2,3)$-generation of $A_n$ for $n\\ne3,6,7,8$. For the figure-eight knot ($w=x^{-1}yxy^{-1}$) a surjection exists for $n=6,9,10$ and not for $n=5,7,8$. Is $N(4_1)=9$, i.e. does $G_{4_1}$ surject onto $A_n$ for every $n\\ge9$?",
+  "plain": "The trefoil's group maps onto every alternating group A_n with n>=9, because modulo its centre it is the modular group. Show that every nontrivial knot group maps onto A_n for all large enough n. Further questions (not part of the formal claim): bound the last exception in terms of the knot; or, weaker, show it for infinitely many n.",
+  "math": "Let $K\\subset S^3$ be a nontrivial (tame) knot and $G_K=\\pi_1(S^3\\setminus K)$. Claim: for every nontrivial $K$ there is $N(K)$ such that $G_K$ surjects onto $A_n$ for all $n\\ge N(K)$. Prove or disprove (a disproof is a nontrivial knot whose group fails to surject onto $A_n$ for infinitely many $n$). Data (exhaustive search over pairs of conjugate even permutations, meridians $x,y$ with $wx=yw$): for the trefoil ($w=xy$) a surjection exists exactly for $n=5$ and $n\\ge9$, since every surjection kills the centre and factors through $\\mathrm{PSL}_2(\\mathbb Z)\\cong C_2*C_3$, and Miller proved $(2,3)$-generation of $A_n$ for $n\\ne3,6,7,8$. For the figure-eight knot ($w=x^{-1}yxy^{-1}$) a surjection exists for $n=6,9,10$ and not for $n=5,7,8$. Further questions (not part of the formal claim): bound $N(K)$ in terms of the crossing number; weaker, prove that $G_K$ surjects onto $A_n$ for infinitely many $n$, or even for one $n\\ge5$; is $N(4_1)=9$, i.e. does $G_{4_1}$ surject onto $A_n$ for every $n\\ge9$?",
   "novelty": 4,
   "importance": 7,
   "value": 7,
@@ -2825,7 +2828,7 @@
   "area": "Number theory",
   "difficulty": 5.5,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Curated",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -2908,7 +2911,7 @@
   "area": "Number theory",
   "difficulty": 5.0,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Curated",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -2989,7 +2992,7 @@
   "area": "Number theory",
   "difficulty": 7.5,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Extension",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -3003,7 +3006,9 @@
   "refs": [
    "https://arxiv.org/abs/2105.11173",
    "https://arxiv.org/abs/2501.00850",
-   "https://arxiv.org/abs/2412.09124"
+   "https://arxiv.org/abs/2412.09124",
+   "https://arxiv.org/pdf/2105.11173",
+   "https://arxiv.org/pdf/1611.08180"
   ],
   "lean": "import Mathlib\n/-! QED-M145: Primes with equal binary and ternary digit sums\nShow that there are infinitely many primes whose binary digit sum equals their ternary digit sum.\nInformal statement: Let $s_q(n)$ be the sum of the base-$q$ digits of $n$. Prove that there are infinitely many primes $p$ with $s_2(p)=s_3(p)$. (Stronger target, not formalized here: $\\#\\{p\\le N:s_2(p)=s_3(p)\\}\\ge N^{c}$ for some $c>0$.)\nFormalization notes:\n* `Nat.digits q n` is the list of base-`q` digits of `n` (least significant first), so\n  `(Nat.digits q n).sum = s_q(n)`.\n* `Claim` is the main statement (infinitely many such primes). Proving `¬Claim` means only finitely\n  many primes have equal binary and ternary digit sums. The stronger counting target is a remark.\n-/\nnamespace OpenProblems.QEDM145\nnoncomputable section\n\n/-- Sum of the base-`q` digits of `n`. -/\ndef digitSum (q n : ℕ) : ℕ := (Nat.digits q n).sum\n\ndef Claim : Prop :=\n  {p : ℕ | p.Prime ∧ digitSum 2 p = digitSum 3 p}.Infinite\n\nend\nend OpenProblems.QEDM145\n",
   "set": "main"
@@ -3041,7 +3046,7 @@
   "area": "Number theory",
   "difficulty": 6.5,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Curated",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -3055,7 +3060,8 @@
   "refs": [
    "https://mospace.umsystem.edu/xmlui/handle/10355/10840",
    "https://portal.mardi4nfdi.de/wiki/Publication:2491070",
-   "https://arxiv.org/abs/1311.2527"
+   "https://arxiv.org/abs/1311.2527",
+   "https://projecteuclid.org/journals/michigan-mathematical-journal/volume-53/issue-3/Distributional-properties-of-the-largest-prime-factor/10.1307/mmj/1133894172.pdf"
   ],
   "lean": "import Mathlib\n/-! QED-M147: Largest prime factor of p−1 in residue classes\nFor each prime p, take the largest prime factor of p − 1. Show that this factor is 1 mod 4 for half of all primes and 3 mod 4 for the other half. More generally, show it is spread evenly over the allowed residue classes mod q.\nInformal statement: Let $P(n)$ be the largest prime factor of $n$. Prove that for every fixed $q\\ge2$ and every $a$ with $\\gcd(a,q)=1$, $\\#\\{p\\le x:\\ P(p-1)\\equiv a\\ (\\mathrm{mod}\\ q)\\}\\sim\\frac{\\pi(x)}{\\varphi(q)}$ as $x\\to\\infty$. The first open case is $q=4$, $a=1$: $\\#\\{p\\le x: P(p-1)\\equiv1\\ (4)\\}\\sim\\tfrac12\\pi(x)$.\nFormalization notes: P(n) = largest prime factor, `gpf n = max 1 (sup of n.primeFactors)`, so P(1) = 1 (only\np = 2 has p − 1 = 1; a single prime does not affect the asymptotic). x ranges over ℕ (the counts only change at\nintegers). `countRes q a x` = #{p ≤ x prime : P(p − 1) ≡ a (mod q)}, written as `gpf (p-1) % q = a % q`\n(truncated subtraction is harmless since p ≥ 2). The asymptotic `count ∼ π(x)/φ(q)` is stated as\n`count / π(x) → 1/φ(q)`, which is equivalent because π(x) > 0 for x ≥ 2 and φ(q) ≥ 1 (the ratio's junk value\nfor x < 2 does not affect the limit). `Nat.primeCounting x` = π(x), `Nat.totient` = φ. `Claim` = the\nasymptotic for all q ≥ 2 and all a coprime to q; `¬Claim` = it fails for some (q, a), e.g. a persistent bias\nfor q = 4.\n-/\nnamespace OpenProblems.QEDM147\nnoncomputable section\n\n/-- Largest prime factor of `n`, with `gpf 0 = gpf 1 = 1`. -/\ndef gpf (n : ℕ) : ℕ := max 1 (n.primeFactors.sup id)\n\n/-- `#{p ≤ x prime : P(p - 1) ≡ a (mod q)}`. -/\ndef countRes (q a x : ℕ) : ℕ :=\n  ((Finset.range (x + 1)).filter (fun p : ℕ => p.Prime ∧ gpf (p - 1) % q = a % q)).card\n\n/-- `P(p - 1)` is equidistributed among the reduced residue classes mod `q`. -/\ndef Claim : Prop :=\n  ∀ q a : ℕ, 2 ≤ q → Nat.Coprime a q →\n    Filter.Tendsto (fun x : ℕ => (countRes q a x : ℝ) / (Nat.primeCounting x : ℝ))\n      Filter.atTop (nhds (1 / (Nat.totient q : ℝ)))\n\nend\nend OpenProblems.QEDM147\n",
   "set": "main"

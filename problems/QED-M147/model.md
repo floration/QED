@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Number theory
+Main set · Grade B · QED Curated · Number theory
 
 **Plain words:** For each prime p, take the largest prime factor of p − 1. Show that this factor is 1 mod 4 for half of all primes and 3 mod 4 for the other half. More generally, show it is spread evenly over the allowed residue classes mod q.
 
@@ -15,6 +15,7 @@ Main set · Grade B · QED Original · Number theory
 - https://mospace.umsystem.edu/xmlui/handle/10355/10840
 - https://portal.mardi4nfdi.de/wiki/Publication:2491070
 - https://arxiv.org/abs/1311.2527
+- https://projecteuclid.org/journals/michigan-mathematical-journal/volume-53/issue-3/Distributional-properties-of-the-largest-prime-factor/10.1307/mmj/1133894172.pdf
 
 Difficulty estimate: 6.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade B · QED Original · Number theory
+Extended set · Grade B · QED Curated · Number theory
 
 **Plain words:** Prime numbers other than 2 leave remainder 1 or 3 when divided by 4. Shiu proved that arbitrarily long runs of consecutive primes all with the same remainder occur. Show that, for every k, there are infinitely many runs of k consecutive primes whose remainders alternate 1, 3, 1, 3, .... Even k = 3 (a prime that is 3 mod 4 sandwiched between two primes that are 1 mod 4) is open.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Number theory
+Main set · Grade B · QED Curated · Number theory
 
 **Plain words:** Tao proved the lonely runner conjecture when every speed is at most 1.2 times the number of runners. Push this to speeds at most twice the number of runners (and ideally any fixed multiple).
 

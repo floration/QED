@@ -156,14 +156,17 @@
    "J.C.C. Nitsche, Stationary partitioning of convex bodies, Arch. Rational Mech. Anal. 89 (1985)",
    "M. Grüter and J. Jost, On embedded minimal disks in convex bodies, Ann. Inst. H. Poincaré Anal. Non Linéaire 3 (1986)",
    "D. Ketover, Equivariant min-max theory, arXiv:1612.08692",
-   "https://arxiv.org/abs/2307.01828"
+   "https://arxiv.org/abs/2307.01828",
+   "https://arxiv.org/pdf/2304.12111",
+   "https://arxiv.org/pdf/2406.13465",
+   "https://arxiv.org/abs/2606.02396"
   ],
   "formal_status": "formalized",
   "set": "extended",
   "id": "QED-E009",
   "lean": "import Mathlib\n/-! QED-E009: Non-flat free-boundary minimal disks in the superball\nInformal statement: for $p>2$ let $B_p=\\{|x|^p+|y|^p+|z|^p\\le1\\}$. Decide whether $B_4$ (more generally $B_p$)\ncontains an embedded minimal disk $\\Sigma$ with $\\partial\\Sigma\\subset\\partial B_p$, meeting $\\partial B_p$\northogonally, that is not contained in a plane. Specifically, show that there is one invariant under the\nrotation by $2\\pi/3$ about the axis $\\mathbb R(1,1,1)$ and under $v\\mapsto -v$.\nBackground (referee): a ℤ₃-invariant free-boundary disk cannot be planar, since the plane x+y+z=0 meets\n∂B_p orthogonally only where xyz=0. Refs: Nitsche (ARMA 1985), Grüter–Jost (1986), Ketover arXiv:1612.08692.\nFormalization notes:\n* Claim is the \"specifically\" part for p = 4: B₄ = {x⁴+y⁴+z⁴ ≤ 1}, f(y) = Σ yᵢ⁴, ∇f(y) = (4yᵢ³).\n* A free-boundary minimal disk is given by a conformal harmonic immersion u of the closed unit disk\n  D̄ ⊂ ℝ² (every embedded minimal disk smooth up to the boundary admits such a parametrisation: isothermal\n  coordinates + Riemann mapping + boundary regularity). u : ℝ×ℝ → ℝ³ is required C² on all of ℝ² (any map\n  smooth up to ∂D̄ extends); only its behaviour on D̄ matters.\n  - conformal immersion on D̄: |u_s|=|u_t| ≠ 0, ⟨u_s,u_t⟩=0;  harmonic (Δu=0) on the open disk;\n  - embedded: injective on D̄;  u(open disk) ⊆ int B₄, u(∂D̄) ⊆ ∂B₄;\n  - free boundary: at each boundary point x of D̄ the outward conormal du_x(x) is a positive multiple of\n    ∇f(u x) (meets ∂B₄ orthogonally).\n* Symmetry: the image is invariant under the cyclic coordinate permutation (x,y,z) ↦ (z,x,y), which is the\n  rotation by 2π/3 about ℝ(1,1,1), and under v ↦ -v. Non-planarity is stated explicitly though implied.\n-/\n\nnamespace OpenProblems.QEDE009\nnoncomputable section\n\n/-- Standard dot product on `ℝ³`. -/\ndef dot (a b : Fin 3 → ℝ) : ℝ := ∑ i, a i * b i\n\n/-- Defining function of the superball `B₄`. -/\ndef f4 (y : Fin 3 → ℝ) : ℝ := ∑ i, y i ^ 4\n\n/-- Gradient of `f4`. -/\ndef gradf4 (y : Fin 3 → ℝ) : Fin 3 → ℝ := fun i => 4 * y i ^ 3\n\n/-- Closed unit disk in `ℝ²`. -/\ndef Dbar : Set (ℝ × ℝ) := {x | x.1 ^ 2 + x.2 ^ 2 ≤ 1}\n\n/-- Partial derivatives `u_s`, `u_t`. -/\ndef du1 (u : ℝ × ℝ → Fin 3 → ℝ) (x : ℝ × ℝ) : Fin 3 → ℝ := fderiv ℝ u x (1, 0)\ndef du2 (u : ℝ × ℝ → Fin 3 → ℝ) (x : ℝ × ℝ) : Fin 3 → ℝ := fderiv ℝ u x (0, 1)\n\n/-- `u` parametrises an embedded free-boundary minimal disk in `B₄`. -/\ndef IsFBMinimalDisk (u : ℝ × ℝ → Fin 3 → ℝ) : Prop :=\n  ContDiff ℝ 2 u ∧\n  Set.InjOn u Dbar ∧\n  (∀ x ∈ Dbar, du1 u x ≠ 0 ∧ dot (du1 u x) (du1 u x) = dot (du2 u x) (du2 u x) ∧\n      dot (du1 u x) (du2 u x) = 0) ∧\n  (∀ x : ℝ × ℝ, x.1 ^ 2 + x.2 ^ 2 < 1 →\n      fderiv ℝ (du1 u) x (1, 0) + fderiv ℝ (du2 u) x (0, 1) = 0) ∧\n  (∀ x : ℝ × ℝ, x.1 ^ 2 + x.2 ^ 2 < 1 → f4 (u x) < 1) ∧\n  (∀ x : ℝ × ℝ, x.1 ^ 2 + x.2 ^ 2 = 1 →\n      f4 (u x) = 1 ∧ ∃ c : ℝ, 0 < c ∧ fderiv ℝ u x x = c • gradf4 (u x))\n\n/-- Rotation by `2π/3` about `ℝ(1,1,1)`: cyclic permutation of coordinates. -/\ndef rot (v : Fin 3 → ℝ) : Fin 3 → ℝ := ![v 2, v 0, v 1]\n\ndef Claim : Prop :=\n  ∃ u : ℝ × ℝ → Fin 3 → ℝ, IsFBMinimalDisk u ∧\n    rot '' (u '' Dbar) = u '' Dbar ∧\n    (fun v => -v) '' (u '' Dbar) = u '' Dbar ∧\n    ¬ ∃ a : Fin 3 → ℝ, a ≠ 0 ∧ ∃ c : ℝ, ∀ x ∈ Dbar, dot a (u x) = c\n\nend\nend OpenProblems.QEDE009\n",
   "lean_gap": null,
-  "provenance": "Original"
+  "provenance": "Extension"
  },
  {
   "legacy_id": "N-627",
@@ -359,8 +362,8 @@
    "The bound 60 is an unrefereed 2026 preprint resting on unverified SAT runs; the safe published bound is 62",
    "Problem may be stated with whichever upper bound the board accepts"
   ],
-  "plain": "Colour every edge of a complete graph with one of four colours. How many vertices force a single-coloured triangle? The answer is known to lie between 51 and 60 (the 60 coming from a 2026 computer-assisted preprint). Narrow or close this gap.",
-  "math": "Let $R_4(3)=R(3,3,3,3)$ be the least $n$ such that every 4-edge-colouring of $K_n$ contains a monochromatic triangle. Known: $51\\le R_4(3)\\le 62$ (refereed), and $\\le 60$ in a 2026 computer-assisted preprint. Improve either bound, i.e. exhibit a 4-colouring of $K_{51}$ with no monochromatic triangle, or lower the upper bound (below 60, or confirm 60 rigorously). Ultimately determine $R_4(3)$; it is conjectured to be $51$.",
+  "plain": "Colour every edge of a complete graph with one of four colours. How many vertices force a single-coloured triangle? The answer is known to lie between 51 and 60 (the 60 coming from a 2026 computer-assisted preprint), and is conjectured to be 51. Prove that 51 vertices already force one, or find a four-colouring of 51 vertices with no single-coloured triangle. Further questions (not part of the formal claim): any improvement of the upper bound, e.g. below 60, or a rigorous proof of 60.",
+  "math": "Let $R_4(3)=R(3,3,3,3)$ be the least $n$ such that every 4-edge-colouring of $K_n$ contains a monochromatic triangle. Known: $51\\le R_4(3)\\le 62$ (refereed), and $\\le 60$ in a 2026 computer-assisted preprint. Claim: every 4-edge-colouring of $K_{51}$ contains a monochromatic triangle, i.e. $R_4(3)\\le51$ and hence $R_4(3)=51$ (conjectured). Prove or disprove; a disproof is a 4-colouring of $K_{51}$ with no monochromatic triangle (giving $R_4(3)\\ge52$). Further questions (not part of the formal claim): lower the upper bound (below 60, or confirm 60 rigorously).",
   "review_note": "Known: Lower 51: F. Chung (1973). Upper 62: Fettes-Kramer-Radziszowski, Ars Combin. 72 (2004). Upper 60: M. Tatarevic, arXiv:2610.36648 (2026 preprint). It reduces to 296,081 SAT instances (UNSAT by Kissat and CaDiCaL); the reductions are in Lean/Mathlib, but the SAT exclusions are taken as a premise; extensive AI assistance is disclosed. Boza, arXiv:2603.10851 (2026), improves other multicolour bounds and cites 62 for R_4(3).",
   "refs": [
    "https://arxiv.org/abs/2610.36648",
@@ -1075,8 +1078,8 @@
   "premise_risks": [
    "arXiv:2603.15579 (2026 preprint) is listed in refs and may be the source of the current Sing-codimension bounds (6 <= r <= 2n) quoted in M; these are not used by Claim."
   ],
-  "plain": "The hypersurface where the n x n determinant vanishes has rational singularities, the mildest kind that matters for much of its geometry. Decide whether the hypersurface where the n x n permanent vanishes has rational singularities for every n, and compute its minimal exponent, a finer measure of how mild a singularity is.",
-  "math": "Let $X_n=\\{\\operatorname{per}_n=0\\}\\subset\\mathbb A^{n^2}_{\\mathbb C}$ and let $\\tilde\\alpha(X_n)$ be Saito's minimal exponent (the smallest root of $b_{\\operatorname{per}_n}(-s)/(1-s)$), so that $\\operatorname{lct}(\\mathbb A^{n^2},X_n)=\\min\\{1,\\tilde\\alpha(X_n)\\}$ and $X_n$ has rational singularities iff $\\tilde\\alpha(X_n)>1$. For $n=2$, $X_2$ is a nondegenerate quadric cone in $\\mathbb A^4$ and $\\tilde\\alpha=2$. For $\\det_n$ the Bernstein--Sato polynomial is $\\prod_{i=1}^n(s+i)$, so $\\tilde\\alpha(\\{\\det_n=0\\})=2$ for all $n$. Determine $\\tilde\\alpha(X_n)$ for all $n\\ge3$ (in particular for $n=3$), and decide whether $X_n$ has rational singularities for every $n$. Note: restricting to a generic linear subspace of dimension $r=\\operatorname{codim}\\operatorname{Sing}(X_n)$ gives an isolated homogeneous singularity, so $\\tilde\\alpha(X_n)\\ge r/n$. Since $6\\le r\\le 2n$ is known and $r=2n$ is conjectured, that conjecture would give $\\tilde\\alpha(X_n)\\ge2$ and rational singularities. Sharpened question: is $\\tilde\\alpha(X_n)=2$ for all $n$, or does $\\tilde\\alpha(X_n)\\to\\infty$?",
+  "plain": "The hypersurface where the n x n determinant vanishes has rational singularities, the mildest kind that matters for much of its geometry. Decide whether the hypersurface where the n x n permanent vanishes has rational singularities for every n. Further questions (not part of the formal claim): compute its minimal exponent, a finer measure of how mild a singularity is.",
+  "math": "Let $X_n=\\{\\operatorname{per}_n=0\\}\\subset\\mathbb A^{n^2}_{\\mathbb C}$ and let $\\tilde\\alpha(X_n)$ be Saito's minimal exponent (the smallest root of $b_{\\operatorname{per}_n}(-s)/(1-s)$), so that $\\operatorname{lct}(\\mathbb A^{n^2},X_n)=\\min\\{1,\\tilde\\alpha(X_n)\\}$ and $X_n$ has rational singularities iff $\\tilde\\alpha(X_n)>1$, i.e. iff $b_{\\operatorname{per}_n}(s)=(s+1)q(s)$ with every root of $q$ less than $-1$. For $n=2$, $X_2$ is a nondegenerate quadric cone in $\\mathbb A^4$ and $\\tilde\\alpha=2$. For $\\det_n$ the Bernstein--Sato polynomial is $\\prod_{i=1}^n(s+i)$, so $\\tilde\\alpha(\\{\\det_n=0\\})=2$ for all $n$. Claim: for every $n\\ge1$, $X_n$ has rational singularities; formally, some $b(s)=(s+1)q(s)$ with $q\\ne0$ and all roots of $q$ of real part $<-1$ satisfies $P(s)\\operatorname{per}_n^{s+1}=b(s)\\operatorname{per}_n^s$ for some $P(s)\\in D_{n^2}[s]$. Prove or disprove (a disproof is an $n$ with $\\tilde\\alpha(X_n)\\le1$). Note: restricting to a generic linear subspace of dimension $r=\\operatorname{codim}\\operatorname{Sing}(X_n)$ gives an isolated homogeneous singularity, so $\\tilde\\alpha(X_n)\\ge r/n$. Since $6\\le r\\le 2n$ is known and $r=2n$ is conjectured, that conjecture would give $\\tilde\\alpha(X_n)\\ge2$ and rational singularities. Further questions (not part of the formal claim): determine $\\tilde\\alpha(X_n)$ for all $n\\ge3$ (in particular for $n=3$); is $\\tilde\\alpha(X_n)=2$ for all $n$, or does $\\tilde\\alpha(X_n)\\to\\infty$?",
   "novelty": 6,
   "importance": 5,
   "value": 5,
@@ -1371,7 +1374,7 @@
   "area": "Combinatorics",
   "difficulty": 4.0,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Extension",
   "credit": "On the irreducible character degrees of symmetric groups and their multiplicities, arXiv:2410.01726 (2024)",
   "results": null,
   "premise_risks": [
@@ -1440,8 +1443,8 @@
   "credit": null,
   "results": null,
   "premise_risks": [],
-  "plain": "Planar graphs on n labelled vertices form a simplicial complex, because deleting an edge keeps a graph planar. It is pure, since every maximal planar graph has 3n-6 edges. Its homology turns out not to be that of a wedge of top-dimensional spheres: already for n=6 it is concentrated two degrees lower and has 2-torsion. Determine its homology.",
-  "math": "Let $\\Pi_n$ be the simplicial complex on vertex set $E(K_n)$ whose faces are edge sets of planar graphs; it is pure of dimension $3n-7$. Determine $\\tilde H_*(\\Pi_n;\\mathbb Z)$, or at least $\\tilde H_*(\\Pi_n;\\mathbb Q)$, for all $n$. Known: $\\Pi_4$ is a simplex, $\\Pi_5=\\partial\\Delta^9\\cong S^8$. For $n=6$ (computed exactly): $\\tilde H_*(\\Pi_6;\\mathbb Q)$ is $\\mathbb Q^{15}$ in degree $9=3n-9$ and $0$ elsewhere; $\\tilde H_*(\\Pi_6;\\mathbb F_2)$ is $\\mathbb F_2^{15},\\mathbb F_2,\\mathbb F_2$ in degrees $9,10,11$, so $\\tilde H_{10}(\\Pi_6;\\mathbb Z)$ has $2$-torsion and $\\Pi_6$ is not a wedge of spheres. The mod-2 top class is the sum of all triangulations: every face of dimension $3n-8$ of $\\Pi_6$ lies in an even number (2 or 4) of facets. Questions: (a) is $\\tilde H_*(\\Pi_n;\\mathbb Q)$ concentrated in degree $3n-9$ for all $n\\ge6$, and what is its rank and $S_n$-module structure? (b) Is $\\tilde H_{3n-7}(\\Pi_n;\\mathbb F_2)\\ne0$ for all $n\\ge5$? Is all torsion 2-torsion?",
+  "plain": "Planar graphs on n labelled vertices form a simplicial complex, because deleting an edge keeps a graph planar. It is pure, since every maximal planar graph has 3n-6 edges. Its homology turns out not to be that of a wedge of top-dimensional spheres: already for n=6 its rational homology sits two degrees lower and there is 2-torsion. Show that for every n ≥ 6 the rational homology lives only in that one degree, 3n-9. Further questions (not part of the formal claim): determine the homology fully (rank, symmetry structure, torsion).",
+  "math": "Let $\\Pi_n$ be the simplicial complex on vertex set $E(K_n)$ whose faces are edge sets of planar graphs; it is pure of dimension $3n-7$. Known: $\\Pi_4$ is a simplex, $\\Pi_5=\\partial\\Delta^9\\cong S^8$. For $n=6$ (computed exactly): $\\tilde H_*(\\Pi_6;\\mathbb Q)$ is $\\mathbb Q^{15}$ in degree $9=3n-9$ and $0$ elsewhere; $\\tilde H_*(\\Pi_6;\\mathbb F_2)$ is $\\mathbb F_2^{15},\\mathbb F_2,\\mathbb F_2$ in degrees $9,10,11$, so $\\tilde H_{10}(\\Pi_6;\\mathbb Z)$ has $2$-torsion and $\\Pi_6$ is not a wedge of spheres. The mod-2 top class is the sum of all triangulations: every face of dimension $3n-8$ of $\\Pi_6$ lies in an even number (2 or 4) of facets. Claim: for every $n\\ge6$, $\\tilde H_i(\\Pi_n;\\mathbb Q)=0$ for all $i\\ne 3n-9$ (concentration only; non-vanishing in degree $3n-9$ is not asserted). Prove or disprove. Further questions (not part of the formal claim): the rank and $S_n$-module structure of $\\tilde H_{3n-9}(\\Pi_n;\\mathbb Q)$; $\\tilde H_*(\\Pi_n;\\mathbb Z)$ in general; is $\\tilde H_{3n-7}(\\Pi_n;\\mathbb F_2)\\ne0$ for all $n\\ge5$? Is all torsion 2-torsion?",
   "novelty": 7,
   "importance": 4,
   "value": 5,
@@ -1901,7 +1904,7 @@
   "premise_risks": [
    "arXiv:2606.06024 (Koymans-Smith, 2026 preprint): source of the 31.95% (0.3195) lower bound for non-sums; the formalized Claim does not use it, but the stated M does."
   ],
-  "plain": "BSD plus the minimalist rank heuristic predict that exactly half of all integers are sums of two rational cubes. Proven: at least 2/21 are (Alpöge–Bhargava–Shnidman), and at least 31.95% are not (Koymans–Smith). Improve either bound.",
+  "plain": "BSD plus the minimalist rank heuristic predict that exactly half of all integers are sums of two rational cubes. Proven: at least 5/12 are (Alpöge–Bhargava–Shnidman's bound, made unconditional by OpenAI's Selmer-converse result), and at least 31.95% are not (Koymans–Smith). Improve either bound.",
   "math": "Let $\\mathcal S=\\{n\\in\\mathbb Z: n=x^3+y^3,\\ x,y\\in\\mathbb Q\\}$, densities ordered by $|n|$. Known: $\\underline d(\\mathcal S)\\ge 5/12$ (Alpöge–Bhargava–Shnidman's conditional bound, made unconditional by the Selmer p-converse at every prime) and $\\underline d(\\mathcal S^c)\\ge 0.3195$ (Koymans–Smith). Conjecture: both densities equal $1/2$. Prove $\\underline d(\\mathcal S)>5/12$ or $\\underline d(\\mathcal S^c)>0.3195$.",
   "novelty": 2,
   "importance": 7,
@@ -1929,8 +1932,8 @@
   "credit": "D.H.J. Polymath 2014, arXiv:1407.4897; J. Maynard 2015, arXiv:1311.4600",
   "results": null,
   "premise_risks": [],
-  "plain": "Assuming Elliott–Halberstam, Maynard's sieve gives infinitely many pairs of primes at distance at most 12. The generalized conjecture GEH gives 6. Lower 12 using EH alone.",
-  "math": "Let $H_1=\\liminf_{n}(p_{n+1}-p_n)$. Assuming EH (level $\\theta=1-\\varepsilon$ for all $\\varepsilon>0$, for the von Mangoldt function only, not GEH), prove $H_1\\le 10$, or prove that no Selberg/Maynard-type sieve weight using EH alone can give $H_1<12$.",
+  "plain": "Assuming Elliott–Halberstam, Maynard's sieve gives infinitely many pairs of primes at distance at most 12. The generalized conjecture GEH gives 6. Using EH alone, show there are infinitely many pairs of primes at distance at most 10. Further questions (not part of the formal claim): or show that no Selberg/Maynard-type sieve with EH alone can beat 12.",
+  "math": "Let $H_1=\\liminf_{n}(p_{n+1}-p_n)$. Let EH be the Elliott–Halberstam conjecture for the von Mangoldt function only (not GEH): for every $\\varepsilon>0$ and $A>0$, $\\sum_{q\\le x^{1-\\varepsilon}}|\\psi(x;q,a_q)-\\psi(x)/\\varphi(q)|\\ll_{\\varepsilon,A} x/\\log^A x$ uniformly over residues $a_q$ coprime to $q$. Claim: EH implies $H_1\\le 10$, i.e. that there are infinitely many primes $p<q\\le p+10$. (An unconditional proof of $H_1\\le10$ also proves the Claim.) Further questions (not part of the formal claim): prove that no Selberg/Maynard-type sieve weight using EH alone can give $H_1<12$.",
   "novelty": 3,
   "importance": 6,
   "value": 6,
@@ -2115,8 +2118,8 @@
   "credit": "Cohen, Lenstra, 'Heuristics on class groups of number fields', LNM 1068 (1984); Davenport-Heilbronn (1971) for the first moment",
   "results": null,
   "premise_risks": [],
-  "plain": "Davenport–Heilbronn showed the average of |Cl(K)[3]| over imaginary quadratic fields is 2, as Cohen–Lenstra predicts. Cohen–Lenstra also predict the average of |Cl(K)[3]|² is 6. Prove this, or at least that the average is bounded.",
-  "math": "Let $K$ range over imaginary quadratic fields with $|D_K|<X$. Cohen–Lenstra ($\\mathbb E\\,\\#\\mathrm{Sur}(\\mathrm{Cl}_K,H)=1$ for $H=(\\mathbb Z/3)^2$) predict $\\frac{1}{\\#\\{K\\}}\\sum_K|\\mathrm{Cl}_K[3]|^2\\to 6$. Prove this limit, or prove $\\sum_K|\\mathrm{Cl}_K[3]|^2\\ll X$.",
+  "plain": "Davenport–Heilbronn showed the average of |Cl(K)[3]| over imaginary quadratic fields is 2, as Cohen–Lenstra predicts. Cohen–Lenstra also predict the average of |Cl(K)[3]|² is 6. Prove this. Further questions (not part of the formal claim): prove at least that the average is bounded.",
+  "math": "Let $K$ range over imaginary quadratic fields with $|D_K|<X$. Cohen–Lenstra ($\\mathbb E\\,\\#\\mathrm{Sur}(\\mathrm{Cl}_K,H)=1$ for $H=(\\mathbb Z/3)^2$) predict $\\frac{1}{\\#\\{K\\}}\\sum_K|\\mathrm{Cl}_K[3]|^2\\to 6$. Claim: this limit holds as $X\\to\\infty$. Prove or disprove. Further questions (not part of the formal claim): prove $\\sum_K|\\mathrm{Cl}_K[3]|^2\\ll X$.",
   "novelty": 2,
   "importance": 7,
   "value": 6,
@@ -5604,7 +5607,7 @@
   "area": "Geometry",
   "difficulty": 6.5,
   "grade": "C",
-  "provenance": "Original",
+  "provenance": "Extension",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -5619,7 +5622,8 @@
    "https://arxiv.org/html/2507.07945v1",
    "https://en.wikipedia.org/wiki/Inscribed_square_problem",
    "https://ar5iv.labs.arxiv.org/html/1801.01945",
-   "https://math.stonybrook.edu/~scott/mat360.spr09/Constr/h-insquare.html"
+   "https://math.stonybrook.edu/~scott/mat360.spr09/Constr/h-insquare.html",
+   "https://www.mat.uc.pt/~sumtopo/slides/U_Fuentes.pdf"
   ],
   "lean": "import Mathlib\n/-! QED-E221: Hyperbolic square peg for all Jordan curves\nEvery closed curve without self-crossings in the hyperbolic plane should pass through the four corners of some regular hyperbolic quadrilateral (four equal sides, four equal angles). Smooth curves are known; the question is all continuous ones.\nInformal statement: Let $\\gamma\\subset\\mathbb H^2$ be a Jordan curve and $d$ the hyperbolic metric. Prove there are four distinct points $p_1,p_2,p_3,p_4\\in\\gamma$ with $d(p_1,p_2)=d(p_2,p_3)=d(p_3,p_4)=d(p_4,p_1)$ and $d(p_1,p_3)=d(p_2,p_4)$ (so they are the vertices of a regular geodesic quadrilateral). First targets: rectifiable curves, or the analogue of Stromquist's locally monotone class.\nFormalization notes:\n* Model of ℍ²: the upper half-plane `{z : ℂ | 0 < z.im}` with the standard hyperbolic distance\n  `d(z,w) = 2 arsinh(|z − w| / (2 √(Im z · Im w)))` (curvature −1). This is defined by hand (`hdist`) rather than\n  through Mathlib's `UpperHalfPlane` metric instance, to avoid any dependence on how that instance's topology is\n  set up. All models of ℍ² are isometric, so the choice is immaterial.\n* Jordan curve: `γ : ℝ → ℂ` continuous, 1-periodic, with values in the upper half-plane, injective on `[0,1)`.\n  Its image is exactly a Jordan curve in ℍ² (the hyperbolic and Euclidean topologies on the open half-plane agree,\n  so continuity w.r.t. the ambient topology of ℂ is the right notion), and every Jordan curve arises this way.\n* Inscribed regular quadrilateral: four pairwise distinct points of `range γ` with the four \"side\" distances equal\n  and the two \"diagonal\" distances equal. In ℍ², given distinct p₁, p₃, the points equidistant from both lie on the\n  perpendicular bisector, at most two at a given distance (one on each side of the geodesic p₁p₃); so distinctness\n  forces p₂, p₄ to be mirror images across p₁p₃, and the equal diagonals then give a regular geodesic quadrilateral\n  (equal sides, equal angles). Distinctness rules out the degenerate \"square of side 0\". No cyclic order along γ\n  is required (matching the informal statement).\n* `Claim` = every Jordan curve in ℍ² inscribes a regular quadrilateral; `¬Claim` = an explicit Jordan curve in ℍ²\n  without one. The partial targets (rectifiable / locally monotone curves) are not encoded.\n-/\nnamespace OpenProblems.QEDE221\nnoncomputable section\n\n/-- The upper half-plane model of the hyperbolic plane, as a subset of `ℂ`. -/\ndef H2 : Set ℂ := {z : ℂ | 0 < z.im}\n\n/-- Hyperbolic distance in the upper half-plane model. -/\ndef hdist (z w : ℂ) : ℝ :=\n  2 * Real.arsinh (‖z - w‖ / (2 * Real.sqrt (z.im * w.im)))\n\n/-- `γ` is a 1-periodic parametrization of a Jordan curve lying in the hyperbolic plane. -/\ndef IsJordanCurve (γ : ℝ → ℂ) : Prop :=\n  Continuous γ ∧ (∀ t : ℝ, γ (t + 1) = γ t) ∧ (∀ t : ℝ, γ t ∈ H2) ∧\n    Set.InjOn γ (Set.Ico (0 : ℝ) 1)\n\n/-- The curve passes through the four vertices of a regular hyperbolic quadrilateral. -/\ndef InscribesRegularQuad (γ : ℝ → ℂ) : Prop :=\n  ∃ p₁ p₂ p₃ p₄ : ℂ,\n    p₁ ∈ Set.range γ ∧ p₂ ∈ Set.range γ ∧ p₃ ∈ Set.range γ ∧ p₄ ∈ Set.range γ ∧\n    p₁ ≠ p₂ ∧ p₁ ≠ p₃ ∧ p₁ ≠ p₄ ∧ p₂ ≠ p₃ ∧ p₂ ≠ p₄ ∧ p₃ ≠ p₄ ∧\n    hdist p₁ p₂ = hdist p₂ p₃ ∧ hdist p₂ p₃ = hdist p₃ p₄ ∧ hdist p₃ p₄ = hdist p₄ p₁ ∧\n    hdist p₁ p₃ = hdist p₂ p₄\n\n/-- Every Jordan curve in the hyperbolic plane inscribes a regular quadrilateral. -/\ndef Claim : Prop :=\n  ∀ γ : ℝ → ℂ, IsJordanCurve γ → InscribesRegularQuad γ\n\nend\nend OpenProblems.QEDE221\n",
   "set": "extended"
@@ -5731,7 +5735,7 @@
   "area": "Combinatorics",
   "difficulty": 2.5,
   "grade": "C",
-  "provenance": "Original",
+  "provenance": "Extension",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -5745,7 +5749,8 @@
   "refs": [
    "https://arxiv.org/pdf/2609.19114",
    "https://scholar.lib.ntnu.edu.tw/en/publications/hamiltonicity-in-prime-sum-graphs-2/",
-   "https://arxiv.org/pdf/1804.07104"
+   "https://arxiv.org/pdf/1804.07104",
+   "https://arxiv.org/abs/2609.19114"
   ],
   "lean": "import Mathlib\n/-! QED-E227: The prime-sum graph is Hamiltonian-laceable\nLine up the numbers 1 to 2n so that neighbours always sum to a prime, starting at any chosen odd\nnumber and ending at any chosen even number.\nInformal statement: Let Γ_n be the graph on [2n] = {1, …, 2n} with xy an edge iff x ≠ y and x + y is\nprime (it is bipartite: odd vs. even). Prove that for all sufficiently large n, for every odd a and even\nb in [2n], Γ_n has a Hamiltonian path from a to b. (Conjecturally this holds for all n ≥ 4.)\nFormalization notes: A Hamiltonian path of Γ_n from a to b is a list `l` that is a permutation of\n[1, …, 2n] (`List.Perm l (List.range' 1 (2 * n))`, so every vertex appears exactly once), whose first\nentry is a and last entry is b, and whose consecutive entries sum to a prime (distinctness of\nneighbours is automatic). Consecutive entries are accessed with `getD` (the default is never used since\nindices are in range). `Claim` is the \"sufficiently large n\" version; the conjectural n ≥ 4 version is\nnot stated. Proving `Claim` = eventual Hamiltonian-laceability; `¬Claim` = infinitely many n with some\nodd a, even b admitting no such path.\n-/\nnamespace OpenProblems.QEDE227\n\nnoncomputable section\n\n/-- `l` is a Hamiltonian path of the prime-sum graph on `{1, …, 2n}` from `a` to `b`. -/\ndef IsPrimeSumHamPath (n a b : ℕ) (l : List ℕ) : Prop :=\n  List.Perm l (List.range' 1 (2 * n)) ∧ l.head? = some a ∧ l.getLast? = some b ∧\n    ∀ i : ℕ, i + 1 < l.length → (l.getD i 0 + l.getD (i + 1) 0).Prime\n\ndef Claim : Prop :=\n  ∃ N : ℕ, ∀ n : ℕ, N ≤ n → ∀ a b : ℕ, 1 ≤ a → a ≤ 2 * n → 1 ≤ b → b ≤ 2 * n →\n    a % 2 = 1 → b % 2 = 0 → ∃ l : List ℕ, IsPrimeSumHamPath n a b l\n\nend\n\nend OpenProblems.QEDE227\n",
   "set": "extended"
@@ -5757,7 +5762,7 @@
   "area": "Number theory",
   "difficulty": 7.5,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Curated",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -5809,7 +5814,7 @@
   "area": "Combinatorics",
   "difficulty": 4.5,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Extension",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -5823,7 +5828,8 @@
   "refs": [
    "https://arxiv.org/abs/2306.04565",
    "https://arxiv.org/pdf/2609.19114",
-   "https://arxiv.org/abs/2003.00729"
+   "https://arxiv.org/abs/2003.00729",
+   "https://arxiv.org/abs/2609.19114"
   ],
   "lean": "import Mathlib\n/-! QED-E230: Bounded-degree spanning trees in the prime-sum graph\nJoin two numbers from 1 to 2n when their sum is prime. Show that every tree on 2n vertices with\nbounded degree and two equal colour classes can be found inside this graph.\nInformal statement: Let 𝒫_{2n} be the graph on [2n] = {1,…,2n} with ij ∈ E iff i + j is prime\n(𝒫_{2n} is bipartite between odds and evens). Prove that for every Δ there is n₀(Δ) such that for\nall n ≥ n₀, every tree T on 2n vertices with maximum degree ≤ Δ and both bipartition classes of size\nn is isomorphic to a spanning subgraph of 𝒫_{2n}.\nFormalization notes: Trees are `SimpleGraph (Fin (2*n))` with `IsTree` (connected and acyclic);\nevery tree on 2n labelled vertices is isomorphic to one of these. Vertex `i : Fin (2*n)` of the host\nstands for the integer i + 1 ∈ [2n], so the host edge condition is `Nat.Prime (i + 1 + (j + 1))`.\nMaximum degree ≤ Δ: every finite set of neighbours of a vertex has at most Δ elements (avoids\ndecidability instances for `degree`). Balanced bipartition: there is a proper 2-colouring with\nexactly n vertices coloured `true`; a tree is connected, so its proper 2-colouring is unique up to\nswapping colours and this says both classes have size n. \"Isomorphic to a spanning subgraph\" = a\nbijection φ of the vertex set mapping every tree edge to a host edge. Proving `Claim` = the\nembedding theorem; proving `¬Claim` = some Δ with infinitely many n admitting a balanced tree of\nmaximum degree ≤ Δ that does not embed.\n-/\nnamespace OpenProblems.QEDE230\nnoncomputable section\n\n/-- The tree `T` on `Fin (2n)` has maximum degree at most `Δ`. -/\ndef MaxDegLE {n : ℕ} (T : SimpleGraph (Fin (2 * n))) (Δ : ℕ) : Prop :=\n  ∀ v : Fin (2 * n), ∀ s : Finset (Fin (2 * n)), (∀ u ∈ s, T.Adj v u) → s.card ≤ Δ\n\n/-- `T` has a proper 2-colouring with exactly `n` vertices in one class. -/\ndef Balanced {n : ℕ} (T : SimpleGraph (Fin (2 * n))) : Prop :=\n  ∃ c : Fin (2 * n) → Bool, (∀ u v : Fin (2 * n), T.Adj u v → c u ≠ c v) ∧\n    (Finset.univ.filter (fun v : Fin (2 * n) => c v = true)).card = n\n\n/-- `T` is isomorphic to a spanning subgraph of the prime-sum graph on `{1,…,2n}`\n(vertex `i` represents the integer `i + 1`). -/\ndef EmbedsInPrimeSum {n : ℕ} (T : SimpleGraph (Fin (2 * n))) : Prop :=\n  ∃ φ : Fin (2 * n) ≃ Fin (2 * n), ∀ u v : Fin (2 * n), T.Adj u v →\n    Nat.Prime (((φ u : ℕ) + 1) + ((φ v : ℕ) + 1))\n\n/-- Every balanced tree of maximum degree ≤ Δ on 2n vertices embeds spanningly in the prime-sum\ngraph, for all large n. -/\ndef Claim : Prop :=\n  ∀ Δ : ℕ, ∃ n₀ : ℕ, ∀ n : ℕ, n₀ ≤ n → ∀ T : SimpleGraph (Fin (2 * n)),\n    T.IsTree → MaxDegLE T Δ → Balanced T → EmbedsInPrimeSum T\n\nend\nend OpenProblems.QEDE230\n",
   "set": "extended"
@@ -5941,7 +5947,7 @@
   "area": "Geometry",
   "difficulty": 6.5,
   "grade": "B",
-  "provenance": "Original",
+  "provenance": "Extension",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
   "results": null,
   "premise_risks": [],
@@ -5956,7 +5962,9 @@
    "https://arxiv.org/abs/2303.10798",
    "https://arxiv.org/html/2509.12216v1",
    "https://arxiv.org/html/2508.10067v1",
-   "https://arxiv.org/pdf/2506.11628"
+   "https://arxiv.org/pdf/2506.11628",
+   "https://arxiv.org/pdf/2309.09504",
+   "https://arxiv.org/pdf/2509.12216"
   ],
   "lean": "import Mathlib\n/-! QED-E235: Is tiling by a single polykite decidable?\nA polykite is a shape glued from kites of the kite grid (the hat monotile is one). Find an algorithm that decides, for any single polykite, whether copies of it can tile the plane, or prove that no such algorithm exists.\nInformal statement: Let $\\mathcal K$ be the deltoidal trihexagonal (Laves $[3.4.6.4]$) tiling of $\\mathbb R^2$ by congruent kites. A polykite is a union $P$ of finitely many tiles of $\\mathcal K$ that is a closed topological disk. $P$ tiles the plane if $\\mathbb R^2=\\bigcup_j g_j(P)$ with $g_j$ isometries of $\\mathbb R^2$ (reflections allowed) and the $g_j(P)$ having pairwise disjoint interiors. Is the set $\\{P:\\ P$ tiles the plane$\\}$ decidable? (Variant: restrict to $g_j$ in the symmetry group of $\\mathcal K$, i.e. kite-grid-aligned tilings.)\nFormalization notes:\n* Kite grid: hex coordinates `(a,b) ↦ a + b/2 + i(√3/2) b` (as in QED-E096). The underlying hexagonal tiling has\n  hexagon centres at the lattice `{(4s + 2t, −2s + 2t) : s, t ∈ ℤ}`, hexagon vertices at `centre + vtx d`\n  (d ∈ Fin 6, circumradius 2) and edge midpoints at `centre + mid d` (`mid d` = midpoint of `vtx d`, `vtx (d+1)`,\n  inradius √3). Every kite of 𝒦 is uniquely `convexHull {c, c + mid (d−1), c + vtx d, c + mid d}` for a centre c\n  and d ∈ Fin 6 (each kite lies in exactly one hexagon, six per hexagon). Sanity check: the hat of QED-E096 is\n  the union of the kites (c, d) = ((0,0),0), ((0,0),1), ((0,0),4), ((0,0),5), ((4,−2),1), ((4,−2),2),\n  ((2,2),3), ((2,2),4), i.e. its 8 kites are of this form (checked by hand against the E096 kite list).\n* Input encoding: a list of triples `(s, t, d) ∈ ℕ³` meaning the kite with centre `(4s+2t, −2s+2t)` and direction\n  `d mod 6`. Centres are restricted to s, t ≥ 0: any finite polykite has a lattice translate of this form, and\n  tileability is invariant under isometries, so nothing is lost; duplicates are harmless. This makes the input\n  type `List (ℕ × ℕ × ℕ)`, which is `Primcodable`.\n* Disk condition: `P` homeomorphic to the closed unit disk. Inputs that are not disks (incl. the empty list) are\n  \"no\" instances. Being a disk is a decidable combinatorial property of a finite union of grid kites, so\n  `Claim` is equivalent to decidability of tiling restricted to genuine polykites.\n* Tiling: a set `T` of isometric copies `g '' P` (`g : ℂ ≃ᵢ ℂ`, reflections allowed, not necessarily grid-aligned)\n  covering ℂ with pairwise disjoint interiors.\n* `Claim` = `ComputablePred` (Mathlib's computability, via partial recursive functions) of \"is a polykite and\n  tiles the plane\"; `¬Claim` = undecidable. The grid-aligned variant is not encoded.\n-/\nnamespace OpenProblems.QEDE235\nnoncomputable section\n\n/-- Hex-grid point `(a, b) ↦ a + b/2 + i·(√3/2)·b`. -/\ndef hexPt (p : ℤ × ℤ) : ℂ := ⟨(p.1 : ℝ) + (p.2 : ℝ) / 2, Real.sqrt 3 / 2 * (p.2 : ℝ)⟩\n\n/-- Hexagon vertices relative to the centre (hex coordinates). -/\ndef vtx : Fin 6 → ℤ × ℤ := ![(2, 0), (0, 2), (-2, 2), (-2, 0), (0, -2), (2, -2)]\n\n/-- Hexagon edge midpoints relative to the centre: `mid d` is the midpoint of `vtx d` and `vtx (d+1)`. -/\ndef mid : Fin 6 → ℤ × ℤ := ![(1, 1), (-1, 2), (-2, 1), (-1, -1), (1, -2), (2, -1)]\n\n/-- The kite of the grid with centre `c` (hex coordinates) and direction `d`. -/\ndef kite (c : ℤ × ℤ) (d : Fin 6) : Set ℂ :=\n  convexHull ℝ {hexPt c, hexPt (c + mid (d - 1)), hexPt (c + vtx d), hexPt (c + mid d)}\n\n/-- Decode a triple `(s, t, d)` to a kite: centre `(4s+2t, -2s+2t)`, direction `d mod 6`. -/\ndef kiteOf (x : ℕ × ℕ × ℕ) : Set ℂ :=\n  kite (4 * (x.1 : ℤ) + 2 * (x.2.1 : ℤ), -2 * (x.1 : ℤ) + 2 * (x.2.1 : ℤ)) (⟨x.2.2 % 6, Nat.mod_lt _ (by norm_num)⟩ : Fin 6)\n\n/-- The union of the listed kites. -/\ndef shape (L : List (ℕ × ℕ × ℕ)) : Set ℂ := ⋃ x ∈ L, kiteOf x\n\n/-- `P` is a closed topological disk. -/\ndef IsDisk (P : Set ℂ) : Prop := Nonempty (P ≃ₜ Metric.closedBall (0 : ℂ) 1)\n\n/-- Isometric copies of `P` (reflections allowed) tile the plane. -/\ndef Tiles (P : Set ℂ) : Prop :=\n  ∃ T : Set (Set ℂ), (∀ t ∈ T, ∃ g : ℂ ≃ᵢ ℂ, t = g '' P) ∧ ⋃₀ T = Set.univ ∧\n    ∀ s ∈ T, ∀ t ∈ T, s ≠ t → Disjoint (interior s) (interior t)\n\n/-- Tiling by a single polykite is decidable. -/\ndef Claim : Prop :=\n  ComputablePred (fun L : List (ℕ × ℕ × ℕ) => IsDisk (shape L) ∧ Tiles (shape L))\n\nend\nend OpenProblems.QEDE235\n",
   "set": "extended"

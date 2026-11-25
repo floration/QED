@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Number theory
+Main set · Grade B · QED Extension · Number theory
 
 **Plain words:** Show that there are infinitely many primes whose binary digit sum equals their ternary digit sum.
 
@@ -15,6 +15,8 @@ Main set · Grade B · QED Original · Number theory
 - https://arxiv.org/abs/2105.11173
 - https://arxiv.org/abs/2501.00850
 - https://arxiv.org/abs/2412.09124
+- https://arxiv.org/pdf/2105.11173
+- https://arxiv.org/pdf/1611.08180
 
 Difficulty estimate: 7.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

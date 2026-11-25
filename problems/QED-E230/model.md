@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade B · QED Original · Combinatorics
+Extended set · Grade B · QED Extension · Combinatorics
 
 **Plain words:** Join two numbers from 1 to 2n when their sum is prime. Show that every tree on 2n vertices with bounded degree and two equal colour classes can be found inside this graph.
 
@@ -15,6 +15,7 @@ Extended set · Grade B · QED Original · Combinatorics
 - https://arxiv.org/abs/2306.04565
 - https://arxiv.org/pdf/2609.19114
 - https://arxiv.org/abs/2003.00729
+- https://arxiv.org/abs/2609.19114
 
 Difficulty estimate: 4.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

@@ -5,7 +5,7 @@
  "area": "Combinatorics",
  "difficulty": 4.0,
  "grade": "B",
- "provenance": "Original",
+ "provenance": "Extension",
  "credit": "On the irreducible character degrees of symmetric groups and their multiplicities, arXiv:2410.01726 (2024)",
  "premise_risks": [
   "arXiv:2410.01726 (preprint, refereeing status unclear): the numerical data for n <= 129 and the suggested limit near 2.5 are context only; Claim does not depend on them."

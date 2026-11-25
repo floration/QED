@@ -5,7 +5,7 @@
  "area": "PDE",
  "difficulty": 5.0,
  "grade": "B",
- "provenance": "Original",
+ "provenance": "Extension",
  "premise_risks": [
   "arXiv:2602.13963 (2026 preprint, cited in refs): background on 1D/sign-of-stretching models only; the statement does not depend on it."
  ],
@@ -19,6 +19,7 @@
   "https://arxiv.org/abs/1701.04050",
   "https://arxiv.org/abs/1905.06387",
   "https://arxiv.org/abs/1203.5151",
-  "https://arxiv.org/pdf/2602.13963"
+  "https://arxiv.org/pdf/2602.13963",
+  "https://ar5iv.labs.arxiv.org/html/2208.08974"
  ]
 }

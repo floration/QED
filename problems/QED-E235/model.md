@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade B · QED Original · Geometry
+Extended set · Grade B · QED Extension · Geometry
 
 **Plain words:** A polykite is a shape glued from kites of the kite grid (the hat monotile is one). Find an algorithm that decides, for any single polykite, whether copies of it can tile the plane, or prove that no such algorithm exists.
 
@@ -16,6 +16,8 @@ Extended set · Grade B · QED Original · Geometry
 - https://arxiv.org/html/2509.12216v1
 - https://arxiv.org/html/2508.10067v1
 - https://arxiv.org/pdf/2506.11628
+- https://arxiv.org/pdf/2309.09504
+- https://arxiv.org/pdf/2509.12216
 
 Difficulty estimate: 6.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

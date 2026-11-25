@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · PDE
+Main set · Grade B · QED Extension · PDE
 
 **Plain words:** Flip the sign of the vortex-stretching term in the 3D Euler vorticity equation and keep advection and the Biot-Savart law. Do smooth solutions stay smooth forever, or can they blow up in finite time? Unlike Euler, this equation does not preserve div ω = 0, so for t > 0 the vorticity ω need not equal curl u. The velocity u is always given by the stated Biot-Savart law (which sees only the divergence-free part of ω), and the question concerns this system as written.
 
@@ -17,6 +17,7 @@ Main set · Grade B · QED Original · PDE
 - https://arxiv.org/abs/1905.06387
 - https://arxiv.org/abs/1203.5151
 - https://arxiv.org/pdf/2602.13963
+- https://ar5iv.labs.arxiv.org/html/2208.08974
 
 Difficulty estimate: 5.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

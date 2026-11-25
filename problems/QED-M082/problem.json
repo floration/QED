@@ -10,8 +10,8 @@
  "premise_risks": [
   "arXiv:2609.01327 (2026 preprint): cited in refs; M does not depend on it."
  ],
- "plain": "Unconditionally, abc is known only in very weak forms. Pasten (2024) proved that if a ≤ c^{1−η} then log c ≤ η^{-1} exp(κ√(log R · log log R)), with R = rad(abc). abc predicts log c ≤ (1+ε) log R + O(1). Replace the square root by any smaller power of log R.",
- "math": "For coprime $a+b=c$ with $R=\\mathrm{rad}(abc)$, Pasten (Invent. Math. 2024, Thm 1.4) proves: if $a\\le c^{1-\\eta}$ then $\\log c\\le \\eta^{-1}\\exp\\big(\\kappa\\sqrt{\\log R\\,\\log_2 R}\\big)$; and $\\log c\\le q\\exp(\\kappa\\sqrt{\\log R\\log_2R})$ with $q=\\min\\{P(a),P(b),P(c)\\}$. Prove either statement with $\\exp((\\log R)^{\\theta})$ for some fixed $\\theta<1/2$, or $\\exp(O(\\sqrt{\\log R}))$.",
+ "plain": "Unconditionally, abc is known only in very weak forms. Pasten (2024) proved that if a ≤ c^{1−η} then log c ≤ η^{-1} exp(κ√(log R · log log R)), with R = rad(abc). abc predicts log c ≤ (1+ε) log R + O(1). Replace the square root by some smaller power of log R, in this bound or in Pasten's companion bound. Further questions (not part of the formal claim): just remove the log log R factor, i.e. get exp(O(√log R)).",
+ "math": "For coprime positive $a+b=c$ with $R=\\mathrm{rad}(abc)$, Pasten (Invent. Math. 2024, Thm 1.4) proves: (1) if $a\\le c^{1-\\eta}$ then $\\log c\\le \\eta^{-1}\\exp\\big(\\kappa\\sqrt{\\log R\\,\\log_2 R}\\big)$; and (2) $\\log c\\le q\\exp(\\kappa\\sqrt{\\log R\\log_2R})$ with $q=\\min\\{P(a),P(b),P(c)\\}$. Claim: there is a fixed $\\theta\\in(0,1/2)$ such that (1) holds with $\\exp(\\kappa(\\log R)^{\\theta})$ for some $\\kappa>0$ and all $\\eta\\in(0,1)$ and all triples, or (2) holds with $\\exp(\\kappa(\\log R)^{\\theta})$ for some $\\kappa>0$ and all triples. Prove or disprove (a disproof would contradict abc). Further questions (not part of the formal claim): prove either statement with $\\exp(O(\\sqrt{\\log R}))$.",
  "novelty": 6,
  "importance": 6,
  "value": 6,
