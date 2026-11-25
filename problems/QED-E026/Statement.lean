@@ -46,9 +46,9 @@ def Planar {V : Type} (G : SimpleGraph V) : Prop :=
 def IsTotalColouring {n k : ℕ} (G : SimpleGraph (Fin n)) (cv : Fin n → Fin k)
     (ce : Sym2 (Fin n) → Fin k) : Prop :=
   (∀ u v : Fin n, G.Adj u v → cv u ≠ cv v) ∧
-  (∀ u v : Fin n, G.Adj u v → ce (Sym2.mk (u, v)) ≠ cv u) ∧
+  (∀ u v : Fin n, G.Adj u v → ce (s(u, v)) ≠ cv u) ∧
   (∀ u v w : Fin n, G.Adj u v → G.Adj u w → v ≠ w →
-    ce (Sym2.mk (u, v)) ≠ ce (Sym2.mk (u, w)))
+    ce (s(u, v)) ≠ ce (s(u, w)))
 
 /-- Maximum degree exactly `6`. -/
 def MaxDegSix {n : ℕ} (G : SimpleGraph (Fin n)) : Prop :=
