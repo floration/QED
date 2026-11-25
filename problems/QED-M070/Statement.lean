@@ -24,9 +24,9 @@ inductive QFunc : ℕ → Type
   | mul : QFunc 2
 
 /-- The language `{∘}` of quasigroup multiplication tables (equality is built in). -/
-def qLang : Language.{0, 0} :=
-  { Functions := QFunc
-    Relations := fun _ => Empty }
+def qLang : FirstOrder.Language where
+  Functions := QFunc
+  Relations := fun _ => Empty
 
 /-- `L` is a Latin square: every row and every column is a bijection. -/
 def IsLatin {n : ℕ} (L : Fin n → Fin n → Fin n) : Prop :=

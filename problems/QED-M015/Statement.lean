@@ -23,6 +23,7 @@ Proving `Claim` = exhibiting b ∈ (0,1) and a confining strategy of speed σ < 
 Proving `¬Claim` = Bressan's anisotropic construction is optimal for every b ∈ (0,1).
 -/
 namespace OpenProblems.QEDM015
+noncomputable section
 
 /-- Convexified spreading set for wind strength `b` (unit base speed). -/
 def Fset (b : ℝ) : Set ℂ :=
@@ -53,5 +54,7 @@ noncomputable def U (b : ℝ) : ℝ :=
 
 def Claim : Prop :=
   ∃ b : ℝ, 0 < b ∧ b < 1 ∧ ∃ σ : ℝ, σ < U b ∧ Confines b σ
+
+end
 
 end OpenProblems.QEDM015

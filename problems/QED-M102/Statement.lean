@@ -26,6 +26,7 @@ every n, n admissible orbits with pairwise inequivalent images; `¬Claim` = only
 knot types occur.
 -/
 namespace OpenProblems.QEDM102
+noncomputable section
 
 /-- Points of ℝ³. -/
 abbrev R3 : Type := Fin 3 → ℝ
@@ -86,5 +87,7 @@ def SomeKnottedOrbit : Prop :=
 def Claim : Prop :=
   ∀ n : ℕ, ∃ o : Fin n → PeriodicOrbit, (∀ i, (o i).Admissible) ∧
     ∀ i j : Fin n, i ≠ j → ¬ KnotEquiv (o i).image (o j).image
+
+end
 
 end OpenProblems.QEDM102

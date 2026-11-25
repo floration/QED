@@ -52,7 +52,7 @@ noncomputable def discrepancy (x : ℝ) (q : ℕ) (a : ℤ) : ℝ :=
 open Classical in
 /-- The weighted sum `∑_{q ≤ Q, (q,a)=1} w_q (π(x;q,a) − π(x)/φ(q))`. -/
 noncomputable def weightedSum (x Q : ℝ) (a : ℤ) (w : ℕ → ℂ) : ℂ :=
-  ∑ q ∈ (Finset.Icc 1 ⌊Q⌋₊).filter (fun q => Int.gcd (q : ℤ) a = 1),
+  ∑ q ∈ ((Finset.Icc 1 ⌊Q⌋₊ : Finset ℕ).filter (fun q : ℕ => Int.gcd (q : ℤ) a = 1)),
     w q * ((discrepancy x q a : ℝ) : ℂ)
 
 def Claim : Prop :=

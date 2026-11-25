@@ -26,7 +26,10 @@ namespace OpenProblems.QEDM081
 def IsA4QuarticUpTo (X : ℝ) (K : IntermediateField ℚ ℂ) : Prop :=
   ∃ h : NumberField K,
     Module.finrank ℚ K = 4 ∧
-    Module.finrank ℚ (normalClosure ℚ K ℂ) = 12 ∧
+    -- the Galois closure of K (smallest normal subfield of ℂ containing K) has degree 12,
+    -- which for a quartic field means Galois group A4
+    (∃ M : IntermediateField ℚ ℂ, K ≤ M ∧ Normal ℚ M ∧ Module.finrank ℚ M = 12 ∧
+      ∀ M' : IntermediateField ℚ ℂ, K ≤ M' → Normal ℚ M' → M ≤ M') ∧
     |((@NumberField.discr K _ h : ℤ) : ℝ)| ≤ X
 
 def Claim : Prop :=
