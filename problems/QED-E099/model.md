@@ -5,7 +5,7 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade B · QED Curated · Number theory
 
-**Plain words:** BSD plus the minimalist rank heuristic predict that exactly half of all integers are sums of two rational cubes. Proven: at least 2/21 are (Alpöge–Bhargava–Shnidman), and at least 31.95% are not (Koymans–Smith). Improve either bound.
+**Plain words:** BSD plus the minimalist rank heuristic predict that exactly half of all integers are sums of two rational cubes. Proven: at least 5/12 are (Alpöge–Bhargava–Shnidman's bound, made unconditional by OpenAI's Selmer-converse result), and at least 31.95% are not (Koymans–Smith). Improve either bound.
 
 **Math:** Let $\mathcal S=\{n\in\mathbb Z: n=x^3+y^3,\ x,y\in\mathbb Q\}$, densities ordered by $|n|$. Known: $\underline d(\mathcal S)\ge 5/12$ (Alpöge–Bhargava–Shnidman's conditional bound, made unconditional by the Selmer p-converse at every prime) and $\underline d(\mathcal S^c)\ge 0.3195$ (Koymans–Smith). Conjecture: both densities equal $1/2$. Prove $\underline d(\mathcal S)>5/12$ or $\underline d(\mathcal S^c)>0.3195$.
 

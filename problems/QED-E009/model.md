@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · QED Original · Geometry
+Extended set · Grade C · QED Extension · Geometry
 
 **Plain words:** In a round ball the only free-boundary minimal disks are flat slices through the centre (Nitsche). The superball x^4+y^4+z^4 <= 1 has nine flat ones, cut by its mirror planes. Is there also one that is not flat? A natural candidate has threefold symmetry about the diagonal (1,1,1). Such a symmetric disk cannot be flat: the only plane invariant under both symmetries is x+y+z=0, and it meets the boundary orthogonally only where xyz=0.
 
@@ -16,6 +16,9 @@ Extended set · Grade C · QED Original · Geometry
 - M. Grüter and J. Jost, On embedded minimal disks in convex bodies, Ann. Inst. H. Poincaré Anal. Non Linéaire 3 (1986)
 - D. Ketover, Equivariant min-max theory, arXiv:1612.08692
 - https://arxiv.org/abs/2307.01828
+- https://arxiv.org/pdf/2304.12111
+- https://arxiv.org/pdf/2406.13465
+- https://arxiv.org/abs/2606.02396
 
 Difficulty estimate: 3.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

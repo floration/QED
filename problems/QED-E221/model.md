@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · QED Original · Geometry
+Extended set · Grade C · QED Extension · Geometry
 
 **Plain words:** Every closed curve without self-crossings in the hyperbolic plane should pass through the four corners of some regular hyperbolic quadrilateral (four equal sides, four equal angles). Smooth curves are known; the question is all continuous ones.
 
@@ -16,6 +16,7 @@ Extended set · Grade C · QED Original · Geometry
 - https://en.wikipedia.org/wiki/Inscribed_square_problem
 - https://ar5iv.labs.arxiv.org/html/1801.01945
 - https://math.stonybrook.edu/~scott/mat360.spr09/Constr/h-insquare.html
+- https://www.mat.uc.pt/~sumtopo/slides/U_Fuentes.pdf
 
 Difficulty estimate: 6.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

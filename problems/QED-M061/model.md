@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Geometry
+Main set · Grade B · QED Extension · Geometry
 
 **Plain words:** The 4D superball x1^4+y1^4+x2^4+y2^4 <= 1 contains the round unit ball, so it holds a symplectic ball of capacity pi. Its cylindrical capacity is about 3.708, and no symplectic ball can be bigger than that. Narrow the gap: embed a bigger ball, or show that no ball of capacity close to 3.708 fits.
 
@@ -20,6 +20,8 @@ Main set · Grade B · QED Original · Geometry
 - https://arxiv.org/pdf/2402.07709
 - https://arxiv.org/pdf/2203.02294
 - https://arxiv.org/pdf/2610.31906
+- https://arxiv.org/pdf/2003.10854
+- https://ar5iv.arxiv.org/html/1911.06062
 
 Difficulty estimate: 4.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

@@ -11,7 +11,7 @@ Main set · Grade B · QED Extension · PDE
 
 **Credit:** Blair, Ford, Marzuola, Strichartz estimates for the wave equation on flat cones / Euclidean surfaces with conical singularities, arXiv:1003.0666.
 
-**QED results so far (reviewer-derived; check before relying on them):** s* >= 0 (trivial). No positive lower bound known. s* <= 1/4: Blair-Ford-Marzuola, Thm 1.5 (arXiv 1003.0666), loss 1/p for compact Euclidean surfaces with conical singularities, p=q=4; authors call the loss an artifact of the method.
+**QED results so far (reviewer-derived; check before relying on them):** s* >= 0 (trivial). No positive lower bound known. s* <= 1/4: Blair-Ford-Herr-Marzuola, Thm 1.5 (arXiv 1003.0666), loss 1/p for compact Euclidean surfaces with conical singularities, p=q=4; the authors believe the loss is an artifact of the method (Remark 1.3).
 
 **References:**
 - https://arxiv.org/abs/1003.0666

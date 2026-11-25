@@ -5,7 +5,7 @@
  "area": "Combinatorics",
  "difficulty": 2.5,
  "grade": "C",
- "provenance": "Original",
+ "provenance": "Extension",
  "credit": "QED original (archived Nov 2026, restored after re-review).",
  "plain": "Line up the numbers 1 to 2n so that neighbours always sum to a prime, starting at any chosen odd number and ending at any chosen even number.",
  "math": "Let $\\Gamma_n$ be the graph on $[2n]$ with $xy$ an edge iff $x\\ne y$ and $x+y$ is prime (bipartite: odd vs. even). Prove that for all sufficiently large $n$ (conjecturally all $n\\ge4$), for every odd $a$ and even $b$ in $[2n]$, $\\Gamma_n$ has a Hamiltonian path from $a$ to $b$.",
@@ -16,6 +16,7 @@
  "refs": [
   "https://arxiv.org/pdf/2609.19114",
   "https://scholar.lib.ntnu.edu.tw/en/publications/hamiltonicity-in-prime-sum-graphs-2/",
-  "https://arxiv.org/pdf/1804.07104"
+  "https://arxiv.org/pdf/1804.07104",
+  "https://arxiv.org/abs/2609.19114"
  ]
 }

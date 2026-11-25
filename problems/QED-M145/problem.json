@@ -5,7 +5,7 @@
  "area": "Number theory",
  "difficulty": 7.5,
  "grade": "B",
- "provenance": "Original",
+ "provenance": "Extension",
  "credit": "QED original (archived Nov 2026, restored after re-review).",
  "plain": "Show that there are infinitely many primes whose binary digit sum equals their ternary digit sum.",
  "math": "Let $s_q(n)$ be the sum of the base-$q$ digits of $n$. Prove that there are infinitely many primes $p$ with $s_2(p)=s_3(p)$. (Stronger target: $\\#\\{p\\le N:s_2(p)=s_3(p)\\}\\ge N^{c}$ for some $c>0$; heuristically the count is $N^{\\log3/\\log4+o(1)}$-type up to the $1/\\log N$ prime density.)",
@@ -16,6 +16,8 @@
  "refs": [
   "https://arxiv.org/abs/2105.11173",
   "https://arxiv.org/abs/2501.00850",
-  "https://arxiv.org/abs/2412.09124"
+  "https://arxiv.org/abs/2412.09124",
+  "https://arxiv.org/pdf/2105.11173",
+  "https://arxiv.org/pdf/1611.08180"
  ]
 }

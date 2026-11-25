@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · QED Original · Combinatorics
+Extended set · Grade C · QED Extension · Combinatorics
 
 **Plain words:** Line up the numbers 1 to 2n so that neighbours always sum to a prime, starting at any chosen odd number and ending at any chosen even number.
 
@@ -15,6 +15,7 @@ Extended set · Grade C · QED Original · Combinatorics
 - https://arxiv.org/pdf/2609.19114
 - https://scholar.lib.ntnu.edu.tw/en/publications/hamiltonicity-in-prime-sum-graphs-2/
 - https://arxiv.org/pdf/1804.07104
+- https://arxiv.org/abs/2609.19114
 
 Difficulty estimate: 2.5/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 

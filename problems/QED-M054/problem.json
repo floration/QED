@@ -11,8 +11,8 @@
   "arXiv:2611.09361 (Slijepcevic, Nov 2026 preprint): the known result h_m(f_k) >= log(2 pi k+4) - 2^430 for k >= exp(2^50000), quoted as background only.",
   "OpenAI preprint (unrefereed, credited in 2611.09361): non-effective positivity for large k, background only."
  ],
- "plain": "Sinai conjectured that the standard map has positive metric entropy for every parameter k>0. After a 2026 AI-generated non-effective proof for large k, Slijepčević proved it for every k ≥ exp(2^{50000}). Bring the threshold down to a physically meaningful range, e.g. all k ≥ 10^6, or even a single explicit k ≤ 100.",
- "math": "Let f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)) on T^2=R^2/Z^2 (Slijepcevic's normalization; Chirikov's K equals 2 pi k), and h_m(f_k) the metric entropy w.r.t. area. Known: log(2 pi k+4)-2^{430} <= h_m(f_k) <= log(2 pi k+4) for k>=exp(2^{50000}) (Slijepcevic 2026). Prove h_m(f_k)>0 for all k>=10^6, or for at least one explicit k<=100.",
+ "plain": "Sinai conjectured that the standard map has positive metric entropy for every parameter k>0. After a 2026 AI-generated non-effective proof for large k, Slijepčević proved it for every k ≥ exp(2^{50000}). Bring the threshold down to a physically meaningful range: prove positive entropy for every k ≥ 10^6. Further questions (not part of the formal claim): prove it for even a single explicit k ≤ 100.",
+ "math": "Let f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)) on T^2=R^2/Z^2 (Slijepcevic's normalization; Chirikov's K equals 2 pi k), and h_m(f_k) the metric entropy w.r.t. area. Known: log(2 pi k+4)-2^{430} <= h_m(f_k) <= log(2 pi k+4) for k>=exp(2^{50000}) (Slijepcevic 2026). Claim: for every real k>=10^6, h_m(f_k)>0; formally (equivalent by Pesin's formula and Oseledets), the set of p in [0,1]^2 with lambda^+(p)=limsup (1/n) log ||Df_k^n(p)|| > 0 has positive Lebesgue measure. Prove or disprove (a disproof gives some k>=10^6 with zero entropy, refuting Sinai's conjecture). Further questions (not part of the formal claim): prove h_m(f_k)>0 for at least one explicit k<=100.",
  "novelty": 4,
  "importance": 8,
  "value": 6,

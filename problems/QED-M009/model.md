@@ -11,7 +11,7 @@ Main set · Grade A · QED Extension · Analysis
 
 **Credit:** Extends Durso (1988, MIT thesis) and Grieser-Maronna, 'Hearing the shape of a triangle' (Notices AMS 2013, arXiv:1208.3163); Kac's question.
 
-**QED results so far (reviewer-derived; check before relying on them):** The heat-invariant count is correct. The polyhedral Dirichlet heat trace gives volume, surface area, the edge sum of L_e times a function of the dihedral angle, and a vertex term (not explicit for general solid angles): 4 numbers against 6 congruence parameters. So the heat trace alone is insufficient.
+**QED results so far (reviewer-derived; check before relying on them):** The heat-invariant count is correct. The small-t expansion of the polyhedral Dirichlet heat trace gives volume, surface area, the edge sum of L_e times a function of the dihedral angle, and a vertex term (not explicit for general solid angles): 4 numbers against 6 congruence parameters. So the heat invariants (the asymptotic coefficients of the heat trace) cannot by themselves determine a tetrahedron. Any proof must use more of the spectrum, e.g. wave-trace / periodic-orbit data as in Durso's triangle proof.
 
 **Rests on recent unrefereed work. Check these premises first:**
 - arXiv:2609.28602 (Krejcirik, 2026 survey): used only for the openness check (does not settle the problem); the statement itself assumes nothing from it.

@@ -5,7 +5,7 @@
  "area": "Number theory",
  "difficulty": 5.5,
  "grade": "B",
- "provenance": "Original",
+ "provenance": "Curated",
  "credit": "QED original (archived Nov 2026, restored after re-review).",
  "plain": "Show that for every exponent θ below 1 there are infinitely many n such that n, n+1 and n+2 each have a prime factor larger than n^θ (for instance θ = 0.9). The two-term analogue (n and n+1) is settled: OpenAI's 2026 joint Dickman law for consecutive integers (Erdős–Pomerance conjecture) shows that log P(n)/log n and log P(n+1)/log n are asymptotically independent, so that set has density (log(1/θ))^2 for 1/2 ≤ θ < 1. Three consecutive integers are not covered.",
  "math": "Let $P(m)$ be the largest prime factor of $m$. Prove that for every $\\theta<1$ there are infinitely many $n$ with $\\min\\{P(n),P(n+1),P(n+2)\\}>n^{\\theta}$. (Benchmark case: $\\theta=0.9$. Stronger target: for $1/2\\le\\theta<1$ the set has lower density $\\ge c(\\theta)>0$, conjecturally equal to $(\\log(1/\\theta))^3$.)",

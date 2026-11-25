@@ -5,7 +5,7 @@
  "area": "Geometry",
  "difficulty": 4.5,
  "grade": "B",
- "provenance": "Original",
+ "provenance": "Extension",
  "results": "c_G(U) >= pi: U contains the Euclidean unit ball, since sum x_i^4 <= (sum x_i^2)^2. (Trivial.) c_G(U) <= c_Z(U) = c_EHZ(U) = c0 = 4Gamma(5/4)^2/Gamma(3/2) ~ 3.7081 (arXiv 2609.37794, Thm 2 with n=2, p=4, B=D=I). Gromov width is <= every normalized capacity. The volume bound sqrt(2 Vol U) ~ 4.65 is weaker.",
  "premise_risks": [
   "arXiv:2609.37794 (2026, unrefereed): Thm 2 giving c_Z(U) = c_EHZ(U) = 4Γ(5/4)^2/Γ(3/2); the Claim's target value c0 comes from it. If that value is wrong, Claim may be false for a trivial reason."
@@ -21,6 +21,8 @@
   "https://arxiv.org/pdf/2405.16513",
   "https://arxiv.org/pdf/2402.07709",
   "https://arxiv.org/pdf/2203.02294",
-  "https://arxiv.org/pdf/2610.31906"
+  "https://arxiv.org/pdf/2610.31906",
+  "https://arxiv.org/pdf/2003.10854",
+  "https://ar5iv.arxiv.org/html/1911.06062"
  ]
 }

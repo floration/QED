@@ -5,9 +5,9 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade B · QED Curated · Number theory
 
-**Plain words:** Assuming Elliott–Halberstam, Maynard's sieve gives infinitely many pairs of primes at distance at most 12. The generalized conjecture GEH gives 6. Lower 12 using EH alone.
+**Plain words:** Assuming Elliott–Halberstam, Maynard's sieve gives infinitely many pairs of primes at distance at most 12. The generalized conjecture GEH gives 6. Using EH alone, show there are infinitely many pairs of primes at distance at most 10. Further questions (not part of the formal claim): or show that no Selberg/Maynard-type sieve with EH alone can beat 12.
 
-**Math:** Let $H_1=\liminf_{n}(p_{n+1}-p_n)$. Assuming EH (level $\theta=1-\varepsilon$ for all $\varepsilon>0$, for the von Mangoldt function only, not GEH), prove $H_1\le 10$, or prove that no Selberg/Maynard-type sieve weight using EH alone can give $H_1<12$.
+**Math:** Let $H_1=\liminf_{n}(p_{n+1}-p_n)$. Let EH be the Elliott–Halberstam conjecture for the von Mangoldt function only (not GEH): for every $\varepsilon>0$ and $A>0$, $\sum_{q\le x^{1-\varepsilon}}|\psi(x;q,a_q)-\psi(x)/\varphi(q)|\ll_{\varepsilon,A} x/\log^A x$ uniformly over residues $a_q$ coprime to $q$. Claim: EH implies $H_1\le 10$, i.e. that there are infinitely many primes $p<q\le p+10$. (An unconditional proof of $H_1\le10$ also proves the Claim.) Further questions (not part of the formal claim): prove that no Selberg/Maynard-type sieve weight using EH alone can give $H_1<12$.
 
 **Credit:** D.H.J. Polymath 2014, arXiv:1407.4897; J. Maynard 2015, arXiv:1311.4600
 

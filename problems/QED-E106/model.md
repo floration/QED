@@ -5,9 +5,9 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Extended set · Grade B · QED Curated · Number theory
 
-**Plain words:** Davenport–Heilbronn showed the average of |Cl(K)[3]| over imaginary quadratic fields is 2, as Cohen–Lenstra predicts. Cohen–Lenstra also predict the average of |Cl(K)[3]|² is 6. Prove this, or at least that the average is bounded.
+**Plain words:** Davenport–Heilbronn showed the average of |Cl(K)[3]| over imaginary quadratic fields is 2, as Cohen–Lenstra predicts. Cohen–Lenstra also predict the average of |Cl(K)[3]|² is 6. Prove this. Further questions (not part of the formal claim): prove at least that the average is bounded.
 
-**Math:** Let $K$ range over imaginary quadratic fields with $|D_K|<X$. Cohen–Lenstra ($\mathbb E\,\#\mathrm{Sur}(\mathrm{Cl}_K,H)=1$ for $H=(\mathbb Z/3)^2$) predict $\frac{1}{\#\{K\}}\sum_K|\mathrm{Cl}_K[3]|^2\to 6$. Prove this limit, or prove $\sum_K|\mathrm{Cl}_K[3]|^2\ll X$.
+**Math:** Let $K$ range over imaginary quadratic fields with $|D_K|<X$. Cohen–Lenstra ($\mathbb E\,\#\mathrm{Sur}(\mathrm{Cl}_K,H)=1$ for $H=(\mathbb Z/3)^2$) predict $\frac{1}{\#\{K\}}\sum_K|\mathrm{Cl}_K[3]|^2\to 6$. Claim: this limit holds as $X\to\infty$. Prove or disprove. Further questions (not part of the formal claim): prove $\sum_K|\mathrm{Cl}_K[3]|^2\ll X$.
 
 **Credit:** Cohen, Lenstra, 'Heuristics on class groups of number fields', LNM 1068 (1984); Davenport-Heilbronn (1971) for the first moment
 
