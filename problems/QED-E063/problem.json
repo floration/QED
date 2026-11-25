@@ -1,0 +1,26 @@
+{
+ "id": "QED-E063",
+ "set": "extended",
+ "title": "Word problem for one-relation monoids",
+ "area": "Logic & computability",
+ "difficulty": 5.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "S. I. Adian (posed c. 1960); reduction by Adian and G. U. Oganesyan",
+ "premise_risks": [
+  "the precise form of the Adian-Oganesyan reduction (bUa=a) was taken from secondary knowledge of the survey, not verified from the full text in this check",
+  "famous within combinatorial semigroup theory; vetter should judge 'famous problem in disguise' (it is stated directly, not disguised)"
+ ],
+ "plain": "Take a monoid with a single defining relation u = v between two words. Is its word problem always decidable: for each such monoid, is there an algorithm that, given two words, decides whether they are equal in it? This is open even though the corresponding question for one-relator groups was settled long ago.",
+ "math": "For a finite alphabet $A$ and $u,v\\in A^*$, let $\\equiv_{u,v}$ be the smallest congruence on $A^*$ containing $(u,v)$. Problem: does every one-relation monoid $\\mathrm{Mon}\\langle A\\mid u=v\\rangle$ have decidable word problem, i.e. is $\\{(w_1,w_2): w_1\\equiv_{u,v}w_2\\}$ decidable for every fixed $A,u,v$? Board Claim: yes. (Uniform variant: the set of all $(A,u,v,w_1,w_2)$ with $w_1\\equiv_{u,v}w_2$ is decidable. By Adian--Oganesyan (1978; two-generator form 1987) it suffices to treat $\\mathrm{Mon}\\langle a,b\\mid bUa=aVa\\rangle$ and $\\mathrm{Mon}\\langle a,b\\mid bUa=a\\rangle$, $U,V\\in\\{a,b\\}^*$; both cases remain open. Undecidability for one fixed such monoid settles the problem negatively.)",
+ "novelty": 2,
+ "importance": 9,
+ "value": 8,
+ "formal_status": "formalized",
+ "review_note": "Known: Decidable for special monoids <A|r=1> (Adian 1960; Makanin's reduction to the group of units), for Adian's left- or right-cycle-free presentations (u and v differ in first letter, or in last letter), and many subcases (Adian-Oganesyan 1987, Lallement 1974, Kobayashi, and Nyberg-Brodda's monadic results). Adian-Oganesyan reduced the general problem to <a,b | bUa = a>. Surveys: Nyberg-Brodda, 'The word problem for one-relation monoids: a survey', Semigroup Forum 103 (2021), arXiv:2105.02853. Related undecidability: one-relator inverse monoids (R. D. Gray, Invent. Math. 2020). Status reconfirmed open in Gray-Steinberg arXiv:2507.04819 (v2 March 2026) and Foniqi-Gray-Nyberg-Brodda (Canad. J. Math. 2024, arXiv:2305.15672), where the related prefix-membership problem is shown undecidable for some positive one-relator groups.",
+ "refs": [
+  "https://arxiv.org/abs/2105.02853",
+  "https://arxiv.org/html/2507.04819v2",
+  "https://www.cambridge.org/core/product/E2D6486D62B9833E797A2D4E9814707D"
+ ]
+}

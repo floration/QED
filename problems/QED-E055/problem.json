@@ -1,0 +1,28 @@
+{
+ "id": "QED-E055",
+ "set": "extended",
+ "title": "Beat the 4-cycle lower bound for cube-free graphs",
+ "area": "Graph theory",
+ "difficulty": 7.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "P. Erdős and M. Simonovits (1970)",
+ "premise_risks": [
+  "Statement is a one-sided target; the vetter may prefer the full Θ(n^{8/5}) conjecture",
+  "Erdős conjectured the n^{8/5} order, but the problem is not commonly named after a person ('Turán number of the cube'); the stated target (beat n^{3/2}) is an unnamed sub-question"
+ ],
+ "plain": "How many edges can an n-vertex graph have without containing the 3-dimensional cube Q3 (8 vertices, 12 edges)? Erdos and Simonovits proved about n^{8/5} is an upper bound, but the best lower bound is still about n^{3/2}, from graphs with no 4-cycle at all (every 4-cycle-free graph is cube-free). Find cube-free graphs with polynomially more edges than that, or show that no such graphs exist.",
+ "math": "Let $\\mathrm{ex}(n,Q_3)$ be the maximum number of edges in an $n$-vertex simple graph with no subgraph isomorphic to the cube $Q_3$. Known: $(\\tfrac12+o(1))n^{3/2}\\le \\mathrm{ex}(n,Q_3)= O(n^{8/5})$. Decide whether $\\liminf_{n\\to\\infty}\\dfrac{\\log \\mathrm{ex}(n,Q_3)}{\\log n}>\\dfrac32$, i.e. whether there is $\\varepsilon>0$ with $\\mathrm{ex}(n,Q_3)\\ge n^{3/2+\\varepsilon}$ for all large $n$. (Erdos conjectured the stronger $\\mathrm{ex}(n,Q_3)=\\Theta(n^{8/5})$.)",
+ "novelty": 2,
+ "importance": 8,
+ "value": 8,
+ "formal_status": "formalized",
+ "review_note": "Known: Upper: Erdős–Simonovits (1970) O(n^{8/5}); new proof by Pinchasi–Sharir and Füredi (arXiv 1307.1062). Lower: Ω(n^{3/2}) from C4-free polarity graphs, since C4 ⊂ Q3 (Erdős problems page states no better lower bound known). Janzer–Sudakov (Forum Math. Sigma, arXiv 2211.02015): ex(n,Q_d)=O(n^{2-1/(d-1)+1/((d-1)2^{d-1})}), and they record that for Q3 the bounds n^{3/2} and n^{8/5} still stand.",
+ "refs": [
+  "https://mathweb.ucsd.edu/~erdosproblems/erdos/newproblems/TuranCube.html",
+  "https://arxiv.org/abs/2211.02015",
+  "https://arxiv.org/abs/1307.1062",
+  "https://arxiv.org/abs/1306.5167",
+  "https://primereboot.pages.dev/erdos/problem/576"
+ ]
+}
