@@ -1,0 +1,25 @@
+{
+ "id": "QED-E047",
+ "set": "extended",
+ "title": "Does the trefoil have a symbiont?",
+ "area": "Topology",
+ "difficulty": 5.5,
+ "grade": "B-",
+ "provenance": "Extension",
+ "credit": "Brittenham & Hermiller, arXiv 2601.18757 (2026), Cor. 4.2 and Sec. 3/5",
+ "premise_risks": [
+  "Fast-moving area: a late-2026 preprint could settle u(10_6)",
+  "Mirror conventions: the bound u(3_1#10_6) ≤ 3 is for a specific mirror pairing",
+  "u(10_6)=2 would not settle the trefoil question, since another partner could exist"
+ ],
+ "plain": "The unknotting number of a knot is the fewest crossing changes needed to turn it into an unknotted loop. In 2025 it was shown that tying two knots together end to end can need fewer changes than the two knots need separately, and in 2026 that every torus knot except possibly the trefoil has a partner like this. Does the trefoil, the simplest knot, also have such a partner? The most likely candidate is the 10-crossing knot 10_6, whose own unknotting number is still unknown (it is 2 or 3).",
+ "math": "Write $u(K)$ for the unknotting number and $\\#$ for connected sum. Knots $K,K'$ are symbionts if $u(K\\#K')<u(K)+u(K')$. Is there a knot $K$, with some choice of mirror image, such that $u(3_1\\#K)<1+u(K)$? By Scharlemann's theorem any such $K$ has $u(K)\\ge2$. Concrete subquestion: is $u(10_6)=3$? Brittenham–Hermiller prove $u(3_1\\#10_6)\\le3$ for the mirror choice with $|\\sigma(3_1\\#10_6)|=2$, so $u(10_6)=3$ would give a positive answer.",
+ "formal_status": "formalized",
+ "review_note": "Known: Additivity fails: $u(7_1\\#\\overline{7_1})\\le5$ (Brittenham–Hermiller, arXiv:2506.24088, 2025). Every non-trivial torus knot except possibly $T(2,3)$ has a symbiont (Cor. 4.2), and $u(3_1\\#10_6)\\le3$ with $u(10_6)\\in\\{2,3\\}$ (Thm 1.3); the paper calls deciding $u(10_6)$ an interesting open problem (Brittenham–Hermiller, arXiv:2601.18757, 2026). Scharlemann: $u(K\\#K')\\ge2$ for non-trivial $K,K'$. arXiv:2608.25256 (2026) obtains 194 new unknotting numbers of alternating knots with d-invariants and Owens' theorem; it began as an attempt to prove $u(10_6)=3$ and says $u(10_6)$ is still unknown. Lee (arXiv:2609.09861, 2026) also lists $10_6$ as unresolved in $[2,3]$.",
+ "refs": [
+  "https://arxiv.org/abs/2506.24088",
+  "https://arxiv.org/abs/2601.18757",
+  "https://arxiv.org/abs/2608.25256",
+  "https://arxiv.org/abs/2609.09861"
+ ]
+}

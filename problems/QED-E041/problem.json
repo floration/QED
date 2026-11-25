@@ -1,0 +1,25 @@
+{
+ "id": "QED-E041",
+ "set": "extended",
+ "title": "No three in line: beat 3n/2",
+ "area": "Geometry",
+ "difficulty": 5.5,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Dudeney (1917); Hall–Jackson–Sudbery–Wild (1975); Guy–Kelly (1968)",
+ "premise_risks": [
+  "the problem is famous (Dudeney); only the constant improvement is asked, not the 2n question",
+  "Epoch AI hosts a closely related target (1.8n, arbitrarily large n), so a solution may surface there first"
+ ],
+ "plain": "How many points of an n-by-n grid can you pick so that no three of them lie on one straight line (at any angle)? Each row holds at most two, so 2n is the ceiling, and explicit constructions from 1975 give about 1.5n for large n. Find, for all large n, a construction with at least cn points for some constant c > 1.5.",
+ "math": "Let $f(n)$ be the largest size of $S\\subseteq\\{1,\\dots,n\\}^2$ with no three collinear points. Known: $(\\tfrac32-o(1))n\\le f(n)\\le 2n$. Prove there is $c>3/2$ with $f(n)\\ge cn$ for all sufficiently large $n$.",
+ "formal_status": "formalized",
+ "review_note": "Known: Lower $(3/2-o(1))n$: Hall, Jackson, Sudbery, Wild, JCTA 18 (1975). Upper $2n$ (pigeonhole); Guy–Kelly (1968) heuristic $f(n)\\sim(\\pi/\\sqrt3)n\\approx1.814n$. $f(n)=2n$ attained computationally for all $n\\le46$ and some larger even $n$ (Flammenkamp); Epoch AI's page reports tightness for $n\\le70$. For $k\\ge3$, the no-$(k+1)$-in-line maximum is $kn$ for large $n$: arXiv:2607.05255 (July 2026), after arXiv:2502.00176 and arXiv:2510.17743; arXiv:2508.07632's randomised constructions are vacuous at $k=2$. Epoch AI lists 'more than 1.8n for arbitrarily large n' as an open problem.",
+ "refs": [
+  "https://epoch.ai/frontiermath/open-problems/no-three-in-line",
+  "https://arxiv.org/abs/2607.05255",
+  "https://arxiv.org/abs/2508.07632",
+  "https://wwwhomes.uni-bielefeld.de/achim/no3in/readme.html",
+  "https://arxiv.org/abs/2502.00176"
+ ]
+}

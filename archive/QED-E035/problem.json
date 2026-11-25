@@ -1,0 +1,23 @@
+{
+ "id": "QED-E035",
+ "set": "extended",
+ "title": "Pin down the Schur–Siegel–Smyth trace constant",
+ "area": "Number theory",
+ "difficulty": 5.0,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Schur, Siegel, Smyth; A. Smith; Orloski–Talebizadeh Sardari–Smith; Niedbala Giraudin",
+ "premise_risks": [
+  "lower bound 1.80220 is a single-author Sept 2026 preprint, unrefereed (fall back to 1.80203 if it fails)",
+  "active area: small incremental improvements are likely, so 'improve either bound' is a moving target"
+ ],
+ "plain": "Take algebraic integers all of whose conjugates are positive real numbers, and look at the average of their conjugates (trace divided by degree). Apart from finitely many exceptions this average cannot be small, and the threshold where infinitely many examples start is a constant lambda. For decades people believed lambda = 2; Smith disproved this, and now lambda is known only to lie between 1.80220 and 1.8216. Narrow this window.",
+ "math": "Let $\\lambda_{\\mathrm{SSS}}$ be the smallest limit point of $\\operatorname{tr}(\\alpha)/\\deg(\\alpha)$ over totally positive algebraic integers. Known $1.80220\\le\\lambda_{\\mathrm{SSS}}\\le1.8216$ (lower bound stated non-strictly, arXiv:2609.29298, unrefereed). Formal target: strict improvement of the lower bound, $\\lambda_{\\mathrm{SSS}}>1.80220$.",
+ "formal_status": "formalized",
+ "review_note": "Known: Lower: Schur 1.6487, Siegel 1.7336, Smyth 1.7719, …, Orloski–Talebizadeh Sardari–Smith 1.80203 (arXiv:2401.03252), Niedbala Giraudin 1.80220 (arXiv:2609.29298, Sept 2026, unrefereed, computer-verified certificate). Upper: Smith, 'Algebraic numbers with small trace' (2021) $<1.8984$ (disproving $\\lambda=2$); Orloski–Talebizadeh Sardari, 'A quantitative converse of Fekete's theorem', arXiv:2304.10021: $1.8216$.",
+ "refs": [
+  "https://arxiv.org/abs/2609.29298",
+  "https://arxiv.org/abs/2401.03252",
+  "https://arxiv.org/abs/2304.10021"
+ ]
+}

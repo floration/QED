@@ -1,0 +1,24 @@
+{
+ "id": "QED-E045",
+ "set": "extended",
+ "title": "Dirac–Motzkin below the Green–Tao threshold",
+ "area": "Geometry",
+ "difficulty": 5.0,
+ "grade": "C",
+ "provenance": "Curated",
+ "credit": "Dirac (1951), Motzkin; Csima–Sawyer (1993); Green–Tao (2013)",
+ "premise_risks": [
+  "Green–Tao's n₀ may have been made explicit somewhere (thesis or follow-up); not found",
+  "Famous conjecture's residual range; the weaker target is the realistic extended-set ask"
+ ],
+ "plain": "Given n points in the plane, not all on one line, an ordinary line is a line through exactly two of them. Green and Tao proved that for all sufficiently large n there are at least n/2 ordinary lines, but they never made 'sufficiently large' explicit. The best bound proved for every n is 6n/13. Prove n/2 for every n except the two known exceptions, 7 and 13, or at least beat 6n/13 for all n ≥ 14.",
+ "math": "For finite non-collinear $P\\subset\\mathbb R^2$ with $|P|=n$, let $t_2(P)$ be the number of lines meeting $P$ in exactly two points. Prove $t_2(P)\\ge n/2$ for all $n\\notin\\{7,13\\}$. By Green–Tao this is known for $n\\ge n_0$, so the content is the finite range $n<n_0$ (or making $n_0$ explicit and verifying below it). Weaker target: find $c>6/13$ with $t_2(P)\\ge cn$ for all $n\\ge 14$.",
+ "formal_status": "formalized",
+ "review_note": "Known: $t_2\\ge 3n/7$: Kelly–Moser (1958). $t_2\\ge 6n/13$ for $n\\ne 7$: Csima–Sawyer, DCG 9 (1993). For $n\\ge n_0$: $t_2\\ge n/2$ for even $n$ and $t_2\\ge 3\\lfloor n/4\\rfloor$ for odd $n$, both sharp (Green–Tao, DCG 50 (2013), arXiv:1208.4714). Exceptions: $n=7$ ($t_2=3$, Kelly–Moser) and $n=13$ ($t_2=6$, Crowe–McKee). Recent related work, which does not improve this: arXiv:2610.21415 (2026, ordinary lines in $\\mathbb C^3$) and Dumitrescu–Pach, EJC 33(3) P3.33 (2026).",
+ "refs": [
+  "https://arxiv.org/abs/1208.4714",
+  "https://doi.org/10.1007/BF02189318",
+  "https://arxiv.org/pdf/2610.21415",
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v33i3p33/pdf/"
+ ]
+}

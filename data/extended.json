@@ -396,5 +396,704 @@
   "formal_status": "not_formalized",
   "set": "extended",
   "id": "QED-E020"
+ },
+ {
+  "id": "QED-E021",
+  "set": "extended",
+  "title": "Is R(3,10) equal to 40 or 41?",
+  "area": "Combinatorics",
+  "difficulty": 3.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Radziszowski dynamic survey 'Small Ramsey Numbers'; Angeltveit (2023/2025).",
+  "premise_risks": [
+   "Angeltveit's upper bound is computer-assisted; if it had an error the range would revert to 40-42",
+   "An unpublished construction or nonexistence proof could exist"
+  ],
+  "plain": "The Ramsey number R(3,10) is the fewest people at a party that guarantees either 3 mutual acquaintances or 10 mutual strangers. It is known to be 40 or 41, and nobody knows which. Settle it: either build a 40-vertex triangle-free graph with no 10 pairwise non-adjacent vertices, or show none exists.",
+  "math": "Let $R(3,10)$ be the least $n$ such that every graph on $n$ vertices contains $K_3$ or an independent set of size $10$. Known: $40\\le R(3,10)\\le 41$. Decide whether there exists a triangle-free graph $G$ on $40$ vertices with $\\alpha(G)\\le 9$ (equivalently whether $R(3,10)=41$).",
+  "review_note": "Known: Lower bound 40: Exoo (1989), a (3,10)-graph on 39 vertices. Upper bound 41: V. Angeltveit, 'R(3,10) <= 41', arXiv:2401.00392, Electron. J. Combin. 32(4) (2025) P4.30, improving 42 (Goedgebeur-Radziszowski 2013). Pandey-Ravi, arXiv:2601.03572 (Jan 2026), study structural properties of hypothetical critical graphs, quoting the older range 40-42 and assuming R(3,10)=42; they do not settle the value. No 2025-2026 resolution found.",
+  "refs": [
+   "https://arxiv.org/abs/2401.00392",
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v32i4p30",
+   "https://arxiv.org/abs/2601.03572v1"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E021: Is R(3,10) equal to 40 or 41?\nThe Ramsey number R(3,10) is the fewest people at a party that guarantees either 3 mutual acquaintances or 10 mutual strangers. It is known to be 40 or 41, and nobody knows which. Settle it: either build a 40-vertex triangle-free graph with no 10 pairwise non-adjacent vertices, or show none exists.\nInformal statement: Let $R(3,10)$ be the least $n$ such that every graph on $n$ vertices contains $K_3$ or an independent set of size $10$. Known: $40\\le R(3,10)\\le 41$. Decide whether there exists a triangle-free graph $G$ on $40$ vertices with $\\alpha(G)\\le 9$ (equivalently whether $R(3,10)=41$).\nFormalization notes: Claim says every graph on 40 vertices has a triangle or an independent set of size 10, i.e. R(3,10) <= 40. Given the known 40 <= R(3,10) <= 41: Claim true means R(3,10)=40, and ¬Claim (a triangle-free graph on 40 vertices with independence number <= 9 exists) means R(3,10)=41. Adjacency is irreflexive, so a triangle's vertices are automatically distinct.\n-/\nnamespace OpenProblems.QEDE021\ndef Claim : Prop :=\n  ∀ G : SimpleGraph (Fin 40),\n    (∃ a b c : Fin 40, G.Adj a b ∧ G.Adj b c ∧ G.Adj a c) ∨\n    (∃ s : Finset (Fin 40), s.card = 10 ∧ ∀ x ∈ s, ∀ y ∈ s, x ≠ y → ¬ G.Adj x y)\nend OpenProblems.QEDE021\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E022",
+  "set": "extended",
+  "title": "Four-colour triangle Ramsey number R(3,3,3,3)",
+  "area": "Combinatorics",
+  "difficulty": 4.0,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Radziszowski survey; Chung (1973); Fettes-Kramer-Radziszowski (2004); Tatarevic (2026 preprint).",
+  "premise_risks": [
+   "The bound 60 is an unrefereed 2026 preprint resting on unverified SAT runs; the safe published bound is 62",
+   "Problem may be stated with whichever upper bound the board accepts"
+  ],
+  "plain": "Colour every edge of a complete graph with one of four colours. How many vertices force a single-coloured triangle? The answer is known to lie between 51 and 60 (the 60 coming from a 2026 computer-assisted preprint). Narrow or close this gap.",
+  "math": "Let $R_4(3)=R(3,3,3,3)$ be the least $n$ such that every 4-edge-colouring of $K_n$ contains a monochromatic triangle. Known: $51\\le R_4(3)\\le 62$ (refereed), and $\\le 60$ in a 2026 computer-assisted preprint. Improve either bound, i.e. exhibit a 4-colouring of $K_{51}$ with no monochromatic triangle, or lower the upper bound (below 60, or confirm 60 rigorously). Ultimately determine $R_4(3)$; it is conjectured to be $51$.",
+  "review_note": "Known: Lower 51: F. Chung (1973). Upper 62: Fettes-Kramer-Radziszowski, Ars Combin. 72 (2004). Upper 60: M. Tatarevic, arXiv:2610.36648 (2026 preprint). It reduces to 296,081 SAT instances (UNSAT by Kissat and CaDiCaL); the reductions are in Lean/Mathlib, but the SAT exclusions are taken as a premise; extensive AI assistance is disclosed. Boza, arXiv:2603.10851 (2026), improves other multicolour bounds and cites 62 for R_4(3).",
+  "refs": [
+   "https://arxiv.org/abs/2610.36648",
+   "https://www.cs.rit.edu/~spr/COURSES/CCOMP/r3333.pdf",
+   "https://arxiv.org/abs/2603.10851",
+   "https://arxiv.org/abs/1912.05353"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E022: Four-colour triangle Ramsey number R(3,3,3,3)\nColour every edge of a complete graph with one of four colours. How many vertices force a single-coloured triangle? The answer is known to lie between 51 and 60 (the 60 coming from a 2026 computer-assisted preprint). Narrow or close this gap.\nInformal statement: Let $R_4(3)=R(3,3,3,3)$ be the least $n$ such that every 4-edge-colouring of $K_n$ contains a monochromatic triangle. Known: $51\\le R_4(3)\\le 62$ (refereed), and $\\le 60$ in a 2026 computer-assisted preprint. Improve either bound, i.e. exhibit a 4-colouring of $K_{51}$ with no monochromatic triangle, or lower the upper bound (below 60, or confirm 60 rigorously). Ultimately determine $R_4(3)$; it is conjectured to be $51$.\nFormalization notes: Claim is the conjecture R_4(3)=51: every symmetric 4-colouring c of the pairs of Fin 51 has a monochromatic triangle on three distinct vertices (diagonal values c i i are irrelevant). Given the known lower bound 51, Claim true means R_4(3)=51, and ¬Claim (a triangle-free 4-colouring of K_51 exists) means R_4(3) >= 52.\n-/\nnamespace OpenProblems.QEDE022\ndef Claim : Prop :=\n  ∀ c : Fin 51 → Fin 51 → Fin 4, (∀ i j : Fin 51, c i j = c j i) →\n    ∃ i j k : Fin 51, i ≠ j ∧ j ≠ k ∧ i ≠ k ∧ c i j = c j k ∧ c i j = c i k\nend OpenProblems.QEDE022\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E023",
+  "set": "extended",
+  "title": "Does the Steiner system S(2,6,51) exist?",
+  "area": "Combinatorics",
+  "difficulty": 4.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Handbook of Combinatorial Designs (Abel-Greig table); Banakh-Hetman-Ravsky (2025).",
+  "premise_risks": [
+   "Exact open list taken from arXiv:2511.05191 as summarised; 51 being open should be double-checked against Abel's latest tables",
+   "Exhaustive search may be far harder than v=46 so the problem could be practically intractable"
+  ],
+  "plain": "Can you choose 6-element groups from 51 objects so that every pair of objects lies together in exactly one group (that would take 85 groups)? The arithmetic allows it, but no one has built one or proved it impossible. This is the smallest such undecided case for groups of size 6.",
+  "math": "Decide whether there is a family $\\mathcal B$ of $6$-subsets of a $51$-set $V$ such that every $2$-subset of $V$ lies in exactly one member of $\\mathcal B$ (a $2$-$(51,6,1)$ design; necessarily $|\\mathcal B|=85$ and each point is in $10$ blocks).",
+  "review_note": "Known: Necessary conditions v ≡ 1, 6 (mod 15). The Handbook of Combinatorial Designs (Abel-Greig) listed 29 undecided v. Banakh-Hetman-Ravsky, arXiv:2511.05191 (2025), construct S(2,6,226) and S(2,6,441), leaving 27 open: 51, 61, 81, 166, 231, 256, 261, 286, 316, 321, 346, 351, 376, 406, 411, 436, 471, 501, 561, 591, 616, 646, 651, 676, 771, 796, 801. S(2,6,46) does not exist (Houghten-Thiel-Janssen-Lam, 2001, exhaustive computation).",
+  "refs": [
+   "https://arxiv.org/abs/2511.05191v2",
+   "https://arxiv.org/html/2504.04293v2",
+   "https://arxiv.org/abs/2401.08274v2"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E023: Does the Steiner system S(2,6,51) exist?\nCan you choose 6-element groups from 51 objects so that every pair of objects lies together in exactly one group (that would take 85 groups)? The arithmetic allows it, but no one has built one or proved it impossible. This is the smallest such undecided case for groups of size 6.\nInformal statement: Decide whether there is a family $\\mathcal B$ of $6$-subsets of a $51$-set $V$ such that every $2$-subset of $V$ lies in exactly one member of $\\mathcal B$ (a $2$-$(51,6,1)$ design; necessarily $|\\mathcal B|=85$ and each point is in $10$ blocks).\nFormalization notes: Claim asserts that a 2-(51,6,1) design exists: a finite family B of 6-subsets of Fin 51 such that every pair of distinct points lies in exactly one block. ¬Claim means no S(2,6,51) exists. The block count 85 follows from the definition and is not stated.\n-/\nnamespace OpenProblems.QEDE023\ndef Claim : Prop :=\n  ∃ B : Finset (Finset (Fin 51)), (∀ b ∈ B, b.card = 6) ∧\n    ∀ x y : Fin 51, x ≠ y → ∃! b : Finset (Fin 51), b ∈ B ∧ x ∈ b ∧ y ∈ b\nend OpenProblems.QEDE023\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E024",
+  "set": "extended",
+  "title": "Ramsey multiplicity constant of K_4",
+  "area": "Combinatorics",
+  "difficulty": 4.0,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Erdos; Thomason; Parczyk-Pokutta-Spiegel-Szabo (2022/2024); Grzesik-Lee-Lidicky-Volec.",
+  "premise_risks": [
+   "Asymptotic constant; Lean formalization would need the limit definition, and 'improve a bound' is not a yes/no claim"
+  ],
+  "plain": "In any red/blue colouring of the edges of a huge complete graph, some fraction of all 4-vertex sets must be single-coloured (all 6 edges the same colour). The minimum possible fraction is known only to lie between about 0.0296 and 0.03015. Pin it down further, or find its exact value.",
+  "math": "Let $c_4=\\lim_{n\\to\\infty}\\min_{G,|V(G)|=n}\\big(k_4(G)+k_4(\\bar G)\\big)/\\binom n4$. Known: $0.0296<c_4\\le U=4551721\\cdot 2^{-24}\\cdot 3^{-2}<0.030145$ (Parczyk–Pokutta–Spiegel–Szabó). Formal target: improve the upper bound strictly, i.e. prove $c_4<4551721\\cdot 2^{-24}\\cdot 3^{-2}$ (more generally improve either bound or determine $c_4$).",
+  "review_note": "Known: Upper: Thomason (1989) < 1/33; Parczyk-Pokutta-Spiegel-Szabo, arXiv:2206.04036, Found. Comput. Math. (2024): c_4 <= 4551721·2^{-24}·3^{-2} < 0.030145 (blow-ups of a 768-vertex Cayley graph). Lower: Niess (arXiv:1207.4714) 0.0287; Sperfeld; Grzesik-Lee-Lidicky-Volec: c_4 > 0.0296 (cited in PPSS). Erdos's conjecture c_4 = 1/32 was refuted by Thomason.",
+  "refs": [
+   "https://arxiv.org/abs/2206.04036v3",
+   "https://link.springer.com/10.1007/s10208-024-09675-6",
+   "https://arxiv.org/abs/1207.4714"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E024: Ramsey multiplicity constant of K_4\nIn any red/blue colouring of the edges of a huge complete graph, some fraction of all 4-vertex sets must be single-coloured (all 6 edges the same colour). The minimum possible fraction is known only to lie between about 0.0296 and 0.03015. Pin it down further, or find its exact value.\nInformal statement: Let $c_4=\\lim_{n\\to\\infty}\\min_{G,|V(G)|=n}\\big(k_4(G)+k_4(\\bar G)\\big)/\\binom n4$.\nKnown: $0.0296<c_4\\le U:=4551721\\cdot 2^{-24}\\cdot 3^{-2}\\approx 0.0301449$ (upper bound:\nParczyk–Pokutta–Spiegel–Szabó, Found. Comput. Math. 2024, from blow-ups of a 768-vertex Cayley\ngraph). Formalized target (strict improvement of the best known UPPER bound): prove $c_4 < U$.\nFormalization notes:\n* `mono G` counts 4-element vertex sets of `G` that are cliques of `G` or of its complement\n  `Gᶜ` (i.e. the monochromatic K₄'s of the red/blue colouring \"red = edge of G\"). A 4-set cannot\n  be both, so this is k₄(G) + k₄(Ḡ).\n* `m n` = min over all simple graphs on `Fin n` of `mono G / C(n,4)` (an `iInf` over the finite,\n  nonempty type `SimpleGraph (Fin n)`; values lie in [0,1], so the real `iInf` is a genuine\n  minimum). For n < 4 the ratio is the junk value 0, which is irrelevant below.\n* Standard averaging over (n−1)-vertex subsets shows `m n` is nondecreasing for n ≥ 4, so\n  c₄ = lim m n = sup_{n≥4} m n exists and m n ≤ c₄ for all n ≥ 4. Hence\n  c₄ < U  ⇔  ∃ c < U, m n ≤ c for all large n. We state the right-hand side, which avoids\n  defining the limit with junk values. (A single finite graph can never prove it, as m n ≤ c₄;\n  a proof needs a sequence, e.g. a better blow-up construction.)\n* The known upper bound is non-strict (it is the exact density of a blow-up family), so\n  `Claim` is a genuine strict improvement. Proving `Claim` = c₄ < 4551721/(2²⁴·9). Proving\n  `¬Claim` = c₄ = 4551721/(2²⁴·9) exactly (the PPSS construction is optimal), given the known\n  bound c₄ ≤ U.\n-/\nnamespace OpenProblems.QEDE024\nnoncomputable section\nopen scoped Classical\n\n/-- Number of monochromatic 4-sets: 4-cliques of `G` plus 4-cliques of the complement. -/\ndef mono {n : ℕ} (G : SimpleGraph (Fin n)) : ℕ :=\n  ((Finset.univ : Finset (Finset (Fin n))).filter (fun s : Finset (Fin n) =>\n    s.card = 4 ∧ ((s : Set (Fin n)).Pairwise G.Adj ∨ (s : Set (Fin n)).Pairwise Gᶜ.Adj))).card\n\n/-- Minimum fraction of monochromatic 4-sets over all 2-colourings of `K_n`. -/\ndef m (n : ℕ) : ℝ :=\n  ⨅ G : SimpleGraph (Fin n), (mono G : ℝ) / (Nat.choose n 4 : ℝ)\n\n/-- The best known upper bound `4551721 · 2⁻²⁴ · 3⁻²`. -/\ndef U : ℝ := 4551721 / ((2 : ℝ) ^ 24 * 9)\n\n/-- `c₄ < U`, expressed via the (nondecreasing) finite minima. -/\ndef Claim : Prop :=\n  ∃ c : ℝ, c < U ∧ ∀ᶠ n : ℕ in Filter.atTop, m n ≤ c\n\nend\nend OpenProblems.QEDE024\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E026",
+  "set": "extended",
+  "title": "Total colouring of planar graphs with maximum degree 6",
+  "area": "Graph theory",
+  "difficulty": 4.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Behzad/Vizing Total Colouring Conjecture; planar-case literature (Sanders-Zhao, Wang, Roussel, Zhu).",
+  "premise_risks": [
+   "Zhu's 2026 maximal-planar result is unrefereed",
+   "Infinite family; formalization needs planarity in Mathlib, which is limited"
+  ],
+  "plain": "A total colouring colours both vertices and edges so that touching objects (adjacent vertices, edges sharing an end, an edge and its endpoint) get different colours. It is conjectured that Δ+2 colours always suffice, where Δ is the maximum degree. For planar graphs this is proved for every Δ except Δ=6: show every planar graph with maximum degree 6 has a total colouring with 8 colours.",
+  "math": "Prove that every simple planar graph $G$ with $\\Delta(G)=6$ satisfies $\\chi''(G)\\le 8$ (or find a counterexample).",
+  "review_note": "Known: Delta <= 5: Kostochka (all graphs). Planar Delta=7: Sanders-Zhao. Planar Delta >= 8: earlier results (Borodin et al.). Planar Delta=6 is known under extra hypotheses: no 4-cycles (Wang et al.), no adjacent triangles (Sun et al.), each vertex misses some k-cycle with 3<=k<=8 (Roussel), no 4-fan (Zhu-Xu), and special 4-cycle conditions (arXiv:2609.19503, 2026); see arXiv:2507.12737. E. Zhu, arXiv:2610.32717 (2026 preprint): every maximal planar graph with Delta <= 6 is totally 8-colourable; this does not cover all planar graphs because completing to a triangulation can raise Delta.",
+  "refs": [
+   "https://arxiv.org/html/2507.12737v1",
+   "https://arxiv.org/abs/2610.32717",
+   "https://arxiv.org/abs/2609.19503",
+   "https://arxiv.org/abs/1812.05833"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E026: Total colouring of planar graphs with maximum degree 6\nA total colouring colours both vertices and edges so that touching objects (adjacent vertices, edges sharing an end, an edge and its endpoint) get different colours. It is conjectured that Δ+2 colours always suffice, where Δ is the maximum degree. For planar graphs this is proved for every Δ except Δ=6: show every planar graph with maximum degree 6 has a total colouring with 8 colours.\nInformal statement: Prove that every simple planar graph $G$ with $\\Delta(G)=6$ satisfies $\\chi''(G)\\le 8$ (or find a counterexample).\nFormalization notes:\n* Graphs: finite simple graphs, w.l.o.g. on vertex set `Fin n` (every finite graph is isomorphic\n  to one; all notions here are isomorphism-invariant).\n* Planarity: by Wagner's theorem a finite graph is planar (has an embedding in the plane) iff it\n  has neither K₅ nor K₃,₃ as a minor; we take this as the definition. Minors are given by branch\n  sets: pairwise disjoint vertex sets each inducing a connected subgraph (Mathlib's `Connected`\n  includes nonemptiness), with an edge between the branch sets of adjacent vertices of the minor.\n* Maximum degree exactly 6: every vertex has at most 6 neighbours and some vertex has exactly 6\n  (degrees as `Set.ncard` of the neighbour set, which is finite).\n* Total colouring with 8 colours: a vertex colouring `cv : Fin n → Fin 8` and an edge colouring\n  `ce : Sym2 (Fin n) → Fin 8` (only values on edges matter) such that adjacent vertices get\n  different colours, two distinct edges at a common vertex get different colours, and each edge\n  differs from both its endpoints (the condition is stated for every ordered adjacent pair, so\n  it covers both endpoints since `Sym2.mk (u,v) = Sym2.mk (v,u)`). This is exactly χ''(G) ≤ 8.\n* Proving `Claim` = the Δ = 6 case of the Total Colouring Conjecture for planar graphs.\n  Proving `¬Claim` = a planar graph with Δ = 6 and χ'' ≥ 9.\n-/\nnamespace OpenProblems.QEDE026\nnoncomputable section\n\n/-- `H` is a minor of `G`: there are pairwise disjoint branch sets `B w ⊆ V`, each inducing a\nconnected (in particular nonempty) subgraph of `G`, with a `G`-edge between `B w` and `B w'`\nwhenever `w w'` is an edge of `H`. -/\ndef IsMinor {V W : Type} (H : SimpleGraph W) (G : SimpleGraph V) : Prop :=\n  ∃ B : W → Set V,\n    (∀ w : W, (G.induce (B w)).Connected) ∧\n    (∀ w w' : W, w ≠ w' → Disjoint (B w) (B w')) ∧\n    (∀ w w' : W, H.Adj w w' → ∃ x ∈ B w, ∃ y ∈ B w', G.Adj x y)\n\n/-- The complete graph `K₅`. -/\ndef K5 : SimpleGraph (Fin 5) := ⊤\n\n/-- The complete bipartite graph `K₃,₃`. -/\ndef K33 : SimpleGraph (Fin 3 ⊕ Fin 3) := completeBipartiteGraph (Fin 3) (Fin 3)\n\n/-- Planarity of a finite simple graph, via Wagner's theorem: no `K₅` and no `K₃,₃` minor. -/\ndef Planar {V : Type} (G : SimpleGraph V) : Prop :=\n  ¬ IsMinor K5 G ∧ ¬ IsMinor K33 G\n\n\n/-- A total colouring of `G` with colours `Fin k`. -/\ndef IsTotalColouring {n k : ℕ} (G : SimpleGraph (Fin n)) (cv : Fin n → Fin k)\n    (ce : Sym2 (Fin n) → Fin k) : Prop :=\n  (∀ u v : Fin n, G.Adj u v → cv u ≠ cv v) ∧\n  (∀ u v : Fin n, G.Adj u v → ce (s(u, v)) ≠ cv u) ∧\n  (∀ u v w : Fin n, G.Adj u v → G.Adj u w → v ≠ w →\n    ce (s(u, v)) ≠ ce (s(u, w)))\n\n/-- Maximum degree exactly `6`. -/\ndef MaxDegSix {n : ℕ} (G : SimpleGraph (Fin n)) : Prop :=\n  (∀ v : Fin n, (G.neighborSet v).ncard ≤ 6) ∧ ∃ v : Fin n, (G.neighborSet v).ncard = 6\n\ndef Claim : Prop :=\n  ∀ (n : ℕ) (G : SimpleGraph (Fin n)), Planar G → MaxDegSix G →\n    ∃ (cv : Fin n → Fin 8) (ce : Sym2 (Fin n) → Fin 8), IsTotalColouring G cv ce\n\nend\nend OpenProblems.QEDE026\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E027",
+  "set": "extended",
+  "title": "Largest cap set in F_3^7",
+  "area": "Combinatorics",
+  "difficulty": 4.5,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "Edel; Potechin; Thackeray (2022).",
+  "premise_risks": [
+   "Thackeray's no-289 result is an arXiv paper with computer-assisted counting; refereed status unclear",
+   "Large gap; exact value may be out of reach"
+  ],
+  "plain": "A cap set is a set of points in the 7-dimensional grid {0,1,2}^7 (arithmetic mod 3) containing no three points on a line. The biggest known one has 236 points, and it is known that 289 points is impossible. Find a bigger cap or prove a better upper bound.",
+  "math": "Let $r_3(7)$ be the maximum size of $A\\subseteq\\mathbb F_3^7$ containing no three distinct points $x,y,z$ with $x+y+z=0$ (equivalently, no three collinear points). Known: $236\\le r_3(7)\\le 288$. Improve either bound; in particular, is there a cap of size $237$? Ultimately determine $r_3(7)$.",
+  "review_note": "Known: Lower 236: Edel et al. construction (Edel's cap tables), matched but not beaten by FunSearch (Romera-Paredes et al., Nature 2023) and X-evolve (arXiv:2508.07932, best known 236 in dimension 7, 512 in dimension 8). Upper 288: Thackeray, 'The cap set problem: up to dimension 7', arXiv:2206.09804, Theorem 4.2 (no 289-cap 7-flat, hence no larger cap). Exact values known through dimension 6 (r_3(6)=112, Potechin 2008).",
+  "refs": [
+   "https://arxiv.org/abs/2206.09804",
+   "https://arxiv.org/abs/2508.07932",
+   "https://en.wikipedia.org/wiki/Cap_set"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E027: Largest cap set in F_3^7\nA cap set is a set of points in the 7-dimensional grid {0,1,2}^7 (arithmetic mod 3) containing no three points on a line. The biggest known one has 236 points, and it is known that 289 points is impossible. Find a bigger cap or prove a better upper bound.\nInformal statement: Let $r_3(7)$ be the maximum size of $A\\subseteq\\mathbb F_3^7$ containing no three distinct points $x,y,z$ with $x+y+z=0$ (equivalently, no three collinear points). Known: $236\\le r_3(7)\\le 288$. Improve either bound; in particular, is there a cap of size $237$? Ultimately determine $r_3(7)$.\nFormalization notes: IsCap A: no three pairwise distinct points of A sum to 0 in (ZMod 3)^7; this is the same as no three collinear points. Claim: a cap of size at least 237 exists, i.e. r_3(7) >= 237 (beating the record). ¬Claim means 236 is optimal, r_3(7)=236. This formalizes the lower-bound side only, not the upper bound.\n-/\nnamespace OpenProblems.QEDE027\ndef IsCap (A : Finset (Fin 7 → ZMod 3)) : Prop :=\n  ∀ x ∈ A, ∀ y ∈ A, ∀ z ∈ A, x ≠ y → y ≠ z → x ≠ z → x + y + z ≠ 0\n\ndef Claim : Prop :=\n  ∃ A : Finset (Fin 7 → ZMod 3), IsCap A ∧ 237 ≤ A.card\nend OpenProblems.QEDE027\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E028",
+  "set": "extended",
+  "title": "Strong edge colouring with maximum degree 4: 20 or 21 colours?",
+  "area": "Graph theory",
+  "difficulty": 4.0,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Erdos-Nesetril conjecture; Cranston; Huang-Santana-Yu.",
+  "premise_risks": [
+   "A 2026 improvement to 20 might exist that the searches missed"
+  ],
+  "plain": "A strong edge colouring gives edges colours so that any two edges that touch, or are joined by a third edge, get different colours. Erdős and Nešetřil conjectured that graphs with maximum degree 4 need at most 20 colours; it is proved that 21 suffice. Close the one-colour gap.",
+  "math": "Prove that every graph $G$ with $\\Delta(G)\\le4$ has strong chromatic index $\\chi'_s(G)\\le20$ (Erdos-Nesetril bound $\\tfrac54\\Delta^2$), or find a graph with $\\Delta\\le4$ and $\\chi'_s=21$.",
+  "review_note": "Known: chi'_s <= 22: Cranston (2006, arXiv:math/0601623). chi'_s <= 21: Huang-Santana-Yu, Electron. J. Combin. 25(3) (2018) P3.31 (arXiv:1806.07012). Lower bound 20 is attained by the blow-up of C_5 (each vertex replaced by 2 vertices). Related: packing edge-colouring results for Delta <= 4 (Involve 18(2), 2025) do not give 20. Delta=3 is settled (10; Andersen, Horak-He-Trotter).",
+  "refs": [
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v25i3p31",
+   "https://arxiv.org/abs/1806.07012",
+   "https://arxiv.org/abs/math/0601623",
+   "https://msp.org/involve/2025/18-2/p04.xhtml"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E028: Strong edge colouring with maximum degree 4: 20 or 21 colours?\nA strong edge colouring gives edges colours so that any two edges that touch, or are joined by a third edge, get different colours. Erdős and Nešetřil conjectured that graphs with maximum degree 4 need at most 20 colours; it is proved that 21 suffice. Close the one-colour gap.\nInformal statement: Prove that every graph $G$ with $\\Delta(G)\\le4$ has strong chromatic index $\\chi'_s(G)\\le20$ (Erdos-Nesetril bound $\\tfrac54\\Delta^2$), or find a graph with $\\Delta\\le4$ and $\\chi'_s=21$.\nFormalization notes: Conflict G e f: e ≠ f and some endpoint of e equals or is adjacent to some endpoint of f (edges at distance <= 1 in the line graph sense used for strong colouring). Claim: every finite simple graph (on Fin n) with all degrees <= 4 has a colouring of its edges with Fin 20 in which conflicting edges differ, i.e. chi'_s <= 20. ¬Claim means some graph with Delta <= 4 has chi'_s = 21 (since 21 always suffices). The colour function is defined on all of Sym2 but only constrained on edges, so there is no junk loophole.\n-/\nnamespace OpenProblems.QEDE028\ndef Conflict {V : Type} (G : SimpleGraph V) (e f : Sym2 V) : Prop :=\n  e ≠ f ∧ ∃ a ∈ e, ∃ b ∈ f, a = b ∨ G.Adj a b\n\ndef Claim : Prop :=\n  ∀ (n : ℕ) (G : SimpleGraph (Fin n)), (∀ v : Fin n, (G.neighborSet v).ncard ≤ 4) →\n    ∃ c : Sym2 (Fin n) → Fin 20,\n      ∀ e ∈ G.edgeSet, ∀ f ∈ G.edgeSet, Conflict G e f → c e ≠ c f\nend OpenProblems.QEDE028\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E029",
+  "set": "extended",
+  "title": "Oriented chromatic number of planar graphs (18 vs 80)",
+  "area": "Graph theory",
+  "difficulty": 4.5,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "Courcelle; Raspaud-Sopena; Marshall; Sopena surveys.",
+  "premise_risks": [
+   "The precise sharper statement ('improve to 79') is incremental; the real interest is a substantially better bound"
+  ],
+  "plain": "Orient every edge of a planar graph. An oriented colouring colours vertices so adjacent vertices differ and all arcs between two colour classes point the same way. Every oriented planar graph can be coloured with 80 colours, and some need 18. The gap has barely moved since 1994: narrow it.",
+  "math": "Let $\\chi_o(\\mathcal P)=\\max\\chi_o(\\vec G)$ over orientations of simple planar graphs ($\\chi_o$ = least order of a tournament receiving a homomorphism). Known $18\\le\\chi_o(\\mathcal P)\\le80$. Formal target: strict improvement of the upper bound, $\\chi_o(\\mathcal P)\\le79$ (the lower-bound direction, an example with $\\chi_o\\ge19$, is the alternative improvement and is not the formal Claim).",
+  "review_note": "Known: Upper 80: Raspaud-Sopena, Inform. Process. Lett. 51 (1994), via acyclic 5-colourability (Borodin). Lower bound history: 15 (Sopena), 16 and 17 (Marshall), 18 (Marshall, Ars Combin. 2015). Clow, 'MAD phase transitions in the oriented chromatic number', arXiv:2607.22915 (2026), confirms both bounds are still current.",
+  "refs": [
+   "https://arxiv.org/abs/2607.22915",
+   "https://arxiv.org/abs/2409.13076",
+   "https://arxiv.org/abs/1411.7192"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E029: Oriented chromatic number of planar graphs (18 vs 80)\nOrient every edge of a planar graph. An oriented colouring colours vertices so adjacent vertices differ and all arcs between two colour classes point the same way. Every oriented planar graph can be coloured with 80 colours, and some need 18. The gap has barely moved since 1994: narrow it.\nInformal statement: Let $\\chi_o(\\mathcal P)=\\max\\chi_o(\\vec G)$ over orientations $\\vec G$ of simple planar graphs, where $\\chi_o(\\vec G)$ is the least order of a tournament $T$ admitting a homomorphism $\\vec G\\to T$. Known: $18\\le\\chi_o(\\mathcal P)\\le80$ (upper bound: Raspaud–Sopena 1994). Formal target (strict improvement of the UPPER bound): prove $\\chi_o(\\mathcal P)\\le 79$, i.e. every oriented planar graph has an oriented colouring with 79 colours. (Improving the lower bound, an oriented planar graph with $\\chi_o\\ge19$, is the other direction and is not what `Claim` asks.)\nFormalization notes:\n* Oriented graphs: a relation `A` on `Fin n` (arcs `u → v`) that is asymmetric (`A u v → ¬A v u`,\n  hence also irreflexive: no loops, no digons). Its underlying simple graph is\n  `SimpleGraph.fromRel A` (u ~ v iff u ≠ v and an arc joins them). Every orientation of a finite\n  simple graph arises this way, up to relabelling vertices by `Fin n`.\n* Planarity of the underlying graph via Wagner's theorem: no K₅ and no K₃,₃ minor (branch-set\n  definition of minors; Mathlib's `Connected` includes nonemptiness).\n* Oriented k-colouring: `f : Fin n → Fin k` with `f u ≠ f v` on every arc, and no two arcs in\n  opposite directions between two colour classes (`A u v`, `A x y`, `f u = f y` forces\n  `f v ≠ f x`). Such `f` is exactly a homomorphism to an oriented graph on ≤ k vertices, which\n  extends to a tournament on k vertices; so this is χ_o ≤ k.\n* Proving `Claim` = χ_o(𝒫) ≤ 79. Proving `¬Claim` = some oriented planar graph needs ≥ 80\n  colours, i.e. (with Raspaud–Sopena) χ_o(𝒫) = 80.\n-/\nnamespace OpenProblems.QEDE029\nnoncomputable section\n\n/-- `H` is a minor of `G`: there are pairwise disjoint branch sets `B w ⊆ V`, each inducing a\nconnected (in particular nonempty) subgraph of `G`, with a `G`-edge between `B w` and `B w'`\nwhenever `w w'` is an edge of `H`. -/\ndef IsMinor {V W : Type} (H : SimpleGraph W) (G : SimpleGraph V) : Prop :=\n  ∃ B : W → Set V,\n    (∀ w : W, (G.induce (B w)).Connected) ∧\n    (∀ w w' : W, w ≠ w' → Disjoint (B w) (B w')) ∧\n    (∀ w w' : W, H.Adj w w' → ∃ x ∈ B w, ∃ y ∈ B w', G.Adj x y)\n\n/-- The complete graph `K₅`. -/\ndef K5 : SimpleGraph (Fin 5) := ⊤\n\n/-- The complete bipartite graph `K₃,₃`. -/\ndef K33 : SimpleGraph (Fin 3 ⊕ Fin 3) := completeBipartiteGraph (Fin 3) (Fin 3)\n\n/-- Planarity of a finite simple graph, via Wagner's theorem: no `K₅` and no `K₃,₃` minor. -/\ndef Planar {V : Type} (G : SimpleGraph V) : Prop :=\n  ¬ IsMinor K5 G ∧ ¬ IsMinor K33 G\n\n\n/-- `f` is an oriented colouring of the oriented graph `A` with colours `Fin k`. -/\ndef IsOrientedColouring {n k : ℕ} (A : Fin n → Fin n → Prop) (f : Fin n → Fin k) : Prop :=\n  (∀ u v : Fin n, A u v → f u ≠ f v) ∧\n  (∀ u v x y : Fin n, A u v → A x y → f u = f y → f v ≠ f x)\n\ndef Claim : Prop :=\n  ∀ (n : ℕ) (A : Fin n → Fin n → Prop), (∀ u v : Fin n, A u v → ¬ A v u) →\n    Planar (SimpleGraph.fromRel A) →\n    ∃ f : Fin n → Fin 79, IsOrientedColouring A f\n\nend\nend OpenProblems.QEDE029\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E030",
+  "set": "extended",
+  "title": "Order of magnitude of ex(n, C_8)",
+  "area": "Combinatorics",
+  "difficulty": 6.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Erdos; Bondy-Simonovits; Furedi-Simonovits survey.",
+  "premise_risks": [
+   "Famous long-standing problem; may be judged better suited to the main set or too hard"
+  ],
+  "plain": "How many edges can a graph on n vertices have without containing a cycle of length 8? It is known to be at most about n^{5/4}, but the best constructions are smaller by a polynomial factor, unlike lengths 4, 6 and 10 where matching constructions exist. Find a C_8-free graph with about n^{5/4} edges, or prove a smaller upper bound.",
+  "math": "Determine whether $\\mathrm{ex}(n,C_8)=\\Theta(n^{5/4})$. Known: $\\Omega(n^{6/5})\\le\\mathrm{ex}(n,C_8)\\le O(n^{5/4})$. (In general $\\mathrm{ex}(n,C_{2k})=O(n^{1+1/k})$ by Bondy-Simonovits, with matching order known only for $k\\in\\{2,3,5\\}$; the lower bound $n^{6/5}$ comes from generalized hexagons and equals the Lazebnik-Ustimenko-Woldar bound $n^{1+2/(3k-3+\\epsilon)}$ with $k=4,\\epsilon=1$.) Equivalently (given the upper bound): are there $c>0$ and $N$ such that for every $n\\ge N$ some $C_8$-free graph on $n$ vertices has $\\ge c\\,n^{5/4}$ edges? Any exponent above $6/5$ would also be progress.",
+  "review_note": "Known: Upper O(n^{5/4}): Bondy-Simonovits (1974); constants improved by Verstraete, Pikhurko, Bukh-Jiang. Lower Omega(n^{6/5}): incidence graph of a generalized hexagon (girth 12), matching Lazebnik-Ustimenko-Woldar n^{1+2/(3k-3+ε)} at k=4, ε=1; see Furedi-Simonovits, arXiv:1306.5167. Order known only for C_4, C_6, C_10 (Benson, Wenger, generalized polygons). 2026 work on C_8 (arXiv:2607.03856 generalized Turán; arXiv:2607.16103 planar Turán) does not touch the ordinary exponent.",
+  "refs": [
+   "https://arxiv.org/abs/1306.5167",
+   "https://fanchung.ucsd.edu/erdosprb/erdos/newproblems/TuranEvenCycleLowerBound.html",
+   "https://arxiv.org/abs/2607.03856",
+   "https://arxiv.org/abs/2607.16103"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E030: Order of magnitude of ex(n, C_8)\nHow many edges can a graph on n vertices have without containing a cycle of length 8? It is known to be at most about n^{5/4}, but the best constructions are smaller by a polynomial factor, unlike lengths 4, 6 and 10 where matching constructions exist. Find a C_8-free graph with about n^{5/4} edges, or prove a smaller upper bound.\nInformal statement: Determine whether $\\mathrm{ex}(n,C_8)=\\Theta(n^{5/4})$. Known: $\\Omega(n^{6/5})\\le\\mathrm{ex}(n,C_8)\\le O(n^{5/4})$. (In general $\\mathrm{ex}(n,C_{2k})=O(n^{1+1/k})$ by Bondy-Simonovits, with matching order known only for $k\\in\\{2,3,5\\}$; the lower bound $n^{6/5}$ comes from generalized hexagons and equals the Lazebnik-Ustimenko-Woldar bound $n^{1+2/(3k-3+\\epsilon)}$ with $k=4,\\epsilon=1$.) Equivalently: is there $c>0$ and $C_8$-free graphs with $\\ge c\\,n^{5/4}$ edges for infinitely many $n$? Any exponent above $6/5$ would also be progress.\nFormalization notes: HasC8 G: there is an injective cyclic sequence of 8 vertices with consecutive ones adjacent (Fin 8 addition wraps around). Claim: there are c>0 and N such that for EVERY n ≥ N there is a C_8-free graph on Fin n with at least c·n^{5/4} edges, i.e. ex(n,C_8) = Ω(n^{5/4}) for all large n; with the Bondy-Simonovits bound this is exactly ex(n,C_8)=Theta(n^{5/4}). ¬Claim means liminf ex(n,C_8)/n^{5/4} = 0. (An infinitely-often construction does not suffice: monotonicity of ex only transfers a bound across bounded-ratio gaps.)\n-/\nnamespace OpenProblems.QEDE030\ndef HasC8 {n : ℕ} (G : SimpleGraph (Fin n)) : Prop :=\n  ∃ f : Fin 8 → Fin n, Function.Injective f ∧ ∀ i : Fin 8, G.Adj (f i) (f (i + 1))\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 0 < c ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n →\n    ∃ G : SimpleGraph (Fin n), ¬ HasC8 G ∧ c * (n : ℝ) ^ ((5 : ℝ) / 4) ≤ (G.edgeSet.ncard : ℝ)\nend OpenProblems.QEDE030\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E031",
+  "set": "extended",
+  "title": "An effective bound for the sum-free excess",
+  "area": "Combinatorics",
+  "difficulty": 5.0,
+  "grade": "C",
+  "provenance": "Extension",
+  "credit": "Bedert (2025) remark; Eberhard-Green-Manners (2014).",
+  "premise_risks": [
+   "EGM's argument might yield a very weak explicit rate on careful bookkeeping; the (log N)^{-c} target avoids this but may be much harder",
+   "Truth could be N/3 + N^{1-c} or much smaller; no conjecture on the true rate"
+  ],
+  "plain": "Every set of N nonzero integers contains a sum-free subset (no x+y=z inside it) of size a bit more than N/3; Bedert (2025) showed the excess grows at least like log log N. It is also known that you cannot always beat N/3 by more than o(N), but that proof gives no rate. Prove a quantitative version: some N-element sets have no sum-free subset larger than N/3 + N/(log N)^c.",
+  "math": "Let $S(N)=\\min_{A\\subset\\mathbb Z\\setminus\\{0\\},\\,|A|=N}\\max\\{|B|:B\\subseteq A\\text{ sum-free}\\}$. Known: $N/3+c\\log\\log N\\le S(N)\\le N/3+o(N)$, with the $o(N)$ ineffective. Prove that there is $c>0$ with $S(N)\\le N/3+O\\big(N/(\\log N)^{c}\\big)$. Any explicitly quantified $o(N)$ (e.g. $N/(\\log\\log N)^{c}$) would be partial progress.",
+  "review_note": "Known: Lower: Erdos (1965) $N/3$; Alon-Kleitman $(N+1)/3$; Bourgain $(N+2)/3$; Bedert, arXiv:2502.08624 (2025) $N/3+c\\log\\log N$. Upper: Eberhard-Green-Manners, Annals 180 (2014), arXiv:1301.4579: $N/3+o(N)$, ineffective.",
+  "refs": [
+   "https://arxiv.org/abs/2502.08624",
+   "https://arxiv.org/abs/1301.4579",
+   "https://www.quantamagazine.org/graduate-student-solves-classic-problem-about-the-limits-of-addition-20250522/"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E031: An effective bound for the sum-free excess\nEvery set of N nonzero integers contains a sum-free subset (no x+y=z inside it) of size a bit more than N/3; Bedert (2025) showed the excess grows at least like log log N. It is also known that you cannot always beat N/3 by more than o(N), but that proof gives no rate. Prove a quantitative version: some N-element sets have no sum-free subset larger than N/3 + N/(log N)^c.\nInformal statement: Let $S(N)=\\min_{A\\subset\\mathbb Z\\setminus\\{0\\},\\,|A|=N}\\max\\{|B|:B\\subseteq A\\text{ sum-free}\\}$. Known: $N/3+c\\log\\log N\\le S(N)\\le N/3+o(N)$, with the $o(N)$ ineffective. Prove that there is $c>0$ with $S(N)\\le N/3+O\\big(N/(\\log N)^{c}\\big)$. Any explicitly quantified $o(N)$ (e.g. $N/(\\log\\log N)^{c}$) would be partial progress.\nFormalization notes: SumFree B: x+y ∉ B for all x,y in B (x=y allowed, the standard convention). Claim: there are c>0, C and N₀ such that for every N >= N₀ some N-element set A of nonzero integers has every sum-free subset of size <= N/3 + C·N/(log N)^c. Junk values: for N <= 1, log N <= 0 and the division misbehaves, but N₀ is chosen by the prover and the statement is only about large N; a negative C cannot help because Erdos's N/3 lower bound would be violated. ¬Claim means no (log N)^{-c} rate holds. Weaker explicit rates are not captured.\n-/\nnamespace OpenProblems.QEDE031\ndef SumFree (B : Finset ℤ) : Prop :=\n  ∀ x ∈ B, ∀ y ∈ B, x + y ∉ B\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 0 < c ∧ ∃ C : ℝ, ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →\n    ∃ A : Finset ℤ, (0 : ℤ) ∉ A ∧ A.card = N ∧\n      ∀ B ⊆ A, SumFree B → (B.card : ℝ) ≤ (N : ℝ) / 3 + C * (N : ℝ) / (Real.log N) ^ c\nend OpenProblems.QEDE031\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E032",
+  "set": "extended",
+  "title": "Covering systems with a large minimum modulus",
+  "area": "Number theory",
+  "difficulty": 4.0,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Erdős (minimum modulus problem); Hough; Balister–Bollobás–Morris–Sahasrabudhe–Tiba; Owens (42); Dai–Li–Li–Yi (14000)",
+  "premise_risks": [
+   "14000 bound is a Nov 2026 preprint, not yet refereed; refereed bound is 616,000",
+   "a construction with minimum modulus > 42 might exist unpublished"
+  ],
+  "plain": "A covering system is a finite list of arithmetic progressions a_i mod m_i, all with different moduli, such that every integer lies in at least one of them. Erdős asked whether the smallest modulus can be made as large as you like; Hough proved it cannot. The largest smallest modulus anyone has actually achieved is 42, while the best proof only shows it is at most 14,000. Find a covering with smallest modulus at least 43, or prove a much smaller upper bound.",
+  "math": "Let $M^*$ be the largest integer $M$ for which there exist $k\\ge1$, distinct integers $M\\le m_1<\\dots<m_k$ and residues $a_i$ with $\\bigcup_i (a_i+m_i\\mathbb Z)=\\mathbb Z$. Known: $42\\le M^*<14000$ (and $\\le 13278$ by a further computer-assisted calculation, same preprint). Decide whether $M^*\\ge 43$, and more generally narrow the gap (e.g. prove $M^*\\le 1000$).",
+  "review_note": "Known: Lower 42: Owens, 'A covering system with minimum modulus 42' (BYU thesis 2014); still the record per the survey arXiv:2208.09720 and the constructions table in arXiv:2611.15110. Upper bounds: Hough 10^16 (Annals 2015); Balister-Bollobas-Morris-Sahasrabudhe-Tiba 616,000 (2022); Dai-Li-Li-Yi, 'On the moduli of distinct covering systems', arXiv:2611.15110 (Nov 2026 preprint): < 14000 (13278 with extra computation). Squarefree moduli: Cummings-Filaseta-Trifonov <= 118 (arXiv:2211.08548), lowered to <= 7 by Dai-Li-Li-Yi.",
+  "refs": [
+   "https://arxiv.org/abs/2611.15110",
+   "https://arxiv.org/abs/2208.09720",
+   "https://arxiv.org/abs/2211.08548",
+   "https://arxiv.org/abs/1307.0874"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E032: Covering systems with a large minimum modulus\nA covering system is a finite list of arithmetic progressions a_i mod m_i, all with different moduli, such that every integer lies in at least one of them. Erdős asked whether the smallest modulus can be made as large as you like; Hough proved it cannot. The largest smallest modulus anyone has actually achieved is 42, while the best proof only shows it is at most 14,000. Find a covering with smallest modulus at least 43, or prove a much smaller upper bound.\nInformal statement: Let $M^*$ be the largest integer $M$ for which there exist $k\\ge1$, distinct integers $M\\le m_1<\\dots<m_k$ and residues $a_i$ with $\\bigcup_i (a_i+m_i\\mathbb Z)=\\mathbb Z$. Known: $42\\le M^*<14000$ (and $\\le 13278$ by a further computer-assisted calculation, same preprint). Decide whether $M^*\\ge 43$, and more generally narrow the gap (e.g. prove $M^*\\le 1000$).\nFormalization notes: A covering is a finite set S of pairs (m, a) with distinct moduli m (Prod.fst injective on S), all m >= 43, such that every integer x satisfies m ∣ x - a for some pair. Claim: such a covering exists, i.e. M* >= 43. ¬Claim means M* = 42. Nonemptiness of S is forced by the covering condition, and m >= 43 excludes the trivial modulus 1.\n-/\nnamespace OpenProblems.QEDE032\ndef Claim : Prop :=\n  ∃ S : Finset (ℕ × ℤ), (∀ p ∈ S, 43 ≤ p.1) ∧ Set.InjOn Prod.fst (S : Set (ℕ × ℤ)) ∧\n    ∀ x : ℤ, ∃ p ∈ S, ((p.1 : ℤ) ∣ x - p.2)\nend OpenProblems.QEDE032\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E034",
+  "set": "extended",
+  "title": "Two sixth powers equal to four",
+  "area": "Number theory",
+  "difficulty": 4.5,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "Lander–Parkin–Selfridge (1967); Ekl; Resta–Meyrignac",
+  "premise_risks": [
+   "MathWorld's 'no 6.2.4 known' is unattributed and may lag distributed searches (EulerNet, Wróblewski's tables)",
+   "no refereed search limit specific to 6.2.4 located"
+  ],
+  "plain": "Can the sum of two sixth powers of positive integers equal the sum of four sixth powers? For sixth powers, three-equals-three examples are plentiful and two-equals-five examples are known, but nobody has found a two-equals-four example or proved there are none.",
+  "math": "Does $x_1^6+x_2^6=y_1^6+y_2^6+y_3^6+y_4^6$ have a solution in positive integers? (Any such solution is automatically nontrivial: cancelling a common term would leave a $6.1.3$ solution, itself unknown.) This is a boundary case $m+n=k$ of the Lander–Parkin–Selfridge conjecture for $k=6$, where only $6.3.3$ solutions are known.",
+  "review_note": "Known: MathWorld, 'Diophantine Equation--6th Powers': 'No solutions are known to the 6.2.3 or 6.2.4 equations'; 'No 6.1.n solutions are known for n<=6' (Lander–Parkin–Selfridge 1967; Guy, UPINT); Ekl (1996/1998) found no 6.2.2 solutions with sums below about $7.25\\times10^{26}$. Smallest 6.2.5 solutions: Resta & Meyrignac, Math. Comp. 72 (2003). Parametric 6.3.3 solutions are classical (e.g. Brudno, Math. Comp. 1976). No refereed search bound specific to 6.2.4 found.",
+  "refs": [
+   "https://mathworld.wolfram.com/DiophantineEquation6thPowers.html",
+   "https://en.wikipedia.org/wiki/Euler%27s_sum_of_powers_conjecture",
+   "https://www.ams.org/mcom/2003-72-242/S0025-5718-02-01445-X/",
+   "https://www.ams.org/mcom/1976-30-135/S0025-5718-1976-0406923-6/"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E034: Two sixth powers equal to four\nCan the sum of two sixth powers of positive integers equal the sum of four sixth powers?\nInformal statement: Does $x_1^6+x_2^6=y_1^6+y_2^6+y_3^6+y_4^6$ have a solution in positive integers?\nFormalization notes: All six variables are positive naturals. No triviality loophole: with all terms positive, cancelling a common term would leave a 6.1.3 identity, which is itself a nontrivial (unknown) solution. Claim = a solution exists; ¬Claim = none exists.\n-/\nnamespace OpenProblems.QEDE034\n\ndef Claim : Prop :=\n  ∃ x₁ x₂ y₁ y₂ y₃ y₄ : ℕ,\n    0 < x₁ ∧ 0 < x₂ ∧ 0 < y₁ ∧ 0 < y₂ ∧ 0 < y₃ ∧ 0 < y₄ ∧\n    x₁ ^ 6 + x₂ ^ 6 = y₁ ^ 6 + y₂ ^ 6 + y₃ ^ 6 + y₄ ^ 6\n\nend OpenProblems.QEDE034\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E036",
+  "set": "extended",
+  "title": "Integer complexity of powers of two",
+  "area": "Number theory",
+  "difficulty": 5.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "D. Rawsthorne; R. K. Guy; H. Altman; J. Zelinsky",
+  "premise_risks": [
+   "He's 2^126 verification is in an arXiv appendix (unrefereed computation)",
+   "may require a qualitatively new idea; known defect theory handles only finitely many k"
+  ],
+  "plain": "The complexity of a positive integer n is the fewest 1's needed to write n using only +, × and parentheses. Writing 2^k as (1+1)(1+1)...(1+1) uses 2k ones. Is that always optimal? It has been checked by computer for every 2^k up to 2^126, but no proof is known.",
+  "math": "Let $\\|n\\|$ be the least number of $1$'s in an expression for $n$ built from $1$, $+$, $\\times$ and parentheses. Prove or disprove: $\\|2^k\\|=2k$ for all $k\\ge1$ (more strongly, $\\|2^k3^\\ell\\|=2k+3\\ell$ for $(k,\\ell)\\ne(0,0)$).",
+  "review_note": "Known: Verified $\\|2^k3^\\ell\\|=2k+3\\ell$ for $k\\le48$ and all $\\ell$: Altman, 'Integer complexity: algorithms and computational results', Integers 18 (2018), arXiv:1606.03635 (earlier $k\\le21$, Altman–Zelinsky arXiv:1207.4841). Pure powers of 2: no counterexample for $2^k\\le 2^{126}\\approx10^{38}$, and $\\|2^i3^j5^k\\|=2i+3j+5k$ checked for $2^i3^j5^k\\le10^{36}$, $k\\le5$ (Q. He, 'Improved algorithms for integer complexity', arXiv:2308.10301). Question attributed to Rawsthorne (in Guy, UPINT F26). Konyagin–Oganesyan arXiv:2603.20876 (2026): average-case estimates, not this question.",
+  "refs": [
+   "https://arxiv.org/abs/1606.03635",
+   "https://arxiv.org/abs/2308.10301",
+   "https://arxiv.org/abs/1207.4841",
+   "https://arxiv.org/abs/2603.20876"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E036: Integer complexity of powers of two\nIs (1+1)(1+1)...(1+1), with 2k ones, always the shortest way to write 2^k using only 1, + and ×?\nInformal statement: Let $\\|n\\|$ be the least number of 1's in an expression for $n$ built from $1$, $+$, $\\times$. Prove or disprove: $\\|2^k\\|=2k$ for all $k\\ge1$.\nFormalization notes: Expressions are binary trees with leaves `one` and nodes `add`/`mul`; `ones` counts leaves. Since (1+1)^k uses exactly 2k ones, ‖2^k‖ = 2k is equivalent to: every expression evaluating to 2^k has at least 2k ones. Claim = the conjecture holds for all k ≥ 1; ¬Claim = some 2^k has an expression with fewer than 2k ones. (The stronger 2^k 3^l form is not encoded.)\n-/\nnamespace OpenProblems.QEDE036\n\ninductive Expr : Type\n  | one : Expr\n  | add : Expr → Expr → Expr\n  | mul : Expr → Expr → Expr\n\ndef Expr.eval : Expr → ℕ\n  | Expr.one => 1\n  | Expr.add a b => a.eval + b.eval\n  | Expr.mul a b => a.eval * b.eval\n\ndef Expr.ones : Expr → ℕ\n  | Expr.one => 1\n  | Expr.add a b => a.ones + b.ones\n  | Expr.mul a b => a.ones + b.ones\n\ndef Claim : Prop :=\n  ∀ k : ℕ, 1 ≤ k → ∀ e : Expr, e.eval = 2 ^ k → 2 * k ≤ e.ones\n\nend OpenProblems.QEDE036\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E037",
+  "set": "extended",
+  "title": "How many groups of order 2048?",
+  "area": "Algebra",
+  "difficulty": 4.0,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "Besche–Eick–O'Brien; Eick–O'Brien; Conway–Dietrich–O'Brien",
+  "premise_risks": [
+   "mainly a large computation; exact value may need counting-without-listing techniques rather than new theory",
+   "the 1.78e15 target encodes an expert expectation (first three digits), not a proved heuristic",
+   "g(2^10) value: check the corrected OEIS figure before publishing"
+  ],
+  "plain": "The number of groups is known exactly for every order below 2048; order 1024 alone has about 49 billion. For order 2048 = 2^11 the exact number of groups is still unknown, and only a lower bound of about 1.774 × 10^15 is proved. Determine the number, or at least prove that it is below 1.78 × 10^15, as experts expect.",
+  "math": "Let $g(n)$ be the number of isomorphism classes of groups of order $n$. Determine $g(2^{11})$. Known: $g(2^{11})\\ge 1\\,774\\,274\\,116\\,992\\,170$, the number of groups of order $2^{11}$ of $2$-class $2$ (exponent-$2$ Frattini quotient class 2). Natural intermediate target: prove $g(2^{11})<1.78\\times10^{15}$, i.e. that the class-2 groups determine the first three significant digits.",
+  "review_note": "Known: $g(n)$ known for all $n<2048$ (Besche–Eick–O'Brien, 'The groups of order at most 2000', ERA-AMS 2001, plus later orders); $g(2^{10})=49\\,487\\,365\\,422$ (later corrected to $49\\,487\\,367\\,289$ in OEIS A000001). Lower bound $g(2^{11})\\ge1\\,774\\,274\\,116\\,992\\,170$ (Eick–O'Brien, 'Enumerating p-groups', J. Austral. Math. Soc. 1999; quoted in Conway–Dietrich–O'Brien, Math. Intelligencer 2008). No explicit nontrivial upper bound specific to $2^{11}$ located; general Higman–Sims bounds are far off.",
+  "refs": [
+   "https://groupprops.subwiki.org/wiki/Groups_of_order_2048",
+   "https://www.math.auckland.ac.nz/~obrien/research/gnu.pdf",
+   "https://mathoverflow.net/questions/349355/has-gnu2048-been-found",
+   "https://oeis.org/A000001"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E037: How many groups of order 2048?\nDetermine the number of groups of order 2048, or at least show it is below 1.78 × 10^15.\nInformal statement: Let $g(n)$ be the number of isomorphism classes of groups of order $n$. Known $g(2^{11})\\ge 1774274116992170$. Prove $g(2^{11})<1.78\\times10^{15}$.\nFormalization notes: Every group of order n is isomorphic to a group structure on `Fin n`, so g(n) is the number of `Group (Fin n)` structures up to isomorphism. The multiplication of a given structure `g` is extracted explicitly (`mulOf`) to avoid clashing with the ring multiplication on `Fin n`. `Nat.card` of the (finite) quotient is the count. Claim = g(2048) < 1780000000000000; ¬Claim = g(2048) ≥ 1780000000000000. Determining g(2048) exactly is stronger than either.\n-/\nnamespace OpenProblems.QEDE037\n\ndef mulOf {n : ℕ} (g : Group (Fin n)) (a b : Fin n) : Fin n :=\n  @Mul.mul (Fin n)\n    (@MulOneClass.toMul (Fin n) (@Monoid.toMulOneClass (Fin n)\n      (@DivInvMonoid.toMonoid (Fin n) (@Group.toDivInvMonoid (Fin n) g)))) a b\n\ndef IsoRel (n : ℕ) (g h : Group (Fin n)) : Prop :=\n  ∃ e : Fin n ≃ Fin n, ∀ a b : Fin n, e (mulOf g a b) = mulOf h (e a) (e b)\n\nnoncomputable def numGroups (n : ℕ) : ℕ := Nat.card (Quot (IsoRel n))\n\ndef Claim : Prop := numGroups 2048 < 1780000000000000\n\nend OpenProblems.QEDE037\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E038",
+  "set": "extended",
+  "title": "Squeezing the square-lattice site percolation threshold",
+  "area": "Probability",
+  "difficulty": 4.0,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "van den Berg–Ermakov (1996); Wierman (1995); Wierman–Oberly (2024)",
+  "premise_risks": [
+   "an unreviewed lower bound 0.5567 already exists online; if it is confirmed, the lower-bound target moves",
+   "the Wierman–Oberly abstract mentions 'a series of recent improvements', so an intermediate upper bound may also exist",
+   "the 2024 upper bound is in conference proceedings rather than a journal"
+  ],
+  "plain": "Colour each square of an infinite chessboard black independently with probability p. There is a critical p above which an infinite connected black cluster appears; simulations put it at about 0.5927, but nobody has a formula. The best proved statements only say it lies between 0.556 and 0.6669. Prove a tighter bound on either side.",
+  "math": "Let $p_c=p_c^{\\mathrm{site}}(\\mathbb Z^2)$. Known rigorously $0.556<p_c<0.666894$. Formal target: improve the upper bound at its published precision, $p_c<0.6668$ (more generally improve either endpoint rigorously).",
+  "review_note": "Known: Lower $p_c>0.556$: van den Berg & Ermakov, Random Structures Algorithms 8 (1996) 199–212. Unreviewed claim $p_c\\ge0.5567$ (computer-assisted, personal page kaust-a-laut.github.io, not peer reviewed). Upper $p_c<0.666894$: Wierman & Oberly, 'A new upper bound for the site percolation threshold of the square lattice', in Combinatorics, Graph Theory and Computing (Springer, 2024), improving Wierman's 0.679492 (CPC 1995, substitution method). Numerical $p_c\\approx0.59274605$ (Jacobsen 2015 and others; non-rigorous).",
+  "refs": [
+   "https://ir.cwi.nl/pub/4915",
+   "https://www.springerprofessional.de/en/a-new-upper-bound-for-the-site-percolation-threshold-of-the-squa/50252622",
+   "https://www.math.fau.edu/combinatorics/abstracts/oberly55.pdf",
+   "https://kaust-a-laut.github.io/"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E038: Squeezing the square-lattice site percolation threshold\nColour each square of an infinite chessboard black independently with probability p. There is a critical p above which an infinite connected black cluster appears; simulations put it at about 0.5927, but nobody has a formula. The best proved statements only say it lies between 0.556 and 0.6669. Prove a tighter bound on either side.\nInformal statement: Let $p_c=p_c^{\\mathrm{site}}(\\mathbb Z^2)$ be the critical probability for\nBernoulli site percolation on the square lattice (nearest-neighbour adjacency). Known\nrigorously: $0.556 < p_c < 0.666894$ (lower: van den Berg–Ermakov 1996; upper: Wierman–Oberly,\nreported to six decimals). Formal target (improvement of the UPPER bound at its published\nprecision): prove $p_c < 0.6668$.\nFormalization notes:\n* Configurations: `ω : ℤ × ℤ → Bool`, `ω x = true` meaning site x is open (black). The law\n  `perc p` is Mathlib's infinite product measure `Measure.infinitePi` of Bernoulli(p) measures\n  (`PMF.bernoulli p h` gives `true` with probability p), i.e. the product Bernoulli measure on\n  {0,1}^(ℤ²) with the product σ-algebra.\n* Clusters: sites are adjacent iff they differ by 1 in exactly one coordinate (ℓ¹ distance 1).\n  The open cluster of the origin is the set of sites reachable from (0,0) along adjacent open\n  sites (`Relation.ReflTransGen` of the open-adjacency relation; the step relation requires both\n  ends open, so if the origin is closed its \"cluster\" is {0}). θ(p) = probability that this set\n  is infinite (= the origin lies in an infinite open cluster; the event is measurable, being a\n  countable union/intersection of cylinder events).\n* p_c := sup {p ∈ [0,1] : θ(p) = 0}. θ is nondecreasing in p (standard coupling), so this is the\n  usual critical probability; the set contains 0 and is bounded by 1, so `sSup` in `ℝ≥0` is\n  meaningful.\n* Choice of target: the known bounds are reported as strict inequalities with rounded constants\n  (the upper bound is the rounded-up value of an algebraic number), so restating them would not be\n  an improvement and their exact values are not encoded here. We take the improvement of the\n  upper bound in the fourth decimal: p_c < 0.6668 (any rigorous bound ≤ 0.6668 − ε, e.g. by\n  further substitution-method computations). Proving `Claim` = this new upper bound. Proving\n  `¬Claim` = p_c ≥ 0.6668 (false according to all numerics, p_c ≈ 0.592746).\n-/\nnamespace OpenProblems.QEDE038\nnoncomputable section\nopen MeasureTheory\nopen scoped NNReal ENNReal\n\n/-- Site configurations on `ℤ²`. -/\nabbrev Config : Type := ℤ × ℤ → Bool\n\n/-- Nearest-neighbour adjacency on `ℤ²`. -/\ndef Adj (x y : ℤ × ℤ) : Prop := |x.1 - y.1| + |x.2 - y.2| = 1\n\n/-- One step between adjacent open sites. -/\ndef OpenStep (ω : Config) (x y : ℤ × ℤ) : Prop := Adj x y ∧ ω x = true ∧ ω y = true\n\n/-- The open cluster of the origin is infinite. -/\ndef Percolates (ω : Config) : Prop :=\n  {z : ℤ × ℤ | Relation.ReflTransGen (OpenStep ω) (0, 0) z}.Infinite\n\n/-- Product Bernoulli(`p`) site percolation measure. -/\ndef perc (p : ℝ≥0) (h : p ≤ 1) : Measure Config :=\n  Measure.infinitePi (fun _ : ℤ × ℤ => (PMF.bernoulli p h).toMeasure)\n\n/-- `θ(p)`: probability that the origin is in an infinite open cluster. -/\ndef theta (p : ℝ≥0) (h : p ≤ 1) : ℝ≥0∞ := perc p h {ω : Config | Percolates ω}\n\n/-- Critical probability `p_c = sup {p : θ(p) = 0}`. -/\ndef pc : ℝ≥0 := sSup {p : ℝ≥0 | ∃ h : p ≤ 1, theta p h = 0}\n\n/-- New upper bound `p_c < 0.6668`. -/\ndef Claim : Prop := (pc : ℝ) < 6668 / 10000\n\nend\nend OpenProblems.QEDE038\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E040",
+  "set": "extended",
+  "title": "Densest packing of regular heptagons",
+  "area": "Geometry",
+  "difficulty": 5.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Kuperberg & Kuperberg (1990); Kallus (2013); after Hales–Kusner (2016)",
+  "premise_risks": [
+   "global optimality could appear in a recent preprint not found",
+   "likely a large computer-assisted project (difficulty may be underestimated)"
+  ],
+  "plain": "Copies of a regular heptagon (any rotations and positions allowed) are placed in the plane without overlapping. The best known arrangement uses rows of heptagons pointing alternately up and down and covers about 89.27% of the plane. Prove no arrangement does better.",
+  "math": "Let $\\delta(P_7)$ be the maximal packing density of congruent copies of the regular heptagon $P_7$ in $\\mathbb R^2$ (isometries allowed). Prove $\\delta(P_7)=\\frac{2}{97}\\left(-111+492\\cos\\frac{\\pi}{7}-356\\cos^2\\frac{\\pi}{7}\\right)\\approx 0.892691$, the density of the best double-lattice packing.",
+  "review_note": "Known: Best double-lattice density: Kuperberg & Kuperberg, DCG 5 (1990); value as stated (AMS Visual Insight, Baez 2014). Pentagon optimum = double lattice: Hales & Kusner, arXiv:1602.07220 (computer-assisted). Kallus, 'Pessimal packing shapes', Geom. Topol. (arXiv:1305.0289): heptagon is a local pessimum for double-lattice density. Local optimality of double lattices: Kallus–Marcus arXiv:1509.02241. The heptagon is believed to be the worst-packing convex shape, unproved. No proof of global optimality.",
+  "refs": [
+   "https://blogs.ams.org/visualinsight/2014/11/15/packing-regular-heptagons/",
+   "https://arxiv.org/abs/1602.07220",
+   "https://arxiv.org/abs/1305.0289",
+   "https://arxiv.org/abs/1509.02241"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E040: Densest packing of regular heptagons\nCopies of a regular heptagon (any rotations and positions allowed) are placed in the plane without overlapping. The best known arrangement uses rows of heptagons pointing alternately up and down and covers about 89.27% of the plane. Prove no arrangement does better.\nInformal statement: Let $\\delta(P_7)$ be the maximal packing density of congruent copies of the regular heptagon $P_7$ in $\\mathbb R^2$ (isometries allowed). Prove $\\delta(P_7)=\\frac{2}{97}\\left(-111+492\\cos\\frac{\\pi}{7}-356\\cos^2\\frac{\\pi}{7}\\right)\\approx 0.892691$, the density of the best double-lattice packing.\nFormalization notes:\n* Space: `EuclideanSpace ℝ (Fin 2)` with its `volume` (Lebesgue measure; the Euclidean metric\n  matters because congruent copies are images under isometries `E ≃ᵢ E` of this metric — these\n  are exactly the maps x ↦ Ax + b with A orthogonal, so rotations and reflections are allowed).\n* Packing: a sequence `g : ℕ → E ≃ᵢ E` with the copies `g i '' K` having pairwise disjoint\n  interiors (boundaries may touch). Indexing by ℕ loses nothing: a packing of copies of a convex\n  body is countable, and finite packings have density 0. Repeated copies are impossible since\n  `interior K ≠ ∅`.\n* Density: upper density = limsup over R → ∞ of vol(⋃ copies ∩ B(0,R)) / vol(B(0,R)), computed\n  in `ℝ≥0∞` (no junk values: numerator ≤ denominator < ∞, denominator > 0 for R > 0). The\n  maximal packing density δ(K) is the supremum over all packings. This is the standard\n  definition (Rogers; Fejes Tóth); taking limsup instead of lim, or balls about the origin\n  instead of arbitrary centres, does not change the supremum over packings.\n* The regular heptagon: convex hull of the 7 points (cos 2πk/7, sin 2πk/7). Density is invariant\n  under similarities, so the circumradius 1 is no loss.\n* The double-lattice packing attaining the constant is known (Kuperberg–Kuperberg construction),\n  so δ(P₇) ≥ value; the open content is the upper bound. Proving `Claim` = δ(P₇) equals the\n  stated closed form (in particular optimality of the double-lattice packing). Proving `¬Claim` =\n  δ(P₇) ≠ that value (by the known construction, a strictly denser packing exists).\n-/\nnamespace OpenProblems.QEDE040\nnoncomputable section\nopen scoped ENNReal\n\n/-- Ambient Euclidean space. -/\nabbrev E : Type := EuclideanSpace ℝ (Fin 2)\n\n/-- A packing of congruent copies of `K`: a sequence of isometries of `E` (rotations,\nreflections, translations) whose images of `K` have pairwise disjoint interiors. -/\ndef IsPacking (K : Set E) (g : ℕ → (E ≃ᵢ E)) : Prop :=\n  ∀ i j : ℕ, i ≠ j → Disjoint (interior (g i '' K)) (interior (g j '' K))\n\n/-- Fraction of the ball of radius `R` about the origin covered by the packing. -/\ndef coveredFraction (K : Set E) (g : ℕ → (E ≃ᵢ E)) (R : ℝ) : ℝ≥0∞ :=\n  MeasureTheory.volume ((⋃ i : ℕ, g i '' K) ∩ Metric.ball (0 : E) R) /\n    MeasureTheory.volume (Metric.ball (0 : E) R)\n\n/-- Upper density of a packing: `limsup_{R → ∞}` of the covered fraction. -/\ndef upperDensity (K : Set E) (g : ℕ → (E ≃ᵢ E)) : ℝ≥0∞ :=\n  Filter.limsup (fun R : ℝ => coveredFraction K g R) Filter.atTop\n\n/-- Maximal packing density of congruent copies of `K`. -/\ndef packingDensity (K : Set E) : ℝ≥0∞ :=\n  ⨆ (g : ℕ → (E ≃ᵢ E)) (_ : IsPacking K g), upperDensity K g\n\n/-- The regular heptagon with circumradius 1 centred at the origin. -/\ndef heptagon : Set E :=\n  convexHull ℝ (Set.range fun k : Fin 7 =>\n    (!₂[Real.cos (2 * Real.pi * (k : ℝ) / 7), Real.sin (2 * Real.pi * (k : ℝ) / 7)] : E))\n\n/-- The conjectured optimal density `(2/97)(−111 + 492 cos(π/7) − 356 cos²(π/7)) ≈ 0.892691`. -/\ndef heptagonValue : ℝ :=\n  2 / 97 * (-111 + 492 * Real.cos (Real.pi / 7) - 356 * Real.cos (Real.pi / 7) ^ 2)\n\ndef Claim : Prop := packingDensity heptagon = ENNReal.ofReal heptagonValue\n\nend\nend OpenProblems.QEDE040\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E041",
+  "set": "extended",
+  "title": "No three in line: beat 3n/2",
+  "area": "Geometry",
+  "difficulty": 5.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Dudeney (1917); Hall–Jackson–Sudbery–Wild (1975); Guy–Kelly (1968)",
+  "premise_risks": [
+   "the problem is famous (Dudeney); only the constant improvement is asked, not the 2n question",
+   "Epoch AI hosts a closely related target (1.8n, arbitrarily large n), so a solution may surface there first"
+  ],
+  "plain": "How many points of an n-by-n grid can you pick so that no three of them lie on one straight line (at any angle)? Each row holds at most two, so 2n is the ceiling, and explicit constructions from 1975 give about 1.5n for large n. Find, for all large n, a construction with at least cn points for some constant c > 1.5.",
+  "math": "Let $f(n)$ be the largest size of $S\\subseteq\\{1,\\dots,n\\}^2$ with no three collinear points. Known: $(\\tfrac32-o(1))n\\le f(n)\\le 2n$. Prove there is $c>3/2$ with $f(n)\\ge cn$ for all sufficiently large $n$.",
+  "review_note": "Known: Lower $(3/2-o(1))n$: Hall, Jackson, Sudbery, Wild, JCTA 18 (1975). Upper $2n$ (pigeonhole); Guy–Kelly (1968) heuristic $f(n)\\sim(\\pi/\\sqrt3)n\\approx1.814n$. $f(n)=2n$ attained computationally for all $n\\le46$ and some larger even $n$ (Flammenkamp); Epoch AI's page reports tightness for $n\\le70$. For $k\\ge3$, the no-$(k+1)$-in-line maximum is $kn$ for large $n$: arXiv:2607.05255 (July 2026), after arXiv:2502.00176 and arXiv:2510.17743; arXiv:2508.07632's randomised constructions are vacuous at $k=2$. Epoch AI lists 'more than 1.8n for arbitrarily large n' as an open problem.",
+  "refs": [
+   "https://epoch.ai/frontiermath/open-problems/no-three-in-line",
+   "https://arxiv.org/abs/2607.05255",
+   "https://arxiv.org/abs/2508.07632",
+   "https://wwwhomes.uni-bielefeld.de/achim/no3in/readme.html",
+   "https://arxiv.org/abs/2502.00176"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E041: No three in line: beat 3n/2\nFind, for all large n, at least cn points of the n×n grid with no three collinear, for some c > 3/2.\nInformal statement: Let $f(n)$ be the largest size of $S\\subseteq\\{1,\\dots,n\\}^2$ with no three collinear points. Prove there is $c>3/2$ with $f(n)\\ge cn$ for all sufficiently large $n$.\nFormalization notes: Points are in ℤ × ℤ with coordinates in [1, n]. Three distinct points p, q, r are collinear iff the cross product (q-p)×(r-p) vanishes. Claim = ∃ c > 3/2, eventually f(n) ≥ c·n (i.e. liminf f(n)/n > 3/2); ¬Claim = liminf f(n)/n ≤ 3/2.\n-/\nnamespace OpenProblems.QEDE041\n\ndef NoThreeCollinear (S : Finset (ℤ × ℤ)) : Prop :=\n  ∀ p ∈ S, ∀ q ∈ S, ∀ r ∈ S, p ≠ q → p ≠ r → q ≠ r →\n    (q.1 - p.1) * (r.2 - p.2) ≠ (q.2 - p.2) * (r.1 - p.1)\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 3 / 2 < c ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n →\n    ∃ S : Finset (ℤ × ℤ),\n      (∀ p ∈ S, 1 ≤ p.1 ∧ p.1 ≤ (n : ℤ) ∧ 1 ≤ p.2 ∧ p.2 ≤ (n : ℤ)) ∧\n      NoThreeCollinear S ∧ c * (n : ℝ) ≤ (S.card : ℝ)\n\nend OpenProblems.QEDE041\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E043",
+  "set": "extended",
+  "title": "Kissing number in five dimensions: at most 43",
+  "area": "Geometry",
+  "difficulty": 5.0,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Mittelmann–Vallentin (2010); Bachoc–Vallentin (2008)",
+  "premise_risks": [
+   "a recent k-point SDP computation might already give 43 or lower without wide notice",
+   "the 3-point SDP value is ≈44.998, so 43 needs a genuinely stronger relaxation or structural input"
+  ],
+  "plain": "How many unit balls can touch a central unit ball in 5-dimensional space without overlapping? A configuration with 40 has been known since 1873, and the best proved upper limit, from large semidefinite computations, is 44 (the computed bound is about 44.998). Prove that 44 is impossible.",
+  "math": "Let $\\tau_5$ be the maximum size of a set $X\\subset S^4$ with $\\langle x,y\\rangle\\le 1/2$ for all distinct $x,y\\in X$. Known $40\\le\\tau_5\\le44$. Prove $\\tau_5\\le 43$.",
+  "review_note": "Known: Lower 40: $D_5$ root system (Korkine–Zolotareff 1873); non-isometric 40-configurations by Leech (1967) and Cohn–Rajagopal (arXiv:2412.00937). Upper: Coxeter 48; Odlyzko–Sloane 46.345 (1979); 45 Bachoc–Vallentin (2008); 44 Mittelmann & Vallentin, Experiment. Math. 19 (2010), arXiv:0902.1105 (SDP value ≈44.998). New SDP upper bounds in dimensions 11–23 (de Laat, Leijenhorst et al.) do not touch $n=5$.",
+  "refs": [
+   "https://teorth.github.io/optimizationproblems/constants/29a.html",
+   "https://arxiv.org/abs/0902.1105",
+   "https://arxiv.org/abs/2412.00937",
+   "https://www.cwi.nl/en/news/new-upper-bounds-for-kissing-in-higher-dimensions/"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E043: Kissing number in five dimensions: at most 43\nAt most 43 non-overlapping unit balls can touch a central unit ball in ℝ⁵.\nInformal statement: Let $\\tau_5$ be the maximum size of $X\\subset S^4$ with $\\langle x,y\\rangle\\le 1/2$ for distinct $x,y\\in X$. Prove $\\tau_5\\le43$.\nFormalization notes: For unit vectors, ⟨x,y⟩ ≤ 1/2 ⟺ ‖x − y‖² = 2 − 2⟨x,y⟩ ≥ 1 ⟺ dist x y ≥ 1, so the angular condition is stated with `dist` to avoid inner-product notation churn. Any kissing configuration is finite (compactness), so quantifying over Finsets loses nothing. Claim = τ₅ ≤ 43; ¬Claim = a 44-point kissing configuration exists (τ₅ = 44).\n-/\nnamespace OpenProblems.QEDE043\n\nabbrev E5 := EuclideanSpace ℝ (Fin 5)\n\ndef Claim : Prop :=\n  ∀ X : Finset E5, (∀ x ∈ X, ‖x‖ = 1) →\n    (∀ x ∈ X, ∀ y ∈ X, x ≠ y → 1 ≤ dist x y) → X.card ≤ 43\n\nend OpenProblems.QEDE043\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E044",
+  "set": "extended",
+  "title": "A macroscopic upper bound for tetrahedron packing",
+  "area": "Geometry",
+  "difficulty": 4.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Gravel–Elser–Kallus (2011); Chen–Engel–Glotzer (2010); Hilbert's 18th problem",
+  "premise_risks": [
+   "the 0.99 benchmark is illustrative; the real question is any macroscopic bound",
+   "an unpublished SDP computation for tetrahedra could exist"
+  ],
+  "plain": "Regular tetrahedra cannot fill space, and the best packings found fill about 85.6% of it. Yet the best proved limit only says a packing fills at most 1 − 0.00000000000000000000000026 of space. Prove a macroscopic upper bound, for instance that no packing of congruent regular tetrahedra fills more than 99% of space.",
+  "math": "Let $\\delta_T$ be the maximal packing density of congruent regular tetrahedra in $\\mathbb R^3$. Known $0.856347\\le\\delta_T\\le1-2.6\\times10^{-25}$. Formal target: the macroscopic bound $\\delta_T\\le0.99$.",
+  "review_note": "Known: Lower $4000/4671$: Chen, Engel, Glotzer, DCG 43 (2010), arXiv:1001.0586 (dimer packings; cf. Kallus–Elser–Gravel, Torquato–Jiao). Upper $1-2.6\\times10^{-25}$: Gravel, Elser, Kallus, 'Upper bound on the packing density of regular tetrahedra and octahedra', DCG 46 (2011), arXiv:1008.2830. SDP framework for congruent copies: Dostert, Guzmán, de Oliveira Filho, Vallentin, arXiv:1308.4893 (computed for pentagons, not tetrahedra). Translative case: arXiv:1208.0420.",
+  "refs": [
+   "https://arxiv.org/abs/1008.2830",
+   "https://arxiv.org/abs/1001.0586",
+   "https://arxiv.org/abs/1308.4893",
+   "https://en.wikipedia.org/wiki/Tetrahedron_packing"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E044: A macroscopic upper bound for tetrahedron packing\nRegular tetrahedra cannot fill space, and the best packings found fill about 85.6% of it. Yet the best proved limit only says a packing fills at most 1 − 0.00000000000000000000000026 of space. Prove a macroscopic upper bound, for instance that no packing of congruent regular tetrahedra fills more than 99% of space.\nInformal statement: Let $\\delta_T$ be the maximal packing density of congruent copies of the\nregular tetrahedron in $\\mathbb R^3$ (rotations allowed). Known:\n$4000/4671\\approx0.856347\\le\\delta_T\\le 1-2.6\\times10^{-25}$ (Gravel–Elser–Kallus). Formal\ntarget: the macroscopic upper bound $\\delta_T\\le 0.99$.\nFormalization notes:\n* Space: `EuclideanSpace ℝ (Fin 3)` with its `volume` (Lebesgue measure; the Euclidean metric\n  matters because congruent copies are images under isometries `E ≃ᵢ E` of this metric — these\n  are exactly the maps x ↦ Ax + b with A orthogonal, so rotations and reflections are allowed).\n* Packing: a sequence `g : ℕ → E ≃ᵢ E` with the copies `g i '' K` having pairwise disjoint\n  interiors (boundaries may touch). Indexing by ℕ loses nothing: a packing of copies of a convex\n  body is countable, and finite packings have density 0. Repeated copies are impossible since\n  `interior K ≠ ∅`.\n* Density: upper density = limsup over R → ∞ of vol(⋃ copies ∩ B(0,R)) / vol(B(0,R)), computed\n  in `ℝ≥0∞` (no junk values: numerator ≤ denominator < ∞, denominator > 0 for R > 0). The\n  maximal packing density δ(K) is the supremum over all packings. This is the standard\n  definition (Rogers; Fejes Tóth); taking limsup instead of lim, or balls about the origin\n  instead of arbitrary centres, does not change the supremum over packings.\n* The regular tetrahedron: convex hull of (1,1,1), (1,−1,−1), (−1,1,−1), (−1,−1,1) (edge 2√2;\n  density is similarity-invariant). It is mirror-symmetric, so allowing reflections among the\n  isometries is the same as allowing only rotations.\n* Choice of target: the problem explicitly asks for a *macroscopic* gap, and \"strictly improve\n  1 − 2.6·10⁻²⁵\" by an arbitrarily small amount would not be the intended question; we use the\n  problem's own illustrative threshold 0.99 (c = 10⁻²). This is a strict improvement over the\n  best known upper bound by 24 orders of magnitude in the gap. Proving `Claim` = δ_T ≤ 0.99.\n  Proving `¬Claim` = some tetrahedron packing has upper density > 0.99.\n-/\nnamespace OpenProblems.QEDE044\nnoncomputable section\nopen scoped ENNReal\n\n/-- Ambient Euclidean space. -/\nabbrev E : Type := EuclideanSpace ℝ (Fin 3)\n\n/-- A packing of congruent copies of `K`: a sequence of isometries of `E` (rotations,\nreflections, translations) whose images of `K` have pairwise disjoint interiors. -/\ndef IsPacking (K : Set E) (g : ℕ → (E ≃ᵢ E)) : Prop :=\n  ∀ i j : ℕ, i ≠ j → Disjoint (interior (g i '' K)) (interior (g j '' K))\n\n/-- Fraction of the ball of radius `R` about the origin covered by the packing. -/\ndef coveredFraction (K : Set E) (g : ℕ → (E ≃ᵢ E)) (R : ℝ) : ℝ≥0∞ :=\n  MeasureTheory.volume ((⋃ i : ℕ, g i '' K) ∩ Metric.ball (0 : E) R) /\n    MeasureTheory.volume (Metric.ball (0 : E) R)\n\n/-- Upper density of a packing: `limsup_{R → ∞}` of the covered fraction. -/\ndef upperDensity (K : Set E) (g : ℕ → (E ≃ᵢ E)) : ℝ≥0∞ :=\n  Filter.limsup (fun R : ℝ => coveredFraction K g R) Filter.atTop\n\n/-- Maximal packing density of congruent copies of `K`. -/\ndef packingDensity (K : Set E) : ℝ≥0∞ :=\n  ⨆ (g : ℕ → (E ≃ᵢ E)) (_ : IsPacking K g), upperDensity K g\n\n/-- A regular tetrahedron centred at the origin. -/\ndef tetrahedron : Set E :=\n  convexHull ℝ {(!₂[(1 : ℝ), 1, 1] : E), (!₂[(1 : ℝ), -1, -1] : E),\n    (!₂[(-1 : ℝ), 1, -1] : E), (!₂[(-1 : ℝ), -1, 1] : E)}\n\ndef Claim : Prop := packingDensity tetrahedron ≤ ENNReal.ofReal (99 / 100)\n\nend\nend OpenProblems.QEDE044\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E047",
+  "set": "extended",
+  "title": "Does the trefoil have a symbiont?",
+  "area": "Topology",
+  "difficulty": 5.5,
+  "grade": "B-",
+  "provenance": "Extension",
+  "credit": "Brittenham & Hermiller, arXiv 2601.18757 (2026), Cor. 4.2 and Sec. 3/5",
+  "premise_risks": [
+   "Fast-moving area: a late-2026 preprint could settle u(10_6)",
+   "Mirror conventions: the bound u(3_1#10_6) ≤ 3 is for a specific mirror pairing",
+   "u(10_6)=2 would not settle the trefoil question, since another partner could exist"
+  ],
+  "plain": "The unknotting number of a knot is the fewest crossing changes needed to turn it into an unknotted loop. In 2025 it was shown that tying two knots together end to end can need fewer changes than the two knots need separately, and in 2026 that every torus knot except possibly the trefoil has a partner like this. Does the trefoil, the simplest knot, also have such a partner? The most likely candidate is the 10-crossing knot 10_6, whose own unknotting number is still unknown (it is 2 or 3).",
+  "math": "Write $u(K)$ for the unknotting number and $\\#$ for connected sum. Knots $K,K'$ are symbionts if $u(K\\#K')<u(K)+u(K')$. Is there a knot $K$, with some choice of mirror image, such that $u(3_1\\#K)<1+u(K)$? By Scharlemann's theorem any such $K$ has $u(K)\\ge2$. Concrete subquestion: is $u(10_6)=3$? Brittenham–Hermiller prove $u(3_1\\#10_6)\\le3$ for the mirror choice with $|\\sigma(3_1\\#10_6)|=2$, so $u(10_6)=3$ would give a positive answer.",
+  "review_note": "Known: Additivity fails: $u(7_1\\#\\overline{7_1})\\le5$ (Brittenham–Hermiller, arXiv:2506.24088, 2025). Every non-trivial torus knot except possibly $T(2,3)$ has a symbiont (Cor. 4.2), and $u(3_1\\#10_6)\\le3$ with $u(10_6)\\in\\{2,3\\}$ (Thm 1.3); the paper calls deciding $u(10_6)$ an interesting open problem (Brittenham–Hermiller, arXiv:2601.18757, 2026). Scharlemann: $u(K\\#K')\\ge2$ for non-trivial $K,K'$. arXiv:2608.25256 (2026) obtains 194 new unknotting numbers of alternating knots with d-invariants and Owens' theorem; it began as an attempt to prove $u(10_6)=3$ and says $u(10_6)$ is still unknown. Lee (arXiv:2609.09861, 2026) also lists $10_6$ as unresolved in $[2,3]$.",
+  "refs": [
+   "https://arxiv.org/abs/2506.24088",
+   "https://arxiv.org/abs/2601.18757",
+   "https://arxiv.org/abs/2608.25256",
+   "https://arxiv.org/abs/2609.09861"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E047: Does the trefoil have a symbiont?\nThe unknotting number of a knot is the fewest crossing changes needed to turn it into an unknotted loop. In 2025 it was shown that tying two knots together end to end can need fewer changes than the two knots need separately, and in 2026 that every torus knot except possibly the trefoil has a partner like this. Does the trefoil, the simplest knot, also have such a partner? The most likely candidate is the 10-crossing knot 10_6, whose own unknotting number is still unknown (it is 2 or 3).\nInformal statement: Write $u(K)$ for the unknotting number and $\\#$ for connected sum. Knots $K,K'$ are symbionts if $u(K\\#K')<u(K)+u(K')$. Is there a knot $K$, with some choice of mirror image, such that $u(3_1\\#K)<1+u(K)$? By Scharlemann's theorem any such $K$ has $u(K)\\ge2$. Concrete subquestion: is $u(10_6)=3$? Brittenham–Hermiller prove $u(3_1\\#10_6)\\le3$ for the mirror choice with $|\\sigma(3_1\\#10_6)|=2$, so $u(10_6)=3$ would give a positive answer. (The formal `Claim` is the main question; the 10_6 subquestion is not formalized.)\nFormalization notes:\n* Polygonal knots: a list `l` of vertices in ℝ³ (closed polygon, edge from the last vertex back\n  to the first), embedded (`Simple`: ≥ 3 vertices and the PL parametrization `param` is\n  injective on [0, n)). Every tame knot has polygonal representatives, so knot types = classes\n  of polygonal knots.\n* Knot type (`Iso`): equivalence closure of three elementary moves: cyclic relabelling\n  (`rotate 1`), subdivision of the first edge at an interior point, and a straight-line slide of\n  the first vertex along which every intermediate polygon is embedded. Rotation lets these act\n  anywhere. Reidemeister's Δ-move (replace edge [a,b] by [a,c] ∪ [c,b] when the triangle abc\n  meets the knot only in [a,b]) is a subdivision followed by a slide of the new vertex, and its\n  inverse is in the closure. Conversely every move is realised by a PL ambient isotopy. So\n  `Iso` is exactly PL ambient isotopy of oriented polygonal knots (Reidemeister 1927), which is\n  the same as ambient isotopy of tame knots. Mirror images are not identified (no reflection\n  move), and orientation is kept (no reversal move).\n\n* `trefoil`: 12 integer points sampled from the (2,3) torus knot and rounded. Checked\n  numerically: the polygon is embedded (minimum distance between non-adjacent edges ≈ 12.8,\n  much larger than the rounding error) and a generic projection has 5 crossings with knot\n  determinant 3; the only knot of crossing number ≤ 5 with determinant 3 is the trefoil.\n* Crossing change (`CrossChange`): the first vertex slides along a straight line and the\n  intermediate polygons are embedded at all times except one time t₀ ∈ (0,1), at which the\n  polygon has exactly one double point (exactly one parameter pair; triple points, tangential\n  overlaps along segments or collapsed edges give more pairs, hence are excluded). Passing one\n  strand through another once changes the knot by one crossing change (or, for a non-transverse\n  touch, not at all); conversely every crossing change of a diagram is realised this way after\n  an isotopy that makes a short edge pair pass through the other strand. So the minimal number\n  of such moves is the unknotting number. `Unk m l` = l can be unknotted with m crossing\n  changes, interleaved with isotopies; `unknottingNumber l = sInf {m | Unk m l}` (nonempty for\n  every knot, so no junk). The unknot is a planar triangle.\n* Connected sum (`IsSum P Q`): P lies in the half-space x₀ ≤ 0 meeting the plane x₀ = 0 exactly\n  in its closing edge [a,b] (P = b, …, a), Q lies in x₀ ≥ 0 meeting the plane exactly in its\n  closing edge [c,d] (Q = d, …, c), and a,b,c,d bound an embedded planar quadrilateral in\n  x₀ = 0. That quadrilateral is a band disk meeting P ∪ Q only in [a,b] ∪ [c,d], and the\n  concatenation `P ++ Q` (edges a→d and c→b replace [a,b], [c,d]) is the standard connected sum\n  of the oriented knots P and Q (separated by a 2-sphere meeting it in two points). Since the\n  trefoil is invertible, orientation conventions do not affect u(3₁ # K).\n* Mirror images: `Claim` quantifies over all knots K (including mirrors), and fixes one\n  trefoil; replacing both by mirrors preserves unknotting numbers, so this covers \"some choice\n  of mirror image\". We state the symbiont inequality u(P # Q) < u(P) + u(Q) with P a trefoil\n  (u(3₁) = 1, so this is u(3₁ # K) < 1 + u(K)).\n* Proving `Claim` = the trefoil has a symbiont. Proving `¬Claim` = u(3₁ # K) = 1 + u(K) for\n  every knot K.\n-/\nnamespace OpenProblems.QEDE047\nnoncomputable section\n\n/-- Points of `ℝ³` (Euclidean). -/\nabbrev E3 : Type := EuclideanSpace ℝ (Fin 3)\n\n/-- Vertex `k` of the closed polygon with vertex list `l` (indices taken mod the length). -/\ndef vtx (l : List E3) (k : ℕ) : E3 := l.getD (k % l.length) 0\n\n/-- Piecewise-linear parametrization: on `[i, i+1]` it runs along the edge from vertex `i` to\nvertex `i+1`; on `[0, n)` (n = number of vertices) it traverses the polygon once. -/\ndef param (l : List E3) (s : ℝ) : E3 :=\n  (1 - (s - (⌊s⌋₊ : ℝ))) • vtx l ⌊s⌋₊ + (s - (⌊s⌋₊ : ℝ)) • vtx l (⌊s⌋₊ + 1)\n\n/-- Double points of the polygon: parameter pairs `0 ≤ s < s' < n` with the same image. -/\ndef doublePts (l : List E3) : Set (ℝ × ℝ) :=\n  {q : ℝ × ℝ | 0 ≤ q.1 ∧ q.1 < q.2 ∧ q.2 < (l.length : ℝ) ∧ param l q.1 = param l q.2}\n\n/-- A polygonal knot: at least 3 vertices and the closed polygon is embedded (this also forces\nconsecutive vertices to be distinct). -/\ndef Simple (l : List E3) : Prop := 3 ≤ l.length ∧ doublePts l = ∅\n\n/-- The polygon `x :: r` with its first vertex moved to `(1-t)x + t x'`. -/\ndef movePath (x x' : E3) (r : List E3) (t : ℝ) : List E3 := ((1 - t) • x + t • x') :: r\n\n/-- Elementary isotopy moves: cyclic relabelling, subdivision of an edge, and a straight-line\nslide of one vertex during which the polygon stays embedded. -/\ninductive Move : List E3 → List E3 → Prop\n  | rot (l : List E3) : Simple l → Move l (l.rotate 1)\n  | sub (x y p : E3) (r : List E3) : Simple (x :: y :: r) → p ∈ openSegment ℝ x y →\n      Move (x :: y :: r) (x :: p :: y :: r)\n  | slide (x x' : E3) (r : List E3) :\n      (∀ t ∈ Set.Icc (0 : ℝ) 1, Simple (movePath x x' r t)) → Move (x :: r) (x' :: r)\n\n/-- Same (oriented) knot type: the equivalence closure of `Move` (zig-zag chains). -/\ninductive Iso : List E3 → List E3 → Prop\n  | refl (l : List E3) : Iso l l\n  | fwd {a b c : List E3} : Move a b → Iso b c → Iso a c\n  | bwd {a b c : List E3} : Move b a → Iso b c → Iso a c\n\n/-- A trefoil (of one chirality): 12 integer points on the (2,3) torus knot\n`((2 + cos 3t) cos 2t, (2 + cos 3t) sin 2t, sin 3t)`, `t = 2πk/12`, scaled by 10 and rounded. -/\ndef trefoil : List E3 :=\n  [!₂[(30 : ℝ), 0, 0], !₂[(10 : ℝ), 17, 10], !₂[(-5 : ℝ), 9, 0], !₂[(-20 : ℝ), 0, -10],\n   !₂[(-15 : ℝ), -26, 0], !₂[(10 : ℝ), -17, 10], !₂[(10 : ℝ), 0, 0], !₂[(10 : ℝ), 17, -10],\n   !₂[(-15 : ℝ), 26, 0], !₂[(-20 : ℝ), 0, 10], !₂[(-5 : ℝ), -9, 0], !₂[(10 : ℝ), -17, -10]]\n\n/-- The unknot: a planar triangle. -/\ndef unknot : List E3 := [!₂[(0 : ℝ), 0, 0], !₂[(1 : ℝ), 0, 0], !₂[(0 : ℝ), 1, 0]]\n\n/-- `l'` is obtained from `l` by one crossing change (one strand passed through another once). -/\ndef CrossChange (l l' : List E3) : Prop :=\n  ∃ (x x' : E3) (r : List E3), l = x :: r ∧ l' = x' :: r ∧ Simple l ∧ Simple l' ∧\n    ∃ t₀ ∈ Set.Ioo (0 : ℝ) 1,\n      (∀ t ∈ Set.Icc (0 : ℝ) 1, t ≠ t₀ → Simple (movePath x x' r t)) ∧\n      (doublePts (movePath x x' r t₀)).ncard = 1\n\n/-- `l` can be unknotted by `m` crossing changes (with isotopies in between). -/\ndef Unk : ℕ → List E3 → Prop\n  | 0, l => Iso l unknot\n  | m + 1, l => ∃ l₁ l₂ : List E3, Iso l l₁ ∧ CrossChange l₁ l₂ ∧ Unk m l₂\n\n/-- Unknotting number. -/\ndef unknottingNumber (l : List E3) : ℕ := sInf {m : ℕ | Unk m l}\n\n/-- `P ++ Q` is the connected sum of the polygonal knots `P` and `Q` (see the notes). -/\ndef IsSum (P Q : List E3) : Prop :=\n  ∃ (a b c d : E3) (mP mQ : List E3),\n    P = b :: (mP ++ [a]) ∧ Q = d :: (mQ ++ [c]) ∧\n    Simple P ∧ Simple Q ∧ Simple (P ++ Q) ∧\n    a 0 = 0 ∧ b 0 = 0 ∧ c 0 = 0 ∧ d 0 = 0 ∧\n    (∀ v ∈ mP, v 0 < 0) ∧ (∀ v ∈ mQ, 0 < v 0) ∧ Simple [a, b, c, d]\n\n/-- The trefoil has a symbiont: some knot `K` with `u(3₁ # K) < u(3₁) + u(K)`. -/\ndef Claim : Prop :=\n  ∃ P Q : List E3, IsSum P Q ∧ Iso P trefoil ∧\n    unknottingNumber (P ++ Q) < unknottingNumber P + unknottingNumber Q\n\nend\nend OpenProblems.QEDE047\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E048",
+  "set": "extended",
+  "title": "Equilateral stick number versus stick number",
+  "area": "Topology",
+  "difficulty": 5.0,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Rawdon & Scharein (2002); restated as open in Cantarella–Rechnitzer–Schumacher–Shonkwiler, arXiv 2508.18263",
+  "premise_risks": [
+   "A strict gap needs exact lower bounds on s_eq, so the problem may be out of reach in practice",
+   "Exact s(K) is unknown for many ≤10-crossing knots; 'agree' means only that the best known bounds coincide"
+  ],
+  "plain": "Build a knot out of straight sticks joined end to end. The stick number of a knot is the fewest sticks that can make it. If all the sticks must also be the same length, you might need more. Is there any knot that really does need more sticks when they all have to be the same length?",
+  "math": "For a knot type $K$ let $s(K)$ be the minimum number of edges of a polygonal knot of type $K$, and $s_{eq}(K)$ the minimum over equilateral polygons. Formal Claim: there is a knot type $K$ with $s_{eq}(K)>s(K)$ (¬Claim: $s_{eq}=s$ for all $K$; the infinite-family variant is not formalized).",
+  "review_note": "Known: Posed by Rawdon–Scharein (2002). After the equilateral 9-stick $9_{29}$ (Theorem 4, proved via a Millett–Rawdon perturbation condition), no knot with ≤10 crossings has differing best known bounds for $s$ and $s_{eq}$ (Cantarella–Rechnitzer–Schumacher–Shonkwiler, arXiv:2508.18263, Sec. 4). Lower bounds for $s$ (Calvo's crossing-number bound, superbridge index) do not depend on edge lengths. Upper bounds on $s_{eq}$ in terms of crossing number: Kim–No–Oh, arXiv:1401.7383.",
+  "refs": [
+   "https://arxiv.org/abs/2508.18263",
+   "https://arxiv.org/abs/1401.7383",
+   "https://arxiv.org/abs/1909.00917",
+   "https://cecm-colab.dcr.sfu.ca/KnotPlot/ktheory.html"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E048: Equilateral stick number versus stick number\nBuild a knot out of straight sticks joined end to end. The stick number of a knot is the fewest sticks that can make it. If all the sticks must also be the same length, you might need more. Is there any knot that really does need more sticks when they all have to be the same length?\nInformal statement: For a knot type $K$ let $s(K)$ be the minimum number of edges of a polygonal knot in $\\mathbb R^3$ of type $K$, and $s_{eq}(K)$ the minimum over polygons with all edges of equal length. Trivially $s_{eq}(K)\\ge s(K)$. Is there a knot type $K$ with $s_{eq}(K)>s(K)$? (Formal `Claim`: yes. The alternatives — $s_{eq}=s$ for all $K$, or for an infinite family — are not separately formalized; $\\neg$Claim is \"$s_{eq}=s$ for all $K$\".)\nFormalization notes:\n* Polygonal knots: a list `l` of vertices in ℝ³ (closed polygon, edge from the last vertex back\n  to the first), embedded (`Simple`: ≥ 3 vertices and the PL parametrization `param` is\n  injective on [0, n)). Every tame knot has polygonal representatives, so knot types = classes\n  of polygonal knots.\n* Knot type (`Iso`): equivalence closure of three elementary moves: cyclic relabelling\n  (`rotate 1`), subdivision of the first edge at an interior point, and a straight-line slide of\n  the first vertex along which every intermediate polygon is embedded. Rotation lets these act\n  anywhere. Reidemeister's Δ-move (replace edge [a,b] by [a,c] ∪ [c,b] when the triangle abc\n  meets the knot only in [a,b]) is a subdivision followed by a slide of the new vertex, and its\n  inverse is in the closure. Conversely every move is realised by a PL ambient isotopy. So\n  `Iso` is exactly PL ambient isotopy of oriented polygonal knots (Reidemeister 1927), which is\n  the same as ambient isotopy of tame knots. Mirror images are not identified (no reflection\n  move), and orientation is kept (no reversal move).\n\n* Stick number `stick l` = least number of vertices (= edges) of a polygon `Iso` to `l`;\n  equilateral stick number `eqStick l` = the same over equilateral polygons (all edges of the\n  same length as the first). Both sets are nonempty for every knot (equilateral representatives\n  exist for every knot type), so `sInf` is a true minimum. Orientation and mirror conventions\n  are irrelevant here (reversal and reflection preserve edge counts and edge lengths), and\n  `Iso` preserves embeddedness.\n* Proving `Claim` = some knot has s_eq(K) > s(K). Proving `¬Claim` = s_eq = s for every knot.\n-/\nnamespace OpenProblems.QEDE048\nnoncomputable section\n\n/-- Points of `ℝ³` (Euclidean). -/\nabbrev E3 : Type := EuclideanSpace ℝ (Fin 3)\n\n/-- Vertex `k` of the closed polygon with vertex list `l` (indices taken mod the length). -/\ndef vtx (l : List E3) (k : ℕ) : E3 := l.getD (k % l.length) 0\n\n/-- Piecewise-linear parametrization: on `[i, i+1]` it runs along the edge from vertex `i` to\nvertex `i+1`; on `[0, n)` (n = number of vertices) it traverses the polygon once. -/\ndef param (l : List E3) (s : ℝ) : E3 :=\n  (1 - (s - (⌊s⌋₊ : ℝ))) • vtx l ⌊s⌋₊ + (s - (⌊s⌋₊ : ℝ)) • vtx l (⌊s⌋₊ + 1)\n\n/-- Double points of the polygon: parameter pairs `0 ≤ s < s' < n` with the same image. -/\ndef doublePts (l : List E3) : Set (ℝ × ℝ) :=\n  {q : ℝ × ℝ | 0 ≤ q.1 ∧ q.1 < q.2 ∧ q.2 < (l.length : ℝ) ∧ param l q.1 = param l q.2}\n\n/-- A polygonal knot: at least 3 vertices and the closed polygon is embedded (this also forces\nconsecutive vertices to be distinct). -/\ndef Simple (l : List E3) : Prop := 3 ≤ l.length ∧ doublePts l = ∅\n\n/-- The polygon `x :: r` with its first vertex moved to `(1-t)x + t x'`. -/\ndef movePath (x x' : E3) (r : List E3) (t : ℝ) : List E3 := ((1 - t) • x + t • x') :: r\n\n/-- Elementary isotopy moves: cyclic relabelling, subdivision of an edge, and a straight-line\nslide of one vertex during which the polygon stays embedded. -/\ninductive Move : List E3 → List E3 → Prop\n  | rot (l : List E3) : Simple l → Move l (l.rotate 1)\n  | sub (x y p : E3) (r : List E3) : Simple (x :: y :: r) → p ∈ openSegment ℝ x y →\n      Move (x :: y :: r) (x :: p :: y :: r)\n  | slide (x x' : E3) (r : List E3) :\n      (∀ t ∈ Set.Icc (0 : ℝ) 1, Simple (movePath x x' r t)) → Move (x :: r) (x' :: r)\n\n/-- Same (oriented) knot type: the equivalence closure of `Move` (zig-zag chains). -/\ninductive Iso : List E3 → List E3 → Prop\n  | refl (l : List E3) : Iso l l\n  | fwd {a b c : List E3} : Move a b → Iso b c → Iso a c\n  | bwd {a b c : List E3} : Move b a → Iso b c → Iso a c\n\n/-- All edges of the closed polygon have the same length. -/\ndef Equilateral (l : List E3) : Prop :=\n  ∀ k : ℕ, k < l.length → dist (vtx l k) (vtx l (k + 1)) = dist (vtx l 0) (vtx l 1)\n\n/-- Stick number of the knot type of `l`. -/\ndef stick (l : List E3) : ℕ := sInf {n : ℕ | ∃ l' : List E3, Iso l l' ∧ l'.length = n}\n\n/-- Equilateral stick number of the knot type of `l`. -/\ndef eqStick (l : List E3) : ℕ :=\n  sInf {n : ℕ | ∃ l' : List E3, Iso l l' ∧ Equilateral l' ∧ l'.length = n}\n\ndef Claim : Prop := ∃ l : List E3, Simple l ∧ stick l < eqStick l\n\nend\nend OpenProblems.QEDE048\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E049",
+  "set": "extended",
+  "title": "Ropelength lower bound for the trefoil",
+  "area": "Topology",
+  "difficulty": 5.0,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "Denne–Diao–Sullivan (2006) bound; ropelength problem of Cantarella–Kusner–Sullivan and Buck–Simon",
+  "premise_risks": [
+   "The Schoen preprint is unrefereed and has several Zenodo versions; its claimed bound could be wrong, or have been raised in a newer version",
+   "Normalization: diameter convention (15.66 = 31.32 in radius convention)",
+   "16.372 is numerical, not a certified upper bound"
+  ],
+  "plain": "Tie a knot in a rope of thickness 1 using as little rope as possible. For the simplest knot, the trefoil, computer experiments find tight knots using about 16.37 units of rope. The last refereed proof shows that every knotted rope needs at least 15.66 units, and a 2026 computer-assisted preprint claims 15.76. Raise the proven lower bound for the trefoil substantially, ideally to 16.",
+  "math": "For a $C^{1,1}$ closed curve, $\\mathrm{Rop}=\\mathrm{length}/(2\\,\\mathrm{reach})$; $R(3_1)=\\inf$ over trefoils (attained). Known $15.66\\le R(3_1)\\lesssim16.372$ (refereed lower bound; numerical value), with an unrefereed 2026 computer-assisted claim $R(K)>15.7561$ for all nontrivial $K$. Formal target: $R(3_1)\\ge16$.",
+  "review_note": "Known: Lower: $\\mathrm{Rop}\\ge15.66$ for every nontrivial knot (Denne–Diao–Sullivan, Geom. Topol. 10 (2006), arXiv:math/0408026), improving 12 (Cantarella–Kusner–Sullivan). Unrefereed: $\\mathrm{Rop}(K)>15.75608926$ for every nontrivial $K$ via interval-arithmetic certificates (A. A. Schoen, 'Endpoint Tangents and a New Universal Lower Bound for the Ropelength of Nontrivial Knots', Zenodo, Sep 2026, v5.0.0, not peer reviewed). Klotz, arXiv:2611.14234 (Nov 2026), lists 31.51217852 (radius-normalized, so 15.756 diameter-normalized) for crossing number 3–8 as the current best, citing Schoen. Upper: numerical tight trefoil below 16.372 (DDS abstract). Minimizers exist (Cantarella–Kusner–Sullivan 2002; Gonzalez–Maddocks–Schuricht–von der Mosel 2002).",
+  "refs": [
+   "https://arxiv.org/abs/math/0408026",
+   "https://zenodo.org/records/22736870",
+   "https://arxiv.org/abs/2611.14234",
+   "https://en.wikipedia.org/wiki/Ropelength",
+   "https://math.charlotte.edu/wp-content/uploads/sites/909/2024/03/2019_18.pdf"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E049: Ropelength lower bound for the trefoil\nTie a knot in a rope of thickness 1 using as little rope as possible. For the simplest knot, the trefoil, computer experiments find tight knots using about 16.37 units of rope. The last refereed proof shows that every knotted rope needs at least 15.66 units, and a 2026 computer-assisted preprint claims 15.76. Raise the proven lower bound for the trefoil substantially, ideally to 16.\nInformal statement: For a $C^{1,1}$ simple closed curve $\\gamma\\subset\\mathbb R^3$ let $\\mathrm{Rop}(\\gamma)=\\mathrm{length}(\\gamma)/(2\\,\\mathrm{reach}(\\gamma))$ (length over tube diameter), and $R(3_1)=\\inf\\{\\mathrm{Rop}(\\gamma):\\gamma\\text{ a trefoil}\\}$ (attained). Known: $15.66\\le R(3_1)\\lesssim16.372$ (refereed lower bound; numerical upper value), with an unrefereed 2026 computer-assisted claim $R(K)>15.7561$ for all nontrivial $K$. Formal target: $R(3_1)\\ge16$.\nFormalization notes:\n* Curves: `γ : ℝ → ℝ³`, 1-periodic, C¹ with nowhere-vanishing derivative, injective on [0,1)\n  (a regular embedded closed C¹ curve). Its image is `γ '' [0,1]`.\n* Reach (Federer): sup of r ≥ 0 such that every point at distance < r from the image has a\n  unique nearest point on it. For a closed C¹ curve, reach > 0 iff the curve is C^{1,1}, and the\n  reach equals the thickness Δ[γ] (Gonzalez–Maddocks–Schuricht–von der Mosel); reach is finite\n  for a closed curve, so the `sSup` is a real supremum. Curves of reach 0 have infinite\n  ropelength and are excluded explicitly (avoiding the junk value x/0 = 0).\n* Length = ∫₀¹ |γ'(t)| dt; Rop = length / (2·reach) (diameter convention, matching 15.66).\n* Knot type: γ is a trefoil iff for all large N the inscribed polygon γ(0), γ(1/N), …,\n  γ((N−1)/N) is a polygonal trefoil. For a regular embedded C¹ closed curve the inscribed\n  polygons are, for N large, embedded and isotopic to γ, so this is the knot type of γ.\n* Polygonal knots: a list `l` of vertices in ℝ³ (closed polygon, edge from the last vertex back\n  to the first), embedded (`Simple`: ≥ 3 vertices and the PL parametrization `param` is\n  injective on [0, n)). Every tame knot has polygonal representatives, so knot types = classes\n  of polygonal knots.\n* Knot type (`Iso`): equivalence closure of three elementary moves: cyclic relabelling\n  (`rotate 1`), subdivision of the first edge at an interior point, and a straight-line slide of\n  the first vertex along which every intermediate polygon is embedded. Rotation lets these act\n  anywhere. Reidemeister's Δ-move (replace edge [a,b] by [a,c] ∪ [c,b] when the triangle abc\n  meets the knot only in [a,b]) is a subdivision followed by a slide of the new vertex, and its\n  inverse is in the closure. Conversely every move is realised by a PL ambient isotopy. So\n  `Iso` is exactly PL ambient isotopy of oriented polygonal knots (Reidemeister 1927), which is\n  the same as ambient isotopy of tame knots. Mirror images are not identified (no reflection\n  move), and orientation is kept (no reversal move).\n\n* `trefoil`: 12 integer points sampled from the (2,3) torus knot and rounded. Checked\n  numerically: the polygon is embedded (minimum distance between non-adjacent edges ≈ 12.8,\n  much larger than the rounding error) and a generic projection has 5 crossings with knot\n  determinant 3; the only knot of crossing number ≤ 5 with determinant 3 is the trefoil.\n* Choice of target: a bound just beyond 15.7561 might already be settled by the unrefereed 2026\n  preprint (which claims Rop > 15.7561 for every nontrivial knot), so the formal target is the\n  substantial bound R(3₁) ≥ 16. Known bounds: 15.66 ≤ R(3₁) (refereed), unrefereed claim\n  R(3₁) > 15.7561, and numerically R(3₁) ≈ 16.372. The infimum R(3₁) is attained, so R(3₁) ≥ 16\n  is exactly \"every trefoil has ropelength ≥ 16\". Proving `Claim` = R(3₁) ≥ 16. Proving `¬Claim`\n  = some trefoil has ropelength < 16 (which would contradict the numerics, ≈ 16.372).\n-/\nnamespace OpenProblems.QEDE049\nnoncomputable section\n\n/-- Points of `ℝ³` (Euclidean). -/\nabbrev E3 : Type := EuclideanSpace ℝ (Fin 3)\n\n/-- Vertex `k` of the closed polygon with vertex list `l` (indices taken mod the length). -/\ndef vtx (l : List E3) (k : ℕ) : E3 := l.getD (k % l.length) 0\n\n/-- Piecewise-linear parametrization: on `[i, i+1]` it runs along the edge from vertex `i` to\nvertex `i+1`; on `[0, n)` (n = number of vertices) it traverses the polygon once. -/\ndef param (l : List E3) (s : ℝ) : E3 :=\n  (1 - (s - (⌊s⌋₊ : ℝ))) • vtx l ⌊s⌋₊ + (s - (⌊s⌋₊ : ℝ)) • vtx l (⌊s⌋₊ + 1)\n\n/-- Double points of the polygon: parameter pairs `0 ≤ s < s' < n` with the same image. -/\ndef doublePts (l : List E3) : Set (ℝ × ℝ) :=\n  {q : ℝ × ℝ | 0 ≤ q.1 ∧ q.1 < q.2 ∧ q.2 < (l.length : ℝ) ∧ param l q.1 = param l q.2}\n\n/-- A polygonal knot: at least 3 vertices and the closed polygon is embedded (this also forces\nconsecutive vertices to be distinct). -/\ndef Simple (l : List E3) : Prop := 3 ≤ l.length ∧ doublePts l = ∅\n\n/-- The polygon `x :: r` with its first vertex moved to `(1-t)x + t x'`. -/\ndef movePath (x x' : E3) (r : List E3) (t : ℝ) : List E3 := ((1 - t) • x + t • x') :: r\n\n/-- Elementary isotopy moves: cyclic relabelling, subdivision of an edge, and a straight-line\nslide of one vertex during which the polygon stays embedded. -/\ninductive Move : List E3 → List E3 → Prop\n  | rot (l : List E3) : Simple l → Move l (l.rotate 1)\n  | sub (x y p : E3) (r : List E3) : Simple (x :: y :: r) → p ∈ openSegment ℝ x y →\n      Move (x :: y :: r) (x :: p :: y :: r)\n  | slide (x x' : E3) (r : List E3) :\n      (∀ t ∈ Set.Icc (0 : ℝ) 1, Simple (movePath x x' r t)) → Move (x :: r) (x' :: r)\n\n/-- Same (oriented) knot type: the equivalence closure of `Move` (zig-zag chains). -/\ninductive Iso : List E3 → List E3 → Prop\n  | refl (l : List E3) : Iso l l\n  | fwd {a b c : List E3} : Move a b → Iso b c → Iso a c\n  | bwd {a b c : List E3} : Move b a → Iso b c → Iso a c\n\n/-- A trefoil (of one chirality): 12 integer points on the (2,3) torus knot\n`((2 + cos 3t) cos 2t, (2 + cos 3t) sin 2t, sin 3t)`, `t = 2πk/12`, scaled by 10 and rounded. -/\ndef trefoil : List E3 :=\n  [!₂[(30 : ℝ), 0, 0], !₂[(10 : ℝ), 17, 10], !₂[(-5 : ℝ), 9, 0], !₂[(-20 : ℝ), 0, -10],\n   !₂[(-15 : ℝ), -26, 0], !₂[(10 : ℝ), -17, 10], !₂[(10 : ℝ), 0, 0], !₂[(10 : ℝ), 17, -10],\n   !₂[(-15 : ℝ), 26, 0], !₂[(-20 : ℝ), 0, 10], !₂[(-5 : ℝ), -9, 0], !₂[(10 : ℝ), -17, -10]]\n\n/-- A regular embedded closed `C¹` curve with period 1. -/\ndef IsClosedCurve (γ : ℝ → E3) : Prop :=\n  ContDiff ℝ 1 γ ∧ (∀ t : ℝ, γ (t + 1) = γ t) ∧ (∀ t : ℝ, deriv γ t ≠ 0) ∧\n    Set.InjOn γ (Set.Ico (0 : ℝ) 1)\n\n/-- Federer's reach of a set. -/\ndef reach (S : Set E3) : ℝ :=\n  sSup {r : ℝ | 0 ≤ r ∧ ∀ x : E3, Metric.infDist x S < r →\n    ∃! y : E3, y ∈ S ∧ dist x y = Metric.infDist x S}\n\n/-- Length of a 1-periodic `C¹` curve. -/\ndef curveLength (γ : ℝ → E3) : ℝ := ∫ t in (0 : ℝ)..1, ‖deriv γ t‖\n\n/-- The curve has the knot type of the trefoil. -/\ndef IsTrefoil (γ : ℝ → E3) : Prop :=\n  ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → Iso (List.ofFn fun k : Fin N => γ (((k : ℕ) : ℝ) / (N : ℝ))) trefoil\n\n/-- `R(3₁) ≥ 16`: every (thick) trefoil has ropelength at least 16. -/\ndef Claim : Prop :=\n  ∀ γ : ℝ → E3, IsClosedCurve γ → IsTrefoil γ → 0 < reach (γ '' Set.Icc (0 : ℝ) 1) →\n    (16 : ℝ) ≤ curveLength γ / (2 * reach (γ '' Set.Icc (0 : ℝ) 1))\n\nend\nend OpenProblems.QEDE049\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E050",
+  "set": "extended",
+  "title": "Does Antihydra halt?",
+  "area": "Logic & computability",
+  "difficulty": 6.5,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "bbchallenge community (Antihydra found 2024; reformulation by mxdys et al.); Ligocki, 'BB(6) is Hard (Antihydra)'",
+  "premise_risks": [
+   "The TM ⇔ arithmetic equivalence rests on bbchallenge wiki and its formal proofs, not a refereed paper. M is self-contained either way.",
+   "Collatz-like; likely far beyond current methods"
+  ],
+  "plain": "Start with 8 and repeatedly multiply by 3/2, rounding down. Keep score: +2 for every even number you see and −1 for every odd number. Does the score ever go negative? This is exactly the question of whether a specific 6-state Turing machine, called Antihydra, ever halts. Answering it is the first obstacle to determining the sixth Busy Beaver number.",
+  "math": "Let $a_0=8$ and $a_{n+1}=\\lfloor 3a_n/2\\rfloor$. For $n\\ge1$ let $E_n=\\#\\{i<n:a_i\\text{ even}\\}$ and $O_n=\\#\\{i<n:a_i\\text{ odd}\\}$. Does there exist $n$ with $O_n>2E_n$? Equivalently (bbchallenge), does the 6-state 2-symbol Turing machine 1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA halt from a blank tape? The conjecture is that it never halts.",
+  "review_note": "Known: Simulated to $2^{38}$ rule steps without halting (bbchallenge wiki). Under a random-walk heuristic (steps +2/−1), the chance of ever reaching −1 from the current score is about $10^{-2.87\\times10^{10}}$ (wiki). It is listed as an undecided 'probviously non-halting' cryptid on the BB(6) wiki page; the current BB(6) champion exceeds $10\\uparrow\\uparrow10\\uparrow\\uparrow10\\uparrow\\uparrow8$ (mxdys, June 2025). BB(5) is determined (arXiv:2509.12337). Related: Mahler's 3/2 problem; Dubickas on integer sequences from linear maps. More BB(6) cryptids, all unresolved: arXiv:2610.22603 (2026).",
+  "refs": [
+   "https://wiki.bbchallenge.org/wiki/Antihydra",
+   "https://wiki.bbchallenge.org/wiki/BB(6)",
+   "https://arxiv.org/abs/2509.12337",
+   "https://arxiv.org/abs/2610.22603"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E050: Does Antihydra halt?\nStart with 8 and repeatedly replace a by ⌊3a/2⌋. Score +2 for each even term and −1 for each odd term. Does the running score ever go negative?\nInformal statement: With a₀ = 8, a_{n+1} = ⌊3aₙ/2⌋, E_n = #{i < n : aᵢ even}, O_n = #{i < n : aᵢ odd}, is O_n ≤ 2E_n for every n? (Equivalently, the 6-state TM 1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA never halts, per the bbchallenge wiki.)\nFormalization notes: `a` is the Hydra/Antihydra orbit with ℕ floor division. The score after n terms is 2·E n − O n; since it moves by +2 or −1, it goes negative iff it hits −1, iff O n > 2·E n for some n. `Claim` = \"Antihydra never halts\" (the conjectured answer). `¬Claim` = Antihydra halts. The TM equivalence itself is not formalized.\n-/\nnamespace OpenProblems.QEDE050\n\n/-- The Antihydra orbit: a₀ = 8, a_{n+1} = ⌊3aₙ/2⌋. -/\ndef a : ℕ → ℕ\n  | 0 => 8\n  | n + 1 => 3 * a n / 2\n\n/-- Number of even terms among a₀, …, a_{n-1}. -/\ndef E (n : ℕ) : ℕ := ((Finset.range n).filter (fun i : ℕ => Even (a i))).card\n\n/-- Number of odd terms among a₀, …, a_{n-1}. -/\ndef O (n : ℕ) : ℕ := ((Finset.range n).filter (fun i : ℕ => ¬ Even (a i))).card\n\n/-- Antihydra never halts. -/\ndef Claim : Prop := ∀ n : ℕ, O n ≤ 2 * E n\n\nend OpenProblems.QEDE050\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E051",
+  "set": "extended",
+  "title": "Translational tiling of the plane with two tiles: decidable?",
+  "area": "Logic & computability",
+  "difficulty": 6.0,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Yang & Zhang, arXiv 2506.19295 (open problem stated); Abel et al., arXiv 2509.07906 (Table 3)",
+  "premise_risks": [
+   "Fast-moving area (k went 5→4→3 in 2025, and the 3D monotile in 2026); a late-2026 preprint could settle k=2",
+   "Connected vs. possibly-disconnected tiles may differ; the main statement allows arbitrary finite tiles"
+  ],
+  "plain": "You are given two shapes made of grid squares, and you may only slide copies of them around, never rotate them. Can copies of the two shapes cover the whole infinite grid with no gaps or overlaps? With one shape there is an algorithm that always answers this. With three shapes, one of them in several pieces, it was proved in 2025 that no algorithm can exist. Two shapes is the open case.",
+  "math": "Given finite $F_1,F_2\\subset\\mathbb Z^2$, decide whether there exist $A_1,A_2\\subseteq\\mathbb Z^2$ with $(F_1+A_1)\\sqcup(F_2+A_2)=\\mathbb Z^2$, i.e. every point of $\\mathbb Z^2$ lies in exactly one translate $F_j+a$, $a\\in A_j$. Is this problem decidable? (Variant: also require $F_1,F_2$ to be connected polyominoes.)",
+  "review_note": "Known: k=1: decidable (Beauquier–Nivat 1991 for polyominoes; Bhattacharya 2020, periodic tiling conjecture in $\\mathbb Z^2$, for arbitrary finite $F$). k=3: co-RE-complete with three polyominoes, one disconnected and two connected of constant size; two trominoes suffice for a periodic subset of 2D (Abel, Akitaya, Chung, Demaine et al., 'Undecidability of Tiling with a Tromino', arXiv:2509.07906, 2025; Table 3 lists 2D/2 pieces/translation as OPEN). k=4, possibly disconnected: Yang–Zhang, arXiv:2506.19295 (2025), who list the two-tile case as open. k=5 connected: Kim, arXiv:2508.10067. Two tiles in $\\mathbb Z^2\\times G_0$: undecidable (Greenfeld–Tao, arXiv:2108.07902). With rotations, two tiles: undecidable (arXiv:2506.11628). A single polycube in 3D, translations only: undecidable (arXiv:2610.12392, Oct 2026).",
+  "refs": [
+   "https://arxiv.org/abs/2509.07906",
+   "https://arxiv.org/abs/2506.19295",
+   "https://arxiv.org/abs/2108.07902",
+   "https://arxiv.org/abs/2506.11628",
+   "https://arxiv.org/abs/2610.12392",
+   "https://arxiv.org/abs/2508.10067"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E051: Translational tiling of the plane with two tiles: decidable?\nGiven two finite sets of grid cells, can translated copies (no rotations) of them tile ℤ² exactly? Is there an algorithm deciding this?\nInformal statement: Is the set of pairs (F₁, F₂) of finite subsets of ℤ² such that ℤ² = (F₁ + A₁) ⊔ (F₂ + A₂) for some A₁, A₂ ⊆ ℤ² decidable?\nFormalization notes: Tiles are given as lists of cells in ℕ × ℕ (every finite subset of ℤ² can be translated into the first quadrant, and tileability is translation invariant, so this loses nothing). Duplicates in a list are harmless (`cells` is a set). `TwoTiles F₁ F₂` says every z ∈ ℤ² lies in exactly one placed copy, where a copy is a pair (tile index, translation vector) with the vector in the corresponding Aⱼ. That is a disjoint exact cover. An empty tile is allowed (the instance then degenerates to one-tile tiling, which is decidable, so it creates no loophole). `Claim` = the problem is decidable (computable in Mathlib's Partrec sense). `¬Claim` = undecidable. The connected-polyomino variant is not encoded.\n-/\nnamespace OpenProblems.QEDE051\n\n/-- The cells of a tile, as a subset of ℤ². -/\ndef cells (F : List (ℕ × ℕ)) : Set (ℤ × ℤ) :=\n  {z | ∃ p ∈ F, z = ((p.1 : ℤ), (p.2 : ℤ))}\n\n/-- Translates of `F₁` and `F₂` tile ℤ² exactly. -/\ndef TwoTiles (F₁ F₂ : List (ℕ × ℕ)) : Prop :=\n  ∃ A₁ A₂ : Set (ℤ × ℤ), ∀ z : ℤ × ℤ, ∃! q : Bool × (ℤ × ℤ),\n    (q.1 = false ∧ q.2 ∈ A₁ ∧ z - q.2 ∈ cells F₁) ∨\n    (q.1 = true ∧ q.2 ∈ A₂ ∧ z - q.2 ∈ cells F₂)\n\n/-- Two-tile translational tiling of the plane is decidable. -/\ndef Claim : Prop :=\n  ComputablePred (fun F : List (ℕ × ℕ) × List (ℕ × ℕ) => TwoTiles F.1 F.2)\n\nend OpenProblems.QEDE051\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E053",
+  "set": "extended",
+  "title": "A polyomino of odd order",
+  "area": "Combinatorics",
+  "difficulty": 4.0,
+  "grade": "B-",
+  "provenance": "Curated",
+  "credit": "Golomb / Klarner rectifiable-polyomino program; Stewart & Wormstein (1992); Reid",
+  "premise_risks": [
+   "Reflections allowed (Golomb's convention); a rotations-only version could differ",
+   "Reid's rectifiable-polyomino page (not loaded) might list an odd-order example. OEIS says none is known."
+  ],
+  "plain": "Some shapes made of squares, like the L-tetromino, can tile a rectangle. The order of such a shape is the fewest copies that can do it. Apart from rectangles themselves (order 1), every shape with a known order needs an even number of copies, and order 3 is proved impossible. Is there a non-rectangular polyomino whose order is odd?",
+  "math": "For a polyomino $P$ that tiles some rectangle with congruent copies (rotations and reflections allowed), let $\\mathrm{ord}(P)$ be the minimum number of copies in such a tiling. Does there exist a non-rectangular $P$ with $\\mathrm{ord}(P)$ odd? First test case: $\\mathrm{ord}(P)=5$.",
+  "review_note": "Known: Order 3 is impossible: Stewart & Wormstein, 'Polyominoes of order 3 do not exist', JCTA 61 (1992) 130–136. Maltby, 'Trisecting a rectangle', JCTA 66 (1994): no non-rectangular 3-piece congruent dissection; M. Reid noted on math-fun that the 5-, 7- and 9-piece dissection cases remain open. Odd tilings, as opposed to odd minimal tilings, exist: Reid, 'Many L-shaped polyominoes have odd rectangular packings', Ann. Comb. 18 (2014) 341–357. OEIS A126140 (maximum order for n cells): 'No example of a non-rectangular polyomino is known for which its order is odd.'",
+  "refs": [
+   "https://oeis.org/A126140",
+   "https://dblp.org/rec/journals/jct/StewartW92",
+   "https://link.springer.com/article/10.1007/s00026-014-0226-9",
+   "https://lists.xmission.com/hyperkitty/list/mathfun@mailman.xmission.com/thread/RIZNQBDMDEYQJXS6OB3J2SLH4QHQX6MU"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E053: A polyomino of odd order\nIs there a non-rectangular polyomino whose order (fewest congruent copies tiling some rectangle) is odd?\nInformal statement: For a polyomino P that tiles a rectangle with congruent copies (rotations and reflections allowed), ord(P) is the least number of copies in such a tiling. Does some non-rectangular P have ord(P) odd?\nFormalization notes: Cells are points of ℤ × ℤ (unit squares indexed by lower-left corner). A polyomino is a nonempty finite cell set connected under edge-adjacency (|dx| + |dy| = 1). A congruent copy is the image under one of the 8 symmetries of ℤ² (optional coordinate swap, then signs e₁, e₂ ∈ ℤˣ = {±1}) followed by a translation; `place g` is injective, so a single copy never overlaps itself. `TilesRectWith P k` says k copies exactly partition an a × b rectangle with a, b ≥ 1 (cover plus pairwise disjointness). k = 0 is impossible because the rectangle is nonempty, and the empty set is excluded by `IsPolyomino`. `IsRect P` says P is a translate of an a × b rectangle, a, b ≥ 1. `Claim` = such an odd-order polyomino exists. `¬Claim` = every non-rectangular rectifiable polyomino has even order (or tiles no rectangle).\n-/\nnamespace OpenProblems.QEDE053\n\n/-- The a × b rectangle [0,a) × [0,b) of cells. -/\ndef rect (a b : ℕ) : Set (ℤ × ℤ) := {z | 0 ≤ z.1 ∧ z.1 < a ∧ 0 ≤ z.2 ∧ z.2 < b}\n\n/-- `P` is a translate of a nonempty rectangle. -/\ndef IsRect (P : Finset (ℤ × ℤ)) : Prop :=\n  ∃ (a b : ℕ) (t : ℤ × ℤ), 0 < a ∧ 0 < b ∧ ∀ z : ℤ × ℤ, z ∈ P ↔ z - t ∈ rect a b\n\n/-- Edge-adjacent cells. -/\ndef Adj (p q : ℤ × ℤ) : Prop := |p.1 - q.1| + |p.2 - q.2| = 1\n\n/-- `P` is a polyomino: nonempty and edge-connected. -/\ndef IsPolyomino (P : Finset (ℤ × ℤ)) : Prop :=\n  P.Nonempty ∧ ∀ p ∈ P, ∀ q ∈ P,\n    Relation.ReflTransGen (fun x y : ℤ × ℤ => x ∈ P ∧ y ∈ P ∧ Adj x y) p q\n\n/-- A symmetry of ℤ² (swap flag, two signs, translation) applied to a cell. -/\ndef place (g : Bool × ℤˣ × ℤˣ × (ℤ × ℤ)) (p : ℤ × ℤ) : ℤ × ℤ :=\n  ((g.2.1 : ℤ) * (if g.1 then p.2 else p.1) + g.2.2.2.1,\n   (g.2.2.1 : ℤ) * (if g.1 then p.1 else p.2) + g.2.2.2.2)\n\n/-- `k` congruent copies of `P` exactly tile some nonempty rectangle. -/\ndef TilesRectWith (P : Finset (ℤ × ℤ)) (k : ℕ) : Prop :=\n  ∃ (a b : ℕ) (c : Fin k → Bool × ℤˣ × ℤˣ × (ℤ × ℤ)), 0 < a ∧ 0 < b ∧\n    (∀ z : ℤ × ℤ, z ∈ rect a b ↔ ∃ i : Fin k, ∃ p ∈ P, place (c i) p = z) ∧\n    (∀ (i j : Fin k) (p q : ℤ × ℤ), p ∈ P → q ∈ P →\n      place (c i) p = place (c j) q → i = j)\n\ndef Claim : Prop :=\n  ∃ P : Finset (ℤ × ℤ), IsPolyomino P ∧ ¬ IsRect P ∧\n    ∃ k : ℕ, Odd k ∧ TilesRectWith P k ∧ ∀ k' : ℕ, k' < k → ¬ TilesRectWith P k'\n\nend OpenProblems.QEDE053\n",
+  "lean_gap": null,
+  "reviewed": true
+ },
+ {
+  "id": "QED-E054",
+  "set": "extended",
+  "title": "Is Grundy's game eventually periodic?",
+  "area": "Games",
+  "difficulty": 6.0,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "Berlekamp, Conway & Guy, Winning Ways; computations by A. Flammenkamp",
+  "premise_risks": [
+   "Computed range: '239' and '235' are superscript-lost renderings (2^39 and 2^35 most likely); not verified from a clean source",
+   "Classic problem with no clear modern angle"
+  ],
+  "plain": "In Grundy's game, players take turns splitting a pile of coins into two smaller piles of different sizes, and whoever cannot move loses. The game's theory reduces to one number per pile size, its Grundy value. These values have been computed for piles of hundreds of billions of coins and show no repeating pattern yet, though Berlekamp, Conway and Guy conjectured that they eventually repeat. Do they?",
+  "math": "Let $g(0)=g(1)=g(2)=0$ and for $n\\ge3$ let $g(n)=\\operatorname{mex}\\{g(a)\\oplus g(b): a+b=n,\\ 1\\le a<b\\}$, where $\\oplus$ is bitwise XOR. Is $g$ eventually periodic, i.e. are there $N,p\\ge1$ with $g(n+p)=g(n)$ for all $n\\ge N$? (Weaker open question: is $g$ bounded?)",
+  "review_note": "Known: Berlekamp–Conway–Guy (Winning Ways) conjecture eventual periodicity; Wikipedia says it is unresolved. Flammenkamp's octal-games page, Table 2 entry for Grundy's game: values computed for all n up to '239', most likely $2^{39}$ with the superscript lost. The largest known value is 297, attained at n = 21544358589, and 1287 rare values are known, the largest at 48399022. Wikipedia's text reads 'first 235 values', most likely $2^{35}$. OEIS A002188. Golomb's periodicity for finite subtraction games does not apply.",
+  "refs": [
+   "https://en.wikipedia.org/wiki/Grundy%27s_game",
+   "https://wwwhomes.uni-bielefeld.de/achim/octal.html",
+   "https://oeis.org/A002188"
+  ],
+  "formal_status": "formalized",
+  "lean": "import Mathlib\n/-! QED-E054: Is Grundy's game eventually periodic?\nIn Grundy's game a move splits a heap into two nonempty heaps of different sizes. Is the sequence of Grundy values of single heaps eventually periodic?\nInformal statement: Let g(n) = mex{ g(a) ⊕ g(b) : a + b = n, 1 ≤ a < b } (so g(0) = g(1) = g(2) = 0). Are there N and p ≥ 1 with g(n + p) = g(n) for all n ≥ N?\nFormalization notes: Instead of defining g by well-founded recursion, `IsGrundy g` states the mex recursion: no option value equals g n, and every smaller value is an option value. A function satisfying it exists and is unique (strong induction on n), so quantifying over all such g is neither vacuous nor ambiguous. ⊕ is `^^^` (bitwise xor on ℕ). For n ≤ 2 there are no options, which forces g n = 0. `Claim` = eventual periodicity (the Berlekamp–Conway–Guy conjecture). `¬Claim` = not eventually periodic.\n-/\nnamespace OpenProblems.QEDE054\n\n/-- `g` satisfies the Grundy-value recursion of Grundy's game. -/\ndef IsGrundy (g : ℕ → ℕ) : Prop :=\n  ∀ n : ℕ,\n    (∀ a b : ℕ, 1 ≤ a → a < b → a + b = n → g n ≠ (g a ^^^ g b)) ∧\n    (∀ m : ℕ, m < g n → ∃ a b : ℕ, 1 ≤ a ∧ a < b ∧ a + b = n ∧ (g a ^^^ g b) = m)\n\ndef Claim : Prop :=\n  ∀ g : ℕ → ℕ, IsGrundy g →\n    ∃ N p : ℕ, 0 < p ∧ ∀ n : ℕ, N ≤ n → g (n + p) = g n\n\nend OpenProblems.QEDE054\n",
+  "lean_gap": null,
+  "reviewed": true
  }
 ]

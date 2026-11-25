@@ -1,0 +1,23 @@
+{
+ "id": "QED-E039",
+ "set": "extended",
+ "title": "Cover any 3D convex body with 13 smaller copies",
+ "area": "Geometry",
+ "difficulty": 5.0,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Levi, Hadwiger (1957), Gohberg–Markus; Prymak (2023)",
+ "premise_risks": [
+  "a 2026 preprint lowering 14 could exist outside the search results"
+ ],
+ "plain": "Take any bounded convex solid in space. How many strictly smaller copies of it (scaled down, translated, not rotated) are always enough to cover it? A cube needs 8, and Hadwiger conjectured 8 always suffice. The best proved number is 14. Prove that 13 always suffice.",
+ "math": "For a convex body $K\\subset\\mathbb R^3$ let $H(K)$ be the least $m$ such that $K\\subseteq\\bigcup_{i=1}^m (\\lambda K + t_i)$ for some $0<\\lambda<1$, $t_i\\in\\mathbb R^3$ (equivalently the illumination number). Let $H_3=\\sup_K H(K)$. Known $8\\le H_3\\le 14$. Prove $H_3\\le 13$.",
+ "formal_status": "formalized",
+ "review_note": "Known: $H_3\\le14$: A. Prymak, 'A new bound for Hadwiger's covering problem in $\\mathbb E^3$', SIAM J. Discrete Math. 37 (2023) 17–24, arXiv:2112.10698. Earlier $H_3\\le16$: Papadoperakis, Geom. Dedicata 75 (1999); $H_3\\le20$: Lassak (1984). Lower bound 8 (cube). Centrally symmetric case $=8$ (Lassak). Cap bodies in $\\mathbb R^3$ have illumination number 6 (arXiv:2507.08712, 2025). Arman–Bondarenko–Prymak, Canad. Math. Bull. 68 (2025), arXiv:2404.00547: small dimensions $\\ge5$, no change for $n=3$.",
+ "refs": [
+  "https://arxiv.org/abs/2112.10698",
+  "https://teorth.github.io/optimizationproblems/constants/39a.html",
+  "https://arxiv.org/abs/2404.00547",
+  "https://arxiv.org/abs/2507.08712"
+ ]
+}

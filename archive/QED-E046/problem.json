@@ -1,0 +1,26 @@
+{
+ "id": "QED-E046",
+ "set": "extended",
+ "title": "Rigorously refute Palásti's parking conjecture in the plane",
+ "area": "Probability",
+ "difficulty": 4.0,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Palásti (1960); Rényi (1958); Penrose (2001)",
+ "premise_risks": [
+  "Weiner (1978) claimed a proof of a Palásti conjecture; the exchange in J. Appl. Prob. indicates it is flawed or about a different model, but I did not read the papers in full",
+  "Variants use lattice squares or random sizes; the continuum aligned unit-square version is intended"
+ ],
+ "plain": "Drop unit squares (all axis-parallel) one at a time at uniformly random positions in a huge box, keeping each one only if it does not overlap those already placed, until no more fit. In one dimension the covered fraction tends to Rényi's constant, about 0.7476. Palásti guessed the planar answer is Rényi's constant squared, about 0.5589. Simulations give about 0.5620, so the guess seems wrong, but nobody has proved it. Prove that the planar jamming density is not Rényi's constant squared.",
+ "math": "Let $\\rho_2$ be the jamming limit of random sequential adsorption of aligned unit squares in $[0,L]^2$ as $L\\to\\infty$; it exists, with $L^1$ and a.s. convergence, by Penrose (2001). Let $c_R=\\int_0^\\infty\\exp\\!\\left(-2\\int_0^t\\frac{1-e^{-u}}{u}\\,du\\right)dt\\approx0.747598$ be Rényi's constant. Prove $\\rho_2\\ne c_R^2$, for instance by proving a rigorous lower bound $\\rho_2>c_R^2\\approx0.55890$. More generally, give any rigorous non-trivial two-sided bound on $\\rho_2$.",
+ "formal_status": "formalized",
+ "review_note": "Known: Rényi (1958): $\\rho_1=c_R$. Palásti (1960) conjectured $\\rho_d=c_R^d$. Weiner, J. Appl. Prob. (1978), claimed a proof for a planar sequential packing model; it was disputed in J. Appl. Prob. by Hori (1979, 'On Weiner's proof of the Palásti conjecture') and in 'Has the Palásti conjecture been proved? A criticism of a paper by H. J. Weiner', and Weiner replied (1980). The modern literature treats the conjecture as numerically false. Existence of $\\rho_d$: Penrose, CMP 218 (2001). CLT: Penrose–Yukich, AAP 12 (2002). Simulations: $\\rho_2\\approx0.562009(4)$ (Brosilow–Ziff–Vigil 1991 and others; Wikipedia RSA table). Low-density availability series: arXiv:2607.05634 (2026), which gives no jamming bound.",
+ "refs": [
+  "https://en.wikipedia.org/wiki/Random_sequential_adsorption",
+  "https://link.springer.com/article/10.1007/s002200100387",
+  "https://www.cambridge.org/core/journals/journal-of-applied-probability/article/on-weiners-proof-of-the-palasti-conjecture/BDF40496AA96FDDA7DC4730E1D07B972",
+  "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/02466E85D27B52C8AE6B435A7EA86D4E/S0021900200107880a.pdf/has-the-palasti-conjecture-been-proved-a-criticism-of-a-paper-with-h-j-weiner.pdf",
+  "https://arxiv.org/pdf/cond-mat/9903139",
+  "https://arxiv.org/pdf/2607.05634"
+ ]
+}
