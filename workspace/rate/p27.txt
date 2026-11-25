@@ -1,0 +1,212 @@
+## Do two permutations commute? | 4 | Computation
+W: Alice holds one permutation of n items and Bob holds another. How many bits must they exchange, using shared randomness and allowing a small error, to decide whether the two permutations commute? A simple reduction from set disjointness shows about n bits are needed, and sending a whole permutation costs about n log n bits. Find the right answer.
+M: For $\pi,\sigma\in S_n$ let $\mathrm{COMM}_n(\pi,\sigma)=1$ iff $\pi\sigma=\sigma\pi$, with $\pi$ given to Alice and $\sigma$ to Bob, and let $R(\mathrm{COMM}_n)$ be its public-coin randomized communication complexity with error $1/3$. Splitting $[n]$ into blocks $\{3j,3j+1,3j+2\}$, with Alice applying $(3j\ 3j{+}1)$ iff $x_j=1$ and Bob applying $(3j{+}1\ 3j{+}2)$ iff $y_j=1$, embeds disjointness on $\lfloor n/3\rfloor$ bits, so $\Omega(n)\le R(\mathrm{COMM}_n)\le O(n\log n)$. Determine $R(\mathrm{COMM}_n)$ up to a constant factor. In particular, decide whether $R(\mathrm{COMM}_n)=o(n\log n)$.
+
+## Information-tight sorting of pattern classes | 5 | Computation
+W: Suppose an array is promised to avoid some fixed pattern (for example, no four entries in the relative order 1, 3, 2, 4). Counting the allowed orders gives a lower bound on the number of comparisons needed to sort it, and Fredman's theorem says this bound plus 2n comparisons always suffice. Is the counting bound always tight up to a negligible error, for every forbidden pattern?
+M: For a permutation $\tau$ let $\mathrm{Av}_n(\tau)$ be the set of $\tau$-avoiding permutations of $[n]$ and let $C_\tau(n)$ be the least worst-case number of comparisons $a_i\overset{?}{<}a_j$ needed by a decision tree that determines the order of $a_1,\dots,a_n$ when the order pattern of $(a_i)$ is promised to lie in $\mathrm{Av}_n(\tau)$. Fredman's bound gives $\log_2|\mathrm{Av}_n(\tau)|\le C_\tau(n)\le\log_2|\mathrm{Av}_n(\tau)|+2n$. Decide whether $C_\tau(n)=\log_2|\mathrm{Av}_n(\tau)|+o(n)$ for every $\tau$. In particular, decide this for $\tau=1324$, whose growth rate is unknown.
+
+## Erdős–Szekeres by comparisons | 4 | Computation
+W: Any list of k² + 1 distinct numbers contains k + 1 numbers that rise or fall in order. How many comparisons between entries does it take to actually find such a run? Patience sorting uses about N log k comparisons for a list of N = k² + 1 numbers. Can it be done with a constant number of comparisons per entry?
+M: Let $N=k^2+1$ and let $T(k)$ be the least worst-case number of comparisons $a_i\overset{?}{<}a_j$ needed by a deterministic algorithm that, given distinct reals $a_1,\dots,a_N$, outputs indices $i_1<\dots<i_{k+1}$ with $(a_{i_t})$ monotone. Patience sorting gives $T(k)=O(N\log k)$. Decide whether $T(k)=O(N)$ or $T(k)=\Theta(N\log k)$. Also determine the randomized (expected-comparison) complexity.
+
+## Egyptian fractions with k terms | 5 | Computation
+W: Given a fraction a/b and a number k, can a/b be written as a sum of k different unit fractions 1/x? Find out how hard this decision is. Even membership in NP is unclear, because the denominators can need exponentially many digits in k.
+M: Let $\mathrm{EGYPT}=\{(a,b,1^k): \exists\,x_1<\dots<x_k\in\mathbb Z_{>0},\ a/b=\sum_{i=1}^k 1/x_i\}$, with $a,b$ in binary and $k$ in unary. Determine its complexity. Specifically: (i) is $\mathrm{EGYPT}\in\mathrm{NP}$? (ii) is it NP-hard, possibly under randomized reductions? (iii) is the restriction to $k=3$ decidable in time polynomial in $\log b$ given an oracle for integer factorization?
+
+## Distances in four-peg Hanoi | 5 | Computation
+W: In Tower of Hanoi with four pegs, the fewest moves between the two "all discs on one peg" positions is now known (Bousch, 2014). Give a polynomial-time method to find the fewest moves between any two legal positions, or show none exists under standard assumptions.
+M: Let $H^4_n$ be the state graph of the Tower of Hanoi with 4 pegs and $n$ discs: vertices are $\{1,2,3,4\}^n$ (peg of each disc), and edges are legal single-disc moves. Is there an algorithm computing $d_{H^4_n}(u,v)$ for arbitrary $u,v\in\{1,2,3,4\}^n$ in time $\mathrm{poly}(n)$? (For 3 pegs this is linear time; for 4 pegs no subexponential algorithm is known to the author.)
+
+## Fewest presses in Lights Out | 4 | Computation
+W: In Lights Out on an n × n board, pressing a cell flips it and its four neighbours. Given a pattern, find the fewest presses that turn every light off. Solving is linear algebra, but the solutions form a family of size 2^d, and d can be a large fraction of n. Is there a polynomial-time method for the fewest presses?
+M: Let $A_n=T_n\otimes I+I\otimes T_n+I$ over $\mathbb F_2$, where $T_n$ is the adjacency matrix of the path $P_n$. Given $n$ and $b\in\mathbb F_2^{n^2}$ in the column space of $A_n$, compute $\min\{|x|:A_nx=b\}$ (Hamming weight). Is this computable in time $\mathrm{poly}(n)$? The nullity $d(n)=\dim\ker A_n=\deg\gcd(p_n(x),p_n(x+1))$, with $p_0=1,\ p_1=x,\ p_{k+1}=xp_k+p_{k-1}$, is large for some $n$: computed $d(527)=350$ and $d(495)=320$. So brute force over the kernel takes time $2^{\Theta(n)}$ for infinitely many $n$.
+
+## Smallest zero-one multiple | 5 | Computation
+W: Every n has a multiple written only with the digits 0 and 1, with at most n digits. Can the shortest such multiple be found in time polynomial in the number of digits of n? Or is deciding whether one exists with at most d digits NP-hard?
+M: For $n\ge1$ coprime to 10 let $L(n)$ be the least number of digits of a positive multiple of $n$ whose decimal digits lie in $\{0,1\}$, i.e. the least $d$ with $\sum_{i\in S}10^i\equiv0\pmod n$ for some nonempty $S\subseteq\{0,\dots,d-1\}$. Decide whether the language $\{(n,1^d):L(n)\le d\}$ ($n$ in binary) is NP-hard under randomized polynomial-time reductions, or whether $L(n)$ can be computed in time $\mathrm{poly}(\log n)$.
+
+## Sorting by swap-or-rotate | 4 | Computation
+W: You can rearrange a row of n cards only by swapping the first two or by moving the first card to the end (or the reverse). Given an arrangement, find the fewest such moves that sort it. Is this NP-hard, or is there a polynomial-time formula?
+M: Let $\Gamma_n$ be the Cayley graph of $S_n$ with generating set $\{s,r,r^{-1}\}$, where $s=(1\,2)$ and $r=(1\,2\,\cdots\,n)$. Determine the complexity of computing $d_{\Gamma_n}(\mathrm{id},\pi)$ for $\pi\in S_n$ given in one-line notation. Is the decision version ($d_{\Gamma_n}(\mathrm{id},\pi)\le k$?) NP-complete, or solvable in time $\mathrm{poly}(n)$?
+
+## Finding Huang's vertex | 6 | Computation
+W: Huang's theorem says any set of more than half the corners of an n-dimensional cube contains a corner with at least √n neighbours in the set. When the set is given by a small circuit, how hard is it to find such a corner? Place this search problem among the known classes of total search problems.
+M: $\mathrm{HUANG}$: given a Boolean circuit $f:\{0,1\}^{n}\to\{0,1\}^n$ whose domain is read as $[2^{n-1}+1]$ (inputs beyond $2^{n-1}+1$ are ignored), output either $i\ne j$ with $f(i)=f(j)$, or indices $i,j_1,\dots,j_m$ with $m=\lceil\sqrt n\rceil$ such that $f(j_1),\dots,f(j_m)$ are distinct and each is at Hamming distance 1 from $f(i)$. By Huang's theorem and the pigeonhole principle this is a TFNP problem. Is $\mathrm{HUANG}\in\mathrm{FP}$? Is it in $\mathrm{PPP}$, $\mathrm{PPA}$ or $\mathrm{PLS}$, and is it complete for any standard subclass of TFNP?
+
+## Roots modulo almost every prime | 6 | Computation
+W: Some polynomials, like (x² − 2)(x² − 3)(x² − 6), have a root modulo almost every prime without having a rational root. Can a computer decide this property in time polynomial in the size of the polynomial? It reduces to a question about the Galois group, and no polynomial-time algorithm for computing Galois groups is known.
+M: Let $\mathcal I=\{f\in\mathbb Z[x]: f \text{ has a root modulo } p \text{ for all but finitely many primes } p\}$, with $f$ given by its degree in unary and its coefficients in binary. By Chebotarev, $f\in\mathcal I$ iff every element of $G=\mathrm{Gal}(f)$ fixes a root of $f$, so $\mathcal I$ is decidable. Is $\mathcal I\in\mathrm P$? If not known, is it at least in $\mathrm{NP}$ or $\mathrm{coNP}$ unconditionally? (Under GRH, effective Chebotarev places the complement in NP.)
+
+## The Mandelbrot set at Gaussian rationals | 7 | Computation
+W: Is there an algorithm that takes a complex number with rational real and imaginary parts and decides whether it lies in the Mandelbrot set? Escaping points can be confirmed and attracting cycles can be found. But some Gaussian rationals, such as c = (37 + 16i)/100, lie on the boundary with an irrationally rotating fixed point, and other kinds of boundary point might hide there too.
+M: Let $M=\{c\in\mathbb C:\ (f_c^{n}(0))_{n\ge0}\text{ bounded}\}$, $f_c(z)=z^2+c$. Prove or disprove that $M\cap\mathbb Q(i)$ is a decidable subset of $\mathbb Q(i)$. (The parameter $c=\mu/2-\mu^2/4$ with $\mu=(3+4i)/5$ equals $(37+16i)/100\in\partial M$; its fixed point has multiplier $\mu$, which is not a root of unity. Every element of $\mathbb Q(i)\setminus\mathbb Z[i]$ is neither a centre nor a Misiurewicz parameter, since those are algebraic integers.)
+
+## Kolakoski in polylogarithmic time | 6 | Computation
+W: The Kolakoski sequence, which begins 1, 2, 2, 1, 1, 2, 1, 2, 2, 1, is its own run-length list. Its n-th term can be computed in logarithmic memory and about n steps. Can it be computed in time polynomial in the number of digits of n?
+M: Let $K=(K_1,K_2,\dots)\in\{1,2\}^{\mathbb N}$ be the Kolakoski sequence, the unique sequence starting with $1$ that equals its own run-length encoding. Is there an algorithm computing $K_n$ from $n$ (in binary) in time $(\log n)^{O(1)}$? Failing that, in time $n^{o(1)}$?
+
+## Recamán's sequence, faster | 5 | Computation
+W: Recamán's sequence starts at 0 and at step n goes back by n if that lands on a new positive number, and otherwise goes forward by n. Computing the n-th term seems to need simulating all earlier steps. Is there an algorithm using substantially fewer than n steps?
+M: Let $a_0=0$ and $a_n=a_{n-1}-n$ if $a_{n-1}-n>0$ and $a_{n-1}-n\notin\{a_0,\dots,a_{n-1}\}$, otherwise $a_n=a_{n-1}+n$. Is there an algorithm that computes $a_n$ (on a word-RAM with $O(\log n)$-bit words) in time $O(n^{1-\varepsilon})$ for some fixed $\varepsilon>0$? Or show that, for some natural model, $\Omega(n^{1-o(1)})$ time is necessary.
+
+## Hamiltonian cycles of the grid are #P₁-complete | 7 | Computation
+W: The number of closed tours through every cell of an n × n grid can be computed in time exponential in n by transfer matrices. Show that no polynomial-time method exists unless every counting problem with unary input is easy. In complexity terms, show that this count is complete for #P₁.
+M: Let $h(n)$ be the number of Hamiltonian cycles of the grid graph $P_n\times P_n$ (with $n$ given in unary). Prove that $h$ is $\#\mathrm P_1$-complete under polynomial-time Turing reductions, or give an algorithm computing $h(n)$ in time $\mathrm{poly}(n)$.
+
+## Integer complexity is NP-hard | 6 | Computation
+W: The integer complexity of n is the fewest 1s needed to write n using +, × and brackets. Deciding whether it is at most k is in NP, since a short formula is a certificate. Is the problem NP-hard for n written in binary, or can it be solved in time polynomial in the number of digits?
+M: Let $\|n\|$ be the least number of $1$'s in an expression for $n$ built from $1$, $+$, $\times$ and parentheses. Since $\|n\|\le3\log_2 n+O(1)$, the language $\{(n,k):\|n\|\le k\}$ with $n$ in binary lies in NP. Prove that it is NP-hard (possibly under randomized reductions), or show that $\|n\|$ can be computed in time $(\log n)^{O(1)}$.
+
+## Proof complexity of Graham–Pollak | 5 | Logic
+W: The edges of a complete graph on n vertices cannot be split into fewer than n − 1 complete bipartite pieces. The known proofs use linear algebra. Written as a propositional formula, does this fact have short proofs in resolution, in cutting planes, or in low-degree sum-of-squares?
+M: Let $\mathrm{GP}_n$ be the CNF with variables $\ell_{t,v},r_{t,v}$ ($t\in[n-2]$, $v\in[n]$) and auxiliary variables $e_{t,uv}\leftrightarrow(\ell_{t,u}\wedge r_{t,v})\vee(r_{t,u}\wedge\ell_{t,v})$, with clauses $\neg\ell_{t,v}\vee\neg r_{t,v}$, and for each edge $uv$ of $K_n$ the clauses saying exactly one $e_{t,uv}$ is true. $\mathrm{GP}_n$ is unsatisfiable by the Graham–Pollak theorem and has size $\mathrm{poly}(n)$. Determine whether $\mathrm{GP}_n$ has (a) resolution refutations of size $2^{n^{o(1)}}$, (b) polynomial-size cutting-planes refutations, (c) sum-of-squares refutations of degree $O(1)$.
+
+## Proof complexity of the sensitivity theorem | 6 | Logic
+W: Huang proved that any set of more than half the corners of the n-cube contains a corner with at least √n neighbours inside the set. Write this as a propositional formula with one variable per corner. Do polynomial-size proofs exist in resolution, cutting planes or sum-of-squares, measured against the 2^n variables?
+M: Let $N=2^n$, $d=\lceil\sqrt n\rceil-1$, and let $\mathrm{SENS}_n$ be the unsatisfiable CNF on variables $x_v$ ($v\in\{0,1\}^n$) plus auxiliary counter variables expressing $\sum_v x_v\ge 2^{n-1}+1$ (sequential-counter encoding), together with, for every $v$ and every $(d+1)$-set $U$ of neighbours of $v$, the clause $\neg x_v\vee\bigvee_{u\in U}\neg x_u$. Does $\mathrm{SENS}_n$ have refutations of size $N^{O(1)}$ in (a) resolution, (b) cutting planes, (c) sum-of-squares (or degree $O(\log N)$ sum-of-squares)? A lower bound of $2^{N^{\Omega(1)}}$ for any of these would also be of interest.
+
+## Three Hadamard rows | 3 | Logic
+W: There are no three ±1 rows of length n, with n twice an odd number, that are pairwise orthogonal. The reason is a short counting argument modulo 4. Encode this as a propositional formula. Do resolution or cutting planes need exponentially long proofs of it?
+M: For $n\equiv2\pmod4$ let $\mathrm{HAD3}_n$ be the CNF on variables $x_{r,j}$ ($r\in\{1,2,3\}$, $j\in[n]$) with auxiliary variables $z_{rs,j}\leftrightarrow x_{r,j}\oplus x_{s,j}$ and sequential-counter clauses asserting $\sum_j z_{rs,j}=n/2$ for each pair $r<s$. It is unsatisfiable for all $n\equiv2\pmod4$ (checked by brute force for $n=2,6,10$, and satisfiable for $n=4,8$). Prove that resolution refutations of $\mathrm{HAD3}_n$ require size $2^{n^{\Omega(1)}}$, and determine whether cutting-planes refutations of size $n^{O(1)}$ (or $n^{O(\log n)}$) exist.
+
+## Steiner triple systems in polynomial calculus | 4 | Logic
+W: A Steiner triple system on n points exists only when n leaves remainder 1 or 3 on division by 6. The impossibility is a divisibility count: modulo 2 for even n, modulo 3 when n leaves remainder 5. Show that algebraic proofs working in the wrong characteristic need high degree.
+M: Let $\mathrm{STS}_n$ be the polynomial system over a field $\mathbb F$ in variables $x_T$, $T\in\binom{[n]}3$: $x_T^2=x_T$, $\sum_{T\supset\{a,b\}}x_T=1$ and $x_Tx_{T'}=0$ for distinct $T,T'\supset\{a,b\}$ (all pairs $\{a,b\}$). It has no $0/1$ solution unless $n\equiv1,3\pmod 6$. For $n\equiv5\pmod6$ it has a degree-1 Polynomial Calculus refutation over $\mathbb F_3$. Prove that over $\mathbb F_2$ every refutation needs degree $n^{\Omega(1)}$. Symmetrically, for even $n$ the system is refuted in low degree over $\mathbb F_2$: prove a degree lower bound $n^{\Omega(1)}$ over $\mathbb F_3$.
+
+## Highways of generalized Langton ants | 7 | Logic
+W: A generalized Langton ant on a grid with k colours turns left or right according to a fixed rule word, steps the cell's colour forward, and moves on. Starting on a blank grid, some rules build a periodic "highway", some grow symmetric blobs forever, and some look chaotic. Show that no algorithm can tell, from the rule word, whether a highway eventually appears.
+M: For $w\in\{L,R\}^k$ ($k\ge2$) the ant on $\mathbb Z^2$ starts at the origin facing north with all cells coloured $0$. At each step, on a cell of colour $c$ it turns by $w_c$, sets the colour to $c+1\bmod k$, and moves one cell forward. Say $w$ builds a highway if there are $t_0$, $p>0$ and $v\ne0$ such that for all $t\ge t_0$ the position at time $t+p$ is the position at time $t$ plus $v$, the heading at time $t+p$ equals the heading at time $t$, and the colours seen at times $t+p$ and $t$ agree. Prove that $\{w:\ w\text{ builds a highway}\}$ is undecidable, or show it is decidable.
+
+## Computable connective constants | 6 | Computation
+W: Count the self-avoiding walks of length n on the Cayley graph of a finitely generated group. Their n-th root tends to the connective constant, and upper bounds converge to it. For groups with a solvable word problem, is the connective constant always a computable number?
+M: Let $G$ be a finitely generated group with solvable word problem and finite symmetric generating set $S$, let $c_n$ be the number of $n$-step self-avoiding walks from $e$ in the Cayley graph $\mathrm{Cay}(G,S)$, and let $\mu(G,S)=\lim c_n^{1/n}=\inf_n c_n^{1/n}$ (so $\mu$ is upper semicomputable). Is $\mu(G,S)$ a computable real for every such $(G,S)$? If not, give a counterexample. If so, is it computable uniformly from $S$ and an algorithm for the word problem?
+
+## Logic of random Latin squares | 6 | Logic
+W: Pick a Latin square of order n uniformly at random and view it as a multiplication table on n symbols. Does every first-order statement about it have a limiting probability as n grows? A full zero-one law should fail. For example, the chance that some x satisfies x·x = x presumably tends to 1 − 1/e.
+M: Let $L_n$ be a uniformly random Latin square on $[n]$, viewed as the structure $([n],\circ)$ with $x\circ y=L_n(x,y)$. Prove or disprove the first-order convergence law: for every first-order sentence $\varphi$ in the language $\{\circ\}$, $\lim_{n\to\infty}\Pr[L_n\models\varphi]$ exists. As a first step, prove that $\Pr[\exists x\ (x\circ x=x)]\to1-e^{-1}$.
+
+## The exact constant for Greater-Than | 5 | Computation
+W: Alice and Bob each hold an n-bit number and want to know whose is larger. With shared randomness and small error this takes about log n bits, up to a constant factor. Find the exact constant in front of log n.
+M: Let $R_\varepsilon(\mathrm{GT}_n)$ be the public-coin randomized communication complexity of $\mathrm{GT}_n(x,y)=[x>y]$ for $x,y\in\{0,1\}^n$, with error $\varepsilon$. It is known that $R_{1/3}(\mathrm{GT}_n)=\Theta(\log n)$. For fixed $\varepsilon\in(0,1/2)$, determine $c(\varepsilon)=\lim_{n\to\infty}R_\varepsilon(\mathrm{GT}_n)/\log_2 n$, proving that the limit exists. In particular, decide whether $c(\varepsilon)$ depends on $\varepsilon$.
+
+## Constructive near-transversals | 5 | Computation
+W: Every Latin square of large order n has n − 1 cells in distinct rows and columns with distinct symbols. This is the Ryser–Brualdi–Stein bound, proved by Montgomery in 2023 with probabilistic absorption methods. Can such a near-transversal be found in polynomial time?
+M: Is there a deterministic algorithm that, given a Latin square $L$ of order $n$ (as an $n\times n$ table), outputs a partial transversal of size $n-1$ (cells $(i_t,j_t)$, $t\le n-1$, with distinct $i_t$, distinct $j_t$ and distinct $L(i_t,j_t)$) in time $n^{O(1)}$, for all sufficiently large $n$? A randomized polynomial-time algorithm would also be new to the author.
+
+## Rank of 3 × 3 by 3 × n matrix multiplication | 6 | Computation
+W: Multiplying a 3 × 3 matrix by a 3 × n matrix takes some number of essential multiplications, which grows linearly in n. Find the exact growth constant. The tensor-rank lower bounds known for small cases do not settle it.
+M: Let $R_n$ be the tensor rank over $\mathbb C$ of the matrix multiplication tensor $\langle3,3,n\rangle$. Since $R_{m+n}\le R_m+R_n$, the limit $\rho=\lim_{n\to\infty}R_n/n=\inf_n R_n/n$ exists, and $\rho\le R(\langle3,3,3\rangle)/3\le23/3$. Determine $\rho$. In particular, decide whether $\rho<23/3$.
+
+## Deterministic zero test for recurrence terms | 5 | Computation
+W: Given an integer linear recurrence and a huge index n written in binary, is the n-th term zero? Random primes give a fast randomized test. Find a deterministic algorithm polynomial in the input size, which includes the number of digits of n.
+M: Input: $k$, integers $c_1,\dots,c_k,u_0,\dots,u_{k-1}$ (binary), and $n$ (binary), defining $u_{m+k}=\sum_i c_iu_{m+k-i}$. Decide whether $u_n=0$ in deterministic time polynomial in $k$, the bit sizes of the $c_i,u_i$, and $\log n$. (The problem is in $\mathrm{coRP}$ via computing $u_n\bmod p$ for random primes $p$ of $O(\log n+\dots)$ bits. Computing $u_n$ exactly takes time exponential in $\log n$, since $u_n$ can have $\Theta(n)$ bits.)
+
+## Orbits of integer polynomial maps in the plane | 6 | Logic
+W: Given a polynomial map of the plane with integer coefficients and two integer points, does iterating the map from the first point ever reach the second? For linear maps this is decidable (Kannan–Lipton), and in one variable it is easy. What about polynomial maps of two variables?
+M: Is the following problem decidable: given $F=(F_1,F_2)\in\mathbb Z[x,y]^2$ and $a,b\in\mathbb Z^2$, decide whether $F^{(n)}(a)=b$ for some $n\ge0$? Also: is it decidable whether the orbit $\{F^{(n)}(a)\}$ is finite?
+
+## Colouring Cayley graphs of the plane lattice | 7 | Logic
+W: Join two points of the integer grid when their difference lies in a fixed finite set D. Given D and a number of colours k, can a computer decide whether this graph can be properly coloured? On the line, periodic colourings settle it. In the plane, the colourings form a tiling-type system that might have no periodic member.
+M: For finite symmetric $D\subset\mathbb Z^2\setminus\{0\}$ let $G_D=\mathrm{Cay}(\mathbb Z^2,D)$. Is $\{(D,k): \chi(G_D)\le k\}$ decidable? Equivalently, does every $k$-colourable $G_D$ admit a $k$-colouring periodic under a finite-index subgroup of $\mathbb Z^2$ (which would give decidability, since non-colourability is witnessed by a finite box)? Settle either question.
+
+## Integers with a predicate for sums of two squares | 6 | Logic
+W: Take the integers with addition and a predicate saying "this number is a sum of two squares". Is the first-order theory of this structure decidable? Or does the predicate let one define multiplication? The analogous question for squarefree numbers has been settled positively.
+M: Let $E=\{a^2+b^2:a,b\in\mathbb Z\}$. Is $\mathrm{Th}(\mathbb Z,+,0,1,E)$ decidable? Is $\mathrm{Th}(\mathbb Z,+,<,E)$ decidable? Determine whether multiplication on $\mathbb N$ is definable in $(\mathbb Z,+,<,E)$. (One expects decidability to hinge on asymptotics for patterns $\{n+h_i\in E,\ n+h'_j\notin E\}$.)
+
+## FRACTRAN with few fractions | 5 | Logic
+W: A FRACTRAN program is a list of fractions. A number is repeatedly multiplied by the first fraction in the list that gives a whole number, until none does. With enough fractions FRACTRAN is universal, so halting is undecidable. What is the smallest list length for which halting becomes undecidable? Is it already decidable with two fractions?
+M: For a list $P=(q_1,\dots,q_k)$ of positive rationals and $N\in\mathbb Z_{>0}$, set $N\mapsto Nq_i$ for the least $i$ with $Nq_i\in\mathbb Z$, halting when no such $i$ exists. Let $\mathrm{HALT}_k=\{(P,N):|P|=k,\ P\text{ halts on }N\}$. Determine the least $k^*$ such that $\mathrm{HALT}_{k^*}$ is undecidable. In particular, prove that $\mathrm{HALT}_2$ is decidable, and decide whether $\mathrm{HALT}_3$ is.
+
+## Closed sets whose sumset is the line | 3 | Logic
+W: Among closed subsets F of the real line, consider those with F + F equal to the whole line. Find the exact descriptive complexity of this family. It is coanalytic by its definition; is it a complete coanalytic set, or is it Borel?
+M: Let $\mathcal F(\mathbb R)$ carry the Effros Borel structure and let $\mathcal A=\{F\in\mathcal F(\mathbb R):F+F=\mathbb R\}$. Since $F+F=\bigcup_n(F_n+F_n)$ with $F_n=F\cap[-n,n]$ compact, $\mathcal A$ is $\boldsymbol\Pi^1_1$. Is $\mathcal A$ $\boldsymbol\Pi^1_1$-complete? The same question for $\{K\in\mathcal K([0,1]):K+K+K=[0,3]\}$ and for $\{F: F+F\supseteq[0,1]\}$.
+
+## The monadic theory of the Kolakoski word | 8 | Logic
+W: Add to the natural numbers with their order a predicate marking the positions where the Kolakoski sequence has a 2. Is the monadic second-order theory of this structure decidable? A positive answer would need an effective understanding of how often every pattern recurs in the sequence, which is not known.
+M: Let $K$ be the Kolakoski sequence and $P_K=\{n:K_n=2\}$. Is $\mathrm{MSO}(\mathbb N,<,P_K)$ decidable? Is the first-order theory $\mathrm{FO}(\mathbb N,<,P_K)$ decidable?
+
+## Positive measure of rational self-similar sets | 6 | Logic
+W: Shrink the line by rational factors and shift by rational amounts, several times over, and take the resulting self-similar fractal. Can a computer decide whether it has positive length? Positive length without interior is known to happen for some parameters, so testing for an interval is not obviously enough.
+M: Given $k$ and rationals $r_1,\dots,r_k\in(0,1)$, $t_1,\dots,t_k$, let $K$ be the attractor of $\{x\mapsto r_ix+t_i\}$. Is $\{(r,t): \lambda(K)>0\}$ decidable? Is $\{(r,t):\mathrm{int}\,K\ne\emptyset\}$ decidable? Do they coincide for rational data?
+
+## How much of the real quadratic family is chaotic? | 7 | Computation
+W: For real c between −2 and 1/4, the map x ↦ x² + c has an attracting cycle for an open dense set of c, but the remaining chaotic parameters have positive length. Is the total length of the parameters with an attracting cycle a computable number? It can be approximated from below by listing windows, but no method approximates it from above.
+M: Let $H=\{c\in[-2,1/4]: x\mapsto x^2+c\text{ has an attracting periodic orbit}\}$. Is the Lebesgue measure $\lambda(H)$ a computable real? (It is lower semicomputable, and $0<\lambda(H)<9/4$ by Jakobson's theorem.)
+
+## Counting transversals of the cyclic Latin square | 6 | Computation
+W: The addition table of the integers mod n is a Latin square. For odd n its transversals (one cell per row and column with all symbols different) number roughly e^{-1/2} (n!)²/n^{n-1}, and exact counts are known only for small n. Show that computing the exact count is as hard as every counting problem with unary input, or find a polynomial-time method.
+M: For odd $n$ let $T(n)$ be the number of permutations $\sigma\in S_n$ such that $i\mapsto i+\sigma(i)\bmod n$ is also a permutation. Prove that $n\mapsto T(n)$ (with $n$ in unary) is $\#\mathrm P_1$-complete under polynomial-time Turing reductions, or give an algorithm computing $T(n)$ in time $\mathrm{poly}(n)$.
+
+## Symmetric numerical semigroups | 4 | Computation
+W: Given a list of positive integers with no common factor, the numbers they generate under addition miss only finitely many values. The semigroup is called symmetric when gaps and non-gaps pair off around the largest gap. Computing that largest gap (the Frobenius number) is NP-hard. How hard is it to test symmetry?
+M: Given coprime positive integers $a_1,\dots,a_k$ (binary, $k$ part of the input), let $S=\langle a_1,\dots,a_k\rangle$ and $F=\max(\mathbb Z\setminus S)$. $S$ is symmetric if for all $x\in\mathbb Z$, exactly one of $x$ and $F-x$ lies in $S$. Determine the complexity of deciding symmetry. Is it coNP-hard? Is it in $\mathrm{P}^{\mathrm{NP}}$, and is it $\Pi_2^{\mathrm P}$-complete?
+
+## Two Beatty sequences, existentially | 6 | Logic
+W: Presburger arithmetic stays decidable when one adds the map n ↦ ⌊n√2⌋. With both ⌊n√2⌋ and ⌊n√3⌋ the full theory is expected to be undecidable. Is the purely existential part decidable? It amounts to solving systems of linear inequalities in which both floors appear.
+M: Let $f(n)=\lfloor n\sqrt2\rfloor$ and $g(n)=\lfloor n\sqrt3\rfloor$. Is the existential theory of $(\mathbb Z,+,<,0,1,f,g)$ decidable? Equivalently: is there an algorithm that decides solvability in $\mathbb Z$ of finite systems of linear equations and inequalities in variables $x_i$ and terms $f(t),g(t)$, with $t$ ranging over such terms (nesting allowed)?
+
+## Rational rotation numbers of piecewise-linear circle maps | 6 | Logic
+W: A circle homeomorphism built from finitely many straight pieces, with rational break points and rational slopes, has a rotation number. Can a computer decide whether that number is rational? Rational rotation numbers come with periodic orbits through rational points, so they can be detected by search. No method is known to certify irrationality.
+M: Let $f:\mathbb R/\mathbb Z\to\mathbb R/\mathbb Z$ be an orientation-preserving piecewise-linear homeomorphism given by finitely many rational break points and rational slopes (and rational $f(0)$). Is $\{f:\rho(f)\in\mathbb Q\}$ decidable? (If $\rho(f)=p/q$ then $f$ has a periodic orbit, and periodic points solve rational linear equations, so this set is computably enumerable.)
+
+## Dimension of the critical almost Mathieu spectrum | 7 | Computation
+W: The critical almost Mathieu operator has a Cantor-set spectrum whose fractal dimension depends delicately on the frequency α. Is this dimension a computable function of α? That is, given a program that computes α, can one compute the dimension to any accuracy?
+M: For irrational $\alpha$ let $\Sigma_\alpha$ be the spectrum of $(H_{\alpha}u)(n)=u(n+1)+u(n-1)+2\cos(2\pi n\alpha)u(n)$ on $\ell^2(\mathbb Z)$, and let $d(\alpha)=\dim_H\Sigma_\alpha$ (known to satisfy $d(\alpha)\le1/2$). Is there an algorithm that, given an oracle for the binary digits of an irrational $\alpha$ and $n\in\mathbb N$, outputs a rational within $2^{-n}$ of $d(\alpha)$? If not uniformly, is $d(\alpha)$ at least a computable real for every computable irrational $\alpha$?
+
+## Deciding limit cycles | 9 | Logic
+W: Given a polynomial vector field in the plane with rational coefficients, is there an algorithm that decides whether it has a limit cycle, an isolated closed orbit? Hilbert's 16th problem asks how many limit cycles there can be. This asks only whether their existence is decidable at all.
+M: Is the set $\{(P,Q)\in\mathbb Q[x,y]^2:\ \dot x=P,\ \dot y=Q\text{ has a limit cycle}\}$ decidable? Is the set of $(P,Q)$ having at least one non-constant periodic orbit decidable?
+
+## Colouring Mycielski graphs in resolution | 5 | Logic
+W: The Mycielski graphs are triangle-free graphs whose chromatic number goes up by one at each step. They are notoriously hard colouring benchmarks for SAT solvers. Does resolution need exponentially long proofs that the k-th one cannot be coloured with k − 1 colours, measured against the size of the graph?
+M: Let $M_2=K_2$ and $M_{k+1}=\mu(M_k)$ (Mycielski construction), so $|V(M_k)|=3\cdot2^{k-2}-1$ and $\chi(M_k)=k$. Let $\mathrm{COL}(M_k,k-1)$ be the standard CNF asserting a proper $(k-1)$-colouring. Does $\mathrm{COL}(M_k,k-1)$ have resolution refutations of size $|V(M_k)|^{O(1)}$? Or is size $2^{|V(M_k)|^{\Omega(1)}}$ necessary?
+
+## Proof complexity of Erdős–Ko–Rado | 4 | Logic
+W: An intersecting family of k-element subsets of an n-set has at most C(n − 1, k − 1) members. Katona's proof averages a simple bound over all cyclic orders. Written as a formula with one variable per k-set, does it have short cutting-planes proofs, and must resolution proofs be exponentially long?
+M: For $n\ge 2k$ let $\mathrm{EKR}_{n,k}$ be the system in variables $x_S$, $S\in\binom{[n]}k$: $x_S+x_T\le1$ for disjoint $S,T$, and $\sum_Sx_S\ge\binom{n-1}{k-1}+1$. Let $N=\binom nk$. For $k=\lfloor n/3\rfloor$: (a) do cutting-planes refutations of size $N^{O(1)}$ exist? (b) prove that resolution refutations of the CNF version (sequential-counter encoding of the cardinality constraint) need size $2^{N^{\Omega(1)}}$, or show they need not.
+
+## Polynomial-time digits of the percolation threshold | 7 | Computation
+W: The critical probability for site percolation on the square grid, about 0.5927, can be computed to any accuracy using finite-box criteria, but the known methods take time exponential in the number of digits. Is there an algorithm producing n correct binary digits in time polynomial in n?
+M: Let $p_c=p_c^{\mathrm{site}}(\mathbb Z^2)$. Is $p_c$ polynomial-time computable, i.e., is there an algorithm that on input $1^n$ outputs a dyadic rational $q$ with $|q-p_c|\le2^{-n}$ in time $n^{O(1)}$?
+
+## Merging one list into a list twice as long | 4 | Computation
+W: Merging two sorted lists of equal length n takes exactly 2n − 1 comparisons. Merging a list of n into a list of 2n needs at least about 2.755n comparisons by counting, and the simple linear merge uses 3n. Find the true constant. It also decides the optimal cost of merging three lists of length n.
+M: Let $M(m,N)$ be the least worst-case number of comparisons that merge sorted lists of lengths $m$ and $N$. Then $\log_2\binom{3n}{n}\le M(n,2n)\le3n-1$, so $\lim M(n,2n)/n$, if it exists, lies in $[3h(1/3),3]$ with $3h(1/3)=3\log_23-2\approx2.755$. Determine $\lim_{n\to\infty}M(n,2n)/n$. Also determine $\lim_{n\to\infty}M_3(n)/n\in[3\log_23,5]$, where $M_3(n)$ is the least worst-case number of comparisons that merge three sorted lists of length $n$.
+
+## Parity of the partition function, fast | 6 | Computation
+W: The number of partitions p(n) has about √n digits and can be computed in about √n time. Its parity is a single bit. Can the parity be computed substantially faster than p(n) itself?
+M: Is there an algorithm that computes $p(n)\bmod 2$ in time $O(n^{1/2-\delta})$ for some fixed $\delta>0$ (bit operations, $n$ given in binary)? Is there one running in time $n^{o(1)}$?
+
+## Constructive Kemnitz–Reiher | 6 | Computation
+W: Among any 4n − 3 points of the n × n grid taken mod n, some n of them sum to zero mod n (Kemnitz's conjecture, proved by Reiher with the Chevalley–Warning theorem). Can such n points be found in time polynomial in n? The existence proof is not constructive.
+M: Is there a deterministic (or randomized) algorithm that, given $n$ and a sequence $v_1,\dots,v_{4n-3}\in(\mathbb Z/n\mathbb Z)^2$, outputs $I\subseteq[4n-3]$ with $|I|=n$ and $\sum_{i\in I}v_i=0$ in time $n^{O(1)}$? Equivalently for prime $n=p$ (the general case reduces multiplicatively), can the Chevalley–Warning zero underlying Reiher's proof be found in polynomial time?
+
+## Polynomial-time entropy of the logistic family | 6 | Computation
+W: The topological entropy of the logistic map x ↦ ax(1 − x) is a continuous function of a that can be computed from the kneading sequence. But the known error bounds force exponentially long kneading data for n correct digits. Is the entropy polynomial-time computable at rational a?
+M: Let $h(a)$ be the topological entropy of $x\mapsto ax(1-x)$ on $[0,1]$, $a\in[1,4]$. Is there an algorithm that, given rational $a$ and $n$, outputs a rational within $2^{-n}$ of $h(a)$ in time polynomial in $n$ and the bit size of $a$?
+
+## Counting squarefree numbers faster | 5 | Computation
+W: How quickly can one count exactly the squarefree numbers up to x? Known methods take time around x^{2/5}. Is there an algorithm using about the cube root of x, or less?
+M: Let $Q(x)=\#\{n\le x: n\text{ squarefree}\}=\sum_{d\le\sqrt x}\mu(d)\lfloor x/d^2\rfloor$. Is there an algorithm computing $Q(x)$ exactly in time $x^{1/3+o(1)}$? Is there one running in time $x^{\varepsilon}$ for every $\varepsilon>0$?
+
+## Word equations with square-free unknowns | 6 | Logic
+W: Solving equations between words with unknown pieces is decidable (Makanin), even with regular constraints on the unknowns. What if some unknowns must be square-free, meaning they contain no block repeated twice in a row? Square-freeness is not a regular property.
+M: Let $A=\{a,b,c\}$ and let $\mathrm{SF}\subseteq A^*$ be the set of square-free words. Is the existential first-order theory of $(A^*,\cdot,a,b,c,\mathrm{SF})$ decidable? Equivalently: given a finite system of word equations with constants together with constraints $x_i\in\mathrm{SF}$ or $x_i\notin\mathrm{SF}$, can one decide whether it has a solution?
+
+## Communication complexity of polynomial coprimality | 5 | Computation
+W: Alice and Bob each hold a polynomial of degree n over the two-element field and want to know whether the polynomials share a factor. Using distinct irreducible polynomials as set elements, set disjointness embeds and gives a lower bound of order n/log n bits. Sending a whole polynomial takes n bits. Which is the truth?
+M: Let $\mathrm{COP}_n(p,q)=1$ iff $\gcd(p,q)=1$, for $p,q\in\mathbb F_2[x]$ of degree at most $n$, held by Alice and Bob respectively. Since there are about $2^d/d$ irreducibles of degree $d$, disjointness on $\Theta(n/\log n)$ bits embeds, so $\Omega(n/\log n)\le R(\mathrm{COP}_n)\le n+1$. Determine $R(\mathrm{COP}_n)$ (public-coin, error $1/3$) up to a constant factor.
+
+## Shortest relation between two permutations | 5 | Computation
+W: Two permutations of n items generate a group. Find the shortest nonempty word in them and their inverses, with no immediate cancellations, that multiplies out to the identity. A proposed word is easy to check, so the decision version is in NP when the length bound is written in unary. Is it NP-hard?
+M: For $a,b\in S_n$ let $g(a,b)$ be the least length of a nonempty freely reduced word $w$ in $a^{\pm1},b^{\pm1}$ with $w(a,b)=\mathrm{id}$ (the girth of the Cayley graph of $\langle a,b\rangle$ with respect to $\{a^{\pm1},b^{\pm1}\}$). Is $\{(a,b,1^k):g(a,b)\le k\}$ NP-complete? Or can $g(a,b)$ be computed in time $\mathrm{poly}(n,g(a,b))$?
+
+## Complexity of the Davenport constant | 6 | Computation
+W: The Davenport constant of a finite abelian group is the shortest length that forces every sequence of group elements to contain a nonempty block summing to zero. It has a simple formula for groups of rank at most 2 and for p-groups, but not in general. How hard is it to compute from the group's invariants?
+M: For $G=\mathbb Z_{n_1}\oplus\cdots\oplus\mathbb Z_{n_r}$ ($n_1\mid\cdots\mid n_r$), let $D(G)$ be the least $\ell$ such that every sequence of $\ell$ elements of $G$ has a nonempty zero-sum subsequence. It is known that $D(G)\ge D^*(G)=1+\sum_i(n_i-1)$, with equality for $r\le2$ and for $p$-groups, and that equality can fail. Is there an algorithm computing $D(G)$ in time polynomial in $r$ and $\log n_r$? For fixed $r=3$, is there one running in time $\mathrm{poly}(n_3)$?
+
+## Finding a vertex that beats half the field | 4 | Computation
+W: In any round-robin tournament on n players, some player beats at least half of the others. How many match results must you look up to find such a player? Finding a player with the most wins is known to need almost all results. Is order n log n lookups enough here, or are almost all results needed again?
+M: Let $Q(n)$ be the deterministic query complexity (queries reveal the orientation of one edge) of the search problem: given a tournament $T$ on $[n]$, output $v$ with $d^+_T(v)\ge(n-1)/2$. Clearly $Q(n)\ge\lceil(n-1)/2\rceil$. Determine $Q(n)$ up to a constant factor. In particular, decide whether $Q(n)=O(n\log n)$ or $Q(n)=\Theta(n^2)$, and determine the randomized complexity.
+
