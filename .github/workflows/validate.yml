@@ -1,0 +1,20 @@
+name: validate-data
+on:
+  pull_request: { paths: ["data/**", "problems/**", "scripts/**", "site/**"] }
+  push: { branches: [main], paths: ["data/**", "problems/**", "scripts/**"] }
+permissions: { contents: read }
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Schema and layout
+        run: python3 scripts/validate.py
+      - name: Near-duplicate report
+        run: |
+          python3 scripts/dupes.py | tee dupes.txt
+          { echo '### Near-duplicate report'; echo '```'; cat dupes.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Regenerated files are up to date
+        run: |
+          python3 scripts/gen_main.py >/dev/null
+          git diff --exit-code -- data/problems.json problems || { echo "::error::Run python3 scripts/gen_main.py and commit the result"; exit 1; }

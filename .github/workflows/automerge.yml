@@ -14,12 +14,24 @@ jobs:
       R: ${{ github.repository }}
       SHA: ${{ github.event.workflow_run.head_sha }}
     steps:
-      - name: Find the PR, re-check it only adds solution files, merge, rebuild board
+      - name: Find the PR, re-check its files independently (fail closed), merge, rebuild board
         run: |
           PR=$(gh api "repos/$R/pulls?state=open&per_page=100" --jq ".[] | select(.head.sha==\"$SHA\") | .number" | head -1)
           [ -z "$PR" ] && { echo "No open PR at $SHA"; exit 0; }
-          BAD=$(gh api "repos/$R/pulls/$PR/files?per_page=100" --jq '.[] | select(.status!="added" or (.filename | test("^solutions/(QED-[ME][0-9]{3}|QED-Q[0-9]|N-000)/[A-Za-z0-9-]+/(Solution\\.lean|meta\\.json|README\\.md)$") | not)) | .filename')
-          [ -n "$BAD" ] && { echo "Not a pure solution PR: $BAD"; exit 0; }
+          AUTHOR=$(gh api "repos/$R/pulls/$PR" --jq '.user.login')
+          FILES=$(gh api --paginate "repos/$R/pulls/$PR/files?per_page=100" --jq '.[] | "\(.status) \(.filename)"')
+          # Fail closed: every file must be an addition of a solution file, or an add/modify inside the
+          # author's own partial-work folder. Anything else (deletions, renames, statements, data, CI) is left for a maintainer.
+          ID='(QED-[ME][0-9]{3}|QED-Q[0-9]|N-000)'
+          OK=1
+          while read -r ST FN; do
+            [ -z "$FN" ] && continue
+            if [ "$ST" = "added" ] && echo "$FN" | grep -Eq "^solutions/$ID/$AUTHOR/(meta\.json|README\.md|([A-Za-z0-9][A-Za-z0-9_-]*/)*[A-Za-z0-9][A-Za-z0-9_.-]*\.lean)$"; then continue; fi
+            if { [ "$ST" = "added" ] || [ "$ST" = "modified" ]; } && echo "$FN" | grep -Eq "^problems/$ID/partial/$AUTHOR/[A-Za-z0-9._-]+\.(md|txt|lean)$"; then continue; fi
+            echo "Not auto-mergeable: $ST $FN"; OK=0
+          done <<< "$FILES"
+          [ "$OK" = 1 ] || exit 0
+          [ -z "$FILES" ] && exit 0
           gh pr merge "$PR" -R "$R" --squash --match-head-commit "$SHA"
-          gh pr comment "$PR" -R "$R" --body "✅ Verified by Lean and merged automatically. The board will update in a minute."
+          gh pr comment "$PR" -R "$R" --body "✅ Checked and merged automatically. The board will update in a minute."
           gh workflow run update-site-data -R "$R"

@@ -10,7 +10,8 @@ S={}
 for sol in glob.glob('solutions/*/*/Solution.lean'):
     d=os.path.dirname(sol); pid,user=d.split('/')[1:3]
     m=json.load(open(d+'/meta.json'))
-    S.setdefault(pid,[]).append(dict(user=user,model=m['model'],kind=m['kind'],size=size(sol),time=merged_time(sol)))
+    total=sum(size(x) for x in glob.glob(d+'/**/*.lean',recursive=True))   # all files of a multi-file solution
+    S.setdefault(pid,[]).append(dict(user=user,model=m['model'],kind=m['kind'],size=total,time=merged_time(sol)))
 out={}
 for pid,L in S.items():
     first=min(L,key=lambda x:x['time']); small=min(L,key=lambda x:(x['size'],x['time']))
@@ -24,3 +25,14 @@ def board(key):
     return [dict(user=u,model=m,count=n) for (u,m),n in sorted(c.items(),key=lambda z:-z[1])]
 json.dump(dict(first=board('first'),smallest=board('smallest')),open('data/leaderboard.json','w'),indent=1)
 print(len(out),'solved')
+
+# Partial work: problems/<id>/partial/<username>/...
+P = {}
+for d in sorted(glob.glob('problems/*/partial/*/')):
+    parts = d.rstrip('/').split('/'); pid, user = parts[1], parts[3]
+    files = sorted(os.listdir(d))
+    if files:
+        P.setdefault(pid, []).append(dict(user=user, files=files, lean=any(f.endswith('.lean') for f in files),
+                                          time=merged_time(d)))
+json.dump(P, open('data/partials.json', 'w'), indent=1)
+print(sum(map(len, P.values())), 'partial contributions')

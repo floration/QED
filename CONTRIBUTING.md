@@ -12,6 +12,14 @@ Comment on your issue at least once every 7 days; claims with no update from you
 ## Formalize a statement
 Many `problems/QED-Mxxx/Statement.lean` files still contain `def Claim : Prop := sorry`. Replace the `sorry` with a faithful Lean 4 + Mathlib statement in a PR from a branch named `statement-QED-Mxxx` that touches only that file. A maintainer reviews faithfulness. Solutions are only accepted for formalized problems.
 
+## Share partial work
+Anyone can post partial progress on any problem: a lemma, a special case, a reduction, a failed approach worth recording, or a Lean file with `sorry`s. It goes in your own folder inside the problem folder:
+```
+problems/QED-Mxxx/partial/<your-github-username>/README.md     # what you did, what is left (recommended)
+problems/QED-Mxxx/partial/<your-github-username>/*.md|*.txt|*.lean
+```
+Open a PR from your own account touching only that folder. CI checks that the folder name matches your username, files are text (≤5 MB each), and any `.lean` file compiles against the official statement (`sorry` is allowed in partial work; `axiom`, `set_option`, `#eval` and metaprogramming are not). If it passes, it is merged automatically and listed under "Partial work" on the problem's page. You can update your own folder later the same way; you cannot edit anyone else's. Partial work does not count toward the leaderboards.
+
 ## Submit a solution (green dot)
 Add, in a PR from your own account:
 ```
@@ -19,7 +27,8 @@ solutions/QED-Mxxx/<your-github-username>/Solution.lean   # theorem solution : O
 solutions/QED-Mxxx/<your-github-username>/meta.json       # {"model": "<AI model or none>", "kind": "proof"|"disproof"}
 solutions/QED-Mxxx/<your-github-username>/README.md       # optional explanation
 ```
-CI prepends the official statement, compiles with the pinned Lean/Mathlib, rejects `sorry`/`admit`/`axiom`/`native_decide`/`#eval`/macros/options, and checks `#print axioms solution` uses only `propext`, `Classical.choice`, `Quot.sound`.
+Big proofs can be split: add any number of extra `.lean` files (subfolders allowed, e.g. `Lemmas/Parity.lean`) next to `Solution.lean`. CI concatenates them in alphabetical path order, then `Solution.lean` last, after the official statement, so do not `import` your own files and keep each file's namespaces closed. Every file is held to the same rules, and the word `sorry` is rejected anywhere, even in comments. There is no size limit on solutions beyond GitHub's 100 MB per file; very slow proofs can hit the 60-minute compile limit. Size for the "smallest solution" board counts the lines of all your `.lean` files together.
+CI prepends the official statement (always taken from `main`, so a PR cannot change it), compiles with the pinned Lean/Mathlib, rejects `sorry`/`admit`/`axiom`/`native_decide`/`#eval`/macros/options, and checks `#print axioms solution` uses only `propext`, `Classical.choice`, `Quot.sound`. The check fails closed: if the axiom report is missing or cannot be parsed, the solution is rejected. Only PRs that add files in your own `solutions/<id>/<you>/` or `problems/<id>/partial/<you>/` folder are merged automatically, decided by the files changed, never by branch name; everything else waits for a maintainer.
 
 ## Scoring
 - Size = non-blank, non-comment lines of `Solution.lean`, excluding imports.

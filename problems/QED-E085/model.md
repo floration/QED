@@ -32,6 +32,7 @@ import Mathlib
 theorem solution : OpenProblems.QEDE085.Claim := by   -- or ¬ OpenProblems.QEDE085.Claim
   ...
 ```
+   Large proofs may add more `.lean` files (subfolders allowed) next to Solution.lean; CI concatenates them in path order before Solution.lean. Don't import them.
 3. Add `solutions/QED-E085/<github-username>/meta.json`: `{"model": "<AI model used, or none>", "kind": "proof" | "disproof"}`. Optionally a `README.md` explaining the idea.
 4. Open a pull request. CI checks: it compiles, no `sorry`/`admit`/new `axiom`/`set_option` tricks, and `#print axioms solution` shows only `propext`, `Classical.choice`, `Quot.sound`.
 
