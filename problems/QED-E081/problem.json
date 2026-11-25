@@ -13,6 +13,7 @@
  "importance": 8,
  "value": 6,
  "formal_status": "formalized",
+ "review_note": "Context (Nov 2026): OpenAI's preprint \"The Unique Games Theorem\" proves UGC; together with P ≠ NP this would imply the Claim, but P ≠ NP is not known, so the Claim remains open.",
  "refs": [
   "Barak, Brandão, Harrow, Kelner, Steurer, Zhou, Hypercontractivity, sum-of-squares proofs, and their applications, STOC 2012, arXiv:1205.4484",
   "Khot, Minzer, Safra, Pseudorandom sets in Grassmann graph have near-perfect expansion, FOCS 2018",

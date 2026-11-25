@@ -17,6 +17,7 @@
  "importance": 7,
  "value": 7,
  "formal_status": "formalized",
+ "review_note": "Context (Nov 2026): OpenAI claims uniform bounds for Hilbert's 16th problem; that does not decide existence of limit cycles, which this problem asks.",
  "refs": [
   "https://arxiv.org/abs/2101.07701",
   "https://core.ac.uk/download/61500783.pdf",

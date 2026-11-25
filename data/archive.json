@@ -8442,6 +8442,24 @@
 "reason": "moved to the main set as QED-M115 (Nov 2026 rescoring: total 19 ≥ 17)"
 },
 {
+"id": "QED-E083",
+"title": "Densest k-Subgraph and k-Biclique FPT-inapproximability from plain ETH",
+"area": "Complexity",
+"plain": "Prove, assuming only ETH, that Densest k-Subgraph cannot be approximated within k^{o(1)} (or any omega(1) factor) in f(k) n^{o(k)} time, or that k-Biclique has no f(k)n^{o(sqrt k)}-type algorithm, matching known Gap-ETH-based results.",
+"math": "Assuming only (deterministic) ETH, prove that there is a function g(k) -> infinity such that no algorithm running in time f(k) n^{O(1)} (f computable) approximates (uncolored) Densest k-Subgraph within factor g(k), i.e. outputs v with OPT/g(k) <= v <= OPT. (Gap-ETH gives every g = k^{o(1)}; the k-Biclique disjunct is already known under ETH, Lin JACM 2018.)",
+"difficulty": 3.5,
+"reason": "retired Nov 2026: its hypothesis (ETH) is refuted by the OpenAI preprint \"The Exponential Time Hypothesis is False\" (2026-10-25), making the Claim vacuous"
+},
+{
+"id": "QED-E084",
+"title": "Does UGC imply SSEH?",
+"area": "Complexity",
+"plain": "Give a polynomial-time reduction from Small-Set Expansion to Unique Games' hardness direction, i.e. prove UGC => SSEH (Raghavendra-Steurer proved SSEH => UGC), or exhibit an oracle/algorithmic separation (e.g. an algorithm for SSE on a class of graphs where UG remains as hard as in general).",
+"math": "Prove that Small-Set Expansion is UG-hard: for every η > 0 there are δ ∈ (0,1) and ε > 0 such that for every alphabet size q there is a polynomial-time many-one reduction from Gap-UG_q(1−ε, ε) (YES: some labelling satisfies ≥ 1−ε of the constraints; NO: none satisfies more than ε) to Gap-SSE(η, δ) on regular graphs (YES: some vertex set of measure δ has expansion ≤ η; NO: every vertex set of measure δ has expansion ≥ 1−η). Such reductions give UGC ⇒ SSEH (Raghavendra–Steurer proved SSEH ⇒ UGC). Separations in restricted models (oracles, SoS) are not part of the statement.",
+"difficulty": 5.0,
+"reason": "retired Nov 2026: superseded by the OpenAI preprint \"The Unique Games Theorem\"; with UGC proved the natural question becomes whether Small-Set Expansion is NP-hard (to be reframed and re-reviewed)"
+},
+{
 "id": "QED-M001",
 "title": "Is the complete-pivoting growth factor exactly 8 for 8x8 matrices?",
 "area": "Algebra",
@@ -8532,6 +8550,15 @@
 "reason": "moved to the extended set as QED-E076 (Nov 2026 rescoring: total 16 < 17)"
 },
 {
+"id": "QED-M018",
+"title": "Breaking the log k barrier for 3-petal sunflowers",
+"area": "Combinatorics",
+"plain": "Show every family of more than (o(log k))^k sets of size k (e.g. (log k)^{(1-c)k} or (log log k)^{O(k)}) contains a sunflower with 3 petals.",
+"math": "Let f(k,3) be the least m such that every family of m distinct k-element sets contains a 3-petal sunflower. Known: f(k,3) <= (C log k)^k (ALWZ, Rao, Bell-Chueluecha-Warnke). Prove f(k,3) <= (eps(k) log k)^k for some eps(k)->0, e.g. f(k,3) <= (log k)^{(1-c)k} for a constant c>0.",
+"difficulty": 4.5,
+"reason": "retired Nov 2026 as solved: OpenAI preprint \"An exponential bound for sunflowers\" (2026-11-24) proves f(k,r) ≤ B_r^k for every r ≥ 3, far beyond this target"
+},
+{
 "id": "QED-M020",
 "title": "Critical linear firefighter rate on Z^3",
 "area": "Combinatorics",
@@ -8566,6 +8593,15 @@
 "math": "Let $\\Pi_n$ be the simplicial complex on vertex set $E(K_n)$ whose faces are edge sets of planar graphs; it is pure of dimension $3n-7$. Determine $\\tilde H_*(\\Pi_n;\\mathbb Z)$, or at least $\\tilde H_*(\\Pi_n;\\mathbb Q)$, for all $n$. Known: $\\Pi_4$ is a simplex, $\\Pi_5=\\partial\\Delta^9\\cong S^8$. For $n=6$ (computed exactly): $\\tilde H_*(\\Pi_6;\\mathbb Q)$ is $\\mathbb Q^{15}$ in degree $9=3n-9$ and $0$ elsewhere; $\\tilde H_*(\\Pi_6;\\mathbb F_2)$ is $\\mathbb F_2^{15},\\mathbb F_2,\\mathbb F_2$ in degrees $9,10,11$, so $\\tilde H_{10}(\\Pi_6;\\mathbb Z)$ has $2$-torsion and $\\Pi_6$ is not a wedge of spheres. The mod-2 top class is the sum of all triangulations: every face of dimension $3n-8$ of $\\Pi_6$ lies in an even number (2 or 4) of facets. Questions: (a) is $\\tilde H_*(\\Pi_n;\\mathbb Q)$ concentrated in degree $3n-9$ for all $n\\ge6$, and what is its rank and $S_n$-module structure? (b) Is $\\tilde H_{3n-7}(\\Pi_n;\\mathbb F_2)\\ne0$ for all $n\\ge5$? Is all torsion 2-torsion?",
 "difficulty": 3.0,
 "reason": "moved to the extended set as QED-E080 (Nov 2026 rescoring: total 16 < 17)"
+},
+{
+"id": "QED-M027",
+"title": "2^{Omega(n)} hardness of Euclidean SVP under ETH",
+"area": "Complexity",
+"plain": "Show that approximate SVP in the l_2 norm (some constant gamma>1) has no 2^{o(n)}-time algorithm unless (randomized) ETH fails; or identify an obstruction (e.g. for the Z^n-based gadget) showing the l_p, p>2 technique cannot reach p=2.",
+"math": "Prove there is a constant gamma > 1 such that, if randomized ETH holds (there is delta > 0 such that no bounded-error randomized algorithm decides 3-SAT on n variables in time 2^{delta n} poly(size)), then there is delta' > 0 such that no bounded-error randomized algorithm decides gamma-GapSVP in the l_2 norm on rank-n integer lattices in time 2^{delta' n} poly(size) (2^{Omega(n)} hardness, in particular no 2^{o(n)}-time algorithm). The alternative 'technique obstruction' target is a meta-statement and is not formalized.",
+"difficulty": 5.5,
+"reason": "retired Nov 2026: its hypothesis (randomized ETH) is refuted by the OpenAI preprint \"The Exponential Time Hypothesis is False\" (2026-10-25), making the Claim vacuous"
 },
 {
 "id": "QED-M028",
@@ -8863,5 +8899,14 @@
 "math": "Call a periodic billiard trajectory in a regular tetrahedron $T\\subset\\mathbb R^3$ admissible if it never meets an edge or vertex of $T$ and its image is an embedded closed polygon. (a) Does some admissible trajectory form a nontrivial knot? (b) Prove that the set of knot types of admissible periodic trajectories is infinite.",
 "difficulty": 3.0,
 "reason": "moved to the extended set as QED-E112 (Nov 2026 rescoring: total 15 < 17)"
+},
+{
+"id": "QED-M107",
+"title": "The Thorp shuffle mixes in O(log n) steps",
+"area": "Probability",
+"plain": "Take a deck of n = 2^d cards and cut it into two equal halves. For each i, the i-th card of each half are placed next to each other, with a fair coin deciding which goes on top. Repeat. A counting argument shows about 2d shuffles are needed before the deck can be close to uniformly random. Prove that a constant times d shuffles always suffice.",
+"math": "Let $n=2^d$, $h=n/2$. For $\\xi\\in\\{0,1\\}^h$ let $\\sigma_\\xi\\in S_n$ put the cards from positions $i$ and $i+h$ into positions $2i,2i+1$, in that order if $\\xi_i=0$ and swapped if $\\xi_i=1$ ($0\\le i<h$). Let $\\mu_d$ be uniform on $\\{\\sigma_\\xi\\}$ and $t_{\\rm mix}(d)=\\min\\{t:\\|\\mu_d^{*t}-U_{S_n}\\|_{TV}\\le 1/4\\}$. Prove there is an absolute constant $C$ with $t_{\\rm mix}(d)\\le Cd$ for all $d\\ge1$. (Counting the support gives $t_{\\rm mix}(d)\\ge(2-o(1))d$.)",
+"difficulty": 6.5,
+"reason": "retired Nov 2026 as solved: OpenAI preprint \"Optimal-order mixing of the Thorp shuffle\" (Oct 2026) proves Θ(d) mixing"
 }
 ]

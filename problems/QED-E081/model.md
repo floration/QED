@@ -9,6 +9,8 @@ Extended set · Grade A · QED Curated · Complexity
 
 **Math:** (Gap) For every eps>0 there is q=q(eps) such that for every degree D there is a Unique Games instance over [q] with optimum <= eps whose degree-2D SoS (Lasserre) value is >= 1-eps. Claim := Gap; ¬Claim is exactly the algorithmic alternative.
 
+**Reviewer note:** Context (Nov 2026): OpenAI's preprint "The Unique Games Theorem" proves UGC; together with P ≠ NP this would imply the Claim, but P ≠ NP is not known, so the Claim remains open.
+
 **Credit:** Barak, Sum-of-Squares open problems (lecture notes); Barak & Steurer 2014, arXiv:1404.5236
 
 **References:**
