@@ -64,7 +64,7 @@ def windingSum {n : ℕ} (θ : Pt n → ℝ) (v : Fin 4 → Pt n) : ℝ :=
 
 /-- Central plaquette of the face `z = h`, listed counterclockwise. -/
 def plaquette (n : ℕ) (h : Fin (n + 1)) : Fin 4 → Pt n :=
-  fun k => rot^[k.val] ((((n - 1) / 2 : ℕ) : Fin (n + 1)), (((n - 1) / 2 : ℕ) : Fin (n + 1)), h)
+  fun k => rot^[k.val] ((⟨(n - 1) / 2, by omega⟩ : Fin (n + 1)), (⟨(n - 1) / 2, by omega⟩ : Fin (n + 1)), h)
 
 def Claim : Prop :=
   ∀ n : ℕ, Odd n → 3 ≤ n →
