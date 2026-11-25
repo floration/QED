@@ -1,0 +1,24 @@
+{
+ "id": "QED-E135",
+ "set": "extended",
+ "title": "Property B: beat the square-root exponent",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical problem (Property B, named for F. Bernstein's property; studied by Erdős and Hajnal). Bounds by Erdős, Beck, Radhakrishnan–Srinivasan, Cherkashin–Kozik.",
+ "premise_risks": [
+  "'Property B' is named after Bernstein (object name, not a named conjecture). It is sometimes called 'the Erdős–Hajnal property B problem', which is a mild naming risk.",
+  "A well-known classical problem, so novelty is low."
+ ],
+ "plain": "Let m(n) be the fewest sets of size n needed so that however you colour the points red and blue, some set is entirely one colour. A random construction shows m(n) is at most about n²·2ⁿ. The best lower bound, from 2000, is about √(n/log n)·2ⁿ. The task is to show that m(n) is at least n^{1/2+δ}·2ⁿ for some fixed δ > 0, a polynomial improvement over the square-root barrier.",
+ "math": "Let $m(n)$ be the minimum number of edges of an $n$-uniform hypergraph that is not 2-colourable (has no vertex 2-colouring without a monochromatic edge). Prove there exist $\\delta>0$ and $c>0$ such that $m(n)\\ge c\\,n^{1/2+\\delta}\\,2^n$ for all $n\\ge1$.",
+ "novelty": 2,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2403.05674",
+  "https://arxiv.org/abs/1602.00218"
+ ]
+}

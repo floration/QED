@@ -1,0 +1,26 @@
+{
+ "id": "QED-E140",
+ "set": "extended",
+ "title": "A point at rational distance from all four corners of a square",
+ "area": "Number theory",
+ "difficulty": 6.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Classical; Guy UPINT D19; Berry (1990); Bremner–Guy.",
+ "premise_risks": [
+  "May be judged geometry rather than number theory (it is a Diophantine problem)",
+  "Famous recreational problem; moderate novelty"
+ ],
+ "plain": "Is there a point in the plane whose distances to all four corners of the unit square are rational numbers? Points at rational distance from three of the corners are dense in the plane, but no point has been found that also works for the fourth corner, and no one has shown that none exists.",
+ "math": "Decide whether there exist $x,y\\in\\mathbb R$ such that $\\sqrt{x^2+y^2}$, $\\sqrt{(x-1)^2+y^2}$, $\\sqrt{x^2+(y-1)^2}$ and $\\sqrt{(x-1)^2+(y-1)^2}$ are all rational. (Any such $x,y$ are automatically rational.)",
+ "novelty": 1,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.numdam.org/item/ASNSP_1990_4_17_4_505_0/",
+  "https://arxiv.org/abs/2403.02030",
+  "https://arxiv.org/abs/2105.05250",
+  "https://arxiv.org/abs/1502.07312"
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "QED-E155",
+ "set": "extended",
+ "title": "Is Euler's constant irrational?",
+ "area": "Analysis",
+ "difficulty": 8.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical (Euler, Mascheroni)",
+ "premise_risks": [
+  "Very famous and probably out of reach (novelty low). It is included because its importance is high and its formal statement is trivial.",
+  "The OpenAI batch claims Catalan's constant irrational. If the same method extends to γ, a claim may appear soon, so recheck before posting."
+ ],
+ "plain": "Euler's constant γ ≈ 0.5772 is the limit of 1 + 1/2 + ... + 1/n − ln n. It also equals −Γ'(1), where Γ is the Gamma function. More than 280 years after Euler, nobody knows whether γ is a fraction. Prove that it is not.",
+ "math": "Prove that $\\gamma=\\lim_{n\\to\\infty}\\left(\\sum_{k=1}^n \\tfrac1k-\\ln n\\right)\\notin\\mathbb{Q}$.",
+ "novelty": 0,
+ "importance": 8,
+ "value": 4,
+ "formal_status": "formalized",
+ "refs": [
+  "https://en.wikipedia.org/wiki/Euler%27s_constant",
+  "https://arxiv.org/abs/1303.1856",
+  "https://arxiv.org/abs/2511.01849"
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "QED-M123",
+ "set": "main",
+ "title": "Halving planes in 3-space: beat n^{5/2}",
+ "area": "Geometry",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Problem of bounding halving planes / k-sets in R^3 (Barany-Furedi-Lovasz 1990, Dey-Edelsbrunner, Sharir-Smorodinsky-Tardos)",
+ "premise_risks": [
+  "OpenAI's unrefereed 2026 preprint claims a power saving for planar halving lines; if its method extends, 3D could fall quickly"
+ ],
+ "plain": "Take n points in 3-space, with n odd and no four on a common plane. A halving triangle is a triple of the points whose plane splits the remaining n-3 points evenly, half on each side. The best upper bound on the number of halving triangles, about n^{5/2}, has not been improved since 2001. Show that the exponent 5/2 can be lowered.",
+ "math": "For $S\\subset\\mathbb{R}^3$ with $|S|=n$ odd and no four points coplanar, let $h(S)$ be the number of $3$-subsets $T\\subseteq S$ such that each open half-space bounded by $\\operatorname{aff}(T)$ contains exactly $(n-3)/2$ points of $S$. Prove that there exist $\\varepsilon>0$ and $C$ with $h(S)\\le C\\,n^{5/2-\\varepsilon}$ for all such $S$.",
+ "novelty": 2,
+ "importance": 8,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://dl.acm.org/doi/10.1007/s00454-001-0005-3",
+  "https://arxiv.org/abs/2403.00412",
+  "https://arxiv.org/abs/1903.07196",
+  "https://jeffe.cs.illinois.edu/open/ksets.html"
+ ]
+}

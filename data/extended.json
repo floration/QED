@@ -3052,5 +3052,757 @@
   ],
   "lean": "import Mathlib\n/-! QED-E132: Optimal sphere packing in dimension 5, 6 or 7\nIn dimensions 5, 6 and 7 the densest known ball packings come from the lattices D5, E6 and E7, which are known to be the best lattice packings. Prove that at least one of them is optimal among all packings.\nInformal statement: Let $\\Delta_n$ be the supremum of upper densities of packings of congruent balls in\n$\\mathbb{R}^n$. Prove that at least one of $\\Delta_5=\\pi^2/(15\\sqrt2)$ (density of $D_5$),\n$\\Delta_6=\\pi^3/(48\\sqrt3)$ (density of $E_6$), $\\Delta_7=\\pi^3/105$ (density of $E_7$) holds.\nFormalization notes:\n* Same packing-density definition as the board's convex-body packing problems (QED-E040),\n  parametrised by the dimension: space `E n = EuclideanSpace ℝ (Fin n)` with `volume`; a packing\n  of congruent copies of `K` is a sequence `g : ℕ → E n ≃ᵢ E n` of isometries with pairwise\n  disjoint interiors `interior (g i '' K)`; upper density = `limsup_{R→∞}` of\n  `vol(⋃ copies ∩ B(0,R)) / vol(B(0,R))` in `ℝ≥0∞`; `packingDensity n K` = supremum over packings.\n  Indexing by ℕ loses nothing (packings of a body with nonempty interior are countable; finite\n  packings have density 0), and limsup about the origin gives the standard supremum (Rogers).\n* Balls: `K = closedBall 0 1` (density is scale invariant). Isometric images of a ball are balls\n  of radius 1, and interiors are open balls, so a packing is exactly a set of unit balls with\n  centres at mutual distance ≥ 2. `Δ n := packingDensity n (closedBall 0 1)`.\n* Constants: centre density of D₅, E₆, E₇ times the unit-ball volume gives\n  `π²/(15√2) ≈ 0.4653`, `π³/(48√3) ≈ 0.3729`, `π³/105 ≈ 0.2953`. The lattice packings give\n  `Δ n ≥` these values, so each equality is equivalent to optimality of the lattice packing among\n  all packings.\n* `Claim` = the disjunction (at least one of the three dimensions is solved by its lattice).\n  `¬Claim` = in each of dimensions 5, 6, 7 some packing has upper density strictly exceeding the\n  lattice value.\n-/\nnamespace OpenProblems.QEDE132\nnoncomputable section\nopen scoped ENNReal\n\n/-- Ambient Euclidean space of dimension `n`. -/\nabbrev E (n : ℕ) : Type := EuclideanSpace ℝ (Fin n)\n\n/-- A packing of congruent copies of `K`: a sequence of isometries of `E n` whose images of `K`\nhave pairwise disjoint interiors. -/\ndef IsPacking {n : ℕ} (K : Set (E n)) (g : ℕ → (E n ≃ᵢ E n)) : Prop :=\n  ∀ i j : ℕ, i ≠ j → Disjoint (interior (g i '' K)) (interior (g j '' K))\n\n/-- Fraction of the ball of radius `R` about the origin covered by the packing. -/\ndef coveredFraction {n : ℕ} (K : Set (E n)) (g : ℕ → (E n ≃ᵢ E n)) (R : ℝ) : ℝ≥0∞ :=\n  MeasureTheory.volume ((⋃ i : ℕ, g i '' K) ∩ Metric.ball (0 : E n) R) /\n    MeasureTheory.volume (Metric.ball (0 : E n) R)\n\n/-- Upper density of a packing: `limsup_{R → ∞}` of the covered fraction. -/\ndef upperDensity {n : ℕ} (K : Set (E n)) (g : ℕ → (E n ≃ᵢ E n)) : ℝ≥0∞ :=\n  Filter.limsup (fun R : ℝ => coveredFraction K g R) Filter.atTop\n\n/-- Maximal packing density of congruent copies of `K` in `E n`. -/\ndef packingDensity (n : ℕ) (K : Set (E n)) : ℝ≥0∞ :=\n  ⨆ (g : ℕ → (E n ≃ᵢ E n)) (_ : IsPacking K g), upperDensity K g\n\n/-- The sphere-packing constant `Δ_n`. -/\ndef spherePackingDensity (n : ℕ) : ℝ≥0∞ :=\n  packingDensity n (Metric.closedBall (0 : E n) 1)\n\n/-- At least one of the lattices D₅, E₆, E₇ is an optimal sphere packing. -/\ndef Claim : Prop :=\n  spherePackingDensity 5 = ENNReal.ofReal (Real.pi ^ 2 / (15 * Real.sqrt 2)) ∨\n  spherePackingDensity 6 = ENNReal.ofReal (Real.pi ^ 3 / (48 * Real.sqrt 3)) ∨\n  spherePackingDensity 7 = ENNReal.ofReal (Real.pi ^ 3 / 105)\n\nend\nend OpenProblems.QEDE132\n",
   "set": "extended"
+ },
+ {
+  "id": "QED-E133",
+  "review_id": "R4-J00",
+  "title": "Beat (3+√2)/2 for diamond-free families",
+  "area": "Combinatorics",
+  "difficulty": 3.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Problem line from Griggs–Lu and Griggs–Li–Lu. Upper bound (3+√2)/2 by Grósz, Methuku, Tompkins (2018). Lower bound 2.1479 by Tompkins (2026). Three-layer bound by Balogh, Hu, Lidický, Liu.",
+  "results": null,
+  "premise_risks": [
+   "The lower bound 2.1479 (and the disproof of the diamond conjecture) rests on an unrefereed July 2026 preprint (arXiv:2607.09497). The Claim itself does not depend on it.",
+   "The Ai–Liu–Song window-density results are an unrefereed 2026 preprint.",
+   "An improved upper bound might exist in a recent preprint not indexed by search."
+  ],
+  "plain": "A family of subsets of {1,...,n} is diamond-free if it contains no four distinct sets A, B, C, D with A ⊂ B ⊂ D and A ⊂ C ⊂ D. For years it was believed that the two middle layers, about 2·binom(n, n/2) sets, are optimal; in July 2026 a random linear-algebra construction beat that with about 2.1479·binom(n, n/2) sets. The best general upper bound, (3+√2)/2 ≈ 2.2071 times binom(n, n/2), dates from 2016–2018. Lower it by any fixed amount.",
+  "math": "Let $La(n,Q_2)$ be the maximum size of $\\mathcal F\\subseteq 2^{[n]}$ containing no four distinct $A,B,C,D\\in\\mathcal F$ with $A\\subsetneq B\\subsetneq D$ and $A\\subsetneq C\\subsetneq D$. Prove that $\\limsup_{n\\to\\infty} La(n,Q_2)/\\binom{n}{\\lfloor n/2\\rfloor} < \\frac{3+\\sqrt2}{2}$. (Known: $\\liminf \\ge 2+\\frac{29}{135}\\prod_{i\\ge1}(1-4^{-i})\\approx 2.1479$; for families inside three consecutive middle layers the density is at most $2.15121$. Stretch goal: determine the limit, whose existence is itself unknown.)",
+  "novelty": 3,
+  "importance": 6,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2607.09497",
+   "https://arxiv.org/abs/1601.06332",
+   "https://arxiv.org/abs/1503.00631",
+   "https://arxiv.org/pdf/2610.28413",
+   "https://arxiv.org/abs/1010.5311"
+  ],
+  "lean": "import Mathlib\n/-! QED-E133: Beat (3+√2)/2 for diamond-free families\nA family of subsets of {1,...,n} is diamond-free if it contains no four distinct sets A, B, C, D with A ⊂ B ⊂ D and A ⊂ C ⊂ D. For years it was believed that the two middle layers, about 2·binom(n, n/2) sets, are optimal; in July 2026 a random linear-algebra construction beat that with about 2.1479·binom(n, n/2) sets. The best general upper bound, (3+√2)/2 ≈ 2.2071 times binom(n, n/2), dates from 2016–2018. Lower it by any fixed amount.\nInformal statement: Let $La(n,Q_2)$ be the maximum size of $\\mathcal F\\subseteq 2^{[n]}$ containing no four distinct $A,B,C,D\\in\\mathcal F$ with $A\\subsetneq B\\subsetneq D$ and $A\\subsetneq C\\subsetneq D$. Prove that $\\limsup_{n\\to\\infty} La(n,Q_2)/\\binom{n}{\\lfloor n/2\\rfloor} < \\frac{3+\\sqrt2}{2}$. (Known: $\\liminf \\ge 2+\\frac{29}{135}\\prod_{i\\ge1}(1-4^{-i})\\approx 2.1479$; for families inside three consecutive middle layers the density is at most $2.15121$. Stretch goal: determine the limit, whose existence is itself unknown.)\nFormalization notes:\n* A family is a `Finset (Finset (Fin n))` (ground set [n] = Fin n). `DiamondFree F` forbids A, B, C, D ∈ F with\n  A ⊂ B ⊂ D, A ⊂ C ⊂ D (strict inclusions) and B ≠ C. Strictness makes A, B, D and A, C, D pairwise distinct, and\n  B ≠ C completes distinctness, so this is exactly the non-induced (weak) Q₂-free condition used for La(n, Q₂)\n  (B, C may be comparable).\n* `La n` is the maximum of `F.card` over diamond-free families (a `Finset.sup` over the finite type of all families;\n  the empty family is diamond-free, so the max is genuine).\n* For a real sequence a, limsup a < L ⇔ ∃ c < L with a n ≤ c eventually. `Claim` states the right-hand side with\n  a n = La n / C(n, ⌊n/2⌋) and L = (3+√2)/2, avoiding a junk-valued limsup. Proving `Claim` = lowering the\n  (3+√2)/2 upper bound by a fixed amount; ¬Claim = limsup La(n,Q₂)/C(n,⌊n/2⌋) ≥ (3+√2)/2 (given the known upper\n  bound, equal to it).\n-/\nnamespace OpenProblems.QEDE133\nnoncomputable section\nopen scoped Classical\n\n/-- No A ⊂ B ⊂ D, A ⊂ C ⊂ D in `F` with B ≠ C (a weak copy of the diamond poset Q₂). -/\ndef DiamondFree {n : ℕ} (F : Finset (Finset (Fin n))) : Prop :=\n  ¬ ∃ A ∈ F, ∃ B ∈ F, ∃ C ∈ F, ∃ D ∈ F, A ⊂ B ∧ B ⊂ D ∧ A ⊂ C ∧ C ⊂ D ∧ B ≠ C\n\n/-- La(n, Q₂): the largest size of a diamond-free family of subsets of [n]. -/\ndef La (n : ℕ) : ℕ :=\n  ((Finset.univ : Finset (Finset (Finset (Fin n)))).filter\n    (fun F : Finset (Finset (Fin n)) => DiamondFree F)).sup Finset.card\n\ndef Claim : Prop :=\n  ∃ c : ℝ, c < (3 + Real.sqrt 2) / 2 ∧\n    ∀ᶠ n : ℕ in Filter.atTop, (La n : ℝ) ≤ c * (Nat.choose n (n / 2) : ℝ)\n\nend\nend OpenProblems.QEDE133\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E134",
+  "review_id": "R4-J01",
+  "title": "Turán density of the tight 5-cycle",
+  "area": "Combinatorics",
+  "difficulty": 4.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Conjectured value from the Mubayi–Rödl construction (the conjecture is usually attributed to them, but the problem is not person-named). Upper bound by Razborov. Related progress by Kamčev, Letzter, Pokrovskiy and the authors of arXiv:2506.03223.",
+  "results": null,
+  "premise_risks": [
+   "The conjecture is sometimes informally attributed to Mubayi and Rödl, which is a mild naming risk. It is normally stated simply as 'π(C_5^3) = 2√3 − 3'.",
+   "The best upper bound might have been sharpened slightly by unpublished flag-algebra runs (for example 0.4683 vs 0.468). This does not affect the target."
+  ],
+  "plain": "A 3-uniform hypergraph is a collection of triples of points. The tight 5-cycle consists of five points v0,...,v4 arranged in a circle together with the five triples of cyclically consecutive points. What is the largest fraction of all triples a hypergraph on n points can contain without a tight 5-cycle, as n grows? An iterated construction achieves 2√3 − 3 ≈ 0.4641, and flag algebras give an upper bound of about 0.468. Prove that 2√3 − 3 is the answer.",
+  "math": "For a 3-graph $H$ write $C_5^{(3)}\\subseteq H$ if there are distinct $v_0,\\dots,v_4\\in V(H)$ with $\\{v_i,v_{i+1},v_{i+2}\\}\\in E(H)$ for all $i\\in\\mathbb Z/5$. Let $\\mathrm{ex}(n)=\\max\\{|E(H)|: |V(H)|=n,\\ C_5^{(3)}\\not\\subseteq H\\}$. Prove that $\\pi(C_5^{(3)}):=\\lim_{n\\to\\infty}\\mathrm{ex}(n)/\\binom n3 = 2\\sqrt3-3$. (The limit exists by averaging; $\\pi(C_5^{(3)})\\ge 2\\sqrt3-3$ is known.)",
+  "novelty": 3,
+  "importance": 6,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2506.03223",
+   "https://arxiv.org/abs/2209.08134",
+   "https://arxiv.org/abs/2412.21011"
+  ],
+  "lean": "import Mathlib\n/-! QED-E134: Turán density of the tight 5-cycle\nA 3-uniform hypergraph is a collection of triples of points. The tight 5-cycle consists of five points v0,...,v4 arranged in a circle together with the five triples of cyclically consecutive points. What is the largest fraction of all triples a hypergraph on n points can contain without a tight 5-cycle, as n grows? An iterated construction achieves 2√3 − 3 ≈ 0.4641, and flag algebras give an upper bound of about 0.468. Prove that 2√3 − 3 is the answer.\nInformal statement: For a 3-graph $H$ write $C_5^{(3)}\\subseteq H$ if there are distinct $v_0,\\dots,v_4\\in V(H)$ with $\\{v_i,v_{i+1},v_{i+2}\\}\\in E(H)$ for all $i\\in\\mathbb Z/5$. Let $\\mathrm{ex}(n)=\\max\\{|E(H)|: |V(H)|=n,\\ C_5^{(3)}\\not\\subseteq H\\}$. Prove that $\\pi(C_5^{(3)}):=\\lim_{n\\to\\infty}\\mathrm{ex}(n)/\\binom n3 = 2\\sqrt3-3$.\nFormalization notes:\n* A 3-graph on `Fin n` is a finset `E` of 3-element subsets of `Fin n` (every 3-graph on an\n  n-vertex set is isomorphic to one of these, and ex(n) is isomorphism invariant).\n* `HasTightC5 E` : there is an injective `f : Fin 5 → Fin n` with `{f i, f (i+1), f (i+2)} ∈ E`\n  for every `i : Fin 5`; addition in `Fin 5` is modulo 5, so this is exactly indexing by ℤ/5.\n  Injectivity makes the five vertices distinct, so each such set really has 3 elements.\n* `ex n` is the maximum of `E.card` over C5-free 3-graphs on `Fin n` (a `Finset.sup` over the\n  finite type of all families; the empty family is C5-free, so this is a genuine maximum).\n* For n < 3 the ratio `ex n / choose n 3` is the junk value 0/0 = 0; irrelevant for the limit.\n* Claim: `ex n / C(n,3) → 2√3 − 3`. The limit is known to exist (the ratio is nonincreasing for\n  n ≥ 3 by averaging), so ¬Claim means π(C_5^{(3)}) ≠ 2√3 − 3 (given the known lower bound,\n  π > 2√3 − 3).\n-/\nnamespace OpenProblems.QEDE134\nnoncomputable section\nopen scoped Classical\nopen Filter Topology\n\n/-- `E` contains a tight 5-cycle on five distinct vertices. -/\ndef HasTightC5 {n : ℕ} (E : Finset (Finset (Fin n))) : Prop :=\n  ∃ f : Fin 5 → Fin n, Function.Injective f ∧\n    ∀ i : Fin 5, ({f i, f (i + 1), f (i + 2)} : Finset (Fin n)) ∈ E\n\n/-- The Turán number of the tight 5-cycle among 3-graphs on `Fin n`. -/\ndef ex (n : ℕ) : ℕ :=\n  ((Finset.univ : Finset (Finset (Finset (Fin n)))).filter\n      (fun E : Finset (Finset (Fin n)) => (∀ e ∈ E, e.card = 3) ∧ ¬ HasTightC5 E)).sup\n    Finset.card\n\ndef Claim : Prop :=\n  Tendsto (fun n : ℕ => ((ex n : ℕ) : ℝ) / ((Nat.choose n 3 : ℕ) : ℝ)) atTop\n    (𝓝 (2 * Real.sqrt 3 - 3))\n\nend\nend OpenProblems.QEDE134\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E135",
+  "review_id": "R4-J03",
+  "title": "Property B: beat the square-root exponent",
+  "area": "Combinatorics",
+  "difficulty": 4.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical problem (Property B, named for F. Bernstein's property; studied by Erdős and Hajnal). Bounds by Erdős, Beck, Radhakrishnan–Srinivasan, Cherkashin–Kozik.",
+  "results": null,
+  "premise_risks": [
+   "'Property B' is named after Bernstein (object name, not a named conjecture). It is sometimes called 'the Erdős–Hajnal property B problem', which is a mild naming risk.",
+   "A well-known classical problem, so novelty is low."
+  ],
+  "plain": "Let m(n) be the fewest sets of size n needed so that however you colour the points red and blue, some set is entirely one colour. A random construction shows m(n) is at most about n²·2ⁿ. The best lower bound, from 2000, is about √(n/log n)·2ⁿ. The task is to show that m(n) is at least n^{1/2+δ}·2ⁿ for some fixed δ > 0, a polynomial improvement over the square-root barrier.",
+  "math": "Let $m(n)$ be the minimum number of edges of an $n$-uniform hypergraph that is not 2-colourable (has no vertex 2-colouring without a monochromatic edge). Prove there exist $\\delta>0$ and $c>0$ such that $m(n)\\ge c\\,n^{1/2+\\delta}\\,2^n$ for all $n\\ge1$.",
+  "novelty": 2,
+  "importance": 7,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2403.05674",
+   "https://arxiv.org/abs/1602.00218"
+  ],
+  "lean": "import Mathlib\n/-! QED-E135: Property B: beat the square-root exponent\nLet m(n) be the fewest sets of size n needed so that however you colour the points red and blue, some set is entirely one colour. A random construction shows m(n) is at most about n²·2ⁿ. The best lower bound, from 2000, is about √(n/log n)·2ⁿ. The task is to show that m(n) is at least n^{1/2+δ}·2ⁿ for some fixed δ > 0, a polynomial improvement over the square-root barrier.\nInformal statement: Let $m(n)$ be the minimum number of edges of an $n$-uniform hypergraph that is not 2-colourable (has no vertex 2-colouring without a monochromatic edge). Prove there exist $\\delta>0$ and $c>0$ such that $m(n)\\ge c\\,n^{1/2+\\delta}\\,2^n$ for all $n\\ge1$.\nFormalization notes: A hypergraph is a finite set `E` of finite subsets of a finite vertex\nset `Fin N` (no repeated edges; repeated edges never help a minimal non-2-colourable\nhypergraph, and any finite vertex set can be relabelled as `Fin N`). `NotTwoColorable E`\nsays every colouring `c : Fin N → Bool` makes some edge monochromatic. Rather than define\n`m n` as an `sInf` (with a junk value for empty sets), the Claim states the lower bound\ndirectly for every n-uniform non-2-colourable hypergraph, which is equivalent to\n`m n ≥ c n^{1/2+δ} 2^n` (for n ≥ 1 such hypergraphs exist, e.g. all n-subsets of a\n(2n−1)-set, so `m n` is a genuine minimum). `n^{1/2+δ}` is the real power `Real.rpow`.\nProving Claim = the polynomial improvement over Radhakrishnan–Srinivasan; ¬Claim = for\nevery δ, c > 0 some n ≥ 1 has m(n) < c n^{1/2+δ} 2^n (equivalently, since m(n) > 0,\nm(n) = O(n^{1/2+δ} 2^n) fails to be beaten: liminf m(n)/(n^{1/2+δ}2^n) = 0 for all δ > 0).\n-/\nnamespace OpenProblems.QEDE135\nnoncomputable section\n\n/-- Every red/blue colouring of the vertices leaves some edge monochromatic. -/\ndef NotTwoColorable {N : ℕ} (E : Finset (Finset (Fin N))) : Prop :=\n  ∀ c : Fin N → Bool, ∃ e ∈ E, ∃ b : Bool, ∀ v ∈ e, c v = b\n\ndef Claim : Prop :=\n  ∃ δ : ℝ, 0 < δ ∧ ∃ C : ℝ, 0 < C ∧\n    ∀ n : ℕ, 1 ≤ n → ∀ N : ℕ, ∀ E : Finset (Finset (Fin N)),\n      (∀ e ∈ E, e.card = n) → NotTwoColorable E →\n        C * (n : ℝ) ^ ((1 : ℝ) / 2 + δ) * (2 : ℝ) ^ n ≤ (E.card : ℝ)\n\nend\nend OpenProblems.QEDE135\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E136",
+  "review_id": "R4-J05",
+  "title": "Does a perfect cuboid exist?",
+  "area": "Number theory",
+  "difficulty": 6.0,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Classical (Euler; Kraitchik; listed as D18 in Guy, Unsolved Problems in Number Theory).",
+  "results": null,
+  "premise_risks": [
+   "Several unrefereed 2026 nonexistence claims (arXiv:2602.00239 math.GM, arXiv:2604.28072) exist; none accepted, but the scorer should know they are out there",
+   "Very famous: low novelty"
+  ],
+  "plain": "Is there a box whose three edges, three face diagonals and space diagonal all have whole-number lengths? Boxes with whole-number edges and face diagonals (Euler bricks, such as 44 × 117 × 240) come in infinite families, but in every known one the space diagonal is irrational. Nobody has found a perfect box or proved that none exists.",
+  "math": "Decide whether there exist positive integers $a,b,c$ such that $a^2+b^2$, $b^2+c^2$, $c^2+a^2$ and $a^2+b^2+c^2$ are all perfect squares.",
+  "novelty": 1,
+  "importance": 5,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://en.wikipedia.org/wiki/Euler_brick",
+   "https://arxiv.org/abs/2401.06784",
+   "https://arxiv.org/abs/2602.00239",
+   "https://arxiv.org/html/2604.28072",
+   "https://arxiv.org/pdf/1506.02215"
+  ],
+  "lean": "import Mathlib\n/-! QED-E136: Does a perfect cuboid exist?\nIs there a box whose three edges, three face diagonals and space diagonal all have whole-number lengths? Boxes with whole-number edges and face diagonals (Euler bricks, such as 44 × 117 × 240) come in infinite families, but in every known one the space diagonal is irrational. Nobody has found a perfect box or proved that none exists.\nInformal statement: Decide whether there exist positive integers $a,b,c$ such that $a^2+b^2$, $b^2+c^2$, $c^2+a^2$ and $a^2+b^2+c^2$ are all perfect squares.\nFormalization notes: Claim asserts that a perfect cuboid exists: positive natural numbers a, b, c\nsuch that the four sums are squares in ℕ (`IsSquare m ↔ ∃ r, m = r * r`). Positivity excludes\ndegenerate boxes such as (a, 0, 0). Proving Claim = exhibiting a perfect cuboid; proving ¬Claim\n= showing none exists. Rational boxes reduce to integer ones by scaling, so this is the full question.\n-/\nnamespace OpenProblems.QEDE136\n\ndef Claim : Prop :=\n  ∃ a b c : ℕ, 0 < a ∧ 0 < b ∧ 0 < c ∧\n    IsSquare (a ^ 2 + b ^ 2) ∧ IsSquare (b ^ 2 + c ^ 2) ∧ IsSquare (c ^ 2 + a ^ 2) ∧\n    IsSquare (a ^ 2 + b ^ 2 + c ^ 2)\n\nend OpenProblems.QEDE136\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E137",
+  "review_id": "R4-J06",
+  "title": "A 3×3 magic square of distinct squares",
+  "area": "Number theory",
+  "difficulty": 5.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "LaBar (College Math. J. 1984); Gardner (Quantum 1996); Guy UPINT D15.",
+  "results": null,
+  "premise_risks": [
+   "Unrefereed nonexistence claim arXiv:2510.08286 (not accepted)",
+   "Famous recreational problem: novelty moderate"
+  ],
+  "plain": "Can nine different perfect squares be arranged in a 3×3 grid so that every row, every column and both diagonals have the same sum? Such squares exist in size 4×4 and larger, and 3×3 examples with seven square entries are known, but no full 3×3 example has been found and none has been ruled out.",
+  "math": "Decide whether there exist integers $x_{ij}$ ($1\\le i,j\\le 3$) such that the nine numbers $x_{ij}^2$ are pairwise distinct and the matrix $(x_{ij}^2)$ is magic: its three row sums, three column sums and two diagonal sums are all equal.",
+  "novelty": 1,
+  "importance": 4,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://en.wikipedia.org/wiki/Magic_square_of_squares",
+   "https://arxiv.org/abs/2609.09351",
+   "https://arxiv.org/abs/2406.09364",
+   "https://arxiv.org/abs/2510.08286"
+  ],
+  "lean": "import Mathlib\n/-! QED-E137: A 3×3 magic square of distinct squares\nCan nine different perfect squares be arranged in a 3×3 grid so that every row, every column and both diagonals have the same sum? Such squares exist in size 4×4 and larger, and 3×3 examples with seven square entries are known, but no full 3×3 example has been found and none has been ruled out.\nInformal statement: Decide whether there exist integers $x_{ij}$ ($1\\le i,j\\le 3$) such that the nine numbers $x_{ij}^2$ are pairwise distinct and the matrix $(x_{ij}^2)$ is magic: its three row sums, three column sums and two diagonal sums are all equal.\nFormalization notes:\n* `IsMagic M` says the three row sums, three column sums, the main diagonal and the\n  anti-diagonal of `M : Fin 3 → Fin 3 → ℤ` all equal the sum of row 0.\n* Distinctness of the nine squares is injectivity of (i,j) ↦ x i j ^ 2 on `Fin 3 × Fin 3`.\n  This excludes trivial solutions (e.g. all entries equal); it also forces at most one entry\n  to be 0, and allows the integers x i j to be negative (only their squares matter).\n* `Claim` asserts existence. Proving `Claim` = exhibiting a 3×3 magic square of nine\n  distinct squares; proving `¬Claim` = showing none exists.\n-/\nnamespace OpenProblems.QEDE137\nnoncomputable section\n\n/-- All row, column and both diagonal sums of `M` are equal. -/\ndef IsMagic (M : Fin 3 → Fin 3 → ℤ) : Prop :=\n  let S : ℤ := M 0 0 + M 0 1 + M 0 2\n  (∀ i : Fin 3, M i 0 + M i 1 + M i 2 = S) ∧\n  (∀ j : Fin 3, M 0 j + M 1 j + M 2 j = S) ∧\n  M 0 0 + M 1 1 + M 2 2 = S ∧\n  M 0 2 + M 1 1 + M 2 0 = S\n\ndef Claim : Prop :=\n  ∃ x : Fin 3 → Fin 3 → ℤ,\n    Function.Injective (fun q : Fin 3 × Fin 3 => x q.1 q.2 ^ 2) ∧\n    IsMagic (fun i j : Fin 3 => x i j ^ 2)\n\nend\nend OpenProblems.QEDE137\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E138",
+  "review_id": "R4-J07",
+  "title": "Infinitely many non-Wieferich primes",
+  "area": "Number theory",
+  "difficulty": 5.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Folklore; Silverman (1988) conditional proof; Guy UPINT A3.",
+  "results": null,
+  "premise_risks": [
+   "Very well-known; novelty modest",
+   "Must not be confused with the (also open) question of infinitely many Wieferich primes"
+  ],
+  "plain": "By Fermat's little theorem, every odd prime p divides 2^(p−1)−1. Usually p^2 does not; the only known exceptions are 1093 and 3511, and there are none other below 2^64. Yet nobody can prove that the usual case happens infinitely often: are there infinitely many primes p with p^2 not dividing 2^(p−1)−1?",
+  "math": "Prove that the set $\\{p\\text{ prime}: 2^{p-1}\\not\\equiv 1 \\pmod{p^2}\\}$ is infinite.",
+  "novelty": 1,
+  "importance": 6,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://en.wikipedia.org/wiki/Wieferich_prime",
+   "https://arxiv.org/abs/1610.00488",
+   "https://arxiv.org/abs/2508.08472",
+   "https://arxiv.org/abs/2310.06809"
+  ],
+  "lean": "import Mathlib\n/-! QED-E138: Infinitely many non-Wieferich primes\nBy Fermat's little theorem, every odd prime p divides 2^(p−1)−1. Usually p^2 does not; the only known exceptions are 1093 and 3511, and there are none other below 2^64. Yet nobody can prove that the usual case happens infinitely often: are there infinitely many primes p with p^2 not dividing 2^(p−1)−1?\nInformal statement: Prove that the set $\\{p\\text{ prime}: 2^{p-1}\\not\\equiv 1 \\pmod{p^2}\\}$ is infinite.\nFormalization notes: Stated in ℕ. Natural-number subtraction is harmless since\n2^(p−1) ≥ 1, so `2^(p-1) - 1` is the true value. The prime 2 is included (4 ∤ 1), which is\nthe standard convention and changes nothing about infiniteness. Proving Claim = infinitely\nmany non-Wieferich primes (base 2); ¬Claim = all but finitely many primes are Wieferich.\n-/\nnamespace OpenProblems.QEDE138\nnoncomputable section\n\ndef Claim : Prop :=\n  Set.Infinite {p : ℕ | p.Prime ∧ ¬ (p ^ 2 ∣ 2 ^ (p - 1) - 1)}\n\nend\nend OpenProblems.QEDE138\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E139",
+  "review_id": "R4-J09",
+  "title": "Does the odd greedy algorithm always terminate?",
+  "area": "Number theory",
+  "difficulty": 5.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Stein, Selfridge, Graham (via Guy UPINT; Klee–Wagon 1991); erdosproblems.com #282.",
+  "results": null,
+  "premise_risks": [
+   "Appears on erdosproblems.com; not itself person-named, but the owner may count 'Erdős problem #282' as person-attributed",
+   "May be considered a 'Collatz-type' problem with little available theory"
+  ],
+  "plain": "Every fraction with an odd denominator can be written as a sum of distinct unit fractions with odd denominators. The odd greedy algorithm tries to find such a sum by repeatedly subtracting the largest unit fraction 1/n, with n odd, that still fits. Does it always stop after finitely many steps when the starting fraction has an odd denominator? In every case tested it does, sometimes only after surprisingly many steps.",
+  "math": "For $x\\in\\mathbb Q\\cap(0,1)$ with odd denominator, set $x_0=x$. While $x_k>0$, let $n_k$ be the least odd integer with $1/n_k\\le x_k$ and set $x_{k+1}=x_k-1/n_k$. Prove or disprove: for every such $x$ there is a $k$ with $x_k=0$.",
+  "novelty": 2,
+  "importance": 4,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://en.wikipedia.org/wiki/Odd_greedy_expansion",
+   "https://google-deepmind.github.io/formal-conjectures/doc/FormalConjectures/ErdosProblems/282.html",
+   "https://arxiv.org/abs/2309.07280",
+   "https://www.mathpages.com/home/kmath478.htm",
+   "https://ics.uci.edu/~eppstein/numth/egypt/3-179.html"
+  ],
+  "lean": "import Mathlib\n/-! QED-E139: Does the odd greedy algorithm always terminate?\nEvery fraction with an odd denominator can be written as a sum of distinct unit fractions with odd denominators. The odd greedy algorithm tries to find such a sum by repeatedly subtracting the largest unit fraction 1/n, with n odd, that still fits. Does it always stop after finitely many steps when the starting fraction has an odd denominator? In every case tested it does, sometimes only after surprisingly many steps.\nInformal statement: For $x\\in\\mathbb Q\\cap(0,1)$ with odd denominator, set $x_0=x$. While $x_k>0$, let $n_k$ be the least odd integer with $1/n_k\\le x_k$ and set $x_{k+1}=x_k-1/n_k$. Prove or disprove: for every such $x$ there is a $k$ with $x_k=0$.\nFormalization notes:\n* `IsLeastOdd n y`: n is odd, 1/n ≤ y, and no odd m with 1/m ≤ y is smaller, i.e. n is the least odd integer with\n  1/n ≤ y (the largest odd-denominator unit fraction not exceeding y). Odd n ≥ 1, so no division by zero; for y > 0\n  such n exists and is unique, so each greedy step is uniquely determined.\n* `Terminates x`: there are k and sequences xs, ns with xs 0 = x, and for every i < k: xs i > 0, ns i is the least odd\n  integer with 1/(ns i) ≤ xs i, and xs (i+1) = xs i − 1/(ns i); and xs k = 0. Since the greedy step is\n  deterministic and defined whenever the current value is positive, such a run exists iff the odd greedy algorithm\n  started at x reaches 0 after k steps. (Stating it as existence of a run avoids defining the step via Nat.find,\n  which would need an in-file existence proof.)\n* `Claim`: every rational x in (0,1) with odd denominator (x.den is the reduced denominator) terminates. Proving\n  `Claim` = the algorithm always halts; ¬Claim = some such x on which it runs forever.\n-/\nnamespace OpenProblems.QEDE139\n\n/-- n is the least odd natural number with 1/n ≤ y. -/\ndef IsLeastOdd (n : ℕ) (y : ℚ) : Prop :=\n  Odd n ∧ (1 : ℚ) / (n : ℚ) ≤ y ∧ ∀ m : ℕ, Odd m → (1 : ℚ) / (m : ℚ) ≤ y → n ≤ m\n\n/-- The odd greedy algorithm started at x reaches 0 after finitely many steps. -/\ndef Terminates (x : ℚ) : Prop :=\n  ∃ k : ℕ, ∃ xs : ℕ → ℚ, ∃ ns : ℕ → ℕ, xs 0 = x ∧\n    (∀ i : ℕ, i < k → 0 < xs i ∧ IsLeastOdd (ns i) (xs i) ∧ xs (i + 1) = xs i - 1 / (ns i : ℚ)) ∧\n    xs k = 0\n\ndef Claim : Prop :=\n  ∀ x : ℚ, 0 < x → x < 1 → Odd x.den → Terminates x\n\nend OpenProblems.QEDE139\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E140",
+  "review_id": "R4-J11",
+  "title": "A point at rational distance from all four corners of a square",
+  "area": "Number theory",
+  "difficulty": 6.0,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Classical; Guy UPINT D19; Berry (1990); Bremner–Guy.",
+  "results": null,
+  "premise_risks": [
+   "May be judged geometry rather than number theory (it is a Diophantine problem)",
+   "Famous recreational problem; moderate novelty"
+  ],
+  "plain": "Is there a point in the plane whose distances to all four corners of the unit square are rational numbers? Points at rational distance from three of the corners are dense in the plane, but no point has been found that also works for the fourth corner, and no one has shown that none exists.",
+  "math": "Decide whether there exist $x,y\\in\\mathbb R$ such that $\\sqrt{x^2+y^2}$, $\\sqrt{(x-1)^2+y^2}$, $\\sqrt{x^2+(y-1)^2}$ and $\\sqrt{(x-1)^2+(y-1)^2}$ are all rational. (Any such $x,y$ are automatically rational.)",
+  "novelty": 1,
+  "importance": 5,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.numdam.org/item/ASNSP_1990_4_17_4_505_0/",
+   "https://arxiv.org/abs/2403.02030",
+   "https://arxiv.org/abs/2105.05250",
+   "https://arxiv.org/abs/1502.07312"
+  ],
+  "lean": "import Mathlib\n/-! QED-E140: A point at rational distance from all four corners of a square\nIs there a point in the plane whose distances to all four corners of the unit square are rational numbers? Points at rational distance from three of the corners are dense in the plane, but no point has been found that also works for the fourth corner, and no one has shown that none exists.\nInformal statement: Decide whether there exist $x,y\\in\\mathbb R$ such that $\\sqrt{x^2+y^2}$, $\\sqrt{(x-1)^2+y^2}$, $\\sqrt{x^2+(y-1)^2}$ and $\\sqrt{(x-1)^2+(y-1)^2}$ are all rational.\nFormalization notes: Claim asserts existence of real x, y such that each of the four Euclidean\ndistances (written with `Real.sqrt` of a nonnegative quantity, so no junk values arise) equals the\nimage of some rational number. The point is allowed anywhere in the plane (inside, on, or outside\nthe square), matching the standard problem. Proving ¬Claim = no such point exists.\n-/\nnamespace OpenProblems.QEDE140\nnoncomputable section\n\ndef Claim : Prop :=\n  ∃ x y : ℝ,\n    (∃ q : ℚ, Real.sqrt (x ^ 2 + y ^ 2) = (q : ℝ)) ∧\n    (∃ q : ℚ, Real.sqrt ((x - 1) ^ 2 + y ^ 2) = (q : ℝ)) ∧\n    (∃ q : ℚ, Real.sqrt (x ^ 2 + (y - 1) ^ 2) = (q : ℝ)) ∧\n    (∃ q : ℚ, Real.sqrt ((x - 1) ^ 2 + (y - 1) ^ 2) = (q : ℝ))\n\nend\nend OpenProblems.QEDE140\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E141",
+  "review_id": "R4-J12",
+  "title": "An odd weird number",
+  "area": "Number theory",
+  "difficulty": 5.5,
+  "grade": "C",
+  "provenance": "Curated",
+  "credit": "Benkoski and Erdős (1974); erdosproblems.com #470.",
+  "results": null,
+  "premise_risks": [
+   "Attributed as an Erdős problem (#470); the question itself is not person-named",
+   "Abundancy-cap context uses an unrefereed 2026 preprint",
+   "Already formalized in google-deepmind/formal-conjectures (helpful, but shows it is well known)"
+  ],
+  "plain": "A number is abundant if its proper divisors add up to more than the number itself, and weird if it is abundant but no selection of its distinct proper divisors adds up to exactly the number (70 is the smallest). Weird numbers have positive density, but every known one is even. Does an odd weird number exist?",
+  "math": "Decide whether there exists an odd $n\\in\\mathbb N$ with $\\sigma(n)>2n$ such that no subset $S$ of the proper divisors of $n$ satisfies $\\sum_{d\\in S}d=n$.",
+  "novelty": 2,
+  "importance": 4,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://google-deepmind.github.io/formal-conjectures/FormalConjectures/ErdosProblems/470.html",
+   "https://en.wikipedia.org/wiki/Weird_number",
+   "https://arxiv.org/abs/2207.12906",
+   "https://proofwiki.org/wiki/Do_Odd_Weird_Numbers_Exist%3F"
+  ],
+  "lean": "import Mathlib\n/-! QED-E141: An odd weird number\nA number is abundant if its proper divisors add up to more than the number itself, and weird if it is abundant but no selection of its distinct proper divisors adds up to exactly the number (70 is the smallest). Weird numbers have positive density, but every known one is even. Does an odd weird number exist?\nInformal statement: Decide whether there exists an odd $n\\in\\mathbb N$ with $\\sigma(n)>2n$ such that no subset $S$ of the proper divisors of $n$ satisfies $\\sum_{d\\in S}d=n$.\nFormalization notes:\n* σ(n) is `∑ d ∈ n.divisors, d`; abundance is 2n < σ(n) (equivalently the proper divisors\n  sum to more than n).\n* Not semiperfect: no `S ⊆ n.properDivisors` (a Finset, so a set of distinct proper divisors)\n  has sum n.\n* `Odd n` excludes n = 0 (where `divisors` is the junk value ∅).\n* `Claim` asserts an odd weird number exists; `¬Claim` says none exists.\n  Sanity check: with `Odd n` dropped, n = 70 witnesses the body.\n-/\nnamespace OpenProblems.QEDE141\nnoncomputable section\n\n/-- `n` is weird: abundant but not a sum of distinct proper divisors. -/\ndef Weird (n : ℕ) : Prop :=\n  2 * n < ∑ d ∈ n.divisors, d ∧\n    ¬ ∃ S : Finset ℕ, S ⊆ n.properDivisors ∧ ∑ d ∈ S, d = n\n\ndef Claim : Prop :=\n  ∃ n : ℕ, Odd n ∧ Weird n\n\nend\nend OpenProblems.QEDE141\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E142",
+  "review_id": "R4-J13",
+  "title": "Three mutually orthogonal Latin squares of order 10",
+  "area": "Algebra",
+  "difficulty": 5.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical. Recent work by Myrvold, McKay–Meynert–Myrvold, and the 2026 SAT study arXiv:2503.10504",
+  "results": null,
+  "premise_risks": [
+   "A massive SAT/computer search could settle it at any time (SAT groups are actively working on it)",
+   "Low novelty: very well known"
+  ],
+  "plain": "Two Latin squares of the same size are orthogonal if, when you lay one on top of the other, every ordered pair of symbols appears exactly once. Euler's 36-officers problem shows no orthogonal pair exists for order 6, but orthogonal pairs of order 10 were found in 1959. Nobody knows whether three Latin squares of order 10 can be pairwise orthogonal.",
+  "math": "Let $N(n)$ be the maximum number of pairwise orthogonal Latin squares of order $n$. Decide whether $N(10)\\ge 3$, i.e. whether there exist $L_1,L_2,L_3:[10]\\times[10]\\to[10]$, each a Latin square, such that for every $a\\ne b$ the map $(i,j)\\mapsto (L_a(i,j),L_b(i,j))$ is a bijection $[10]^2\\to[10]^2$.",
+  "novelty": 1,
+  "importance": 5,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v33i1p30",
+   "https://arxiv.org/abs/2503.10504",
+   "https://arxiv.org/pdf/2601.22205"
+  ],
+  "lean": "import Mathlib\n/-! QED-E142: Three mutually orthogonal Latin squares of order 10\nTwo Latin squares of the same size are orthogonal if, when you lay one on top of the other, every ordered pair of symbols appears exactly once. Euler's 36-officers problem shows no orthogonal pair exists for order 6, but orthogonal pairs of order 10 were found in 1959. Nobody knows whether three Latin squares of order 10 can be pairwise orthogonal.\nInformal statement: Let $N(10)$ be the maximum number of pairwise orthogonal Latin squares of order $10$. Decide whether $N(10)\\ge 3$, i.e. whether there exist $L_1,L_2,L_3:[10]\\times[10]\\to[10]$, each a Latin square, such that for every $a\\ne b$ the map $(i,j)\\mapsto (L_a(i,j),L_b(i,j))$ is a bijection $[10]^2\\to[10]^2$.\nFormalization notes: A Latin square of order 10 is `L : Fin 10 → Fin 10 → Fin 10` with every\nrow `L i` and every column `fun i => L i j` bijective. Two squares are orthogonal when\n`(i,j) ↦ (L i j, M i j)` is a bijection `Fin 10 × Fin 10 → Fin 10 × Fin 10`. A triple is\n`L : Fin 3 → (Fin 10 → Fin 10 → Fin 10)`, pairwise orthogonal for distinct indices\n(orthogonality forces the three squares to be distinct). Claim = a set of 3 MOLS(10)\nexists (N(10) ≥ 3); ¬Claim = N(10) = 2 (given the known N(10) ≥ 2).\n-/\nnamespace OpenProblems.QEDE142\nnoncomputable section\n\ndef IsLatin (L : Fin 10 → Fin 10 → Fin 10) : Prop :=\n  (∀ i : Fin 10, Function.Bijective (L i)) ∧\n    ∀ j : Fin 10, Function.Bijective (fun i : Fin 10 => L i j)\n\ndef Orth (L M : Fin 10 → Fin 10 → Fin 10) : Prop :=\n  Function.Bijective (fun p : Fin 10 × Fin 10 => (L p.1 p.2, M p.1 p.2))\n\ndef Claim : Prop :=\n  ∃ L : Fin 3 → (Fin 10 → Fin 10 → Fin 10),\n    (∀ a : Fin 3, IsLatin (L a)) ∧ ∀ a b : Fin 3, a ≠ b → Orth (L a) (L b)\n\nend\nend OpenProblems.QEDE142\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E143",
+  "review_id": "R4-J14",
+  "title": "Does a projective plane of order 12 exist?",
+  "area": "Algebra",
+  "difficulty": 6.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical (Veblen–Bussey era question). Partial results by Janko, van Trung and others.",
+  "results": null,
+  "premise_risks": [
+   "Very well known, so novelty is low",
+   "May be judged a 'famous problem' (the prime power conjecture for planes), but the specific order-12 case is the natural unnamed sub-question",
+   "Overlaps thematically with MOLS(10) (both are MOLS questions); the owner may want only one"
+  ],
+  "plain": "A finite projective plane of order n has n^2+n+1 points and the same number of lines. Every line has n+1 points, and any two points lie on exactly one common line. Planes exist whenever n is a prime power, they are impossible for n = 6 and n = 10, and no plane is known for any other n. The smallest unsettled order is 12.",
+  "math": "Decide whether there exists a finite incidence structure with $157$ points and $157$ lines in which every line contains exactly $13$ points, every point lies on exactly $13$ lines, and any two distinct points lie on exactly one common line. Equivalently: is there a $157\\times157$ $0/1$ matrix $A$ with $AA^{\\mathsf T}=12I+J$, or equivalently are there $11$ mutually orthogonal Latin squares of order $12$?",
+  "novelty": 1,
+  "importance": 7,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.emergentmind.com/open-problems/existence-projective-planes-non-prime-power-orders-order-12",
+   "https://cs.uwaterloo.ca/~cbright/talks/canadam2025.pdf",
+   "https://ajc-new.maths.uq.edu.au/pdf/74/ajc_v74_p112.pdf",
+   "https://www.homepages.ucl.ac.uk/~ucahbdo/FiniteProjectivePlanes.pdf"
+  ],
+  "lean": "import Mathlib\n/-! QED-E143: Does a projective plane of order 12 exist?\nA finite projective plane of order n has n^2+n+1 points and the same number of lines. Every line has n+1 points, and any two points lie on exactly one common line. Planes exist whenever n is a prime power, they are impossible for n = 6 and n = 10, and no plane is known for any other n. The smallest unsettled order is 12.\nInformal statement: Decide whether there exists a finite incidence structure with $157$ points and $157$ lines in which every line contains exactly $13$ points, every point lies on exactly $13$ lines, and any two distinct points lie on exactly one common line. Equivalently: is there a $157\\times157$ $0/1$ matrix $A$ with $AA^{\\mathsf T}=12I+J$, or equivalently are there $11$ mutually orthogonal Latin squares of order $12$?\nFormalization notes:\n* Points are Fin 157; lines are 13-element subsets of the points, collected in a Finset B (so lines are distinct as\n  point sets, as in a projective plane). `Claim`: |B| = 157, every line has 13 points, and any two distinct points\n  lie on exactly one line of B.\n* This is exactly a projective plane of order 12: a 2-(157,13,1) design. Counting gives each point on\n  156/12 = 13 lines and |B| = 157·156/(13·12) = 157 (so the |B| condition is redundant but stated for fidelity), and\n  two distinct lines meet in exactly one point (Fisher/symmetric-design argument); non-degeneracy is automatic.\n  Conversely a projective plane of order 12 gives such B.\n* Decision problem: proving `Claim` = constructing a projective plane of order 12; ¬Claim = none exists.\n-/\nnamespace OpenProblems.QEDE143\n\ndef Claim : Prop :=\n  ∃ B : Finset (Finset (Fin 157)), B.card = 157 ∧ (∀ b ∈ B, b.card = 13) ∧\n    ∀ x y : Fin 157, x ≠ y → ∃! b : Finset (Fin 157), b ∈ B ∧ x ∈ b ∧ y ∈ b\n\nend OpenProblems.QEDE143\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E144",
+  "review_id": "R4-J16",
+  "title": "Every non-abelian p-group has a non-inner automorphism of order p",
+  "area": "Algebra",
+  "difficulty": 6.0,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Y. Berkovich (Kourovka Notebook Problem 4.13); survey by Sarkar–Joshi",
+  "results": null,
+  "premise_risks": [
+   "Naming: usually called the 'non-inner automorphism conjecture', but some papers call it 'Berkovich's conjecture'. The owner may treat it as person-named.",
+   "Possible incremental partial results in 2025-26 that I did not find; no resolution claim found"
+  ],
+  "plain": "Every group acts on itself by conjugation, and these 'inner' automorphisms are its obvious symmetries. Does every finite non-abelian group whose order is a power of a prime p have an automorphism that is not inner and that gives the identity when applied p times? Gaschütz proved in 1966 that a non-inner automorphism of p-power order always exists, but getting order exactly p has resisted proof for decades.",
+  "math": "For every prime $p$ and every finite non-abelian $p$-group $G$, prove that there exists $\\varphi\\in\\mathrm{Aut}(G)\\setminus\\mathrm{Inn}(G)$ with $\\varphi^p=\\mathrm{id}$ (such a $\\varphi$ has order exactly $p$), or find a counterexample.",
+  "novelty": 2,
+  "importance": 6,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1901.03560",
+   "https://arxiv.org/abs/2505.04125",
+   "https://arxiv.org/abs/2406.10623",
+   "https://arxiv.org/abs/1702.02293",
+   "https://arxiv.org/abs/2503.00954"
+  ],
+  "lean": "import Mathlib\n/-! QED-E144: Every non-abelian p-group has a non-inner automorphism of order p\nEvery group acts on itself by conjugation, and these 'inner' automorphisms are its obvious symmetries. Does every finite non-abelian group whose order is a power of a prime p have an automorphism that is not inner and that gives the identity when applied p times? Gaschütz proved in 1966 that a non-inner automorphism of p-power order always exists, but getting order exactly p has resisted proof for decades.\nInformal statement: For every prime $p$ and every finite non-abelian $p$-group $G$, prove that there exists $\\varphi\\in\\mathrm{Aut}(G)\\setminus\\mathrm{Inn}(G)$ with $\\varphi^p=\\mathrm{id}$ (such a $\\varphi$ has order exactly $p$), or find a counterexample.\nFormalization notes:\n* `MulAut G` is Aut(G) (a group under composition); Inn(G) is the range of the\n  conjugation hom `MulAut.conj : G →* MulAut G`.\n* `IsPGroup p G` with `Finite G` means |G| is a power of p. Non-abelian is stated as\n  `∃ a b, a * b ≠ b * a`.\n* φ ^ p = 1 together with φ ∉ Inn(G) (so φ ≠ 1) and p prime gives order exactly p.\n* Groups are taken in `Type` (universe 0); every finite group is isomorphic to one in `Type`,\n  so this loses no generality.\n* `Claim` is the conjecture; `¬Claim` is a counterexample.\n-/\nnamespace OpenProblems.QEDE144\nnoncomputable section\n\ndef Claim : Prop :=\n  ∀ (p : ℕ), p.Prime → ∀ (G : Type) [Group G] [Finite G], IsPGroup p G →\n    (∃ a b : G, a * b ≠ b * a) →\n    ∃ φ : MulAut G, φ ^ p = 1 ∧ φ ∉ (MulAut.conj : G →* MulAut G).range\n\nend\nend OpenProblems.QEDE144\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E145",
+  "review_id": "R4-J17",
+  "title": "No perfect single-error-correcting code over a 6-letter alphabet",
+  "area": "Algebra",
+  "difficulty": 6.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Folklore conjecture on perfect codes over non-prime-power alphabets; Golomb–Posner, Heden–Roos, Heden's survey",
+  "results": null,
+  "premise_risks": [
+   "Exact list of excluded lengths for q=6 not fully verified (some other paper might exclude 43); does not affect the general claim",
+   "Heden–Roos 2011 citation details from secondary source"
+  ],
+  "plain": "A code of words of length n over a 6-letter alphabet is 1-perfect if every possible word is either a codeword or differs from exactly one codeword in exactly one position. Over alphabets whose size is a prime power, such codes (Hamming codes) exist in infinitely many lengths. Over 6 letters none is known for n≥2. Counting arguments and Lloyd's theorem leave only lengths 7, 19, 43, 97, 115, 259, ..., and only 7 and 19 have been ruled out. Prove that none exists.",
+  "math": "Let $H(n,6)=\\{0,\\dots,5\\}^n$ with the Hamming distance $d$. Prove that for no $n\\ge2$ is there $C\\subseteq H(n,6)$ such that every $x\\in H(n,6)$ has exactly one $c\\in C$ with $d(x,c)\\le1$. (Necessary conditions: $1+5n=2^a3^b$ and, by Lloyd's theorem, $6\\mid 1+5n$, so $n\\in\\{7,19,43,97,115,259,\\dots\\}$. The cases $n=7$ (Golomb\\u2013Posner) and $n=19$ (Heden\\u2013Roos) are excluded.)",
+  "novelty": 2,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2403.10992",
+   "https://arxiv.org/abs/2405.03347",
+   "https://arxiv.org/abs/2607.27555",
+   "https://arxiv.org/abs/2008.13260"
+  ],
+  "lean": "import Mathlib\n/-! QED-E145: No perfect single-error-correcting code over a 6-letter alphabet\nA code of words of length n over a 6-letter alphabet is 1-perfect if every possible word is either a codeword or differs from exactly one codeword in exactly one position. Over alphabets whose size is a prime power, such codes (Hamming codes) exist in infinitely many lengths. Over 6 letters none is known for n≥2. Counting arguments and Lloyd's theorem leave only lengths 7, 19, 43, 97, 115, 259, ..., and only 7 and 19 have been ruled out. Prove that none exists.\nInformal statement: Let $H(n,6)=\\{0,\\dots,5\\}^n$ with the Hamming distance $d$. Prove that for no $n\\ge2$ is there $C\\subseteq H(n,6)$ such that every $x\\in H(n,6)$ has exactly one $c\\in C$ with $d(x,c)\\le1$.\nFormalization notes: Words are `Fin n → Fin 6`; distance is Mathlib's `hammingDist`\n(number of coordinates where two words differ). A 1-perfect code is a finite set `C` of\nwords with every word within distance 1 of exactly one codeword (balls of radius 1 tile\nthe space). The cases n = 0, 1 are excluded since they are trivially perfect (a single\ncodeword). Claim = no 1-perfect code over a 6-letter alphabet for any length n ≥ 2;\n¬Claim = such a code exists for some n ≥ 2 (necessarily n ∈ {43, 97, 115, 259, ...}).\n-/\nnamespace OpenProblems.QEDE145\nnoncomputable section\n\ndef Claim : Prop :=\n  ∀ n : ℕ, 2 ≤ n → ¬ ∃ C : Finset (Fin n → Fin 6),\n    ∀ x : Fin n → Fin 6, ∃! c : Fin n → Fin 6, c ∈ C ∧ hammingDist x c ≤ 1\n\nend\nend OpenProblems.QEDE145\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E146",
+  "review_id": "R4-J19",
+  "title": "Eight points with integer distances in general position",
+  "area": "Geometry",
+  "difficulty": 3.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Question posed by Kreisel and Kurz (2008), in the line of Erdos's question on integral point sets in general position",
+  "results": null,
+  "premise_risks": [
+   "Could be resolved by a large computer search (it is a recognised open problem with refereed literature, but a positive answer might be pure computation)",
+   "Erdos's broader question is attributed to a person, but this specific 8-point question is unnamed"
+  ],
+  "plain": "Can you place eight points in the plane so that every pair is an integer distance apart, no three points lie on a line, and no four lie on a circle? Seven such points were found by computer in 2008. Nobody has found eight or shown that eight is impossible.",
+  "math": "Decide whether there exist pairwise distinct $p_1,\\dots,p_8\\in\\mathbb{R}^2$ such that $|p_i-p_j|\\in\\mathbb{Z}$ for all $i,j$, no three of the $p_i$ are collinear, and no four of the $p_i$ are concyclic.",
+  "novelty": 3,
+  "importance": 4,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/0804.1303",
+   "https://arxiv.org/abs/2401.10821",
+   "https://arxiv.org/html/2407.08121v1",
+   "https://www.emergentmind.com/open-problems/arbitrarily-large-integer-distance-plane-sets-no-3-collinear-no-4-concyclic"
+  ],
+  "lean": "import Mathlib\n/-! QED-E146: Eight points with integer distances in general position\nCan you place eight points in the plane so that every pair is an integer distance apart, no three points lie on a line, and no four lie on a circle? Seven such points were found by computer in 2008. Nobody has found eight or shown that eight is impossible.\nInformal statement: Decide whether there exist pairwise distinct $p_1,\\dots,p_8\\in\\mathbb{R}^2$ such that $|p_i-p_j|\\in\\mathbb{Z}$ for all $i,j$, no three of the $p_i$ are collinear, and no four of the $p_i$ are concyclic.\nFormalization notes:\n* The plane is `EuclideanSpace ℝ (Fin 2)` with its Euclidean `dist`.\n* Integer distances: for all i, j there is an integer m with `dist (p i) (p j) = m`.\n* No three collinear: for every 3-element index set s, the image point set is not `Collinear ℝ`.\n* No four concyclic: for every 4-element index set s, the image is not\n  `EuclideanGeometry.Cospherical` (some center and radius with all points at that distance).\n  In the plane, cospherical = concyclic (Mathlib's `Concyclic` adds coplanarity, automatic in\n  dimension 2), so we use `Cospherical` directly. Radius 0 is impossible for distinct points.\n* `Function.Injective p` gives pairwise distinct points (also implied by the collinearity condition).\n* Claim = such 8 points exist; ¬Claim = they do not.\n-/\nnamespace OpenProblems.QEDE146\nnoncomputable section\n\ndef Claim : Prop :=\n  ∃ p : Fin 8 → EuclideanSpace ℝ (Fin 2), Function.Injective p ∧\n    (∀ i j : Fin 8, ∃ m : ℤ, dist (p i) (p j) = (m : ℝ)) ∧\n    (∀ s : Finset (Fin 8), s.card = 3 → ¬ Collinear ℝ (p '' (s : Set (Fin 8)))) ∧\n    (∀ s : Finset (Fin 8), s.card = 4 →\n      ¬ EuclideanGeometry.Cospherical (p '' (s : Set (Fin 8))))\n\nend\nend OpenProblems.QEDE146\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E147",
+  "review_id": "R4-J20",
+  "title": "How many faces can a convex space-filler have?",
+  "area": "Geometry",
+  "difficulty": 4.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Grunbaum and Shephard, 'Tilings with congruent tiles', Bull. AMS 1980, Problem (G)",
+  "results": null,
+  "premise_risks": [
+   "The 54-faced Wolfram 'space-filling polyhedron' must be confirmed non-convex (if convex and genuine it would only beat the record, not settle boundedness)",
+   "Possible unlocated progress in crystallographic literature on non-isohedral convex tiles"
+  ],
+  "plain": "A convex polyhedron is a space-filler if congruent copies of it fill all of 3-space with no gaps or overlaps. In the plane a convex tile has at most 6 sides, but in space the record is 38 faces (Engel, 1981). Is there any finite upper bound at all on the number of faces of a convex space-filler?",
+  "math": "Call a convex polytope $P\\subset\\mathbb{R}^3$ with nonempty interior a monohedral prototile if there are isometries $g_1,g_2,\\dots$ of $\\mathbb{R}^3$ with $\\bigcup_i g_iP=\\mathbb{R}^3$ and $\\operatorname{int}(g_iP)\\cap\\operatorname{int}(g_jP)=\\emptyset$ for $i\\neq j$ (the tiling need not be face-to-face, isohedral or periodic). Decide whether there is $N<\\infty$ such that every monohedral prototile in $\\mathbb{R}^3$ has at most $N$ facets.",
+  "novelty": 2,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://www.ams.org/journals/bull/1980-03-03/S0273-0979-1980-14827-2/S0273-0979-1980-14827-2.pdf",
+   "https://en.wikipedia.org/wiki/Plesiohedron",
+   "https://mathworld.wolfram.com/EngelPolyhedra.html",
+   "https://arxiv.org/pdf/0708.2114"
+  ],
+  "lean": "import Mathlib\n/-! QED-E147: How many faces can a convex space-filler have?\nA convex polyhedron is a space-filler if congruent copies of it fill all of 3-space with no gaps or overlaps. In the plane a convex tile has at most 6 sides, but in space the record is 38 faces (Engel, 1981). Is there any finite upper bound at all on the number of faces of a convex space-filler?\nInformal statement: Call a convex polytope $P\\subset\\mathbb{R}^3$ with nonempty interior a monohedral prototile if there are isometries $g_1,g_2,\\dots$ of $\\mathbb{R}^3$ with $\\bigcup_i g_iP=\\mathbb{R}^3$ and $\\operatorname{int}(g_iP)\\cap\\operatorname{int}(g_jP)=\\emptyset$ for $i\\neq j$ (the tiling need not be face-to-face, isohedral or periodic). Decide whether there is $N<\\infty$ such that every monohedral prototile in $\\mathbb{R}^3$ has at most $N$ facets.\nFormalization notes:\n* E = `EuclideanSpace ℝ (Fin 3)` (Euclidean metric). A convex polytope is the convex hull of\n  a finite point set `S`; we require nonempty interior (3-dimensional).\n* Tiling: a sequence `g : ℕ → E ≃ᵢ E` of isometries (orientation-reversing ones allowed, the\n  standard meaning of \"congruent copies\") whose images cover E and have pairwise disjoint\n  interiors. Indexing by ℕ loses nothing: tiles with disjoint nonempty interiors are at most\n  countably many, and finitely many compact tiles cannot cover E.\n* Facets: F is a facet of P if F = {x ∈ P | ⟪a,x⟫ = sup_P ⟪a,·⟫} for some a ≠ 0 (an exposed\n  face; P is compact and nonempty so the sSup is a genuine maximum) and the affine span of F\n  has dimension 2. For a 3-polytope these are exactly its 2-dimensional faces.\n* To avoid the junk value of cardinalities of possibly infinite sets, \"P has at most N facets\"\n  is stated as: every finite family of distinct facets has at most N members.\n* `Claim` = there is a uniform bound N. `¬Claim` = convex space-fillers with arbitrarily\n  many facets exist.\n-/\nnamespace OpenProblems.QEDE147\nnoncomputable section\nopen scoped InnerProductSpace RealInnerProductSpace\n\nabbrev E := EuclideanSpace ℝ (Fin 3)\n\n/-- `P` tiles space by congruent copies. -/\ndef Tiles (P : Set E) : Prop :=\n  ∃ g : ℕ → (E ≃ᵢ E),\n    (⋃ i : ℕ, (g i) '' P) = Set.univ ∧\n    ∀ i j : ℕ, i ≠ j → Disjoint (interior ((g i) '' P)) (interior ((g j) '' P))\n\n/-- `F` is a facet (2-dimensional exposed face) of `P`. -/\ndef IsFacet (P F : Set E) : Prop :=\n  (∃ a : E, a ≠ 0 ∧\n    F = {x : E | x ∈ P ∧ ⟪a, x⟫_ℝ = sSup ((fun y : E => ⟪a, y⟫_ℝ) '' P)}) ∧\n  Module.finrank ℝ (affineSpan ℝ F).direction = 2\n\ndef Claim : Prop :=\n  ∃ N : ℕ, ∀ S : Finset E,\n    (interior (convexHull ℝ (S : Set E))).Nonempty →\n    Tiles (convexHull ℝ (S : Set E)) →\n    ∀ 𝓕 : Finset (Set E), (∀ F ∈ 𝓕, IsFacet (convexHull ℝ (S : Set E)) F) → 𝓕.card ≤ N\n\nend\nend OpenProblems.QEDE147\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E148",
+  "review_id": "R4-J21",
+  "title": "Largest lattice 4-polytope with one interior lattice point",
+  "area": "Geometry",
+  "difficulty": 4.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Conjecture 1.7 in Nill's paper on reflexive simplices; proved for simplices and the reflexive case (Balletti–Kasprzyk–Nill, Forum Math. Sigma 2022, arXiv:1611.02455); the extremal simplex is due to Zaks–Perles–Wills.",
+  "results": null,
+  "premise_risks": [
+   "Extremal simplex is called the Zaks-Perles-Wills simplex (object name, allowed); the conjecture itself is not person-named",
+   "Uniqueness is irrelevant to the bound; in d=3 the bound is attained by more than one polytope, so check claims of uniqueness separately"
+  ],
+  "plain": "Take a polytope in 4-dimensional space whose corners all have integer coordinates and which contains exactly one integer point in its interior. How large can its volume be? The best known example is the simplex with vertices 0, 2e1, 3e2, 7e3, 84e4, of volume 147, and it is known to be the largest among simplices. Is it the largest among all such polytopes?",
+  "math": "Let $P=\\operatorname{conv}(V)\\subset\\mathbb{R}^4$ with $V\\subset\\mathbb{Z}^4$ finite and $|\\operatorname{int}(P)\\cap\\mathbb{Z}^4|=1$. Prove that $\\operatorname{vol}_4(P)\\le 147=\\tfrac{2(s_4-1)^2}{4!}$, where $s_1=2,s_2=3,s_3=7,s_4=43$ are the Sylvester numbers. Equality holds for $\\operatorname{conv}(0,2e_1,3e_2,7e_3,84e_4)$. (Here vol is Euclidean volume, so normalized volume is $3528$. The same bound $2(s_d-1)^2/d!$ is conjectured for every $d\\ge4$.)",
+  "novelty": 4,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1611.02455",
+   "https://arxiv.org/abs/1309.7967",
+   "https://arxiv.org/abs/1803.04852",
+   "https://arxiv.org/abs/2308.12719"
+  ],
+  "lean": "import Mathlib\n/-! QED-E148: Largest lattice 4-polytope with one interior lattice point\nTake a polytope in 4-dimensional space whose corners all have integer coordinates and which contains exactly one integer point in its interior. How large can its volume be? The best known example is the simplex with vertices 0, 2e1, 3e2, 7e3, 84e4, of volume 147, and it is known to be the largest among simplices. Is it the largest among all such polytopes?\nInformal statement: Let $P=\\operatorname{conv}(V)\\subset\\mathbb{R}^4$ with $V\\subset\\mathbb{Z}^4$ finite and $|\\operatorname{int}(P)\\cap\\mathbb{Z}^4|=1$. Prove that $\\operatorname{vol}_4(P)\\le 147=\\tfrac{2(s_4-1)^2}{4!}$, where $s_1=2,s_2=3,s_3=7,s_4=43$ are the Sylvester numbers. Equality holds for $\\operatorname{conv}(0,2e_1,3e_2,7e_3,84e_4)$.\nFormalization notes: ℝ⁴ is modelled as `Fin 4 → ℝ`. Its product topology equals the\nEuclidean topology, so `interior` is the usual interior, and `MeasureTheory.volume` on it is\nthe product Lebesgue measure, i.e. Euclidean 4-volume. Lattice points are `Fin 4 → ℤ`,\nembedded coordinatewise. `P` is the real convex hull of the image of a finite set `V` of\nlattice points. The hypothesis counts lattice points `z` whose image lies in `interior P`;\n`Set.ncard = 1` means exactly one (the set is finite since `P` is bounded, and if `P` is\nlower-dimensional its interior is empty and the hypothesis fails). The bound is stated in\n`ENNReal` to avoid any `toReal` junk; 147 = 2·3·7·84/4! is attained by the\nZaks–Perles–Wills simplex. Claim = the conjectured sharp bound in dimension 4;\n¬Claim = a lattice 4-polytope with exactly one interior lattice point and volume > 147.\n-/\nnamespace OpenProblems.QEDE148\nnoncomputable section\n\n/-- Embed an integer point of ℤ⁴ into ℝ⁴. -/\ndef toR (z : Fin 4 → ℤ) : Fin 4 → ℝ := fun i : Fin 4 => (z i : ℝ)\n\n/-- The lattice polytope with vertex set (contained in) `V`. -/\ndef poly (V : Finset (Fin 4 → ℤ)) : Set (Fin 4 → ℝ) :=\n  convexHull ℝ (toR '' (V : Set (Fin 4 → ℤ)))\n\ndef Claim : Prop :=\n  ∀ V : Finset (Fin 4 → ℤ),\n    Set.ncard {z : Fin 4 → ℤ | toR z ∈ interior (poly V)} = 1 →\n      MeasureTheory.volume (poly V) ≤ (147 : ENNReal)\n\nend\nend OpenProblems.QEDE148\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E149",
+  "review_id": "R4-J22",
+  "title": "Every centrally symmetric 5-polytope has at least 243 faces",
+  "area": "Geometry",
+  "difficulty": 4.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Kalai (1989); d = 4 case Sanyal-Werner-Ziegler (2009)",
+  "results": null,
+  "premise_risks": [
+   "Sub-case of a person-named conjecture (allowed by rules as an unnamed dimension-specific sub-question)",
+   "Google DeepMind formal-conjectures may already host a formal statement (helps formalization, but signals visibility)"
+  ],
+  "plain": "A polytope is centrally symmetric if it looks the same after reflection through its centre, like a cube or an octahedron. The 5-dimensional cube has 3^5 = 243 non-empty faces (counting the polytope itself), and so does the 5-dimensional cross-polytope. It is conjectured that no centrally symmetric 5-polytope has fewer. This is proved in dimensions up to 4 and open in dimension 5.",
+  "math": "Let $P\\subset\\mathbb R^5$ be a full-dimensional convex polytope with $P=-P$. Prove that $P$ has at least $3^5=243$ non-empty faces, where the faces are the sets $\\{x\\in P:\\langle a,x\\rangle=\\max_{y\\in P}\\langle a,y\\rangle\\}$, $a\\in\\mathbb R^5$ ($a=0$ gives $P$ itself).",
+  "novelty": 3,
+  "importance": 6,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/0708.3661",
+   "https://arxiv.org/abs/2308.02909",
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v33i3p24",
+   "https://en.wikipedia.org/wiki/Kalai's_3d_conjecture",
+   "https://arxiv.org/abs/1201.5790"
+  ],
+  "lean": "import Mathlib\n/-! QED-E149: Every centrally symmetric 5-polytope has at least 243 faces\nA polytope is centrally symmetric if it looks the same after reflection through its centre, like a cube or an octahedron. The 5-dimensional cube has 3^5 = 243 non-empty faces (counting the polytope itself), and so does the 5-dimensional cross-polytope. It is conjectured that no centrally symmetric 5-polytope has fewer. This is proved in dimensions up to 4 and open in dimension 5.\nInformal statement: Let $P\\subset\\mathbb R^5$ be a full-dimensional convex polytope with $P=-P$. Prove that $P$ has at least $3^5=243$ non-empty faces, where the faces are the sets $\\{x\\in P:\\langle a,x\\rangle=\\max_{y\\in P}\\langle a,y\\rangle\\}$, $a\\in\\mathbb R^5$ ($a=0$ gives $P$ itself).\nFormalization notes:\n* ℝ⁵ is Fin 5 → ℝ (product topology = Euclidean) with the standard dot product `dot a x = ∑ a i * x i`.\n  A polytope is P = convexHull of a finite set V; full-dimensional: interior P nonempty; centrally symmetric:\n  x ∈ P → −x ∈ P (equivalently P = −P).\n* `IsFace P F`: F = {x ∈ P | ∀ y ∈ P, dot a y ≤ dot a x} for some a (the maximizers of a linear functional; a = 0\n  gives P). These are exactly the nonempty faces of P (P is compact and nonempty, so each such set is nonempty;\n  the empty face is not counted).\n* \"At least 243 faces\" is stated as an injection Fin 243 → faces, avoiding `ncard` junk values (faces of a polytope\n  are finitely many, but the injection form needs no finiteness argument).\n* Proving `Claim` = the 3^d conjecture in dimension 5; ¬Claim = a centrally symmetric 5-polytope with < 243\n  nonempty faces.\n-/\nnamespace OpenProblems.QEDE149\nnoncomputable section\n\ndef dot (a x : Fin 5 → ℝ) : ℝ := ∑ i : Fin 5, a i * x i\n\n/-- F is a nonempty face of P: the set of maximizers in P of some linear functional. -/\ndef IsFace (P F : Set (Fin 5 → ℝ)) : Prop :=\n  ∃ a : Fin 5 → ℝ, F = {x : Fin 5 → ℝ | x ∈ P ∧ ∀ y ∈ P, dot a y ≤ dot a x}\n\ndef Claim : Prop :=\n  ∀ V : Finset (Fin 5 → ℝ),\n    (interior (convexHull ℝ (V : Set (Fin 5 → ℝ)))).Nonempty →\n    (∀ x ∈ convexHull ℝ (V : Set (Fin 5 → ℝ)), -x ∈ convexHull ℝ (V : Set (Fin 5 → ℝ))) →\n    ∃ F : Fin 243 → Set (Fin 5 → ℝ), Function.Injective F ∧\n      ∀ i : Fin 243, IsFace (convexHull ℝ (V : Set (Fin 5 → ℝ))) (F i)\n\nend\nend OpenProblems.QEDE149\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E150",
+  "review_id": "R4-J23",
+  "title": "Beat n^2 empty triangles",
+  "area": "Geometry",
+  "difficulty": 3.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Problem of determining h_3(n) asymptotically (Barany, Valtr and others); bounds by Katchalski-Meir, Dumitrescu, Garcia, Aichholzer et al., Barany-Valtr",
+  "results": null,
+  "premise_risks": [
+   "An unpublished or less visible improvement of the n^2 lower bound may exist (searches found none)",
+   "Lower bound attributions (Dumitrescu 2000, Garcia 2012) recalled from secondary sources; the 2014 bound is confirmed"
+  ],
+  "plain": "Scatter n points in the plane with no three on a line. A triangle with corners among the points is empty if no other point is inside it. Every such configuration has at least about n^2 empty triangles, and the best constructions have about 1.62 n^2. Show that every configuration actually has at least (1+c) n^2 empty triangles for some fixed c > 0.",
+  "math": "For a finite $S\\subset\\mathbb{R}^2$ with no three points collinear, let $e(S)$ be the number of 3-subsets $T\\subseteq S$ with $\\operatorname{conv}(T)\\cap S=T$. Let $h_3(n)=\\min_{|S|=n}e(S)$. Prove that there is $c>0$ with $h_3(n)\\ge(1+c)\\,n^2$ for all sufficiently large $n$. (Known: $n^2-\\tfrac{32}{7}n+\\tfrac{22}{7}\\le h_3(n)\\le(1.6195\\ldots+o(1))\\,n^2$.)",
+  "novelty": 3,
+  "importance": 5,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://kam.mff.cuni.cz/kamserie/clanky/2004/s674.pdf",
+   "https://publications.ist.tugraz.at/abstracts/afhhpv-lbnsc-14/index.html",
+   "https://arxiv.org/html/2111.12533",
+   "https://link.springer.com/article/10.1007/s10474-024-01431-0"
+  ],
+  "lean": "import Mathlib\n/-! QED-E150: Beat n^2 empty triangles\nScatter n points in the plane with no three on a line. A triangle with corners among the points is empty if no other point is inside it. Every such configuration has at least about n^2 empty triangles, and the best constructions have about 1.62 n^2. Show that every configuration actually has at least (1+c) n^2 empty triangles for some fixed c > 0.\nInformal statement: For a finite $S\\subset\\mathbb{R}^2$ with no three points collinear, let $e(S)$ be the number of 3-subsets $T\\subseteq S$ with $\\operatorname{conv}(T)\\cap S=T$. Let $h_3(n)=\\min_{|S|=n}e(S)$. Prove that there is $c>0$ with $h_3(n)\\ge(1+c)\\,n^2$ for all sufficiently large $n$.\nFormalization notes:\n* The plane is `EuclideanSpace ℝ (Fin 2)`; a point set is a `Finset` of it.\n* General position: every 3-element subset is not `Collinear ℝ`.\n* `emptyTri S` = 3-subsets T of S (via `powersetCard 3`) such that every point of S lying in the\n  closed convex hull of T is a vertex of T, i.e. conv(T) ∩ S = T. In general position no other\n  point can lie on an edge, so closed vs open hull does not matter.\n* \"h₃(n) ≥ (1+c)n² for large n\" is stated as a bound for every general-position S with\n  |S| ≥ N, which is equivalent because h₃(n) is the minimum of e(S) over |S| = n.\n* Claim: ∃ c > 0, ∃ N, all such S with N ≤ |S| have (1+c)|S|² ≤ e(S). ¬Claim: liminf h₃(n)/n² ≤ 1\n  (so, with the known lower bound, h₃(n) = (1+o(1))n² along a subsequence).\n-/\nnamespace OpenProblems.QEDE150\nnoncomputable section\nopen scoped Classical\n\nabbrev Plane := EuclideanSpace ℝ (Fin 2)\n\ndef GeneralPosition (S : Finset Plane) : Prop :=\n  ∀ T : Finset Plane, T ⊆ S → T.card = 3 → ¬ Collinear ℝ (T : Set Plane)\n\n/-- The empty triangles of `S`: 3-subsets whose convex hull meets `S` only in their vertices. -/\ndef emptyTri (S : Finset Plane) : Finset (Finset Plane) :=\n  (S.powersetCard 3).filter (fun T : Finset Plane =>\n    ∀ q ∈ S, q ∈ convexHull ℝ (T : Set Plane) → q ∈ T)\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 0 < c ∧ ∃ N : ℕ, ∀ S : Finset Plane, GeneralPosition S → N ≤ S.card →\n    (1 + c) * ((S.card : ℕ) : ℝ) ^ 2 ≤ (((emptyTri S).card : ℕ) : ℝ)\n\nend\nend OpenProblems.QEDE150\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E151",
+  "review_id": "R4-J25",
+  "title": "Rational 6-cycles of z^2+c",
+  "area": "Dynamics",
+  "difficulty": 6.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Stoll (2008); open case of the Morton-Silverman / Flynn-Poonen-Schaefer programme",
+  "results": null,
+  "premise_risks": [
+   "The full statement 'no period > 3' is the named Flynn-Poonen-Schaefer conjecture. This candidate is only its unnamed period-6 case, which the naming rule allows.",
+   "An unconditional rank computation for J_1(6) could be within reach of modern class-group methods (as in Fu-Stoll 2024), so difficulty may be lower than it looks."
+  ],
+  "plain": "Iterate the map x ↦ x² + c with c and the starting point x rational. A rational starting point can return to itself after exactly 1, 2 or 3 steps (for example c = −29/16, x = −1/4 gives a 3-cycle), and it is proved that exact periods 4 and 5 are impossible. Show, without assuming unproved conjectures, that exact period 6 is impossible too.",
+  "math": "Prove that there are no $c,x\\in\\mathbb{Q}$ such that $x$ has exact (minimal) period $6$ under $f_c(z)=z^2+c$.",
+  "novelty": 2,
+  "importance": 6,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/0803.2836",
+   "https://arxiv.org/abs/2206.12154",
+   "https://arxiv.org/abs/2609.13431",
+   "https://arxiv.org/pdf/math/9508211"
+  ],
+  "lean": "import Mathlib\n/-! QED-E151: Rational 6-cycles of z^2+c\nIterate the map x ↦ x² + c with c and the starting point x rational. A rational starting point can return to itself after exactly 1, 2 or 3 steps (for example c = −29/16, x = −1/4 gives a 3-cycle), and it is proved that exact periods 4 and 5 are impossible. Show, without assuming unproved conjectures, that exact period 6 is impossible too.\nInformal statement: Prove that there are no $c,x\\in\\mathbb{Q}$ such that $x$ has exact (minimal) period $6$ under $f_c(z)=z^2+c$.\nFormalization notes: `Function.minimalPeriod f x` is the least n > 0 with `f^[n] x = x`,\nand 0 if x is not periodic; so `= 6` means exactly that x is periodic with exact period 6.\nClaim = unconditional nonexistence of rational 6-cycles for z² + c (Stoll's result\nwithout BSD); ¬Claim = an explicit rational c and point x of exact period 6.\n-/\nnamespace OpenProblems.QEDE151\nnoncomputable section\n\ndef Claim : Prop :=\n  ¬ ∃ c x : ℚ, Function.minimalPeriod (fun z : ℚ => z ^ 2 + c) x = 6\n\nend\nend OpenProblems.QEDE151\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E152",
+  "review_id": "R4-J26",
+  "title": "Does the classical Hénon map have a periodic sink?",
+  "area": "Dynamics",
+  "difficulty": 7.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Hénon (1976); open question as framed by Galias & Tucker (2015)",
+  "results": null,
+  "premise_risks": [
+   "A positive answer could come from a pure computer search (a certified long-period sink). That is a legitimate solution, but some reviewers may see it as computational.",
+   "A negative answer is far beyond current techniques, so the problem may sit open for a long time either way."
+  ],
+  "plain": "The Hénon map H(x,y) = (1 − 1.4x² + y, 0.3x) is the textbook example of a 'strange attractor': on a computer screen its orbits trace out a fractal set. No one has proved that what we see is not just a stable periodic orbit with a very long period. Decide whether H has an attracting periodic orbit.",
+  "math": "Let $H(x,y)=(1-\\tfrac{7}{5}x^2+y,\\ \\tfrac{3}{10}x)$ on $\\mathbb{R}^2$. Decide whether there exist $n\\ge1$ and $p\\in\\mathbb{R}^2$ with $H^n(p)=p$ such that both eigenvalues of $DH^n(p)$ have modulus $<1$.",
+  "novelty": 2,
+  "importance": 6,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://research.monash.edu/en/publications/is-the-h%C3%A9non-attractor-chaotic/",
+   "https://www2.math.uu.se/~watuc425/CAPA/publications/papers/chaossubmitted20140128.pdf",
+   "https://zenodo.org/records/18824095",
+   "https://arxiv.org/abs/math/0304450"
+  ],
+  "lean": "import Mathlib\n/-! QED-E152: Does the classical Hénon map have a periodic sink?\nThe Hénon map H(x,y) = (1 − 1.4x² + y, 0.3x) is the textbook example of a 'strange attractor': on a computer screen its orbits trace out a fractal set. No one has proved that what we see is not just a stable periodic orbit with a very long period. Decide whether H has an attracting periodic orbit.\nInformal statement: Let $H(x,y)=(1-\\tfrac{7}{5}x^2+y,\\ \\tfrac{3}{10}x)$ on $\\mathbb{R}^2$. Decide whether there exist $n\\ge1$ and $p\\in\\mathbb{R}^2$ with $H^n(p)=p$ such that both eigenvalues of $DH^n(p)$ have modulus $<1$.\nFormalization notes:\n* H is defined exactly (7/5 = 1.4, 3/10 = 0.3). Its Jacobian at (x, y) is `J (x, y) = !![-(14/5) x, 1; 3/10, 0]`.\n  By the chain rule DHⁿ(p) = J(H^{n−1} p) ⋯ J(H p) J(p); `jac n p` is this product, defined recursively\n  (jac 0 p = 1, jac (k+1) p = J(H^[k] p) * jac k p), so no fderiv API is needed.\n* The eigenvalues of a real 2×2 matrix M are the complex roots of z² − tr(M) z + det(M); trace and determinant are\n  written out from the entries. \"Both eigenvalues have modulus < 1\" is stated as: every complex root z of this\n  polynomial has ‖z‖ < 1.\n* `Claim`: there exist n ≥ 1 and p with Hⁿ(p) = p whose eigenvalues of DHⁿ(p) lie in the open unit disk, i.e. H has\n  an attracting periodic orbit (a sink). Decision problem: proving `Claim` = exhibit a sink (e.g. certified\n  computation); ¬Claim = H has no periodic sink.\n-/\nnamespace OpenProblems.QEDE152\nnoncomputable section\n\n/-- The classical Hénon map. -/\ndef H (p : ℝ × ℝ) : ℝ × ℝ := (1 - 7 / 5 * p.1 ^ 2 + p.2, 3 / 10 * p.1)\n\n/-- Jacobian matrix of H at p. -/\ndef J (p : ℝ × ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![-(14 / 5) * p.1, 1; 3 / 10, 0]\n\n/-- Jacobian matrix of H^[n] at p, by the chain rule. -/\ndef jac : ℕ → ℝ × ℝ → Matrix (Fin 2) (Fin 2) ℝ\n  | 0, _ => 1\n  | k + 1, p => J (H^[k] p) * jac k p\n\ndef Claim : Prop :=\n  ∃ n : ℕ, 1 ≤ n ∧ ∃ p : ℝ × ℝ, H^[n] p = p ∧\n    ∀ z : ℂ, z ^ 2 - (((jac n p) 0 0 + (jac n p) 1 1 : ℝ) : ℂ) * z\n        + (((jac n p) 0 0 * (jac n p) 1 1 - (jac n p) 0 1 * (jac n p) 1 0 : ℝ) : ℂ) = 0 → ‖z‖ < 1\n\nend\nend OpenProblems.QEDE152\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E153",
+  "review_id": "R4-J27",
+  "title": "Area of the boundary of the Mandelbrot set",
+  "area": "Dynamics",
+  "difficulty": 8.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Classical (Milnor's problem lists; Douady-Hubbard era)",
+  "results": null,
+  "premise_risks": [
+   "Famous and probably very hard (low novelty). It is listed because it is important and has a one-line Lean statement.",
+   "It should be checked against the scorer's view of whether it duplicates the existing hyperbolic-measure item QED-M051. It does not: that item asks about the computability of a real-line measure."
+  ],
+  "plain": "The Mandelbrot set M is the set of complex numbers c for which the orbit of 0 under z -> z^2 + c stays bounded. Its boundary is a fractal of Hausdorff dimension 2, as large as possible for a plane set. Does the boundary of M have zero area?",
+  "math": "Let $M=\\{c\\in\\mathbb C:\\sup_n|f_c^{n}(0)|<\\infty\\}$ with $f_c(z)=z^2+c$. Decide whether the two-dimensional Lebesgue measure of $\\partial M$ is $0$.",
+  "novelty": 2,
+  "importance": 8,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/math/9205209",
+   "https://mrob.com/pub/muency/openconjectures.html",
+   "https://arxiv.org/abs/2512.24171"
+  ],
+  "lean": "import Mathlib\n/-! QED-E153: Area of the boundary of the Mandelbrot set\nThe Mandelbrot set M is the set of complex numbers c for which the orbit of 0 under z -> z^2 + c stays bounded. Its boundary is a fractal of Hausdorff dimension 2, as large as possible for a plane set. Does the boundary of M have zero area?\nInformal statement: Let $M=\\{c\\in\\mathbb C:\\sup_n|f_c^{n}(0)|<\\infty\\}$ with $f_c(z)=z^2+c$. Decide whether the two-dimensional Lebesgue measure of $\\partial M$ is $0$.\nFormalization notes:\n* `mandelbrot` = {c : ℂ | the sequence ‖f_c^[n] 0‖ (n : ℕ) is bounded above}, with\n  `f_c z = z^2 + c` and `^[n]` the n-fold iterate (`Nat.iterate`).\n* `frontier` is the topological boundary in ℂ.\n* `MeasureTheory.volume` on ℂ is Mathlib's standard measure, which corresponds to Lebesgue\n  measure on ℝ² under the real/imaginary-part identification (`Complex.measurableEquivRealProd`\n  is measure preserving), so this is two-dimensional Lebesgue measure.\n* Claim = the boundary has zero area; ¬Claim = it has positive area (∂M is compact, so its\n  measure is finite and the dichotomy is exactly 0 vs positive).\n-/\nnamespace OpenProblems.QEDE153\nnoncomputable section\n\ndef mandelbrot : Set ℂ :=\n  {c : ℂ | BddAbove (Set.range (fun n : ℕ => ‖(fun z : ℂ => z ^ 2 + c)^[n] 0‖))}\n\ndef Claim : Prop :=\n  MeasureTheory.volume (frontier mandelbrot) = 0\n\nend\nend OpenProblems.QEDE153\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E154",
+  "review_id": "R4-J28",
+  "title": "Are the fractional parts of (3/2)^n dense?",
+  "area": "Analysis",
+  "difficulty": 8.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical (Vijayaraghavan, Mahler, Flatto-Lagarias-Pollington)",
+  "results": null,
+  "premise_risks": [
+   "Area is borderline: this is uniform distribution / Diophantine analysis rather than core dynamics.",
+   "Famous and extremely hard (low novelty). It should not be confused with the named Mahler Z-number problem, which is related but separate."
+  ],
+  "plain": "Write down 3/2, 9/4, 27/8, ... and keep only the part after the decimal point. Numerically these fractional parts look uniformly spread over [0,1), but nobody can prove they even come arbitrarily close to every number in [0,1]. Prove that they do.",
+  "math": "Prove that $\\{ \\{(3/2)^n\\} : n \\in \\mathbb{N}\\}$ is dense in $[0,1]$, where $\\{t\\} = t - \\lfloor t \\rfloor$.",
+  "novelty": 0,
+  "importance": 8,
+  "value": 5,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://eudml.org/doc/206742",
+   "https://arxiv.org/abs/2603.16794",
+   "https://arxiv.org/abs/2411.03468v2",
+   "https://en.wikipedia.org/wiki/Mahler%27s_3/2_problem"
+  ],
+  "lean": "import Mathlib\n/-! QED-E154: Are the fractional parts of (3/2)^n dense?\nWrite down 3/2, 9/4, 27/8, ... and keep only the part after the decimal point. Numerically these fractional parts look uniformly spread over [0,1), but nobody can prove they even come arbitrarily close to every number in [0,1]. Prove that they do.\nInformal statement: Prove that $\\{ \\{(3/2)^n\\} : n \\in \\mathbb{N}\\}$ is dense in $[0,1]$, where $\\{t\\} = t - \\lfloor t \\rfloor$.\nFormalization notes:\n* {t} is `Int.fract t` = t − ⌊t⌋ ∈ [0,1).\n* Density in [0,1] is stated directly: every x ∈ [0,1] is approximated within every ε > 0.\n  Note x = 1 is approximated by values near 1, and since infinitely many n are needed for\n  smaller and smaller ε (finitely many values cannot be dense), the n = 0 term is irrelevant.\n* `Claim` = density. `¬Claim` = some subinterval of [0,1] is avoided by all {(3/2)^n}.\n-/\nnamespace OpenProblems.QEDE154\nnoncomputable section\n\ndef Claim : Prop :=\n  ∀ x : ℝ, x ∈ Set.Icc (0 : ℝ) 1 → ∀ ε : ℝ, 0 < ε →\n    ∃ n : ℕ, |Int.fract (((3 : ℝ) / 2) ^ n) - x| < ε\n\nend\nend OpenProblems.QEDE154\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E155",
+  "review_id": "R4-J29",
+  "title": "Is Euler's constant irrational?",
+  "area": "Analysis",
+  "difficulty": 8.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical (Euler, Mascheroni)",
+  "results": null,
+  "premise_risks": [
+   "Very famous and probably out of reach (novelty low). It is included because its importance is high and its formal statement is trivial.",
+   "The OpenAI batch claims Catalan's constant irrational. If the same method extends to γ, a claim may appear soon, so recheck before posting."
+  ],
+  "plain": "Euler's constant γ ≈ 0.5772 is the limit of 1 + 1/2 + ... + 1/n − ln n. It also equals −Γ'(1), where Γ is the Gamma function. More than 280 years after Euler, nobody knows whether γ is a fraction. Prove that it is not.",
+  "math": "Prove that $\\gamma=\\lim_{n\\to\\infty}\\left(\\sum_{k=1}^n \\tfrac1k-\\ln n\\right)\\notin\\mathbb{Q}$.",
+  "novelty": 0,
+  "importance": 8,
+  "value": 4,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://en.wikipedia.org/wiki/Euler%27s_constant",
+   "https://arxiv.org/abs/1303.1856",
+   "https://arxiv.org/abs/2511.01849"
+  ],
+  "lean": "import Mathlib\n/-! QED-E155: Is Euler's constant irrational?\nEuler's constant γ ≈ 0.5772 is the limit of 1 + 1/2 + ... + 1/n − ln n. It also equals −Γ'(1), where Γ is the Gamma function. More than 280 years after Euler, nobody knows whether γ is a fraction. Prove that it is not.\nInformal statement: Prove that $\\gamma=\\lim_{n\\to\\infty}\\left(\\sum_{k=1}^n \\tfrac1k-\\ln n\\right)\\notin\\mathbb{Q}$.\nFormalization notes: To be self-contained, γ is characterised as the limit of\nH_n − log n, with H_n = ∑_{k=1}^n 1/k written as a sum over `Finset.range n` of\n1/(k+1). The Claim says every real limit of this sequence is irrational. The limit is\nknown to exist (Mathlib: `Real.tendsto_harmonic_sub_log`, limit\n`Real.eulerMascheroniConstant`), so the hypothesis is satisfiable and the Claim is exactly\n\"γ is irrational\"; limits in ℝ are unique so there is no other g. ¬Claim = γ ∈ ℚ.\n-/\nnamespace OpenProblems.QEDE155\nnoncomputable section\n\n/-- H_n − log n. -/\ndef gammaSeq (n : ℕ) : ℝ :=\n  (∑ k ∈ Finset.range n, (1 : ℝ) / ((k : ℝ) + 1)) - Real.log (n : ℝ)\n\ndef Claim : Prop :=\n  ∀ g : ℝ, Filter.Tendsto gammaSeq Filter.atTop (nhds g) → Irrational g\n\nend\nend OpenProblems.QEDE155\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E156",
+  "review_id": "R4-J31",
+  "title": "Can additive squares be avoided over the integers?",
+  "area": "Combinatorics",
+  "difficulty": 6.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "T. C. Brown and A. R. Freedman (1987); G. Pirillo and S. Varricchio (1994); see also Halbeisen-Hungerbühler, Cassaigne-Currie-Schaeffer-Shallit.",
+  "results": null,
+  "premise_risks": [
+   "Zhang 2026 preprint (arXiv:2610.02215) is unrefereed but only cited as context",
+   "The problem is sometimes informally attributed to its askers, but it is not a person-named conjecture"
+  ],
+  "plain": "An additive square in a sequence of integers is a block of 2k consecutive terms whose first half and second half have the same sum (for example 1 3 | 2 2). Is there a finite set of integers S and an infinite sequence with all terms in S that contains no additive square? Such sequences exist over a finite subset of the plane lattice Z², and over Z one can avoid additive cubes (three adjacent blocks of equal length and equal sum), but no one knows whether squares can be avoided over Z.",
+  "math": "Decide whether there exist a finite set $S\\subset\\mathbb{Z}$ and $w:\\mathbb{N}\\to S$ such that for all $i\\ge0$ and $k\\ge1$, $\\sum_{j=i}^{i+k-1}w(j)\\neq\\sum_{j=i+k}^{i+2k-1}w(j)$. Equivalently, by compactness: is there a finite $S\\subset\\mathbb Z$ for which arbitrarily long finite words over $S$ avoid additive squares?",
+  "novelty": 3,
+  "importance": 5,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2506.21200",
+   "https://arxiv.org/abs/2207.09937",
+   "https://arxiv.org/abs/1106.5204",
+   "https://arxiv.org/abs/1511.05875",
+   "https://arxiv.org/abs/2610.02215"
+  ],
+  "lean": "import Mathlib\n/-! QED-E156: Can additive squares be avoided over the integers?\nAn additive square in a sequence of integers is a block of 2k consecutive terms whose first half and second half have the same sum (for example 1 3 | 2 2). Is there a finite set of integers S and an infinite sequence with all terms in S that contains no additive square? Such sequences exist over a finite subset of the plane lattice Z², and over Z one can avoid additive cubes (three adjacent blocks of equal length and equal sum), but no one knows whether squares can be avoided over Z.\nInformal statement: Decide whether there exist a finite set $S\\subset\\mathbb{Z}$ and $w:\\mathbb{N}\\to S$ such that for all $i\\ge0$ and $k\\ge1$, $\\sum_{j=i}^{i+k-1}w(j)\\neq\\sum_{j=i+k}^{i+2k-1}w(j)$. Equivalently, by compactness: is there a finite $S\\subset\\mathbb Z$ for which arbitrarily long finite words over $S$ avoid additive squares?\nFormalization notes:\n* An infinite word is w : ℕ → ℤ with all values in a finite set S : Finset ℤ. An additive square at position i of\n  half-length k ≥ 1 is w(i) + … + w(i+k−1) = w(i+k) + … + w(i+2k−1). `AddSqFree w` forbids all of them.\n* `Claim`: some finite S ⊂ ℤ admits an infinite additive-square-free word over S. Decision problem: proving\n  `Claim` = additive squares are avoidable over ℤ; ¬Claim = every infinite word over any finite S ⊂ ℤ has an\n  additive square (by compactness equivalent to the finite-word version).\n-/\nnamespace OpenProblems.QEDE156\n\ndef AddSqFree (w : ℕ → ℤ) : Prop :=\n  ∀ i k : ℕ, 0 < k →\n    ∑ j ∈ Finset.range k, w (i + j) ≠ ∑ j ∈ Finset.range k, w (i + k + j)\n\ndef Claim : Prop :=\n  ∃ S : Finset ℤ, ∃ w : ℕ → ℤ, (∀ n : ℕ, w n ∈ S) ∧ AddSqFree w\n\nend OpenProblems.QEDE156\n",
+  "set": "extended"
+ },
+ {
+  "id": "QED-E157",
+  "review_id": "R4-J34",
+  "title": "Square-free words from lists of size three",
+  "area": "Combinatorics",
+  "difficulty": 5.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Posed by J. Grytczuk, J. Przybyło and X. Zhu (2011) in the context of nonrepetitive list colouring; see M. Rosenfeld (2022), V. Bui and M. Rosenfeld (2025).",
+  "results": null,
+  "premise_risks": [
+   "Occasionally referred to as a conjecture of Grytczuk–Przybyło–Zhu; the usual name is 'the Thue choice number of the path is 3' (object named after Thue), so naming rule is likely satisfied but should be checked"
+  ],
+  "plain": "Thue showed in 1906 that there is an infinite word over three letters with no square, that is, no block immediately repeated (like 'abab'). Now suppose each position i has its own list A_i of three allowed symbols, chosen by an adversary from an unbounded alphabet. Is there always an infinite square-free word whose i-th letter lies in A_i? Lists of size 4 are known to suffice, and size 3 suffices when all lists are drawn from only four symbols.",
+  "math": "Claim: for every sequence $(A_i)_{i\\ge1}$ of sets $A_i\\subseteq\\mathbb N$ with $|A_i|=3$, there exists $w:\\mathbb N_{\\ge1}\\to\\mathbb N$ with $w(i)\\in A_i$ for all $i$, such that there are no $i,k\\ge1$ with $w(i+j)=w(i+k+j)$ for all $0\\le j<k$. (By compactness, this is equivalent to the same statement for every finite length; that is, the Thue choice number of the path is $3$.)",
+  "novelty": 3,
+  "importance": 5,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2104.09965",
+   "https://arxiv.org/abs/2512.03670",
+   "https://arxiv.org/abs/1508.02559",
+   "https://arxiv.org/abs/1601.01886"
+  ],
+  "lean": "import Mathlib\n/-! QED-E157: Square-free words from lists of size three\nThue showed in 1906 that there is an infinite word over three letters with no square, that is, no block immediately repeated (like 'abab'). Now suppose each position i has its own list A_i of three allowed symbols, chosen by an adversary from an unbounded alphabet. Is there always an infinite square-free word whose i-th letter lies in A_i? Lists of size 4 are known to suffice, and size 3 suffices when all lists are drawn from only four symbols.\nInformal statement: Claim: for every sequence $(A_i)_{i\\ge1}$ of sets $A_i\\subseteq\\mathbb N$ with $|A_i|=3$, there exists $w:\\mathbb N_{\\ge1}\\to\\mathbb N$ with $w(i)\\in A_i$ for all $i$, such that there are no $i,k\\ge1$ with $w(i+j)=w(i+k+j)$ for all $0\\le j<k$. (By compactness, this is equivalent to the same statement for every finite length; that is, the Thue choice number of the path is $3$.)\nFormalization notes: Positions are indexed from 0 instead of 1 (an inessential shift).\nSymbols are natural numbers (any countable alphabet reduces to ℕ, and a single sequence of\nlists uses only countably many symbols). `SquareFree w` says no factor of the infinite\nword w is a square: for every start i and every length k > 0 the blocks\nw(i..i+k−1) and w(i+k..i+2k−1) differ somewhere. Claim = every assignment of\n3-element lists admits a square-free choice (Thue choice number of the path ≤ 3, hence = 3);\n¬Claim = some sequence of 3-lists admits no infinite square-free choice word (equivalently,\nby König's lemma, some finite prefix of lists admits none).\n-/\nnamespace OpenProblems.QEDE157\nnoncomputable section\n\ndef SquareFree (w : ℕ → ℕ) : Prop :=\n  ∀ i k : ℕ, 0 < k → ∃ j : ℕ, j < k ∧ w (i + j) ≠ w (i + k + j)\n\ndef Claim : Prop :=\n  ∀ A : ℕ → Finset ℕ, (∀ i : ℕ, (A i).card = 3) →\n    ∃ w : ℕ → ℕ, (∀ i : ℕ, w i ∈ A i) ∧ SquareFree w\n\nend\nend OpenProblems.QEDE157\n",
+  "set": "extended"
  }
 ]

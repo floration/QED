@@ -1,0 +1,27 @@
+{
+ "id": "QED-E139",
+ "set": "extended",
+ "title": "Does the odd greedy algorithm always terminate?",
+ "area": "Number theory",
+ "difficulty": 5.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Stein, Selfridge, Graham (via Guy UPINT; Klee–Wagon 1991); erdosproblems.com #282.",
+ "premise_risks": [
+  "Appears on erdosproblems.com; not itself person-named, but the owner may count 'Erdős problem #282' as person-attributed",
+  "May be considered a 'Collatz-type' problem with little available theory"
+ ],
+ "plain": "Every fraction with an odd denominator can be written as a sum of distinct unit fractions with odd denominators. The odd greedy algorithm tries to find such a sum by repeatedly subtracting the largest unit fraction 1/n, with n odd, that still fits. Does it always stop after finitely many steps when the starting fraction has an odd denominator? In every case tested it does, sometimes only after surprisingly many steps.",
+ "math": "For $x\\in\\mathbb Q\\cap(0,1)$ with odd denominator, set $x_0=x$. While $x_k>0$, let $n_k$ be the least odd integer with $1/n_k\\le x_k$ and set $x_{k+1}=x_k-1/n_k$. Prove or disprove: for every such $x$ there is a $k$ with $x_k=0$.",
+ "novelty": 2,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://en.wikipedia.org/wiki/Odd_greedy_expansion",
+  "https://google-deepmind.github.io/formal-conjectures/doc/FormalConjectures/ErdosProblems/282.html",
+  "https://arxiv.org/abs/2309.07280",
+  "https://www.mathpages.com/home/kmath478.htm",
+  "https://ics.uci.edu/~eppstein/numth/egypt/3-179.html"
+ ]
+}

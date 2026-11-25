@@ -1,0 +1,27 @@
+{
+ "id": "QED-E136",
+ "set": "extended",
+ "title": "Does a perfect cuboid exist?",
+ "area": "Number theory",
+ "difficulty": 6.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Classical (Euler; Kraitchik; listed as D18 in Guy, Unsolved Problems in Number Theory).",
+ "premise_risks": [
+  "Several unrefereed 2026 nonexistence claims (arXiv:2602.00239 math.GM, arXiv:2604.28072) exist; none accepted, but the scorer should know they are out there",
+  "Very famous: low novelty"
+ ],
+ "plain": "Is there a box whose three edges, three face diagonals and space diagonal all have whole-number lengths? Boxes with whole-number edges and face diagonals (Euler bricks, such as 44 × 117 × 240) come in infinite families, but in every known one the space diagonal is irrational. Nobody has found a perfect box or proved that none exists.",
+ "math": "Decide whether there exist positive integers $a,b,c$ such that $a^2+b^2$, $b^2+c^2$, $c^2+a^2$ and $a^2+b^2+c^2$ are all perfect squares.",
+ "novelty": 1,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://en.wikipedia.org/wiki/Euler_brick",
+  "https://arxiv.org/abs/2401.06784",
+  "https://arxiv.org/abs/2602.00239",
+  "https://arxiv.org/html/2604.28072",
+  "https://arxiv.org/pdf/1506.02215"
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "QED-E157",
+ "set": "extended",
+ "title": "Square-free words from lists of size three",
+ "area": "Combinatorics",
+ "difficulty": 5.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Posed by J. Grytczuk, J. Przybyło and X. Zhu (2011) in the context of nonrepetitive list colouring; see M. Rosenfeld (2022), V. Bui and M. Rosenfeld (2025).",
+ "premise_risks": [
+  "Occasionally referred to as a conjecture of Grytczuk–Przybyło–Zhu; the usual name is 'the Thue choice number of the path is 3' (object named after Thue), so naming rule is likely satisfied but should be checked"
+ ],
+ "plain": "Thue showed in 1906 that there is an infinite word over three letters with no square, that is, no block immediately repeated (like 'abab'). Now suppose each position i has its own list A_i of three allowed symbols, chosen by an adversary from an unbounded alphabet. Is there always an infinite square-free word whose i-th letter lies in A_i? Lists of size 4 are known to suffice, and size 3 suffices when all lists are drawn from only four symbols.",
+ "math": "Claim: for every sequence $(A_i)_{i\\ge1}$ of sets $A_i\\subseteq\\mathbb N$ with $|A_i|=3$, there exists $w:\\mathbb N_{\\ge1}\\to\\mathbb N$ with $w(i)\\in A_i$ for all $i$, such that there are no $i,k\\ge1$ with $w(i+j)=w(i+k+j)$ for all $0\\le j<k$. (By compactness, this is equivalent to the same statement for every finite length; that is, the Thue choice number of the path is $3$.)",
+ "novelty": 3,
+ "importance": 5,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2104.09965",
+  "https://arxiv.org/abs/2512.03670",
+  "https://arxiv.org/abs/1508.02559",
+  "https://arxiv.org/abs/1601.01886"
+ ]
+}

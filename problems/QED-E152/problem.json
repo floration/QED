@@ -1,0 +1,26 @@
+{
+ "id": "QED-E152",
+ "set": "extended",
+ "title": "Does the classical Hénon map have a periodic sink?",
+ "area": "Dynamics",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Hénon (1976); open question as framed by Galias & Tucker (2015)",
+ "premise_risks": [
+  "A positive answer could come from a pure computer search (a certified long-period sink). That is a legitimate solution, but some reviewers may see it as computational.",
+  "A negative answer is far beyond current techniques, so the problem may sit open for a long time either way."
+ ],
+ "plain": "The Hénon map H(x,y) = (1 − 1.4x² + y, 0.3x) is the textbook example of a 'strange attractor': on a computer screen its orbits trace out a fractal set. No one has proved that what we see is not just a stable periodic orbit with a very long period. Decide whether H has an attracting periodic orbit.",
+ "math": "Let $H(x,y)=(1-\\tfrac{7}{5}x^2+y,\\ \\tfrac{3}{10}x)$ on $\\mathbb{R}^2$. Decide whether there exist $n\\ge1$ and $p\\in\\mathbb{R}^2$ with $H^n(p)=p$ such that both eigenvalues of $DH^n(p)$ have modulus $<1$.",
+ "novelty": 2,
+ "importance": 6,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://research.monash.edu/en/publications/is-the-h%C3%A9non-attractor-chaotic/",
+  "https://www2.math.uu.se/~watuc425/CAPA/publications/papers/chaossubmitted20140128.pdf",
+  "https://zenodo.org/records/18824095",
+  "https://arxiv.org/abs/math/0304450"
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "id": "QED-M122",
+ "set": "main",
+ "title": "The widest hollow body in 3-space",
+ "area": "Geometry",
+ "difficulty": 4.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Codenotti and Santos (2019), Conjecture 1.2; Averkov, Codenotti, Macchia, Santos (2021)",
+ "premise_risks": [
+  "Listed on Tao's optimization-constants page (73a), but not moving there; no updates since 2021",
+  "Conjecture is attributed to two people but is not commonly called by their names"
+ ],
+ "plain": "A convex body is hollow if no point with all-integer coordinates lies strictly inside it. Hollow bodies must be thin in some integer direction (the flatness theorem). In the plane the largest guaranteed thinness is known exactly, 1+2/sqrt(3). In 3-space a hollow tetrahedron of lattice width 2+sqrt(2) is known: is that the widest possible?",
+ "math": "For a convex body (compact, convex, nonempty interior) $K\\subset\\mathbb{R}^3$ and $u\\in\\mathbb{Z}^3\\setminus\\{0\\}$ let $w_u(K)=\\max_{x\\in K}\\langle u,x\\rangle-\\min_{x\\in K}\\langle u,x\\rangle$ and $w(K)=\\min_{u\\neq0}w_u(K)$. Call $K$ hollow if $\\operatorname{int}K\\cap\\mathbb{Z}^3=\\emptyset$. Prove or disprove: every hollow convex body $K\\subset\\mathbb{R}^3$ satisfies $w(K)\\le 2+\\sqrt2$. (Equivalently $\\mathrm{Flt}(3)=2+\\sqrt2$; known: $2+\\sqrt2\\le\\mathrm{Flt}(3)<3.972$.)",
+ "novelty": 4,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://teorth.github.io/optimizationproblems/constants/73a.html",
+  "https://arxiv.org/abs/1907.06199",
+  "https://arxiv.org/abs/1812.00916",
+  "https://arxiv.org/pdf/2604.27260"
+ ]
+}

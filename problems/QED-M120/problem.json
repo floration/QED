@@ -1,0 +1,27 @@
+{
+ "id": "QED-M120",
+ "set": "main",
+ "title": "Superlinear exponent for K_t-intersecting graph families",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Full conjecture by Ellis, Filmus, Friedgut (generalising the Simonovits–Sós triangle question). Superlinear-exponent formulation by the proposer. Bounds by Berger–Zhao, Mani–Zhang, Sason.",
+ "premise_risks": [
+  "The full statement is often called the 'Ellis–Filmus–Friedgut conjecture'. This candidate is an unnamed weaker sub-question, which the naming rule allows.",
+  "The t=5 result is a 2025 PRIMES report, possibly unrefereed. It is used only for context.",
+  "A cleverer entropy or recursive-trace argument might give a superlinear exponent fairly easily. I could not find one, but this is a difficulty risk."
+ ],
+ "plain": "Consider a family of graphs on the same n labelled vertices such that any two graphs in the family share a complete subgraph K_t among their common edges. Taking all graphs that contain one fixed K_t gives a fraction 2^{-t(t-1)/2} of all graphs, and this is believed to be optimal. An easy entropy argument shows the best possible fraction is at most about 2^{-2t}, so the exponent is at least linear in t. Prove that the exponent grows faster than linearly: the largest fraction is at most 2^{-f(t)} with f(t)/t tending to infinity.",
+ "math": "Call $\\mathcal F\\subseteq 2^{E(K_n)}$ $K_t$-intersecting if for all $G,H\\in\\mathcal F$ the graph $G\\cap H$ contains a copy of $K_t$. Let $\\alpha_t=\\sup_n\\max\\{|\\mathcal F|\\,2^{-\\binom n2}:\\mathcal F\\text{ is }K_t\\text{-intersecting on }[n]\\}$ and $f(t)=\\log_2(1/\\alpha_t)$. Prove $f(t)/t\\to\\infty$. (Known: $f(t)\\le\\binom t2$; $f(3)=3,f(4)=6,f(5)=10$; Shearer's lemma over a uniformly random partition of $[n]$ into $m$ parts gives $f(t)\\ge m\\,f(\\lceil t/m\\rceil)$, hence $f(t)\\ge 10\\lfloor t/5\\rfloor$ and $\\lim f(t)/t=\\sup_s f(s)/s$. So the claim is equivalent to: for every $C$ there is $s$ with $\\alpha_s\\le 2^{-Cs}$. Conjectured: $f(t)=\\binom t2$.)",
+ "novelty": 6,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2103.12671",
+  "https://arxiv.org/abs/2501.02894",
+  "https://math.mit.edu/research/highschool/primes/materials/2024/Mani-Zhang.pdf",
+  "https://arxiv.org/pdf/2510.18064"
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "id": "QED-M119",
+ "set": "main",
+ "title": "The 3k−4 conjecture modulo a prime",
+ "area": "Combinatorics",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Problem line from Freiman's 3k−4 theorem over Z. The mod-p conjecture appears in work of Freiman, Rödseth, Serra–Zémor, Candela–Serra–Spiegel, Lev–Serra and Grynkiewicz.",
+ "premise_risks": [
+  "The name contains 'Freiman' only through 'Freiman's 3k−4 theorem' over Z. The mod-p statement is usually called 'the 3k−4 conjecture', which is not person-named.",
+  "A sparse-range improvement beyond 2.7652 may exist in a 2024–26 preprint not surfaced by search."
+ ],
+ "plain": "Over the integers, Freiman's 3k−4 theorem says that if a finite set A has a sumset A+A with at most 3|A|−4 elements, then A lies in an arithmetic progression with only |A+A|−|A|+1 terms. Modulo a prime p the same should hold as long as A+A does not come too close to filling Z/pZ. It is known for tiny sets (|A| below roughly p/10^215) and, for larger sets, only when |A+A| is well below 3|A|. Prove the full statement.",
+ "math": "Let $p$ be prime and $A\\subseteq\\mathbb Z/p\\mathbb Z$ with $A+A\\neq\\mathbb Z/p\\mathbb Z$. Write $|A+A|=2|A|+r$. Prove that if $|A+A|\\le\\min\\{3|A|-4,\\;p-r-4\\}$, then $A$ is contained in an arithmetic progression $\\{a,a+d,\\dots,a+(L-1)d\\}$ with $L\\le |A|+r+1=|A+A|-|A|+1$. (This states only the first conclusion of the full conjecture, arXiv:1909.07967 Conj. 1.2; the companion statement that $2A$ contains an arithmetic progression with the same difference and at least $2|A|-1$ terms is omitted.)",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/math/0403338",
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v30i2p48",
+  "https://arxiv.org/abs/1805.12374",
+  "https://arxiv.org/abs/1909.07967",
+  "https://arxiv.org/abs/2402.15028",
+  "https://arxiv.org/abs/0804.0935"
+ ]
+}

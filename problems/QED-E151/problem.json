@@ -1,0 +1,26 @@
+{
+ "id": "QED-E151",
+ "set": "extended",
+ "title": "Rational 6-cycles of z^2+c",
+ "area": "Dynamics",
+ "difficulty": 6.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Stoll (2008); open case of the Morton-Silverman / Flynn-Poonen-Schaefer programme",
+ "premise_risks": [
+  "The full statement 'no period > 3' is the named Flynn-Poonen-Schaefer conjecture. This candidate is only its unnamed period-6 case, which the naming rule allows.",
+  "An unconditional rank computation for J_1(6) could be within reach of modern class-group methods (as in Fu-Stoll 2024), so difficulty may be lower than it looks."
+ ],
+ "plain": "Iterate the map x ↦ x² + c with c and the starting point x rational. A rational starting point can return to itself after exactly 1, 2 or 3 steps (for example c = −29/16, x = −1/4 gives a 3-cycle), and it is proved that exact periods 4 and 5 are impossible. Show, without assuming unproved conjectures, that exact period 6 is impossible too.",
+ "math": "Prove that there are no $c,x\\in\\mathbb{Q}$ such that $x$ has exact (minimal) period $6$ under $f_c(z)=z^2+c$.",
+ "novelty": 2,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/0803.2836",
+  "https://arxiv.org/abs/2206.12154",
+  "https://arxiv.org/abs/2609.13431",
+  "https://arxiv.org/pdf/math/9508211"
+ ]
+}

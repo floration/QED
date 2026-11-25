@@ -1,0 +1,27 @@
+{
+ "id": "QED-M121",
+ "set": "main",
+ "title": "Additive basis conjecture: a constant number of bases suffices",
+ "area": "Algebra",
+ "difficulty": 6.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Jaeger, Linial, Payan, Tarsi (1992); Alon–Linial–Meshulam (1991)",
+ "premise_risks": [
+  "The p=3 case is claimed by an unrefereed single-author note (arXiv:2510.01300, Preprints.org Feb 2026). The general conjecture is unaffected, but the owner may prefer the claim 'for p=5'.",
+  "Naming: called the 'Additive Basis Conjecture' (not person-named); fine under the rules",
+  "Possible overlap with graph-flow problems on the board (none found in existing titles)"
+ ],
+ "plain": "Take several bases of the vector space (Z/p)^n and pool all their vectors into one list. Can every vector of the space be written as the sum of some sub-list, using each pooled vector at most once? The conjecture says a fixed number c(p) of bases always suffices, independent of the dimension n. The best proven bound grows like log n.",
+ "math": "For a prime $p$, a finite multiset $B$ of vectors in $\\mathbb{F}_p^n$ is an additive basis if $\\{\\sum_{b\\in B}\\varepsilon_b b : \\varepsilon\\in\\{0,1\\}^B\\}=\\mathbb{F}_p^n$. Prove that for every prime $p$ there is $c(p)$ such that for every $n\\ge1$ and all bases $B_1,\\dots,B_{c(p)}$ of $\\mathbb{F}_p^n$, the multiset union $B_1\\uplus\\cdots\\uplus B_{c(p)}$ is an additive basis.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2111.13658",
+  "https://arxiv.org/abs/2510.01300",
+  "https://www.preprints.org/manuscript/202602.1158/v1",
+  "https://arxiv.org/pdf/0812.2613"
+ ]
+}

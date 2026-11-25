@@ -1,0 +1,26 @@
+{
+ "id": "QED-E146",
+ "set": "extended",
+ "title": "Eight points with integer distances in general position",
+ "area": "Geometry",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Question posed by Kreisel and Kurz (2008), in the line of Erdos's question on integral point sets in general position",
+ "premise_risks": [
+  "Could be resolved by a large computer search (it is a recognised open problem with refereed literature, but a positive answer might be pure computation)",
+  "Erdos's broader question is attributed to a person, but this specific 8-point question is unnamed"
+ ],
+ "plain": "Can you place eight points in the plane so that every pair is an integer distance apart, no three points lie on a line, and no four lie on a circle? Seven such points were found by computer in 2008. Nobody has found eight or shown that eight is impossible.",
+ "math": "Decide whether there exist pairwise distinct $p_1,\\dots,p_8\\in\\mathbb{R}^2$ such that $|p_i-p_j|\\in\\mathbb{Z}$ for all $i,j$, no three of the $p_i$ are collinear, and no four of the $p_i$ are concyclic.",
+ "novelty": 3,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/0804.1303",
+  "https://arxiv.org/abs/2401.10821",
+  "https://arxiv.org/html/2407.08121v1",
+  "https://www.emergentmind.com/open-problems/arbitrarily-large-integer-distance-plane-sets-no-3-collinear-no-4-concyclic"
+ ]
+}

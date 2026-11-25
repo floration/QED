@@ -2236,5 +2236,219 @@
   ],
   "lean": "import Mathlib\n/-! QED-M118: Exponentially beat Minkowski's sphere packing lower bound\nIn high dimension n the best sphere packings known have density only about n²·2^{-n} (up to log\nfactors), barely above the trivial 2^{-n} from greedy/saturated packings, while the best upper bound\nis about 2^{-0.599n}. Is there a constant c>1 with packings of density at least c^n·2^{-n} in all\nlarge dimensions?\nInformal statement: Let $\\Delta_n$ be the supremum of upper densities of packings of congruent balls\nin $\\mathbb{R}^n$. Prove or disprove: there exist $c>1$ and $N$ such that $\\Delta_n\\ge c^n2^{-n}$ for\nall $n\\ge N$.\nFormalization notes:\n* Space: `EuclideanSpace ℝ (Fin n)` with its `volume` (Lebesgue measure) and Euclidean metric.\n  The definitions follow the packing-density definitions of QED-E040, specialised to balls.\n* Packing: congruent copies of the closed unit ball are exactly its translates (the ball is\n  invariant under orthogonal maps), so a packing is a sequence of centres `x : ℕ → E` with\n  `dist (x i) (x j) ≥ 2` for `i ≠ j`, i.e. the balls have pairwise disjoint interiors (they may\n  touch). Indexing by ℕ loses nothing: a ball packing is countable, and finite packings have\n  density 0. The radius 1 is no loss since density is scale-invariant.\n* Density: upper density = limsup over R → ∞ of vol(⋃ balls ∩ B(0,R)) / vol(B(0,R)), computed in\n  `ℝ≥0∞` (numerator ≤ denominator < ∞, denominator > 0 for R > 0 and n ≥ 1). Δ_n is the supremum\n  over packings (the standard definition, as in Rogers / Conway–Sloane; limsup vs lim and centring\n  at the origin do not change the supremum).\n* `Claim` = ∃ c > 1, ∃ N, ∀ n ≥ N, Δ_n ≥ (c/2)^n. Since Δ_n is a supremum, this is equivalent (after\n  shrinking c) to the existence of individual packings of density ≥ c^n 2^{-n}. Proving `¬Claim` =\n  for every c > 1 there are infinitely many n with Δ_n < c^n 2^{-n}, i.e. no exponential improvement\n  over 2^{-n} holds in all large dimensions.\n-/\nnamespace OpenProblems.QEDM118\nnoncomputable section\nopen scoped ENNReal\n\n/-- Ambient Euclidean space `ℝⁿ`. -/\nabbrev E (n : ℕ) : Type := EuclideanSpace ℝ (Fin n)\n\n/-- A packing of unit balls with centres `x i`: distinct centres are at distance at least 2. -/\ndef IsPacking {n : ℕ} (x : ℕ → E n) : Prop :=\n  ∀ i j : ℕ, i ≠ j → 2 ≤ dist (x i) (x j)\n\n/-- Fraction of the ball of radius `R` about the origin covered by the packing. -/\ndef coveredFraction {n : ℕ} (x : ℕ → E n) (R : ℝ) : ℝ≥0∞ :=\n  MeasureTheory.volume ((⋃ i : ℕ, Metric.closedBall (x i) 1) ∩ Metric.ball (0 : E n) R) /\n    MeasureTheory.volume (Metric.ball (0 : E n) R)\n\n/-- Upper density of a packing: `limsup_{R → ∞}` of the covered fraction. -/\ndef upperDensity {n : ℕ} (x : ℕ → E n) : ℝ≥0∞ :=\n  Filter.limsup (fun R : ℝ => coveredFraction x R) Filter.atTop\n\n/-- Sphere packing density `Δ_n` of `ℝⁿ`. -/\ndef packingDensity (n : ℕ) : ℝ≥0∞ :=\n  ⨆ (x : ℕ → E n) (_ : IsPacking x), upperDensity x\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 1 < c ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n → ENNReal.ofReal ((c / 2) ^ n) ≤ packingDensity n\n\nend\nend OpenProblems.QEDM118\n",
   "set": "main"
+ },
+ {
+  "id": "QED-M119",
+  "review_id": "R4-J02",
+  "title": "The 3k−4 conjecture modulo a prime",
+  "area": "Combinatorics",
+  "difficulty": 4.5,
+  "grade": "B",
+  "provenance": "Curated",
+  "credit": "Problem line from Freiman's 3k−4 theorem over Z. The mod-p conjecture appears in work of Freiman, Rödseth, Serra–Zémor, Candela–Serra–Spiegel, Lev–Serra and Grynkiewicz.",
+  "results": null,
+  "premise_risks": [
+   "The name contains 'Freiman' only through 'Freiman's 3k−4 theorem' over Z. The mod-p statement is usually called 'the 3k−4 conjecture', which is not person-named.",
+   "A sparse-range improvement beyond 2.7652 may exist in a 2024–26 preprint not surfaced by search."
+  ],
+  "plain": "Over the integers, Freiman's 3k−4 theorem says that if a finite set A has a sumset A+A with at most 3|A|−4 elements, then A lies in an arithmetic progression with only |A+A|−|A|+1 terms. Modulo a prime p the same should hold as long as A+A does not come too close to filling Z/pZ. It is known for tiny sets (|A| below roughly p/10^215) and, for larger sets, only when |A+A| is well below 3|A|. Prove the full statement.",
+  "math": "Let $p$ be prime and $A\\subseteq\\mathbb Z/p\\mathbb Z$ with $A+A\\neq\\mathbb Z/p\\mathbb Z$. Write $|A+A|=2|A|+r$. Prove that if $|A+A|\\le\\min\\{3|A|-4,\\;p-r-4\\}$, then $A$ is contained in an arithmetic progression $\\{a,a+d,\\dots,a+(L-1)d\\}$ with $L\\le |A|+r+1=|A+A|-|A|+1$. (This states only the first conclusion of the full conjecture, arXiv:1909.07967 Conj. 1.2; the companion statement that $2A$ contains an arithmetic progression with the same difference and at least $2|A|-1$ terms is omitted.)",
+  "novelty": 3,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/math/0403338",
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v30i2p48",
+   "https://arxiv.org/abs/1805.12374",
+   "https://arxiv.org/abs/1909.07967",
+   "https://arxiv.org/abs/2402.15028",
+   "https://arxiv.org/abs/0804.0935"
+  ],
+  "lean": "import Mathlib\n/-! QED-M119: The 3k−4 conjecture modulo a prime\nOver the integers, Freiman's 3k−4 theorem says that if a finite set A has a sumset A+A with at most 3|A|−4 elements, then A lies in an arithmetic progression with only |A+A|−|A|+1 terms. Modulo a prime p the same should hold as long as A+A does not come too close to filling Z/pZ. It is known for tiny sets (|A| below roughly p/10^215) and, for larger sets, only when |A+A| is well below 3|A|. Prove the full statement.\nInformal statement: Let $p$ be prime and $A\\subseteq\\mathbb Z/p\\mathbb Z$ with $A+A\\neq\\mathbb Z/p\\mathbb Z$. Write $|A+A|=2|A|+r$. Prove that if $|A+A|\\le\\min\\{3|A|-4,\\;p-r-4\\}$, then $A$ is contained in an arithmetic progression $\\{a,a+d,\\dots,a+(L-1)d\\}$ with $L\\le |A|+r+1=|A+A|-|A|+1$.\nFormalization notes:\n* `A + A` is the pointwise Finset sumset in `ZMod p` (`open Pointwise`).\n* All size arithmetic is done in `ℤ` (k = |A|, s = |A+A|, r = s − 2k, which may be −1), so\n  there is no truncated natural subtraction. For A = ∅ or |A| ≤ 1 the hypothesis s ≤ 3k − 4\n  fails, so no junk cases arise.\n* The hypothesis A + A ≠ Z/pZ is stated as `∃ x, x ∉ A + A` (avoids needing a Fintype\n  instance on `ZMod p` for variable p) and is kept literally, although it follows from s ≤ p − r − 4.\n* An arithmetic progression with L terms is the image of `Finset.range L` under\n  i ↦ a + i·d. The common difference d = 0 is allowed (degenerate progression); this only\n  weakens the conclusion for singletons, which the hypotheses exclude anyway, and any set\n  contained in such an AP with L terms is contained in a genuine one with ≤ L terms.\n* `Claim` is the full 3k−4 conjecture mod p (as stated e.g. in Candela–Serra–Spiegel 2020).\n  Proving `¬Claim` means exhibiting p and A satisfying the hypotheses not covered by any short AP.\n-/\nnamespace OpenProblems.QEDM119\nnoncomputable section\nopen Pointwise\n\ndef Claim : Prop :=\n  ∀ (p : ℕ), p.Prime → ∀ (A : Finset (ZMod p)),\n    (∃ x : ZMod p, x ∉ A + A) →\n    ((A + A).card : ℤ) ≤ 3 * (A.card : ℤ) - 4 →\n    ((A + A).card : ℤ) ≤ (p : ℤ) - (((A + A).card : ℤ) - 2 * (A.card : ℤ)) - 4 →\n    ∃ (a d : ZMod p) (L : ℕ),\n      (L : ℤ) ≤ ((A + A).card : ℤ) - (A.card : ℤ) + 1 ∧\n      A ⊆ (Finset.range L).image (fun i : ℕ => a + (i : ZMod p) * d)\n\nend\nend OpenProblems.QEDM119\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M120",
+  "review_id": "R4-J04",
+  "title": "Superlinear exponent for K_t-intersecting graph families",
+  "area": "Combinatorics",
+  "difficulty": 3.5,
+  "grade": "B",
+  "provenance": "Extension",
+  "credit": "Full conjecture by Ellis, Filmus, Friedgut (generalising the Simonovits–Sós triangle question). Superlinear-exponent formulation by the proposer. Bounds by Berger–Zhao, Mani–Zhang, Sason.",
+  "results": null,
+  "premise_risks": [
+   "The full statement is often called the 'Ellis–Filmus–Friedgut conjecture'. This candidate is an unnamed weaker sub-question, which the naming rule allows.",
+   "The t=5 result is a 2025 PRIMES report, possibly unrefereed. It is used only for context.",
+   "A cleverer entropy or recursive-trace argument might give a superlinear exponent fairly easily. I could not find one, but this is a difficulty risk."
+  ],
+  "plain": "Consider a family of graphs on the same n labelled vertices such that any two graphs in the family share a complete subgraph K_t among their common edges. Taking all graphs that contain one fixed K_t gives a fraction 2^{-t(t-1)/2} of all graphs, and this is believed to be optimal. An easy entropy argument shows the best possible fraction is at most about 2^{-2t}, so the exponent is at least linear in t. Prove that the exponent grows faster than linearly: the largest fraction is at most 2^{-f(t)} with f(t)/t tending to infinity.",
+  "math": "Call $\\mathcal F\\subseteq 2^{E(K_n)}$ $K_t$-intersecting if for all $G,H\\in\\mathcal F$ the graph $G\\cap H$ contains a copy of $K_t$. Let $\\alpha_t=\\sup_n\\max\\{|\\mathcal F|\\,2^{-\\binom n2}:\\mathcal F\\text{ is }K_t\\text{-intersecting on }[n]\\}$ and $f(t)=\\log_2(1/\\alpha_t)$. Prove $f(t)/t\\to\\infty$. (Known: $f(t)\\le\\binom t2$; $f(3)=3,f(4)=6,f(5)=10$; Shearer's lemma over a uniformly random partition of $[n]$ into $m$ parts gives $f(t)\\ge m\\,f(\\lceil t/m\\rceil)$, hence $f(t)\\ge 10\\lfloor t/5\\rfloor$ and $\\lim f(t)/t=\\sup_s f(s)/s$. So the claim is equivalent to: for every $C$ there is $s$ with $\\alpha_s\\le 2^{-Cs}$. Conjectured: $f(t)=\\binom t2$.)",
+  "novelty": 6,
+  "importance": 5,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2103.12671",
+   "https://arxiv.org/abs/2501.02894",
+   "https://math.mit.edu/research/highschool/primes/materials/2024/Mani-Zhang.pdf",
+   "https://arxiv.org/pdf/2510.18064"
+  ],
+  "lean": "import Mathlib\n/-! QED-M120: Superlinear exponent for K_t-intersecting graph families\nConsider a family of graphs on the same n labelled vertices such that any two graphs in the family share a complete subgraph K_t among their common edges. Taking all graphs that contain one fixed K_t gives a fraction 2^{-t(t-1)/2} of all graphs, and this is believed to be optimal. An easy entropy argument shows the best possible fraction is at most about 2^{-2t}, so the exponent is at least linear in t. Prove that the exponent grows faster than linearly: the largest fraction is at most 2^{-f(t)} with f(t)/t tending to infinity.\nInformal statement: Call $\\mathcal F\\subseteq 2^{E(K_n)}$ $K_t$-intersecting if for all $G,H\\in\\mathcal F$ the graph $G\\cap H$ contains a copy of $K_t$. Let $\\alpha_t=\\sup_n\\max\\{|\\mathcal F|\\,2^{-\\binom n2}:\\mathcal F\\text{ is }K_t\\text{-intersecting on }[n]\\}$ and $f(t)=\\log_2(1/\\alpha_t)$. Prove $f(t)/t\\to\\infty$. (Known: $f(t)\\le\\binom t2$; $f(3)=3,f(4)=6,f(5)=10$; Shearer's lemma over a uniformly random partition of $[n]$ into $m$ parts gives $f(t)\\ge m\\,f(\\lceil t/m\\rceil)$, hence $f(t)\\ge 10\\lfloor t/5\\rfloor$ and $\\lim f(t)/t=\\sup_s f(s)/s$. So the claim is equivalent to: for every $C$ there is $s$ with $\\alpha_s\\le 2^{-Cs}$. Conjectured: $f(t)=\\binom t2$.)\nFormalization notes:\n* Labelled graphs on [n] = Fin n are encoded as edge sets G ⊆ `pairs n`, where `pairs n` is the set of ordered pairs\n  (i, j) with i < j (one representative per unordered pair; |pairs n| = C(n,2)). So graphs on [n] correspond\n  bijectively to subsets of `pairs n`, and there are 2^{C(n,2)} of them.\n* `KtIntersecting t F`: for all G, H ∈ F (G = H allowed, as in the definition), there is a t-element vertex set s all\n  of whose pairs i < j in s are edges of both G and H, i.e. G ∩ H contains a copy of K_t (s.card = t forces t\n  distinct vertices).\n* `frac n t` = (max |F| over K_t-intersecting families of graphs on [n]) / 2^{C(n,2)} ∈ [0, 1]. `alpha t` = sup over n\n  (a real `iSup` of a sequence bounded by 1, hence a genuine supremum). alpha t > 0, witnessed by n = t and\n  F = {complete graph}, so f(t) = log₂(1/alpha t) is a genuine real number.\n* `Claim`: f(t)/t → ∞ as t → ∞ (t cast to ℝ). Proving ¬Claim = f(t)/t is bounded along a subsequence (by the\n  known super-additivity, f(t)/t then converges to a finite limit).\n-/\nnamespace OpenProblems.QEDM120\nnoncomputable section\nopen scoped Classical\n\n/-- Potential edges of a graph on Fin n, as pairs (i, j) with i < j. -/\ndef pairs (n : ℕ) : Finset (Fin n × Fin n) :=\n  (Finset.univ : Finset (Fin n × Fin n)).filter (fun p : Fin n × Fin n => p.1 < p.2)\n\n/-- Every two members (not necessarily distinct) share a copy of K_t in their common edges. -/\ndef KtIntersecting {n : ℕ} (t : ℕ) (F : Finset (Finset (Fin n × Fin n))) : Prop :=\n  ∀ G ∈ F, ∀ H ∈ F, ∃ s : Finset (Fin n), s.card = t ∧\n    ∀ i ∈ s, ∀ j ∈ s, i < j → (i, j) ∈ G ∧ (i, j) ∈ H\n\n/-- A family of graphs on Fin n: all members are edge sets inside `pairs n`. -/\ndef IsGraphFamily {n : ℕ} (F : Finset (Finset (Fin n × Fin n))) : Prop :=\n  ∀ G ∈ F, G ⊆ pairs n\n\n/-- Largest fraction of all labelled graphs on [n] forming a K_t-intersecting family. -/\ndef frac (n t : ℕ) : ℝ :=\n  ((((Finset.univ : Finset (Finset (Finset (Fin n × Fin n)))).filter\n      (fun F : Finset (Finset (Fin n × Fin n)) => IsGraphFamily F ∧ KtIntersecting t F)).sup\n      Finset.card : ℕ) : ℝ) / (2 : ℝ) ^ (Nat.choose n 2)\n\n/-- α_t = sup_n frac n t. -/\ndef alpha (t : ℕ) : ℝ := ⨆ n : ℕ, frac n t\n\n/-- f(t) = log₂(1/α_t). -/\ndef f (t : ℕ) : ℝ := Real.logb 2 (1 / alpha t)\n\ndef Claim : Prop :=\n  Filter.Tendsto (fun t : ℕ => f t / (t : ℝ)) Filter.atTop Filter.atTop\n\nend\nend OpenProblems.QEDM120\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M121",
+  "review_id": "R4-J15",
+  "title": "Additive basis conjecture: a constant number of bases suffices",
+  "area": "Algebra",
+  "difficulty": 6.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Jaeger, Linial, Payan, Tarsi (1992); Alon–Linial–Meshulam (1991)",
+  "results": null,
+  "premise_risks": [
+   "The p=3 case is claimed by an unrefereed single-author note (arXiv:2510.01300, Preprints.org Feb 2026). The general conjecture is unaffected, but the owner may prefer the claim 'for p=5'.",
+   "Naming: called the 'Additive Basis Conjecture' (not person-named); fine under the rules",
+   "Possible overlap with graph-flow problems on the board (none found in existing titles)"
+  ],
+  "plain": "Take several bases of the vector space (Z/p)^n and pool all their vectors into one list. Can every vector of the space be written as the sum of some sub-list, using each pooled vector at most once? The conjecture says a fixed number c(p) of bases always suffices, independent of the dimension n. The best proven bound grows like log n.",
+  "math": "For a prime $p$, a finite multiset $B$ of vectors in $\\mathbb{F}_p^n$ is an additive basis if $\\{\\sum_{b\\in B}\\varepsilon_b b : \\varepsilon\\in\\{0,1\\}^B\\}=\\mathbb{F}_p^n$. Prove that for every prime $p$ there is $c(p)$ such that for every $n\\ge1$ and all bases $B_1,\\dots,B_{c(p)}$ of $\\mathbb{F}_p^n$, the multiset union $B_1\\uplus\\cdots\\uplus B_{c(p)}$ is an additive basis.",
+  "novelty": 3,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/pdf/2111.13658",
+   "https://arxiv.org/abs/2510.01300",
+   "https://www.preprints.org/manuscript/202602.1158/v1",
+   "https://arxiv.org/pdf/0812.2613"
+  ],
+  "lean": "import Mathlib\n/-! QED-M121: Additive basis conjecture: a constant number of bases suffices\nTake several bases of the vector space (Z/p)^n and pool all their vectors into one list. Can every vector of the space be written as the sum of some sub-list, using each pooled vector at most once? The conjecture says a fixed number c(p) of bases always suffices, independent of the dimension n. The best proven bound grows like log n.\nInformal statement: For a prime $p$, a finite multiset $B$ of vectors in $\\mathbb{F}_p^n$ is an additive basis if $\\{\\sum_{b\\in B}\\varepsilon_b b : \\varepsilon\\in\\{0,1\\}^B\\}=\\mathbb{F}_p^n$. Prove that for every prime $p$ there is $c(p)$ such that for every $n\\ge1$ and all bases $B_1,\\dots,B_{c(p)}$ of $\\mathbb{F}_p^n$, the multiset union $B_1\\uplus\\cdots\\uplus B_{c(p)}$ is an additive basis.\nFormalization notes:\n* 𝔽_p^n is `Fin n → ZMod p`. A basis is an indexed family `B a : Fin n → (Fin n → ZMod p)` that\n  is linearly independent over `ZMod p`; since the space has dimension n, n linearly independent\n  vectors are exactly a basis (we avoid the `Basis` structure, whose namespace has moved).\n* The multiset union of c bases is the family indexed by `Fin c × Fin n`; repeated vectors across\n  bases are separate members, as in a multiset. A 0/1 choice is `ε : Fin c → Fin n → Bool`, and\n  the subset sum is `∑ a, ∑ i, if ε a i then B a i else 0`.\n* Claim: for every prime p there is c such that for every n ≥ 1, every c-tuple of bases, and\n  every target vector v, some subset sum equals v. n ≥ 1 rules out the trivial n = 0 case (it\n  is harmless anyway); c = 0 never works for n ≥ 1, so the existential is not vacuous.\n  ¬Claim: for some prime p, for every c there is a dimension and c bases whose union is not an\n  additive basis.\n-/\nnamespace OpenProblems.QEDM121\n\ndef Claim : Prop :=\n  ∀ p : ℕ, p.Prime → ∃ c : ℕ, ∀ n : ℕ, 1 ≤ n →\n    ∀ B : Fin c → Fin n → (Fin n → ZMod p),\n      (∀ a : Fin c, LinearIndependent (ZMod p) (B a)) →\n      ∀ v : Fin n → ZMod p, ∃ ε : Fin c → Fin n → Bool,\n        v = ∑ a : Fin c, ∑ i : Fin n, (if ε a i then B a i else 0)\n\nend OpenProblems.QEDM121\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M122",
+  "review_id": "R4-J18",
+  "title": "The widest hollow body in 3-space",
+  "area": "Geometry",
+  "difficulty": 4.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Codenotti and Santos (2019), Conjecture 1.2; Averkov, Codenotti, Macchia, Santos (2021)",
+  "results": null,
+  "premise_risks": [
+   "Listed on Tao's optimization-constants page (73a), but not moving there; no updates since 2021",
+   "Conjecture is attributed to two people but is not commonly called by their names"
+  ],
+  "plain": "A convex body is hollow if no point with all-integer coordinates lies strictly inside it. Hollow bodies must be thin in some integer direction (the flatness theorem). In the plane the largest guaranteed thinness is known exactly, 1+2/sqrt(3). In 3-space a hollow tetrahedron of lattice width 2+sqrt(2) is known: is that the widest possible?",
+  "math": "For a convex body (compact, convex, nonempty interior) $K\\subset\\mathbb{R}^3$ and $u\\in\\mathbb{Z}^3\\setminus\\{0\\}$ let $w_u(K)=\\max_{x\\in K}\\langle u,x\\rangle-\\min_{x\\in K}\\langle u,x\\rangle$ and $w(K)=\\min_{u\\neq0}w_u(K)$. Call $K$ hollow if $\\operatorname{int}K\\cap\\mathbb{Z}^3=\\emptyset$. Prove or disprove: every hollow convex body $K\\subset\\mathbb{R}^3$ satisfies $w(K)\\le 2+\\sqrt2$. (Equivalently $\\mathrm{Flt}(3)=2+\\sqrt2$; known: $2+\\sqrt2\\le\\mathrm{Flt}(3)<3.972$.)",
+  "novelty": 4,
+  "importance": 6,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://teorth.github.io/optimizationproblems/constants/73a.html",
+   "https://arxiv.org/abs/1907.06199",
+   "https://arxiv.org/abs/1812.00916",
+   "https://arxiv.org/pdf/2604.27260"
+  ],
+  "lean": "import Mathlib\n/-! QED-M122: The widest hollow body in 3-space\nA convex body is hollow if no point with all-integer coordinates lies strictly inside it. Hollow bodies must be thin in some integer direction (the flatness theorem). In the plane the largest guaranteed thinness is known exactly, 1+2/sqrt(3). In 3-space a hollow tetrahedron of lattice width 2+sqrt(2) is known: is that the widest possible?\nInformal statement: For a convex body (compact, convex, nonempty interior) $K\\subset\\mathbb{R}^3$ and $u\\in\\mathbb{Z}^3\\setminus\\{0\\}$ let $w_u(K)=\\max_{x\\in K}\\langle u,x\\rangle-\\min_{x\\in K}\\langle u,x\\rangle$ and $w(K)=\\min_{u\\neq0}w_u(K)$. Call $K$ hollow if $\\operatorname{int}K\\cap\\mathbb{Z}^3=\\emptyset$. Prove or disprove: every hollow convex body $K\\subset\\mathbb{R}^3$ satisfies $w(K)\\le 2+\\sqrt2$. (Equivalently $\\mathrm{Flt}(3)=2+\\sqrt2$; known: $2+\\sqrt2\\le\\mathrm{Flt}(3)<3.972$.)\nFormalization notes:\n* ℝ³ is modelled as Fin 3 → ℝ; its product topology is the Euclidean one, so `interior` is the usual interior.\n  A convex body is K convex, compact, with nonempty interior. Hollow: no integer point (fun i => (z i : ℝ)) lies in\n  interior K.\n* w_u(K) = max_K ⟨u,·⟩ − min_K ⟨u,·⟩ = sup_{x,y∈K} ⟨u, x−y⟩, so w_u(K) ≤ c ⇔ ∀ x y ∈ K, ⟨u,x−y⟩ ≤ c. The lattice width\n  w(K) = min over u ∈ ℤ³∖{0} is attained (w_u is a norm of u when K has interior, so only finitely many u give\n  w_u below any bound). Hence w(K) ≤ 2+√2 ⇔ ∃ u ≠ 0 with w_u(K) ≤ 2+√2, which is what `Claim` states.\n* `Claim`: every hollow convex body in ℝ³ has lattice width ≤ 2+√2, i.e. Flt(3) ≤ 2+√2; with the known hollow\n  tetrahedron, Claim ⇔ Flt(3) = 2+√2. ¬Claim = a hollow convex body of lattice width > 2+√2 exists.\n-/\nnamespace OpenProblems.QEDM122\nnoncomputable section\n\ndef Claim : Prop :=\n  ∀ K : Set (Fin 3 → ℝ), Convex ℝ K → IsCompact K → (interior K).Nonempty →\n    (∀ z : Fin 3 → ℤ, (fun i : Fin 3 => (z i : ℝ)) ∉ interior K) →\n    ∃ u : Fin 3 → ℤ, u ≠ 0 ∧\n      ∀ x ∈ K, ∀ y ∈ K, ∑ i : Fin 3, (u i : ℝ) * (x i - y i) ≤ 2 + Real.sqrt 2\n\nend\nend OpenProblems.QEDM122\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M123",
+  "review_id": "R4-J24",
+  "title": "Halving planes in 3-space: beat n^{5/2}",
+  "area": "Geometry",
+  "difficulty": 4.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Problem of bounding halving planes / k-sets in R^3 (Barany-Furedi-Lovasz 1990, Dey-Edelsbrunner, Sharir-Smorodinsky-Tardos)",
+  "results": null,
+  "premise_risks": [
+   "OpenAI's unrefereed 2026 preprint claims a power saving for planar halving lines; if its method extends, 3D could fall quickly"
+  ],
+  "plain": "Take n points in 3-space, with n odd and no four on a common plane. A halving triangle is a triple of the points whose plane splits the remaining n-3 points evenly, half on each side. The best upper bound on the number of halving triangles, about n^{5/2}, has not been improved since 2001. Show that the exponent 5/2 can be lowered.",
+  "math": "For $S\\subset\\mathbb{R}^3$ with $|S|=n$ odd and no four points coplanar, let $h(S)$ be the number of $3$-subsets $T\\subseteq S$ such that each open half-space bounded by $\\operatorname{aff}(T)$ contains exactly $(n-3)/2$ points of $S$. Prove that there exist $\\varepsilon>0$ and $C$ with $h(S)\\le C\\,n^{5/2-\\varepsilon}$ for all such $S$.",
+  "novelty": 2,
+  "importance": 8,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://dl.acm.org/doi/10.1007/s00454-001-0005-3",
+   "https://arxiv.org/abs/2403.00412",
+   "https://arxiv.org/abs/1903.07196",
+   "https://jeffe.cs.illinois.edu/open/ksets.html"
+  ],
+  "lean": "import Mathlib\n/-! QED-M123: Halving planes in 3-space: beat n^{5/2}\nTake n points in 3-space, with n odd and no four on a common plane. A halving triangle is a triple of the points whose plane splits the remaining n-3 points evenly, half on each side. The best upper bound on the number of halving triangles, about n^{5/2}, has not been improved since 2001. Show that the exponent 5/2 can be lowered.\nInformal statement: For $S\\subset\\mathbb{R}^3$ with $|S|=n$ odd and no four points coplanar, let $h(S)$ be the number of $3$-subsets $T\\subseteq S$ such that each open half-space bounded by $\\operatorname{aff}(T)$ contains exactly $(n-3)/2$ points of $S$. Prove that there exist $\\varepsilon>0$ and $C$ with $h(S)\\le C\\,n^{5/2-\\varepsilon}$ for all such $S$.\nFormalization notes:\n* E = `EuclideanSpace ℝ (Fin 3)`. \"No four coplanar\": every 4-subset T has vector span of\n  dimension 3 (`Module.finrank ℝ (vectorSpan ℝ T) = 3`), i.e. is affinely spanning.\n  Consequently every 3-subset is affinely independent and spans a unique plane, and no\n  fourth point of S lies on it.\n* A plane is {x | ⟪a,x⟫ = b} with a ≠ 0. T is halving if some such plane contains T and\n  has exactly (n−3)/2 points of S strictly on each side. Since aff(T) is the unique plane\n  through T, this is exactly the informal definition. (n−3)/2 is natural division; n is odd\n  and n ≥ 3 whenever a 3-subset exists, so it is exact.\n* The bound is C·n^{5/2−ε} with real exponent (`Real.rpow`); C and ε are uniform in S.\n  For n = 1 the count is 0, so small cases impose no extra constraint.\n* `Claim` is the power-saving improvement of Sharir–Smorodinsky–Tardos. `¬Claim` says for every\n  ε > 0 the exponent 5/2 − ε fails (the O(n^{5/2}) bound is tight up to n^{o(1)}).\n-/\nnamespace OpenProblems.QEDM123\nnoncomputable section\nopen scoped InnerProductSpace RealInnerProductSpace\n\nabbrev E := EuclideanSpace ℝ (Fin 3)\n\n/-- No four points of `S` are coplanar. -/\ndef NoFourCoplanar (S : Finset E) : Prop :=\n  ∀ T : Finset E, T ⊆ S → T.card = 4 → Module.finrank ℝ (vectorSpan ℝ (T : Set E)) = 3\n\n/-- `T` is a halving triangle of `S`. -/\ndef IsHalving (S T : Finset E) : Prop :=\n  ∃ (a : E) (b : ℝ), a ≠ 0 ∧ (∀ x ∈ T, ⟪a, x⟫_ℝ = b) ∧\n    (S.filter (fun x : E => b < ⟪a, x⟫_ℝ)).card = (S.card - 3) / 2 ∧\n    (S.filter (fun x : E => ⟪a, x⟫_ℝ < b)).card = (S.card - 3) / 2\n\nopen Classical in\n/-- Number of halving triangles. -/\ndef h (S : Finset E) : ℕ :=\n  ((S.powersetCard 3).filter (fun T : Finset E => IsHalving S T)).card\n\ndef Claim : Prop :=\n  ∃ ε : ℝ, 0 < ε ∧ ∃ C : ℝ, ∀ S : Finset E, Odd S.card → NoFourCoplanar S →\n    (h S : ℝ) ≤ C * (S.card : ℝ) ^ ((5 : ℝ) / 2 - ε)\n\nend\nend OpenProblems.QEDM123\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M124",
+  "review_id": "R4-J32",
+  "title": "The 1/3–2/3 conjecture for width-three posets",
+  "area": "Combinatorics",
+  "difficulty": 5.0,
+  "grade": "A",
+  "provenance": "Extension",
+  "credit": "1/3–2/3 conjecture: S. S. Kislitsyn (1968), M. Fredman (1975), N. Linial (1984); width-3 subcase singled out as the first open bounded-width case after the 2026 large-width results of Aires, Chan, Kahn, Pak, Panova.",
+  "results": null,
+  "premise_risks": [
+   "The 'large width is settled' framing rests on unrefereed 2026 preprints (Aires; Aires-Chan-Pak-Panova); the width-3 question itself is open independent of them",
+   "Must double-check no explicit-threshold bounded-width result (e.g. in arXiv:2609.30888 Thm 1.5 or 2510.26134) covers width 3 with all ranges"
+  ],
+  "plain": "Take a finite partial order and pick one of its linear extensions (total orders compatible with it) uniformly at random. The 1/3–2/3 conjecture says that, unless the order is already total, some pair x, y has probability between 1/3 and 2/3 that x comes before y. It is known for width 2 (no three pairwise incomparable elements) and, since 2026, for all posets of width above some unspecified constant. Prove it for every poset of width 3.",
+  "math": "For a finite poset $P$, let $e(P)$ be its number of linear extensions and, for $x\\ne y$, let $p(x\\prec y)$ be the fraction of linear extensions in which $x$ precedes $y$. Prove that every finite poset of width exactly $3$ contains $x,y$ with $\\tfrac13\\le p(x\\prec y)\\le\\tfrac23$.",
+  "novelty": 4,
+  "importance": 6,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2609.30888",
+   "https://arxiv.org/abs/2509.11549",
+   "https://arxiv.org/abs/2510.26134",
+   "https://en.wikipedia.org/wiki/1/3%E2%80%932/3_conjecture",
+   "https://arxiv.org/abs/1706.04985"
+  ],
+  "lean": "import Mathlib\n/-! QED-M124: The 1/3–2/3 conjecture for width-three posets\nTake a finite partial order and pick one of its linear extensions (total orders compatible with it) uniformly at random. The 1/3–2/3 conjecture says that, unless the order is already total, some pair x, y has probability between 1/3 and 2/3 that x comes before y. It is known for width 2 (no three pairwise incomparable elements) and, since 2026, for all posets of width above some unspecified constant. Prove it for every poset of width 3.\nInformal statement: For a finite poset $P$, let $e(P)$ be its number of linear extensions and, for $x\\ne y$, let $p(x\\prec y)$ be the fraction of linear extensions in which $x$ precedes $y$. Prove that every finite poset of width exactly $3$ contains $x,y$ with $\\tfrac13\\le p(x\\prec y)\\le\\tfrac23$.\nFormalization notes:\n* A finite poset is a type `α : Type` with `[Fintype α] [PartialOrder α]` (every finite poset is\n  isomorphic to one, and the statement is isomorphism invariant).\n* A linear extension is a bijection `f : α ≃ Fin (Fintype.card α)` that is strictly order\n  preserving: `x < y → f x < f y`. These correspond bijectively to linear extensions.\n* `numLinExt α` = number of linear extensions; `numBefore x y` = number in which `f x < f y`.\n  Both are `Nat.card` of finite subtypes (finite since `α ≃ Fin _` is finite), so no junk value.\n* Width exactly 3: some 3-element antichain exists, and every antichain (as a Finset) has at most\n  3 elements. Antichains use `IsAntichain (· ≤ ·)`.\n* Claim: every such poset has x ≠ y with 1/3 ≤ numBefore x y / numLinExt ≤ 2/3, written without\n  division as 3·numBefore ≥ numLinExt and 3·numBefore ≤ 2·numLinExt (numLinExt ≥ 1 since\n  linear extensions exist). ¬Claim: some width-3 poset has no balanced pair.\n-/\nnamespace OpenProblems.QEDM124\nnoncomputable section\n\n/-- Number of linear extensions of a finite poset. -/\ndef numLinExt (α : Type) [Fintype α] [PartialOrder α] : ℕ :=\n  Nat.card {f : α ≃ Fin (Fintype.card α) // ∀ x y : α, x < y → f x < f y}\n\n/-- Number of linear extensions in which `x` comes before `y`. -/\ndef numBefore {α : Type} [Fintype α] [PartialOrder α] (x y : α) : ℕ :=\n  Nat.card {f : α ≃ Fin (Fintype.card α) // (∀ a b : α, a < b → f a < f b) ∧ f x < f y}\n\n/-- The poset has width exactly 3. -/\ndef WidthThree (α : Type) [Fintype α] [PartialOrder α] : Prop :=\n  (∃ s : Finset α, s.card = 3 ∧ IsAntichain (· ≤ ·) (s : Set α)) ∧\n    ∀ s : Finset α, IsAntichain (· ≤ ·) (s : Set α) → s.card ≤ 3\n\ndef Claim : Prop :=\n  ∀ (α : Type) [Fintype α] [PartialOrder α], WidthThree α →\n    ∃ x y : α, x ≠ y ∧ numLinExt α ≤ 3 * numBefore x y ∧ 3 * numBefore x y ≤ 2 * numLinExt α\n\nend\nend OpenProblems.QEDM124\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M125",
+  "review_id": "R4-J33",
+  "title": "A positive fraction of matroids are sparse paving",
+  "area": "Combinatorics",
+  "difficulty": 6.0,
+  "grade": "A",
+  "provenance": "Extension",
+  "credit": "Weakening of the conjecture of D. Mayhew, M. Newman, D. Welsh, G. Whittle (Europ. J. Combin. 2011), after H. Crapo and G.-C. Rota; log-scale result by R. Pendavingh and J. van der Pol.",
+  "results": null,
+  "premise_risks": [
+   "Adjacent to a person-named conjecture (MNWW): this is an unnamed weakening, allowed by owner rules but should be presented as such",
+   "Some may view positive-fraction as nearly as hard as ratio → 1 (difficulty high)"
+  ],
+  "plain": "A matroid of rank r is sparse paving if its non-bases are r-sets, no two of which share r−1 elements; equivalently, all circuits have size r or r+1, and so do all circuits of its dual. These are the 'generic' matroids, and it is believed that almost all matroids on n labelled elements are of this kind. Even the much weaker statement is open: show that a fixed positive fraction of all matroids on n elements are sparse paving, for all large n.",
+  "math": "Let $m_n$ be the number of matroids on the ground set $[n]$ and $s_n$ the number of sparse paving matroids on $[n]$ (rank $r$ matroids whose set $\\mathcal N$ of non-bases is a family of $r$-subsets with $|X\\triangle Y|\\ge 4$ for distinct $X,Y\\in\\mathcal N$). Claim: $\\liminf_{n\\to\\infty} s_n/m_n>0$.",
+  "novelty": 5,
+  "importance": 6,
+  "value": 6,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1411.0935",
+   "https://arxiv.org/abs/1602.04763",
+   "https://arxiv.org/abs/2509.02832",
+   "https://arxiv.org/pdf/2111.11577"
+  ],
+  "lean": "import Mathlib\n/-! QED-M125: A positive fraction of matroids are sparse paving\nA matroid of rank r is sparse paving if its non-bases are r-sets, no two of which share r−1 elements; equivalently, all circuits have size r or r+1, and so do all circuits of its dual. These are the 'generic' matroids, and it is believed that almost all matroids on n labelled elements are of this kind. Even the much weaker statement is open: show that a fixed positive fraction of all matroids on n elements are sparse paving, for all large n.\nInformal statement: Let $m_n$ be the number of matroids on the ground set $[n]$ and $s_n$ the number of sparse paving matroids on $[n]$ (rank $r$ matroids whose set $\\mathcal N$ of non-bases is a family of $r$-subsets with $|X\\triangle Y|\\ge 4$ for distinct $X,Y\\in\\mathcal N$). Claim: $\\liminf_{n\\to\\infty} s_n/m_n>0$.\nFormalization notes:\n* A matroid on the labelled ground set `Fin n` is identified with its family of bases\n  ℬ ⊆ 2^[n], characterised by the standard base axioms: ℬ nonempty, and the exchange axiom\n  (for B₁, B₂ ∈ ℬ and x ∈ B₁ \\ B₂ there is y ∈ B₂ \\ B₁ with (B₁ − x) + y ∈ ℬ). This is a\n  bijection between matroids on [n] and such families, so `m n` counts labelled matroids.\n  (All bases then have a common size, the rank.)\n* Sparse paving: there is r such that every base has size r, and the non-bases\n  𝒩 = (r-subsets) \\ ℬ satisfy |X Δ Y| ≥ 4 for distinct X, Y ∈ 𝒩, with X Δ Y written as\n  (X \\ Y) ∪ (Y \\ X). `s n` counts base families that are both matroids and sparse paving.\n* m n ≥ 1 (e.g. ℬ = {∅}), so liminf s_n/m_n > 0 is equivalent to: ∃ c > 0 and N₀ with\n  c·m n ≤ s n for all n ≥ N₀. That is `Claim`. `¬Claim` means liminf s_n/m_n = 0.\n-/\nnamespace OpenProblems.QEDM125\nnoncomputable section\nopen Classical\n\n/-- `ℬ` satisfies the matroid base axioms on ground set `Fin n`. -/\ndef IsMatroidBases {n : ℕ} (ℬ : Finset (Finset (Fin n))) : Prop :=\n  ℬ.Nonempty ∧\n    ∀ B₁ ∈ ℬ, ∀ B₂ ∈ ℬ, ∀ x ∈ B₁ \\ B₂, ∃ y ∈ B₂ \\ B₁, insert y (B₁.erase x) ∈ ℬ\n\n/-- The matroid with bases `ℬ` is sparse paving. -/\ndef IsSparsePaving {n : ℕ} (ℬ : Finset (Finset (Fin n))) : Prop :=\n  ∃ r : ℕ, (∀ B ∈ ℬ, B.card = r) ∧\n    ∀ X ∈ (Finset.univ : Finset (Fin n)).powersetCard r \\ ℬ,\n    ∀ Y ∈ (Finset.univ : Finset (Fin n)).powersetCard r \\ ℬ,\n      X ≠ Y → 4 ≤ ((X \\ Y) ∪ (Y \\ X)).card\n\n/-- Number of matroids on `Fin n`. -/\ndef m (n : ℕ) : ℕ :=\n  ((Finset.univ : Finset (Finset (Finset (Fin n)))).filter\n    (fun ℬ : Finset (Finset (Fin n)) => IsMatroidBases ℬ)).card\n\n/-- Number of sparse paving matroids on `Fin n`. -/\ndef s (n : ℕ) : ℕ :=\n  ((Finset.univ : Finset (Finset (Finset (Fin n)))).filter\n    (fun ℬ : Finset (Finset (Fin n)) => IsMatroidBases ℬ ∧ IsSparsePaving ℬ)).card\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 0 < c ∧ ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n → c * (m n : ℝ) ≤ (s n : ℝ)\n\nend\nend OpenProblems.QEDM125\n",
+  "set": "main"
  }
 ]
