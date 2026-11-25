@@ -1,0 +1,15 @@
+You are a STRICT auditor and scorer of proposed open math problems. Do NOT try to solve them.
+Input: /home/claude/rate/b_{I}.json (list of {title, area, W, M}). Duplicate check against /home/claude/rate/all_titles.txt (665 existing/archived problems: title — plain words).
+
+For each problem:
+1. flag (one): ok | known (cite) | false (simple refutation; run python checks <20 s if useful) | easy (standard argument settles it) | ill-posed (vague/garbled/undefined) | computation (finite check settles it) | famous-equiv (equivalent to or implies a famous open problem) | duplicate (of an existing title or another item in the file).
+   Use web search sparingly to check "known".
+2. r: difficulty 0.0–10.0 on the calibrated scale (sensitivity 2.6, cap sets 2.7, lonely runner 3.4, graceful tree 3.6, Goldbach 4.8, twin primes 5.0, Collatz 5.5).
+3. novelty, importance, value: integers 0–10.
+   - novelty: is the question genuinely new (not a variant of an existing problem, not a gimmick mash-up)?
+   - importance: if solved, how much would it matter? (an arbitrary new Collatz-type map ≈ 3; a transcendence question for a famous constant ≈ 6; a breakthrough-forcing question ≈ 8+)
+   - value: overall worth keeping (interest × clarity × distinctness). Anything below 4 will be discarded, so be honest.
+4. why: ≤25 words.
+
+SAVE INCREMENTALLY: after every 10 problems append JSON lines {"title","flag","r","novelty","importance","value","why"} to /home/claude/rate/b_out_{I}.jsonl. Skip titles already in that file (resume support).
+End with one line: counts per flag, number with flag ok and value ≥ 4, mean value.

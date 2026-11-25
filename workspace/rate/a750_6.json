@@ -1,0 +1,182 @@
+[
+{
+"title": "Period-doubling torus bundles",
+"area": "Topology",
+"W": "Build a once-punctured torus bundle by reading the period-doubling word as a product of the two basic shear matrices. Show its hyperbolic volume per letter settles to a limit as the word grows.",
+"M": "Let $W_n\\in\\{a,b\\}^{2^n}$ be the length-$2^n$ prefix of the fixed point of $a\\mapsto ab,\\ b\\mapsto aa$, let $\\phi_n$ be $W_n$ with $a\\mapsto R=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$, $b\\mapsto L=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}$, and let $M_n$ be the (hyperbolic) once-punctured torus bundle with monodromy $\\phi_n$. Prove that $\\lim_{n\\to\\infty}\\mathrm{vol}(M_n)/2^n$ exists."
+},
+{
+"title": "Knotted billiards in a regular tetrahedron",
+"area": "Topology",
+"W": "A billiard ball bouncing periodically inside a regular tetrahedron traces a closed polygon. Show that infinitely many different knot types arise this way.",
+"M": "Call a periodic billiard trajectory in a regular tetrahedron $T\\subset\\mathbb R^3$ admissible if it avoids edges and vertices and is an embedded closed polygon. Prove that the set of knot types of admissible periodic trajectories is infinite."
+},
+{
+"title": "Knotted Reeb orbits of a superball",
+"area": "Topology",
+"W": "The boundary of the 4D ball x\u2074+y\u2074+z\u2074+w\u2074 \u2264 1 carries a natural Reeb flow from the standard symplectic structure. Does some closed orbit form a nontrivial knot?",
+"M": "Let $U=\\{x_1^4+y_1^4+x_2^4+y_2^4\\le1\\}\\subset(\\mathbb R^4,dx_1\\wedge dy_1+dx_2\\wedge dy_2)$ and let $R$ be the Reeb field of $\\lambda=\\tfrac12\\sum(x_i\\,dy_i-y_i\\,dx_i)$ on $\\partial U\\cong S^3$. Decide whether $R$ has a periodic orbit that is a nontrivial knot in $\\partial U$."
+},
+{
+"title": "Simple closed geodesics on the Fermat quartic",
+"area": "Geometry",
+"W": "On the surface x\u2074+y\u2074+z\u2074 = 1 the nine symmetry planes cut out nine simple closed geodesics. Are there only finitely many simple closed geodesics altogether?",
+"M": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the metric induced from $\\mathbb R^3$. The planes $x=0,y=0,z=0,x=\\pm y,y=\\pm z,x=\\pm z$ meet $S$ in simple closed geodesics. Decide whether $S$ has finitely many simple closed geodesics (as unparametrized curves), and if so whether these nine are all of them."
+},
+{
+"title": "Outer billiards around a superellipse",
+"area": "Dynamics",
+"W": "Outer billiards around a smooth convex shape with positive curvature has only bounded orbits. Decide whether this survives for x\u2074+y\u2074 \u2264 1, whose curvature vanishes at four points.",
+"M": "Let $K=\\{x^4+y^4\\le1\\}$ and let $T:\\mathbb R^2\\setminus K\\to\\mathbb R^2\\setminus K$ be the outer billiard map ($T(p)$ is the reflection of $p$ in the point where the right-hand tangent line from $p$ touches $\\partial K$). Decide whether every $T$-orbit is bounded."
+},
+{
+"title": "Rupert superballs",
+"area": "Geometry",
+"W": "The cube can pass through a hole drilled in a copy of itself; the round ball cannot. Show every superball between them, |x|^p+|y|^p+|z|^p \u2264 1 with p > 2, can.",
+"M": "Let $B_p=\\{|x|^p+|y|^p+|z|^p\\le1\\}$. Prove that for every $p\\in(2,\\infty)$ there are orthogonal projections $\\pi_1,\\pi_2$ onto planes and a rigid motion $\\rho$ of the plane with $\\rho(\\pi_1(B_p))\\subset\\operatorname{int}\\pi_2(B_p)$."
+},
+{
+"title": "Drum tones of superellipses",
+"area": "Analysis",
+"W": "Among regions x^p + y^p \u2264 r of unit area, the circle (p = 2) has the lowest tone and the square (p = \u221e) is back up high. Show the tone rises steadily as p goes from 2 to infinity.",
+"M": "Let $D_p=\\{|x|^p+|y|^p\\le r_p^p\\}$ with $r_p$ chosen so $|D_p|=1$, and let $\\lambda_1(p)$ be its first Dirichlet eigenvalue. Prove $\\lambda_1$ is strictly increasing on $[2,\\infty)$."
+},
+{
+"title": "Chaotic billiards in a superellipse",
+"area": "Dynamics",
+"W": "The billiard table x\u2074+y\u2074 \u2264 1 is smooth and convex but has four flat points, so it has no caustics. Show a positive fraction of its phase space is chaotic.",
+"M": "Let $\\Phi$ be the billiard map of $\\{x^4+y^4\\le1\\}$ with its invariant Liouville measure $\\nu$. Prove that the metric entropy $h_\\nu(\\Phi)$ is positive."
+},
+{
+"title": "Ergodicity of the regular tetrahedron billiard",
+"area": "Dynamics",
+"W": "The regular tetrahedron does not tile space, so its billiard cannot be unfolded into a straight-line flow on a torus. Is a billiard ball in it ergodic?",
+"M": "Prove or disprove that the billiard flow in a regular tetrahedron in $\\mathbb R^3$ is ergodic with respect to Liouville measure on the unit tangent bundle."
+},
+{
+"title": "Shifted Fujita equation",
+"area": "PDE",
+"W": "In the plane, every positive solution of u_t = \u0394u + u\u00b2 blows up. Does this survive when the square is replaced by the product of values one unit to the left and right?",
+"M": "Let $e=(1,0)$. Prove or disprove: every solution of $u_t=\\Delta u+u(x-e,t)\\,u(x+e,t)$ on $\\mathbb R^2$ with $0\\le u_0\\in C_c(\\mathbb R^2)$, $u_0\\not\\equiv0$, blows up in finite time."
+},
+{
+"title": "Strauss exponent for an oscillating source",
+"area": "PDE",
+"W": "The wave equation with source |u|^p in 3D has small-data global existence exactly above the Strauss exponent 1+\u221a2. Find the threshold when the source is multiplied by cos t.",
+"M": "For $u_{tt}-\\Delta u=\\cos(t)\\,|u|^p$ on $\\mathbb R^{1+3}$ with data $\\varepsilon(f,g)$, $f,g\\in C_c^\\infty$, determine $p_c$ such that for $p>p_c$ solutions are global for all small $\\varepsilon$, and for $1<p<p_c$ some data blow up for all small $\\varepsilon$; decide whether $p_c=1+\\sqrt2$."
+},
+{
+"title": "Minimal-mass blow-up with reflection",
+"area": "PDE",
+"W": "In the 2D Schr\u00f6dinger equation where each point feels the density at its mirror point, blow-up needs at least the ground-state mass. Classify the solutions that blow up with exactly that mass.",
+"M": "For $i u_t+\\Delta u+|u(-x,t)|^2u=0$ on $\\mathbb R^2$ with $\\|u_0\\|_{L^2}=\\|Q\\|_{L^2}$ ($Q$ the cubic ground state), prove that every $H^1$ solution blowing up in finite time equals, up to phase and scaling, the pseudo-conformal transform of $Q$ centred at the origin."
+},
+{
+"title": "Heat with a cosine reaction",
+"area": "PDE",
+"W": "In u_t = u_xx + cos(x)u\u00b2, the reaction averages to zero, but a second-order effect looks like +u\u00b3, the borderline Fujita case. Does every positive start blow up?",
+"M": "Prove or disprove: for every $0\\le u_0\\in C_c(\\mathbb R)$, $u_0\\not\\equiv0$, the solution of $u_t=u_{xx}+\\cos(x)\\,u^2$ on $\\mathbb R$ blows up in finite time."
+},
+{
+"title": "Difference Burgers, negative side",
+"area": "PDE",
+"W": "In u_t = u_xx + u(x)\u00b2 \u2212 u(x\u22121)\u00b2, mass flows rightward. Big positive bumps blow up in simulations, while big negative bumps flatten out. Prove negative data always survive.",
+"M": "For $u_t=u_{xx}+u(x,t)^2-u(x-1,t)^2$ on $\\mathbb R$, show that every $u_0\\in C_c^\\infty(\\mathbb R)$ with $u_0\\le0$ gives a global solution with $\\|u(t)\\|_\\infty\\to0$. (Finite-difference runs with $u_0=-Ae^{-x^2}$, $A\\in\\{5,20,100,400\\}$, up to $t=3$ or $5$ stayed bounded with $\\sup|u|$ decreasing; $u_0=+5e^{-x^2}$ blew up near $t=0.39$.)"
+},
+{
+"title": "Burgers with lattice viscosity",
+"area": "PDE",
+"W": "Replace the viscosity in Burgers' equation by the bounded discrete Laplacian with step 1. Large jumps can steepen into shocks. Show small-amplitude data never do.",
+"M": "For $u_t+uu_x=u(x+1,t)-2u(x,t)+u(x-1,t)$ on $\\mathbb R$, prove there is $c>0$ such that every $u_0\\in C^\\infty$ with $u_0'\\in L^\\infty$ and $\\sup u_0-\\inf u_0<c$ gives a global solution with $u_x$ bounded on every finite time interval."
+},
+{
+"title": "Laplacian equal to the gradient product",
+"area": "PDE",
+"W": "Find all bounded functions on the plane whose Laplacian equals the product of their two partial derivatives.",
+"M": "Prove or disprove: every bounded $u\\in C^2(\\mathbb R^2)$ with $\\Delta u=u_xu_y$ is constant."
+},
+{
+"title": "Critical NLS mass on the cube",
+"area": "PDE",
+"W": "Focusing cubic Schr\u00f6dinger blow-up in 2D needs the ground-state mass. On a cube surface the corners should lower the threshold to three quarters of it.",
+"M": "On the flat unit-cube surface $S$, consider $iu_t+\\Delta u+|u|^2u=0$. Prove: $H^1$ data with $\\|u_0\\|_2^2<\\tfrac34\\|Q\\|_{L^2(\\mathbb R^2)}^2$ give global solutions, and for every $m>\\tfrac34\\|Q\\|_2^2$ there is $H^1$ data of mass $m$ blowing up in finite time."
+},
+{
+"title": "Quintic Szeg\u0151 growth",
+"area": "PDE",
+"W": "The cubic Szeg\u0151 equation on the circle is integrable and its solutions' high Sobolev norms can grow without bound. Decide what the quintic version does.",
+"M": "For $iu_t=\\Pi(|u|^4u)$ on $L^2_+(\\mathbb T)$ ($\\Pi$ the Szeg\u0151 projector), decide whether there is $u_0\\in C^\\infty\\cap L^2_+$ with $\\limsup_{t\\to\\infty}\\|u(t)\\|_{H^s}=\\infty$ for some $s>\\tfrac12$."
+},
+{
+"title": "L\u2074 Strichartz on a cube",
+"area": "PDE",
+"W": "On a flat square torus the L\u2074 Strichartz estimate holds with only \u03b5 loss of derivatives. Prove the same on the surface of a cube, where corners diffract waves.",
+"M": "Let $S$ be the flat unit-cube surface. Prove that for every $\\varepsilon>0$, $\\|e^{it\\Delta}f\\|_{L^4([0,1]\\times S)}\\le C_\\varepsilon\\|f\\|_{H^\\varepsilon(S)}$."
+},
+{
+"title": "XZ next-nearest spin chain",
+"area": "Analysis",
+"W": "The spin chain with neighbouring XX coupling and next-nearest ZZ coupling is not a free-fermion model. Numerically its gap closes like 1/N. Prove the gap closes.",
+"M": "On the ring $\\mathbb Z/N$ let $H_N=\\sum_i(X_iX_{i+1}+Z_iZ_{i+2})$. For $N\\equiv0\\pmod4$ let $\\Delta_N=E_1-E_0$. Prove $\\Delta_N\\to0$. (Exact diagonalization gives $\\Delta_N=0.641,0.384,0.269,0.205$ for $N=8,12,16,20$, with $N\\Delta_N$ decreasing from $5.13$ to $4.09$; for $N\\equiv2\\pmod4$ the ground state is doubly degenerate.)"
+},
+{
+"title": "Paley spin glass",
+"area": "Combinatorics",
+"W": "Spins on F_p interact through Legendre symbols of their differences. The spectral bound caps the ground-state energy at one half times p^{3/2}, and local search gets to about 0.46. Is the bound sharp?",
+"M": "For primes $p\\equiv1\\pmod4$ let $E_p=\\max_{\\sigma\\in\\{\\pm1\\}^{\\mathbb F_p}}\\sum_{i<j}\\left(\\frac{j-i}{p}\\right)\\sigma_i\\sigma_j\\le\\frac12p^{3/2}$. Decide whether $E_p/p^{3/2}\\to\\frac12$. (Greedy local search from 30 random starts gave ratios $0.461,0.461,0.461,0.456$ for $p=101,197,401,797$.)"
+},
+{
+"title": "Two vortices on a cube",
+"area": "Dynamics",
+"W": "Two identical point vortices on the surface of a cube have no symmetry to make them integrable. Show their motion is chaotic.",
+"M": "Let $G$ be the Green function of the flat unit-cube surface $S$ and $R$ its Robin function. Show the Hamiltonian $H(z_1,z_2)=G(z_1,z_2)+\\tfrac12(R(z_1)+R(z_2))$ on $S\\times S\\setminus\\Delta$, with symplectic form $dA_1+dA_2$, has an energy level on which the flow has positive topological entropy."
+},
+{
+"title": "Dimers on a cube surface",
+"area": "Combinatorics",
+"W": "Count domino coverings of the grid on a cube surface with n \u00d7 n squares per face. Pin down the logarithmic correction that the eight corners contribute.",
+"M": "Let $M_n$ be the number of perfect matchings of the graph formed by the vertices and edges of the $n\\times n$ subdivision of each face of a cube ($6n^2+2$ vertices). Prove $\\log M_n=\\frac{6G}{\\pi}n^2+\\kappa\\log n+O(1)$, with $G$ Catalan's constant, for an explicit $\\kappa$, and find $\\kappa$."
+},
+{
+"title": "Ising spin at a cube corner",
+"area": "Probability",
+"W": "Glue three quarter-planes of the square grid into the surface of an infinite cube corner and run the critical Ising model. Prove the corner spin decorrelates with the exponent 7/24 that conformal field theory predicts.",
+"M": "Let $\\Gamma$ be the union of the three quadrant grids $\\mathbb Z_{\\ge0}^2$ on the faces of the octant boundary, glued along the axes, with apex $o$. For the critical nearest-neighbour Ising model on $\\Gamma$ prove $\\langle\\sigma_o\\sigma_x\\rangle\\asymp|x|^{-7/24}$ as $|x|\\to\\infty$."
+},
+{
+"title": "Kagome Hofstadter butterfly",
+"area": "Analysis",
+"W": "The Harper model on the square lattice has a Cantor spectrum for every irrational flux. Prove the same for electrons hopping on the kagome lattice.",
+"M": "Let $H_\\alpha$ be the nearest-neighbour magnetic Laplacian on the kagome lattice for a uniform magnetic field with flux $2\\pi\\alpha$ through each unit cell. Prove that $\\sigma(H_\\alpha)$ is a Cantor set for every irrational $\\alpha$."
+},
+{
+"title": "Spikes at the primes",
+"area": "Analysis",
+"W": "Put a fixed bump at every prime on the half-line lattice. Prove the electron is localized at energies inside the free band, as it would be if the primes were random.",
+"M": "Let $H=\\Delta+\\lambda\\mathbf 1_{\\mathbb P}$ on $\\ell^2(\\mathbb N)$, $\\lambda\\ne0$. Prove that $H$ has pure point spectrum in $(-2,2)$."
+},
+{
+"title": "Fibonacci-modulated growing Jacobi matrix",
+"area": "Analysis",
+"W": "Off-diagonal weights grow like \u221an but are doubled wherever the Fibonacci word has a 1. Periodic modulations give spectral phase transitions. Decide what this aperiodic one gives.",
+"M": "Let $f\\in\\{0,1\\}^{\\mathbb N}$ be the Fibonacci word and $J$ the Jacobi matrix with $a_n=\\sqrt n\\,(1+f_n)$, $b_n=0$. Determine the spectral type of $J$; in particular decide whether $J$ has absolutely continuous spectrum."
+},
+{
+"title": "Hearing tetrahedra",
+"area": "Analysis",
+"W": "Triangles can be heard: their Dirichlet spectrum determines them. Show the same holds for tetrahedra.",
+"M": "Prove that two tetrahedra in $\\mathbb R^3$ with the same Dirichlet Laplacian spectrum are congruent."
+},
+{
+"title": "Non-arithmetic tones of the cube",
+"area": "Analysis",
+"W": "Many vibration frequencies of a cube's surface come from the square torus and are rational multiples of \u03c0\u00b2. Show some frequency is not.",
+"M": "Let $S$ be the flat unit-cube surface. Prove that some eigenvalue of the Laplacian on $S$ is not a rational multiple of $\\pi^2$."
+},
+{
+"title": "Infinite knots in the ABC flow",
+"area": "Topology",
+"W": "Steady Euler flows can carry knotted streamlines. Show the symmetric ABC flow has closed streamlines tied in infinitely many different knots.",
+"M": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb T^3$ has null-homotopic periodic orbits lying in embedded balls and realizing infinitely many distinct knot types."
+}
+]

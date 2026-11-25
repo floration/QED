@@ -6,9 +6,10 @@ Hard requirements for every problem:
 - Not easy: if a standard argument (Bertrand, Dirichlet, Carleson, Vinogradov, Koukoulopoulos–Maynard, Mauduit–Rivat, trivial bounds, monotone decrease) settles it, discard it.
 - Not settled by a finite computation.
 - Well-posed and precise. No "..." or hedging inside statements.
-- Not a duplicate of, or close variant of, any problem in /home/claude/rate/all_titles.txt (title — plain words; read it ALL first; that collection is already saturated with: hat/spectre tilings, Gerver's sofa variants, square-sum graphs, Prime Nim, largest-prime-factor maps, seven-free digits, Keller/Jacobian maps, Navier–Stokes blow-up). Avoid those objects entirely unless the question is clearly different in kind.
+- Not a duplicate of, or close variant of, any problem in /home/claude/rate/all_titles.txt (title — plain words; read it ALL first; that collection is already saturated with: hat/spectre tilings, Gerver's sofa variants, square-sum graphs, Prime Nim, largest-prime-factor maps, seven-free digits, Keller/Jacobian maps, Navier–Stokes blow-up). Avoid those objects entirely. They are now CAPPED and closed: no new problems about hat/spectre tilings, Gerver's sofa, square-sum or prime-sum graphs, Prime Nim, largest-prime-factor maps, digit-restricted ("7-free") numbers, Keller/Jacobian maps, firefighter games, Sudoku.
 - Target difficulty: centred around 5 on this calibrated scale (sensitivity conjecture 2.6, cap sets 2.7, lonely runner 3.4, graceful tree 3.6, Goldbach 4.8, twin primes 5.0, Collatz 5.5; 10 = beyond all methods). Spread from about 3 to 9.
 - Any numerical claim (e.g. "every tested start reaches these cycles") must be verified by you with code you actually run (keep each run under 20 s), and the statement must say what was tested.
+- QUALITY BAR (problems are later scored 0-10 for novelty, importance, value; anything below value 4 is discarded): each problem must have its own reason to exist — a natural object, a question whose answer would teach something or force a new method, connections to other mathematics. No gimmick mash-ups ("known problem X but on object Y"), no cosmetic variants of each other (at most 2 problems per template in your whole batch), no isolated arbitrary constants.
 - Prefer natural, crisp, surprising questions about concrete new objects; vary templates (do not make many problems from one template).
 
 Context facts (treat as true, late 2026): RH proved in Lean (Alpöge, Nov 2026); Jacobian conjecture false in dim 3; forced 3D Navier–Stokes blow-up exists; Erdős unit distance conjecture disproved (n^1.014); Gerver's sofa proved optimal (Baek).
@@ -20,3 +21,5 @@ M: precise math statement with $LaTeX$
 
 (rating = your honest integer 2–9 estimate on the scale above; Area one of: Number theory, Combinatorics, Geometry, Analysis, Probability, Dynamics, Algebra, Logic, Games, Topology, PDE, Computation)
 Then reply with one line: how many problems written.
+
+SAVE INCREMENTALLY (mandatory): as soon as each problem has passed your checks, APPEND its block to the output file immediately (create the file if needed). Never hold problems in memory to write at the end — the session may be interrupted and unsaved work is lost.

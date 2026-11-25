@@ -1,0 +1,182 @@
+[
+{
+"title": "Thue\u2013Morse Lorenz knots",
+"area": "Topology",
+"W": "Turn the first 2^n letters of the Thue\u2013Morse word into a periodic orbit of the Lorenz template. Show these knots are eventually hyperbolic and their volume grows proportionally to the word length.",
+"M": "Let $K_n$ be the Lorenz knot whose Lorenz word is the length-$2^n$ Thue\u2013Morse prefix $t_0\\cdots t_{2^n-1}$ with $0\\mapsto x$, $1\\mapsto y$ (this word is primitive). Prove that $S^3\\setminus K_n$ is hyperbolic for all sufficiently large $n$ and that $\\lim_{n\\to\\infty}\\mathrm{vol}(S^3\\setminus K_n)/2^n$ exists and is positive."
+},
+{
+"title": "Chaos in the symmetric ABC flow",
+"area": "Dynamics",
+"W": "The ABC flow with all three coefficients equal to 1 is a classical steady solution of the Euler equations on the 3-torus. Prove it is genuinely chaotic.",
+"M": "Prove that the flow of $\\dot x=\\sin z+\\cos y,\\ \\dot y=\\sin x+\\cos z,\\ \\dot z=\\sin y+\\cos x$ on $\\mathbb T^3$ has positive topological entropy."
+},
+{
+"title": "Integrability of the egg-crate torus",
+"area": "Dynamics",
+"W": "Take the surface z = \u03b5 sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.",
+"M": "For $\\varepsilon>0$ let $g_\\varepsilon$ be the metric on $\\mathbb R^2/(2\\pi\\mathbb Z)^2$ induced by the graph $z=\\varepsilon\\sin x\\sin y$ in $\\mathbb R^3$. Prove that for every $\\varepsilon>0$ the geodesic flow of $g_\\varepsilon$ has no real-analytic first integral on $T^*\\mathbb T^2\\setminus 0$ that is functionally independent of the Hamiltonian."
+},
+{
+"title": "How nearly can tetrahedra close up",
+"area": "Geometry",
+"W": "A chain of regular tetrahedra glued face to face can never close exactly. Find the exact exponential rate at which the best near-closure improves with chain length.",
+"M": "For a regular tetrahedron $T_0$, a chain of length $n$ is $T_0,\\dots,T_n$ with $T_{k+1}$ the reflection of $T_k$ in a face not shared with $T_{k-1}$. Let $g(n)$ be the minimum over chains of the Hausdorff distance between $T_n$ and $T_0$ (always positive). Prove that $\\lim_{n\\to\\infty}\\frac1n\\log g(n)=-\\frac{\\log 3}{6}$."
+},
+{
+"title": "Sup norms on the Fermat quartic",
+"area": "Analysis",
+"W": "On a sphere, some eigenfunctions pile up at the poles as much as possible. Show this cannot happen on the surface x\u2074+y\u2074+z\u2074 = 1.",
+"M": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the induced metric and $\\Delta\\varphi=-\\lambda\\varphi$, $\\|\\varphi\\|_{L^2(S)}=1$. Prove that $\\|\\varphi\\|_{L^\\infty(S)}=o(\\lambda^{1/4})$ as $\\lambda\\to\\infty$."
+},
+{
+"title": "Capacities of the 4D superball",
+"area": "Geometry",
+"W": "Viterbo's conjecture that all symplectic capacities agree on convex bodies is false in general. Do they agree on the 4D ball x\u2074+y\u2074+z\u2074+w\u2074 \u2264 1?",
+"M": "Let $U=\\{x_1^4+y_1^4+x_2^4+y_2^4\\le1\\}\\subset(\\mathbb R^4,\\omega_0)$. Decide whether the Gromov width of $U$ equals its Ekeland\u2013Hofer\u2013Zehnder capacity (the minimal action of a closed characteristic on $\\partial U$)."
+},
+{
+"title": "Charge on a Fermat conductor",
+"area": "Analysis",
+"W": "Put a unit of electric charge on a perfectly conducting body x\u2074+y\u2074+z\u2074 \u2264 1. Show the surface charge is thinnest at the six flat points and thickest at the eight diagonal points.",
+"M": "Let $\\mu$ be the Newtonian equilibrium measure of $K=\\{x^4+y^4+z^4\\le1\\}$, with density $\\rho$ with respect to surface area on $\\partial K$. Prove that $\\rho$ attains its minimum exactly at $(\\pm1,0,0),(0,\\pm1,0),(0,0,\\pm1)$ and its maximum exactly at $3^{-1/4}(\\pm1,\\pm1,\\pm1)$."
+},
+{
+"title": "Free-boundary disks in a superball",
+"area": "Geometry",
+"W": "In a round ball the only free-boundary minimal disks are flat. In the superball x\u2074+y\u2074+z\u2074 \u2264 1, is there one that is not a flat slice?",
+"M": "Let $B=\\{x^4+y^4+z^4\\le1\\}$. Decide whether there is an embedded minimal disk $\\Sigma\\subset B$ with $\\partial\\Sigma\\subset\\partial B$ meeting $\\partial B$ orthogonally that is not contained in a plane."
+},
+{
+"title": "Riesz-transform Schr\u00f6dinger equation",
+"area": "PDE",
+"W": "Couple a 2D Schr\u00f6dinger wave to the Riesz transform of its own density. Mass is conserved but there is no energy. Do smooth solutions live forever?",
+"M": "Consider $i u_t+\\Delta u=u\\,R_1(|u|^2)$ on $\\mathbb R\\times\\mathbb R^2$, where $\\widehat{R_1 f}(\\xi)=-i\\frac{\\xi_1}{|\\xi|}\\hat f(\\xi)$. Decide whether every $u_0\\in H^1(\\mathbb R^2)$ gives a global solution in $C(\\mathbb R,H^1)$."
+},
+{
+"title": "Euler with reversed stretching",
+"area": "PDE",
+"W": "Flip the sign of the vortex-stretching term in the 3D Euler equations, keeping the usual Biot\u2013Savart law. Do smooth solutions stay smooth forever?",
+"M": "Consider $\\omega_t+(u\\cdot\\nabla)\\omega=-S\\omega$ on $\\mathbb T^3$, where $u=\\nabla\\times(-\\Delta)^{-1}\\omega$ and $S=\\tfrac12(\\nabla u+\\nabla u^{T})$. Decide whether every $\\omega_0\\in C^\\infty(\\mathbb T^3)$ with mean zero yields a global smooth solution."
+},
+{
+"title": "Reflected Lane\u2013Emden in five dimensions",
+"area": "PDE",
+"W": "\u2212\u0394u = u\u00b2 has no positive solutions in R\u2075. Replace u\u00b2 by u(x)u(\u2212x). Positive solutions are ruled out in dimensions up to 4 and exist from 6 on; decide dimension 5.",
+"M": "Decide whether there is a positive $u\\in C^2(\\mathbb R^5)$ with $-\\Delta u(x)=u(x)\\,u(-x)$ for all $x$."
+},
+{
+"title": "KdV with a cosine coefficient",
+"area": "PDE",
+"W": "Put a cos x in front of the cubic term of modified KdV on the circle. Energy survives but the L\u00b2 norm no longer does. Can solutions blow up?",
+"M": "Consider $u_t+u_{xxx}+(\\cos(x)\\,u^3)_x=0$ on $\\mathbb T=\\mathbb R/2\\pi\\mathbb Z$, which conserves $\\int u$ and $\\int(\\tfrac12u_x^2-\\tfrac14\\cos(x)u^4)$ but not $\\int u^2$. Decide whether every $u_0\\in C^\\infty(\\mathbb T)$ yields a global smooth solution."
+},
+{
+"title": "Burgers with degenerate critical dissipation",
+"area": "PDE",
+"W": "Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off at one point of the circle. Do shocks form there?",
+"M": "Let $a(x)=1-\\cos x$ and consider $u_t+uu_x+\\Lambda^{1/2}\\big(a\\,\\Lambda^{1/2}u\\big)=0$ on $\\mathbb T$, $\\Lambda=(-\\partial_x^2)^{1/2}$. Decide whether every $u_0\\in C^\\infty(\\mathbb T)$ yields a global smooth solution."
+},
+{
+"title": "Permanent\u2013Amp\u00e8re equation",
+"area": "PDE",
+"W": "Monge\u2013Amp\u00e8re sets the Hessian determinant to 1, and J\u00f6rgens showed its entire convex solutions are quadratics. Swap the determinant for the permanent.",
+"M": "Let $u\\in C^4(\\mathbb R^2)$ satisfy $u_{xx}u_{yy}+u_{xy}^2=1$, $u_{xx}>0$, $2u_{xy}^2<1$ everywhere (ellipticity). Prove or disprove that $u$ is a quadratic polynomial."
+},
+{
+"title": "Mirror-competition KPP",
+"area": "PDE",
+"W": "In u_t = u_xx + u(1 \u2212 u(\u2212x)), each point competes with its mirror image. Even data behave like ordinary KPP, but the state u \u2261 1 is unstable to odd perturbations. Show any asymmetry eventually explodes.",
+"M": "For $u_t=u_{xx}+u(x,t)\\,(1-u(-x,t))$ on $\\mathbb R$ with $0\\le u_0\\in C_c(\\mathbb R)$ not even (solutions are global, $0\\le u\\le e^t\\|u_0\\|_\\infty$), prove $\\sup_x u(x,t)\\to\\infty$ as $t\\to\\infty$."
+},
+{
+"title": "Keller\u2013Segel on the cube",
+"area": "PDE",
+"W": "On smooth surfaces chemotactic collapse needs mass 8\u03c0. The 3\u03c0/2 cone points at the corners of a cube surface should lower this to 6\u03c0.",
+"M": "On the flat unit-cube surface $S$ (area $6$), consider $\\rho_t=\\Delta\\rho-\\nabla\\cdot(\\rho\\nabla c)$, $-\\Delta c=\\rho-\\frac{M}{6}$, $\\int_S\\rho=M$. Prove that solutions with $0\\le\\rho_0\\in C^\\infty$ are global if $M<6\\pi$, and that for every $M>6\\pi$ some smooth data blow up in finite time."
+},
+{
+"title": "Lane\u2013Emden with a shift",
+"area": "PDE",
+"W": "Replace u\u00b2 in the five-dimensional Lane\u2013Emden equation by the square of u at a shifted point. Are there still no positive solutions?",
+"M": "Let $e\\in\\mathbb R^5$, $e\\ne0$. Decide whether there is a positive $u\\in C^2(\\mathbb R^5)$ with $-\\Delta u(x)=u(x+e)^2$ for all $x$."
+},
+{
+"title": "Damped waves on a cube",
+"area": "PDE",
+"W": "Damp waves on a cube surface only on one face. Belt geodesics miss that face, so energy decays only polynomially. Find the exact rate.",
+"M": "On the flat unit-cube surface $S$ let $a\\in C^\\infty(S)$, $0\\le a\\le1$, equal 1 on a closed sub-square of the top face and 0 outside the top face, and solve $u_{tt}-\\Delta u+a u_t=0$. Find the largest $\\alpha$ with $E(t)^{1/2}\\le Ct^{-\\alpha}\\|(u_0,u_1)\\|_{H^2\\times H^1}$ for all data."
+},
+{
+"title": "Scattering on the cube corner",
+"area": "PDE",
+"W": "Defocusing cubic Schr\u00f6dinger in the plane scatters for all finite-mass data. Show the same on the surface of an infinite cube corner.",
+"M": "Let $\\mathcal C$ be the flat cone of angle $3\\pi/2$ (boundary of an octant). Prove that every $u_0\\in L^2(\\mathcal C)$ gives a global solution of $iu_t+\\Delta u=|u|^2u$ that scatters in $L^2$ as $t\\to\\pm\\infty$."
+},
+{
+"title": "Thue\u2013Morse quantum walk",
+"area": "Analysis",
+"W": "A quantum walker on the line uses a Hadamard coin or a rotation coin according to the Thue\u2013Morse sequence. Decide whether it spreads at full ballistic speed.",
+"M": "On $\\ell^2(\\mathbb Z)\\otimes\\mathbb C^2$ let $U=S\\,C$, where $S$ shifts the up and down components by $+1$ and $-1$, and $C_n=H$ if $t_{|n|}=0$, $C_n=\\begin{pmatrix}\\cos\\frac\\pi3&\\sin\\frac\\pi3\\\\-\\sin\\frac\\pi3&\\cos\\frac\\pi3\\end{pmatrix}$ if $t_{|n|}=1$. For $\\psi_0=\\delta_0\\otimes e_1$ decide whether $\\limsup_{T\\to\\infty}\\frac{\\log\\sum_n|n|^2\\|(U^T\\psi_0)(n)\\|^2}{2\\log T}=1$."
+},
+{
+"title": "Three-body mean-field rotors",
+"area": "Dynamics",
+"W": "Three rotors on a circle attract each other with a cosine potential. After removing total momentum, show this two-degree-of-freedom system is not integrable.",
+"M": "Let $H=\\tfrac12(p_1^2+p_2^2+p_3^2)+\\sum_{i<j}(1-\\cos(\\theta_i-\\theta_j))$ on $T^*\\mathbb T^3$. Prove that the reduction by $\\sum p_i$ has no meromorphic first integral independent of $H$ on generic energy levels."
+},
+{
+"title": "Four vortices on a square torus",
+"area": "Dynamics",
+"W": "Three point vortices on a flat torus are integrable. Show four identical ones are not.",
+"M": "Let $H=-\\sum_{i<j}G(z_i-z_j)$, with $G$ the Green function of $\\mathbb C/(\\mathbb Z+i\\mathbb Z)$, for four unit vortices. Prove that after reduction by the translation symmetry the system has no real-analytic first integral independent of $H$."
+},
+{
+"title": "Chaos in the double pendulum at every energy",
+"area": "Dynamics",
+"W": "The planar double pendulum with equal masses and arms is chaotic at moderate energies. Prove it is chaotic at every energy above the rest state, however small.",
+"M": "Let $H$ be the Hamiltonian of the planar double pendulum with $m_1=m_2=\\ell_1=\\ell_2=g=1$, with minimum $E_0$. Prove that for every $E>E_0$ the flow on $\\{H=E\\}$ has positive topological entropy."
+},
+{
+"title": "Two-frequency localization",
+"area": "Analysis",
+"W": "Use a potential that is the sum of two cosines with frequencies \u221a2 and \u221a3, and take strong coupling. Prove electrons localize for these specific frequencies, not just for almost every frequency pair.",
+"M": "Let $(H_\\theta\\psi)(n)=\\psi(n+1)+\\psi(n-1)+10\\big(\\cos2\\pi(n\\sqrt2+\\theta_1)+\\cos2\\pi(n\\sqrt3+\\theta_2)\\big)\\psi(n)$. Prove that for Lebesgue-a.e. $\\theta\\in\\mathbb T^2$, $H_\\theta$ has pure point spectrum with exponentially decaying eigenfunctions."
+},
+{
+"title": "Spikes at the squares",
+"area": "Analysis",
+"W": "Put a fixed bump at every perfect square on the half-line lattice. The spectrum has no absolutely continuous part. Prove the states are localized inside the free band.",
+"M": "Let $H=\\Delta+\\lambda\\mathbf 1_{\\{m^2:m\\ge1\\}}$ on $\\ell^2(\\mathbb N)$, $\\lambda\\ne0$. Prove that the spectral measure of $\\delta_1$ restricted to $(-2,2)$ is pure point."
+},
+{
+"title": "Jacobi matrix of primes",
+"area": "Analysis",
+"W": "Use the primes as the off-diagonal entries of a Jacobi matrix. Known criteria for absolutely continuous spectrum just fail because prime gaps fluctuate. Decide the spectral type.",
+"M": "Let $J$ be the Jacobi matrix on $\\ell^2(\\mathbb N)$ with $a_n=p_n$ (the $n$-th prime) and $b_n=0$, which is self-adjoint since $\\sum1/p_n=\\infty$. Decide whether the spectrum of $J$ is purely absolutely continuous on $\\mathbb R$."
+},
+{
+"title": "Quartic oscillator ground state",
+"area": "Analysis",
+"W": "The lowest energy of the quartic oscillator, \u2212d\u00b2/dx\u00b2 + x\u2074, is about 1.0603620905. Show it is irrational.",
+"M": "Let $E_0=\\min\\sigma\\big(-\\frac{d^2}{dx^2}+x^4\\big)$ on $L^2(\\mathbb R)$. Prove $E_0\\notin\\mathbb Q$."
+},
+{
+"title": "Chirp potential threshold",
+"area": "Analysis",
+"W": "The potential \u03bb sin(x\u00b2) oscillates faster and faster, so it acts like \u2212\u03bb\u00b2/(8x\u00b2) at long range. Prove that infinitely many bound states appear exactly when \u03bb exceeds \u221a2.",
+"M": "Let $H_\\lambda=-\\frac{d^2}{dx^2}+\\lambda\\sin(x^2)$ on $L^2(\\mathbb R)$. Prove that $H_\\lambda$ has finitely many negative eigenvalues if $|\\lambda|<\\sqrt2$ and infinitely many if $|\\lambda|>\\sqrt2$, and decide the case $|\\lambda|=\\sqrt2$."
+},
+{
+"title": "Multiplicities on the Fermat quartic",
+"area": "Analysis",
+"W": "The surface x\u2074+y\u2074+z\u2074 = 1 has the symmetries of a cube. Show its Laplace eigenvalues never repeat more than symmetry forces, except perhaps finitely often.",
+"M": "Let $S=\\{x^4+y^4+z^4=1\\}$ with the induced metric. Prove that all but finitely many Laplace eigenvalues of $S$ have multiplicity at most $3$."
+},
+{
+"title": "Frozen vortices for Kuramoto on a cube",
+"area": "Dynamics",
+"W": "Identical Kuramoto oscillators on the grid of a cube surface tend to synchronize. Show that for large grids a stable state that is not synchronized also exists.",
+"M": "Let $Q_n$ be the vertex\u2013edge graph of the $n\\times n$ subdivided cube surface and $\\dot\\theta_i=\\sum_{j\\sim i}\\sin(\\theta_j-\\theta_i)$. Prove that for all large $n$ there is a linearly stable equilibrium that is not of the form $\\theta_i\\equiv c$."
+}
+]
