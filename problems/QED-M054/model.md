@@ -9,6 +9,8 @@ Main set · Grade A · QED Curated · Dynamics
 
 **Math:** Let f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)) on T^2=R^2/Z^2 (Slijepcevic's normalization; Chirikov's K equals 2 pi k), and h_m(f_k) the metric entropy w.r.t. area. Known: log(2 pi k+4)-2^{430} <= h_m(f_k) <= log(2 pi k+4) for k>=exp(2^{50000}) (Slijepcevic 2026). Prove h_m(f_k)>0 for all k>=10^6, or for at least one explicit k<=100.
 
+**Reviewer note:** Context (AI-lab announcement, treated as correct): OpenAI 146: Positive metric entropy for the standard map (Positive Metric Entropy for the Standard Map at Large Parameters). Proves h_m(f_k)>0 for all k>=k_0 in the same normalization, but k_0 is not explicit (ineffective). The board asks for all k>=10^6 or one explicit k<=100, so it is not met. The 'Known' line should cite this all-large-k result alongside Slijepcevic's explicit exp(2^50000) threshold.
+
 **Credit:** Ya. G. Sinai (conjecture, 1994); Slijepcevic 2026, arXiv:2611.09361
 
 **Rests on recent unrefereed work. Check these premises first:**

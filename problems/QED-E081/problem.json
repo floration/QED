@@ -13,7 +13,7 @@
  "importance": 8,
  "value": 6,
  "formal_status": "formalized",
- "review_note": "Context (Nov 2026): OpenAI's preprint \"The Unique Games Theorem\" proves UGC; together with P ≠ NP this would imply the Claim, but P ≠ NP is not known, so the Claim remains open.",
+ "review_note": "Context (Nov 2026): OpenAI's preprint \"The Unique Games Theorem\" proves UGC; together with P ≠ NP this would imply the Claim, but P ≠ NP is not known, so the Claim remains open. Context (AI-lab announcement, treated as correct): OpenAI 102: The Unique Games Conjecture and optimal approximation thresholds (The Unique Games Theorem). UGC is now a theorem (3SAT reduces to UG with completeness 1-eps, soundness delta, fixed alphabet). If not-Claim held, constant-degree SoS would decide those instances in poly time, giving P=NP. So Claim follows from P!=NP, and not-Claim would imply P=NP. It is still not proved unconditionally.",
  "refs": [
   "Barak, Brandão, Harrow, Kelner, Steurer, Zhou, Hypercontractivity, sum-of-squares proofs, and their applications, STOC 2012, arXiv:1205.4484",
   "Khot, Minzer, Safra, Pseudorandom sets in Grassmann graph have near-perfect expansion, FOCS 2018",

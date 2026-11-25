@@ -582,7 +582,8 @@
   "M_fix_reason": "M's 'Equivalently (Korten 2021), AVOID is in FP^NP' overstates the connection: Korten's results tie AVOID in FP^NP to the near-maximum (about 2^n/n) truth-table construction under P^NP reductions, not to a 2^{εn} lower bound at an unspecified ε, and W's 2^n/n target differs from M's 2^{εn}. Stated the lower bound alone and recorded AVOID as a related target.",
   "prov_reason": "Exponential circuit lower bounds for E^NP are a long-standing open problem, explicitly the target of the range-avoidance program after the S₂E results.",
   "legacy_id": "N-695",
-  "set": "main"
+  "set": "main",
+  "review_note": "Context (AI-lab announcement, treated as correct): OpenAI 378, The Exponential Time Hypothesis is False. Claims superlinear circuit lower bounds for a language in E^NP on infinitely many lengths, which is new for E^NP. Superlinear is far below the board's 2^{eps n} target, so this does not resolve it, but it changes the stated best-known E^NP lower bound."
  },
  {
   "id": "QED-M040",
@@ -944,7 +945,8 @@
   "M_fix_reason": null,
   "prov_reason": "Claim is the k >= 10^6 case of Sinai's conjecture (positive metric entropy for every k), with the threshold recently made explicit by Slijepcevic.",
   "legacy_id": "N-674",
-  "set": "main"
+  "set": "main",
+  "review_note": "Context (AI-lab announcement, treated as correct): OpenAI 146: Positive metric entropy for the standard map (Positive Metric Entropy for the Standard Map at Large Parameters). Proves h_m(f_k)>0 for all k>=k_0 in the same normalization, but k_0 is not explicit (ineffective). The board asks for all k>=10^6 or one explicit k<=100, so it is not met. The 'Known' line should cite this all-large-k result alongside Slijepcevic's explicit exp(2^50000) threshold."
  },
  {
   "id": "QED-M056",
@@ -1051,7 +1053,8 @@
   "M_fix_reason": null,
   "prov_reason": "A sharpened target (constant-factor gain in the Kalai-Kleitman exponent) within the polynomial Hirsch conjecture program; no source found that poses exactly (1-ε) log2 d, though Liu-Ge-Ye discuss the sharpness of the leading term for path-counting recursions.",
   "legacy_id": "N-712",
-  "set": "main"
+  "set": "main",
+  "review_note": "Context (AI-lab announcement, treated as correct): OpenAI 380, Superpolynomial graph diameter of simple polytopes (polynomial Hirsch refuted). Gives bounded simple polytopes with n facets, d=n^{o(1)}, diameter n^{omega(1)}, and Thm 1.2 lower bound cE*min{E^a,d^b}. Unquantified superpolynomial growth does not reach (n-d)^{(1-eps)log2 d}, so the upper-bound target stays open. The board's 'Known' line should add the new superpolynomial lower bound."
  },
  {
   "id": "QED-M061",
@@ -1188,7 +1191,7 @@
   "prov_reason": "The request for an explicit, moderate-size counterexample is QED's response to the claimed non-constructive 2026 disproof; no ref poses this specific explicit-construction question (Cambie's criterion is a tool, not the question).",
   "legacy_id": "N-139",
   "set": "main",
-  "review_note": "Context: the OpenAI Hadwiger counterexample (preprint dated 2026-09-23, released 2026-10-06) is non-explicit (random graphs on 2^{1000·(10^9+1)·N} vertices); this problem asks for an explicit one."
+  "review_note": "Context: the OpenAI Hadwiger counterexample (preprint dated 2026-09-23, released 2026-10-06) is non-explicit (random graphs on 2^{1000·(10^9+1)·N} vertices); this problem asks for an explicit one. Context (AI-lab announcement, treated as correct): OpenAI 157: Graph coloring, clique minors, and Colin de Verdiere invariants (A counterexample to Hadwiger's conjecture). Hadwiger is now disproved (alpha<=2 graphs with cm(G)<m/100, h<26m/75+2/3<m/2<=chi). But the construction is probabilistic (sampled configurations, unbounded parameter n), so it gives no explicit graph with <10^6 vertices and a checkable proof. The board target is unmet; premise (a counterexample exists) is confirmed. Reframe as 'explicit/small' only."
  },
  {
   "id": "QED-M067",

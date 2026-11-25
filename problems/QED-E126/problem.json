@@ -17,6 +17,7 @@
  "importance": 7,
  "value": 7,
  "formal_status": "formalized",
+ "review_note": "Context (AI-lab announcement, treated as correct): OpenAI 134: Generalized star height at most three. Every regular language has generalized star height <=3, so the uniform-boundedness question is settled. The board question (does any L have height >=2, i.e. is the maximum 1 or in {2,3}) is still open. Update the known-bounds context.",
  "refs": [
   "https://en.wikipedia.org/wiki/Generalized_star-height_problem",
   "https://www.irif.fr/~jep/Problemes/starheight.html",

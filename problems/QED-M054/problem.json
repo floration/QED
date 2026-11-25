@@ -17,6 +17,7 @@
  "importance": 8,
  "value": 6,
  "formal_status": "formalized",
+ "review_note": "Context (AI-lab announcement, treated as correct): OpenAI 146: Positive metric entropy for the standard map (Positive Metric Entropy for the Standard Map at Large Parameters). Proves h_m(f_k)>0 for all k>=k_0 in the same normalization, but k_0 is not explicit (ineffective). The board asks for all k>=10^6 or one explicit k<=100, so it is not met. The 'Known' line should cite this all-large-k result alongside Slijepcevic's explicit exp(2^50000) threshold.",
  "refs": [
   "https://arxiv.org/abs/2611.09361",
   "https://arxiv.org/abs/2507.11375",
