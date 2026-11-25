@@ -12,6 +12,9 @@
  ],
  "plain": "Orient every edge of a planar graph. An oriented colouring colours vertices so adjacent vertices differ and all arcs between two colour classes point the same way. Every oriented planar graph can be coloured with 80 colours, and some need 18. The gap has barely moved since 1994: narrow it.",
  "math": "Let $\\chi_o(\\mathcal P)=\\max\\chi_o(\\vec G)$ over orientations of simple planar graphs ($\\chi_o$ = least order of a tournament receiving a homomorphism). Known $18\\le\\chi_o(\\mathcal P)\\le80$. Formal target: strict improvement of the upper bound, $\\chi_o(\\mathcal P)\\le79$ (the lower-bound direction, an example with $\\chi_o\\ge19$, is the alternative improvement and is not the formal Claim).",
+ "novelty": 2,
+ "importance": 5,
+ "value": 5,
  "formal_status": "formalized",
  "review_note": "Known: Upper 80: Raspaud-Sopena, Inform. Process. Lett. 51 (1994), via acyclic 5-colourability (Borodin). Lower bound history: 15 (Sopena), 16 and 17 (Marshall), 18 (Marshall, Ars Combin. 2015). Clow, 'MAD phase transitions in the oriented chromatic number', arXiv:2607.22915 (2026), confirms both bounds are still current.",
  "refs": [

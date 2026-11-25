@@ -1,0 +1,19 @@
+{
+ "id": "QED-E069",
+ "set": "extended",
+ "title": "Charge on a Fermat conductor",
+ "area": "Analysis",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Original",
+ "plain": "Put a unit of electric charge on a perfectly conducting solid x^4+y^4+z^4 <= 1. Show that the surface charge is thinnest exactly at the six flat points (+-1,0,0),... and thickest exactly at the eight points in the diagonal directions.",
+ "math": "Let $K=\\{x^4+y^4+z^4\\le1\\}\\subset\\mathbb R^3$ and let $\\mu=\\rho\\,d\\sigma$ be its Newtonian (capacitary) equilibrium measure, $\\sigma$ surface measure on $\\partial K$ ($\\rho$ is real-analytic and positive since $\\partial K$ is analytic). Prove that $\\min_{\\partial K}\\rho$ is attained exactly at $(\\pm1,0,0),(0,\\pm1,0),(0,0,\\pm1)$ and $\\max_{\\partial K}\\rho$ exactly at $3^{-1/4}(\\pm1,\\pm1,\\pm1)$.",
+ "novelty": 7,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/1911.03602",
+  "https://arxiv.org/pdf/1509.09252"
+ ]
+}

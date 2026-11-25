@@ -9,6 +9,9 @@
  "credit": "Aggarwal, Gupta, Morolia, Zhang, 'Mind the Gap? Not for SVP Hardness under ETH!', ICALP 2026 (LIPIcs 374, paper 8), arXiv:2504.02695, Open Problem 1.",
  "plain": "Show that approximate SVP in the l_2 norm (some constant gamma>1) has no 2^{o(n)}-time algorithm unless (randomized) ETH fails; or identify an obstruction (e.g. for the Z^n-based gadget) showing the l_p, p>2 technique cannot reach p=2.",
  "math": "Prove there is a constant gamma > 1 such that, if randomized ETH holds (there is delta > 0 such that no bounded-error randomized algorithm decides 3-SAT on n variables in time 2^{delta n} poly(size)), then there is delta' > 0 such that no bounded-error randomized algorithm decides gamma-GapSVP in the l_2 norm on rank-n integer lattices in time 2^{delta' n} poly(size) (2^{Omega(n)} hardness, in particular no 2^{o(n)}-time algorithm). The alternative 'technique obstruction' target is a meta-statement and is not formalized.",
+ "novelty": 4,
+ "importance": 7,
+ "value": 7,
  "formal_status": "formalized",
  "refs": [
   "Aggarwal, Gupta, Morolia, Zhang, Mind the Gap? Not for SVP Hardness under ETH!, ICALP 2026, arXiv:2504.02695",

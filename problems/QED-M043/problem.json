@@ -15,6 +15,9 @@
  ],
  "plain": "Given n points in the plane (integer coordinates poly(n), or real RAM), decide whether three are collinear in O(n^{2-eps}) time for some eps>0; or give a fine-grained reduction showing Collinearity is hard under a hypothesis not refuted by Alman-Vassilevska Williams (e.g. 4SUM, 3SUM-Indexing, or a new geometric hypothesis).",
  "math": "Prove or disprove: for every constant c ≥ 1 there are ε > 0 and a deterministic word-RAM algorithm (word size Θ(log n)) deciding in O(n^{2-ε}) time whether n distinct points of ℤ² ∩ [−n^c, n^c]² contain three collinear points. (The real-RAM variant is a separate question.)",
+ "novelty": 5,
+ "importance": 7,
+ "value": 7,
  "formal_status": "formalized",
  "refs": [
   "Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",

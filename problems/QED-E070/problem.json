@@ -1,0 +1,22 @@
+{
+ "id": "QED-E070",
+ "set": "extended",
+ "title": "Fibonacci-modulated growing Jacobi matrix",
+ "area": "Analysis",
+ "difficulty": 3.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Extends Janas-Naboko (periodic modulations, e.g. arXiv:math/0605593) and Swiderski (arXiv:1707.06486) on periodically modulated Jacobi matrices.",
+ "plain": "Take a Jacobi matrix with zero diagonal and off-diagonal weights sqrt(n). Double the weight at every position where the Fibonacci word has a 1. Periodic modulations of power-growing weights are known to produce spectral phase transitions. Determine the spectral type for this aperiodic modulation.",
+ "math": "Let $f=f_1f_2f_3\\cdots=0100101001001\\cdots\\in\\{0,1\\}^{\\mathbb N}$ be the Fibonacci word, the fixed point of $0\\mapsto01,\\ 1\\mapsto0$. Let $J$ be the Jacobi operator on $\\ell^2(\\mathbb N)$ with $(Ju)_n=a_{n-1}u_{n-1}+a_nu_{n+1}$, where $a_n=\\sqrt n\\,(1+f_n)$ and $a_0u_0:=0$. Since $\\sum 1/a_n=\\infty$, $J$ is self-adjoint (Carleman). Determine the spectral type of $J$. In particular: is $\\sigma_{ac}(J)\\neq\\emptyset$? Is $\\sigma_{ac}(J)=\\mathbb R$? Is the spectrum on some interval pure point or singular continuous?",
+ "novelty": 7,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1003.3597",
+  "https://arxiv.org/abs/math/0605593",
+  "https://arxiv.org/abs/1707.06486",
+  "https://arxiv.org/abs/0711.4035"
+ ]
+}

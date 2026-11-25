@@ -14,6 +14,9 @@
  ],
  "plain": "The number of groups is known exactly for every order below 2048; order 1024 alone has about 49 billion. For order 2048 = 2^11 the exact number of groups is still unknown, and only a lower bound of about 1.774 × 10^15 is proved. Determine the number, or at least prove that it is below 1.78 × 10^15, as experts expect.",
  "math": "Let $g(n)$ be the number of isomorphism classes of groups of order $n$. Determine $g(2^{11})$. Known: $g(2^{11})\\ge 1\\,774\\,274\\,116\\,992\\,170$, the number of groups of order $2^{11}$ of $2$-class $2$ (exponent-$2$ Frattini quotient class 2). Natural intermediate target: prove $g(2^{11})<1.78\\times10^{15}$, i.e. that the class-2 groups determine the first three significant digits.",
+ "novelty": 3,
+ "importance": 3,
+ "value": 4,
  "formal_status": "formalized",
  "review_note": "Known: $g(n)$ known for all $n<2048$ (Besche–Eick–O'Brien, 'The groups of order at most 2000', ERA-AMS 2001, plus later orders); $g(2^{10})=49\\,487\\,365\\,422$ (later corrected to $49\\,487\\,367\\,289$ in OEIS A000001). Lower bound $g(2^{11})\\ge1\\,774\\,274\\,116\\,992\\,170$ (Eick–O'Brien, 'Enumerating p-groups', J. Austral. Math. Soc. 1999; quoted in Conway–Dietrich–O'Brien, Math. Intelligencer 2008). No explicit nontrivial upper bound specific to $2^{11}$ located; general Higman–Sims bounds are far off.",
  "refs": [

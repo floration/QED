@@ -13,6 +13,9 @@
  ],
  "plain": "In Grundy's game, players take turns splitting a pile of coins into two smaller piles of different sizes, and whoever cannot move loses. The game's theory reduces to one number per pile size, its Grundy value. These values have been computed for piles of hundreds of billions of coins and show no repeating pattern yet, though Berlekamp, Conway and Guy conjectured that they eventually repeat. Do they?",
  "math": "Let $g(0)=g(1)=g(2)=0$ and for $n\\ge3$ let $g(n)=\\operatorname{mex}\\{g(a)\\oplus g(b): a+b=n,\\ 1\\le a<b\\}$, where $\\oplus$ is bitwise XOR. Is $g$ eventually periodic, i.e. are there $N,p\\ge1$ with $g(n+p)=g(n)$ for all $n\\ge N$? (Weaker open question: is $g$ bounded?)",
+ "novelty": 2,
+ "importance": 4,
+ "value": 4,
  "formal_status": "formalized",
  "review_note": "Known: Berlekamp–Conway–Guy (Winning Ways) conjecture eventual periodicity; Wikipedia says it is unresolved. Flammenkamp's octal-games page, Table 2 entry for Grundy's game: values computed for all n up to '239', most likely $2^{39}$ with the superscript lost. The largest known value is 297, attained at n = 21544358589, and 1287 rare values are known, the largest at 48399022. Wikipedia's text reads 'first 235 values', most likely $2^{35}$. OEIS A002188. Golomb's periodicity for finite subtraction games does not apply.",
  "refs": [
