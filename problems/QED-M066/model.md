@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Graph theory · formerly N-396
+Main set · Grade B · QED Extension · Graph theory
 
 **Plain words:** A forest with m edges and c trees has m + c vertices. Label them with 0, 1, ..., m + c - 1, each label used once, so that the m edge differences |label(u) - label(v)| are all different. Show that every forest has such a labelling. The case 'a tree plus one isolated vertex' already says that every tree can be labelled gracefully if one spare label is allowed.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · PDE · formerly N-610
+Extended set · Grade C · PDE
 
 **Plain words:** The 2026 forced Navier–Stokes blow-up uses a force that is smooth through the blow-up time. Can the force be made to vanish identically at the blow-up instant while staying smooth up to and including that instant?
 

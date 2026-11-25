@@ -1,6 +1,5 @@
 {
  "id": "QED-M095",
- "legacy_id": "N-639",
  "set": "main",
  "title": "KdV with a cosine coefficient",
  "area": "PDE",

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Analysis · formerly N-657
+Main set · Grade B · QED Curated · Analysis
 
 **Plain words:** Put a bump of fixed height at every prime on the half-line lattice and study the electron (discrete Schrodinger operator). What kind of spectrum does it have inside the free band (-2,2)? If the primes behaved like a random sparse set (Cramer model), the states would be localized (pure point spectrum); is that true for the actual primes?
 

@@ -1,13 +1,12 @@
 {
  "id": "QED-M070",
- "legacy_id": "N-678",
  "set": "main",
  "title": "First-order convergence law for random Latin squares",
  "area": "Logic & computability",
  "difficulty": 3.5,
  "grade": "A",
  "provenance": "Original",
- "results": "There is a flaw in the first reviewer's route (i). The extension property 'every finite partial configuration extends in every consistent way w.h.p.' is false. A new x with x∘a1=b1 and x∘a2=b2 has expected count n·n^{-2}→0, because x∘a=b already determines x. The structure is functionally sparse (Lynch-type), not G(n,1/2)-type, so the route was rewritten.",
+ "results": "Caution: route (i) as originally proposed has a flaw. The extension property 'every finite partial configuration extends in every consistent way w.h.p.' is false. A new x with x∘a1=b1 and x∘a2=b2 has expected count n·n^{-2}→0, because x∘a=b already determines x. The structure is functionally sparse (Lynch-type), not G(n,1/2)-type, so the route was rewritten.",
  "premise_risks": [
   "arXiv:2606.18174 (Allsop-Morris, 2026 preprint): cited only as evidence that even the Poisson(1) idempotent law is unproved; the statement assumes nothing from it."
  ],

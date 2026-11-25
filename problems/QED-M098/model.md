@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · PDE · formerly N-645
+Main set · Grade B · QED Extension · PDE
 
 **Plain words:** The cubic Szego equation on the circle is completely integrable, and Gerard-Grellier showed that its smooth solutions can have Sobolev norms that are unbounded in time. Decide whether the quintic Szego equation, which is presumably not integrable, also has smooth solutions with unbounded high Sobolev norms.
 

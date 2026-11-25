@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · PDE · formerly N-639
+Main set · Grade B · QED Original · PDE
 
 **Plain words:** Put a cos x in front of the cubic term of the modified KdV equation on the circle. The energy and the mean are still conserved, but the L² norm is not, and the energy no longer has a definite sign. Can smooth solutions blow up in finite time?
 

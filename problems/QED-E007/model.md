@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Dynamics · formerly N-665
+Extended set · Grade C · Dynamics
 
 **Plain words:** Identical Kuramoto oscillators sit on the grid of a cube's surface. Besides full synchrony, there is a 'longitude' state with a vortex at the centre of the top face and an antivortex at the centre of the bottom face. Prove that this state is a linearly stable equilibrium for every grid size.
 

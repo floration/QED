@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Dynamics · formerly N-621
+Main set · Grade B · QED Curated · Dynamics
 
 **Plain words:** The ABC flow with all three coefficients equal to 1 is the classical steady Euler flow on the 3-torus that is believed to be chaotic. Prove that it really is: show it has positive topological entropy.
 

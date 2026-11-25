@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Complexity · formerly N-697
+Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** Anand-van den Brand-McCarty give O~(n^2) preprocessing and O~(n^{2-1/d}) query time for Boolean Mv when M has VC-dimension d. Show, assuming OMv (or unconditionally in the cell-probe model), that n^{2-c/d} query time is necessary for some constant c, for d up to some omega(1) function; or improve the upper bound to n^{2-f(d)} with f(d) >> 1/d.
 

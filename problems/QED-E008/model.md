@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Dynamics · formerly N-650
+Extended set · Grade C · Dynamics
 
 **Plain words:** Two identical point vortices moving on the surface of a cube form a two-degree-of-freedom Hamiltonian system with no continuous symmetry, so there is no second conserved quantity to make it integrable. Prove their motion is genuinely chaotic.
 

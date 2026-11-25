@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · Dynamics · formerly N-625
+Main set · Grade A · QED Extension · Dynamics
 
 **Plain words:** Outer billiards around a smooth convex shape with positive curvature has only bounded orbits (Moser-Douady). Polygons, semicircles and generic C^1 shapes can have orbits that escape to infinity. What if the table is analytic and strictly convex, but its curvature vanishes at a few points, like the superellipse x^4+y^4 ≤ 1? Decide whether every orbit stays bounded.
 

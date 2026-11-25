@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Topology · formerly N-664
+Main set · Grade B · QED Extension · Topology
 
 **Plain words:** Steady Euler flows can carry knotted streamlines, and generic high-frequency Beltrami fields on the torus contain every knot. Show that the most-studied explicit example, the ABC flow with A = B = C = 1, has closed streamlines tied in infinitely many different knots.
 

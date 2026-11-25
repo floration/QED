@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Geometry · formerly N-189
+Main set · Grade B · QED Extension · Geometry
 
 **Plain words:** Baek (2024) proved that Gerver's sofa has the largest area among shapes that can be moved around a right-angled corner in a hallway of width 1. Show that any movable sofa whose area is nearly Gerver's must be nearly Gerver's sofa in shape (which in particular gives uniqueness).
 

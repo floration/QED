@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Mathematical physics · formerly N-344
+Main set · Grade B · QED Extension · Mathematical physics
 
 **Plain words:** Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid. Prove it.
 

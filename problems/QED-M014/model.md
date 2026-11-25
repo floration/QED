@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Analysis · formerly N-654
+Main set · Grade B · QED Curated · Analysis
 
 **Plain words:** Take a one-dimensional lattice Schrödinger operator whose potential is the sum of two cosines with frequencies √2 and √3, and make the coupling strong. Prove that for these specific frequencies, not just for almost every frequency pair, almost every phase gives localized eigenfunctions that decay exponentially.
 

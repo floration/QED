@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Original · Complexity · formerly N-680
+Main set · Grade A · QED Original · Complexity
 
 **Plain words:** Huang's theorem says that any set of more than half the corners of the n-cube contains a corner with at least √n neighbours in the set. When the set is listed by a small circuit, how hard is it to find such a corner, or a flaw in the listing? The problem is easily shown to be at least as hard as the pigeonhole class PPP. Is it in PPP, so that it is PPP-complete, or does Huang's linear-algebra proof make it harder?
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Logic & computability · formerly N-685
+Main set · Grade B · QED Original · Logic & computability
 
 **Plain words:** Count the self-avoiding walks of length n on the Cayley graph of a finitely generated group. Their n-th roots decrease to the connective constant, so it can always be approximated from above. For groups with a solvable word problem, can it always be computed to any precision, i.e. also approximated from below?
 

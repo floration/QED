@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Algebra · formerly N-553
+Main set · Grade B · QED Extension · Algebra
 
 **Plain words:** The 2026 counterexamples to the Jacobian conjecture in three variables have degree 7 at best (Alpöge's map has component degrees 7,6,4). Wang's theorem says degree 2 is impossible. Find the smallest degree a three-variable counterexample can have: some number from 3 to 7.
 

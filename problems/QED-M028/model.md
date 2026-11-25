@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Complexity · formerly N-666
+Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Construct Unique Games instances with value <= eps on which degree-d Sum-of-Squares has value >= 1-eps, for some d = omega(1) (any slowly growing function of n), or show degree-O(1) SoS achieves a (1-eps, delta) distinguishing guarantee on all UG instances.
 

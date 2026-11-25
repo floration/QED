@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · PDE · formerly N-643
+Main set · Grade B · QED Extension · PDE
 
 **Plain words:** In the plane, the focusing cubic Schrödinger equation needs at least the ground-state mass to blow up. On the surface of a cube, each corner is a cone with total angle 3π/2, which can hold a 'three-quarter' ground state. So the blow-up threshold should drop to three quarters of the planar one, and the claim is that it does exactly that.
 
@@ -17,7 +17,7 @@ Main set · Grade B · QED Extension · PDE · formerly N-643
 Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM088.Claim` or a proof of `¬ OpenProblems.QEDM088.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M088/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Statement left as sorry by design. Literature check was not done by the original reviewer (search budget exhausted); worth a novelty search before publishing.
+Either a proof of `OpenProblems.QEDM088.Claim` or a proof of `¬ OpenProblems.QEDM088.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M088/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Statement left as sorry by design.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Algebra · formerly N-024
+Main set · Grade B · QED Original · Algebra
 
 **Plain words:** In 2026 the Jacobian conjecture was refuted in three variables. The first explicit counterexample (Alpöge's map) has polynomial degree 7. Wang's theorem says degree 2 is impossible. What is the smallest degree a counterexample in three variables can have? In particular, is there one of degree 3, 4 or 5?
 

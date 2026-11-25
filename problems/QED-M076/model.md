@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Number theory · formerly N-709
+Main set · Grade B · QED Curated · Number theory
 
 **Plain words:** BSD plus the minimalist rank heuristic predict that exactly half of all integers are sums of two rational cubes. Proven: at least 2/21 are (Alpöge–Bhargava–Shnidman), and at least 31.95% are not (Koymans–Smith). Improve either bound.
 

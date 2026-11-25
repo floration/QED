@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Combinatorics · formerly N-118
+Main set · Grade B · QED Original · Combinatorics
 
 **Plain words:** Color the edges of a huge complete graph red and blue. Does a random coloring minimize the number of single-color copies of the Petersen graph?
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Number theory · formerly N-705
+Main set · Grade B · QED Extension · Number theory
 
 **Plain words:** Montgomery's function F(α) is known only for |α|≤1 (on RH). Under GRH for Dirichlet L-functions, Goldston–Gonek–Özlük–Snyder proved F(α) ≥ 3/2−|α|−ε on 1≤|α|≤3/2, while the conjecture says F(α)=1 there. Improve this lower bound.
 

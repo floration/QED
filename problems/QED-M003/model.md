@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Algebra · formerly N-682
+Main set · Grade B · QED Original · Algebra
 
 **Plain words:** The hypersurface where the n x n determinant vanishes has rational singularities, the mildest kind that matters for much of its geometry. Decide whether the hypersurface where the n x n permanent vanishes has rational singularities for every n, and compute its minimal exponent, a finer measure of how mild a singularity is.
 

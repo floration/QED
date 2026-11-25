@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Complexity · formerly N-695
+Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** Prove E^NP is not contained in SIZE[2^n/n] (or even SIZE[2^{epsilon n}] for some eps>0 infinitely often); equivalently, put Range Avoidance in FP^NP for the relevant circuit classes, improving Li's FS_2^P algorithm.
 

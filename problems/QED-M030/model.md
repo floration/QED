@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Complexity · formerly N-675
+Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Solve All-Edges Sparse Triangle (for each of m edges, report whether it is in a triangle) in O(m^{4/3-eps}) time on general (balanced) sparse graphs, or derive an m^{4/3-o(1)} lower bound from a hypothesis that survives AVW (e.g. 4SUM, OV/SETH, or combinatorial BMM).
 

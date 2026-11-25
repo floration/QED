@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Geometry · formerly N-712
+Main set · Grade B · QED Extension · Geometry
 
 **Plain words:** All known bounds on the diameter of a d-dimensional polyhedron with n facets have the form (n−d)^{log₂ d − O(log log d)}. The latest (Liu–Ge–Ye 2026) is (n−d)^{log₂ G_d} with G_d ~ (4 ln 2) d/(ln d)². Get an exponent at most (1−ε) log₂ d.
 

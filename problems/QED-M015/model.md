@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Analysis · formerly N-161
+Main set · Grade B · QED Extension · Analysis
 
 **Plain words:** A fire spreads from a point, faster downwind: speed a + b cos(theta) in direction theta (0<=b<a). Firefighters build a barrier at speed sigma. Let sigma*(a,b) be the smallest speed that can confine the fire. Known: 1.626(a-b) <= sigma* <= 2 max (a+b cos theta) sin theta. Improve either bound, especially in the strong-wind limit b/a -> 1, where the lower bound tends to 0 but the upper bound stays near 2.6a.
 

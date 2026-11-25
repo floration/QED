@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · Analysis · formerly N-661
+Main set · Grade A · QED Extension · Analysis
 
 **Plain words:** Triangles can be heard: their Dirichlet spectrum determines them up to congruence (Durso 1988; Grieser–Maronna 2013). Show the same for tetrahedra.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Dynamics · formerly N-651
+Main set · Grade B · QED Curated · Dynamics
 
 **Plain words:** On a flat torus, three point vortices with total circulation zero form an integrable system (Stremler-Aref), but for vortices of equal strength even three are believed chaotic, from numerics only. Prove that three identical point vortices on the square torus are not integrable; the same question is open for four.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · PDE · formerly N-640
+Main set · Grade B · QED Extension · PDE
 
 **Plain words:** In u_t = u_xx + cos(x) u^2 the reaction term averages to zero over a period, but a second-order (homogenization) effect produces an effective +u^3 term, which in one dimension is exactly Fujita's borderline exponent where every positive solution of u_t = u_xx + u^3 blows up. Does every positive solution of the cosine equation blow up in finite time?
 

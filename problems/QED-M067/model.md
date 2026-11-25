@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Graph theory · formerly N-148
+Main set · Grade B · QED Extension · Graph theory
 
 **Plain words:** Ringel's conjecture, now a theorem for large n, says the complete graph on 2m+1 vertices splits into 2m+1 copies of any tree with m edges. Show the same holds for every forest with m edges. A stronger form asks that every such forest have a rho-labelling, which gives a cyclic decomposition.
 

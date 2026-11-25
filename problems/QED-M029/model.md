@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Complexity · formerly N-672
+Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Mao's counterexample (permutation-invariant graph distributions with zero low-degree advantage up to degree Theta(log^{r-1} n) that a linear-time rank test detects after constant-rate resampling) needs non-uniform advice for its Reed-Muller subspace / evaluation-point seed. Find a polynomial-time algorithm that outputs a good seed, giving a uniformly poly-time samplable counterexample; or show that every uniformly samplable permutation-invariant distribution with vanishing degree-polylog advantage is hard for poly-time noise-robust tests (a repaired conjecture).
 

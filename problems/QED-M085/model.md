@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Number theory · formerly N-708
+Main set · Grade B · QED Curated · Number theory
 
 **Plain words:** Davenport–Heilbronn showed the average of |Cl(K)[3]| over imaginary quadratic fields is 2, as Cohen–Lenstra predicts. Cohen–Lenstra also predict the average of |Cl(K)[3]|² is 6. Prove this, or at least that the average is bounded.
 

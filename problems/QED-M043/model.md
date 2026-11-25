@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Complexity · formerly N-670
+Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Given n points in the plane (integer coordinates poly(n), or real RAM), decide whether three are collinear in O(n^{2-eps}) time for some eps>0; or give a fine-grained reduction showing Collinearity is hard under a hypothesis not refuted by Alman-Vassilevska Williams (e.g. 4SUM, 3SUM-Indexing, or a new geometric hypothesis).
 

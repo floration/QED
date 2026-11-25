@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Complexity · formerly N-671
+Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Given a tripartite graph with parts of sizes n, n, sqrt(n) and O(n^{3/2}) edges, determine for every edge whether it lies in a triangle in O(n^{2-eps}) time (combinatorial or algebraic).
 

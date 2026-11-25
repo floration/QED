@@ -3,13 +3,13 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Original · Logic & computability · formerly N-678
+Main set · Grade A · QED Original · Logic & computability
 
 **Plain words:** Pick a Latin square of order n uniformly at random and read it as a multiplication table x∘y on n symbols. Does every first-order statement about this table have a limiting probability as n grows? A zero-one law fails: the number of x with x∘x=x should be asymptotically Poisson(1), so the probability that one exists should tend to 1−1/e rather than 0 or 1.
 
 **Math:** Let $L_n$ be uniform among Latin squares on $[n]$ and $\mathcal Q_n=([n],\circ)$ with $x\circ y=L_n(x,y)$. Prove or disprove: for every first-order sentence $\varphi$ in the language $\{\circ,=\}$, $\lim_{n\to\infty}\Pr[\mathcal Q_n\models\varphi]$ exists. (A 0-1 law should fail: by symbol-relabelling symmetry, $\mathbb E\#\{x:x\circ x=x\}=1$ exactly, and this count is conjecturally Poisson(1).) Expected route, as for Lynch's random unary functions: (i) w.h.p. the bounded-depth term closure of any bounded tuple is free except for coincidences counted by balanced configurations ($v$ elements, $v$ independent equations); (ii) a joint Poisson limit for the counts of all such balanced configurations, e.g. cycles of $x\mapsto x\circ x$. A disproof would need a definable sparse statistic with no limit law.
 
-**QED results so far (reviewer-derived; check before relying on them):** There is a flaw in the first reviewer's route (i). The extension property 'every finite partial configuration extends in every consistent way w.h.p.' is false. A new x with x∘a1=b1 and x∘a2=b2 has expected count n·n^{-2}→0, because x∘a=b already determines x. The structure is functionally sparse (Lynch-type), not G(n,1/2)-type, so the route was rewritten.
+**QED results so far (reviewer-derived; check before relying on them):** Caution: route (i) as originally proposed has a flaw. The extension property 'every finite partial configuration extends in every consistent way w.h.p.' is false. A new x with x∘a1=b1 and x∘a2=b2 has expected count n·n^{-2}→0, because x∘a=b already determines x. The structure is functionally sparse (Lynch-type), not G(n,1/2)-type, so the route was rewritten.
 
 **Rests on recent unrefereed work. Check these premises first:**
 - arXiv:2606.18174 (Allsop-Morris, 2026 preprint): cited only as evidence that even the Poisson(1) idempotent law is unproved; the statement assumes nothing from it.

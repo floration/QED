@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Combinatorics · formerly N-022
+Main set · Grade B · QED Extension · Combinatorics
 
 **Plain words:** A jigsaw with no picture can only be solved from the shapes of its pieces. Each internal edge is one of k shapes (a tab that fits only its own matching blank), and pieces may be turned. How small can k be if some n×n blank jigsaw still goes together in exactly one way? Counting shows k must be at least about √n, and random puzzles need about n.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Analysis · formerly N-630
+Main set · Grade B · QED Original · Analysis
 
 **Plain words:** Put a unit of electric charge on a perfectly conducting solid x^4+y^4+z^4 <= 1. Show that the surface charge is thinnest exactly at the six flat points (+-1,0,0),... and thickest exactly at the eight points in the diagonal directions.
 

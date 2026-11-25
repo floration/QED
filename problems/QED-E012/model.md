@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Number theory · formerly N-341
+Extended set · Grade C · Number theory
 
 **Plain words:** Markov triples are positive integer solutions of x^2+y^2+z^2=3xyz. Are there infinitely many in which all three numbers are prime?
 

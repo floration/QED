@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Combinatorics · formerly N-677
+Main set · Grade A · QED Curated · Combinatorics
 
 **Plain words:** Join two points of the integer grid when their difference lies in a fixed finite set D. If this graph can be properly coloured with k colours, can it always be coloured with k colours in a repeating, wallpaper-like pattern? On a line the answer is yes. For some infinite graphs built from trees it is no. The plane is the first open case, and a yes would also give an algorithm for the chromatic number.
 

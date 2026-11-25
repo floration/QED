@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Number theory · formerly N-691
+Main set · Grade B · QED Curated · Number theory
 
 **Plain words:** Malle predicts about X^{1/2} log X quartic fields with Galois group A4 and discriminant up to X. Loughran–Paterson (2025) proved the matching lower bound. The best upper bound is still about X^{0.7785}. Lower the exponent.
 

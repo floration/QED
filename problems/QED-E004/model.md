@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Analysis · formerly N-077
+Extended set · Grade C · Analysis
 
 **Plain words:** Smooth compactly supported starting data for the 3D Euler equations that blow up in finite time are now known to exist, but the construction is an infinite iterative series. Give such data as an explicit formula.
 

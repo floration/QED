@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Probability · formerly N-113
+Extended set · Grade C · Probability
 
 **Plain words:** (Corrected.) Draw n Wang tiles whose four edge colours are chosen uniformly at random from c colours, and let c grow with n ≈ λc². How likely is the set to tile the plane? Show the probability has a limit F(λ) and find the critical λ above which tiling is almost certain.
 

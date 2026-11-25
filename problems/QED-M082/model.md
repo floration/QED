@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Number theory · formerly N-707
+Main set · Grade B · QED Extension · Number theory
 
 **Plain words:** Unconditionally, abc is known only in very weak forms. Pasten (2024) proved that if a ≤ c^{1−η} then log c ≤ η^{-1} exp(κ√(log R · log log R)), with R = rad(abc). abc predicts log c ≤ (1+ε) log R + O(1). Replace the square root by any smaller power of log R.
 

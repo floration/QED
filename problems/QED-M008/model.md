@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Analysis · formerly N-659
+Main set · Grade B · QED Extension · Analysis
 
 **Plain words:** Take a Jacobi matrix with zero diagonal and off-diagonal weights sqrt(n). Double the weight at every position where the Fibonacci word has a 1. Periodic modulations of power-growing weights are known to produce spectral phase transitions. Determine the spectral type for this aperiodic modulation.
 

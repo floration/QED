@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Dynamics · formerly N-681
+Main set · Grade A · QED Curated · Dynamics
 
 **Plain words:** Is there an algorithm that takes a complex number with rational real and imaginary parts and decides whether it lies in the Mandelbrot set? Escaping points can be confirmed, and so can points that have an attracting or neutral cycle of some period, since for each period that is an exact algebraic check. The trouble is points on the boundary where every cycle repels. No such Gaussian rational is known, but none has been ruled out.
 

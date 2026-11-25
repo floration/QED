@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Geometry · formerly N-627
+Extended set · Grade C · Geometry
 
 **Plain words:** A cube can pass through a hole drilled in a copy of itself; a round ball cannot. Show that every superball between them, |x|^p+|y|^p+|z|^p ≤ 1 with p > 2, can.
 

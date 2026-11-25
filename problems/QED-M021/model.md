@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Combinatorics · formerly N-683
+Main set · Grade B · QED Curated · Combinatorics
 
 **Plain words:** Conjugate partitions always give representations of S_n of the same dimension, so at most about half of the p(n) irreducible representations can have distinct dimensions. Decide whether the fraction of distinct dimensions tends to a limit, and whether that limit is positive.
 

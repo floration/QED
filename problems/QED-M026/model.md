@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Combinatorics · formerly N-684
+Main set · Grade B · QED Original · Combinatorics
 
 **Plain words:** Planar graphs on n labelled vertices form a simplicial complex, because deleting an edge keeps a graph planar. It is pure, since every maximal planar graph has 3n-6 edges. Its homology turns out not to be that of a wedge of top-dimensional spheres: already for n=6 it is concentrated two degrees lower and has 2-torsion. Determine its homology.
 

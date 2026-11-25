@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Combinatorics · formerly N-438
+Main set · Grade B · QED Extension · Combinatorics
 
 **Plain words:** Colour the positive integers with finitely many colours. Show there are always three different numbers of the same colour whose three pairwise sums are all perfect squares.
 

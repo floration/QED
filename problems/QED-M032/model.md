@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Complexity · formerly N-689
+Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** AVW's core subroutine computes requested entries of XY (N x D times D x N, D <= N^{eps}) in N^2/D^{c} operations; Majdoddin extends the regime to eps < ln4/(5 ln5) ~ 0.17227, matching Coppersmith's 1982 exponent for the same tensor. Either (a) extend the thin-product theorem to some eps > 0.17227 (e.g. via a different base identity, or settle Majdoddin's open thin product <34,2,35>), giving 3SUM/APSP exponents below 1.9945 / 2.9945; or (b) prove that every partial-product-tensor/Coppersmith-style scheme is limited to eps <= 0.17227.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Dynamics · formerly N-633
+Main set · Grade B · QED Original · Dynamics
 
 **Plain words:** A billiard ball bounces inside a regular tetrahedron. The tetrahedron does not tile space, and its dihedral angle arccos(1/3) is an irrational multiple of pi. So the billiard cannot be unfolded into a straight-line flow on a torus or a translation structure. Is the motion ergodic, so that almost every trajectory equidistributes in position and direction?
 

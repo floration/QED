@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · PDE · formerly N-642
+Main set · Grade B · QED Original · PDE
 
 **Plain words:** Jörgens proved that a convex function on the whole plane whose Hessian determinant is 1 must be a quadratic polynomial. Replace the determinant by the permanent, u_xx·u_yy + u_xy², and ask whether the same rigidity holds for solutions on the elliptic branch.
 

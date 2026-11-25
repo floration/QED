@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · PDE · formerly N-360
+Main set · Grade B · QED Extension · PDE
 
 **Plain words:** The 2026 forced Navier–Stokes blow-up uses a push that varies in time and is switched on and off. Can a smooth, compactly supported push that never changes in time also drive a fluid at rest to a singularity?
 

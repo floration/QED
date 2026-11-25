@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Combinatorics · formerly N-667
+Main set · Grade A · QED Curated · Combinatorics
 
 **Plain words:** Show every family of more than (o(log k))^k sets of size k (e.g. (log k)^{(1-c)k} or (log log k)^{O(k)}) contains a sunflower with 3 petals.
 

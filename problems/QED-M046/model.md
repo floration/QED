@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Dynamics · formerly N-688
+Main set · Grade B · QED Extension · Dynamics
 
 **Plain words:** A circle homeomorphism made of finitely many straight pieces, with rational break points and slopes, has a rotation number. Rational rotation numbers can be confirmed by finding a rational periodic orbit. Irrational ones occur too: Belk–Hyde–Moore found √2−1 with slopes 3/2, 2/3, 1. Is there an algorithm that always decides which case holds?
 

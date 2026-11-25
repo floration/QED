@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Complexity · formerly N-692
+Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** Bach and Huiberts (2025) found a simplex method with smoothed complexity O(σ^{-1/2} d^{11/4} log^{7/4} n) pivots and showed σ^{-1/2} is optimal. In the dimension d, the best lower bound is only about d^{1/2}. Close the gap in d.
 
@@ -24,7 +24,7 @@ Main set · Grade B · QED Curated · Complexity · formerly N-692
 Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM040.Claim` or a proof of `¬ OpenProblems.QEDM040.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M040/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Statement left as sorry by design. Note: an assumptions-on-trial label is odd here (reviewer: smoothed analysis is a framework, not an assumption).
+Either a proof of `OpenProblems.QEDM040.Claim` or a proof of `¬ OpenProblems.QEDM040.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M040/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Statement left as sorry by design.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

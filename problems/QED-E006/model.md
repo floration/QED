@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Analysis · formerly N-663
+Extended set · Grade C · Analysis
 
 **Plain words:** The surface x^4+y^4+z^4 = 1 has exactly the 48 symmetries of a cube. Show its Laplace eigenvalues repeat no more often than those symmetries force (at most 3 times), except possibly for finitely many eigenvalues.
 

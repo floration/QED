@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Algebra · formerly N-397
+Extended set · Grade C · Algebra
 
 **Plain words:** Take a polynomial map of 3-space with integer coefficients whose Jacobian determinant is identically 1 (a Keller map). Show that if it never sends two different integer points to the same point, then it is a polynomial automorphism.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Geometry · formerly N-385
+Main set · Grade B · QED Curated · Geometry
 
 **Plain words:** Every smooth convex body in 4-space should have the eight corners of a regular cross-polytope lying on its boundary.
 

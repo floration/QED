@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Original · Combinatorics · formerly N-649
+Main set · Grade A · QED Original · Combinatorics
 
 **Plain words:** Place a ±1 spin at each element of F_p, and let each pair interact through the Legendre symbol of their difference. Equivalently, this is the max-cut problem for the Paley graph. The eigenvalue bound caps the ground-state energy at p^{3/2}/2. Simple square-wave configurations reach this bound along special primes, but heuristic search for typical primes stalls around 0.46. Is the eigenvalue bound asymptotically sharp for all primes?
 

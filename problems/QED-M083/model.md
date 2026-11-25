@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Number theory · formerly N-696
+Main set · Grade B · QED Curated · Number theory
 
 **Plain words:** Under GRH, the low-lying zeros of L(s,χ_d) for quadratic characters are known to follow the symplectic random-matrix law only for test functions whose Fourier transform is supported in (−2,2). Go beyond 2.
 

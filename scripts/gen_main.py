@@ -7,7 +7,7 @@ import json,sys,os
 REPO=os.environ.get('REPO','floration/qed')
 D=json.load(open('data/main.json'))+json.load(open('data/extended.json'))+json.load(open('data/qtests.json'))
 WRITE_LEAN='--statements' in sys.argv
-PUB=('id','legacy_id','set','title','area','difficulty','grade','provenance','credit','results','premise_risks','plain','math',
+PUB=('id','set','title','area','difficulty','grade','provenance','credit','results','premise_risks','plain','math',
      'novelty','importance','value','formal_status','lean_gap','review_note','est_lines','refs')
 out=[]
 for m in D:
@@ -42,7 +42,7 @@ end OpenProblems.{ns}
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-{ {'main':'Main set','extended':'Extended set','test':'Submission test'}[m['set']] }{' · Grade '+m['grade'] if m['set']!='test' else ''}{' · QED '+m['provenance'] if m.get('provenance') else ''} · {m.get('area','')}{' · formerly '+m['legacy_id'] if m.get('legacy_id') else ''}
+{ {'main':'Main set','extended':'Extended set','test':'Submission test'}[m['set']] }{' · Grade '+m['grade'] if m['set']!='test' else ''}{' · QED '+m['provenance'] if m.get('provenance') else ''} · {m.get('area','')}
 
 **Plain words:** {m['plain']}
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Algebra · formerly N-587
+Main set · Grade B · QED Original · Algebra
 
 **Plain words:** A Keller map (polynomial map with constant nonzero Jacobian) that is not invertible covers a generic point d times, and following the d preimages around loops gives a permutation group, its monodromy. Campbell's 1973 theorem says that if this group is regular (the Galois case), the map is invertible. The 2026 counterexamples realize full symmetric groups and some imprimitive groups. Is Campbell's theorem the only obstruction?
 

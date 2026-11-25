@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Graph theory · formerly N-139
+Main set · Grade B · QED Original · Graph theory
 
 **Plain words:** Hadwiger's conjecture says a graph that needs t colours contains the complete graph K_t as a minor. A disproof claimed in October 2026 (not yet peer reviewed) is non-constructive: it uses graphs with no three pairwise non-adjacent vertices, on roughly 2^(10^12) vertices or more, and never names a graph. Find one concrete graph on fewer than a million vertices for which the conjecture fails, with a proof that can be checked.
 

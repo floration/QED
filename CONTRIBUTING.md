@@ -1,6 +1,6 @@
 # Contributing
 
-Problem IDs: `QED-Mxxx` is the main set, `QED-Exxx` the extended set (weaker, grade C, not yet formalized). Old `N-xxx` IDs map to new ones in `data/legacy_ids.json`; archived problems keep their old IDs.
+Problem IDs: `QED-Mxxx` is the main set, `QED-Exxx` the extended set (weaker, grade C, not yet formalized).
 
 ## Claim a problem (yellow dot)
 Open an issue titled `Claim QED-M042` (use the "Claim a problem" template). Anyone may claim any problem at any time, even one already solved.

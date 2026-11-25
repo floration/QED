@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Number theory · formerly N-706
+Main set · Grade B · QED Extension · Number theory
 
 **Plain words:** The Alternative Hypothesis says normalized gaps between zeta zeros are almost all near half-integers. It contradicts GUE, but no proven hypothesis is known to rule it out. Decide whether GRH plus Elliott–Halberstam (strong statements about primes, not zeros) is incompatible with it.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · PDE · formerly N-427
+Main set · Grade A · QED Extension · PDE
 
 **Plain words:** In 2026 it was shown that a smooth, compactly supported force can drive the 3D Navier–Stokes equations, started from rest, to blow up in finite time. Inside a domain this can simply be copied away from any wall. Show that blow-up can also happen at the wall itself: in a half-space with the no-slip condition, the velocity becomes unbounded at a point of the boundary.
 

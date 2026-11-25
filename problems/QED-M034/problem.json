@@ -1,6 +1,5 @@
 {
  "id": "QED-M034",
- "legacy_id": "N-693",
  "set": "main",
  "title": "Densest k-Subgraph and k-Biclique FPT-inapproximability from plain ETH",
  "area": "Complexity",

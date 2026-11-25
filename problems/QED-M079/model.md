@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Number theory · formerly N-704
+Main set · Grade B · QED Curated · Number theory
 
 **Plain words:** Banks, Ford and Tao showed that a random sieve model of the primes predicts the largest prime gap below x is about g(ξ log²x), where g is controlled by an extremal sieve quantity W_y. W_y is the fewest survivors in [0,y] after one residue class is removed for each prime up to √(y/log y). Narrow the bounds on W_y.
 

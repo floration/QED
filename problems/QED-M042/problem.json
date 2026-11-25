@@ -1,6 +1,5 @@
 {
  "id": "QED-M042",
- "legacy_id": "N-702",
  "set": "main",
  "title": "Sparse 3-LPN at noise n^{-1/2}: beating Gaussian elimination",
  "area": "Complexity",

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Number theory · formerly N-493
+Main set · Grade B · QED Extension · Number theory
 
 **Plain words:** Markov numbers are the numbers appearing in positive integer solutions of x^2+y^2+z^2=3xyz. Show that the largest prime factor of a Markov number tends to infinity. Equivalently, for any finite set of primes, only finitely many Markov numbers are built from those primes alone.
 

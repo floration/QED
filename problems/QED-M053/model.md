@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Dynamics · formerly N-631
+Main set · Grade B · QED Curated · Dynamics
 
 **Plain words:** The billiard table x^4 + y^4 <= 1 is smooth and convex, but its curvature vanishes at four points, so (by Mather) it has no caustics. Its phase space mixes stable islands with apparently chaotic regions. Prove that the chaos is real: on a set of positive measure, nearby trajectories separate exponentially fast.
 

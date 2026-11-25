@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · Topology · formerly N-679
+Main set · Grade A · QED Extension · Topology
 
 **Plain words:** The trefoil's group maps onto every alternating group A_n with n>=9, because modulo its centre it is the modular group. Show that every nontrivial knot group maps onto A_n for all large n, or at least for infinitely many n, and bound the last exception in terms of the knot.
 

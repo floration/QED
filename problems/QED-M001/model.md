@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Curated · Algebra · formerly N-711
+Main set · Grade B · QED Curated · Algebra
 
 **Plain words:** The worst-case complete-pivoting growth is known exactly only for n ≤ 6 (values 1, 2, 2.25, 4, 4.1325, 5). The value g_8 = 8, attained by Hadamard matrices, is conjectured but unproven, and Hadamard matrices are known not to be optimal at n = 12 and 16. Determine g_7 and decide whether g_8 = 8.
 
@@ -12,7 +12,7 @@ Main set · Grade B · QED Curated · Algebra · formerly N-711
 **Credit:** A. Edelman & J. Urschel 2023, arXiv:2303.04892 (also Cryer 1968, Gould 1991 for the g_n <= n history)
 
 **Rests on recent unrefereed work. Check these premises first:**
-- W says g_n is known exactly only for n <= 6 (with g_5 = 4.1325 and g_6 = 5). The refs do not support this and it may rest on recent preprints (e.g. arXiv:2602.20390, 2026). It is not used by Claim.
+- Exact values g_n are cited as known only for n ≤ 6 (g_5 = 4.1325, g_6 = 5); check against Edelman–Urschel 2023 before relying on them.
 
 **References:**
 - https://arxiv.org/abs/2303.04892

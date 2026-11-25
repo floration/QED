@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · PDE · formerly N-638
+Extended set · Grade C · PDE
 
 **Plain words:** Consider the 2D Schrödinger equation in which the self-interaction at each point uses the density at the mirror point -x. Below the ground-state mass, solutions exist forever. Show that the only solutions that blow up with exactly the ground-state mass are the explicit pseudo-conformal ground-state solutions centred at the origin.
 

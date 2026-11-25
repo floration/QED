@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Original · Analysis · formerly N-658
+Main set · Grade B · QED Original · Analysis
 
 **Plain words:** Build an infinite tridiagonal (Jacobi) matrix with zero diagonal and the primes 2, 3, 5, 7, ... on the off-diagonals. The standard criteria for purely absolutely continuous spectrum need the off-diagonal sequence to vary regularly, and they just fail because prime gaps fluctuate. Decide whether the spectrum is nevertheless purely absolutely continuous on the whole real line.
 

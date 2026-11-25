@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · PDE · formerly N-641
+Extended set · Grade C · PDE
 
 **Plain words:** Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off quadratically at one point of the circle. Do shocks form there?
 

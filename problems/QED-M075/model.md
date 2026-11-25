@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Curated · Number theory · formerly N-673
+Main set · Grade A · QED Curated · Number theory
 
 **Plain words:** The primes are known to be evenly spread over residue classes, on average over moduli up to x^{5/8}, if the average is weighted by triply well-factorable weights. Push the exponent past 5/8, or show the dispersion method cannot.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · Probability · formerly N-653
+Main set · Grade A · QED Extension · Probability
 
 **Plain words:** Glue three quarter-planes of the square grid into the surface of an infinite cube corner (a flat cone of angle 3π/2) and run the critical Ising model. Prove that the spin at the corner decorrelates with the exponent 7/24 predicted by conformal field theory.
 

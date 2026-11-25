@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · PDE · formerly N-418
+Main set · Grade A · QED Extension · PDE
 
 **Plain words:** With an ordinary Laplacian, a smooth compactly supported push can make a fluid at rest blow up in finite time (OpenAI, 2026). With dissipation (-Δ)^α for α ≥ 5/4, Lions proved that solutions stay smooth. Does forced blow-up from rest still happen for every α strictly between 1 and 5/4?
 

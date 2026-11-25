@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Dynamics · formerly N-622
+Main set · Grade B · QED Extension · Dynamics
 
 **Plain words:** Put the surface z = ε sin x sin y over a flat square torus. Show its geodesic flow is never integrable, however small the bumps are.
 

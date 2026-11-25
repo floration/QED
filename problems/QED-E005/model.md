@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Analysis · formerly N-629
+Extended set · Grade C · Analysis
 
 **Plain words:** Take the region |x|^p + |y|^p <= r^p, scaled to have area 1. At p = 2 it is a disk, which has the lowest possible bass note of any region of that area (Faber–Krahn). As p grows to infinity it becomes a square, whose note is higher. Show that the note rises steadily the whole way from p = 2 to infinity.
 

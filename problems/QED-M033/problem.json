@@ -1,6 +1,5 @@
 {
  "id": "QED-M033",
- "legacy_id": "N-701",
  "set": "main",
  "title": "Binary-error LWE with linearly many samples",
  "area": "Complexity",

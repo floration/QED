@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Geometry · formerly N-300
+Extended set · Grade C · Geometry
 
 **Plain words:** Among convex shapes of area A, how few lattice points can a shape be guaranteed to contain under every rotation about the origin? Can any shape do much better than a disc centred at the origin?
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · PDE · formerly N-635
+Extended set · Grade C · PDE
 
 **Plain words:** In the plane, every positive solution of u_t = Delta u + u^2 blows up (u^2 is exactly Fujita-critical in dimension 2). Does this survive when u^2 is replaced by the product of the values of u one unit to the left and one unit to the right?
 

@@ -1,6 +1,5 @@
 {
  "id": "QED-M027",
- "legacy_id": "N-676",
  "set": "main",
  "title": "2^{Omega(n)} hardness of Euclidean SVP under ETH",
  "area": "Complexity",

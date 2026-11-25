@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · Logic & computability · formerly N-669
+Main set · Grade A · QED Extension · Logic & computability
 
 **Plain words:** Given a polynomial vector field in the plane with rational coefficients, is there an algorithm that decides whether it has a limit cycle, that is, an isolated closed orbit? Hilbert's 16th problem asks how many limit cycles there can be. This asks only whether their existence is algorithmically decidable. The same question can be asked for closed orbits of any kind, including those in period annuli around centres.
 

@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Topology · formerly N-619
+Extended set · Grade C · Topology
 
 **Plain words:** Turn the first 2^n letters of the Thue–Morse word into a periodic orbit of the Lorenz flow, and so into a knot K_n. For n >= 4 these knots appear to be hyperbolic. Their volume grows only in proportion to n, the logarithm of the word length, not in proportion to the length itself. Prove that, and find the constant.
 

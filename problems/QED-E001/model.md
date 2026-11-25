@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Algebra · formerly N-378
+Extended set · Grade C · Algebra
 
 **Plain words:** Gallagher (2026) built, for every n>=3, a polynomial map C^3->C^3 with constant nonzero Jacobian whose general fibre has exactly n points. Determine the symmetry (monodromy/Galois) group of how those n points are permuted.
 

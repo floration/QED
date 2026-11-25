@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Extended set · Grade C · Algebra · formerly N-439
+Extended set · Grade C · Algebra
 
 **Plain words:** Since 2026 there are polynomial maps of 3-space with constant nonzero Jacobian that are not invertible (counterexamples to the Jacobian conjecture), and every number n >= 3 of points in a generic fibre occurs. Show that for every n the fibre points can be permuted in every possible way by going around loops, i.e. the monodromy group can be the full symmetric group S_n.
 

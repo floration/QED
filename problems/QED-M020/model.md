@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Combinatorics · formerly N-594
+Main set · Grade B · QED Extension · Combinatorics
 
 **Plain words:** On the 3D grid, a finite fire spreads to all unprotected neighbours each step, and at step t you may protect about ct new vertices. It is known that linear growth is the right order. Elementary arguments show that rate c>8 always contains the fire and that c<8/243 does not. Narrow this gap, or find the exact critical rate.
 

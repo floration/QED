@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · PDE · formerly N-647
+Main set · Grade A · QED Extension · PDE
 
 **Plain words:** Dodson proved that the defocusing cubic Schrodinger equation in the plane scatters for every finite-mass initial state. Prove the same on every flat cone, a plane with a single conical singularity of total angle alpha. For alpha = 2pi/k it follows from Dodson by symmetry, and radial data are also easy. Every other angle, such as the surface of a cube corner (alpha = 3pi/2) or alpha > 2pi, is open.
 

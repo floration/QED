@@ -1,6 +1,5 @@
 {
  "id": "QED-M088",
- "legacy_id": "N-643",
  "set": "main",
  "title": "Critical NLS blow-up threshold on the cube surface",
  "area": "PDE",
@@ -14,7 +13,7 @@
  "importance": 5,
  "value": 6,
  "formal_status": "not_formalized",
- "lean_gap": "Statement left as sorry by design. Literature check was not done by the original reviewer (search budget exhausted); worth a novelty search before publishing.",
+ "lean_gap": "Statement left as sorry by design.",
  "refs": [
   "https://arxiv.org/html/2503.15142v3"
  ]

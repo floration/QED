@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Topology · formerly N-620
+Main set · Grade B · QED Extension · Topology
 
 **Plain words:** A billiard ball bouncing periodically inside a regular tetrahedron, without hitting edges or corners, traces a closed polygon in space. Is any such polygon knotted, and do infinitely many different knot types occur?
 

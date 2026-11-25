@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade A · QED Extension · Mathematical physics · formerly N-656
+Main set · Grade A · QED Extension · Mathematical physics
 
 **Plain words:** On the half-line lattice, add a fixed spike of height λ at every perfect square. The free band (-2,2) then has no absolutely continuous spectrum, by Remling's theorem. Decide whether the spectrum inside the band is pure point (localized states) or singular continuous. A heuristic in the physics literature predicts singular continuous.
 

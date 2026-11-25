@@ -1,13 +1,12 @@
 {
  "id": "QED-M051",
- "legacy_id": "N-668",
  "set": "main",
  "title": "Is the measure of the hyperbolic real quadratic parameters computable?",
  "area": "Dynamics",
  "difficulty": 5.5,
  "grade": "A",
  "provenance": "Original",
- "results": "The first reviewer's semicomputability check is correct. λ(H) is lower semicomputable. Each CE(C,γ) piece is an intersection of finite-time conditions, so it is only upper semicomputable, which is the wrong direction. The 'equivalently' clause is valid through Lyubich's regular-or-stochastic theorem and Avila–Moreira (almost every stochastic parameter is CE).",
+ "results": "Checked: λ(H) is lower semicomputable. Each CE(C,γ) piece is an intersection of finite-time conditions, so it is only upper semicomputable, which is the wrong direction. The 'equivalently' clause is valid through Lyubich's regular-or-stochastic theorem and Avila–Moreira (almost every stochastic parameter is CE).",
  "premise_risks": [
   "arXiv 2505.20495 (Golmakani–Koudjinan–Luzzatto–Pilarczyk, 2025 preprint): cited only for the remark that computer-assisted schemes certify expansion, not measure; statement does not depend on it."
  ],

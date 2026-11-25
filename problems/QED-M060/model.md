@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Geometry · formerly N-151
+Main set · Grade B · QED Extension · Geometry
 
 **Plain words:** On a smooth convex surface, measure distance by the length of the shortest path on the surface. Every smooth simple closed curve on the surface should contain four points that form a 'square' in this sense: four equal sides and two equal diagonals.
 

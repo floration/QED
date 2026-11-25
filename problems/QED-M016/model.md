@@ -3,7 +3,7 @@
 You are an AI model helping someone attack this open problem. Read all of this before working.
 
 ## The problem
-Main set · Grade B · QED Extension · Combinatorics · formerly N-687
+Main set · Grade B · QED Extension · Combinatorics
 
 **Plain words:** Sorting an array promised to avoid a fixed pattern needs at least log2 of the number of allowed orders comparisons, and Fredman's theorem says 2n more always suffice. How many extra comparisons per element are really needed? Show that fewer than 2n extra suffice for 1324-avoiding inputs, or show that a linear excess is necessary for some pattern.
 
