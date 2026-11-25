@@ -5,7 +5,7 @@ errs = []
 def err(m): errs.append(m)
 
 FMT = {'main': r'QED-M\d{3}', 'extended': r'QED-E\d{3}', 'test': r'QED-Q\d'}
-GRADES = {'main': {'A', 'B'}, 'extended': {'B-', 'C'}, 'test': {'Q'}}
+GRADES = {'main': {'A', 'B'}, 'extended': {'A', 'B', 'B-', 'C'}, 'test': {'Q'}}  # main is capped at ~100, so strong problems can live in extended
 PROV = {None, 'Original', 'Extension', 'Curated'}
 FORMAL = {'formalized', 'not_formalized'}
 REQ = {'id': str, 'set': str, 'title': str, 'area': str, 'grade': str, 'plain': str, 'math': str, 'formal_status': str}
