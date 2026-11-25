@@ -42,7 +42,7 @@ def IsChi8d (d : ℕ) (χ : DirichletCharacter ℂ (8 * d)) : Prop :=
 def ord (f : ℂ → ℂ) (s : ℂ) : ℕ := sInf {k : ℕ | iteratedDeriv k f s ≠ 0}
 
 /-- `Σ_γ m(1/2 + iγ) φ(γ log X / 2π)` over the zeros of `L(s, χ)` on the critical line. -/
-def zeroSum {N : ℕ} (χ : DirichletCharacter ℂ N) (φ : ℝ → ℝ) (X : ℝ) : ℝ :=
+def zeroSum {N : ℕ} [NeZero N] (χ : DirichletCharacter ℂ N) (φ : ℝ → ℝ) (X : ℝ) : ℝ :=
   ∑' γ : ℝ, (ord (DirichletCharacter.LFunction χ) ((1 / 2 : ℂ) + (γ : ℂ) * Complex.I) : ℝ) *
     φ (γ * Real.log X / (2 * Real.pi))
 
@@ -50,11 +50,16 @@ def zeroSum {N : ℕ} (χ : DirichletCharacter ℂ N) (φ : ℝ → ℝ) (X : �
 def family (X : ℝ) : Finset ℕ :=
   (Finset.Ioc ⌊X⌋₊ ⌊2 * X⌋₊).filter (fun d : ℕ => Odd d ∧ Squarefree d)
 
+/-- `Σ_γ φ(γ log X / 2π)` for `χ_{8d}` (summed over the unique character mod `8d` with the defining
+property; `0` for the excluded value `d = 0`, which never lies in the family). -/
+def chiZeroSum (d : ℕ) (φ : ℝ → ℝ) (X : ℝ) : ℝ :=
+  if h : d = 0 then 0 else
+    haveI : NeZero (8 * d) := ⟨by omega⟩
+    ∑ᶠ χ : DirichletCharacter ℂ (8 * d), if IsChi8d d χ then zeroSum χ φ X else 0
+
 /-- The averaged one-level density. -/
 def oneLevel (X : ℝ) (φ : ℝ → ℝ) : ℝ :=
-  ((family X).card : ℝ)⁻¹ *
-    ∑ d ∈ family X, ∑ᶠ χ : DirichletCharacter ℂ (8 * d),
-      if IsChi8d d χ then zeroSum χ φ X else 0
+  ((family X).card : ℝ)⁻¹ * ∑ d ∈ family X, chiZeroSum d φ X
 
 /-- Even real Schwartz function. -/
 def IsEvenSchwartz (φ : ℝ → ℝ) : Prop :=

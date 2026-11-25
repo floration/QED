@@ -293,9 +293,11 @@ def VCOMv (dfun : ℕ → ℕ) : WROnlineProblem where
   Correct := fun (x : {x : OMvInst // VCLe x.M x.n (dfun x.n)}) (outs : List (List ℕ)) =>
     x.1.Correct outs
 
-/-- The desired lower bound: query time `n^{2 - c/d - o(1)}` for all `d ≤ D(n)`. -/
+/-- The desired lower bound: query time `n^{2 - c/d - o(1)}` for all `d ≤ D(n)`.
+`D n ≥ 1` for every `n` is required: otherwise a `D` with `D 0 = 0` makes the hypothesis on `dfun`
+unsatisfiable and the conclusion vacuous. -/
 def Conclusion : Prop :=
-  ∃ c : ℝ, 0 < c ∧ ∃ D : ℕ → ℕ, Filter.Tendsto D Filter.atTop Filter.atTop ∧
+  ∃ c : ℝ, 0 < c ∧ ∃ D : ℕ → ℕ, (∀ n : ℕ, 1 ≤ D n) ∧ Filter.Tendsto D Filter.atTop Filter.atTop ∧
     ∀ dfun : ℕ → ℕ, (∀ n : ℕ, 1 ≤ dfun n ∧ dfun n ≤ D n) →
       ∀ ε : ℝ, 0 < ε → ∀ p : ℕ,
         ¬ WROnlineRandSolvesIn (VCOMv dfun)

@@ -4,7 +4,7 @@ Magnets on a hat tiling should behave at their critical point exactly like magne
 Informal statement (sharpened): Let `G` be the tile-adjacency graph of a hat tiling `T` (any tiling of the plane by
 isometric copies, reflections allowed, of the Smith–Myers–Kaplan–Goodman-Strauss hat). Prove: there is
 `β_c ∈ (0,∞)`, the same for all hat tilings `T`, such that, with constants depending only on `T`,
-(a) `M_T(β, x) = 0` for all tiles `x` and `β ≤ β_c`, and `c(β−β_c)^{1/8} ≤ M_T(β, x) ≤ C(β−β_c)^{1/8}` uniformly in
+(a) `M_T(β, x) = 0` for all tiles `x` and `0 ≤ β ≤ β_c`, and `c(β−β_c)^{1/8} ≤ M_T(β, x) ≤ C(β−β_c)^{1/8}` uniformly in
 `x` for `β_c < β < β_c + δ`; (b) for `β_c − δ < β < β_c`, `χ_T(β) = sup_x Σ_y ⟨σ_xσ_y⟩_β` satisfies
 `c(β_c−β)^{−7/4} ≤ χ_T(β) ≤ C(β_c−β)^{−7/4}`; (c) for `β_c − δ < β < β_c`, the inverse correlation length
 `1/ξ_T(β) = liminf_{|x−y|→∞} (−log⟨σ_xσ_y⟩_β / |x−y|)` satisfies `c(β_c−β) ≤ 1/ξ_T(β) ≤ C(β_c−β)`.
@@ -32,6 +32,9 @@ Formalization notes:
   standard slowest-decay definition `1/ξ = liminf (−log⟨σ_xσ_y⟩/|x−y|)` (so `⟨σ_xσ_y⟩ ≤ e^{−(1/ξ−ε)|x−y|}` for
   all distant pairs), which is what "correlation length" means; also each asymptotic is placed on the side of
   `β_c` where the quantity is nontrivial, and constants depend on `T` but not on tiles.
+* (a) is restricted to `0 ≤ β`: for `β < 0` (antiferromagnet) the plus-state magnetization is not 0
+  (already `Λ = {x}` gives `tanh(β·deg x) < 0`, and `mag` is an infimum), which would make `Claim`
+  false for a reason unrelated to criticality.
 -/
 namespace OpenProblems.QEDM071
 noncomputable section
@@ -113,7 +116,7 @@ def InvCorrLengthBetween (T : Set (Set ℂ)) (β lo hi : ℝ) : Prop :=
 
 def Claim : Prop :=
   ∃ βc : ℝ, 0 < βc ∧ ∀ T : Set (Set ℂ), IsHatTiling T →
-    (∀ β : ℝ, β ≤ βc → ∀ x : T, mag T β x = 0) ∧
+    (∀ β : ℝ, 0 ≤ β → β ≤ βc → ∀ x : T, mag T β x = 0) ∧
     ∃ δ c C : ℝ, 0 < δ ∧ 0 < c ∧ 0 < C ∧
       (∀ β : ℝ, βc < β → β < βc + δ → ∀ x : T,
         c * (β - βc) ^ ((1 : ℝ) / 8) ≤ mag T β x ∧ mag T β x ≤ C * (β - βc) ^ ((1 : ℝ) / 8)) ∧
