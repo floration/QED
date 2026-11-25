@@ -1,0 +1,26 @@
+{
+ "id": "QED-E145",
+ "set": "extended",
+ "title": "No perfect single-error-correcting code over a 6-letter alphabet",
+ "area": "Algebra",
+ "difficulty": 6.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Folklore conjecture on perfect codes over non-prime-power alphabets; Golomb–Posner, Heden–Roos, Heden's survey",
+ "premise_risks": [
+  "Exact list of excluded lengths for q=6 not fully verified (some other paper might exclude 43); does not affect the general claim",
+  "Heden–Roos 2011 citation details from secondary source"
+ ],
+ "plain": "A code of words of length n over a 6-letter alphabet is 1-perfect if every possible word is either a codeword or differs from exactly one codeword in exactly one position. Over alphabets whose size is a prime power, such codes (Hamming codes) exist in infinitely many lengths. Over 6 letters none is known for n≥2. Counting arguments and Lloyd's theorem leave only lengths 7, 19, 43, 97, 115, 259, ..., and only 7 and 19 have been ruled out. Prove that none exists.",
+ "math": "Let $H(n,6)=\\{0,\\dots,5\\}^n$ with the Hamming distance $d$. Prove that for no $n\\ge2$ is there $C\\subseteq H(n,6)$ such that every $x\\in H(n,6)$ has exactly one $c\\in C$ with $d(x,c)\\le1$. (Necessary conditions: $1+5n=2^a3^b$ and, by Lloyd's theorem, $6\\mid 1+5n$, so $n\\in\\{7,19,43,97,115,259,\\dots\\}$. The cases $n=7$ (Golomb\\u2013Posner) and $n=19$ (Heden\\u2013Roos) are excluded.)",
+ "novelty": 2,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2403.10992",
+  "https://arxiv.org/abs/2405.03347",
+  "https://arxiv.org/abs/2607.27555",
+  "https://arxiv.org/abs/2008.13260"
+ ]
+}

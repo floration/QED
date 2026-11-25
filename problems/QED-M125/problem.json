@@ -1,0 +1,26 @@
+{
+ "id": "QED-M125",
+ "set": "main",
+ "title": "A positive fraction of matroids are sparse paving",
+ "area": "Combinatorics",
+ "difficulty": 6.0,
+ "grade": "A",
+ "provenance": "Extension",
+ "credit": "Weakening of the conjecture of D. Mayhew, M. Newman, D. Welsh, G. Whittle (Europ. J. Combin. 2011), after H. Crapo and G.-C. Rota; log-scale result by R. Pendavingh and J. van der Pol.",
+ "premise_risks": [
+  "Adjacent to a person-named conjecture (MNWW): this is an unnamed weakening, allowed by owner rules but should be presented as such",
+  "Some may view positive-fraction as nearly as hard as ratio → 1 (difficulty high)"
+ ],
+ "plain": "A matroid of rank r is sparse paving if its non-bases are r-sets, no two of which share r−1 elements; equivalently, all circuits have size r or r+1, and so do all circuits of its dual. These are the 'generic' matroids, and it is believed that almost all matroids on n labelled elements are of this kind. Even the much weaker statement is open: show that a fixed positive fraction of all matroids on n elements are sparse paving, for all large n.",
+ "math": "Let $m_n$ be the number of matroids on the ground set $[n]$ and $s_n$ the number of sparse paving matroids on $[n]$ (rank $r$ matroids whose set $\\mathcal N$ of non-bases is a family of $r$-subsets with $|X\\triangle Y|\\ge 4$ for distinct $X,Y\\in\\mathcal N$). Claim: $\\liminf_{n\\to\\infty} s_n/m_n>0$.",
+ "novelty": 5,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1411.0935",
+  "https://arxiv.org/abs/1602.04763",
+  "https://arxiv.org/abs/2509.02832",
+  "https://arxiv.org/pdf/2111.11577"
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "id": "QED-E137",
+ "set": "extended",
+ "title": "A 3×3 magic square of distinct squares",
+ "area": "Number theory",
+ "difficulty": 5.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "LaBar (College Math. J. 1984); Gardner (Quantum 1996); Guy UPINT D15.",
+ "premise_risks": [
+  "Unrefereed nonexistence claim arXiv:2510.08286 (not accepted)",
+  "Famous recreational problem: novelty moderate"
+ ],
+ "plain": "Can nine different perfect squares be arranged in a 3×3 grid so that every row, every column and both diagonals have the same sum? Such squares exist in size 4×4 and larger, and 3×3 examples with seven square entries are known, but no full 3×3 example has been found and none has been ruled out.",
+ "math": "Decide whether there exist integers $x_{ij}$ ($1\\le i,j\\le 3$) such that the nine numbers $x_{ij}^2$ are pairwise distinct and the matrix $(x_{ij}^2)$ is magic: its three row sums, three column sums and two diagonal sums are all equal.",
+ "novelty": 1,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://en.wikipedia.org/wiki/Magic_square_of_squares",
+  "https://arxiv.org/abs/2609.09351",
+  "https://arxiv.org/abs/2406.09364",
+  "https://arxiv.org/abs/2510.08286"
+ ]
+}

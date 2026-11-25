@@ -1,0 +1,25 @@
+{
+ "id": "QED-E153",
+ "set": "extended",
+ "title": "Area of the boundary of the Mandelbrot set",
+ "area": "Dynamics",
+ "difficulty": 8.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Classical (Milnor's problem lists; Douady-Hubbard era)",
+ "premise_risks": [
+  "Famous and probably very hard (low novelty). It is listed because it is important and has a one-line Lean statement.",
+  "It should be checked against the scorer's view of whether it duplicates the existing hyperbolic-measure item QED-M051. It does not: that item asks about the computability of a real-line measure."
+ ],
+ "plain": "The Mandelbrot set M is the set of complex numbers c for which the orbit of 0 under z -> z^2 + c stays bounded. Its boundary is a fractal of Hausdorff dimension 2, as large as possible for a plane set. Does the boundary of M have zero area?",
+ "math": "Let $M=\\{c\\in\\mathbb C:\\sup_n|f_c^{n}(0)|<\\infty\\}$ with $f_c(z)=z^2+c$. Decide whether the two-dimensional Lebesgue measure of $\\partial M$ is $0$.",
+ "novelty": 2,
+ "importance": 8,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/math/9205209",
+  "https://mrob.com/pub/muency/openconjectures.html",
+  "https://arxiv.org/abs/2512.24171"
+ ]
+}

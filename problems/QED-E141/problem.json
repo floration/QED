@@ -1,0 +1,27 @@
+{
+ "id": "QED-E141",
+ "set": "extended",
+ "title": "An odd weird number",
+ "area": "Number theory",
+ "difficulty": 5.5,
+ "grade": "C",
+ "provenance": "Curated",
+ "credit": "Benkoski and Erdős (1974); erdosproblems.com #470.",
+ "premise_risks": [
+  "Attributed as an Erdős problem (#470); the question itself is not person-named",
+  "Abundancy-cap context uses an unrefereed 2026 preprint",
+  "Already formalized in google-deepmind/formal-conjectures (helpful, but shows it is well known)"
+ ],
+ "plain": "A number is abundant if its proper divisors add up to more than the number itself, and weird if it is abundant but no selection of its distinct proper divisors adds up to exactly the number (70 is the smallest). Weird numbers have positive density, but every known one is even. Does an odd weird number exist?",
+ "math": "Decide whether there exists an odd $n\\in\\mathbb N$ with $\\sigma(n)>2n$ such that no subset $S$ of the proper divisors of $n$ satisfies $\\sum_{d\\in S}d=n$.",
+ "novelty": 2,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://google-deepmind.github.io/formal-conjectures/FormalConjectures/ErdosProblems/470.html",
+  "https://en.wikipedia.org/wiki/Weird_number",
+  "https://arxiv.org/abs/2207.12906",
+  "https://proofwiki.org/wiki/Do_Odd_Weird_Numbers_Exist%3F"
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "id": "QED-E143",
+ "set": "extended",
+ "title": "Does a projective plane of order 12 exist?",
+ "area": "Algebra",
+ "difficulty": 6.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical (Veblen–Bussey era question). Partial results by Janko, van Trung and others.",
+ "premise_risks": [
+  "Very well known, so novelty is low",
+  "May be judged a 'famous problem' (the prime power conjecture for planes), but the specific order-12 case is the natural unnamed sub-question",
+  "Overlaps thematically with MOLS(10) (both are MOLS questions); the owner may want only one"
+ ],
+ "plain": "A finite projective plane of order n has n^2+n+1 points and the same number of lines. Every line has n+1 points, and any two points lie on exactly one common line. Planes exist whenever n is a prime power, they are impossible for n = 6 and n = 10, and no plane is known for any other n. The smallest unsettled order is 12.",
+ "math": "Decide whether there exists a finite incidence structure with $157$ points and $157$ lines in which every line contains exactly $13$ points, every point lies on exactly $13$ lines, and any two distinct points lie on exactly one common line. Equivalently: is there a $157\\times157$ $0/1$ matrix $A$ with $AA^{\\mathsf T}=12I+J$, or equivalently are there $11$ mutually orthogonal Latin squares of order $12$?",
+ "novelty": 1,
+ "importance": 7,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.emergentmind.com/open-problems/existence-projective-planes-non-prime-power-orders-order-12",
+  "https://cs.uwaterloo.ca/~cbright/talks/canadam2025.pdf",
+  "https://ajc-new.maths.uq.edu.au/pdf/74/ajc_v74_p112.pdf",
+  "https://www.homepages.ucl.ac.uk/~ucahbdo/FiniteProjectivePlanes.pdf"
+ ]
+}

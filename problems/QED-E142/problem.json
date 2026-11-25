@@ -1,0 +1,25 @@
+{
+ "id": "QED-E142",
+ "set": "extended",
+ "title": "Three mutually orthogonal Latin squares of order 10",
+ "area": "Algebra",
+ "difficulty": 5.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical. Recent work by Myrvold, McKay–Meynert–Myrvold, and the 2026 SAT study arXiv:2503.10504",
+ "premise_risks": [
+  "A massive SAT/computer search could settle it at any time (SAT groups are actively working on it)",
+  "Low novelty: very well known"
+ ],
+ "plain": "Two Latin squares of the same size are orthogonal if, when you lay one on top of the other, every ordered pair of symbols appears exactly once. Euler's 36-officers problem shows no orthogonal pair exists for order 6, but orthogonal pairs of order 10 were found in 1959. Nobody knows whether three Latin squares of order 10 can be pairwise orthogonal.",
+ "math": "Let $N(n)$ be the maximum number of pairwise orthogonal Latin squares of order $n$. Decide whether $N(10)\\ge 3$, i.e. whether there exist $L_1,L_2,L_3:[10]\\times[10]\\to[10]$, each a Latin square, such that for every $a\\ne b$ the map $(i,j)\\mapsto (L_a(i,j),L_b(i,j))$ is a bijection $[10]^2\\to[10]^2$.",
+ "novelty": 1,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v33i1p30",
+  "https://arxiv.org/abs/2503.10504",
+  "https://arxiv.org/pdf/2601.22205"
+ ]
+}
