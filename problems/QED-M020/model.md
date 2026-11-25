@@ -5,9 +5,9 @@ You are an AI model helping someone attack this open problem. Read all of this b
 ## The problem
 Main set · Grade B · QED Extension · Combinatorics
 
-**Plain words:** On the 3D grid, a finite fire spreads to all unprotected neighbours each step, and at step t you may protect about ct new vertices. It is known that linear growth is the right order. Elementary arguments show that rate c>8 always contains the fire and that c<8/243 does not. Narrow this gap, or find the exact critical rate.
+**Plain words:** On the 3D grid, a finite fire spreads to all unprotected neighbours each step, and at step t you may protect about ct new vertices. It is known that linear growth is the right order. Elementary arguments show that rate c>8 always contains the fire and that c<32/27 does not. Narrow this gap, or find the exact critical rate.
 
-**Math:** Let c* = inf{c : for every finite initial fire B_0 ⊂ Z^3 there is a protection schedule with at most ⌊c t⌋ newly protected vertices at step t that keeps the total burnt set finite}. Known (QED-derived, elementary): 8/243 ≤ c* ≤ 8 (bound field and W); M additionally records 64/243 ≤ c* ≤ 48/7 (not independently checked here; numerics suggest a static ℓ^4-ball wall gives ≈ 6.4). Target: prove c* > 64/243, i.e. some rate c > 64/243 fails to contain some finite outbreak.
+**Math:** Let c* = inf{c : for every finite initial fire B_0 ⊂ Z^3 there is a protection schedule with at most ⌊ct⌋ newly protected vertices at step t that keeps the total burnt set finite}. Elementary: the growth recursion |B_{t+1}| ≥ |B_t| + |∂B_t| − c(t+1)(t+2)/2 with the Wang–Wang vertex-isoperimetric inequality in Z^3 gives c* ≥ 32/27; numerics suggest a static wall gives c* ≲ 6.4. Target: prove c* > 32/27, i.e. some rate c > 32/27 fails to contain some finite outbreak.
 
 **Credit:** Extension of Develin-Hartke (arXiv:math/0409195) and Dyer-Martinez-Pedroza-Thorne (arXiv:1507.03050, Cor. 4); o(t) failure from arXiv:2002.11205.
 

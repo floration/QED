@@ -7,7 +7,7 @@ Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** Bach and Huiberts (2025) found a simplex method with smoothed complexity O(σ^{-1/2} d^{11/4} log^{7/4} n) pivots and showed σ^{-1/2} is optimal. In the dimension d, the best lower bound is only about d^{1/2}. Close the gap in d.
 
-**Math:** Model: rows (a_i,b_i) ∈ R^{d+1}, i ≤ n, of norm ≤ 1, each perturbed by independent N(0,σ² I); S(d,n,σ) = sup over such unperturbed inputs of the expected number of pivots (Phase I included) of a fixed simplex pivot rule computable in polynomial time per pivot, minimised over such rules. Known (Bach-Huiberts): S = O(σ^{-1/2} d^{11/4} log^{7/4} n), and the expected combinatorial diameter is Ω(σ^{-1/2} d^{1/2} (ln 4/σ)^{-1/4}) at n = ⌊(4/σ)^d⌋. Question (regime σ ≤ 1/d, n ≤ 2^{poly(d)}): is there a pivot rule with S = O(σ^{-1/2} d^{a} (log n)^{O(1)}) for some a < 11/4? Dually, is the expected diameter Ω(σ^{-1/2} d^{b}) for some b > 1/2 in that regime?
+**Math:** Model: rows (ā_i, b̄_i) ∈ ℝ^{d+1}, i ≤ n, of Euclidean norm ≤ 1, each perturbed by independent N(0, σ² I), giving P = {x : ⟨a_i,x⟩ ≤ b_i}. Let diam(P) be the combinatorial diameter of its vertex-edge graph. Known (Bach–Huiberts): E[diam] = Ω(σ^{-1/2} d^{1/2} (ln 4/σ)^{-1/4}) at n = ⌊(4/σ)^d⌋, and a simplex method with O(σ^{-1/2} d^{11/4} log^{7/4} n) pivots exists. Claim: there are b > 1/2, c > 0 and K such that for all large d and all 0 < σ ≤ 1/d, some n ≤ (4/σ)^{Kd} and some unperturbed rows of norm ≤ 1 give E[diam(P)] ≥ c σ^{-1/2} d^b (log 4/σ)^{-K}. (The companion algorithmic question, whether a polynomial-time-per-pivot rule with Phase I achieves O(σ^{-1/2} d^a (log n)^{O(1)}) for some a < 11/4, has no canonical formal model and is not part of Claim.)
 
 **Credit:** Bach, Huiberts, Optimal smoothed analysis of the simplex method, arXiv:2504.04197 (2025; v2 May 2026).
 
@@ -24,7 +24,7 @@ Main set · Grade B · QED Curated · Complexity
 Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM040.Claim` or a proof of `¬ OpenProblems.QEDM040.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M040/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Statement left as sorry by design.
+Either a proof of `OpenProblems.QEDM040.Claim` or a proof of `¬ OpenProblems.QEDM040.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M040/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

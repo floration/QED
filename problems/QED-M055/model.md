@@ -7,7 +7,7 @@ Main set · Grade B · QED Curated · Dynamics
 
 **Plain words:** On a flat torus, three point vortices with total circulation zero form an integrable system (Stremler-Aref), but for vortices of equal strength even three are believed chaotic, from numerics only. Prove that three identical point vortices on the square torus are not integrable; the same question is open for four.
 
-**Math:** Let $G$ be the Green function of $\mathbb T=\mathbb C/(\mathbb Z+i\mathbb Z)$ ($\Delta G=\delta_0-1$) and $H=-\sum_{i<j}G(z_i-z_j)$ on $\{(z_1,\dots,z_N)\in\mathbb T^N: z_i\ne z_j\}$ with symplectic form $\sum_i dx_i\wedge dy_i$. The centre $Z=\sum_i z_i\in\mathbb T$ is conserved; the reduced space $M_N=\{Z=Z_0\}/(\tfrac1N\mathbb Z[i]/\mathbb Z[i])$ is symplectic of dimension $2N-2$. Prove that for $N=3$ the reduced flow on $M_3$ has no real-analytic first integral functionally independent of $H$ (and likewise for $N=4$ on $M_4$).
+**Math:** For N = 3 the reduced flow on M_3 has no real-analytic first integral functionally independent of H (Claim); the N = 4 analogue is a separate proposition ClaimN4, not part of Claim.
 
 **Credit:** Borisov, Mamaev, Kilin, Regul. Chaotic Dyn. (2019); survey arXiv:2003.00716 (Thm 7); Stremler-Aref (1999, chao-dyn/9907038) for the zero-circulation integrable case
 
@@ -21,7 +21,7 @@ Main set · Grade B · QED Curated · Dynamics
 Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM055.Claim` or a proof of `¬ OpenProblems.QEDM055.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M055/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs the torus Green function and symplectic reduction (or a verified explicit coordinate model). The 'likewise for N=4' clause is secondary and would be a separate Claim.
+Either a proof of `OpenProblems.QEDM055.Claim` or a proof of `¬ OpenProblems.QEDM055.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M055/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

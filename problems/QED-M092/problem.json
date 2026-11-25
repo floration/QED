@@ -16,8 +16,7 @@
  "novelty": 6,
  "importance": 7,
  "value": 7,
- "formal_status": "not_formalized",
- "lean_gap": "Not formalized: needs fractional Navier–Stokes solution theory.",
+ "formal_status": "formalized",
  "refs": [
   "https://openai.com/index/navier-stokes-solution/",
   "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",

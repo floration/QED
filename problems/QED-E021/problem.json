@@ -1,0 +1,23 @@
+{
+ "id": "QED-E021",
+ "set": "extended",
+ "title": "Is R(3,10) equal to 40 or 41?",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Radziszowski dynamic survey 'Small Ramsey Numbers'; Angeltveit (2023/2025).",
+ "premise_risks": [
+  "Angeltveit's upper bound is computer-assisted; if it had an error the range would revert to 40-42",
+  "An unpublished construction or nonexistence proof could exist"
+ ],
+ "plain": "The Ramsey number R(3,10) is the fewest people at a party that guarantees either 3 mutual acquaintances or 10 mutual strangers. It is known to be 40 or 41, and nobody knows which. Settle it: either build a 40-vertex triangle-free graph with no 10 pairwise non-adjacent vertices, or show none exists.",
+ "math": "Let $R(3,10)$ be the least $n$ such that every graph on $n$ vertices contains $K_3$ or an independent set of size $10$. Known: $40\\le R(3,10)\\le 41$. Decide whether there exists a triangle-free graph $G$ on $40$ vertices with $\\alpha(G)\\le 9$ (equivalently whether $R(3,10)=41$).",
+ "formal_status": "formalized",
+ "review_note": "Known: Lower bound 40: Exoo (1989), a (3,10)-graph on 39 vertices. Upper bound 41: V. Angeltveit, 'R(3,10) <= 41', arXiv:2401.00392, Electron. J. Combin. 32(4) (2025) P4.30, improving 42 (Goedgebeur-Radziszowski 2013). Pandey-Ravi, arXiv:2601.03572 (Jan 2026), study structural properties of hypothetical critical graphs, quoting the older range 40-42 and assuming R(3,10)=42; they do not settle the value. No 2025-2026 resolution found.",
+ "refs": [
+  "https://arxiv.org/abs/2401.00392",
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v32i4p30",
+  "https://arxiv.org/abs/2601.03572v1"
+ ]
+}

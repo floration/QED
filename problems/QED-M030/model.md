@@ -7,7 +7,7 @@ Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Solve All-Edges Sparse Triangle (for each of m edges, report whether it is in a triangle) in O(m^{4/3-eps}) time on general (balanced) sparse graphs, or derive an m^{4/3-o(1)} lower bound from a hypothesis that survives AVW (e.g. 4SUM, OV/SETH, or combinatorial BMM).
 
-**Math:** Model: word-RAM with Θ(log N)-bit words. Let G be a tripartite graph on parts A, B, C with |A|=|B|=|C|=N, m=Θ(N^{3/2}) edges and maximum degree O(√N). Is there a (possibly randomized) algorithm that, for every edge of every such G, decides whether that edge lies in a triangle, in time O(m^{4/3-ε}) for some fixed ε>0? (The alternative 'show that such an algorithm refutes a hypothesis still standing after AVW' is a separate, conditional-hardness question and should be posed as its own problem with a named hypothesis, e.g. 4SUM or OV.)
+**Math:** Model: word-RAM with Θ(log N)-bit words. Is there a fixed ε > 0 such that for all constants α, δ > 0 there is a randomized (success ≥ 2/3) algorithm that, given a tripartite graph on parts A, B, C with |A|=|B|=|C|=N, m ≥ α N^{3/2} edges and maximum degree ≤ δ√N, decides for every edge whether it lies in a triangle in time O(m^{4/3-ε})? (The conditional-hardness alternative is a separate question.)
 
 **Credit:** Alman, Vassilevska Williams 2026, arXiv:2610.06783, Sec. 6; Patrascu, STOC 2010
 
@@ -25,7 +25,7 @@ Main set · Grade A · QED Curated · Complexity
 Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM030.Claim` or a proof of `¬ OpenProblems.QEDM030.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M030/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs a word-RAM model with time bounds (and, for the alternative, fine-grained reductions), absent from Mathlib.
+Either a proof of `OpenProblems.QEDM030.Claim` or a proof of `¬ OpenProblems.QEDM030.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M030/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

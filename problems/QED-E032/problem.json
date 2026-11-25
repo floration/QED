@@ -1,0 +1,24 @@
+{
+ "id": "QED-E032",
+ "set": "extended",
+ "title": "Covering systems with a large minimum modulus",
+ "area": "Number theory",
+ "difficulty": 4.0,
+ "grade": "B-",
+ "provenance": "Curated",
+ "credit": "Erdős (minimum modulus problem); Hough; Balister–Bollobás–Morris–Sahasrabudhe–Tiba; Owens (42); Dai–Li–Li–Yi (14000)",
+ "premise_risks": [
+  "14000 bound is a Nov 2026 preprint, not yet refereed; refereed bound is 616,000",
+  "a construction with minimum modulus > 42 might exist unpublished"
+ ],
+ "plain": "A covering system is a finite list of arithmetic progressions a_i mod m_i, all with different moduli, such that every integer lies in at least one of them. Erdős asked whether the smallest modulus can be made as large as you like; Hough proved it cannot. The largest smallest modulus anyone has actually achieved is 42, while the best proof only shows it is at most 14,000. Find a covering with smallest modulus at least 43, or prove a much smaller upper bound.",
+ "math": "Let $M^*$ be the largest integer $M$ for which there exist $k\\ge1$, distinct integers $M\\le m_1<\\dots<m_k$ and residues $a_i$ with $\\bigcup_i (a_i+m_i\\mathbb Z)=\\mathbb Z$. Known: $42\\le M^*<14000$ (and $\\le 13278$ by a further computer-assisted calculation, same preprint). Decide whether $M^*\\ge 43$, and more generally narrow the gap (e.g. prove $M^*\\le 1000$).",
+ "formal_status": "formalized",
+ "review_note": "Known: Lower 42: Owens, 'A covering system with minimum modulus 42' (BYU thesis 2014); still the record per the survey arXiv:2208.09720 and the constructions table in arXiv:2611.15110. Upper bounds: Hough 10^16 (Annals 2015); Balister-Bollobas-Morris-Sahasrabudhe-Tiba 616,000 (2022); Dai-Li-Li-Yi, 'On the moduli of distinct covering systems', arXiv:2611.15110 (Nov 2026 preprint): < 14000 (13278 with extra computation). Squarefree moduli: Cummings-Filaseta-Trifonov <= 118 (arXiv:2211.08548), lowered to <= 7 by Dai-Li-Li-Yi.",
+ "refs": [
+  "https://arxiv.org/abs/2611.15110",
+  "https://arxiv.org/abs/2208.09720",
+  "https://arxiv.org/abs/2211.08548",
+  "https://arxiv.org/abs/1307.0874"
+ ]
+}

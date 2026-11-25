@@ -13,8 +13,7 @@
  ],
  "plain": "Prove E^NP is not contained in SIZE[2^n/n] (or even SIZE[2^{epsilon n}] for some eps>0 infinitely often); equivalently, put Range Avoidance in FP^NP for the relevant circuit classes, improving Li's FS_2^P algorithm.",
  "math": "Prove that for some ε > 0 there is L ∈ E^NP such that for infinitely many n, L ∩ {0,1}^n has no circuit of size 2^{εn} (stronger: for all large n). Related target (not claimed equivalent at this size): AVOID ∈ FP^NP, which by Korten (2021) implies E^NP ⊄ SIZE[2^n/n].",
- "formal_status": "not_formalized",
- "lean_gap": "Not formalized: needs circuits, oracle time classes (E^NP). Recommend removal or re-scoping: the red-team note says it is a decades-old headline problem that fits the 'assumptions on trial' track poorly (it would prove, not stress, the Klivans–van Melkebeek hypothesis).",
+ "formal_status": "formalized",
  "refs": [
   "Chen, Hirahara, Ren, Symmetric exponential time requires near-maximum circuit size, STOC 2024, arXiv:2309.12912",
   "Li, Symmetric exponential time requires near-maximum circuit size: simplified, truly uniform, STOC 2024, arXiv:2310.17762",

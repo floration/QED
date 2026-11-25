@@ -7,7 +7,7 @@ Main set · Grade B · QED Extension · Mathematical physics
 
 **Plain words:** Magnets on a hat tiling should behave at their critical point exactly like magnets on a square grid. Prove it.
 
-**Math:** Let G be the tile-adjacency graph of a hat tiling T in the hull. Prove: there is β_c ∈ (0,∞), the same for all T in the hull, such that (a) for β > β_c the plus-state magnetization at a tile satisfies c(β−β_c)^{1/8} ≤ M_T(β) ≤ C(β−β_c)^{1/8} uniformly in the tile, and M_T(β) = 0 for β ≤ β_c; (b) for β < β_c the susceptibility χ(β) = sup over tiles x of Σ_y ⟨σ_xσ_y⟩_β satisfies χ(β) ≍ (β_c−β)^{−7/4}; (c) for β < β_c the correlation length ξ(β), defined by −lim inf_{|x−y|→∞} log⟨σ_xσ_y⟩/|x−y| = 1/ξ, satisfies ξ(β) ≍ (β_c−β)^{−1}; all for β in a neighbourhood of β_c.
+**Math:** Let T be any hat tiling (tiling of ℂ by isometric copies, reflections allowed, of the Smith–Myers–Kaplan–Goodman-Strauss hat; all such tilings form the hull) and G its tile-adjacency graph (tiles sharing a boundary segment), with the J=1 ferromagnetic Ising model. Prove: there is β_c ∈ (0,∞), the same for all T, such that, with constants c, C, δ > 0 depending only on T: (a) the plus-state magnetization M_T(β,x) = 0 for all tiles x and 0 ≤ β ≤ β_c, and c(β−β_c)^{1/8} ≤ M_T(β,x) ≤ C(β−β_c)^{1/8} uniformly in x for β_c < β < β_c+δ; (b) for β_c−δ < β < β_c, χ_T(β) = sup_x Σ_y ⟨σ_xσ_y⟩_β satisfies c(β_c−β)^{−7/4} ≤ χ_T(β) ≤ C(β_c−β)^{−7/4}; (c) for β_c−δ < β < β_c, the inverse correlation length 1/ξ_T(β) = liminf_{|x−y|→∞} (−log⟨σ_xσ_y⟩_β/|x−y|) satisfies c(β_c−β) ≤ 1/ξ_T(β) ≤ C(β_c−β).
 
 **Credit:** Hat tiling: Smith, Myers, Kaplan, Goodman-Strauss (2023); numerics on hat-tiling Ising models as cited in the notes (arXiv:2402.11331, arXiv:2307.11054); background: Chelkak-Smirnov universality on isoradial graphs.
 
@@ -18,7 +18,7 @@ Main set · Grade B · QED Extension · Mathematical physics
 Difficulty estimate: 4.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM071.Claim` or a proof of `¬ OpenProblems.QEDM071.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M071/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs hat tiling construction, infinite-volume Ising Gibbs states, and definitions of M, χ, ξ.
+Either a proof of `OpenProblems.QEDM071.Claim` or a proof of `¬ OpenProblems.QEDM071.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M071/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

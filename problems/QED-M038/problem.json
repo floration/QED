@@ -8,9 +8,8 @@
  "provenance": "Extension",
  "credit": "Dürr, Kipouridis, Lampis, Węgrzycki, 'Faster algorithms for k-Orthogonal Vectors in low dimension', ICALP 2026, arXiv:2507.11098; Björklund–Kaski, STOC 2024, arXiv:2310.11926.",
  "plain": "Dürr-Kipouridis-Lampis-Węgrzycki show k-OV is solvable in O(2^{(1-eps_k)d} n) for every fixed k, and that eps_k -> 0 is forced by the Set Cover Conjecture. Determine the decay rate: prove eps_k >= c/log k (or c/k), or show that eps_k >= omega(1/k) would refute the Set Cover Conjecture.",
- "math": "Prove or disprove: there is an absolute constant c > 0 such that for every k >= 2, k-OV on n vectors in {0,1}^d is solvable in time O(2^{(1 - c/log k) d} * n^{O(1)}). (Companion: show SCC implies no O(2^{(1-eps)d} n^{O(1)}) algorithm for k-OV when eps >= C/k.)",
- "formal_status": "not_formalized",
- "lean_gap": "Not formalized: needs a RAM time-complexity framework absent from Mathlib. DKLW is a 2025 preprint published at ICALP 2026 (refereed), so no premise risk.",
+ "math": "Prove or disprove: there are absolute constants c > 0 and p ∈ ℕ such that for every k ≥ 2, k-OV on k sets of n vectors in {0,1}^d is solvable by a deterministic word-RAM algorithm in time O_k(2^{(1 - c/ln k) d} · n^p). (The exponent p must not depend on k: otherwise brute force n^k·d makes the statement trivial. Companion SCC direction is separate.)",
+ "formal_status": "formalized",
  "refs": [
   "Dürr, Kipouridis, Lampis, Węgrzycki, Faster algorithms for k-Orthogonal Vectors in low dimension, ICALP 2026, arXiv:2507.11098",
   "Björklund, Kaski, The Asymptotic Rank Conjecture and the Set Cover Conjecture are not both true, STOC 2024, arXiv:2310.11926"

@@ -7,7 +7,7 @@ Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** Prove, assuming only ETH, that Densest k-Subgraph cannot be approximated within k^{o(1)} (or any omega(1) factor) in f(k) n^{o(k)} time, or that k-Biclique has no f(k)n^{o(sqrt k)}-type algorithm, matching known Gap-ETH-based results.
 
-**Math:** Assuming only (deterministic) ETH, prove there is no f(k)*n^{O(1)} algorithm that approximates (uncolored) Densest k-Subgraph within any factor g(k)=omega(1) (Gap-ETH gives k^{o(1)}, Chalermsook et al. FOCS 2017).
+**Math:** Assuming only (deterministic) ETH, prove that there is a function g(k) -> infinity such that no algorithm running in time f(k) n^{O(1)} (f computable) approximates (uncolored) Densest k-Subgraph within factor g(k), i.e. outputs v with OPT/g(k) <= v <= OPT. (Gap-ETH gives every g = k^{o(1)}; the k-Biclique disjunct is already known under ETH, Lin JACM 2018.)
 
 **Credit:** Chalermsook et al., From Gap-ETH to FPT-inapproximability, FOCS 2017 (arXiv:1708.04218); Feldmann, Karthik C.S., Lee, Manurangsi, survey on approximation in parameterized complexity 2020 (arXiv:2006.04411)
 
@@ -24,7 +24,7 @@ Main set · Grade B · QED Curated · Complexity
 Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM034.Claim` or a proof of `¬ OpenProblems.QEDM034.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M034/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs a machine model with running times, ETH, and FPT-approximation algorithms. Mathlib has none of these in usable form.
+Either a proof of `OpenProblems.QEDM034.Claim` or a proof of `¬ OpenProblems.QEDM034.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M034/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

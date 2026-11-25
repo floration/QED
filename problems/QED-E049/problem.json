@@ -1,0 +1,26 @@
+{
+ "id": "QED-E049",
+ "set": "extended",
+ "title": "Ropelength lower bound for the trefoil",
+ "area": "Topology",
+ "difficulty": 5.0,
+ "grade": "C",
+ "provenance": "Curated",
+ "credit": "Denne–Diao–Sullivan (2006) bound; ropelength problem of Cantarella–Kusner–Sullivan and Buck–Simon",
+ "premise_risks": [
+  "The Schoen preprint is unrefereed and has several Zenodo versions; its claimed bound could be wrong, or have been raised in a newer version",
+  "Normalization: diameter convention (15.66 = 31.32 in radius convention)",
+  "16.372 is numerical, not a certified upper bound"
+ ],
+ "plain": "Tie a knot in a rope of thickness 1 using as little rope as possible. For the simplest knot, the trefoil, computer experiments find tight knots using about 16.37 units of rope. The last refereed proof shows that every knotted rope needs at least 15.66 units, and a 2026 computer-assisted preprint claims 15.76. Raise the proven lower bound for the trefoil substantially, ideally to 16.",
+ "math": "For a $C^{1,1}$ closed curve, $\\mathrm{Rop}=\\mathrm{length}/(2\\,\\mathrm{reach})$; $R(3_1)=\\inf$ over trefoils (attained). Known $15.66\\le R(3_1)\\lesssim16.372$ (refereed lower bound; numerical value), with an unrefereed 2026 computer-assisted claim $R(K)>15.7561$ for all nontrivial $K$. Formal target: $R(3_1)\\ge16$.",
+ "formal_status": "formalized",
+ "review_note": "Known: Lower: $\\mathrm{Rop}\\ge15.66$ for every nontrivial knot (Denne–Diao–Sullivan, Geom. Topol. 10 (2006), arXiv:math/0408026), improving 12 (Cantarella–Kusner–Sullivan). Unrefereed: $\\mathrm{Rop}(K)>15.75608926$ for every nontrivial $K$ via interval-arithmetic certificates (A. A. Schoen, 'Endpoint Tangents and a New Universal Lower Bound for the Ropelength of Nontrivial Knots', Zenodo, Sep 2026, v5.0.0, not peer reviewed). Klotz, arXiv:2611.14234 (Nov 2026), lists 31.51217852 (radius-normalized, so 15.756 diameter-normalized) for crossing number 3–8 as the current best, citing Schoen. Upper: numerical tight trefoil below 16.372 (DDS abstract). Minimizers exist (Cantarella–Kusner–Sullivan 2002; Gonzalez–Maddocks–Schuricht–von der Mosel 2002).",
+ "refs": [
+  "https://arxiv.org/abs/math/0408026",
+  "https://zenodo.org/records/22736870",
+  "https://arxiv.org/abs/2611.14234",
+  "https://en.wikipedia.org/wiki/Ropelength",
+  "https://math.charlotte.edu/wp-content/uploads/sites/909/2024/03/2019_18.pdf"
+ ]
+}

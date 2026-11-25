@@ -7,7 +7,7 @@ Main set · Grade A · QED Original · PDE
 
 **Plain words:** For the 3D wave equation with source |u|^p, small smooth data give global solutions exactly when p > 1+√2 (Strauss). Multiply the source by a factor that oscillates periodically in time with average zero, such as cos t. The global-existence proof still works above 1+√2. Every blow-up proof below it breaks, because they all need the source to be positive. Is the true threshold strictly smaller?
 
-**Math:** Let $g$ be smooth, $2\pi$-periodic, $\int_0^{2\pi}g=0$, $g\not\equiv0$ (model $g=\cos t$). For $u_{tt}-\Delta u=g(t)|u|^p$ on $\mathbb R^{1+3}$ with data $\varepsilon(f,h)$, $f,h\in C_c^\infty$ (solutions in the usual weak/mild sense, e.g. $C([0,T);H^1)$ with John-type weighted bounds), let $p_c(g)=\inf\{p>1:\forall f,h\ \exists\varepsilon_0>0$ such that the solution is global for all $0<\varepsilon<\varepsilon_0\}$. Since John/Zhou/Glassey global existence uses only $|g|u|^p|\lesssim|u|^p$ and the matching Lipschitz bound, $p_c(g)\le1+\sqrt2$. Is $p_c(g)<1+\sqrt2$? Determine $p_c(g)$ and whether it depends on $g$ (a heuristic predicts 2). For $1<p<p_c(g)$, determine the lifespan $T_\varepsilon$ as $\varepsilon\to0$ for suitable data.
+**Math:** For u_tt − Δu = cos(t)|u|^p on R^{1+3} (continuous Kirchhoff–Duhamel mild solutions), is p_c < 1+√2, i.e. does some p in (1,1+√2) have small-data global existence for all real C_c^∞ data? Exact p_c, dependence on g and lifespan are not formalized; the all-g version is ClaimGeneral (secondary).
 
 **QED results so far (reviewer-derived; check before relying on them):** Bound p_c<=1+sqrt2 is correct: John/Zhou iteration uses only |F(u)|<=C|u|^p and |F(u)-F(v)|<=C(|u|+|v|)^{p-1}|u-v|, both hold for g(t)|u|^p. The 'resonance predicts 2' heuristic (exp of int t^{1-p}) is arithmetically right but not an argument; a normal-form attempt (H''=g) just recycles the oscillating factor, so nothing is proved.
 
@@ -26,7 +26,7 @@ Main set · Grade A · QED Original · PDE
 Difficulty estimate: 3.2/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM090.Claim` or a proof of `¬ OpenProblems.QEDM090.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M090/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Statement left as sorry by design.
+Either a proof of `OpenProblems.QEDM090.Claim` or a proof of `¬ OpenProblems.QEDM090.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M090/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

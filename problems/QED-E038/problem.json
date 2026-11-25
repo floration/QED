@@ -1,0 +1,25 @@
+{
+ "id": "QED-E038",
+ "set": "extended",
+ "title": "Squeezing the square-lattice site percolation threshold",
+ "area": "Probability",
+ "difficulty": 4.0,
+ "grade": "C",
+ "provenance": "Curated",
+ "credit": "van den Berg–Ermakov (1996); Wierman (1995); Wierman–Oberly (2024)",
+ "premise_risks": [
+  "an unreviewed lower bound 0.5567 already exists online; if it is confirmed, the lower-bound target moves",
+  "the Wierman–Oberly abstract mentions 'a series of recent improvements', so an intermediate upper bound may also exist",
+  "the 2024 upper bound is in conference proceedings rather than a journal"
+ ],
+ "plain": "Colour each square of an infinite chessboard black independently with probability p. There is a critical p above which an infinite connected black cluster appears; simulations put it at about 0.5927, but nobody has a formula. The best proved statements only say it lies between 0.556 and 0.6669. Prove a tighter bound on either side.",
+ "math": "Let $p_c=p_c^{\\mathrm{site}}(\\mathbb Z^2)$. Known rigorously $0.556<p_c<0.666894$. Formal target: improve the upper bound at its published precision, $p_c<0.6668$ (more generally improve either endpoint rigorously).",
+ "formal_status": "formalized",
+ "review_note": "Known: Lower $p_c>0.556$: van den Berg & Ermakov, Random Structures Algorithms 8 (1996) 199–212. Unreviewed claim $p_c\\ge0.5567$ (computer-assisted, personal page kaust-a-laut.github.io, not peer reviewed). Upper $p_c<0.666894$: Wierman & Oberly, 'A new upper bound for the site percolation threshold of the square lattice', in Combinatorics, Graph Theory and Computing (Springer, 2024), improving Wierman's 0.679492 (CPC 1995, substitution method). Numerical $p_c\\approx0.59274605$ (Jacobsen 2015 and others; non-rigorous).",
+ "refs": [
+  "https://ir.cwi.nl/pub/4915",
+  "https://www.springerprofessional.de/en/a-new-upper-bound-for-the-site-percolation-threshold-of-the-squa/50252622",
+  "https://www.math.fau.edu/combinatorics/abstracts/oberly55.pdf",
+  "https://kaust-a-laut.github.io/"
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "id": "QED-E056",
+ "set": "extended",
+ "title": "Do minimum-order k-chromatic graphs of girth at least g have girth exactly g?",
+ "area": "Graph theory",
+ "difficulty": 6.0,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "G. Exoo and J. Goedgebeur (2019), Question 1; restriction to k ≥ 4 added here",
+ "premise_risks": [
+  "Could be resolved by a single computation once n_6(4) or n_4(6) is pinned down, if a counterexample exists; a positive answer needs a real idea",
+  "Restriction k ≥ 4 is ours (the paper's literal question fails for k = 3); vetter should confirm this is the intended question",
+  "Rampone 2026 bounds are an unrefereed preprint; not used by the statement",
+  "Possible elementary resolution: the vertex-identification argument above settles cases with large diameter; a cleverer local operation might settle all cases"
+ ],
+ "plain": "Let n_g(k) be the fewest vertices of a graph that needs k colours and has no cycle shorter than g. Exoo and Goedgebeur asked whether a smallest such graph must have a cycle of length exactly g; equivalently, whether n_g(k) strictly increases with g. For k = 3 this fails (the 5-cycle is smallest for both g = 4 and g = 5), so the question is for k >= 4. The analogous statement for cages is a classical theorem of Erdos and Sachs.",
+ "math": "Let $n_g(k)=\\min\\{|V(G)|:\\chi(G)=k,\\ \\mathrm{girth}(G)\\ge g\\}$. Decide whether $n_g(k)<n_{g+1}(k)$ for all $k\\ge 4$ and $g\\ge 3$; equivalently, whether every graph with $\\chi=k$, girth $\\ge g$ and exactly $n_g(k)$ vertices has girth exactly $g$.",
+ "novelty": 5,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "review_note": "Known: Posed as Question 1 in Exoo–Goedgebeur, 'Bounds for the smallest k-chromatic graphs of given girth', DMTCS 21(3) (2019) #9 (arXiv 1805.06713). Known exact values: n_3(k)=k (K_k), n_4(4)=11 (Grötzsch/Chvátal), n_5(4)=21, n_4(5)=22 (Jensen–Royle); bounds 26 ≤ n_6(4) ≤ 66 (Rampone, arXiv 2608.23652, 2026: 29 ≤ n_6(4) ≤ 64), 30 ≤ n_7(4) ≤ 171, 29 ≤ n_5(5) ≤ 80, 32 ≤ n_4(6) ≤ 40 (Goedgebeur, J. Graph Theory 2020, arXiv 1707.07581). Implied strict cases: n_3(k)<n_4(k) for k ≥ 3 (K_k is the unique smallest), n_4(4)<n_5(4)<n_6(4), n_4(5)<n_5(5).",
+ "refs": [
+  "https://arxiv.org/abs/1805.06713",
+  "https://dmtcs.episciences.org/5259",
+  "https://arxiv.org/abs/1707.07581",
+  "https://arxiv.org/abs/2608.23652"
+ ]
+}

@@ -8242,5 +8242,86 @@
 "difficulty": 4.5,
 "reason": "removed Nov 2026: not a precise statement (\"combinatorial\" undefined)",
 "grade_was": "B"
+},
+{
+"id": "QED-E025",
+"title": "Turán density of K_4^- (the 2/7 conjecture)",
+"area": "Combinatorics",
+"plain": "Take a collection of triples from n points such that no 4 points carry 3 or more of their 4 triples. How large a fraction of all triples can you take? A recursive construction gets 2/7 and computer-aided proofs show you can't beat about 0.2868. Prove 2/7 is right, or beat it.",
+"math": "Let $K_4^-$ be the $3$-graph on 4 vertices with 3 edges and $\\pi(K_4^-)=\\lim_n \\mathrm{ex}(n,K_4^-)/\\binom n3$. Known: $2/7\\le \\pi(K_4^-)\\le 0.2868$. Prove $\\pi(K_4^-)=2/7$ (Frankl-Furedi/Mubayi conjecture), or improve the upper bound.",
+"difficulty": 5.0,
+"reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Frankl–Füredi 2/7 conjecture)"
+},
+{
+"id": "QED-E033",
+"title": "Ideal Prouhet–Tarry–Escott solution of size 11",
+"area": "Number theory",
+"plain": "Find two different lists of 11 integers whose sums agree, whose sums of squares agree, and so on all the way up to their sums of 10th powers. Such 'ideal' pairs are known for every list size up to 10 and for size 12, but size 11 has never been found, nor proved impossible.",
+"math": "Do there exist multisets $\\{a_1,\\dots,a_{11}\\}\\neq\\{b_1,\\dots,b_{11}\\}$ of integers with $\\sum_i a_i^j=\\sum_i b_i^j$ for $j=1,\\dots,10$? Equivalently, is there an ideal PTE solution of degree $10$, i.e. $\\prod_{i=1}^{11}(x-a_i)-\\prod_{i=1}^{11}(x-b_i)$ a nonzero constant?",
+"difficulty": 5.0,
+"reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Prouhet–Tarry–Escott problem)"
+},
+{
+"id": "QED-E035",
+"title": "Pin down the Schur–Siegel–Smyth trace constant",
+"area": "Number theory",
+"plain": "Take algebraic integers all of whose conjugates are positive real numbers, and look at the average of their conjugates (trace divided by degree). Apart from finitely many exceptions this average cannot be small, and the threshold where infinitely many examples start is a constant lambda. For decades people believed lambda = 2; Smith disproved this, and now lambda is known only to lie between 1.80220 and 1.8216. Narrow this window.",
+"math": "Let $\\lambda_{\\mathrm{SSS}}$ be the smallest limit point of $\\operatorname{tr}(\\alpha)/\\deg(\\alpha)$ over totally positive algebraic integers. Known $1.80220\\le\\lambda_{\\mathrm{SSS}}\\le1.8216$ (lower bound stated non-strictly, arXiv:2609.29298, unrefereed). Formal target: strict improvement of the lower bound, $\\lambda_{\\mathrm{SSS}}>1.80220$.",
+"difficulty": 5.0,
+"reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Schur–Siegel–Smyth trace problem)"
+},
+{
+"id": "QED-E039",
+"title": "Cover any 3D convex body with 13 smaller copies",
+"area": "Geometry",
+"plain": "Take any bounded convex solid in space. How many strictly smaller copies of it (scaled down, translated, not rotated) are always enough to cover it? A cube needs 8, and Hadwiger conjectured 8 always suffice. The best proved number is 14. Prove that 13 always suffice.",
+"math": "For a convex body $K\\subset\\mathbb R^3$ let $H(K)$ be the least $m$ such that $K\\subseteq\\bigcup_{i=1}^m (\\lambda K + t_i)$ for some $0<\\lambda<1$, $t_i\\in\\mathbb R^3$ (equivalently the illumination number). Let $H_3=\\sup_K H(K)$. Known $8\\le H_3\\le 14$. Prove $H_3\\le 13$.",
+"difficulty": 5.0,
+"reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Hadwiger's covering conjecture)"
+},
+{
+"id": "QED-E042",
+"title": "Happy ending for heptagons: ES(7)=33",
+"area": "Geometry",
+"plain": "Among any 17 points in the plane with no three on a line, some 6 form a convex hexagon, and 16 points are not enough; this was proved by computer in 2006. Erdős and Szekeres predicted that the right number for convex 7-gons is 33. Prove that every 33 points in general position contain 7 in convex position.",
+"math": "Let $ES(k)$ be the least $N$ such that every set of $N$ points in $\\mathbb R^2$ with no three collinear contains $k$ points in convex position. Known $ES(k)\\ge 2^{k-2}+1$ (Erdős–Szekeres 1961) with equality for $k\\le6$; $ES(7)\\le 113$. Prove $ES(7)=33$, i.e. every 33-point set in general position contains a convex heptagon (any rigorous improvement of $113$ is also progress).",
+"difficulty": 4.5,
+"reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Erdős–Szekeres (happy ending) conjecture)"
+},
+{
+"id": "QED-E045",
+"title": "Dirac–Motzkin below the Green–Tao threshold",
+"area": "Geometry",
+"plain": "Given n points in the plane, not all on one line, an ordinary line is a line through exactly two of them. Green and Tao proved that for all sufficiently large n there are at least n/2 ordinary lines, but they never made 'sufficiently large' explicit. The best bound proved for every n is 6n/13. Prove n/2 for every n except the two known exceptions, 7 and 13, or at least beat 6n/13 for all n ≥ 14.",
+"math": "For finite non-collinear $P\\subset\\mathbb R^2$ with $|P|=n$, let $t_2(P)$ be the number of lines meeting $P$ in exactly two points. Prove $t_2(P)\\ge n/2$ for all $n\\notin\\{7,13\\}$. By Green–Tao this is known for $n\\ge n_0$, so the content is the finite range $n<n_0$ (or making $n_0$ explicit and verifying below it). Weaker target: find $c>6/13$ with $t_2(P)\\ge cn$ for all $n\\ge 14$.",
+"difficulty": 5.0,
+"reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Dirac–Motzkin conjecture)"
+},
+{
+"id": "QED-E046",
+"title": "Rigorously refute Palásti's parking conjecture in the plane",
+"area": "Probability",
+"plain": "Drop unit squares (all axis-parallel) one at a time at uniformly random positions in a huge box, keeping each one only if it does not overlap those already placed, until no more fit. In one dimension the covered fraction tends to Rényi's constant, about 0.7476. Palásti guessed the planar answer is Rényi's constant squared, about 0.5589. Simulations give about 0.5620, so the guess seems wrong, but nobody has proved it. Prove that the planar jamming density is not Rényi's constant squared.",
+"math": "Let $\\rho_2$ be the jamming limit of random sequential adsorption of aligned unit squares in $[0,L]^2$ as $L\\to\\infty$; it exists, with $L^1$ and a.s. convergence, by Penrose (2001). Let $c_R=\\int_0^\\infty\\exp\\!\\left(-2\\int_0^t\\frac{1-e^{-u}}{u}\\,du\\right)dt\\approx0.747598$ be Rényi's constant. Prove $\\rho_2\\ne c_R^2$, for instance by proving a rigorous lower bound $\\rho_2>c_R^2\\approx0.55890$. More generally, give any rigorous non-trivial two-sided bound on $\\rho_2$.",
+"difficulty": 4.0,
+"reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Palásti's conjecture)"
+},
+{
+"id": "QED-E052",
+"title": "A shape with Heesch number 7",
+"area": "Geometry",
+"plain": "Some shapes cannot tile the whole plane but can still be surrounded by a ring of copies of themselves, and that ring by another ring, and so on, up to some limit. The number of rings possible is the shape's Heesch number. The record is 6, found in 2021. Find a shape whose Heesch number is finite but at least 7.",
+"math": "For a closed topological disk $T\\subset\\mathbb R^2$ that does not tile the plane, the Heesch number $H(T)$ is the largest $k$ such that there is a patch of congruent copies of $T$ made of $T$ surrounded by $k$ successive coronas. Each corona is a ring of copies covering a neighbourhood of the previous patch's boundary, and each intermediate union must be a closed disk (no holes). Exhibit $T$ with $7\\le H(T)<\\infty$. Polyform version: exhibit a polyomino, polyhex or polyiamond with $7\\le H<\\infty$.",
+"difficulty": 4.5,
+"reason": "retired Nov 2026: extended set excludes directly named conjectures/problems (Heesch's problem)"
+},
+{
+"id": "QED-M042",
+"title": "Sparse 3-LPN at noise n^{-1/2}: beating Gaussian elimination",
+"area": "Complexity",
+"plain": "For 3-sparse LPN with m = n^{1.4} samples and noise rate eta = n^{-0.6} (or any eta in [n^{-0.7}, n^{-0.5}]), give an algorithm running in time exp(o(eta*n)), or prove a lower bound (e.g. for low-degree/SoS or statistical-query-like models) showing exp(Omega(eta*n)) is needed in this regime.",
+"math": "Fix k = 3, m = floor(n^{1.4}), eta = n^{-0.6}. In 3-sparse LPN a secret s in F_2^n is uniform, each sample is (a_i, <a_i,s> + e_i) with a_i uniform among weight-3 vectors of F_2^n and e_i ~ Bernoulli(eta) independent, i = 1..m. Prove or disprove: there is a (classical, randomized) algorithm that, given the m samples, outputs s with probability >= 2/3 for all sufficiently large n, in time exp(o(eta n)) = exp(o(n^{0.4})).",
+"difficulty": 3.5,
+"reason": "retired Nov 2026: not open — a sum-of-squares algorithm in time exp(Õ(n^0.2)) (cited in Chen–Shu–Zhou, arXiv:2407.19215) already meets the target"
 }
 ]

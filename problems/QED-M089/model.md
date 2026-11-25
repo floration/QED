@@ -7,7 +7,7 @@ Main set · Grade B · QED Extension · PDE
 
 **Plain words:** On the flat torus, the L4 space-time estimate for Schrodinger waves loses only epsilon derivatives (Bourgain). On the surface of a cube, which has eight cone points that diffract waves, only a loss of 1/4 derivative is known. Find the true loss: prove any loss below 1/4, or show some loss is necessary.
 
-**Math:** Let $S$ be the unit cube surface, $\Delta$ the Friedrichs extension from $C_c^\infty(S\setminus\text{vertices})$, and $s^*=\inf\{s\ge0:\|e^{it\Delta}f\|_{L^4([0,1]\times S)}\le C_s\|f\|_{H^s(S)}\}$. Known: $0\le s^*\le\tfrac14$ (Blair–Ford–Marzuola). Prove $s^*<\tfrac14$, or $s^*>0$; ideally determine $s^*$ (conjecturally $0$).
+**Math:** Let $S$ be the unit cube surface, $\Delta$ the Friedrichs extension from $C_c^\infty(S\setminus\text{vertices})$, and $s^*=\inf\{s\ge0:\|e^{it\Delta}f\|_{L^4([0,1]\times S)}\le C_s\|f\|_{H^s(S)}\}$. Known: $0\le s^*\le\tfrac14$ (Blair–Ford–Marzuola). Prove $s^*<\tfrac14$, or $s^*>0$; ideally determine $s^*$ (conjecturally $0$). The board's target (Claim) is $s^*<\tfrac14$.
 
 **Credit:** Blair, Ford, Marzuola, Strichartz estimates for the wave equation on flat cones / Euclidean surfaces with conical singularities, arXiv:1003.0666.
 
@@ -23,7 +23,7 @@ Main set · Grade B · QED Extension · PDE
 Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM089.Claim` or a proof of `¬ OpenProblems.QEDM089.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M089/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs Friedrichs Laplacian and Sobolev spaces on a cone surface.
+Either a proof of `OpenProblems.QEDM089.Claim` or a proof of `¬ OpenProblems.QEDM089.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M089/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

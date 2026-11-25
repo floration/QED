@@ -7,7 +7,7 @@ Main set · Grade B · QED Curated · Complexity
 
 **Plain words:** For LWE with secret in Z_q^n (q = poly(n)) and errors uniform in {0,1}, given m = C*n samples for a fixed constant C > 1, either give a polynomial-time (or 2^{o(n)}) algorithm, or prove hardness from standard LWE/worst-case lattice problems for m = C*n (beyond the n(1+O(1/log n)) samples of Micciancio-Peikert).
 
-**Math:** Binary-error LWE with linearly many samples: fix q = q(n) ≤ poly(n) and a constant C > 1. Given (A, As + e mod q) with A uniform in Z_q^{m×n}, s uniform in Z_q^n, e uniform in {0,1}^m, m = ⌈Cn⌉, either (a) give an algorithm recovering s (or distinguishing from uniform) with non-negligible advantage in time 2^{o(n)}, or (b) prove that this problem is as hard as standard LWE (or worst-case lattice problems) with polynomial loss in n. Known: Arora-Ge linearization solves it in poly time for m ≈ n²; Micciancio-Peikert prove hardness for m = n(1+O(1/log n)).
+**Math:** Fix q = q(n) with 2 <= q(n) <= poly(n) and a constant C > 1; m = ceil(Cn). Decision binary-error LWE: given (A, b), A uniform in Z_q^{m x n}, b = As + e mod q (s uniform, e uniform in {0,1}^m) or b uniform. Show that for every such C and q either (a) some randomized 2^{o(n)}-time algorithm distinguishes with non-negligible advantage, or (b) the problem is hard for polynomial time (no non-negligible advantage) assuming standard decision LWE is hard for some standard parameter family (dimension polynomially related to n, poly(n) modulus and samples, discrete Gaussian error of width alpha q' >= 2 sqrt(n')). Known: Arora-Ge solves m ~ n^2 in poly time; Micciancio-Peikert give (b) for m = n(1+O(1/log n)).
 
 **Credit:** Micciancio, Peikert, Hardness of SIS and LWE with small parameters, CRYPTO 2013; Arora, Ge, ICALP 2011.
 
@@ -20,7 +20,7 @@ Main set · Grade B · QED Curated · Complexity
 Difficulty estimate: 4.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM033.Claim` or a proof of `¬ OpenProblems.QEDM033.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M033/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Statement left as sorry by design.
+Either a proof of `OpenProblems.QEDM033.Claim` or a proof of `¬ OpenProblems.QEDM033.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M033/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

@@ -12,8 +12,7 @@
  "novelty": 3,
  "importance": 6,
  "value": 5,
- "formal_status": "not_formalized",
- "lean_gap": "Not formalized: billiard map construction on a quartic curve plus Kolmogorov-Sinai entropy or Lyapunov/Pesin theory is not in Mathlib. 2026 refs (2605.19897, 2610.28247) are background progress on topological entropy and lemons, not premises.",
+ "formal_status": "formalized",
  "refs": [
   "https://legacy-www.math.harvard.edu/~knill/offprints/lpbilliards.pdf",
   "https://arxiv.org/abs/2605.19897",

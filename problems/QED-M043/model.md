@@ -7,7 +7,7 @@ Main set · Grade A · QED Curated · Complexity
 
 **Plain words:** Given n points in the plane (integer coordinates poly(n), or real RAM), decide whether three are collinear in O(n^{2-eps}) time for some eps>0; or give a fine-grained reduction showing Collinearity is hard under a hypothesis not refuted by Alman-Vassilevska Williams (e.g. 4SUM, 3SUM-Indexing, or a new geometric hypothesis).
 
-**Math:** Prove or disprove: for every constant c >= 1 there exist eps > 0 and a word-RAM algorithm (word size Theta(log n)) deciding in O(n^{2-eps}) time whether n points of Z^2 ∩ [-n^c,n^c]^2 contain three collinear points (and the analogous real-RAM question for points of R^2).
+**Math:** Prove or disprove: for every constant c ≥ 1 there are ε > 0 and a deterministic word-RAM algorithm (word size Θ(log n)) deciding in O(n^{2-ε}) time whether n distinct points of ℤ² ∩ [−n^c, n^c]² contain three collinear points. (The real-RAM variant is a separate question.)
 
 **Credit:** Alman & Vassilevska Williams, 'Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs', arXiv:2610.06783 (2026), Sec. 1 and Sec. 6.
 
@@ -29,7 +29,7 @@ Main set · Grade A · QED Curated · Complexity
 Difficulty estimate: 3.5/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM043.Claim` or a proof of `¬ OpenProblems.QEDM043.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M043/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: requires a word-RAM/real-RAM time-complexity framework absent from Mathlib.
+Either a proof of `OpenProblems.QEDM043.Claim` or a proof of `¬ OpenProblems.QEDM043.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M043/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 

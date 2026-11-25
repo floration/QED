@@ -7,7 +7,7 @@ Main set · Grade B · QED Extension · Complexity
 
 **Plain words:** Dürr-Kipouridis-Lampis-Węgrzycki show k-OV is solvable in O(2^{(1-eps_k)d} n) for every fixed k, and that eps_k -> 0 is forced by the Set Cover Conjecture. Determine the decay rate: prove eps_k >= c/log k (or c/k), or show that eps_k >= omega(1/k) would refute the Set Cover Conjecture.
 
-**Math:** Prove or disprove: there is an absolute constant c > 0 such that for every k >= 2, k-OV on n vectors in {0,1}^d is solvable in time O(2^{(1 - c/log k) d} * n^{O(1)}). (Companion: show SCC implies no O(2^{(1-eps)d} n^{O(1)}) algorithm for k-OV when eps >= C/k.)
+**Math:** Prove or disprove: there are absolute constants c > 0 and p ∈ ℕ such that for every k ≥ 2, k-OV on k sets of n vectors in {0,1}^d is solvable by a deterministic word-RAM algorithm in time O_k(2^{(1 - c/ln k) d} · n^p). (The exponent p must not depend on k: otherwise brute force n^k·d makes the statement trivial. Companion SCC direction is separate.)
 
 **Credit:** Dürr, Kipouridis, Lampis, Węgrzycki, 'Faster algorithms for k-Orthogonal Vectors in low dimension', ICALP 2026, arXiv:2507.11098; Björklund–Kaski, STOC 2024, arXiv:2310.11926.
 
@@ -18,7 +18,7 @@ Main set · Grade B · QED Extension · Complexity
 Difficulty estimate: 3.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer
-Either a proof of `OpenProblems.QEDM038.Claim` or a proof of `¬ OpenProblems.QEDM038.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M038/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution. What is missing: Not formalized: needs a RAM time-complexity framework absent from Mathlib. DKLW is a 2025 preprint published at ICALP 2026 (refereed), so no premise risk.
+Either a proof of `OpenProblems.QEDM038.Claim` or a proof of `¬ OpenProblems.QEDM038.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-M038/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
 
 If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
 
