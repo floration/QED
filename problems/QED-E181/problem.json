@@ -1,0 +1,26 @@
+{
+ "id": "QED-E181",
+ "set": "extended",
+ "title": "Is Out(F_3) linear?",
+ "area": "Algebra",
+ "difficulty": 7.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Bridson–Vogtmann survey (2006), Question 15; background Formanek–Procesi",
+ "premise_risks": [
+  "Open status confirmed from 2006 survey and 2012 Kielak paper; no 2024-26 resolution found but no recent survey checked verbatim",
+  "Whether Out(F_3) contains no Formanek–Procesi subgroup is taken from the survey's framing"
+ ],
+ "plain": "The outer automorphism group of the free group on three letters, Out(F_3), is a basic finitely presented group in geometric group theory. Does it have a faithful representation by complex matrices of some size? For two letters it does (it is GL_2(Z)). For four or more letters it does not, because it then contains Aut(F_3), which Formanek and Procesi showed is not linear. Three letters is the single open case.",
+ "math": "Let $F_3$ be the free group of rank $3$ and $\\mathrm{Out}(F_3)=\\mathrm{Aut}(F_3)/\\mathrm{Inn}(F_3)$. Determine whether there exist $m\\in\\mathbb N$ and an injective group homomorphism $\\mathrm{Out}(F_3)\\hookrightarrow \\mathrm{GL}_m(\\mathbb C)$.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/math/0507612",
+  "https://arxiv.org/abs/1202.0923",
+  "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/faithful-polynomial-representation-of-out-f3/F579AA787EF224331259094103C671E8",
+  "https://arxiv.org/abs/2311.04010"
+ ]
+}

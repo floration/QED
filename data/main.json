@@ -2453,5 +2453,193 @@
   ],
   "lean": "import Mathlib\n/-! QED-M125: A positive fraction of matroids are sparse paving\nA matroid of rank r is sparse paving if its non-bases are r-sets, no two of which share r−1 elements; equivalently, all circuits have size r or r+1, and so do all circuits of its dual. These are the 'generic' matroids, and it is believed that almost all matroids on n labelled elements are of this kind. Even the much weaker statement is open: show that a fixed positive fraction of all matroids on n elements are sparse paving, for all large n.\nInformal statement: Let $m_n$ be the number of matroids on the ground set $[n]$ and $s_n$ the number of sparse paving matroids on $[n]$ (rank $r$ matroids whose set $\\mathcal N$ of non-bases is a family of $r$-subsets with $|X\\triangle Y|\\ge 4$ for distinct $X,Y\\in\\mathcal N$). Claim: $\\liminf_{n\\to\\infty} s_n/m_n>0$.\nFormalization notes:\n* A matroid on the labelled ground set `Fin n` is identified with its family of bases\n  ℬ ⊆ 2^[n], characterised by the standard base axioms: ℬ nonempty, and the exchange axiom\n  (for B₁, B₂ ∈ ℬ and x ∈ B₁ \\ B₂ there is y ∈ B₂ \\ B₁ with (B₁ − x) + y ∈ ℬ). This is a\n  bijection between matroids on [n] and such families, so `m n` counts labelled matroids.\n  (All bases then have a common size, the rank.)\n* Sparse paving: there is r such that every base has size r, and the non-bases\n  𝒩 = (r-subsets) \\ ℬ satisfy |X Δ Y| ≥ 4 for distinct X, Y ∈ 𝒩, with X Δ Y written as\n  (X \\ Y) ∪ (Y \\ X). `s n` counts base families that are both matroids and sparse paving.\n* m n ≥ 1 (e.g. ℬ = {∅}), so liminf s_n/m_n > 0 is equivalent to: ∃ c > 0 and N₀ with\n  c·m n ≤ s n for all n ≥ N₀. That is `Claim`. `¬Claim` means liminf s_n/m_n = 0.\n-/\nnamespace OpenProblems.QEDM125\nnoncomputable section\nopen Classical\n\n/-- `ℬ` satisfies the matroid base axioms on ground set `Fin n`. -/\ndef IsMatroidBases {n : ℕ} (ℬ : Finset (Finset (Fin n))) : Prop :=\n  ℬ.Nonempty ∧\n    ∀ B₁ ∈ ℬ, ∀ B₂ ∈ ℬ, ∀ x ∈ B₁ \\ B₂, ∃ y ∈ B₂ \\ B₁, insert y (B₁.erase x) ∈ ℬ\n\n/-- The matroid with bases `ℬ` is sparse paving. -/\ndef IsSparsePaving {n : ℕ} (ℬ : Finset (Finset (Fin n))) : Prop :=\n  ∃ r : ℕ, (∀ B ∈ ℬ, B.card = r) ∧\n    ∀ X ∈ (Finset.univ : Finset (Fin n)).powersetCard r \\ ℬ,\n    ∀ Y ∈ (Finset.univ : Finset (Fin n)).powersetCard r \\ ℬ,\n      X ≠ Y → 4 ≤ ((X \\ Y) ∪ (Y \\ X)).card\n\n/-- Number of matroids on `Fin n`. -/\ndef m (n : ℕ) : ℕ :=\n  ((Finset.univ : Finset (Finset (Finset (Fin n)))).filter\n    (fun ℬ : Finset (Finset (Fin n)) => IsMatroidBases ℬ)).card\n\n/-- Number of sparse paving matroids on `Fin n`. -/\ndef s (n : ℕ) : ℕ :=\n  ((Finset.univ : Finset (Finset (Finset (Fin n)))).filter\n    (fun ℬ : Finset (Finset (Fin n)) => IsMatroidBases ℬ ∧ IsSparsePaving ℬ)).card\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 0 < c ∧ ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n → c * (m n : ℝ) ≤ (s n : ℝ)\n\nend\nend OpenProblems.QEDM125\n",
   "set": "main"
+ },
+ {
+  "id": "QED-M126",
+  "review_id": "R5-K03",
+  "title": "Glauber dynamics for colourings mixes rapidly with (1+eps)Delta colours",
+  "area": "Probability",
+  "difficulty": 4.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Conjecture q >= Delta+2 commonly cited to Jerrum (1995) as a 'long-standing conjecture'; asymptotic form as stated here is a weaker unnamed version.",
+  "results": null,
+  "premise_risks": [
+   "Actively moving constant (Tao-list-style risk): new 2026 preprints (Li-Oveis Gharan, Yang) unrefereed; the endpoint target avoids arbitrary intermediate thresholds",
+   "Some sources call the Delta+2 statement 'Jerrum's conjecture'; the asymptotic version is the unnamed weaker form",
+   "Well known, so low novelty"
+  ],
+  "plain": "To sample a random proper colouring of a graph with q colours, repeat this step: pick a random vertex and a random colour, and recolour the vertex if no neighbour already has that colour. For large maximum degree Delta this chain is known to reach equilibrium in polynomial time once q is a bit above (1+1/e)Delta, about 1.368 Delta (2026). Conjecturally q >= Delta+2 is enough. Weakest asymptotic form: for every eps > 0, are (1+eps)Delta colours enough once Delta is large?",
+  "math": "For a finite graph $G$ on $n$ vertices with maximum degree $\\Delta$ and an integer $q\\ge\\Delta+2$, let $\\Omega$ be the set of proper $q$-colourings and $P$ the Glauber (Metropolis) chain on $\\Omega$: choose $v\\in V$ and $c\\in[q]$ uniformly at random and set $\\sigma(v)=c$ if no neighbour of $v$ has colour $c$. Let $t_{\\mathrm{mix}}(G,q)=\\min\\{t:\\max_{\\sigma\\in\\Omega}\\|P^t(\\sigma,\\cdot)-U_\\Omega\\|_{TV}\\le 1/4\\}$. Claim: for every $\\varepsilon>0$ there are $\\Delta_0$ and $C$ such that $t_{\\mathrm{mix}}(G,q)\\le C n^{C}$ for every graph $G$ with $\\Delta(G)\\ge\\Delta_0$ and every integer $q\\ge(1+\\varepsilon)\\Delta(G)$.",
+  "novelty": 3,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2611.04699",
+   "https://arxiv.org/abs/2407.04870",
+   "https://arxiv.org/abs/1804.04025",
+   "https://arxiv.org/abs/2307.08080",
+   "https://arxiv.org/abs/2611.12444"
+  ],
+  "lean": "import Mathlib\n/-! QED-M126: Glauber dynamics for colourings mixes rapidly with (1+eps)Delta colours\nTo sample a random proper colouring of a graph with q colours, repeat this step: pick a random\nvertex and a random colour, and recolour the vertex if no neighbour already has that colour. For\nlarge maximum degree Delta this chain is known to reach equilibrium in polynomial time once q is a\nbit above (1+1/e)Delta. Conjecturally q >= Delta+2 is enough. Weakest asymptotic form: for every\neps > 0, are (1+eps)Delta colours enough once Delta is large?\nInformal statement: For a finite graph G on n vertices with maximum degree Δ and q colours, let Ω\nbe the set of proper q-colourings and P the Glauber (Metropolis) chain on Ω: choose v ∈ V and\nc ∈ [q] uniformly and set σ(v) = c if no neighbour of v has colour c. Let\nt_mix(G,q) = min{t : max_{σ∈Ω} ‖P^t(σ,·) − U_Ω‖_TV ≤ 1/4}. Claim: for every ε > 0 there are Δ₀\nand C such that t_mix(G,q) ≤ C·n^C for every graph G with Δ(G) ≥ Δ₀ and every integer\nq ≥ (1+ε)Δ(G).\nFormalization notes:\n* Graphs are `SimpleGraph (Fin n)` (every finite simple graph up to isomorphism); Δ(G) is Mathlib's\n  `SimpleGraph.maxDegree`.\n* The chain is run on all maps `Fin n → Fin q`; `glauberStep G σ v c` recolours `v` to `c` if no\n  neighbour of `v` has colour `c` and otherwise leaves `σ` unchanged (lazy Metropolis rule; the\n  choice c = σ(v) is a holding step, as in the standard chain). From a proper colouring the chain\n  stays among proper colourings, so `law` started at a proper σ is supported on Ω and the total\n  variation distance computed over all maps equals the one over Ω.\n* `trans G q σ τ = #{(v,c) : glauberStep G σ v c = τ} / (n q)` is the transition matrix;\n  `law G q σ t` is the row P^t(σ,·), defined by the recursion law_{t+1}(τ) = Σ_ρ law_t(ρ) P(ρ,τ).\n* `uniformProper` is the uniform distribution on Ω (0 off Ω); `tvDist μ ν = ½ Σ |μ − ν|`.\n* `MixedBy G q t` says max over proper σ of the TV distance at time t is ≤ 1/4. Since\n  d(t) = max_σ ‖P^t(σ,·) − π‖_TV is non-increasing for every finite Markov chain with stationary\n  distribution π (here π = U_Ω, P is symmetric), \"∃ t ≤ T, MixedBy G q t\" is equivalent to\n  t_mix ≤ T; this avoids `Nat.find`.\n* Claim: ∀ ε > 0, ∃ Δ₀ C : ℕ, ∀ n G q, Δ(G) ≥ Δ₀ → q ≥ (1+ε)Δ(G) → t_mix(G,q) ≤ C·n^C.\n  Δ₀ is chosen by the prover, so the range Δ+2 > q ≥ (1+ε)Δ (where the chain may be non-ergodic)\n  is excluded by taking Δ₀ ≥ 2/ε, exactly as in the informal statement. Proving `Claim` = the\n  asymptotic (1+o(1))Δ rapid-mixing conjecture; `¬Claim` = some ε > 0 and graphs of arbitrarily\n  large degree with super-polynomial mixing at q ≥ (1+ε)Δ.\n-/\nnamespace OpenProblems.QEDM126\nnoncomputable section\nopen Classical\n\n/-- `σ` is a proper colouring of `G`. -/\ndef IsProper {n q : ℕ} (G : SimpleGraph (Fin n)) (σ : Fin n → Fin q) : Prop :=\n  ∀ u v : Fin n, G.Adj u v → σ u ≠ σ v\n\n/-- One Glauber (Metropolis) update with chosen vertex `v` and colour `c`. -/\ndef glauberStep {n q : ℕ} (G : SimpleGraph (Fin n)) (σ : Fin n → Fin q) (v : Fin n) (c : Fin q) :\n    Fin n → Fin q :=\n  if (∀ u : Fin n, G.Adj v u → σ u ≠ c) then Function.update σ v c else σ\n\n/-- Transition probability `P(σ, τ)` of the Glauber chain (`(v,c)` uniform on `Fin n × Fin q`). -/\ndef trans {n q : ℕ} (G : SimpleGraph (Fin n)) (σ τ : Fin n → Fin q) : ℝ :=\n  ((Finset.univ.filter (fun vc : Fin n × Fin q => glauberStep G σ vc.1 vc.2 = τ)).card : ℝ) /\n    ((n : ℝ) * (q : ℝ))\n\n/-- The distribution `P^t(σ, ·)` of the chain after `t` steps, started at `σ`. -/\ndef law {n q : ℕ} (G : SimpleGraph (Fin n)) (σ : Fin n → Fin q) : ℕ → (Fin n → Fin q) → ℝ\n  | 0 => fun τ => if τ = σ then 1 else 0\n  | t + 1 => fun τ => ∑ ρ : Fin n → Fin q, law G σ t ρ * trans G ρ τ\n\n/-- Number of proper colourings `|Ω|`. -/\ndef numProper {n q : ℕ} (G : SimpleGraph (Fin n)) : ℕ :=\n  (Finset.univ.filter (fun σ : Fin n → Fin q => IsProper G σ)).card\n\n/-- The uniform distribution on proper colourings. -/\ndef uniformProper {n q : ℕ} (G : SimpleGraph (Fin n)) (τ : Fin n → Fin q) : ℝ :=\n  if IsProper G τ then 1 / ((numProper (q := q) G : ℕ) : ℝ) else 0\n\n/-- Total variation distance between two functions on a finite type. -/\ndef tvDist {α : Type} [Fintype α] (μ ν : α → ℝ) : ℝ :=\n  (1 / 2 : ℝ) * ∑ a : α, |μ a - ν a|\n\n/-- After `t` steps, every proper starting state is within TV distance `1/4` of uniform. -/\ndef MixedBy {n : ℕ} (G : SimpleGraph (Fin n)) (q t : ℕ) : Prop :=\n  ∀ σ : Fin n → Fin q, IsProper G σ → tvDist (law G σ t) (uniformProper (q := q) G) ≤ 1 / 4\n\ndef Claim : Prop :=\n  ∀ ε : ℝ, 0 < ε → ∃ Δ₀ C : ℕ, ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (q : ℕ),\n    Δ₀ ≤ G.maxDegree → (1 + ε) * (G.maxDegree : ℝ) ≤ (q : ℝ) →\n      ∃ t : ℕ, t ≤ C * n ^ C ∧ MixedBy G q t\n\nend\nend OpenProblems.QEDM126\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M127",
+  "review_id": "R5-K09",
+  "title": "Are graphs with no K7 minor 7-colourable?",
+  "area": "Graph theory",
+  "difficulty": 4.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Open question recorded in arXiv:2609.17760 and earlier (Albar-Gonçalves 2018); weaker unnamed sub-question of the t=7 case of Hadwiger's conjecture.",
+  "results": null,
+  "premise_risks": [
+   "The '6-colourable' version is a named-conjecture case; the claim is deliberately the weaker 7-colour statement, which is unnamed",
+   "Key 2026 source arXiv:2609.17760 is an unrefereed preprint (its statement of openness is corroborated by the refereed 8-colourability literature)",
+   "Must make sure the OpenAI 'linear list colouring bound in terms of Hadwiger number' does not give a constant <= 7 for t=7 (its abstract-level claim is a linear bound, constant not small)"
+  ],
+  "plain": "A graph has a K7 minor if one can find 7 disjoint connected groups of vertices with an edge between every two groups. Graphs with no K7 minor are known to be colourable with 8 colours, and the t=7 case of Hadwiger's conjecture predicts that 6 suffice, but nobody can even show that 7 colours always suffice. Prove (or disprove) that every graph with no K7 minor can be properly coloured with 7 colours.",
+  "math": "Let $G$ be a finite simple graph with no $K_7$ minor, i.e. there are no pairwise disjoint nonempty sets $B_1,\\dots,B_7\\subseteq V(G)$ with each $G[B_i]$ connected and at least one edge between $B_i$ and $B_j$ for all $i\\ne j$. Claim: $\\chi(G)\\le 7$. (Known: $\\chi(G)\\le 8$.)",
+  "novelty": 3,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2208.07335",
+   "https://arxiv.org/abs/2609.17760",
+   "https://arxiv.org/abs/2507.03244",
+   "https://arxiv.org/abs/1304.5468",
+   "https://arxiv.org/abs/2610.17090"
+  ],
+  "lean": "import Mathlib\n/-! QED-M127: Are graphs with no K7 minor 7-colourable?\nGraphs with no K7 minor are known to be 8-colourable, and the t = 7 case of Hadwiger's\nconjecture predicts 6 colours, but even 7 colours is open. Prove or disprove that every graph\nwith no K7 minor is properly 7-colourable.\nInformal statement: Let G be a finite simple graph with no K₇ minor, i.e. there are no pairwise\ndisjoint nonempty sets B₁,…,B₇ ⊆ V(G) with each G[Bᵢ] connected and at least one edge between\nBᵢ and Bⱼ for all i ≠ j. Claim: χ(G) ≤ 7. (Known: χ(G) ≤ 8.)\nFormalization notes: Finite graphs are taken on vertex type `Fin n` (every finite simple graph\nis isomorphic to one of these, and both minor-containment and colourability are isomorphism\ninvariant). `HasCliqueMinor G t` is the branch-set definition of a K_t minor: t sets of\nvertices, each inducing a connected subgraph (`SimpleGraph.Connected` of the induced graph\n`G.induce (B i)`, which includes nonemptiness), pairwise disjoint, and pairwise joined by an\nedge. This is the standard equivalent of \"K_t is obtained from G by deleting and contracting\".\nColourability is Mathlib's `SimpleGraph.Colorable` (a proper colouring with colours in `Fin 7`).\n`Claim` = every K₇-minor-free finite graph is 7-colourable; `¬Claim` = an explicit finite\nK₇-minor-free graph with chromatic number 8.\n-/\nnamespace OpenProblems.QEDM127\nnoncomputable section\n\n/-- `G` has a `K_t` minor, via branch sets. -/\ndef HasCliqueMinor {V : Type} (G : SimpleGraph V) (t : ℕ) : Prop :=\n  ∃ B : Fin t → Set V,\n    (∀ i : Fin t, (G.induce (B i)).Connected) ∧\n    (∀ i j : Fin t, i ≠ j → Disjoint (B i) (B j)) ∧\n    (∀ i j : Fin t, i ≠ j → ∃ u ∈ B i, ∃ v ∈ B j, G.Adj u v)\n\ndef Claim : Prop :=\n  ∀ (n : ℕ) (G : SimpleGraph (Fin n)), ¬ HasCliqueMinor G 7 → G.Colorable 7\n\nend\nend OpenProblems.QEDM127\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M128",
+  "review_id": "R5-K24",
+  "title": "Monochromatic rectangles in low-rank Boolean matrices: beating 2^{-sqrt r}",
+  "area": "Complexity",
+  "difficulty": 8.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Weakening of the log-rank conjecture (Lovász–Saks 1988); rectangle formulation Nisan–Wigderson 1995; sqrt barrier from Lovett 2016 and Sudakov–Tomon 2024.",
+  "results": null,
+  "premise_risks": [
+   "This is an unnamed weakening of a person-associated famous conjecture (log-rank, Lovász–Saks); permitted under the sub-question rule but scorer may judge it a famous problem in disguise",
+   "Exponent target c<1/2 is natural (first polynomial improvement) but any such result would be a major breakthrough: very hard"
+  ],
+  "plain": "Take any m-by-n matrix of 0s and 1s whose real rank is r. It is known that it always contains an all-0 or all-1 submatrix (some rows times some columns) covering at least a 2^{-O(sqrt r)} fraction of the entries. Can sqrt r be replaced by r^c for some c < 1/2? By a standard reduction this is the same as a communication protocol of cost O(r^c), beating the current sqrt(rank) bound on the way to the log-rank conjecture.",
+  "math": "Do there exist constants $c<1/2$ and $C>0$ such that for all $m,n\\ge1$ and every $M\\in\\{0,1\\}^{m\\times n}$ with $r=\\operatorname{rank}_{\\mathbb R}(M)\\ge1$ there are $A\\subseteq[m]$, $B\\subseteq[n]$, $b\\in\\{0,1\\}$ with $M_{ij}=b$ for all $(i,j)\\in A\\times B$ and $|A||B|\\ge mn\\,2^{-Cr^{c}}$? (By the Nisan--Wigderson/Lovett recursion this is equivalent, up to constants, to $D(M)=O(\\operatorname{rank}(M)^{c})$ for all Boolean $M$.)",
+  "novelty": 3,
+  "importance": 8,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2311.18524",
+   "https://arxiv.org/abs/1306.1877",
+   "https://arxiv.org/abs/2510.02583",
+   "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2026.7",
+   "https://lacker.io/complexity/problems/log-rank-sqrt-vs-polylog.html"
+  ],
+  "lean": "import Mathlib\n/-! QED-M128: Monochromatic rectangles in low-rank Boolean matrices: beating 2^{-sqrt r}\nTake any m-by-n matrix of 0s and 1s whose real rank is r. It is known that it always contains an all-0 or all-1 submatrix (some rows times some columns) covering at least a 2^{-O(sqrt r)} fraction of the entries. Can sqrt r be replaced by r^c for some c < 1/2? By a standard reduction this is the same as a communication protocol of cost O(r^c), beating the current sqrt(rank) bound on the way to the log-rank conjecture.\nInformal statement: Do there exist constants $c<1/2$ and $C>0$ such that for all $m,n\\ge1$ and every $M\\in\\{0,1\\}^{m\\times n}$ with $r=\\operatorname{rank}_{\\mathbb R}(M)\\ge1$ there are $A\\subseteq[m]$, $B\\subseteq[n]$, $b\\in\\{0,1\\}$ with $M_{ij}=b$ for all $(i,j)\\in A\\times B$ and $|A||B|\\ge mn\\,2^{-Cr^{c}}$? (By the Nisan--Wigderson/Lovett recursion this is equivalent, up to constants, to $D(M)=O(\\operatorname{rank}(M)^{c})$ for all Boolean $M$.)\nFormalization notes:\n* Boolean matrices are `Matrix (Fin m) (Fin n) ℝ` with all entries 0 or 1; rank is Mathlib's\n  `Matrix.rank` over ℝ. The hypothesis `1 ≤ rank` forces m, n ≥ 1 and excludes the zero matrix.\n* A monochromatic rectangle is `A : Finset (Fin m)`, `B : Finset (Fin n)` and a value `b` with\n  `M i j = b` on `A × B`; `b : ℝ` is unrestricted, but on a nonempty rectangle it is an entry,\n  hence 0 or 1, and the size bound `|A||B| ≥ mn·2^{-C r^c} > 0` forces nonemptiness.\n* `2^{-C r^c}` uses real powers (`Real.rpow`); r ≥ 1 so `r^c` is the usual power.\n* Claim: ∃ c < 1/2, ∃ C > 0 with the rectangle bound for all m, n, M. (A witness c ≤ 0 would be\n  even stronger, since r^c is increasing in c for r ≥ 1.) The communication-protocol form\n  mentioned in parentheses is not formalized; it is equivalent by the standard recursion.\n  Proving Claim = the first polynomial improvement over Sudakov–Tomon's 2^{-O(√r)};\n  ¬Claim = for every c < 1/2 and C > 0 some Boolean matrix has all monochromatic rectangles of\n  density < 2^{-C r^c} (which would refute the log-rank conjecture).\n-/\nnamespace OpenProblems.QEDM128\nnoncomputable section\n\ndef Claim : Prop :=\n  ∃ c : ℝ, c < 1 / 2 ∧ ∃ C : ℝ, 0 < C ∧\n    ∀ m n : ℕ, ∀ M : Matrix (Fin m) (Fin n) ℝ,\n      (∀ i : Fin m, ∀ j : Fin n, M i j = 0 ∨ M i j = 1) → 1 ≤ M.rank →\n        ∃ (A : Finset (Fin m)) (B : Finset (Fin n)) (b : ℝ),\n          (∀ i ∈ A, ∀ j ∈ B, M i j = b) ∧\n          (m : ℝ) * (n : ℝ) * (2 : ℝ) ^ (-(C * (M.rank : ℝ) ^ c)) ≤\n            (A.card : ℝ) * (B.card : ℝ)\n\nend\nend OpenProblems.QEDM128\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M129",
+  "review_id": "R5-K29",
+  "title": "Modular isomorphism problem for odd primes",
+  "area": "Algebra",
+  "difficulty": 7.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical modular isomorphism problem; odd-p case posed in Margolis's survey (Jahresber. DMV 2022) after García-Lucas–Margolis–del Río",
+  "results": null,
+  "premise_risks": [
+   "Named 'modular isomorphism problem' (not a person name) — fine",
+   "Recent restrictive results are 2026 preprints (arXiv:2610.40868) — not needed for the statement"
+  ],
+  "plain": "For a finite p-group G, the group algebra F_p G remembers G only through linear combinations of its elements. Can two non-isomorphic p-groups have isomorphic group algebras over F_p? For p = 2 the answer is yes (groups of order 512, found in 2021). For every odd prime p the question is open: find such a pair, or prove the group algebra determines the group.",
+  "math": "Let $p$ be an odd prime. Decide whether there exist finite $p$-groups $G\\not\\cong H$ with $\\mathbb F_pG\\cong\\mathbb F_pH$ as $\\mathbb F_p$-algebras. Board claim (either direction accepted): exhibit such $p,G,H$, or prove that for every odd prime $p$ and all finite $p$-groups $G,H$, $\\mathbb F_pG\\cong\\mathbb F_pH\\Rightarrow G\\cong H$.",
+  "novelty": 3,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2202.11412",
+   "https://arxiv.org/abs/2406.01810",
+   "https://arxiv.org/pdf/2610.06909",
+   "https://arxiv.org/pdf/2610.40868"
+  ],
+  "lean": "import Mathlib\n/-! QED-M129: Modular isomorphism problem for odd primes\nFor a finite p-group G, the group algebra F_p G remembers G only through linear combinations of its\nelements. Can two non-isomorphic p-groups have isomorphic group algebras over F_p? For p = 2 the\nanswer is yes (groups of order 512, found in 2021). For every odd prime p the question is open:\nfind such a pair, or prove the group algebra determines the group.\nInformal statement: Let p be an odd prime. Decide whether there exist finite p-groups G ≇ H with\nF_pG ≅ F_pH as F_p-algebras. Board claim (either direction accepted): exhibit such p, G, H, or\nprove that for every odd prime p and all finite p-groups G, H, F_pG ≅ F_pH ⇒ G ≅ H.\nFormalization notes:\n* F_p is `ZMod p`; the group algebra F_pG is Mathlib's `MonoidAlgebra (ZMod p) G`, an\n  `ZMod p`-algebra; isomorphism of F_p-algebras is `≃ₐ[ZMod p]`.\n* Finite p-groups: `[Group G] [Finite G]` with `IsPGroup p G` (every element has p-power order,\n  equivalently |G| is a power of p for finite G).\n* Groups range over `Type` (no loss: every finite group has an isomorphic copy in `Type`).\n* Claim is the positive answer for all odd primes simultaneously. Proving `Claim` = the modular\n  isomorphism problem has a positive answer for every odd p; `¬Claim` = an explicit odd prime p\n  and non-isomorphic finite p-groups with isomorphic F_p group algebras. Both are accepted.\n-/\nnamespace OpenProblems.QEDM129\nnoncomputable section\n\ndef Claim : Prop :=\n  ∀ p : ℕ, p.Prime → p ≠ 2 →\n    ∀ (G H : Type) [Group G] [Group H] [Finite G] [Finite H],\n      IsPGroup p G → IsPGroup p H →\n        Nonempty (MonoidAlgebra (ZMod p) G ≃ₐ[ZMod p] MonoidAlgebra (ZMod p) H) →\n          Nonempty (G ≃* H)\n\nend\nend OpenProblems.QEDM129\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M130",
+  "review_id": "R5-K37",
+  "title": "Positivity of order-6 linear recurrences: decidable?",
+  "area": "Logic & computability",
+  "difficulty": 6.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Open problem as posed by Ouaknine and Worrell (2014); restated in Ibrahim et al. arXiv:2412.08576.",
+  "results": null,
+  "premise_risks": [
+   "The rational-to-integer reduction I sketched (scaling by d^n) changes the recurrence coefficients but preserves order and sign; standard but worth a one-line check by the formalizer.",
+   "Undecidability direction is considered very unlikely; the board accepts either."
+  ],
+  "plain": "An integer sequence obeying a fixed linear recurrence u_{n+6} = a_1 u_{n+5} + ... + a_6 u_n is determined by six coefficients and six starting values. Is there an algorithm that, given these twelve integers, decides whether every term of the sequence is nonnegative? Such an algorithm exists for recurrences of order at most 5; order 6 is the first open case.",
+  "math": "For $a=(a_1,\\dots,a_6)\\in\\mathbb Z^6$ and $c=(c_0,\\dots,c_5)\\in\\mathbb Z^6$ let $u=u^{a,c}$ be defined by $u_n=c_n$ ($n<6$) and $u_{n+6}=\\sum_{i=1}^6 a_iu_{n+6-i}$. Let $\\mathrm{Pos}=\\{(a,c)\\in\\mathbb Z^{12}: u^{a,c}_n\\ge 0\\ \\forall n\\in\\mathbb N\\}$. Problem: is $\\mathrm{Pos}$ a decidable (computable) subset of $\\mathbb Z^{12}$? Board Claim (either direction accepted): $\\mathrm{Pos}$ is decidable, or $\\mathrm{Pos}$ is undecidable.",
+  "novelty": 3,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1307.2779",
+   "https://arxiv.org/abs/1309.1550",
+   "https://arxiv.org/abs/1309.1914",
+   "https://ar5iv.labs.arxiv.org/html/2412.08576",
+   "https://arxiv.org/html/2605.17013v1",
+   "https://www.emergentmind.com/open-problems/decidability-positivity-c-finite-order-6"
+  ],
+  "lean": "import Mathlib\n/-! QED-M130: Positivity of order-6 linear recurrences: decidable?\nAn integer sequence obeying a fixed linear recurrence u_{n+6} = a_1 u_{n+5} + ... + a_6 u_n is determined by six coefficients and six starting values. Is there an algorithm that, given these twelve integers, decides whether every term of the sequence is nonnegative? Such an algorithm exists for recurrences of order at most 5; order 6 is the first open case.\nInformal statement: For $a=(a_1,\\dots,a_6)\\in\\mathbb Z^6$ and $c=(c_0,\\dots,c_5)\\in\\mathbb Z^6$ let $u=u^{a,c}$ be defined by $u_n=c_n$ ($n<6$) and $u_{n+6}=\\sum_{i=1}^6 a_iu_{n+6-i}$. Let $\\mathrm{Pos}=\\{(a,c)\\in\\mathbb Z^{12}: u^{a,c}_n\\ge 0\\ \\forall n\\in\\mathbb N\\}$. Is $\\mathrm{Pos}$ a decidable (computable) subset of $\\mathbb Z^{12}$? Claim (either direction accepted): $\\mathrm{Pos}$ is decidable, or $\\mathrm{Pos}$ is undecidable.\nFormalization notes:\n* `lrs a c` is the integer sequence with initial values c 0, …, c 5 and recurrence u(n+6) = a 0·u(n+5) + a 1·u(n+4) + … + a 5·u(n) (so `a i` is a_{i+1}). Defined by structural recursion.\n* Computability uses Mathlib's `ComputablePred` (Partrec/Computable, i.e. Turing-computable via partial recursive functions). Inputs are encoded as a pair of lists of pairs of naturals: (p, q) codes the integer p − q, and an instance is valid only if both lists have length exactly 6 (invalid inputs are rejected, i.e. not in `PosInput`). Decoding and length checks are primitive recursive, and every integer 12-tuple has a code, so `PosInput` is computable iff Pos ⊆ ℤ¹² is computable under any standard encoding. Using ℕ-pairs avoids relying on a `Primcodable ℤ` instance.\n* Degenerate instances (a_6 = 0, i.e. order < 6) are included; they are decidable by Ouaknine–Worrell, so including them changes nothing. Rational coefficients/initial values (the literature's usual setting) reduce to integers by clearing denominators (u'_n = D^n·E·u_n satisfies an integer recurrence of the same order and has the same signs), so the integer version is equivalent.\n* `Claim` = Positivity for order-6 integer LRS is decidable. `¬Claim` = it is undecidable. Either settles the problem (the board accepts either direction). Pos is co-r.e. (a negative term is found by search), so `Claim` is equivalent to Pos being r.e.\n-/\nnamespace OpenProblems.QEDM130\n\n/-- The order-6 linear recurrence sequence with coefficients `a` and initial values `c`. -/\ndef lrs (a c : Fin 6 → ℤ) : ℕ → ℤ\n  | 0 => c 0\n  | 1 => c 1\n  | 2 => c 2\n  | 3 => c 3\n  | 4 => c 4\n  | 5 => c 5\n  | n + 6 => a 0 * lrs a c (n + 5) + a 1 * lrs a c (n + 4) + a 2 * lrs a c (n + 3) +\n      a 3 * lrs a c (n + 2) + a 4 * lrs a c (n + 1) + a 5 * lrs a c n\n\n/-- The integer coded by a pair of naturals. -/\ndef decInt (p : ℕ × ℕ) : ℤ := (p.1 : ℤ) - (p.2 : ℤ)\n\n/-- The 6-vector coded by a list (missing entries read as 0; such inputs are rejected anyway). -/\ndef vecOf (L : List (ℕ × ℕ)) : Fin 6 → ℤ := fun i => decInt (L.getD i.val (0, 0))\n\n/-- The coded instance is valid and its sequence is nonnegative. -/\ndef PosInput (x : List (ℕ × ℕ) × List (ℕ × ℕ)) : Prop :=\n  x.1.length = 6 ∧ x.2.length = 6 ∧ ∀ n : ℕ, 0 ≤ lrs (vecOf x.1) (vecOf x.2) n\n\n/-- Positivity of order-6 integer linear recurrence sequences is decidable. -/\ndef Claim : Prop := ComputablePred PosInput\n\nend OpenProblems.QEDM130\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M131",
+  "review_id": "R5-K41",
+  "title": "Is the 4-sphere algorithmically recognizable?",
+  "area": "Topology",
+  "difficulty": 7.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical question (Novikov era); current statements in Tancer arXiv:2310.07421 and Friedl–Hirsch–Kegel arXiv:2603.23630.",
+  "results": null,
+  "premise_risks": [
+   "Equivalence of the bistellar-move definition with PL homeomorphism rests on Pachner's theorem (refereed, 1991); the board statement is self-contained and does not depend on it.",
+   "Must state the move definition carefully (link condition B ∉ K and fresh vertices for the 1→6 move); a sloppy move set could change the set S.",
+   "Friedl–Hirsch–Kegel 2026 is a preprint; openness is also stated in refereed sources (Tancer)."
+  ],
+  "plain": "A triangulated 4-dimensional shape can be given as a finite list of 5-element vertex sets. Is there an algorithm that decides whether such a list describes the piecewise-linear 4-sphere? The question is solved (yes) in dimension 3 and known to be undecidable in every dimension 5 and above; dimension 4 is the single open case.",
+  "math": "A bistellar move on a finite pure 4-dimensional simplicial complex $K$ (vertices in $\\mathbb N$, given by facets) replaces $A*\\partial B$ by $\\partial A*B$, where $A\\cap B=\\emptyset$, $|A\\cup B|=6$, $|A|,|B|\\ge1$, $A\\in K$, $\\mathrm{lk}_K(A)=\\partial B$ and $B\\notin K$ (for $|B|=1$: a fresh vertex). Let $\\mathcal S$ be the set of finite complexes isomorphic to one obtained from $\\partial\\Delta^5$ by finitely many bistellar moves; by Pachner's theorem these are exactly the combinatorial triangulations of the PL 4-sphere. Decide whether $\\mathcal S$ is a decidable set. Board claim (either direction accepted): give an algorithm deciding membership in $\\mathcal S$, or prove that none exists.",
+  "novelty": 2,
+  "importance": 8,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2310.07421",
+   "https://arxiv.org/abs/2603.23630",
+   "https://arxiv.org/abs/1405.3848",
+   "https://en.wikipedia.org/wiki/Simplicial_complex_recognition_problem"
+  ],
+  "lean": "import Mathlib\n/-! QED-M131: Is the 4-sphere algorithmically recognizable?\nA triangulated 4-dimensional shape can be given as a finite list of 5-element vertex sets. Is there\nan algorithm that decides whether such a list describes the piecewise-linear 4-sphere? The question\nis solved (yes) in dimension 3 and known to be undecidable in every dimension 5 and above;\ndimension 4 is the single open case.\nInformal statement: A bistellar move on a finite pure 4-dimensional simplicial complex K (vertices\nin ℕ, given by facets) replaces A * ∂B by ∂A * B, where A ∩ B = ∅, |A ∪ B| = 6, |A|, |B| ≥ 1,\nA ∈ K, lk_K(A) = ∂B and B ∉ K (for |B| = 1: a fresh vertex). Let 𝒮 be the set of finite complexes\nisomorphic to one obtained from ∂Δ⁵ by finitely many bistellar moves; by Pachner's theorem these\nare exactly the combinatorial triangulations of the PL 4-sphere. Decide whether 𝒮 is a decidable\nset. Board claim (either direction accepted): give an algorithm deciding membership in 𝒮, or prove\nthat none exists.\nFormalization notes:\n* A complex is its set of facets `K : Finset (Finset ℕ)`; its faces are all subsets of facets\n  (`IsFace`, including ∅). Complexes reachable from ∂Δ⁵ always have all facets of size 5.\n* Link: `τ ∈ lk_K(A)` iff `τ ∩ A = ∅` and `τ ∪ A` is a face. `lk_K(A) = ∂B` is stated as: for\n  every finset τ, (τ ∩ A = ∅ ∧ τ ∪ A face) ↔ τ ⊊ B. (For |B| = 1 this says A is a facet.)\n* Move (`BistellarStep K K'`): A, B disjoint, |A|,|B| ≥ 1, |A ∪ B| = 6, A a face, link\n  condition, B not a face of K. Given the link condition the facets of K containing A are exactly\n  A ∪ (B∖{b}); they are removed and replaced by (A∖{a}) ∪ B for a ∈ A. The condition \"B not a face\"\n  is the standard requirement; for |B| = 1 it says exactly that the new vertex is fresh, and it\n  guarantees the new facets are not already present. This is Pachner's set of bistellar moves.\n* ∂Δ⁵ = all 5-subsets of {0,…,5}. Isomorphism = relabelling vertices by a permutation of ℕ.\n  `InS K` := K is isomorphic to a complex reachable from ∂Δ⁵ by finitely many moves\n  (`Relation.ReflTransGen`).\n* Inputs to an algorithm are codes `List (List ℕ)` (a list of vertex lists; `decodeComplex`\n  turns each into a finset and the list into a finset of facets), which carry Mathlib's\n  `Primcodable` structure; every finite complex has a code, and the decoded set is computable from\n  the code, so decidability of `InS` on codes is the same as decidability of 𝒮.\n* Claim := `ComputablePred (fun c => InS (decodeComplex c))` (Mathlib's notion of a decidable\n  predicate on a `Primcodable` type, i.e. a partial-recursive total decision procedure).\n  Proving `Claim` = 4-sphere recognition is decidable; `¬Claim` = it is undecidable. Both are\n  accepted.\n-/\nnamespace OpenProblems.QEDM131\nnoncomputable section\n\n/-- `σ` is a face of the complex with facet set `K`. -/\ndef IsFace (K : Finset (Finset ℕ)) (σ : Finset ℕ) : Prop :=\n  ∃ F ∈ K, σ ⊆ F\n\n/-- The bistellar move with parameters `A`, `B` turns `K` into `K'`. -/\ndef BistellarMove (K : Finset (Finset ℕ)) (A B : Finset ℕ) (K' : Finset (Finset ℕ)) : Prop :=\n  Disjoint A B ∧ A.Nonempty ∧ B.Nonempty ∧ (A ∪ B).card = 6 ∧ IsFace K A ∧\n    (∀ τ : Finset ℕ, (Disjoint τ A ∧ IsFace K (τ ∪ A)) ↔ τ ⊂ B) ∧\n    ¬ IsFace K B ∧\n    K' = K.filter (fun F => ¬ A ⊆ F) ∪ A.image (fun a => (A.erase a) ∪ B)\n\n/-- One bistellar move. -/\ndef BistellarStep (K K' : Finset (Finset ℕ)) : Prop :=\n  ∃ A B : Finset ℕ, BistellarMove K A B K'\n\n/-- The boundary of the 5-simplex on vertices `{0,…,5}`. -/\ndef boundarySimplex5 : Finset (Finset ℕ) :=\n  (Finset.range 6).powersetCard 5\n\n/-- Two facet sets are isomorphic: related by a relabelling of the vertices. -/\ndef ComplexIso (L K : Finset (Finset ℕ)) : Prop :=\n  ∃ e : Equiv.Perm ℕ, K = L.image (fun F => F.map e.toEmbedding)\n\n/-- `K` is a combinatorial triangulation of the PL 4-sphere (Pachner): isomorphic to a complex\nreachable from `∂Δ⁵` by bistellar moves. -/\ndef InS (K : Finset (Finset ℕ)) : Prop :=\n  ∃ L : Finset (Finset ℕ), Relation.ReflTransGen BistellarStep boundarySimplex5 L ∧ ComplexIso L K\n\n/-- Decoding an input: a list of vertex lists, read as a set of facets. -/\ndef decodeComplex (c : List (List ℕ)) : Finset (Finset ℕ) :=\n  (c.map List.toFinset).toFinset\n\ndef Claim : Prop :=\n  ComputablePred (fun c : List (List ℕ) => InS (decodeComplex c))\n\nend\nend OpenProblems.QEDM131\n",
+  "set": "main"
  }
 ]

@@ -1,0 +1,27 @@
+{
+ "id": "QED-E185",
+ "set": "extended",
+ "title": "Dimension-free weak (1,1) bound for the ball maximal function",
+ "area": "Analysis",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Question going back to Stein (1980s) and Stein–Strömberg 1983; stated open in Bourgain–Mirek–Stein–Wróbel survey arXiv:1812.00153.",
+ "premise_risks": [
+  "Spector–Stockdale O(sqrt(d) log d) bound (arXiv:2609.05377) is an unrefereed 2026 preprint; the problem statement does not depend on it",
+  "Lower-bound literature for balls was checked only through the survey (search budget exhausted)"
+ ],
+ "plain": "For a function f on d-dimensional space, the centred maximal function Mf(x) is the largest average of |f| over balls centred at x. A classical theorem says the set where Mf exceeds lambda has volume at most C_d ||f||_1 / lambda. Does one constant C work in every dimension d, or must the best C_d go to infinity?",
+ "math": "For $d\\ge1$ and $f\\in L^1(\\mathbb R^d)$ let $Mf(x)=\\sup_{r>0}|B(x,r)|^{-1}\\int_{B(x,r)}|f|$, with $B(x,r)$ the Euclidean ball. Let $C_d$ be the least constant such that $|\\{x: Mf(x)>\\lambda\\}|\\le C_d\\,\\lambda^{-1}\\|f\\|_{L^1(\\mathbb R^d)}$ for all $f\\in L^1(\\mathbb R^d)$ and $\\lambda>0$. Decide whether $\\sup_{d\\ge1}C_d<\\infty$.",
+ "novelty": 2,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1812.00153",
+  "https://arxiv.org/abs/2609.05377",
+  "https://arxiv.org/abs/0805.1565",
+  "https://arxiv.org/abs/math/0504240",
+  "https://arxiv.org/abs/0908.0643"
+ ]
+}

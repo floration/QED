@@ -1,0 +1,27 @@
+{
+ "id": "QED-E190",
+ "set": "extended",
+ "title": "Conjugacy problem for one-relator groups",
+ "area": "Logic & computability",
+ "difficulty": 6.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical problem in combinatorial group theory (Magnus era); current statement as in Linton et al. arXiv:2501.18306.",
+ "premise_risks": [
+  "Status of BS-free one-relator groups depends on unrefereed 2026 claims (OpenAI preprint on hyperbolicity; conditional results in arXiv:2610.25305). These affect only the description of partial progress, not openness.",
+  "Attribution details for some subclass results (pinched cases) should be double-checked against the Linton survey before posting."
+ ],
+ "plain": "A one-relator group is obtained from a free group on finitely many letters by imposing a single relation r = 1. Magnus showed in 1932 that one can always decide whether two words are equal in such a group. Can one also always decide whether two words are conjugate, i.e. whether u = g v g^{-1} for some g? Many classes are done, including (by a 2026 claim) all one-relator groups without Baumslag-Solitar subgroups, which are hyperbolic; what remains are one-relator groups that contain a Baumslag-Solitar subgroup.",
+ "math": "For $n\\ge1$ and $r\\in F_n$ (free group on $x_1,\\dots,x_n$) let $G_r=F_n/\\langle\\!\\langle r\\rangle\\!\\rangle$ and $\\pi:F_n\\to G_r$. Decide whether, for every $n$ and every $r\\in F_n$, the set $\\mathrm{Conj}_r=\\{(u,v)\\in F_n^2:\\exists g\\in G_r,\\ \\pi(u)=g\\,\\pi(v)\\,g^{-1}\\}$ is decidable. A solution is either a proof that it is (an algorithm uniform in $(n,r,u,v)$ is a stronger positive answer), or an explicit pair $(n,r)$ for which $\\mathrm{Conj}_r$ is undecidable. (Since Baumslag-Solitar-free one-relator groups are hyperbolic, the problem concerns only $r$ for which $G_r$ contains some $BS(p,q)$.)",
+ "novelty": 2,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2501.18306",
+  "https://arxiv.org/abs/2610.25305",
+  "https://arxiv.org/abs/2209.04357",
+  "https://www.emergentmind.com/open-problems/conjugacy-problem-one-relator-groups",
+  "https://en.wikipedia.org/wiki/One-relator_group"
+ ]
+}

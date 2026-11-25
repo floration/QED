@@ -1,0 +1,29 @@
+{
+ "id": "QED-E168",
+ "set": "extended",
+ "title": "Real-rooted h*-polynomials of hypersimplices",
+ "area": "Combinatorics",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Natural surviving special case of Ferroni's matroid-polytope real-rootedness conjecture (see Ferroni–Jochemko–Schröter, arXiv:2106.08183); unimodality version from De Loera–Haws–Köppe",
+ "premise_risks": [
+  "The disproof of the general matroid conjecture is an unrefereed 2026 preprint (arXiv:2609.37439).",
+  "Unimodality or real-rootedness for some k ≥ 3 may already follow from a known formula (for example Li's descent/excedance description) in a source not found here.",
+  "Search budget ran out before a last check of 2025–26 hypersimplex-specific papers."
+ ],
+ "plain": "The hypersimplex Δ(k,n) is the slice of the unit cube [0,1]^n by the hyperplane x_1+...+x_n = k. Count the lattice points in its t-fold dilate for every t. These counts are packaged into a polynomial h*(z) with nonnegative integer coefficients. For k = 2 this polynomial is known to have only real roots. Is that true for every k and n?",
+ "math": "Let $L_{k,n}(t)=\\#\\{x\\in\\{0,\\dots,t\\}^n:\\ \\sum x_i=kt\\}$ and define $h^*_{k,n}(z)$ by $\\sum_{t\\ge0}L_{k,n}(t)z^t=h^*_{k,n}(z)/(1-z)^n$. Claim: for all $1\\le k\\le n-1$, every root of $h^*_{k,n}$ is real. Weaker open target: the coefficients of $h^*_{k,n}$ are unimodal for all k, n.",
+ "novelty": 4,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2202.11808",
+  "https://arxiv.org/abs/2106.08183",
+  "https://arxiv.org/abs/2609.37439",
+  "https://dmtcs.episciences.org/12798/pdf",
+  "https://arxiv.org/abs/1911.10146",
+  "https://arxiv.org/pdf/2412.06524v2"
+ ]
+}

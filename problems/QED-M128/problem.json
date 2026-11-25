@@ -1,0 +1,27 @@
+{
+ "id": "QED-M128",
+ "set": "main",
+ "title": "Monochromatic rectangles in low-rank Boolean matrices: beating 2^{-sqrt r}",
+ "area": "Complexity",
+ "difficulty": 8.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Weakening of the log-rank conjecture (Lovász–Saks 1988); rectangle formulation Nisan–Wigderson 1995; sqrt barrier from Lovett 2016 and Sudakov–Tomon 2024.",
+ "premise_risks": [
+  "This is an unnamed weakening of a person-associated famous conjecture (log-rank, Lovász–Saks); permitted under the sub-question rule but scorer may judge it a famous problem in disguise",
+  "Exponent target c<1/2 is natural (first polynomial improvement) but any such result would be a major breakthrough: very hard"
+ ],
+ "plain": "Take any m-by-n matrix of 0s and 1s whose real rank is r. It is known that it always contains an all-0 or all-1 submatrix (some rows times some columns) covering at least a 2^{-O(sqrt r)} fraction of the entries. Can sqrt r be replaced by r^c for some c < 1/2? By a standard reduction this is the same as a communication protocol of cost O(r^c), beating the current sqrt(rank) bound on the way to the log-rank conjecture.",
+ "math": "Do there exist constants $c<1/2$ and $C>0$ such that for all $m,n\\ge1$ and every $M\\in\\{0,1\\}^{m\\times n}$ with $r=\\operatorname{rank}_{\\mathbb R}(M)\\ge1$ there are $A\\subseteq[m]$, $B\\subseteq[n]$, $b\\in\\{0,1\\}$ with $M_{ij}=b$ for all $(i,j)\\in A\\times B$ and $|A||B|\\ge mn\\,2^{-Cr^{c}}$? (By the Nisan--Wigderson/Lovett recursion this is equivalent, up to constants, to $D(M)=O(\\operatorname{rank}(M)^{c})$ for all Boolean $M$.)",
+ "novelty": 3,
+ "importance": 8,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2311.18524",
+  "https://arxiv.org/abs/1306.1877",
+  "https://arxiv.org/abs/2510.02583",
+  "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2026.7",
+  "https://lacker.io/complexity/problems/log-rank-sqrt-vs-polylog.html"
+ ]
+}

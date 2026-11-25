@@ -1,0 +1,27 @@
+{
+ "id": "QED-E179",
+ "set": "extended",
+ "title": "Randomized query complexity of monotone graph properties beyond n^{4/3}",
+ "area": "Complexity",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Randomized evasiveness (Karp; Yao 1987); 4/3 barrier Hajnal 1991, Chakrabarti–Khot 2001.",
+ "premise_risks": [
+  "Partial sub-question of the person-named randomized Aanderaa–Karp–Rosenberg conjecture; allowed as an unnamed weakening",
+  "OpenAI 2026-09-25 preprint 'A Sharp Threshold Bound for Monotone Graph Properties' may be related; only title known",
+  "Formalizing randomized trees needs PMF over a finite type of trees; moderate effort"
+ ],
+ "plain": "A graph property on n vertices is monotone if adding edges never destroys it (like connectivity or containing a triangle). A randomized algorithm may ask whether individual edges are present and must answer correctly with probability at least 2/3. Every nontrivial monotone property is believed to need about n^2 queries, but since Hajnal (1991) and Chakrabarti-Khot (2001) the best general lower bound has been stuck at roughly n^{4/3}. Can the exponent 4/3 be improved?",
+ "math": "For n-vertex graph properties f that are invariant under vertex relabelling, monotone increasing and nontrivial (the empty graph lacks f, the complete graph has f), let R(f) be the bounded-error randomized decision-tree complexity: the least d such that a probability distribution over deterministic decision trees of depth at most d, each query asking whether a pair {i,j} is an edge, outputs f(G) with probability at least 2/3 for every graph G. Prove there exist $\\varepsilon>0$ and $c>0$ such that $R(f)\\ge c\\,n^{4/3+\\varepsilon}$ for every $n$ and every such $f$.",
+ "novelty": 2,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://onlinelibrary.wiley.com/doi/abs/10.1002/rsa.20164",
+  "https://arxiv.org/abs/cs/0508071",
+  "https://arxiv.org/abs/2010.12629",
+  "https://en.wikipedia.org/wiki/Evasiveness"
+ ]
+}

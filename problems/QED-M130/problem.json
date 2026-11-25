@@ -1,0 +1,28 @@
+{
+ "id": "QED-M130",
+ "set": "main",
+ "title": "Positivity of order-6 linear recurrences: decidable?",
+ "area": "Logic & computability",
+ "difficulty": 6.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Open problem as posed by Ouaknine and Worrell (2014); restated in Ibrahim et al. arXiv:2412.08576.",
+ "premise_risks": [
+  "The rational-to-integer reduction I sketched (scaling by d^n) changes the recurrence coefficients but preserves order and sign; standard but worth a one-line check by the formalizer.",
+  "Undecidability direction is considered very unlikely; the board accepts either."
+ ],
+ "plain": "An integer sequence obeying a fixed linear recurrence u_{n+6} = a_1 u_{n+5} + ... + a_6 u_n is determined by six coefficients and six starting values. Is there an algorithm that, given these twelve integers, decides whether every term of the sequence is nonnegative? Such an algorithm exists for recurrences of order at most 5; order 6 is the first open case.",
+ "math": "For $a=(a_1,\\dots,a_6)\\in\\mathbb Z^6$ and $c=(c_0,\\dots,c_5)\\in\\mathbb Z^6$ let $u=u^{a,c}$ be defined by $u_n=c_n$ ($n<6$) and $u_{n+6}=\\sum_{i=1}^6 a_iu_{n+6-i}$. Let $\\mathrm{Pos}=\\{(a,c)\\in\\mathbb Z^{12}: u^{a,c}_n\\ge 0\\ \\forall n\\in\\mathbb N\\}$. Problem: is $\\mathrm{Pos}$ a decidable (computable) subset of $\\mathbb Z^{12}$? Board Claim (either direction accepted): $\\mathrm{Pos}$ is decidable, or $\\mathrm{Pos}$ is undecidable.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1307.2779",
+  "https://arxiv.org/abs/1309.1550",
+  "https://arxiv.org/abs/1309.1914",
+  "https://ar5iv.labs.arxiv.org/html/2412.08576",
+  "https://arxiv.org/html/2605.17013v1",
+  "https://www.emergentmind.com/open-problems/decidability-positivity-c-finite-order-6"
+ ]
+}

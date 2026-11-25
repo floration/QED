@@ -1,0 +1,27 @@
+{
+ "id": "QED-E169",
+ "set": "extended",
+ "title": "Ehrhart positivity of the Birkhoff polytope",
+ "area": "Combinatorics",
+ "difficulty": 6.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Conjecture attributed to R. Stanley; surveyed in F. Liu, 'On positivity of Ehrhart polynomials' (arXiv:1711.09962)",
+ "premise_risks": [
+  "Naming: the survey attributes it to Stanley, and the Nov 2026 preprint calls a related leading-coefficient statement 'Stanley's conjecture'. The owner may treat this as person-named.",
+  "Low novelty, since it is a well-known conjecture.",
+  "The 2611.25973 asymptotic result is unrefereed and very recent; its full text was not read because of a rate limit."
+ ],
+ "plain": "Let H_n(t) be the number of n x n matrices of nonnegative integers whose rows and columns all sum to t (semi-magic squares). For fixed n, H_n(t) is a polynomial in t of degree (n-1)^2. Are all of its coefficients positive, for every n?",
+ "math": "Let $H_n(t)=\\#\\{A\\in\\mathbb Z_{\\ge0}^{n\\times n}:\\ A\\mathbf 1=A^{T}\\mathbf 1=t\\mathbf 1\\}$, the Ehrhart polynomial of the Birkhoff polytope $B_n$. Prove or disprove: for every $n\\ge1$, every coefficient of $t^i$ in $H_n(t)$, $0\\le i\\le (n-1)^2$, is strictly positive.",
+ "novelty": 2,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1711.09962",
+  "https://arxiv.org/abs/math/0202267",
+  "https://arxiv.org/abs/2611.25973",
+  "https://arxiv.org/abs/2307.10852"
+ ]
+}

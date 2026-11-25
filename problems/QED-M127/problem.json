@@ -1,0 +1,28 @@
+{
+ "id": "QED-M127",
+ "set": "main",
+ "title": "Are graphs with no K7 minor 7-colourable?",
+ "area": "Graph theory",
+ "difficulty": 4.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Open question recorded in arXiv:2609.17760 and earlier (Albar-Gonçalves 2018); weaker unnamed sub-question of the t=7 case of Hadwiger's conjecture.",
+ "premise_risks": [
+  "The '6-colourable' version is a named-conjecture case; the claim is deliberately the weaker 7-colour statement, which is unnamed",
+  "Key 2026 source arXiv:2609.17760 is an unrefereed preprint (its statement of openness is corroborated by the refereed 8-colourability literature)",
+  "Must make sure the OpenAI 'linear list colouring bound in terms of Hadwiger number' does not give a constant <= 7 for t=7 (its abstract-level claim is a linear bound, constant not small)"
+ ],
+ "plain": "A graph has a K7 minor if one can find 7 disjoint connected groups of vertices with an edge between every two groups. Graphs with no K7 minor are known to be colourable with 8 colours, and the t=7 case of Hadwiger's conjecture predicts that 6 suffice, but nobody can even show that 7 colours always suffice. Prove (or disprove) that every graph with no K7 minor can be properly coloured with 7 colours.",
+ "math": "Let $G$ be a finite simple graph with no $K_7$ minor, i.e. there are no pairwise disjoint nonempty sets $B_1,\\dots,B_7\\subseteq V(G)$ with each $G[B_i]$ connected and at least one edge between $B_i$ and $B_j$ for all $i\\ne j$. Claim: $\\chi(G)\\le 7$. (Known: $\\chi(G)\\le 8$.)",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2208.07335",
+  "https://arxiv.org/abs/2609.17760",
+  "https://arxiv.org/abs/2507.03244",
+  "https://arxiv.org/abs/1304.5468",
+  "https://arxiv.org/abs/2610.17090"
+ ]
+}

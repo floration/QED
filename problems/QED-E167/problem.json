@@ -1,0 +1,28 @@
+{
+ "id": "QED-E167",
+ "set": "extended",
+ "title": "Hamilton decompositions of 6-regular abelian Cayley graphs of even order",
+ "area": "Graph theory",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Unnamed open case of B. Alspach's 1984 problem on Hamilton-decomposing Cayley graphs of abelian groups; status per Westlund-Liu-Kreher (2009) and the Kreher-Westlund HDCGAG project.",
+ "premise_risks": [
+  "Is a sub-case of a person-named conjecture (Alspach's conjecture), allowed as an unnamed partial sub-question",
+  "Partial even-order results rest partly on a Westlund preprint whose refereed status I did not confirm",
+  "Could be seen as a 'next valency' parameter choice, though 6 is the first open valency"
+ ],
+ "plain": "Take a finite abelian group of even order and a set S of 6 nonzero elements, closed under negation, that generates the group; join x to x+s for each s in S. The resulting connected 6-regular Cayley graph is predicted to split into 3 edge-disjoint Hamilton cycles. This is proved for all 4-regular such graphs and for 6-regular ones on groups of odd order, but only special even-order cases are known. Prove it for every abelian group of even order.",
+ "math": "Let $A$ be a finite abelian group with $|A|$ even, and $S\\subseteq A\\setminus\\{0\\}$ with $S=-S$, $|S|=6$, $\\langle S\\rangle=A$. Let $\\Gamma=\\mathrm{Cay}(A,S)$ be the simple graph with edges $\\{x,x+s\\}$, $s\\in S$ (an involution $s\\in S$ gives one edge at each vertex, so $\\Gamma$ is $6$-regular). Prove that $E(\\Gamma)$ can be partitioned into three Hamilton cycles.",
+ "novelty": 4,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://digitalcommons.mtu.edu/michigantech-p/6284",
+  "https://digitalcommons.kennesaw.edu/facpubs/2825",
+  "https://portal.mardi4nfdi.de/wiki/Publication:855297",
+  "https://pages.mtu.edu/~kreher/ResearchWebsites/HDCGAG/HDCGAG.html",
+  "https://arxiv.org/abs/1408.5211"
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "id": "QED-E182",
+ "set": "extended",
+ "title": "Can 3x3 matrices be multiplied with 22 multiplications over the complex numbers?",
+ "area": "Algebra",
+ "difficulty": 6.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical (Laderman 1976; Bläser 2003); framing after the 2026 F_2 resolution claims",
+ "premise_risks": [
+  "F_2 = 23 and Z >= 22 claims are unrefereed Oct 2026 preprints; the C question does not depend on them",
+  "OpenAI preprint 'Staggered-extraction-for-exact-matrix-multiplication-over-every-field' should be checked to ensure it is not a 3x3 rank result",
+  "Could be viewed as computational; mitigated because over C no finite search exists"
+ ],
+ "plain": "Laderman (1976) multiplies two 3x3 matrices with 23 scalar multiplications in a bilinear algorithm, and nobody has beaten 23. Over the two-element field (and hence for integer coefficients) 23 has now been claimed optimal, but over the complex or rational numbers the best lower bound is still 19. Is there a 22-multiplication algorithm with complex coefficients, or is 23 optimal?",
+ "math": "Let $T=\\langle3,3,3\\rangle\\in(\\mathbb C^9)^{\\otimes3}$ be the $3\\times3$ matrix multiplication tensor and $R_{\\mathbb C}(T)$ its tensor rank; known $19\\le R_{\\mathbb C}(T)\\le23$. Is $R_{\\mathbb C}(T)\\le22$, i.e. do there exist $A_i,B_i,C_i\\in M_3(\\mathbb C)$, $i=1,\\dots,22$, with $XY=\\sum_{i=1}^{22}\\operatorname{tr}(A_iX)\\operatorname{tr}(B_iY)\\,C_i$ for all $X,Y\\in M_3(\\mathbb C)$? (Partial target: prove $R_{\\mathbb C}(T)\\ge20$.)",
+ "novelty": 3,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2610.11823",
+  "https://arxiv.org/abs/2603.07280",
+  "https://arxiv.org/abs/2609.18722",
+  "https://arxiv.org/abs/2212.01175",
+  "https://arxiv.org/abs/2601.05272"
+ ]
+}

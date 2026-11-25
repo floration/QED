@@ -1,0 +1,29 @@
+{
+ "id": "QED-E159",
+ "set": "extended",
+ "title": "Are the edges of a uniformly random forest negatively correlated?",
+ "area": "Probability",
+ "difficulty": 3.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Posed by Kahn and by Grimmett-Winkler (also in Pemantle, 'Towards a theory of negative dependence'); Branden-Huh factor-2 bound.",
+ "premise_risks": [
+  "NAMING: several papers call this 'Kahn's conjecture' or the Grimmett-Winkler conjecture; if the owner counts that as person-named, use the unnamed sub-target (absolute constant c<2) or a class such as planar graphs",
+  "Recent progress is all 2026 preprints, which may signal that a resolution is near",
+  "Mostly computational small-case evidence; a counterexample on 10+ vertices is not excluded"
+ ],
+ "plain": "Pick a forest (an acyclic set of edges) uniformly at random from a finite graph. If edge e is in the forest, does that make edge f less likely to be in it? For uniformly random spanning trees the answer is yes (Kirchhoff), but for forests, the independent sets of the graphic matroid, it has been open since about 2000. It has been checked on all graphs with at most 8 vertices and proved for complete and complete bipartite graphs.",
+ "math": "For a finite simple graph $G=(V,E)$ let $\\mathcal F$ be the set of acyclic subsets of $E$, and for $S\\subseteq E$ let $N_S=\\#\\{F\\in\\mathcal F: S\\subseteq F\\}$, $N=|\\mathcal F|$. Claim: for all distinct $e,f\\in E$, $N_{\\{e,f\\}}\\,N\\le N_{\\{e\\}}\\,N_{\\{f\\}}$. Known: $N_{\\{e,f\\}}N\\le 2(1-1/|E|)\\,N_{\\{e\\}}N_{\\{f\\}}$ (Huh-Schroter-Wang; Branden-Huh). Fallback unnamed sub-target: some absolute constant $c<2$ in place of 1.",
+ "novelty": 2,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/math/0302185",
+  "https://arxiv.org/pdf/2610.36749",
+  "https://arxiv.org/pdf/2610.00549",
+  "https://arxiv.org/pdf/2609.26134",
+  "https://arxiv.org/pdf/2609.11578",
+  "https://arxiv.org/abs/2603.10738"
+ ]
+}

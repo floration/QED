@@ -1,0 +1,27 @@
+{
+ "id": "QED-M131",
+ "set": "main",
+ "title": "Is the 4-sphere algorithmically recognizable?",
+ "area": "Topology",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical question (Novikov era); current statements in Tancer arXiv:2310.07421 and Friedl–Hirsch–Kegel arXiv:2603.23630.",
+ "premise_risks": [
+  "Equivalence of the bistellar-move definition with PL homeomorphism rests on Pachner's theorem (refereed, 1991); the board statement is self-contained and does not depend on it.",
+  "Must state the move definition carefully (link condition B ∉ K and fresh vertices for the 1→6 move); a sloppy move set could change the set S.",
+  "Friedl–Hirsch–Kegel 2026 is a preprint; openness is also stated in refereed sources (Tancer)."
+ ],
+ "plain": "A triangulated 4-dimensional shape can be given as a finite list of 5-element vertex sets. Is there an algorithm that decides whether such a list describes the piecewise-linear 4-sphere? The question is solved (yes) in dimension 3 and known to be undecidable in every dimension 5 and above; dimension 4 is the single open case.",
+ "math": "A bistellar move on a finite pure 4-dimensional simplicial complex $K$ (vertices in $\\mathbb N$, given by facets) replaces $A*\\partial B$ by $\\partial A*B$, where $A\\cap B=\\emptyset$, $|A\\cup B|=6$, $|A|,|B|\\ge1$, $A\\in K$, $\\mathrm{lk}_K(A)=\\partial B$ and $B\\notin K$ (for $|B|=1$: a fresh vertex). Let $\\mathcal S$ be the set of finite complexes isomorphic to one obtained from $\\partial\\Delta^5$ by finitely many bistellar moves; by Pachner's theorem these are exactly the combinatorial triangulations of the PL 4-sphere. Decide whether $\\mathcal S$ is a decidable set. Board claim (either direction accepted): give an algorithm deciding membership in $\\mathcal S$, or prove that none exists.",
+ "novelty": 2,
+ "importance": 8,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2310.07421",
+  "https://arxiv.org/abs/2603.23630",
+  "https://arxiv.org/abs/1405.3848",
+  "https://en.wikipedia.org/wiki/Simplicial_complex_recognition_problem"
+ ]
+}

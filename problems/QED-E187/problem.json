@@ -1,0 +1,27 @@
+{
+ "id": "QED-E187",
+ "set": "extended",
+ "title": "Rademacher sums exceed √2 standard deviations with probability at most 1/8",
+ "area": "Analysis",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Hollom and Portier, Conjecture 6.2 in arXiv:2306.07811 (2023); background Keller–Klein, Pinelis.",
+ "premise_risks": [
+  "Edelman's unrefereed 2025 preprint arXiv:2508.13226 claims a general equal-weight theorem for mid-tails which would imply the claim; its correctness is doubtful (earlier version retracted after Pinelis's counterexample) but a scorer should know of it",
+  "Hollom–Portier preprint: publication venue not verified"
+ ],
+ "plain": "Take real weights a_1,...,a_n with a_1²+...+a_n²=1 and independent fair ±1 signs, and form X = Σ a_i ε_i. With three equal weights 1/√3, X equals √3 with probability 1/8, so P(X > √2) can be 1/8. Prove that P(X > √2) <= 1/8 for every n and all such weights.",
+ "math": "For $n\\ge1$ and $a\\in\\mathbb R^n$ with $\\sum_i a_i^2=1$, let $\\varepsilon_1,\\dots,\\varepsilon_n$ be i.i.d. uniform on $\\{\\pm1\\}$. Prove $\\Pr\\big(\\sum_i a_i\\varepsilon_i>\\sqrt2\\big)\\le 1/8$; equivalently $\\#\\{\\varepsilon\\in\\{\\pm1\\}^n:\\langle a,\\varepsilon\\rangle>\\sqrt2\\}\\le 2^{n-3}$. (Equality is attained, e.g. $a=(1,1,1)/\\sqrt3$.)",
+ "novelty": 5,
+ "importance": 4,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2306.07811",
+  "https://onlinelibrary.wiley.com/doi/full/10.1002/rsa.70024",
+  "https://arxiv.org/abs/2006.16834",
+  "https://arxiv.org/abs/1204.1761",
+  "https://arxiv.org/abs/2508.13226"
+ ]
+}

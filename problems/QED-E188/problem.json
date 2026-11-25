@@ -1,0 +1,27 @@
+{
+ "id": "QED-E188",
+ "set": "extended",
+ "title": "Is the order of vanishing at 1 of a ±1 polynomial O(log n)?",
+ "area": "Analysis",
+ "difficulty": 6.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Byrnes's question (N(m)=2^m?) answered negatively by Boyd; growth-rate question implicit in Boyd 1997 and Borwein–Erdélyi–Kós (1999); formulated here as ρ>1.",
+ "premise_risks": [
+  "The exact form of Boyd's upper bound is taken from secondary citations (Erdélyi arXiv:2407.16120, Borwein–Erdélyi–Kós) since the Math. Comp. PDF could not be fetched",
+  "Not found stated verbatim as 'is the multiplicity O(log n)' in a single source; the question is implicit in the cited gap"
+ ],
+ "plain": "A Littlewood polynomial has every coefficient equal to +1 or -1. The Thue-Morse product (1-x)(1-x^2)(1-x^4)...(1-x^{2^{m-1}}) has length 2^m and a zero of order m at x = 1, and shorter examples exist (length 240 for order 10). Is the order of the zero at 1 always at most a constant times the logarithm of the length? Equivalently, does the shortest length N(m) achieving order m grow exponentially in m? The best known lower bound, due to Boyd, is only about e^{sqrt m}.",
+ "math": "Let $N(m)$ be the least $n$ such that some $p(x)=\\sum_{j=0}^{n-1}\\varepsilon_jx^j$ with all $\\varepsilon_j\\in\\{\\pm1\\}$ is divisible by $(x-1)^m$ (finite, since $N(m)\\le2^m$). Because $p(x)q(x^{N(a)})$ shows $N(a+b)\\le N(a)N(b)$, the limit $\\rho=\\lim_m N(m)^{1/m}=\\inf_m N(m)^{1/m}$ exists, and $1\\le\\rho\\le240^{1/10}\\approx1.730$, while Boyd proved $N(m)\\ge e^{(1+o(1))\\sqrt m}$. Decide whether $\\rho>1$. Equivalently: is there $C$ such that every Littlewood polynomial of length $n\\ge2$ has a zero at $1$ of multiplicity at most $C\\log n$?",
+ "novelty": 5,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.ams.org/journals/mcom/1997-66-220/S0025-5718-97-00892-2",
+  "https://www.ams.org/mcom/2021-90-329/S0025-5718-2021-03612-1/",
+  "https://www.ams.org/mcom/2006-75-255/S0025-5718-06-01848-5/",
+  "https://arxiv.org/abs/2407.16120",
+  "https://cmrr-star.ucsd.edu/static/pubs/high_order.pdf"
+ ]
+}

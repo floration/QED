@@ -1,0 +1,26 @@
+{
+ "id": "QED-M129",
+ "set": "main",
+ "title": "Modular isomorphism problem for odd primes",
+ "area": "Algebra",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical modular isomorphism problem; odd-p case posed in Margolis's survey (Jahresber. DMV 2022) after García-Lucas–Margolis–del Río",
+ "premise_risks": [
+  "Named 'modular isomorphism problem' (not a person name) — fine",
+  "Recent restrictive results are 2026 preprints (arXiv:2610.40868) — not needed for the statement"
+ ],
+ "plain": "For a finite p-group G, the group algebra F_p G remembers G only through linear combinations of its elements. Can two non-isomorphic p-groups have isomorphic group algebras over F_p? For p = 2 the answer is yes (groups of order 512, found in 2021). For every odd prime p the question is open: find such a pair, or prove the group algebra determines the group.",
+ "math": "Let $p$ be an odd prime. Decide whether there exist finite $p$-groups $G\\not\\cong H$ with $\\mathbb F_pG\\cong\\mathbb F_pH$ as $\\mathbb F_p$-algebras. Board claim (either direction accepted): exhibit such $p,G,H$, or prove that for every odd prime $p$ and all finite $p$-groups $G,H$, $\\mathbb F_pG\\cong\\mathbb F_pH\\Rightarrow G\\cong H$.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2202.11412",
+  "https://arxiv.org/abs/2406.01810",
+  "https://arxiv.org/pdf/2610.06909",
+  "https://arxiv.org/pdf/2610.40868"
+ ]
+}

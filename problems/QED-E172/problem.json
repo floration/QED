@@ -1,0 +1,26 @@
+{
+ "id": "QED-E172",
+ "set": "extended",
+ "title": "Six cubes suffice for all large integers",
+ "area": "Number theory",
+ "difficulty": 8.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical sub-question of Waring's problem for cubes (Linnik 1943 bound; see Vaughan–Wooley survey 'Waring's problem: a survey', 2002).",
+ "premise_risks": [
+  "The overall problem is named (Waring's problem); this is the unnamed intermediate step G(3)≤6, which the scorer should check against the naming rule",
+  "The conjectured last exceptions (8042 for six cubes, 1290740 for five) are from computations recalled from the literature; my own check confirms 8042 up to 3·10^5"
+ ],
+ "plain": "Linnik proved in 1943 that every sufficiently large integer is a sum of at most seven cubes of non-negative integers, and it is believed that four cubes suffice from some point on. Nobody has proved even that six cubes suffice. Prove that every sufficiently large integer is a sum of six cubes of non-negative integers.",
+ "math": "Prove that there exists $N_0$ such that every integer $n\\ge N_0$ can be written as $n=x_1^3+\\cdots+x_6^3$ with $x_1,\\dots,x_6\\in\\mathbb Z_{\\ge0}$; equivalently $G(3)\\le6$, where $G(3)$ is the least $s$ such that all sufficiently large integers are sums of $s$ non-negative cubes. (Known: $4\\le G(3)\\le7$.)",
+ "novelty": 1,
+ "importance": 7,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://en.wikipedia.org/wiki/Waring%27s_problem",
+  "https://www.math.purdue.edu/~twooley/publ/2001%20wp36.pdf",
+  "https://ar5iv.labs.arxiv.org/html/0903.4503",
+  "https://arxiv.org/abs/1004.2670"
+ ]
+}

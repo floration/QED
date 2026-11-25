@@ -1,0 +1,28 @@
+{
+ "id": "QED-E191",
+ "set": "extended",
+ "title": "Do two triangular 2×2 matrices generate a free semigroup? Decide it",
+ "area": "Logic & computability",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Cassaigne–Harju–Karhumäki (1999) and Cassaigne–Nicolas (2012), Open Question 8 and the (λ,μ) reduction.",
+ "premise_risks": [
+  "The claim that every two-generator upper-triangular rational instance reduces to the (λ,μ) family is from Cassaigne–Nicolas; the formalized statement does not depend on it.",
+  "Decidability of FREE(2) over 2×2 N-matrices (Open Question 8) is a slightly different instance class; a solution of one may not immediately settle the other."
+ ],
+ "plain": "For rational numbers λ and μ consider the matrices D = [[λ,0],[0,1]] and T = [[μ,1],[0,1]], or equivalently the maps x -> λx and x -> μx + 1 of the line. They are called free if different finite words in D and T always multiply to different matrices. Is there an algorithm that, given λ and μ, decides whether D and T are free? Deciding freeness of any two upper-triangular 2×2 rational matrices reduces to this family, and freeness is already undecidable for 3×3 matrices of natural numbers.",
+ "math": "For $\\lambda,\\mu\\in\\mathbb Q$ let $D_\\lambda=\\begin{pmatrix}\\lambda&0\\\\0&1\\end{pmatrix}$, $T_\\mu=\\begin{pmatrix}\\mu&1\\\\0&1\\end{pmatrix}$, and let $\\phi_{\\lambda,\\mu}:\\{0,1\\}^*\\to M_2(\\mathbb Q)$ be the monoid morphism with $0\\mapsto D_\\lambda$ and $1\\mapsto T_\\mu$. Let $\\Phi=\\{(\\lambda,\\mu)\\in\\mathbb Q^2:\\phi_{\\lambda,\\mu}\\text{ is injective}\\}$. Determine whether $\\Phi$ is a decidable (recursive) subset of $\\mathbb Q^2$. A proof of either answer settles the problem.",
+ "novelty": 4,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/0808.3112",
+  "https://arxiv.org/pdf/1304.1637",
+  "https://arxiv.org/pdf/1610.09834",
+  "https://arxiv.org/pdf/2101.00872",
+  "https://arxiv.org/pdf/2105.09387",
+  "https://cs.uwaterloo.ca/twiki/view/CoWiki/MatricesGenerateFreeGroup"
+ ]
+}

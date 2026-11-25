@@ -1,0 +1,28 @@
+{
+ "id": "QED-M126",
+ "set": "main",
+ "title": "Glauber dynamics for colourings mixes rapidly with (1+eps)Delta colours",
+ "area": "Probability",
+ "difficulty": 4.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Conjecture q >= Delta+2 commonly cited to Jerrum (1995) as a 'long-standing conjecture'; asymptotic form as stated here is a weaker unnamed version.",
+ "premise_risks": [
+  "Actively moving constant (Tao-list-style risk): new 2026 preprints (Li-Oveis Gharan, Yang) unrefereed; the endpoint target avoids arbitrary intermediate thresholds",
+  "Some sources call the Delta+2 statement 'Jerrum's conjecture'; the asymptotic version is the unnamed weaker form",
+  "Well known, so low novelty"
+ ],
+ "plain": "To sample a random proper colouring of a graph with q colours, repeat this step: pick a random vertex and a random colour, and recolour the vertex if no neighbour already has that colour. For large maximum degree Delta this chain is known to reach equilibrium in polynomial time once q is a bit above (1+1/e)Delta, about 1.368 Delta (2026). Conjecturally q >= Delta+2 is enough. Weakest asymptotic form: for every eps > 0, are (1+eps)Delta colours enough once Delta is large?",
+ "math": "For a finite graph $G$ on $n$ vertices with maximum degree $\\Delta$ and an integer $q\\ge\\Delta+2$, let $\\Omega$ be the set of proper $q$-colourings and $P$ the Glauber (Metropolis) chain on $\\Omega$: choose $v\\in V$ and $c\\in[q]$ uniformly at random and set $\\sigma(v)=c$ if no neighbour of $v$ has colour $c$. Let $t_{\\mathrm{mix}}(G,q)=\\min\\{t:\\max_{\\sigma\\in\\Omega}\\|P^t(\\sigma,\\cdot)-U_\\Omega\\|_{TV}\\le 1/4\\}$. Claim: for every $\\varepsilon>0$ there are $\\Delta_0$ and $C$ such that $t_{\\mathrm{mix}}(G,q)\\le C n^{C}$ for every graph $G$ with $\\Delta(G)\\ge\\Delta_0$ and every integer $q\\ge(1+\\varepsilon)\\Delta(G)$.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2611.04699",
+  "https://arxiv.org/abs/2407.04870",
+  "https://arxiv.org/abs/1804.04025",
+  "https://arxiv.org/abs/2307.08080",
+  "https://arxiv.org/abs/2611.12444"
+ ]
+}

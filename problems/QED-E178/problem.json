@@ -1,0 +1,26 @@
+{
+ "id": "QED-E178",
+ "set": "extended",
+ "title": "Median selection in 2.5n comparisons",
+ "area": "Combinatorics",
+ "difficulty": 6.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Classical gap (Blum et al. 1973; Schönhage–Paterson–Pippenger 1976; Dor–Zwick 1999/2001); 2.5n milestone from SPP's conditional bound.",
+ "premise_risks": [
+  "Target 2.5n is a milestone, not the conjectured truth; if the true constant exceeds 2.5 the claim is false and would need a lower bound > 2.5n to refute (far beyond current techniques)",
+  "Small-n values quoted from memory of Knuth's tables; should be rechecked"
+ ],
+ "plain": "How many pairwise comparisons does a deterministic algorithm need, in the worst case, to find the median of n distinct numbers? Since 1995 the best algorithm uses about 2.95n comparisons, while the best lower bound is only barely above 2n. In 1976 Schönhage, Paterson and Pippenger showed that 2.5n would suffice if a natural plausible hypothesis ('extra elements never help') held, but nobody has reached 2.5n unconditionally. Can the median always be found with (2.5+o(1))n comparisons?",
+ "math": "A comparison tree on $n$ elements has internal nodes labelled by pairs $(i,j)\\in[n]^2$ (branch on $x_i<x_j$) and leaves labelled by an index in $[n]$; it computes the median if for every injective $x:[n]\\to\\mathbb N$ with $n$ odd the leaf reached outputs the $i$ with $|\\{j:x_j<x_i\\}|=(n-1)/2$. Let $V(n)$ be the minimum depth of such a tree. Claim: $V(n)\\le (5/2+o(1))\\,n$, i.e. $\\forall\\varepsilon>0\\ \\exists N\\ \\forall$ odd $n\\ge N$: $V(n)\\le(2.5+\\varepsilon)n$.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.csc.kth.se/~johanh/mediansdma.pdf",
+  "https://lacker.io/complexity/problems/median-selection-comparison-gap.html",
+  "https://eccc.weizmann.ac.il/report/1995/031",
+  "https://core.ac.uk/download/19553847.pdf"
+ ]
+}
