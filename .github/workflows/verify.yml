@@ -1,25 +1,33 @@
 name: verify-solution
-on: pull_request   # untrusted code: no secrets, read-only token
+# Untrusted code: no secrets, read-only token. Runs for any PR touching contribution paths;
+# a PR is classified by the files it changes, never by its branch name.
+on:
+  pull_request:
+    paths: ["solutions/**", "problems/*/partial/**"]
 permissions: { contents: read }
 jobs:
   verify:
-    if: startsWith(github.head_ref, 'statement') == false
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
+      - name: Use the base branch's checker, toolchain and dependency pins (a PR cannot change them)
+        run: |
+          git checkout "origin/${{ github.base_ref }}" -- scripts lakefile.lean lean-toolchain
+          git checkout "origin/${{ github.base_ref }}" -- lake-manifest.json 2>/dev/null || true
       - id: files
-        run: echo "list=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD | tr '\n' ' ')" >> $GITHUB_OUTPUT
-      - name: Install Lean and Mathlib cache
+        run: echo "list=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | tr '\n' ' ')" >> $GITHUB_OUTPUT
+      - name: Install Lean and the pinned Mathlib cache
         run: |
           curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> $GITHUB_PATH
           export PATH="$HOME/.elan/bin:$PATH"
-          lake update
-          lake exe cache get
-      - name: Check solution
-        env: { PR_AUTHOR: "${{ github.event.pull_request.user.login }}" }
+          if [ -f lake-manifest.json ]; then lake exe cache get; else lake update && lake exe cache get; fi
+      - name: Check contribution
+        env:
+          PR_AUTHOR: "${{ github.event.pull_request.user.login }}"
+          BASE_REF: "${{ github.base_ref }}"
         run: python3 scripts/check.py ${{ steps.files.outputs.list }}
       - if: always()
         uses: actions/upload-artifact@v4
