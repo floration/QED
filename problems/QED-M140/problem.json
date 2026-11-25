@@ -7,6 +7,7 @@
  "grade": "B",
  "provenance": "Original",
  "credit": "QED original (archived Nov 2026, restored after re-review).",
+ "results": "Uniform lower bound sketch (external audit, Nov 2026): thicken each disc by eta and take eta-separated normals up to sign; each slab has volume ~eta, pairwise intersections are O(eta^2/sin angle) uniformly in translations, and the angular kernel is integrable on the sphere, so Cauchy-Schwarz bounds the eta-neighbourhood's volume below by a positive constant; let eta -> 0 by compactness. So c_* > 0 with an explicit argument.",
  "plain": "A set in space contains a flat unit disc in every orientation. How small can its volume be? Such sets cannot have zero volume, unlike sets containing a needle in every direction.",
  "math": "For a unit vector ν let D_ν = {x ∈ ℝ³ : x·ν = 0, |x| ≤ 1}, and c_* = inf{|E| : E ⊂ ℝ³ compact, ∀ν ∃x_ν, x_ν + D_ν ⊂ E} (c_* > 0 by Marstrand/Falconer). Decide whether c_* < (4/3)π, i.e. whether some compact set containing a translate of every D_ν has smaller volume than the unit ball. (Determining c_* exactly and whether the infimum is attained are further questions.)",
  "novelty": 7,

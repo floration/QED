@@ -11,6 +11,8 @@ Extended set · Grade C · Probability
 
 **Reviewer note:** A
 
+**QED results so far (reviewer-derived; check before relying on them):** Elementary partial result (external audit, Nov 2026): liminf_c tileProb >= 1-e^{-lambda}, since a tile with equal left/right and equal top/bottom colours tiles Z^2 alone, and each tile is such with probability 1/c^2. Tiling can occur without such a tile, so this is a lower bound only.
+
 Difficulty estimate: 4.0/10 (anchored scale: 1 ≈ Erdős–Ginzburg–Ziv, 2.5 ≈ the sensitivity conjecture, 5 ≈ bounded prime gaps, 7.5 ≈ the Riemann Hypothesis, 10 ≈ P vs NP). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
 
 ## What counts as an answer

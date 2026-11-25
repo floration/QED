@@ -11,7 +11,7 @@
   "Other 2026 preprints (2609.17795, 2607.20210, 2607.22198, 2610.24889, 2607.21572, 2609.33491): further counterexamples of degree >= 7 in dim 3 and low-degree ones in dims 4-12; background."
  ],
  "plain": "In 2026 the Jacobian conjecture was refuted in three variables. The first explicit counterexample (Alpöge's map) has polynomial degree 7. Wang's theorem says degree 2 is impossible. What is the smallest degree a counterexample in three variables can have? In particular, is there one of degree 3, 4 or 5?",
- "math": "Let $d_3$ be the least $d$ such that some polynomial map $F:\\mathbb C^3\\to\\mathbb C^3$ with $\\max_i\\deg F_i=d$ and $\\det DF\\in\\mathbb C^\\times$ is not an automorphism. Wang's theorem gives $d_3\\ge3$, and Alpöge's map gives $d_3\\le7$. Determine $d_3$. In particular, decide whether $d_3\\le5$.",
+ "math": "Let $d_3$ be the least $d$ such that some polynomial map $F:\\mathbb C^3\\to\\mathbb C^3$ with $\\max_i\\deg F_i=d$ and $\\det DF\\in\\mathbb C^\\times$ is not an automorphism. Wang's theorem gives $d_3\\ge3$, and Alpöge's map gives $d_3\\le7$. Determine $d_3$. In particular, decide whether $d_3\\le5$. Board target (the Lean Claim): decide whether $d_3\\le5$, i.e. exhibit a counterexample of degree at most 5; the exact value of $d_3$ is a further question.",
  "novelty": 5,
  "importance": 7,
  "value": 7,

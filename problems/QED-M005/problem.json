@@ -12,7 +12,7 @@
   "arXiv:2608.00222 / arXiv:2609.17795 (2026 preprints, Alpöge's map and follow-up): the premise that the Jacobian conjecture is false at all; the formal Claim (dimension 5) does not depend on it."
  ],
  "plain": "The Jacobian conjecture is now known to fail. A classical reduction says that if it fails at all, it fails for maps of the special form x + (cubic homogeneous terms), but the reduction pays for this by raising the number of variables. Such a cubic counterexample is now known in 18 variables, and none exists in 4 or fewer. What is the smallest number of variables in which one exists?",
- "math": "Let N_3 be the least n such that there is H=(H_1,...,H_n), each H_i in C[x_1..x_n] homogeneous of degree 3, with JH nilpotent and x+H not an automorphism of C^n. Hubbers (n<=4) gives N_3>=5; de Bondt (arXiv:2610.24889, unrefereed) gives N_3<=18. Determine N_3; in particular decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5.",
+ "math": "Let N_3 be the least n such that there is H=(H_1,...,H_n), each H_i in C[x_1..x_n] homogeneous of degree 3, with JH nilpotent and x+H not an automorphism of C^n. Hubbers (n<=4) gives N_3>=5; de Bondt (arXiv:2610.24889, unrefereed) gives N_3<=18. Determine N_3; in particular decide whether the Jacobian conjecture holds for cubic homogeneous maps in dimension 5. Board target (the Lean Claim): dimension 5, i.e. prove that every such $x+H$ in dimension 5 is an automorphism (so $N_3>5$); the exact value of $N_3$ is a further question.",
  "novelty": 6,
  "importance": 6,
  "value": 6,

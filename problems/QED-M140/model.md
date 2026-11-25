@@ -11,6 +11,8 @@ Extended set · Grade B · QED Original · Geometry
 
 **Credit:** QED original (archived Nov 2026, restored after re-review).
 
+**QED results so far (reviewer-derived; check before relying on them):** Uniform lower bound sketch (external audit, Nov 2026): thicken each disc by eta and take eta-separated normals up to sign; each slab has volume ~eta, pairwise intersections are O(eta^2/sin angle) uniformly in translations, and the angular kernel is integrable on the sphere, so Cauchy-Schwarz bounds the eta-neighbourhood's volume below by a positive constant; let eta -> 0 by compactness. So c_* > 0 with an explicit argument.
+
 **References:**
 - https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/abs/some-remarks-on-the-kakeya-problem/F994CB74D52930B6A0209D8F52B66627
 - https://arxiv.org/abs/2610.33734

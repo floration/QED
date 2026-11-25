@@ -11,6 +11,8 @@ Extended set · Grade B · QED Original · Number theory
 
 **Credit:** QED original (archived Nov 2026, restored after re-review).
 
+**QED results so far (reviewer-derived; check before relying on them):** Note: infinitude is trivial (n=10^k), which is why the board asks for the counting exponent.
+
 **References:**
 - https://arxiv.org/abs/1510.07711
 - https://arxiv.org/abs/1604.01041

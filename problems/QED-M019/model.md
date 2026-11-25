@@ -7,7 +7,7 @@ Main set · Grade A · QED Original · Combinatorics
 
 **Plain words:** Find the largest set of binary strings of length n in which no two differ in a perfect-square number of positions. Does it grow exponentially in n, and if so at what rate? This is a hypercube version of Sarkozy's theorem on square differences.
 
-**Math:** Let $A(n)=\max\{|C|: C\subseteq\{0,1\}^n,\ d_H(x,y)\notin\{1,4,9,16,\dots\}\ \forall x\ne y\in C\}$. Decide whether $A(n)=2^{o(n)}$. More precisely, determine $\liminf_n\frac1n\log_2A(n)$ and $\limsup_n\frac1n\log_2A(n)$ (in particular whether they are equal).
+**Math:** Let $A(n)=\max\{|C|: C\subseteq\{0,1\}^n,\ d_H(x,y)\notin\{1,4,9,16,\dots\}\ \forall x\ne y\in C\}$. Decide whether $A(n)=2^{o(n)}$. More precisely, determine $\liminf_n\frac1n\log_2A(n)$ and $\limsup_n\frac1n\log_2A(n)$ (in particular whether they are equal). Board target (the Lean Claim): $A(n)=2^{o(n)}$; the exact liminf and limsup of the rate are further questions.
 
 **QED results so far (reviewer-derived; check before relying on them):** Small values A(1..7)=1,2,4,5,10,12,14 re-verified by exact max-clique. Frankl-Rodl rate<1 argument is correct. The claim that codes with all distances between consecutive squares are polynomial is only correct for windows at linear distance. Constant-weight codes with w~k^2/2, w~n^{2/3}, and pairwise intersections <k have all distances in (k^2,(k+1)^2).
 

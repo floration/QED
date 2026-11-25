@@ -288,7 +288,7 @@
   "grade": "B",
   "provenance": "Original",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
-  "results": null,
+  "results": "Uniform lower bound sketch (external audit, Nov 2026): thicken each disc by eta and take eta-separated normals up to sign; each slab has volume ~eta, pairwise intersections are O(eta^2/sin angle) uniformly in translations, and the angular kernel is integrable on the sphere, so Cauchy-Schwarz bounds the eta-neighbourhood's volume below by a positive constant; let eta -> 0 by compactness. So c_* > 0 with an explicit argument.",
   "premise_risks": [],
   "plain": "A set in space contains a flat unit disc in every orientation. How small can its volume be? Such sets cannot have zero volume, unlike sets containing a needle in every direction.",
   "math": "For a unit vector ν let D_ν = {x ∈ ℝ³ : x·ν = 0, |x| ≤ 1}, and c_* = inf{|E| : E ⊂ ℝ³ compact, ∀ν ∃x_ν, x_ν + D_ν ⊂ E} (c_* > 0 by Marstrand/Falconer). Decide whether c_* < (4/3)π, i.e. whether some compact set containing a translate of every D_ν has smaller volume than the unit ball. (Determining c_* exactly and whether the infimum is attained are further questions.)",
@@ -304,29 +304,6 @@
   ],
   "lean": "import Mathlib\n/-! QED-M140: Least volume of a Kakeya set for discs\nA set in space contains a flat unit disc in every orientation. How small can its volume be? Such sets\ncannot have zero volume, unlike sets containing a needle in every direction.\nInformal statement: For a unit vector ν let D_ν = {x ∈ ℝ³ : x·ν = 0, |x| ≤ 1}. Let\nc_* = inf{|E| : E ⊂ ℝ³ compact, ∀ν ∃x_ν, x_ν + D_ν ⊂ E}. By Marstrand and Falconer's L² bound for the\n2-plane maximal operator, c_* > 0. Determine c_*. The Claim formalized here is the sharp sub-question\n\"is the unit ball beaten?\": c_* < (4/3)π, i.e. there is a compact set containing a translate of every\nD_ν whose Lebesgue measure is less than that of the unit ball.\nFormalization notes: ℝ³ is modelled as `Fin 3 → ℝ` with its product Lebesgue measure `volume`; the\nEuclidean structure is written out explicitly (dot product `∑ i, x i * ν i`, squared norm `∑ i, x i ^ 2`),\navoiding the sup-norm that Mathlib puts on `Fin 3 → ℝ`. A set E is a \"disc Kakeya set\" if it is compact\nand for every unit vector ν some translate x + D_ν lies in E. Since c_* is an infimum over these sets\nand the unit ball (all x_ν = 0) is admissible with volume 4π/3, \"c_* < 4π/3\" is equivalent to the\nexistence of an admissible E with volume < 4π/3, which is how `Claim` is stated (no `sInf` needed).\nProving `Claim` = exhibiting a disc Kakeya set beating the ball; `¬Claim` = the ball is optimal\n(c_* = 4π/3, attained). The other sub-questions (exact value of c_* if < 4π/3; whether the infimum is\nattained) are not captured by this Claim.\n-/\nnamespace OpenProblems.QEDM140\n\nnoncomputable section\n\n/-- Euclidean dot product on `ℝ³ = Fin 3 → ℝ`. -/\ndef dot (x y : Fin 3 → ℝ) : ℝ := ∑ i : Fin 3, x i * y i\n\n/-- The unit disc through the origin perpendicular to `ν`. -/\ndef disc (ν : Fin 3 → ℝ) : Set (Fin 3 → ℝ) :=\n  {y | dot y ν = 0 ∧ dot y y ≤ 1}\n\n/-- `E` is compact and contains a translate of the unit disc perpendicular to every unit vector. -/\ndef IsDiscKakeya (E : Set (Fin 3 → ℝ)) : Prop :=\n  IsCompact E ∧ ∀ ν : Fin 3 → ℝ, dot ν ν = 1 → ∃ x : Fin 3 → ℝ, ∀ y ∈ disc ν, x + y ∈ E\n\ndef Claim : Prop :=\n  ∃ E : Set (Fin 3 → ℝ), IsDiscKakeya E ∧\n    MeasureTheory.volume E < ENNReal.ofReal (4 / 3 * Real.pi)\n\nend\n\nend OpenProblems.QEDM140\n",
   "set": "extended"
- },
- {
-  "legacy_id": "N-397",
-  "title": "Keller maps injective on integer points",
-  "area": "Algebra",
-  "difficulty": 3.5,
-  "grade": "C",
-  "plain": "Take a polynomial map of 3-space with integer coefficients whose Jacobian determinant is identically 1 (a Keller map). Prove or disprove: if it never sends two different integer points to the same point, then it is a polynomial automorphism. Caution: if some 3D Keller counterexample with F(0)=0 has only finitely many colliding integer pairs, then F(Nx)/N for suitable N is an integer Keller map injective on Z^3 that is not an automorphism.",
-  "math": "Let $F\\in\\mathbb{Z}[x,y,z]^3$ with $\\det JF\\equiv 1$. Prove or disprove: if $F|_{\\mathbb{Z}^3}$ is injective, then $F$ has a polynomial inverse (equivalently, by Bia{\\l}ynicki-Birula--Rosenlicht, $F$ is injective on $\\mathbb{C}^3$). Caution: if some 3D Keller counterexample with $F(0)=0$ has only finitely many colliding integer pairs, then $F(Nx)/N$ for suitable $N$ is an integer Keller map injective on $\\mathbb{Z}^3$ that is not an automorphism.",
-  "novelty": 5,
-  "importance": 3,
-  "value": 3,
-  "review_note": "Posed as prove-or-disprove: the scaling F(Nx)/N could turn a 3D Keller counterexample with finitely many integer collisions into a refutation.",
-  "refs": [
-   "https://arxiv.org/abs/1502.00328",
-   "https://arxiv.org/abs/1712.02113",
-   "https://arxiv.org/abs/1705.10921"
-  ],
-  "formal_status": "formalized",
-  "set": "extended",
-  "id": "QED-E002",
-  "lean": "import Mathlib\n/-! QED-E002: Keller maps injective on integer points\nInformal statement (prove or disprove): let $F\\in\\mathbb{Z}[x,y,z]^3$ with $\\det JF\\equiv 1$. If $F|_{\\mathbb{Z}^3}$\nis injective, then $F$ has a polynomial inverse (equivalently, by Białynicki-Birula–Rosenlicht, $F$ is injective\non $\\mathbb{C}^3$).\nCaution (referee): if some 3D Keller counterexample with F(0)=0 has only finitely many colliding integer pairs,\nthen F(Nx)/N for suitable N is an integer Keller map injective on ℤ³ that is not an automorphism, so the claim\nmay well be false; it is posed as a decision.\nFormalization notes:\n* `F : Fin 3 → MvPolynomial (Fin 3) ℤ`; the Jacobian determinant is computed in `ℤ[x,y,z]` with\n  `MvPolynomial.pderiv` and must equal the constant polynomial `1` (identically, not just on ℤ³).\n* Injectivity on ℤ³: the evaluation map `ℤ³ → ℤ³` is `Function.Injective`.\n* Conclusion: a two-sided polynomial inverse over ℂ (composition via `MvPolynomial.bind₁` after mapping the\n  coefficients to ℂ). This is equivalent to a polynomial inverse over ℚ or even over ℤ (the inverse of a map\n  over a field k invertible over an extension is defined over k; with det JF = 1 the formal inverse has\n  integer coefficients), so the choice of ℂ is harmless.\n* Claim is the \"prove\" direction; ¬Claim is an integer Keller map injective on ℤ³ that is not an automorphism.\n-/\n\nnamespace OpenProblems.QEDE002\n\n/-- Jacobian matrix `(∂Fᵢ/∂xⱼ)` of a polynomial map in 3 variables over `ℤ`. -/\nnoncomputable def jac (F : Fin 3 → MvPolynomial (Fin 3) ℤ) :\n    Matrix (Fin 3) (Fin 3) (MvPolynomial (Fin 3) ℤ) :=\n  fun i j => MvPolynomial.pderiv j (F i)\n\n/-- The map `ℤ³ → ℤ³` given by evaluating `F` at integer points. -/\nnoncomputable def evalZ (F : Fin 3 → MvPolynomial (Fin 3) ℤ) : (Fin 3 → ℤ) → (Fin 3 → ℤ) :=\n  fun x i => MvPolynomial.eval x (F i)\n\n/-- `F`, viewed over `ℂ`, has a two-sided polynomial inverse. -/\ndef IsPolyAutomorphismC (F : Fin 3 → MvPolynomial (Fin 3) ℤ) : Prop :=\n  ∃ G : Fin 3 → MvPolynomial (Fin 3) ℂ,\n    (∀ i : Fin 3, MvPolynomial.bind₁ G (MvPolynomial.map (Int.castRingHom ℂ) (F i)) =\n      MvPolynomial.X i) ∧\n    (∀ i : Fin 3, MvPolynomial.bind₁ (fun j => MvPolynomial.map (Int.castRingHom ℂ) (F j)) (G i) =\n      MvPolynomial.X i)\n\ndef Claim : Prop :=\n  ∀ F : Fin 3 → MvPolynomial (Fin 3) ℤ,\n    (jac F).det = 1 → Function.Injective (evalZ F) → IsPolyAutomorphismC F\n\nend OpenProblems.QEDE002\n",
-  "lean_gap": null
  },
  {
   "legacy_id": "N-439",
@@ -601,7 +578,8 @@
   "set": "extended",
   "id": "QED-E018",
   "lean": "import Mathlib\n/-! QED-E018: Random Wang tiles\nInformal statement: let $T_1,\\dots,T_n$ be i.i.d. Wang tiles, each with its four edge colours i.i.d. uniform in\n$[c]$, no rotations. Let $n=\\lfloor\\lambda c^2\\rfloor$, $c\\to\\infty$. Prove $F(\\lambda)=\\lim_c\\Pr(\\{T_i\\}$ tiles\n$\\mathbb Z^2)$ exists for every $\\lambda>0$, and that $\\lambda_c=\\inf\\{\\lambda:F(\\lambda)=1\\}=1$ (prove or\ndisprove; the first-moment heuristic suggests 1). Determining $F$ on $(0,\\lambda_c)$ is a further, unformalized goal.\nFormalization notes:\n* A tile is `Fin 4 → Fin c` (edges 0 = N, 1 = E, 2 = S, 3 = W). A tuple `T : Fin n → Tile` tiles ℤ² if some\n  placement `f : ℤ × ℤ → Fin n` matches E of (x,y) with W of (x+1,y) and N of (x,y) with S of (x,y+1).\n  Repeated tiles are harmless (the set {Tᵢ} tiles iff the tuple does).\n* The probability is the exact uniform count over all c^{4n} tuples (finite type, so `Nat.card` is fine).\n* Claim: for every λ > 0 the limit F(λ) exists, F(λ) = 1 for λ > 1, and F(λ) < 1 for 0 < λ < 1; this is\n  exactly \"F exists and λ_c = 1\" (F(1) is left unconstrained). ¬Claim: the limit fails to exist for some λ,\n  or λ_c ≠ 1 (including λ_c = ∞).\n-/\n\nnamespace OpenProblems.QEDE018\nnoncomputable section\n\n/-- `T` (a tuple of `n` Wang tiles over `c` colours) admits a valid tiling of `ℤ²`. -/\ndef Tiles {c n : ℕ} (T : Fin n → Fin 4 → Fin c) : Prop :=\n  ∃ f : ℤ × ℤ → Fin n, ∀ x y : ℤ,\n    T (f (x, y)) 1 = T (f (x + 1, y)) 3 ∧ T (f (x, y)) 0 = T (f (x, y + 1)) 2\n\n/-- Probability that `n` uniformly random Wang tiles over `c` colours tile the plane. -/\ndef tileProb (c n : ℕ) : ℝ :=\n  (Nat.card {T : Fin n → Fin 4 → Fin c // Tiles T} : ℝ) / (c : ℝ) ^ (4 * n)\n\ndef Claim : Prop :=\n  ∀ l : ℝ, 0 < l → ∃ L : ℝ,\n    Filter.Tendsto (fun c : ℕ => tileProb c ⌊l * (c : ℝ) ^ 2⌋₊) Filter.atTop (nhds L) ∧\n    (1 < l → L = 1) ∧ (l < 1 → L < 1)\n\nend\nend OpenProblems.QEDE018\n",
-  "lean_gap": null
+  "lean_gap": null,
+  "results": "Elementary partial result (external audit, Nov 2026): liminf_c tileProb >= 1-e^{-lambda}, since a tile with equal left/right and equal top/bottom colours tiles Z^2 alone, and each tile is such with probability 1/c^2. Tiling can occur without such a tile, so this is a lower bound only."
  },
  {
   "legacy_id": "N-618",
@@ -2108,7 +2086,7 @@
   "results": null,
   "premise_risks": [],
   "plain": "Put an Ising magnet on each tile of a hat tiling, with neighbouring tiles interacting. Show that there is one critical temperature shared by all hat tilings, and that near it the magnetisation, susceptibility and correlation length follow the square-lattice laws with exponents 1/8, 7/4 and 1. Part (i) of QED-M148 (the common critical temperature) is the first step of both problems.",
-  "math": "Let T be any hat tiling (tiling of ℂ by isometric copies, reflections allowed, of the Smith–Myers–Kaplan–Goodman-Strauss hat; all such tilings form the hull) and G its tile-adjacency graph (tiles sharing a boundary segment), with the J=1 ferromagnetic Ising model. Prove: there is β_c ∈ (0,∞), the same for all T, such that, with constants c, C, δ > 0 depending only on T: (a) the plus-state magnetization M_T(β,x) = 0 for all tiles x and 0 ≤ β ≤ β_c, and c(β−β_c)^{1/8} ≤ M_T(β,x) ≤ C(β−β_c)^{1/8} uniformly in x for β_c < β < β_c+δ; (b) for β_c−δ < β < β_c, χ_T(β) = sup_x Σ_y ⟨σ_xσ_y⟩_β satisfies c(β_c−β)^{−7/4} ≤ χ_T(β) ≤ C(β_c−β)^{−7/4}; (c) for β_c−δ < β < β_c, the inverse correlation length 1/ξ_T(β) = liminf_{|x−y|→∞} (−log⟨σ_xσ_y⟩_β/|x−y|) satisfies c(β_c−β) ≤ 1/ξ_T(β) ≤ C(β_c−β).",
+  "math": "Let T be any hat tiling (tiling of ℂ by isometric copies, reflections allowed, of the Smith–Myers–Kaplan–Goodman-Strauss hat; all such tilings form the hull) and G its tile-adjacency graph (tiles sharing a boundary segment), with the J=1 ferromagnetic Ising model. Prove: there is β_c ∈ (0,∞), the same for all T, such that, with constants c, C, δ > 0 depending only on T: (a) the plus-state magnetization M_T(β,x) = 0 for all tiles x and 0 ≤ β ≤ β_c, and c(β−β_c)^{1/8} ≤ M_T(β,x) ≤ C(β−β_c)^{1/8} uniformly in x for β_c < β < β_c+δ; (b) for β_c−δ < β < β_c, χ_T(β) = sup_x Σ_y ⟨σ_xσ_y⟩_β satisfies c(β_c−β)^{−7/4} ≤ χ_T(β) ≤ C(β_c−β)^{−7/4}; (c) for β_c−δ < β < β_c, the inverse correlation length 1/ξ_T(β) = liminf_{|x−y|→∞} (−log⟨σ_xσ_y⟩_β/|x−y|) satisfies c(β_c−β) ≤ 1/ξ_T(β) ≤ C(β_c−β). Shared milestone: the existence of a common $\\beta_c$ is also part (i) of QED-M148; it can be credited separately from the exponent bounds.",
   "novelty": 4,
   "importance": 6,
   "value": 5,
@@ -6060,7 +6038,7 @@
   "grade": "B",
   "provenance": "Original",
   "credit": "QED original (archived Nov 2026, restored after re-review).",
-  "results": null,
+  "results": "Note: infinitude is trivial (n=10^k), which is why the board asks for the counting exponent.",
   "premise_risks": [],
   "plain": "Count the numbers n up to x whose square, written in base 10, has no digit 7. Show that the count has the size the random-digit model predicts.",
   "math": "Let $\\mathcal A=\\{m\\ge1:\\ \\text{the decimal expansion of }m\\text{ contains no digit }7\\}$. Prove that $\\#\\{n\\le x:\\ n^2\\in\\mathcal A\\}=x^{\\,1+2\\log_{10}(9/10)+o(1)}$ as $x\\to\\infty$ (exponent $\\approx0.9085$). The lower bound $\\ge x^{1+2\\log_{10}(9/10)-o(1)}$ is the main difficulty; even an asymptotic for the count in some fixed base $q\\le 10$ would be new.",
