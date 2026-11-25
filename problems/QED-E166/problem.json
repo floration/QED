@@ -1,0 +1,28 @@
+{
+ "id": "QED-E166",
+ "set": "extended",
+ "title": "Does the cubic-residue graph on 127 vertices force a monochromatic triangle?",
+ "area": "Graph theory",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Folkman (1970) existence; problem of bounding F_e(3,3;4): Erdős, Graham prize; G127 candidate suggested by G. Exoo; bounds by Radziszowski-Xu, Lange-Radziszowski-Xu, Bikov-Nenov.",
+ "premise_risks": [
+  "Identification of G127 (Hill-Irwing graph) with the cubic-residue Cayley graph on Z_127 should be double-checked against Radziszowski-Xu 2007 (the K4-freeness and 42-regularity checks are consistent with it)",
+  "Largely a computational decision problem on one fixed graph; accepted because it is a recognised open problem in refereed literature",
+  "A negative answer (a good colouring) settles G127 but says little about F_e(3,3;4) itself"
+ ],
+ "plain": "Folkman showed that there are graphs with no 4 mutually adjacent vertices in which every red/blue colouring of the edges creates a single-coloured triangle. The fewest vertices such a graph can have, F_e(3,3;4), is only known to lie between 21 and 786. A natural candidate is the graph on the integers mod 127 that joins x and y when x - y is a nonzero cube mod 127; it has no 4 mutually adjacent vertices. Decide whether every red/blue colouring of its edges has a single-coloured triangle. A yes would show F_e(3,3;4) <= 127.",
+ "math": "Let $G_{127}$ be the Cayley graph on $\\mathbb Z_{127}$ with connection set $C=\\{x^3: x\\in\\mathbb Z_{127}^{*}\\}$ (a subgroup of order $42$ containing $-1$, so $G_{127}$ is a $42$-regular simple graph; it is $K_4$-free). Decide whether $G_{127}\\to(3,3)^e$, i.e. whether every map $c:E(G_{127})\\to\\{0,1\\}$ admits a triangle of $G_{127}$ whose three edges have the same colour. (Known: $21\\le F_e(3,3;4)\\le 786$; a positive answer gives $F_e(3,3;4)\\le 127$.)",
+ "novelty": 4,
+ "importance": 4,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/1904.01937",
+  "https://www.cs.rit.edu/~spr/COURSES/CCOMP/tc25.pdf",
+  "https://arxiv.org/pdf/2605.16542",
+  "https://arxiv.org/pdf/1207.3750",
+  "https://arxiv.org/pdf/1609.03468"
+ ]
+}

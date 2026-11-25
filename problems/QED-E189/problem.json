@@ -1,0 +1,27 @@
+{
+ "id": "QED-E189",
+ "set": "extended",
+ "title": "Reachability for two-interval piecewise affine maps",
+ "area": "Logic & computability",
+ "difficulty": 5.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Open problem as stated by Ghahremani, Kelmendi, Ouaknine (LICS 2023); the 2-D undecidability baseline is Koiran–Cosnard–Garzon (1994).",
+ "premise_risks": [
+  "My restriction of the domain to Q (instead of R or [0,1]) is harmless for reachability between rational points but should be stated in the board text.",
+  "Some sources state the problem for self-maps of [0,1]. That class is a decidable subset of instances of Reach_2, so undecidability there implies undecidability here and decidability here implies decidability there; but a decidability proof only for self-maps of [0,1] would not settle this statement. Choose one version before posting."
+ ],
+ "plain": "Fix a rational cut point c in (0,1) and two affine maps with rational coefficients, and let f use the first map on [0,c) and the second on [c,1), with f mapping [0,1) into itself. Given rational x and y in [0,1), does iterating f from x ever hit y exactly? Is there an algorithm that decides this for every such f, x, y? It is open even for two pieces, while in dimension two the analogous problem is undecidable.",
+ "math": "For $\\theta=(a_1,b_1,a_2,b_2,c)\\in\\mathbb Q^5$ with $0<c<1$ let $f_\\theta:[0,1)\\to\\mathbb R$, $f_\\theta(t)=a_1t+b_1$ for $t<c$ and $f_\\theta(t)=a_2t+b_2$ for $t\\ge c$, and let $\\Theta=\\{\\theta: f_\\theta([0,1))\\subseteq[0,1)\\}$ (a decidable set). Let $\\mathrm{Reach}_2=\\{(\\theta,x,y):\\theta\\in\\Theta,\\ x,y\\in\\mathbb Q\\cap[0,1),\\ \\exists n\\ge0\\ f_\\theta^{\\,n}(x)=y\\}$. Decide whether $\\mathrm{Reach}_2$ is decidable (either answer, with proof, resolves the problem).",
+ "novelty": 3,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2301.09752",
+  "https://people.mpi-sws.org/~joel/publications/pam23.pdf",
+  "https://livrepository.liverpool.ac.uk/3023232/",
+  "https://arxiv.org/abs/2502.19923",
+  "https://arxiv.org/abs/1510.04121"
+ ]
+}

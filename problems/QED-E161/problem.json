@@ -1,0 +1,27 @@
+{
+ "id": "QED-E161",
+ "set": "extended",
+ "title": "Super-exponential anticoncentration of the random ±1 permanent at zero",
+ "area": "Probability",
+ "difficulty": 3.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Conjecture 6.12 in V. Vu's survey (arXiv:2005.02797); current bound Hunter-Kwan-Sauermann (arXiv:2509.22577).",
+ "premise_risks": [
+  "Attributed to Vu ('as conjectured by Vu'); appears unnamed as 'Conjecture 6.12 (Permanent)' but the owner may count it as person-attributed",
+  "Hunter-Kwan-Sauermann is a 2025 arXiv preprint (refereeing status unknown); the claim does not depend on it beyond context"
+ ],
+ "plain": "Fill an n by n matrix with independent random signs +1/-1 and compute its permanent (the determinant without the minus signs). The chance that the determinant is 0 is about 2^(-n), mostly because two rows or columns can be equal or opposite. The permanent has no such structural reason to vanish, and in 2025 its chance of being 0 was shown to be exponentially small. Is it super-exponentially small, that is, smaller than e^(-Cn) for every fixed C once n is large?",
+ "math": "Let $p_n=2^{-n^2}\\,\\#\\{M\\in\\{\\pm1\\}^{n\\times n}:\\operatorname{per}M=0\\}$, where $\\operatorname{per}M=\\sum_{\\pi\\in S_n}\\prod_{i=1}^n M_{i\\pi(i)}$. Prove or disprove: for every $C>0$ there is $N$ such that $p_n\\le e^{-Cn}$ for all $n\\ge N$ (equivalently $\\tfrac1n\\log p_n\\to-\\infty$, with $\\log 0=-\\infty$). Known: $p_n\\le e^{-cn}$ for some absolute $c>0$.",
+ "novelty": 3,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2509.22577",
+  "https://arxiv.org/pdf/2005.02797v1",
+  "https://arxiv.org/abs/0804.2362",
+  "https://arxiv.org/pdf/2608.26707",
+  "https://arxiv.org/html/2603.15856v1"
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "id": "QED-E158",
+ "set": "extended",
+ "title": "Once-reinforced random walk on Z^2: recurrent for some reinforcement?",
+ "area": "Probability",
+ "difficulty": 3.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Davis (model); conjecture forms due to Sidoravicius (all beta, d=2) and Beffara (large reinforcement); stated as open in Bou-Rabee-Peres arXiv:2610.00090 Problem 3 and Kious-Schapira-Tarres arXiv:1807.07167.",
+ "premise_risks": [
+  "Key status statements come from 2026 preprints (Bou-Rabee-Peres, Elboim-Kozma), not yet refereed",
+  "Naming: the full 'every beta' and 'large beta' versions are attributed to Sidoravicius/Beffara; the 'some beta>1' claim is an unnamed weaker sub-question",
+  "Collevecchio-Tarres mention advanced work in progress on Z^2 shape theorem failure (not a recurrence result)"
+ ],
+ "plain": "A walker on the square grid prefers edges it has already crossed: a used edge has weight beta, an unused edge weight 1. With beta = 1 this is simple random walk, which returns to its start infinitely often. Is there any beta > 1 for which the reinforced walk is still recurrent (returns to the origin infinitely often with probability 1)? In dimensions 2 to 5, no beta > 1 is known to give either recurrence or transience.",
+ "math": "Fix $\\beta>1$. ORRW$(\\beta)$ on $\\mathbb Z^2$: $X_0=0$; let $E_t$ be the set of undirected nearest-neighbour edges traversed by $X$ up to time $t$, $w_t(e)=\\beta$ if $e\\in E_t$ and $w_t(e)=1$ otherwise, and $\\Pr(X_{t+1}=y\\mid X_0,\\dots,X_t)=w_t(\\{X_t,y\\})/\\sum_{z\\sim X_t}w_t(\\{X_t,z\\})$ for $y\\sim X_t$. Claim: there exists $\\beta>1$ such that $\\Pr(X_t=0\\text{ for infinitely many }t)=1$.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2610.00090",
+  "https://arxiv.org/abs/1807.07167",
+  "https://arxiv.org/abs/2601.17972",
+  "https://arxiv.org/abs/2509.04318",
+  "https://arxiv.org/abs/2602.10721"
+ ]
+}

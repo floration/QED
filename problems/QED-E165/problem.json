@@ -1,0 +1,26 @@
+{
+ "id": "QED-E165",
+ "set": "extended",
+ "title": "Inducibility of the 4-vertex path",
+ "area": "Graph theory",
+ "difficulty": 5.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Inducibility: Pippenger-Golumbic (1975); P4 bounds: Exoo, Even-Zohar-Linial (2015), Vaughan (flag algebras); status confirmed by Bodnár-Pikhurko (EJC 2026).",
+ "premise_risks": [
+  "The exact value may be irrational or of a non-blow-up form, so 'decide whether = 1173/5824' may be answered negatively without determining the value; the claim targets the exact value",
+  "Upper-bound improvements by larger flag-algebra computations alone would be computational rather than conceptual"
+ ],
+ "plain": "Pick 4 vertices at random from a large graph; how likely is it that they induce exactly a path a-b-c-d (with no other edges among them)? The inducibility of P4 is the largest this probability can be in the limit. For every other graph on 4 vertices the answer is known, but for P4 it is only known to lie between about 0.2014 and 0.2033. Determine it.",
+ "math": "For a graph $G$ on $n\\ge4$ vertices let $d(G)$ be the fraction of 4-subsets of $V(G)$ that induce a copy of $P_4$, and let $\\lambda_{P_4}=\\lim_{n\\to\\infty}\\max_{|G|=n} d(G)$ (the maxima are non-increasing in $n$, so the limit exists). Known: $1173/5824=0.20140\\ldots\\le\\lambda_{P_4}\\le 0.20332375$. Determine $\\lambda_{P_4}$; in particular decide whether $\\lambda_{P_4}=1173/5824$.",
+ "novelty": 2,
+ "importance": 4,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1312.1205",
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v33i2p39/pdf/",
+  "https://arxiv.org/abs/2610.33850",
+  "https://arxiv.org/abs/2507.01596"
+ ]
+}

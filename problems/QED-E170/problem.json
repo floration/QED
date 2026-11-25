@@ -1,0 +1,28 @@
+{
+ "id": "QED-E170",
+ "set": "extended",
+ "title": "Are lower Bruhat intervals in S_n rank-unimodal?",
+ "area": "Combinatorics",
+ "difficulty": 5.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Question raised by A. Björner (with T. Ekedahl, 'On the shape of Bruhat intervals', Ann. Math. 2009; SLC 61 talk)",
+ "premise_risks": [
+  "A known type-A result (for example from Gaetz–Gao or later work) could already settle it; the last search was blocked by the search budget.",
+  "The question in Björner's talk is posed for general crystallographic groups. Restricting to S_n is natural but narrower.",
+  "Log-concavity was observed only for n ≤ 8; do not promote it to the claim."
+ ],
+ "plain": "In the Bruhat order on permutations, u <= w roughly means that u can be obtained from w by undoing inversions. For a permutation w, count the permutations below it with exactly k inversions, for k = 0, 1, ..., inv(w). Does this sequence always rise and then fall? Bjorner and Ekedahl proved that the first half never decreases, but the full statement is open.",
+ "math": "For $w\\in S_n$ let $f_k(w)=\\#\\{u\\in S_n:\\ u\\le w\\text{ in Bruhat order},\\ \\mathrm{inv}(u)=k\\}$ for $0\\le k\\le\\mathrm{inv}(w)$, where $u\\le w$ iff $\\#\\{a\\le i:u(a)\\ge j\\}\\le\\#\\{a\\le i:w(a)\\ge j\\}$ for all $i,j\\in[n]$. Claim: for every $n$ and every $w\\in S_n$ there is $m$ with $f_0(w)\\le\\dots\\le f_m(w)\\ge f_{m+1}(w)\\ge\\dots\\ge f_{\\mathrm{inv}(w)}(w)$.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.mat.univie.ac.at/~slc/wpapers/s61vortrag/bjoerner.pdf",
+  "https://arxiv.org/abs/2311.17980",
+  "https://arxiv.org/abs/2501.03037",
+  "https://arxiv.org/abs/2608.13836",
+  "https://arxiv.org/abs/2003.06710"
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "id": "QED-E171",
+ "set": "extended",
+ "title": "Beat the trivial x^{1/4} gap between sums of two squares",
+ "area": "Number theory",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical; stated as open in A. Kalmynin, 'Intervals between numbers that are sums of two squares' (arXiv:1706.07380).",
+ "premise_risks": [
+  "Kalmynin's statement is from 2017–18; I found no later improvement but a 2025–26 claim in a non-indexed venue cannot be excluded"
+ ],
+ "plain": "Let R(x) be the largest gap between consecutive integers of the form a²+b² up to x. A greedy argument (take the largest square below n, then fix the remainder with a second square) gives R(x) <= C·x^{1/4}, and this exponent has never been improved, although gaps are believed to be only about log x in size. Prove that R(x) is eventually smaller than any constant multiple of x^{1/4}.",
+ "math": "Let $S=\\{a^2+b^2: a,b\\in\\mathbb Z_{\\ge0}\\}$. Prove that for every $\\varepsilon>0$ there is $X_0$ such that for all real $x\\ge X_0$ the interval $(x,\\,x+\\varepsilon x^{1/4}]$ meets $S$; equivalently, the maximal gap between consecutive elements of $S\\cap[1,x]$ is $o(x^{1/4})$.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1706.07380",
+  "https://arxiv.org/abs/1906.09100",
+  "https://arxiv.org/abs/1810.03203"
+ ]
+}

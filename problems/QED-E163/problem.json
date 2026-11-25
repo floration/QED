@@ -1,0 +1,27 @@
+{
+ "id": "QED-E163",
+ "set": "extended",
+ "title": "Planar graphs with no cycles of length 4, 5 or 6: always 3-colourable?",
+ "area": "Graph theory",
+ "difficulty": 5.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Question of Erdős (relaxation of Steinberg's problem); listed as open by Dvořák et al., arXiv:2203.08136; partial results Borodin et al. 2005, Liang-Liao-Bai 2026.",
+ "premise_risks": [
+  "Some may view it as the 'Erdős relaxation of Steinberg's conjecture', i.e. attached to person-named problems, though the specific k=6 question is unnamed",
+  "Mathlib has no planarity; formalization needs a combinatorial planarity definition (e.g. via Wagner/Kuratowski minors or rotation systems)"
+ ],
+ "plain": "Forbidding short cycles makes planar graphs easier to colour. Planar graphs with no cycles of length 4, 5, 6 or 7 can always be properly 3-coloured, while forbidding only lengths 4 and 5 is not enough (2017 counterexample). Decide the remaining case: is every planar graph with no cycle of length 4, 5 or 6 3-colourable?",
+ "math": "Let $G$ be a finite simple planar graph with no cycle of length $4$, $5$ or $6$ (triangles and cycles of length $\\ge7$ allowed). Must $\\chi(G)\\le3$? Equivalently, determine $k^*=\\min\\{k:$ every planar graph with no cycle of length in $\\{4,\\dots,k\\}$ is 3-colourable$\\}$, known to satisfy $k^*\\in\\{6,7\\}$.",
+ "novelty": 3,
+ "importance": 5,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2203.08136",
+  "https://www.sciopen.com/article/10.3934/math.2026530",
+  "https://arxiv.org/abs/1604.05108",
+  "https://arxiv.org/abs/2412.19059",
+  "https://arxiv.org/abs/1506.04629"
+ ]
+}

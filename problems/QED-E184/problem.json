@@ -1,0 +1,26 @@
+{
+ "id": "QED-E184",
+ "set": "extended",
+ "title": "A flat cyclotomic polynomial with five odd prime factors",
+ "area": "Algebra",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Question stated by N. Kaplan (Integers 2010); computations by Arnold–Monagan",
+ "premise_risks": [
+  "Search bound 6.26·10^8 is from 2010; later unpublished searches may extend it but no example has been reported (Bachman 2026)",
+  "Could be resolved by a lucky search, but candidate n are enormous (order-4 flat examples already ~4·10^5 with degree ~2·10^5), so a construction needs theory"
+ ],
+ "plain": "Call the cyclotomic polynomial Phi_n flat if every coefficient is -1, 0 or 1. Flat examples are known when n has up to four distinct odd prime factors (for example Phi_{3*5*31*929}). Is there a flat Phi_n where n has five distinct odd prime factors? None has ever been found, and no reason is known why they cannot exist.",
+ "math": "Let $\\omega_{\\mathrm{odd}}(n)$ be the number of distinct odd primes dividing $n$. Does there exist $n$ with $\\omega_{\\mathrm{odd}}(n)=5$ such that every coefficient of $\\Phi_n(x)\\in\\mathbb Z[x]$ lies in $\\{-1,0,1\\}$? (Since $\\Phi_{2m}(x)=\\pm\\Phi_m(-x)$ for odd $m>1$ and $\\Phi_{n}(x)=\\Phi_{\\mathrm{rad}(n)}(x^{n/\\mathrm{rad}(n)})$, one may assume $n=p_1p_2p_3p_4p_5$ with distinct odd primes.)",
+ "novelty": 4,
+ "importance": 3,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://emis.univie.ac.at/journals/INTEGERS/papers/k30/k30.pdf",
+  "https://arxiv.org/abs/1207.5811",
+  "https://arxiv.org/abs/2602.07727",
+  "https://arxiv.org/abs/2111.04034"
+ ]
+}
