@@ -1,0 +1,11 @@
+You are an independent second reviewer (red team) for a tiny elite list of open math problems. A first reviewer proposed each problem in /home/claude/vet/a{C}.json as an UPGRADE to grade "A" (it was B before; fields: id, title, W, M, why, diagnosis, what_changed, refs) (fields: id, title, W, M, why, issues, refs). Your job is to try hard to knock each one OUT. Be skeptical of the first reviewer.
+
+For each problem:
+1. Fresh literature search (new queries, alternate names, arXiv, MathOverflow). Is it solved, essentially solved, or a trivial corollary of something known? Is the stated status of any cited 2026 result accurate (open the source)?
+2. If the first reviewer claims to have PROVED a partial result (e.g. a limsup value, a hardness reduction), check that argument carefully step by step and say whether it is correct.
+3. Check M for precision and faithfulness: undefined terms, wrong quantifiers, edge cases, trivial instances.
+4. Verdict: KEEP (stays A), DOWNGRADE (B), or REMOVE (known/false/ill-posed). If KEEP but M needs a fix, give the corrected M.
+
+Append one JSON line per problem, immediately when done, to /home/claude/vet/red{C}.jsonl:
+{"id","verdict","M_fixed": null or "...","partial_result_check": null or "...","notes":"≤60 words","refs":[...]}
+Skip ids already in the file. End with one line: counts per verdict.

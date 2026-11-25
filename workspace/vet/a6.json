@@ -1,0 +1,50 @@
+[
+{
+"id": "N-180",
+"outcome": "UPGRADED",
+"title": "Smallest dimension of a cubic-homogeneous Jacobian counterexample",
+"W": "The Jacobian conjecture is now known to fail. A classical reduction says that if it fails at all, it fails for maps of the special form x + (cubic homogeneous terms), but the reduction pays for this by raising the number of variables. Such a cubic counterexample is now known in 18 variables, and none exists in 4 or fewer. What is the smallest number of variables in which one exists?",
+"M": "Let $N_3$ be the least $n$ such that there is $H=(H_1,\\dots,H_n)$, each $H_i\\in\\mathbb C[x_1,\\dots,x_n]$ homogeneous of degree 3, with $JH$ nilpotent (equivalently $\\det(I+JH)=1$) and $x+H$ not an automorphism of $\\mathbb C^n$. By Hubbers' classification (JC holds for cubic homogeneous maps with $n\\le4$), $N_3\\ge5$; the stabilization of Alp\\\"oge's map in arXiv:2610.24889 gives $N_3\\le18$ (unrefereed). Determine $N_3$. Companion: determine $d_3$, the least polynomial degree of a non-invertible Keller map $\\mathbb C^3\\to\\mathbb C^3$ (known $3\\le d_3\\le7$).",
+"why": "The Bass-Connell-Wright/Yagzhev reduction to cubic homogeneous maps (and Druzkowski's to cubic-linear) organized forty years of work on the Jacobian conjecture: small-n classifications of nilpotent cubic Jacobians (Hubbers, de Bondt, van den Essen), quasi-translations, Zhao's vanishing conjecture. With the conjecture refuted, N_3 is the canonical measure of where that whole structural program actually breaks, and it is testable against the existing classification machinery from below and explicit constructions from above.",
+"diagnosis": "B because the minimal degree in dimension 3 is one numeric invariant of one dimension; the reviewer noted the newer families might already lower it. The canonical boundary is the one in the cubic-homogeneous normal form that the field was built around.",
+"what_changed": "Replaced 'minimal degree in dimension 3' by the minimal dimension of a cubic-homogeneous counterexample (the reduction's canonical form), with explicit bounds 5<=N_3<=18; kept d_3 as a companion. Status of n=5 (de Bondt) not verified.",
+"refs": [
+"https://arxiv.org/abs/2610.24889",
+"https://arxiv.org/abs/2608.00222",
+"https://arxiv.org/abs/2609.17795",
+"https://www.cs.ru.nl/E.Hubbers/pubs/nilpotent_jacobians_112500.pdf",
+"https://isa-afp.org/entries/Jacobian_Counterexample.html"
+]
+},
+{
+"id": "N-640",
+"outcome": "UPGRADED",
+"title": "Mean-zero weights shift the Fujita exponent",
+"W": "Fujita's theorem says that for u_t = Δu + u^p in d dimensions, every positive solution blows up when p ≤ 1+2/d, and small solutions survive when p is larger. Replace u^p by a(x)u^p, where a is periodic and averages to zero. The first-order effect cancels, and a homogenization heuristic predicts an effective term proportional to u^(2p-1), which would move the threshold to p = 1+1/d. Prove that this is the true threshold.",
+"M": "Let $d\\ge1$, $a\\in C^\\infty(\\mathbb T^d)$ with $\\int_{\\mathbb T^d}a=0$, $a\\not\\equiv0$, viewed as a $\\mathbb Z^d$-periodic function on $\\mathbb R^d$. Consider $u_t=\\Delta u+a(x)u^p$, $u(\\cdot,0)=u_0\\in C_c(\\mathbb R^d)$, $u_0\\ge0$, $u_0\\not\\equiv0$. Prove: (i) if $1<p\\le 1+1/d$, every such solution blows up in finite time; (ii) if $p>1+1/d$, solutions with sufficiently small $u_0$ are global. The critical case $d=1$, $p=2$, $a=\\cos x$ (every positive solution of $u_t=u_{xx}+\\cos(x)u^2$ blows up) is the test case.",
+"why": "Fujita thresholds are among the most studied phenomena in nonlinear parabolic PDE, and all known weighted versions (Pinsky; Meier; degenerate and potential variants) use weights with a sign, where the threshold is set by scaling. A mean-zero oscillating weight is the cleanest case where the leading effect cancels and the threshold is produced by a nonlinear second-order homogenization correction (constant c = <a,(-Δ)^{-1}a> > 0, effective v_t = Δv + c p v^(2p-1)). Proving it requires controlling homogenization over infinite time windows at criticality, which current test-function and Kaplan methods cannot do because the weight changes sign.",
+"diagnosis": "B for being one specific equation (cos x, d=1, p=2) and an uncertain literature check. The real content is the structural claim that zero-mean oscillation halves the Fujita excess, from 2/d to 1/d.",
+"what_changed": "Promoted the general-d, general-p threshold p*=1+1/d to the main statement, with cos-weight d=1 critical case as test case. Additional searches found no treatment of mean-zero periodic weights.",
+"refs": [
+"https://portal.mardi4nfdi.de/wiki/Publication:678039",
+"https://arxiv.org/pdf/2212.12491",
+"https://arxiv.org/pdf/0805.1313"
+]
+},
+{
+"id": "N-625",
+"outcome": "UPGRADED",
+"title": "Outer billiards around analytic tables with flat points",
+"W": "Outer billiards around a smooth convex shape with positive curvature has only bounded orbits (Moser-Douady). Polygons, semicircles and generic C^1 shapes can have orbits that escape to infinity. What if the table is analytic and strictly convex, but its curvature vanishes at a few points, like the superellipse x^4+y^4 ≤ 1? Decide whether every orbit stays bounded.",
+"M": "Let $K\\subset\\mathbb R^2$ be a strictly convex body whose boundary is a real-analytic curve, with curvature vanishing at finitely many points. Let $T(p)=2q-p$ be the outer billiard map, where $q\\in\\partial K$ is the tangency point of the right-hand tangent from $p$. Decide whether every $T$-orbit is bounded for all such $K$. If not, decide whether boundedness depends on the vanishing orders. The first test case is $K=\\{x^4+y^4\\le1\\}$.",
+"why": "Moser's question about which tables confine all orbits now has sharp answers at both extremes: Douady's positive-curvature C^6 theorem, and C^1-generic escape (2026), which relies on a purely singular radius-of-curvature measure. Analytic tables with isolated flat points sit in between. The boundary is as smooth as possible, but the radius of curvature has integrable singularities ~|θ|^{-k/(k+1)} at a point of curvature vanishing order k (|θ|^{-2/3} for x^4+y^4), so the twist map at infinity is only Hölder and KAM does not apply. This isolates curvature degeneracy, rather than lack of smoothness, as the possible cause of escape.",
+"diagnosis": "B because x^4+y^4 is one arbitrary instance. The canonical question is the class: analytic strictly convex tables with isolated zero-curvature points. Neither the generic C^1 result nor Douady's theorem covers it, and I found nothing that treats it.",
+"what_changed": "Generalized from the single superellipse to all analytic strictly convex tables with finitely many flat points, and asked whether boundedness depends on the vanishing order. Kept x^4+y^4 as the test case.",
+"refs": [
+"https://arxiv.org/pdf/2610.06418",
+"https://www.math.umd.edu/~dolgop/outer15.pdf",
+"https://arxiv.org/abs/math/0702073",
+"https://arxiv.org/pdf/math/9408216"
+]
+}
+]

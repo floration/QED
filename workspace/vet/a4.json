@@ -1,0 +1,57 @@
+[
+{
+"id": "C-99",
+"outcome": "UPGRADED",
+"title": "Periodic optimal colourings of Cayley graphs of Z^2",
+"W": "Join two points of the integer grid when their difference lies in a fixed finite set D. If this graph can be properly coloured with k colours, can it always be coloured with k colours in a repeating, wallpaper-like pattern? On a line the answer is yes. For some infinite graphs built from trees it is no. The plane is the first open case, and a yes would also give an algorithm for the chromatic number.",
+"M": "For finite symmetric $D\\subset\\mathbb Z^2\\setminus\\{0\\}$ let $G_D=\\mathrm{Cay}(\\mathbb Z^2,D)$ with $\\chi(G_D)=k<\\infty$. Must $G_D$ have a proper $k$-colouring invariant under a finite-index subgroup of $\\mathbb Z^2$? Equivalently, does the $k$-colouring subshift $X_{D,k}\\subset\\{1..k\\}^{\\mathbb Z^2}$ always contain a periodic point? (A yes makes $\\{(D,k):\\chi(G_D)\\le k\\}$ decidable via compactness plus enumeration of periodic colourings. A no gives the first weakly aperiodic colouring subshift on $\\mathbb Z^2$.) Same question for $\\mathbb Z^d$, $d\\ge3$.",
+"why": "Proper colourings of $G_D$ form a 2D subshift of finite type of a special kind. Its constraints are only of the form 'different colours at difference d', and they are symmetric under permuting the colours. General 2D SFTs can be aperiodic (Berger). Recent work on periodic colourings of quasi-transitive graphs (arXiv:2411.01951) proves that 2-ended graphs have periodic chi-colourings. The same paper builds a tree-like quasi-transitive graph with no periodic chi-colouring and leaves 1-ended graphs open. Z^2 is the canonical 1-ended amenable case. The question mirrors the periodic tiling conjecture, which holds in Z^2 (Bhattacharya) and fails in high dimension (Greenfeld-Tao), so the same dimensional dichotomy may appear here.",
+"diagnosis": "B mostly because it was never literature-checked, and because the decidability question (a) was the headline when it is really a corollary. The structural periodicity question (b) is the real problem.",
+"what_changed": "The periodicity question is now the headline and decidability a corollary. Added Z^d. Placed it in the 2024 periodic-colouring programme (2-ended solved, tree-like counterexample). No source found that settles Z^2.",
+"refs": [
+"https://arxiv.org/pdf/2411.01951",
+"https://arxiv.org/pdf/2511.03028",
+"https://arxiv.org/pdf/2312.08911"
+],
+"issues": "B mostly because it was never literature-checked, and because the decidability question (a) was the headline when it is really a corollary. The structural periodicity question (b) is the real problem. | The periodicity question is now the headline and decidability a corollary. Added Z^d. Placed it in the 2024 periodic-colouring programme (2-ended solved, tree-like counterexample). No source found that settles Z^2."
+},
+{
+"id": "N-655",
+"outcome": "UPGRADED",
+"title": "Ten Martini for every periodic planar lattice",
+"W": "A tight-binding electron on any doubly periodic planar network in a uniform magnetic field: is the energy spectrum always a Cantor set when the flux per cell is irrational? This is known for the square lattice (Ten Martini), the honeycomb lattice and the Lieb lattice, each by a reduction to a one-dimensional operator. Flat-band eigenvalues that persist in any field can sit isolated, so they must be set aside. The question is whether what remains is always a Cantor set, or at least never contains an interval.",
+"M": "Let $G\\subset\\mathbb R^2$ be a connected planar graph with straight edges that is invariant under a lattice $L\\cong\\mathbb Z^2$ and has finitely many $L$-orbits of vertices. For a constant field $B$ with vector potential $A$, set $(H_B\\psi)(x)=\\sum_{y\\sim x}e^{i\\int_{[x,y]}A}\\psi(y)$ on $\\ell^2(V(G))$, and let $2\\pi\\alpha=B\\cdot\\mathrm{covol}(L)$. Let $\\Sigma'=\\sigma(H_B)\\setminus\\{\\text{isolated points}\\}$. Prove or disprove: for every such $G$ and every irrational $\\alpha$, $\\Sigma'$ is a Cantor set. At minimum, decide whether $\\sigma(H_B)$ is always nowhere dense. The first open instance is the kagome lattice.",
+"why": "Cantor spectrum is known only lattice by lattice: square (Avila-Jitomirskaya), honeycomb (Becker-Han-Jitomirskaya-Zworski) and Lieb (2024). Each proof reduces the problem to a scalar or one-dimensional quasi-periodic operator. The general case concerns self-adjoint matrix-valued noncommutative trigonometric polynomials in the irrational rotation algebra coming from planar graphs. The question is whether Cantor structure comes from magnetic translation symmetry itself or from special reductions. A counterexample (a band of positive length at irrational flux) would be equally striking.",
+"diagnosis": "Kagome is just one more lattice after square, honeycomb and Lieb. The structural question is whether every periodic planar magnetic graph has Cantor spectrum. I checked it against a counterexample: pendant twin vertices give flux-independent isolated eigenvalues, so isolated points must be excluded.",
+"what_changed": "Replaced the single kagome instance by all Z^2-periodic planar graphs. Removed isolated (flat-band) points after finding a counterexample to the naive statement. Added a minimal yes/no (nowhere dense). Kagome is kept as the first open case.",
+"refs": [
+"https://arxiv.org/abs/1408.2814",
+"https://arxiv.org/pdf/1404.0642",
+"https://arxiv.org/pdf/1803.00988",
+"https://www.imo.universite-paris-saclay.fr/~bernard.helffer/helfferharpercambridge2015.pdf",
+"https://arxiv.org/abs/2401.11405",
+"https://arxiv.org/abs/math-ph/0511057",
+"https://arxiv.org/abs/2609.15812"
+],
+"issues": "Kagome is just one more lattice after square, honeycomb and Lieb. The structural question is whether every periodic planar magnetic graph has Cantor spectrum. I checked it against a counterexample: pendant twin vertices give flux-independent isolated eigenvalues, so isolated points must be excluded. | Replaced the single kagome instance by all Z^2-periodic planar graphs. Removed isolated (flat-band) points after finding a counterexample to the naive statement. Added a minimal yes/no (nowhere dense). Kagome is kept as the first open case."
+},
+{
+"id": "N-134",
+"outcome": "UPGRADED",
+"title": "A monotile that forces quasicrystalline symmetry",
+"W": "Every aperiodic monotile known (Socolar-Taylor, the hat, the spectre, and the 3D examples) has tilings with only crystallographic rotational structure: 2-, 3-, 4- or 6-fold. Is there a single tile in the plane whose tilings are all forced to be quasicrystalline with fivefold symmetry, as Penrose tilings are? Or is non-crystallographic symmetry something only two or more tiles can enforce?",
+"M": "Call a compact set $T\\subset\\mathbb R^2$ homeomorphic to a closed disc a monotile if it tiles $\\mathbb R^2$ by isometric copies, reflections allowed. For a tiling $\\mathcal T$ let $\\Omega(\\mathcal T)$ be its translation hull in the local topology. Does there exist a monotile $T$ such that for every tiling $\\mathcal T$ by copies of $T$, $\\Omega(\\mathcal T)$ is invariant under rotation by $2\\pi/5$ about the origin? (Equivalently up to orientation conventions, every tiling has the same 5-fold rotationally invariant local-isomorphism class.) The analogous question in $\\mathbb R^3$, with an icosahedral group $A_5$ in place of $C_5$, is a secondary target.",
+"why": "Penrose and Ammann showed that non-crystallographic order can be forced locally with two tiles, and the Einstein problem has now been solved for crystallographic-type hulls. It is open whether one tile with no markings suffices to force the symmetry seen in real quasicrystals. Gummelt's decagon does this only with overlaps (a covering, not a tiling). A positive answer would make the single-tile quasicrystal model of Steinhardt-Jeong exact, and a negative answer would be a new rigidity phenomenon separating one tile from two.",
+"diagnosis": "The 3D icosahedral version is an arbitrary harder instance. The reviewer notes the 2D fivefold analogue is open and more natural, but the original framed it as a mere first step.",
+"what_changed": "Moved to the plane with 5-fold hull symmetry, which is the canonical non-crystallographic case and directly answers 'can one tile force Penrose-type order?'. Disc topology and no markings keep it honest, and the 3D icosahedral version is kept as secondary.",
+"refs": [
+"https://arxiv.org/pdf/2303.10798",
+"https://arxiv.org/pdf/1009.1419",
+"https://arxiv.org/abs/2609.19214",
+"https://arxiv.org/pdf/1003.4909",
+"https://collaborate.princeton.edu/en/publications/constructing-penrose-like-tilings-from-a-single-prototile-and-the/",
+"https://en.wikipedia.org/wiki/Einstein_problem"
+],
+"issues": "The 3D icosahedral version is an arbitrary harder instance. The reviewer notes the 2D fivefold analogue is open and more natural, but the original framed it as a mere first step. | Moved to the plane with 5-fold hull symmetry, which is the canonical non-crystallographic case and directly answers 'can one tile force Penrose-type order?'. Disc topology and no markings keep it honest, and the 3D icosahedral version is kept as secondary."
+}
+]

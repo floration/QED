@@ -1,0 +1,53 @@
+[
+{
+"id": "N-637",
+"outcome": "UPGRADED",
+"title": "Does an oscillating source lower the Strauss exponent?",
+"W": "For the 3D wave equation with source |u|^p, small smooth data give global solutions exactly when p > 1+√2 (Strauss). Multiply the source by a factor that oscillates periodically in time with average zero, such as cos t. The global-existence proof still works above 1+√2. Every blow-up proof below it breaks, because they all need the source to be positive. Is the true threshold strictly smaller?",
+"M": "Let $g$ be smooth, $2\\pi$-periodic, $\\int_0^{2\\pi}g=0$, $g\\not\\equiv0$ (model case $g=\\cos t$). For $u_{tt}-\\Delta u=g(t)|u|^p$ on $\\mathbb R^{1+3}$ with data $\\varepsilon(f,h)$, $f,h\\in C_c^\\infty$, let $p_c(g)=\\inf\\{p>1:\\forall f,h,\\ $the solution is global for all small $\\varepsilon\\}$. John-type estimates use only $|g|u|^p|\\lesssim|u|^p$, so $p_c(g)\\le1+\\sqrt2$. Is $p_c(g)<1+\\sqrt2$? Determine $p_c(g)$ (a resonance heuristic predicts $2$, independent of $g$). Also: for $1<p<p_c$, is the lifespan finite for suitable data?",
+"why": "The Strauss exponent is a central small-data threshold for nonlinear waves. Every proof of the blow-up half (John, Glassey, Sideris, Zhou, Yordanov-Zhang) uses the positivity of the source, while the global half uses only its size. A mean-zero oscillating factor separates the two. Either the threshold is robust, which would need a new blow-up mechanism, or the iteration along the light cone is suppressed by cancellation and the threshold is set by parametric resonance. In the second case u decays like 1/t near the cone, so |u|^{p-1} acts as a time-periodic potential of size t^{1-p}. Its Mathieu-type amplification is exp(c∫t^{1-p}dt), which diverges iff p<=2. The literature on g(t)|u|^p treats g>=0 or g of power type. Time-oscillating nonlinearities are studied for NLS (Cazenave-Scialom type averaging) but not, as far as I could find, at fixed frequency for the Strauss problem.",
+"diagnosis": "The original was one arbitrary coefficient (cos t) with an open-ended 'determine p_c'. Its novelty had not been checked against the literature.",
+"what_changed": "Generalised to any smooth periodic mean-zero g. Noted the free bound p_c<=1+√2 and made the headline the yes/no 'is p_c<1+√2?'. Searches on oscillating time-dependent coefficients in the Strauss problem found no prior treatment.",
+"refs": [
+"https://arxiv.org/pdf/1705.03965",
+"https://ricerca.uniba.it/retrieve/df4c0680-37be-4856-a2cb-00c79cabccc2/Postprint%20DAbbiccoLucenteReissig2015%20JDE.pdf",
+"https://arxiv.org/pdf/2306.11471"
+],
+"issues": "The original was one arbitrary coefficient (cos t) with an open-ended 'determine p_c'. Its novelty had not been checked against the literature. | Generalised to any smooth periodic mean-zero g. Noted the free bound p_c<=1+√2 and made the headline the yes/no 'is p_c<1+√2?'. Searches on oscillating time-dependent coefficients in the Strauss problem found no prior treatment."
+},
+{
+"id": "C-98",
+"outcome": "UPGRADED",
+"title": "First-order convergence law for random Latin squares",
+"W": "Pick a Latin square of order n uniformly at random and read it as a multiplication table x∘y on n symbols. Does every first-order statement about this table have a limiting probability as n grows? A zero-one law fails: the number of x with x∘x=x should be asymptotically Poisson(1), so the probability that one exists should tend to 1−1/e rather than 0 or 1.",
+"M": "Let $L_n$ be uniform among Latin squares on $[n]$ and $\\mathcal Q_n=([n],\\circ)$ with $x\\circ y=L_n(x,y)$. Prove or disprove: for every first-order sentence $\\varphi$ in the language $\\{\\circ,=\\}$, $\\lim_{n\\to\\infty}\\Pr[\\mathcal Q_n\\models\\varphi]$ exists. Expected route: (i) an extension property, under which every finite partial-quasigroup configuration extends in every consistent way w.h.p.; (ii) a joint Poisson limit for the counts of all sparse definable configurations with bounded expectation, such as cycles of the diagonal map $x\\mapsto x\\circ x$, as for Lynch's random unary functions. A disproof would need a definable sparse statistic with no limit law.",
+"why": "Convergence laws are known for G(n,p), sparse random graphs, random functions and permutations, all of which have independence or exchangeable structure. A uniform Latin square is the canonical dense random algebraic object with rigid global constraints, where such tools fail. New 'independent model' approximations (Kwan-Sah-Sawhney-Simkin; Parities in random Latin squares, 2509.13125, resolving Cameron's conjecture) make it timely. The answer would say what first-order logic can see of a random quasigroup.",
+"diagnosis": "Marked B mainly because the literature check was incomplete. The question itself is natural (the canonical random dense algebraic structure), decisive (a convergence law, yes or no), not found posed, and hard. Recent independent-model approximations make it timely.",
+"what_changed": "Searches found no FO-law work on Latin squares or quasigroups. Sharpened it into a decisive convergence-law question and named the expected mechanism: an extension property plus a Poisson limit for sparse definable configurations.",
+"refs": [
+"https://arxiv.org/abs/2509.13125",
+"https://arxiv.org/pdf/2011.07572",
+"https://arxiv.org/pdf/2106.11932",
+"https://arxiv.org/abs/2402.02567"
+],
+"issues": "Marked B mainly because the literature check was incomplete. The question itself is natural (the canonical random dense algebraic structure), decisive (a convergence law, yes or no), not found posed, and hard. Recent independent-model approximations make it timely. | Searches found no FO-law work on Latin squares or quasigroups. Sharpened it into a decisive convergence-law question and named the expected mechanism: an extension property plus a Poisson limit for sparse definable configurations."
+},
+{
+"id": "N-647",
+"outcome": "UPGRADED",
+"title": "Mass-critical scattering on flat cones",
+"W": "Dodson proved that the defocusing cubic Schrodinger equation in the plane scatters for every finite-mass initial state. Prove the same on every flat cone, a plane with a single conical singularity of total angle alpha. For alpha = 2pi/k it follows from Dodson by symmetry, and radial data are also easy. Every other angle, such as the surface of a cube corner (alpha = 3pi/2) or alpha > 2pi, is open.",
+"M": "For $\\alpha>0$ let $\\mathcal C_\\alpha=(0,\\infty)\\times(\\mathbb R/\\alpha\\mathbb Z)$ with metric $dr^2+r^2d\\theta^2$ and $\\Delta$ the Friedrichs extension of the Laplacian on $C_c^\\infty(\\mathcal C_\\alpha)$. Prove that for every $\\alpha>0$ and every $u_0\\in L^2(\\mathcal C_\\alpha)$ the solution of $iu_t+\\Delta u=|u|^2u$, $u(0)=u_0$, is global with $\\|u\\|_{L^4_{t,x}(\\mathbb R\\times\\mathcal C_\\alpha)}<\\infty$, hence scatters in $L^2$. (Known: $\\alpha=2\\pi/k$, since $\\mathcal C_{2\\pi/k}=\\mathbb R^2/\\mathbb Z_k$ and Dodson applies to $\\mathbb Z_k$-invariant data. Radial data for any $\\alpha$, since the radial equation coincides with the 2D one.)",
+"why": "Dodson's theorem uses Euclidean translation and Galilean symmetry. On a cone with angle not of the form 2pi/k, translations and Galilean boosts are lost, waves diffract at the apex, and concentration at the apex rescales back to the same cone. The flat-cone family is the simplest geometry testing whether concentration-compactness and rigidity survive a genuine singularity at the mass-critical level. Known results on cones (Zhang-Zheng, Blair-Ford-Marzuola) give only small data or energy-space results.",
+"diagnosis": "The angle 3pi/2 was cosmetic and the trivial cases were not identified, so the problem read as an isolated instance with no literature check.",
+"what_changed": "Extended to all cone angles. Identified the solved cases: alpha=2pi/k by the quotient R^2/Z_k, and radial data. The open set is now exactly the non-quotient angles. Literature check found only small-data or H^1 results on cones.",
+"refs": [
+"https://arxiv.org/abs/1702.05813",
+"https://arxiv.org/pdf/1105.5410",
+"https://arxiv.org/pdf/2504.06045",
+"https://arxiv.org/pdf/0707.3188",
+"https://ar5iv.arxiv.org/html/1909.03572"
+],
+"issues": "The angle 3pi/2 was cosmetic and the trivial cases were not identified, so the problem read as an isolated instance with no literature check. | Extended to all cone angles. Identified the solved cases: alpha=2pi/k by the quotient R^2/Z_k, and radial data. The open set is now exactly the non-quotient angles. Literature check found only small-data or H^1 results on cones."
+}
+]

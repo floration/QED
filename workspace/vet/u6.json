@@ -1,0 +1,79 @@
+[
+{
+"id": "N-564",
+"title": "Critical Ising on the hat is SLE(3)",
+"area": "Physics",
+"W": "Show the interface in the critical Ising model on a hat tiling converges to the random curve SLE(3), even though the graph is not isoradial.",
+"M": "For the critical Ising model on the hat graph with Dobrushin boundary conditions, prove the interface converges to chordal SLE$_3$.",
+"novelty": 4,
+"importance": 6,
+"value": 5,
+"issues": "scorer note: Ising universality beyond isoradial graphs; hat is a good test case."
+},
+{
+"id": "N-587",
+"title": "Keller maps classification",
+"area": "Algebra",
+"W": "List every Jacobian-conjecture counterexample in 3D, up to symmetry.",
+"M": "Classify all non-invertible Keller maps $\\mathbb{C}^3\\to\\mathbb{C}^3$ up to composition with polynomial automorphisms.",
+"novelty": 6,
+"importance": 7,
+"value": 5,
+"issues": "scorer note: Full classification of 3D Keller counterexamples; important but vague, likely hopeless."
+},
+{
+"id": "N-140",
+"title": "Explicit Navier–Stokes blow-up",
+"area": "Analysis",
+"W": "Write down a forced Navier–Stokes blow-up as an explicit formula instead of a computer-assisted construction.",
+"M": "Give closed-form smooth $u_0,f$ on $\\mathbb{R}^3$ for which the Navier–Stokes solution blows up in finite time.",
+"novelty": 5,
+"importance": 6,
+"value": 5,
+"issues": "scorer note: Explicit formula for known computer-assisted blow-up; meaningful but derivative."
+},
+{
+"id": "N-345",
+"title": "Finite simple groups in Lean",
+"area": "Formal proof",
+"W": "Turn the classification of finite simple groups into one computer-checked proof.",
+"M": "Formalize the classification of finite simple groups in Lean 4.",
+"novelty": 5,
+"importance": 6,
+"value": 5,
+"issues": "scorer note: CFSG formalization: major engineering, not a math question per se."
+},
+{
+"id": "C-Word equations with ",
+"title": "Word equations with square-free unknowns",
+"area": "Logic",
+"W": "Solving equations between words with unknown pieces is decidable (Makanin), even with regular constraints on the unknowns. What if some unknowns must be square-free, meaning they contain no block repeated twice in a row? Square-freeness is not a regular property.",
+"M": "Let $A=\\{a,b,c\\}$ and let $\\mathrm{SF}\\subseteq A^*$ be the set of square-free words. Is the existential first-order theory of $(A^*,\\cdot,a,b,c,\\mathrm{SF})$ decidable? Equivalently: given a finite system of word equations with constants together with constraints $x_i\\in\\mathrm{SF}$ or $x_i\\notin\\mathrm{SF}$, can one decide whether it has a solution?",
+"novelty": 7,
+"importance": 4,
+"value": 5,
+"issues": ""
+},
+{
+"id": "N-641",
+"title": "Burgers with degenerate critical dissipation",
+"area": "",
+"W": "Critical half-Laplacian dissipation keeps Burgers smooth. Let that dissipation switch off quadratically at one point of the circle. Do shocks form there?",
+"M": "Let $a(x)=1-\\cos x$ and consider $u_t+uu_x+\\Lambda^{1/2}\\big(a\\,\\Lambda^{1/2}u\\big)=0$ on $\\mathbb{T}$, $\\Lambda=(-\\partial_x^2)^{1/2}$. Decide whether every real $u_0\\in C^\\infty(\\mathbb{T})$ yields a global smooth solution.",
+"novelty": 7,
+"importance": 3,
+"value": 3,
+"issues": "deep vet grade C: Likely routine, with expected answer no. The equation preserves odd symmetry (a is even), so odd data with u_0'(0)<0 steepen at the stationary point x=0. Writing the operator as a·Lambda + [Lambda^{1/2},a]Lambda^{1/2}, the commutator is order 0. At the Burgers self-similar scale (x ~ (T-t)^{3/2}, u ~ (T-t)^{1/2}), both dissipative pieces are lower order than u_t. So stable Burgers shock formation (Buckmaster-Shkoller-Vicol style modulation, or Dong-Du-Li type arguments) should go through. Novel but narrow and probably expert-routine. Added 'real' to the data."
+},
+{
+"id": "N-619",
+"title": "Thue–Morse Lorenz knots",
+"area": "",
+"W": "Turn the first 2^n letters of the Thue–Morse word into a periodic orbit of the Lorenz flow, and so into a knot K_n. For n >= 4 these knots appear to be hyperbolic. Their volume grows only in proportion to n, the logarithm of the word length, not in proportion to the length itself. Prove that, and find the constant.",
+"M": "Let $K_n$ be the Lorenz knot with Lorenz word $t_0t_1\\cdots t_{2^n-1}$ (the length-$2^n$ Thue–Morse prefix, $0\\mapsto x$, $1\\mapsto y$; this word is primitive, since Thue–Morse is overlap-free and $t_{[0,2^n)}=w\\bar w$). Prove that $S^3\\setminus K_n$ is hyperbolic for all $n\\ge4$ and that $\\lim_{n\\to\\infty}\\mathrm{vol}(S^3\\setminus K_n)/n$ exists and is positive. Determine the limit.",
+"novelty": 7,
+"importance": 3,
+"value": 4,
+"issues": "deep vet grade C: The ORIGINAL claim (vol/2^n tends to a positive limit) appears FALSE. I computed K_n as the closure of the Lorenz permutation braid of the sorted cyclic shifts and used SnapPy. n=2 gives the unknot and n=3 gives the torus knot T(3,4), with fundamental group <a,b | a^4=b^3>. For n=4..8 the knots are hyperbolic with all tetrahedra positively oriented, and the n=8 value is stable under randomisation. Volumes: 9.396, 16.184, 25.056, 32.991, 41.092. The ratios vol/2^n are 0.587, 0.506, 0.392, 0.258, 0.161, heading to 0. The increments are 6.79, 8.87, 7.93, 8.10, so roughly 8 per doubling, i.e. vol ~ 8n. That is linear in n = log2(length). This fits the picture that the hierarchical word makes large blocks of strands travel in parallel, giving about n twist regions. I rewrote W and M to the numerically supported conjecture (linear in n), set the hyperbolicity threshold to n >= 4, and added a primitivity justification. The increments may tend to about 8.12 (8 times the regular ideal tetrahedron volume), which is speculative. The family choice is arbitrary, hence grade C. Web searches were unavailable for this item because the search budget was exhausted, so there is no literature check."
+}
+]
