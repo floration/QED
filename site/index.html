@@ -41,6 +41,7 @@ aside{position:sticky;top:12px;align-self:start}
 table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left}th{font:500 11px "JetBrains Mono",monospace;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
 a{color:#a9c7ff}.tabs{display:flex;gap:4px;margin-bottom:8px}.tabs button{background:none;border:1px solid transparent;border-radius:99px;color:var(--mut);padding:5px 12px;cursor:pointer;font:inherit;font-size:13px}.tabs button.on{color:var(--fg);border-color:var(--line);background:#151821}
 footer{text-align:center;color:var(--mut);font-size:13px;padding:0 0 40px}
+.dots button.nf{background:transparent!important;border:2px solid var(--r);opacity:.8}.dots button.nf.g{border-color:var(--g)}.dots button.nf.y{border-color:var(--y)}
 </style></head><body>
 <header>
 <div class="eyebrow">Open problems · proved in Lean</div>
@@ -49,12 +50,14 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:0 0 40px}
 <div class="stats"><div><b id="sG">0</b><span>solved</span></div><div><b id="sY">0</b><span>in progress</span></div><div><b id="sR">0</b><span>untouched</span></div><div><b id="sW">0</b><span>people working</span></div></div>
 <div class="prog"><i id="pG" style="background:var(--g)"></i><i id="pY" style="background:var(--y)"></i><i id="pR" style="background:var(--r);opacity:.55"></i></div>
 <div class="progl"><span id="pT">0 problems in the main set</span><span>solved / in progress / open</span></div>
-<div class="legend mut"><span><i class="dot g"></i>solved or disproved</span><span><i class="dot y"></i>someone is on it</span><span><i class="dot r"></i>no attempts yet</span></div>
+<div class="legend mut"><span><i class="dot g"></i>solved or disproved</span><span><i class="dot y"></i>someone is on it</span><span><i class="dot r"></i>no attempts yet</span><span><i class="dot" style="background:transparent;border:2px solid var(--mut)"></i>hollow: Lean statement not ready yet</span></div>
 </header>
 <main>
 <section>
-<div class="controls"><input id="q" placeholder="Search title or id…"><select id="st"><option value="">All statuses</option><option value="g">Solved</option><option value="y">In progress</option><option value="r">Untouched</option></select><select id="gr"><option value="">All grades</option><option value="A">Grade A</option><option value="B">Grade B</option><option value="C">Grade C</option></select><select id="pv"><option value="">All types</option><option>Original</option><option>Extension</option><option>Curated</option><option value="R">Has QED results</option></select></div>
+<div class="controls"><input id="q" placeholder="Search title or id…"><select id="st"><option value="">All statuses</option><option value="g">Solved</option><option value="y">In progress</option><option value="r">Untouched</option></select><select id="gr"><option value="">All grades</option><option value="A">Grade A</option><option value="B">Grade B</option><option value="C">Grade C</option></select><select id="pv"><option value="">All types</option><option>Original</option><option>Extension</option><option>Curated</option><option value="R">Has QED results</option></select><select id="fs"><option value="">Any statement</option><option value="f">Lean statement ready</option><option value="n">Needs formalizing</option></select><select id="df"><option value="">Any difficulty</option><option value="0-3">Easier (below 3)</option><option value="3-5">Medium (3 to 5)</option><option value="5-11">Hard (5 and up)</option></select></div>
+<div id="msg" class="mut" style="margin:6px 0 14px">Loading problems…</div>
 <div id="grid"></div>
+<p class="mut" style="font-size:12px;margin-top:18px">Difficulty is on one calibrated 0–10 scale: Collatz ≈ 5.5, twin primes ≈ 5.0. Statuses: a problem can be claimed and worked on at any time; full solutions are accepted only once its Lean statement is ready.</p>
 </section>
 <aside>
 <div class="panel" id="detail"><h2>Pick a dot</h2><div class="mut">Click any dot to see the problem, its first victor, its smallest solution and who is working on it.</div></div>
@@ -64,23 +67,26 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:0 0 40px}
 <script>
 const REPO='floration/qed'; document.getElementById('repo').href=`https://github.com/${REPO}/blob/main/CONTRIBUTING.md`;
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let LG={},P=[],A=[],S={},C={},L={first:[],smallest:[]},cur=null,tab='first';
-const get=u=>fetch(u+'?t='+Date.now()).then(r=>r.ok?r.json():{}).catch(()=>({}));
-Promise.all([get('data/problems.json'),get('data/solutions.json'),get('data/claims.json'),get('data/leaderboard.json'),]).then(([p,s,c,l])=>{
-  P=(p||[]).filter(x=>x.set);S=s||{};C=c||{};L=Object.assign({first:[],smallest:[]},l);
+let PA={},P=[],S={},C={},L={first:[],smallest:[]},cur=null,tab='first';
+const FAILED=[];const get=(u,opt)=>fetch(u+'?t='+Date.now()).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).catch(e=>{if(!opt)FAILED.push(u);return null;});
+Promise.all([get('data/problems.json'),get('data/solutions.json',1),get('data/claims.json',1),get('data/leaderboard.json',1),get('data/partials.json',1)]).then(([p,s,c,l,pa])=>{
+  P=(Array.isArray(p)?p:[]).filter(x=>x&&x.set);S=s||{};C=c||{};L=Object.assign({first:[],smallest:[]},l||{});PA=pa||{};
+  const m=document.getElementById('msg');
+  if(!P.length){m.innerHTML='Could not load the problem list'+(FAILED.length?' ('+FAILED.map(esc).join(', ')+')':'')+'. <a href="javascript:location.reload()">Retry</a>';m.style.color='var(--r)';}
+  else m.textContent='';
   draw();board(); const h=location.hash.slice(1); if(h) show(h);
 });
 const status=id=>S[id]?'g':(C[id]&&C[id].length?'y':'r');
 function draw(){
-  const q=document.getElementById('q').value.toLowerCase(),st=document.getElementById('st').value,gr=document.getElementById('gr').value,pv=document.getElementById('pv').value;
+  const q=document.getElementById('q').value.toLowerCase(),st=document.getElementById('st').value,gr=document.getElementById('gr').value,pv=document.getElementById('pv').value,fs=document.getElementById('fs').value,df=document.getElementById('df').value;
   const g=document.getElementById('grid');g.innerHTML='';let n={g:0,y:0,r:0};const groups={};
   P.forEach(p=>{const s=status(p.id);n[s]++;
     if(q&&!(p.title.toLowerCase().includes(q)||p.id.toLowerCase().includes(q)))return;
-    if(st&&s!==st)return;if(gr&&p.grade!==gr)return;if(pv&&(pv==='R'?!p.results:p.provenance!==pv))return;const gk=p.set==='main'?'Main set':'Extended set';(groups[gk]=groups[gk]||[]).push([p,s]);});
+    if(st&&s!==st)return;if(gr&&p.grade!==gr)return;if(pv&&(pv==='R'?!p.results:p.provenance!==pv))return;if(fs&&(fs==='f')!==(p.formal_status==='formalized'))return;if(df){const[lo,hi]=df.split('-').map(Number);if(!(p.difficulty>=lo&&p.difficulty<hi))return;}const gk=p.set==='main'?'Main set':'Extended set';(groups[gk]=groups[gk]||[]).push([p,s]);});
   Object.keys(groups).sort((a,b)=>(a==='Extended set')-(b==='Extended set')).forEach(k=>{
     const sec=document.createElement('div');sec.className='area';const done=groups[k].filter(x=>x[1]==='g').length;
     sec.innerHTML=`<h3><span>${esc(k)}</span><span>${done}/${groups[k].length}</span></h3><div class="dots"></div>`;const d=sec.lastChild;
-    groups[k].sort((x,y)=>(x[0].set==='test')-(y[0].set==='test')||x[0].id.localeCompare(y[0].id,undefined,{numeric:true})).forEach(([p,s])=>{const b=document.createElement('button');b.className=s+(cur===p.id?' sel':'');b.title=`${p.id} · ${p.title}`;b.onclick=()=>show(p.id);d.appendChild(b);});
+    groups[k].sort((x,y)=>(x[0].set==='test')-(y[0].set==='test')||x[0].id.localeCompare(y[0].id,undefined,{numeric:true})).forEach(([p,s])=>{const b=document.createElement('button');b.className=s+(cur===p.id?' sel':'')+(p.formal_status==='formalized'?'':' nf');b.title=`${p.id} · ${p.title}${p.formal_status==='formalized'?'':' (needs formalizing)'}`;b.onclick=()=>show(p.id);d.appendChild(b);});
     g.appendChild(sec);});
   sG.textContent=n.g;sY.textContent=n.y;sR.textContent=n.r;
   sW.textContent=new Set(Object.values(C).flat().map(c=>c.user)).size;
@@ -92,11 +98,12 @@ function show(id){
   const s=S[id],c=C[id]||[],st=status(id);
   document.getElementById('detail').innerHTML=`<div class="pid"><i class="dot ${st}"></i> ${esc(p.id)}</div><h2>${esc(p.title)}</h2>
   <div class="mut">${p.set==='test'?`<b>Submission test · about ${esc(p.est_lines)} lines</b> · `:p.set?`<b>${p.set==='main'?'Main':'Extended'} · Grade ${esc(p.grade)}</b>${p.provenance?' · QED '+esc(p.provenance):''} · `:''}${esc(p.area)} · difficulty ${esc(p.difficulty)}/10${s?' · '+(s.kind==='disproof'?'DISPROVED':'SOLVED'):''}</div>${p.credit?`<div class="mut" style="font-size:13px">Credit: ${esc(p.credit)}</div>`:''}${p.review_note?`<p class="mut" style="font-size:13px">Reviewer note: ${esc(p.review_note)}</p>`:''}
-  ${p.value!=null?`<div class="mut" style="font-size:13px">novelty ${p.novelty} · importance ${p.importance} · value ${p.value}</div>`:''}<p>${esc(p.plain)}</p><div class="math">${esc(p.math)}</div>${p.results?`<p><b>QED results so far.</b> ${esc(p.results)}</p>`:''}${p.premise_risks&&p.premise_risks.length?`<p class="mut" style="font-size:13px">Rests on recent unrefereed work: ${p.premise_risks.map(esc).join('; ')}</p>`:''}${p.formal_status==='not_formalized'?`<p class="mut" style="font-size:13px">Not yet formalized in Lean: ${esc(p.lean_gap||'')}</p>`:''}
+  ${p.value!=null?`<div class="mut" style="font-size:13px">novelty ${p.novelty} · importance ${p.importance} · value ${p.value}</div>`:''}<p>${esc(p.plain)}</p><div class="math">${esc(p.math)}</div>${p.results?`<p><b>QED results so far.</b> ${esc(p.results)}</p>`:''}${p.premise_risks&&p.premise_risks.length?`<p class="mut" style="font-size:13px">Rests on recent unrefereed work: ${p.premise_risks.map(esc).join('; ')}</p>`:''}<p style="font-size:13px"><b>Statement:</b> ${p.formal_status==='formalized'?'Lean statement ready (adversarially reviewed)':'proposed, not yet formalized in Lean'+(p.lean_gap?' — '+esc(p.lean_gap):'')}</p>
   <div class="kv"><div class="mut">First victor</div><div>${sol(s&&s.first)}</div>
   <div class="mut">Smallest</div><div>${sol(s&&s.smallest)}</div>
-  <div class="mut">Working on it</div><div><b>${c.length}</b> ${c.map(x=>`<a href="${esc(x.issue)}">@${esc(x.user)}</a>`).join(', ')}</div></div>
-  <div class="btns"><a href="https://github.com/${REPO}/issues/new?template=claim.yml&title=Claim+${id}">Claim it</a><a href="https://github.com/${REPO}/blob/main/problems/${id}/model.md">model.md</a><a href="https://github.com/${REPO}/blob/main/problems/${id}/Statement.lean">Lean statement</a><a href="https://github.com/${REPO}/tree/main/solutions/${id}">solutions</a></div>`;
+  <div class="mut">Working on it</div><div><b>${c.length}</b> ${c.map(x=>`<a href="${esc(x.issue)}">@${esc(x.user)}</a>`).join(', ')}</div>
+  <div class="mut">Partial work</div><div>${(PA[id]||[]).length?(PA[id]||[]).map(x=>`<a href="https://github.com/${REPO}/tree/main/problems/${id}/partial/${esc(x.user)}">@${esc(x.user)}</a>${x.lean?' (Lean)':''}`).join(', '):'<span class="mut">none yet</span>'}</div></div>
+  <div class="btns"><a href="https://github.com/${REPO}/issues/new?template=claim.yml&title=Claim+${id}">Claim it</a><a href="https://github.com/${REPO}/blob/main/problems/${id}/model.md">model.md</a><a href="https://github.com/${REPO}/blob/main/problems/${id}/Statement.lean">Lean statement</a><a href="https://github.com/${REPO}/tree/main/solutions/${id}">solutions</a><a href="https://github.com/${REPO}/blob/main/CONTRIBUTING.md#share-partial-work">add partial work</a></div>`;
   if(window.renderMathInElement) renderMathInElement(document.getElementById('detail'),{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false});
 }
 function board(){
@@ -104,5 +111,5 @@ function board(){
    (rows.length?rows.map((r,i)=>`<tr><td>${i+1}</td><td><a href="https://github.com/${esc(r.user)}">@${esc(r.user)}</a></td><td>${esc(r.model)}</td><td>${r.count}</td></tr>`).join(''):'<tr><td colspan=4 class="mut">No solves yet — be the first.</td></tr>');
 }
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');tab=b.dataset.b;board();});
-['q','st','gr','pv'].forEach(i=>document.getElementById(i).oninput=draw);
+['q','st','gr','pv','fs','df'].forEach(i=>document.getElementById(i).oninput=draw);
 </script></body></html>
