@@ -1,0 +1,95 @@
+[
+{
+"assumption": "k-SUM hypothesis for k>=4 / 3SUM-Indexing",
+"title": "Does 4SUM survive the thin-product attack?",
+"W": "Solve 4SUM on n integers of poly(n) magnitude in O(n^{2-eps}) time, or 3SUM-Indexing with S space and T query time where S*T = O(n^{2-eps}); alternatively prove that any algorithm built from AVW-style thin rectangular product subroutines plus fine-grained self-reductions cannot beat n^{ceil(k/2)} for k=4.",
+"M": "Yes: the k-SUM hierarchy (and the 3SUM-Indexing data-structure lower bounds) fall, and the n^{ceil(k/2)} conjecture is wrong. A barrier: explains why 3SUM fell but 4SUM did not (lack of self-reductions), and makes 4SUM the natural replacement hardness source.",
+"why": "AVW explicitly could not improve k-SUM/k-XOR for k>=4 or 3SUM-Indexing, blaming lack of fine-grained self-reductions. These are now the main surviving additive-combinatorics hypotheses in fine-grained complexity.",
+"status_notes": "3SUM refuted (AVW, arXiv:2610.06783, Oct 2026 preprint); AVW list k-SUM/k-XOR k>=4 and the 3SUM-Indexing conjecture as NOT refuted and open. Majdoddin (arXiv:2610.17420) extends to 3SUM over abelian groups, not to 4SUM.",
+"grade": "A",
+"refs": [
+"Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",
+"Majdoddin, Thin matrix products up to D<=N^0.172 and lossless reductions for 3SUM, Exact Triangle and APSP, arXiv:2610.17420 (Oct 2026)",
+"Goldstein, Kopelowitz, Lewenstein, Porat, How hard is it to find (honest) witnesses?, ESA 2016 (3SUM-Indexing)"
+],
+"id": "AS0-01",
+"issues": "3SUM refuted (AVW, arXiv:2610.06783, Oct 2026 preprint); AVW list k-SUM/k-XOR k>=4 and the 3SUM-Indexing conjecture as NOT refuted and open. Majdoddin (arXiv:2610.17420) extends to 3SUM over abelian groups, not to 4SUM."
+},
+{
+"assumption": "Sparse triangle / k-Clique-type hypotheses (Patrascu balanced instances)",
+"title": "All-Edges Sparse Triangle below m^{4/3} on balanced instances",
+"W": "Solve All-Edges Sparse Triangle (for each of m edges, report whether it is in a triangle) in O(m^{4/3-eps}) time on general (balanced) sparse graphs, or derive an m^{4/3-o(1)} lower bound from a hypothesis that survives AVW (e.g. 4SUM, OV/SETH, or combinatorial BMM).",
+"M": "Yes: kills Patrascu-style lower bounds for dynamic and data-structure problems that go through balanced instances (set-disjointness, dynamic reachability lower bounds). No: re-grounds the m^{4/3} barrier on a still-standing assumption.",
+"why": "AVW handle only lopsided instances and explicitly leave Patrascu's balanced instances open; dozens of dynamic lower bounds rest on m^{4/3}.",
+"status_notes": "m^{4/3} lower bounds (Patrascu STOC 2010; Kopelowitz-Pettie-Porat SODA 2016) came from 3SUM, now refuted (AVW arXiv:2610.06783, Oct 2026). AVW state balanced sparse instances are not addressed. Best known upper bound O(m^{2omega/(omega+1)}).",
+"grade": "A",
+"refs": [
+"Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",
+"Patrascu, Towards polynomial lower bounds for dynamic problems, STOC 2010",
+"Kopelowitz, Pettie, Porat, Higher lower bounds from the 3SUM conjecture, SODA 2016"
+],
+"id": "AS0-04",
+"issues": "m^{4/3} lower bounds (Patrascu STOC 2010; Kopelowitz-Pettie-Porat SODA 2016) came from 3SUM, now refuted (AVW arXiv:2610.06783, Oct 2026). AVW state balanced sparse instances are not addressed. Best known upper bound O(m^{2omega/(omega+1)})."
+},
+{
+"assumption": "ETH (fine-grained lattice hardness)",
+"title": "2^{Omega(n)} hardness of Euclidean SVP under ETH",
+"W": "Show that approximate SVP in the l_2 norm (some constant gamma>1) has no 2^{o(n)}-time algorithm unless (randomized) ETH fails; or identify an obstruction (e.g. for the Z^n-based gadget) showing the l_p, p>2 technique cannot reach p=2.",
+"M": "Yes: grounds the concrete security of lattice cryptography (l_2 SVP) on ETH rather than Gap-ETH. Obstruction: explains why l_2 is special, complementing known barriers for SETH-hardness of CVP in even norms.",
+"why": "Stated as Open Problem 1 (p in [1,2], specifically p=2) in the ICALP 2026 paper; the most cryptographically relevant case.",
+"status_notes": "Aggarwal-Gupta-Morolia-Zhang (ICALP 2026) prove ETH-hardness for CVP_p (all p>=1) and SVP_p (p>2); p in [1,2] incl. p=2 left open. Earlier SVP_2 2^{Omega(n)} hardness required Gap-ETH-type assumptions.",
+"grade": "A",
+"refs": [
+"Aggarwal, Gupta, Morolia, Zhang, Mind the Gap? Not for SVP Hardness under ETH!, ICALP 2026, arXiv:2504.02695",
+"Aggarwal, Stephens-Davidowitz, (Gap-)ETH-hardness of SVP, STOC 2018"
+],
+"id": "AS0-10",
+"issues": "Aggarwal-Gupta-Morolia-Zhang (ICALP 2026) prove ETH-hardness for CVP_p (all p>=1) and SVP_p (p>2); p in [1,2] incl. p=2 left open. Earlier SVP_2 2^{Omega(n)} hardness required Gap-ETH-type assumptions."
+},
+{
+"assumption": "Circuit lower bounds underlying derandomization (E needs exponential circuits)",
+"title": "From S_2E to E^NP: near-maximum circuit lower bounds",
+"W": "Prove E^NP is not contained in SIZE[2^n/n] (or even SIZE[2^{epsilon n}] for some eps>0 infinitely often); equivalently, put Range Avoidance in FP^NP for the relevant circuit classes, improving Li's FS_2^P algorithm.",
+"M": "Yes: an unconditional exponential lower bound one level lower than currently known, strengthening hardness-vs-randomness inputs (e.g. derandomization of AM / prBPP in P^NP-type classes). Barrier/relativization result: shows the symmetric-alternation step of Chen-Hirahara-Ren/Li is essential.",
+"why": "The 2023-24 breakthrough reached S_2E; E^NP is the natural next class and is explicitly the target of the range-avoidance program.",
+"status_notes": "Chen-Hirahara-Ren (STOC 2024) and Li (STOC 2024) proved S_2E needs 2^n/n circuits via FS_2^P range avoidance; Hitchcock (arXiv:2605.03306, 2026) shows such languages are comeager in S_2E. E^NP case remains open; BPP=P still conditional.",
+"grade": "A",
+"refs": [
+"Chen, Hirahara, Ren, Symmetric exponential time requires near-maximum circuit size, STOC 2024, arXiv:2309.12912",
+"Li, Symmetric exponential time requires near-maximum circuit size: simplified, truly uniform, STOC 2024, arXiv:2310.17762",
+"Hitchcock, Exponential-size circuit complexity is comeager in symmetric exponential time, arXiv:2605.03306"
+],
+"id": "AS0-17",
+"issues": "Chen-Hirahara-Ren (STOC 2024) and Li (STOC 2024) proved S_2E needs 2^n/n circuits via FS_2^P range avoidance; Hitchcock (arXiv:2605.03306, 2026) shows such languages are comeager in S_2E. E^NP case remains open; BPP=P still conditional."
+},
+{
+"assumption": "Katz–Sarnak random-matrix symmetry types for low-lying zeros (GRH-based)",
+"title": "One-level density of quadratic Dirichlet L-functions beyond support (−2,2)",
+"W": "Under GRH, the low-lying zeros of L(s,χ_d) for quadratic characters are known to follow the symplectic random-matrix law only for test functions whose Fourier transform is supported in (−2,2). Go beyond 2.",
+"M": "For the family of real primitive characters $\\chi_{8d}$, $d$ odd squarefree, $X<d\\le 2X$, and even Schwartz $\\phi$ with $\\operatorname{supp}\\hat\\phi\\subset(-\\sigma,\\sigma)$, prove under GRH that $\\frac1{|\\mathcal F|}\\sum_d\\sum_{\\gamma_d}\\phi\\!\\big(\\gamma_d\\frac{\\log X}{2\\pi}\\big)\\to\\int\\phi(x)\\big(1-\\frac{\\sin 2\\pi x}{2\\pi x}\\big)dx$ for some $\\sigma>2$.",
+"why": "Support beyond 2 is the classic test of the symplectic prediction in its non-trivial range and would give better nonvanishing proportions for L(1/2,χ_d). For the averaged family of all Dirichlet characters, Drappeau–Pratt–Radziwiłł got past 2 unconditionally (to 2+50/1093) using large-sieve and dispersion input. The question is whether analogous input exists for the thinner quadratic family.",
+"status_notes": "Özlük–Snyder: support (−2,2) under GRH for quadratic family; Rubinstein for n-level. Drappeau–Pratt–Radziwiłł (ANT 2023): beyond 2 (to 2+50/1093) for all primitive characters with conductor in [Q/2,Q]. I found no extension past 2 for the quadratic family; ratios-conjecture computations predict the answer.",
+"grade": "A",
+"refs": [
+"https://arxiv.org/abs/2002.11968",
+"https://msp.org/ant/2023/17-4/ant-v17-n4-p01-p.pdf"
+],
+"id": "AS1-05",
+"issues": "Özlük–Snyder: support (−2,2) under GRH for quadratic family; Rubinstein for n-level. Drappeau–Pratt–Radziwiłł (ANT 2023): beyond 2 (to 2+50/1093) for all primitive characters with conductor in [Q/2,Q]. I found no extension past 2 for the quadratic family; ratios-conjecture computations predict the answer."
+},
+{
+"assumption": "Stability of Gaussian elimination with pivoting (growth factor assumptions in numerical linear algebra)",
+"title": "Is the complete-pivoting growth factor superlinear?",
+"W": "Numerical analysts long assumed the worst-case growth factor of Gaussian elimination with complete pivoting is at most n. This was refuted: it is at least 1.0045n for n>10, and the limsup of g_n/n is at least 3.317. Decide whether g_n grows faster than every linear function, or better, like n^{1+δ}.",
+"M": "Let $g_n=\\sup_A \\max_{i,j,k}|a^{(k)}_{ij}|/\\max_{ij}|a_{ij}|$ over real nonsingular $n\\times n$ $A$ under complete pivoting. Known: $g_n\\ge 1.0045n$ ($n>10$), $\\limsup g_n/n\\ge 3.317$ (Edelman–Urschel 2024), $g_n\\le n^{0.2079\\ln n+0.91}$ (Bisain–Edelman–Urschel 2024). Prove $g_n/n\\to\\infty$ along a subsequence, or $g_n\\ge n^{1+\\delta}$ infinitely often, or $g_n=O(n)$.",
+"why": "Complete pivoting is the textbook 'provably safe' variant of Gaussian elimination. The gap between linear lower bounds and a quasi-polynomial upper bound has stood since Wilkinson (1961), apart from one 2024 improvement. Superlinear growth would mean the classical stability folklore is false asymptotically, while O(n) would vindicate it.",
+"status_notes": "Folklore conjecture g_n≤n refuted for n>10 (Edelman–Urschel 2024, arXiv 2303.04892; Gould 1991 for n=13 in floating point). Their numerics give g_100>3n, and they suggest g_n/n→∞. Upper bound improved for the first time since Wilkinson: n^{0.2079 ln n+0.91} (arXiv 2312.00994).",
+"grade": "A",
+"refs": [
+"https://arxiv.org/abs/2303.04892",
+"https://arxiv.org/abs/2312.00994"
+],
+"id": "AS1-12",
+"issues": "Folklore conjecture g_n≤n refuted for n>10 (Edelman–Urschel 2024, arXiv 2303.04892; Gould 1991 for n=13 in floating point). Their numerics give g_100>3n, and they suggest g_n/n→∞. Upper bound improved for the first time since Wilkinson: n^{0.2079 ln n+0.91} (arXiv 2312.00994)."
+}
+]

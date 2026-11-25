@@ -1,0 +1,96 @@
+[
+{
+"assumption": "3SUM hypothesis (and its geometric consequences)",
+"title": "Three collinear points after the fall of 3SUM",
+"W": "Given n points in the plane (integer coordinates poly(n), or real RAM), decide whether three are collinear in O(n^{2-eps}) time for some eps>0; or give a fine-grained reduction showing Collinearity is hard under a hypothesis not refuted by Alman-Vassilevska Williams (e.g. 4SUM, 3SUM-Indexing, or a new geometric hypothesis).",
+"M": "Yes: the 3SUM-hard geometric family (GeomBase, collinearity, minimum-area triangle, ...) collapses below n^2 and the thin-product technique is shown to handle point-line incidences. No (conditional): a new hardness source separating geometric 3SUM from integer 3SUM, re-founding the Gajentaan-Overmars program.",
+"why": "3SUM reduces TO collinearity, not back; once 3SUM is subquadratic, collinearity's n^2 lower bound has no support. AVW explicitly say it is now open. Sharp, single problem, and meaningful either way.",
+"status_notes": "AVW (arXiv:2610.06783, Oct 2026, preprint) give deterministic O(n^1.9992) integer 3SUM and claim to refute real 3SUM via Las Vegas algorithms; they state that truly subquadratic collinearity is now open. Majdoddin (arXiv:2610.17420) improves 3SUM to n^{1.9945+o(1)}.",
+"grade": "A",
+"refs": [
+"Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",
+"Majdoddin, Thin matrix products up to D<=N^0.172 and lossless reductions for 3SUM, Exact Triangle and APSP, arXiv:2610.17420 (Oct 2026)",
+"Gajentaan, Overmars, On a class of O(n^2) problems in computational geometry, CGTA 1995"
+],
+"id": "AS0-00",
+"issues": "AVW (arXiv:2610.06783, Oct 2026, preprint) give deterministic O(n^1.9992) integer 3SUM and claim to refute real 3SUM via Las Vegas algorithms; they state that truly subquadratic collinearity is now open. Majdoddin (arXiv:2610.17420) improves 3SUM to n^{1.9945+o(1)}."
+},
+{
+"assumption": "APSP / Exact Triangle hypothesis",
+"title": "All-Edges Triangle in the (n, n, sqrt n) tripartite regime",
+"W": "Given a tripartite graph with parts of sizes n, n, sqrt(n) and O(n^{3/2}) edges, determine for every edge whether it lies in a triangle in O(n^{2-eps}) time (combinatorial or algebraic).",
+"M": "Yes: AVW note this has consequences for girth approximation and pushes the lopsided method outside its n^{0.12} middle-part limit. No (conditional lower bound from a surviving hypothesis): pins the exact frontier of the new technique.",
+"why": "Explicit open regime named in AVW; it is precisely the boundary of the refuted APSP-type hardness, with a concrete application.",
+"status_notes": "AVW's method needs the middle part to have at most ~n^{0.12} vertices; the sqrt(n) case is stated open (arXiv:2610.06783, Oct 2026). Prior hardness for such regimes came from 3SUM/APSP, both now refuted (claimed).",
+"grade": "A",
+"refs": [
+"Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)"
+],
+"id": "AS0-03",
+"issues": "AVW's method needs the middle part to have at most ~n^{0.12} vertices; the sqrt(n) case is stated open (arXiv:2610.06783, Oct 2026). Prior hardness for such regimes came from 3SUM/APSP, both now refuted (claimed)."
+},
+{
+"assumption": "Gap-ETH (vs ETH)",
+"title": "Densest k-Subgraph and k-Biclique FPT-inapproximability from plain ETH",
+"W": "Prove, assuming only ETH, that Densest k-Subgraph cannot be approximated within k^{o(1)} (or any omega(1) factor) in f(k) n^{o(k)} time, or that k-Biclique has no f(k)n^{o(sqrt k)}-type algorithm, matching known Gap-ETH-based results.",
+"M": "Yes: removes Gap-ETH from another flagship parameterized-inapproximability result, continuing the PIH-under-ETH program. A barrier (e.g. showing DkS hardness needs average-case-type gap structure) would identify what Gap-ETH genuinely adds over ETH.",
+"why": "After Guruswami-Lin-Ren-Sun-Wu (PIH under ETH) and lattice results moving from Gap-ETH to ETH, DkS/k-Biclique are the prominent results still listed only under Gap-ETH.",
+"status_notes": "Gap-ETH remains unproven from ETH. PIH proved under ETH (Guruswami-Lin-Ren-Sun-Wu, STOC 2024); CVP_p and SVP_p (p>2) moved to ETH (Aggarwal-Gupta-Morolia-Zhang, ICALP 2026), which still list DkS/k-Biclique as Gap-ETH-only.",
+"grade": "A",
+"refs": [
+"Guruswami, Lin, Ren, Sun, Wu, Parameterized Inapproximability Hypothesis under ETH, STOC 2024, arXiv:2311.16587",
+"Aggarwal, Gupta, Morolia, Zhang, Mind the Gap? Not for SVP Hardness under ETH!, ICALP 2026, arXiv:2504.02695",
+"Chalermsook et al., From Gap-ETH to FPT-inapproximability, FOCS 2017"
+],
+"id": "AS0-09",
+"issues": "Gap-ETH remains unproven from ETH. PIH proved under ETH (Guruswami-Lin-Ren-Sun-Wu, STOC 2024); CVP_p and SVP_p (p>2) moved to ETH (Aggarwal-Gupta-Morolia-Zhang, ICALP 2026), which still list DkS/k-Biclique as Gap-ETH-only."
+},
+{
+"assumption": "Planted clique / low-degree conjecture",
+"title": "A uniformly samplable counterexample to the poly-time low-degree conjecture",
+"W": "Mao's counterexample (permutation-invariant graph distributions with zero low-degree advantage up to degree Theta(log^{r-1} n) that a linear-time rank test detects after constant-rate resampling) needs non-uniform advice for its Reed-Muller subspace / evaluation-point seed. Find a polynomial-time algorithm that outputs a good seed, giving a uniformly poly-time samplable counterexample; or show that every uniformly samplable permutation-invariant distribution with vanishing degree-polylog advantage is hard for poly-time noise-robust tests (a repaired conjecture).",
+"M": "Uniform counterexample: the low-degree heuristic is refuted even in its most cryptographically natural form, undermining low-degree-based hardness predictions (planted clique variants, tensor PCA, random CSPs). Repaired conjecture: gives the field a defensible replacement.",
+"why": "Stated open by Mao (Jul 2026); it is the single remaining gap between the polynomial-time counterexample and a fully satisfying refutation.",
+"status_notes": "Buhai-Hsieh-Jain-Kothari (arXiv:2505.17360, 2025) refuted the quasi-polynomial low-degree conjecture; Mao (arXiv:2607.20318, Jul 2026) refuted the polynomial-time graph version, leaving uniform samplability and a natural repair open. Planted clique itself (k = n^{1/2-delta}) remains believed hard.",
+"grade": "A",
+"refs": [
+"Mao, The Polynomial-Time Low-Degree Conjecture is False, arXiv:2607.20318",
+"Buhai, Hsieh, Jain, Kothari, The Quasi-Polynomial Low-Degree Conjecture is False, arXiv:2505.17360",
+"Hopkins, Statistical inference and the sum of squares method, PhD thesis 2018"
+],
+"id": "AS0-13",
+"issues": "Buhai-Hsieh-Jain-Kothari (arXiv:2505.17360, 2025) refuted the quasi-polynomial low-degree conjecture; Mao (arXiv:2607.20318, Jul 2026) refuted the polynomial-time graph version, leaving uniform samplability and a natural repair open. Planted clique itself (k = n^{1/2-delta}) remains believed hard."
+},
+{
+"assumption": "Elliott–Halberstam conjecture (level of distribution of primes)",
+"title": "Break the 5/8 barrier for primes with triply well-factorable weights",
+"W": "The primes are known to be evenly spread over residue classes, on average over moduli up to x^{5/8}, if the average is weighted by triply well-factorable weights. Push the exponent past 5/8, or show the dispersion method cannot.",
+"M": "Let $\\theta^*$ be the supremum of $\\theta$ such that for every triply well-factorable sequence $\\lambda_q$ supported on $q\\le x^{\\theta}$ and every fixed $a\\ne0$: $\\sum_{q\\le x^\\theta,(q,a)=1}\\lambda_q\\big(\\pi(x;q,a)-\\pi(x)/\\varphi(q)\\big)\\ll_{A,a} x(\\log x)^{-A}$. Known: $\\theta^*\\ge 5/8$ (Pascadi 2025; earlier $3/5$ Maynard, $66/107$ Lichtman). Prove $\\theta^*>5/8$.",
+"why": "Exponents past 1/2 are the only unconditional form of Elliott–Halberstam usable in sieves; each step (4/7, 3/5, 66/107, 5/8) improved twin-prime upper bounds and Goldbach-type results. Pascadi states that 5/8 seems to be the limit of current Kloosterman/large-sieve technology in every sieve-relevant setting, so passing it would need a new idea, and a proven barrier would be informative too.",
+"status_notes": "EH open. Level beyond 1/2 known only for well-factorable weights: BFI 4/7; Maynard 3/5; Lichtman 66/107 (5/8 under Selberg's eigenvalue conjecture); Pascadi 2025 reached 5/8 unconditionally (arXiv 2505.00653), noting quadruply well-factorable weights do not help.",
+"grade": "A",
+"refs": [
+"https://arxiv.org/abs/2505.00653",
+"https://arxiv.org/abs/2309.08522",
+"https://arxiv.org/abs/2404.04239"
+],
+"id": "AS1-00",
+"issues": "EH open. Level beyond 1/2 known only for well-factorable weights: BFI 4/7; Maynard 3/5; Lichtman 66/107 (5/8 under Selberg's eigenvalue conjecture); Pascadi 2025 reached 5/8 unconditionally (arXiv 2505.00653), noting quadruply well-factorable weights do not help."
+},
+{
+"assumption": "Positive metric entropy / ergodicity of conservative systems (Sinai's standard-map conjecture)",
+"title": "Positive metric entropy of the Chirikov standard map at an explicit moderate parameter",
+"W": "Sinai conjectured that the standard map has positive metric entropy for every parameter k>0. After a 2026 AI-generated non-effective proof for large k, Slijepčević proved it for every k ≥ exp(2^{50000}). Bring the threshold down to a physically meaningful range, e.g. all k ≥ 10^6, or even a single explicit k ≤ 100.",
+"M": "Let $f_k(x,y)=(x+y+k\\sin x,\\ y+k\\sin x)$ on $\\mathbb T^2$ and $h_m(f_k)$ its metric entropy for Lebesgue measure. Known: $\\log(2\\pi k+4)-2^{430}\\le h_m(f_k)$ for all $k\\ge \\exp(2^{50000})$ (Slijepčević 2026). Prove $h_m(f_k)>0$ for all $k\\ge 10^{6}$, or for at least one explicit $k\\le 100$.",
+"why": "This is the most famous instance of the Lyapunov/ergodicity assumption used throughout conservative dynamics and physics: positive exponents on a positive-measure set. The proof now exists for huge k, so the remaining gap is quantitative and well defined, and computer-assisted methods are plausible. Either success, or a mechanism showing the threshold cannot be lowered by these techniques, would be informative.",
+"status_notes": "Open for decades (Sinai, Herman). An OpenAI preprint (2026) proved positivity for all sufficiently large k (non-effective). Slijepčević (arXiv 2611.09361, Nov 2026) made it effective: h_m(f_k)=log k+O(1) for k≥exp(2^50000). Berger–Turaev (2019) proved Herman's positive-entropy conjecture for C^∞-perturbations.",
+"grade": "A",
+"refs": [
+"https://arxiv.org/abs/2611.09361",
+"https://arxiv.org/abs/2507.11375",
+"https://arxiv.org/abs/2003.09329"
+],
+"id": "AS1-10",
+"issues": "Open for decades (Sinai, Herman). An OpenAI preprint (2026) proved positivity for all sufficiently large k (non-effective). Slijepčević (arXiv 2611.09361, Nov 2026) made it effective: h_m(f_k)=log k+O(1) for k≥exp(2^50000). Berger–Turaev (2019) proved Herman's positive-entropy conjecture for C^∞-perturbations."
+}
+]

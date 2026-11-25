@@ -1,0 +1,97 @@
+[
+{
+"assumption": "APSP / Exact Triangle hypothesis",
+"title": "Beyond the D <= N^{0.172} wall for thin matrix products",
+"W": "AVW's core subroutine computes requested entries of XY (N x D times D x N, D <= N^{eps}) in N^2/D^{c} operations; Majdoddin extends the regime to eps < ln4/(5 ln5) ~ 0.17227, matching Coppersmith's 1982 exponent for the same tensor. Either (a) extend the thin-product theorem to some eps > 0.17227 (e.g. via a different base identity, or settle Majdoddin's open thin product <34,2,35>), giving 3SUM/APSP exponents below 1.9945 / 2.9945; or (b) prove that every partial-product-tensor/Coppersmith-style scheme is limited to eps <= 0.17227.",
+"M": "(a) pushes the refutation toward a substantial polynomial saving and tests whether 3SUM might be near-linear-ish (n^{1.5}?); (b) gives the first barrier for the new method, analogous to the Ambainis-Filmus-Le Gall barriers for omega.",
+"why": "The refutation is real but the saving is tiny (n^{0.0055}); whether it is a crack or a collapse is the key question post-October 2026.",
+"status_notes": "APSP refuted in word-RAM: O(n^{2.9995}) (AVW arXiv:2610.06783, Oct 2026 preprint, unverified by peer review); Majdoddin (arXiv:2610.17420, AI-assisted) gives n^{2.9945+o(1)} and lists the <34,2,35> thin product and other base identities as open.",
+"grade": "A",
+"refs": [
+"Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",
+"Majdoddin, Thin matrix products up to D<=N^0.172 and lossless reductions for 3SUM, Exact Triangle and APSP, arXiv:2610.17420 (Oct 2026)",
+"Coppersmith, Rapid multiplication of rectangular matrices, SICOMP 1982"
+],
+"id": "AS0-02",
+"issues": "APSP refuted in word-RAM: O(n^{2.9995}) (AVW arXiv:2610.06783, Oct 2026 preprint, unverified by peer review); Majdoddin (arXiv:2610.17420, AI-assisted) gives n^{2.9945+o(1)} and lists the <34,2,35> thin product and other base identities as open."
+},
+{
+"assumption": "OMv conjecture (and hinted variants)",
+"title": "Hinted OMv outside the thin regime",
+"W": "For the van den Brand-Nanongkai-Saranurak hinted Mv conjectures (v-hinted Mv, Mv-hinted Mv, uMv-hinted uMv) with hint dimension n^tau, give a polynomially faster algorithm for some tau >= 0.1204 (ideally tau = 1/2), or prove one of them equivalent to plain Boolean OMv for tau >= some explicit threshold.",
+"M": "Yes: removes the conditional lower bounds for dynamic matrix inverse / dynamic distances in a new range (AVW say the tau~0.53 bounds survive); equivalence: shows the thin regime was special and OMv is the true barrier.",
+"why": "AVW refute these conjectures only for tau < 1/18 (smaller savings up to tau < 0.1204). The phase transition between refuted and unrefuted is now an explicit, checkable frontier.",
+"status_notes": "Plain OMv: best n^3/2^{Omega(sqrt log n)} (Larsen-Williams SODA 2017), still standing; AVW (arXiv:2610.06783, Oct 2026) refute three rectangular hinted OMv conjectures only for thin hints, and state the tau~0.53 dynamic matrix inverse bounds are not affected.",
+"grade": "A",
+"refs": [
+"Alman, Vassilevska Williams, Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, arXiv:2610.06783 (Oct 2026)",
+"van den Brand, Nanongkai, Saranurak, Dynamic matrix inverse: improved algorithms and matching conditional lower bounds, FOCS 2019",
+"Larsen, Williams, Faster online matrix-vector multiplication, SODA 2017"
+],
+"id": "AS0-05",
+"issues": "Plain OMv: best n^3/2^{Omega(sqrt log n)} (Larsen-Williams SODA 2017), still standing; AVW (arXiv:2610.06783, Oct 2026) refute three rectangular hinted OMv conjectures only for thin hints, and state the tau~0.53 dynamic matrix inverse bounds are not affected."
+},
+{
+"assumption": "Unique Games Conjecture / Small-Set Expansion Hypothesis",
+"title": "A super-constant-degree SoS integrality gap for Unique Games",
+"W": "Construct Unique Games instances with value <= eps on which degree-d Sum-of-Squares has value >= 1-eps, for some d = omega(1) (any slowly growing function of n), or show degree-O(1) SoS achieves a (1-eps, delta) distinguishing guarantee on all UG instances.",
+"M": "Gap: the first evidence that the strongest known algorithmic hierarchy fails on UG, strongly supporting UGC. Algorithm: refutes UGC (assuming NP is not in quasi-poly time for the 2-to-2 case), a major event.",
+"why": "Known gap instances (short code, noisy hypercube) are solved by constant-degree SoS (Barak et al. 2012), so the canonical lower-bound evidence for UGC is missing; this is the sharpest SoS-side test of the conjecture.",
+"status_notes": "UGC open; 2-to-2 Games theorem proved (Khot-Minzer-Safra 2018). Subexponential algorithm 2^{n^{poly(eps)}} (Arora-Barak-Steurer). To our knowledge no omega(1)-degree SoS integrality gap for UG is known (listed in Barak's SoS open problems). Not verified for 2025-26 developments.",
+"grade": "A",
+"refs": [
+"Barak, Brandão, Harrow, Kelner, Steurer, Zhou, Hypercontractivity, sum-of-squares proofs, and their applications, STOC 2012, arXiv:1205.4484",
+"Khot, Minzer, Safra, Pseudorandom sets in Grassmann graph have near-perfect expansion, FOCS 2018",
+"Barak, Sum of Squares: open problems (lecture notes)"
+],
+"id": "AS0-11",
+"issues": "UGC open; 2-to-2 Games theorem proved (Khot-Minzer-Safra 2018). Subexponential algorithm 2^{n^{poly(eps)}} (Arora-Barak-Steurer). To our knowledge no omega(1)-degree SoS integrality gap for UG is known (listed in Barak's SoS open problems). Not verified for 2025-26 developments."
+},
+{
+"assumption": "Sunflower conjecture (Erdős-Rado)",
+"title": "Breaking the log k barrier for 3-petal sunflowers",
+"W": "Show every family of more than (o(log k))^k sets of size k (e.g. (log k)^{(1-c)k} or (log log k)^{O(k)}) contains a sunflower with 3 petals.",
+"M": "Yes: first bound beyond what robust sunflowers can give (they provably need a log k factor), so a genuinely new non-robust technique, with applications to monotone circuit lower bounds and data structures. Failure of natural approaches clarifies whether C^k is plausible.",
+"why": "The robust-sunflower method is provably stuck at (O(w log k))^k; w=3 is the smallest open case of the Erdős-Rado conjecture and the most-studied.",
+"status_notes": "Best bound O(w log k)^k (Alweiss-Lovett-Wu-Zhang 2020; Rao; Bell-Chueluecha-Warnke), with a matching Omega(log k)^{k-sqrt k} lower bound for robust sunflowers; a 2025 survey (arXiv:2509.14790) states the conjecture open. A 2026 claim for shifted families (arXiv:2606.02667) appears to have a gap and does not cover general families.",
+"grade": "A",
+"refs": [
+"Alweiss, Lovett, Wu, Zhang, Improved bounds for the sunflower lemma, Annals of Math 2021",
+"The Story of Sunflowers (survey), arXiv:2509.14790",
+"Bell, Chueluecha, Warnke, Note on sunflowers, Discrete Math 2021"
+],
+"id": "AS0-18",
+"issues": "Best bound O(w log k)^k (Alweiss-Lovett-Wu-Zhang 2020; Rao; Bell-Chueluecha-Warnke), with a matching Omega(log k)^{k-sqrt k} lower bound for robust sunflowers; a 2025 survey (arXiv:2509.14790) states the conjecture open. A 2026 claim for shifted families (arXiv:2606.02667) appears to have a gap and does not cover general families."
+},
+{
+"assumption": "Malle conjecture (counting number fields)",
+"title": "Lower the exponent 0.7785 for A4-quartic fields",
+"W": "Malle predicts about X^{1/2} log X quartic fields with Galois group A4 and discriminant up to X. Loughran–Paterson (2025) proved the matching lower bound. The best upper bound is still about X^{0.7785}. Lower the exponent.",
+"M": "Let $N_{A_4}(X)=\\#\\{L/\\mathbb Q\\ \\text{quartic},\\ \\mathrm{Gal}=A_4,\\ |\\Delta_L|\\le X\\}$. Known: $X^{1/2}\\log X\\ll N_{A_4}(X)\\ll X^{0.7785}$ (Loughran–Paterson 2025; Bhargava–Shankar–Taniguchi–Thorne–Tsimerman–Zhao, JAMS 2020, Thm 1.4). Prove $N_{A_4}(X)\\ll X^{\\beta}$ for some $\\beta<0.778$, ideally $\\beta=1/2+\\varepsilon$.",
+"why": "A4 is the smallest group whose Malle count is open in both exponent and log-power. The upper bound reduces to bounding 2-torsion in class groups of cyclic cubic fields, so any gain is a gain on ℓ-torsion bounds, the bottleneck in most of Malle's conjecture. Since recent counterexamples hit Türkelli's refined b-constant, the cleanest unrefuted test case should be settled.",
+"status_notes": "Weak and strong Malle are open in general. Klüners' C3≀C2 counterexample to the b-constant is now asymptotically resolved (Alberts–Lemke Oliver–Wang–Wood, arXiv 2501.18574). Wang (2025) refuted Türkelli's modified b. A4: lower bound ≫X^{1/2}log X (Loughran–Paterson 2025), upper ≪X^{0.7785} (BSTTTZ 2020).",
+"grade": "A",
+"refs": [
+"https://arxiv.org/abs/2510.05248",
+"https://arxiv.org/abs/2501.18574",
+"https://arxiv.org/abs/2502.04261"
+],
+"id": "AS1-08",
+"issues": "Weak and strong Malle are open in general. Klüners' C3≀C2 counterexample to the b-constant is now asymptotically resolved (Alberts–Lemke Oliver–Wang–Wood, arXiv 2501.18574). Wang (2025) refuted Türkelli's modified b. A4: lower bound ≫X^{1/2}log X (Loughran–Paterson 2025), upper ≪X^{0.7785} (BSTTTZ 2020)."
+},
+{
+"assumption": "Smoothed-analysis explanation of simplex-method efficiency",
+"title": "Optimal dimension dependence in the smoothed complexity of the simplex method",
+"W": "Bach and Huiberts (2025) found a simplex method with smoothed complexity O(σ^{-1/2} d^{11/4} log^{7/4} n) pivots and showed σ^{-1/2} is optimal. In the dimension d, the best lower bound is only about d^{1/2}. Close the gap in d.",
+"M": "Let $S(d,n,\\sigma)$ be the best smoothed complexity (expected pivot count, worst over unit-norm data perturbed by $N(0,\\sigma^2)$) of any simplex method on LPs with $d$ variables and $n$ constraints. Known: $S\\ll\\sigma^{-1/2}d^{11/4}\\log^{7/4}n$, and a diameter lower bound $\\Omega(\\sigma^{-1/2}d^{1/2}\\ln(4/\\sigma)^{-1/4})$ at $n=\\lfloor(4/\\sigma)^d\\rfloor$ (Bach–Huiberts 2025). Determine the exponent of $d$: improve $11/4$ or prove a lower bound $d^{\\beta}$ with $\\beta>1/2$.",
+"why": "Smoothed analysis is the standard explanation for why the simplex method works in practice. With σ-dependence now optimal, the d exponent is the remaining question of whether the explanation is quantitatively sharp. A matching lower bound would come from new constructions of smoothed polytopes with long shadow paths.",
+"status_notes": "Spielman–Teng (2004) first bound; Huiberts–Lee–Zhang (STOC 2023) O(σ^{-3/2}d^{13/4}log^{7/4}n); Bach–Huiberts (arXiv 2504.04197, 2025) O(σ^{-1/2}d^{11/4}log^{7/4}n), σ-optimal up to polylogs, d gap open.",
+"grade": "A",
+"refs": [
+"https://arxiv.org/abs/2504.04197",
+"https://arxiv.org/abs/2211.11860"
+],
+"id": "AS1-14",
+"issues": "Spielman–Teng (2004) first bound; Huiberts–Lee–Zhang (STOC 2023) O(σ^{-3/2}d^{13/4}log^{7/4}n); Bach–Huiberts (arXiv 2504.04197, 2025) O(σ^{-1/2}d^{11/4}log^{7/4}n), σ-optimal up to polylogs, d gap open."
+}
+]
