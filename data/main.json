@@ -2143,5 +2143,98 @@
   "formal_status": "formalized",
   "lean": "import Mathlib\n/-! QED-M115: Returning to the identity in SL(3,Z)\nYou are given finitely many 3x3 integer matrices with determinant 1. Can some nonempty product of them (in any order, with repetition) equal the identity matrix? For 2x2 matrices there is an algorithm, and for 4x4 matrices it is known that none exists. Decide whether an algorithm exists for 3x3.\nInformal statement: Let $\\mathcal I_3=\\{(M_1,\\dots,M_k): k\\ge1,\\ M_i\\in SL(3,\\mathbb Z),\\ \\exists\\, m\\ge1,\\ i_1,\\dots,i_m\\in\\{1,\\dots,k\\}:\\ M_{i_1}\\cdots M_{i_m}=I_3\\}$, with instances given as finite lists of integer matrices. Is $\\mathcal I_3$ decidable? Board Claim: $\\mathcal I_3$ is decidable.\nFormalization notes:\n* Instances are `List (Fin 3 → Fin 3 → ℕ)`: a list of 3×3 arrays of natural numbers, each entry\n  decoded to an integer by the zig-zag bijection `zz : ℕ → ℤ` (`2n ↦ n`, `2n+1 ↦ -(n+1)`). This is a\n  computable bijection, so it is just a `Primcodable` encoding of lists of integer matrices (it\n  avoids relying on a `Primcodable ℤ` / `Matrix` instance). `toMat` turns an array into a\n  `Matrix (Fin 3) (Fin 3) ℤ`.\n* `Ident3 L`: every matrix in `L` has determinant 1 (membership in `SL(3,ℤ)`), and some NONEMPTY\n  word `w` in the indices of `L` (repetition allowed, any order) has product `1`. The empty list\n  is automatically a no-instance (`Fin 0` admits no nonempty word), matching `k ≥ 1`. Lists\n  containing a matrix of determinant `≠ 1` are no-instances; since the determinant test is\n  computable this does not change decidability (it is the language $\\mathcal I_3$ literally).\n* `List.prod` multiplies left to right, `M_{i_1} ⋯ M_{i_m}`; the order convention is irrelevant\n  for the identity problem anyway (reverse words).\n* Decidability is Mathlib's `ComputablePred`. `Claim` = the identity problem for `SL(3,ℤ)` is\n  decidable; `¬Claim` = it is undecidable. The predicate is r.e. (enumerate words), so the content\n  is co-r.e.-ness / an algorithm; neither side is trivial.\n-/\nnamespace OpenProblems.QEDM115\nnoncomputable section\n\n/-- Zig-zag bijection `ℕ → ℤ`: `2n ↦ n`, `2n+1 ↦ -(n+1)`. -/\ndef zz (n : ℕ) : ℤ :=\n  if n % 2 = 0 then ((n / 2 : ℕ) : ℤ) else -((n / 2 : ℕ) : ℤ) - 1\n\n/-- The integer matrix encoded by a 3×3 array of codes. -/\ndef toMat (A : Fin 3 → Fin 3 → ℕ) : Matrix (Fin 3) (Fin 3) ℤ :=\n  Matrix.of (fun i j : Fin 3 => zz (A i j))\n\n/-- `L` is a list of `SL(3,ℤ)` matrices some nonempty product of which is the identity. -/\ndef Ident3 (L : List (Fin 3 → Fin 3 → ℕ)) : Prop :=\n  (∀ A ∈ L, (toMat A).det = 1) ∧\n    ∃ w : List (Fin L.length), w ≠ [] ∧\n      (w.map (fun i : Fin L.length => toMat (L.get i))).prod = 1\n\n/-- The identity problem for `SL(3,ℤ)` is decidable. -/\ndef Claim : Prop :=\n  ComputablePred Ident3\n\nend\nend OpenProblems.QEDM115\n",
   "lean_gap": null
+ },
+ {
+  "id": "QED-M116",
+  "review_id": "R3-H03",
+  "title": "Spectral gap of the spin-2 valence-bond-solid (AKLT) model on the square lattice",
+  "area": "Mathematical physics",
+  "difficulty": 6.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Conjectured by Affleck, Kennedy, Lieb, Tasaki (1988); status per Pomata-Wei (2020) and Jackson-Nachtergaele-Young (2026).",
+  "results": null,
+  "premise_risks": [
+   "Model named after people (AKLT), but the question is the spectral-gap property, not a named conjecture",
+   "Partly approachable by a large certified finite-size computation; could fall to a computer-assisted proof",
+   "Board already has AKLT on the hat (N-457) - related theme"
+  ],
+  "plain": "Put a quantum spin 2 (a 5-dimensional space) at every site of an L x L periodic square grid. For each edge, add the energy of projecting the two neighbouring spins onto their joint spin-4 state. The resulting Hamiltonian has ground energy 0, attained by the AKLT valence-bond state. Show that the first excited level stays a fixed distance above 0 however large L is. This gap was proved for the hexagonal lattice in 2020 and for many decorated square lattices, but not for the plain square lattice.",
+  "math": "Let $\\mathcal H_L=\\bigotimes_{x\\in(\\mathbb Z/L\\mathbb Z)^2}\\mathbb C^5$, let $\\mathbf S_x$ be the spin-2 operators at $x$, and for a nearest-neighbour edge $xy$ of the torus let $P^{(4)}_{xy}$ be the orthogonal projection onto the eigenspace $\\{(\\mathbf S_x+\\mathbf S_y)^2=20\\}$ (total spin 4). Let $H_L=\\sum_{xy}P^{(4)}_{xy}$, so $H_L\\ge0$ and $\\ker H_L\\neq\\{0\\}$. Prove there is $\\gamma>0$ with $\\mathrm{spec}(H_L)\\subset\\{0\\}\\cup[\\gamma,\\infty)$ for all $L\\ge3$.",
+  "novelty": 3,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/pdf/2010.03137",
+   "https://arxiv.org/pdf/1905.01275",
+   "https://arxiv.org/pdf/1901.09297",
+   "https://pdf.arxiv.org/pdf/2212.11872",
+   "https://arxiv.org/pdf/2605.12184",
+   "https://ar5iv.labs.arxiv.org/html/1308.3631"
+  ],
+  "lean": "import Mathlib\n/-! QED-M116: Spectral gap of the spin-2 AKLT model on the square lattice\nPut a quantum spin 2 (a 5-dimensional space) at every site of an L x L periodic square grid. For each edge, add the energy of projecting the two neighbouring spins onto their joint spin-4 state. The resulting Hamiltonian has ground energy 0, attained by the AKLT valence-bond state. Show that the first excited level stays a fixed distance above 0 however large L is. This gap was proved for the hexagonal lattice in 2020 and for many decorated square lattices, but not for the plain square lattice.\nInformal statement: Let $\\mathcal H_L=\\bigotimes_{x\\in(\\mathbb Z/L\\mathbb Z)^2}\\mathbb C^5$, let $\\mathbf S_x$ be the\nspin-2 operators at $x$, and for a nearest-neighbour edge $xy$ of the torus let $P^{(4)}_{xy}$ be the orthogonal\nprojection onto the eigenspace $\\{(\\mathbf S_x+\\mathbf S_y)^2=20\\}$ (total spin 4). Let $H_L=\\sum_{xy}P^{(4)}_{xy}$,\nso $H_L\\ge0$ and $\\ker H_L\\neq\\{0\\}$. Prove there is $\\gamma>0$ with\n$\\mathrm{spec}(H_L)\\subset\\{0\\}\\cup[\\gamma,\\infty)$ for all $L\\ge3$.\nFormalization notes:\n* Sites: the discrete torus `Fin L × Fin L` with periodic successor `succMod i = (i+1) mod L`.\n  Each site `x` contributes the two edges `x — right x` and `x — up x`; for `L ≥ 3` these are\n  the `2L²` nearest-neighbour edges of the torus, each counted exactly once, with no loops or\n  multi-edges.\n* Hilbert space: `ℂ^(Config L)` where `Config L = Site L → Fin 5` is the product basis\n  (basis vector `k : Fin 5` at a site is the `S^z` eigenvector with `m = 2 - k`). Operators are\n  matrices `Matrix (Config L) (Config L) ℂ`; this is exactly `⊗_x ℂ^5` in the product basis.\n* Spin-2 matrices: `Sz = diag(2,1,0,-1,-2)`, `S⁺|m⟩ = √(6 - m(m+1)) |m+1⟩` (entries 2, √6, √6, 2\n  on the superdiagonal), `S⁻ = (S⁺)ᵀ`. Two-site `S·S = Sz⊗Sz + ½(S⁺⊗S⁻ + S⁻⊗S⁺)`, and the\n  two-site Casimir `C = (S₁+S₂)² = S₁² + S₂² + 2 S₁·S₂ = 12 + 2 S₁·S₂` (since `S² = s(s+1) = 6`).\n  `C` is Hermitian with spectrum `{j(j+1) : j = 0..4} = {0,2,6,12,20}`, so the spectral\n  projection onto `C = 20` (total spin 4, a 9-dimensional space) is the Lagrange polynomial\n  `P4 = C(C-2)(C-6)(C-12)/(20·18·14·8)`, `20·18·14·8 = 40320`. (Checked numerically: `P4² = P4`,\n  `tr P4 = 9`.)\n* Embedding at an edge `(x,y)`: matrix entry `⟨σ|P_{xy}|τ⟩ = P4[(σx,σy),(τx,τy)]` if `σ` and `τ`\n  agree off `{x,y}`, else 0. The off-edge agreement is written decidably as\n  `τ = update (update σ x (τ x)) y (τ y)`.\n* Gap: `H L` is Hermitian and positive semidefinite, so its spectrum is real and ⊆ [0,∞);\n  the spectrum of a finite matrix is its set of eigenvalues, stated here directly via\n  `H.mulVec v = μ • v`, `v ≠ 0`. `Claim`: one `γ > 0` works for all `L ≥ 3` — no eigenvalue in\n  `(0, γ)` (kernel degeneracy allowed). Each fixed `L` trivially has some positive gap, so `Claim`\n  is equivalent to `inf_{L ≥ 3} gap(H_L) > 0`, the uniform spectral gap of the AKLT literature.\n  Proving `¬Claim` = the gaps above the ground space tend to 0 along a sequence of `L`\n  (gaplessness).\n-/\nnamespace OpenProblems.QEDM116\nnoncomputable section\n\n/-- Sites of the `L × L` discrete torus. -/\nabbrev Site (L : ℕ) : Type := Fin L × Fin L\n\n/-- Product-basis labels: a spin-2 basis state (`k : Fin 5`, `m = 2 - k`) at each site. -/\nabbrev Config (L : ℕ) : Type := Site L → Fin 5\n\n/-- Periodic successor `i ↦ (i + 1) mod L`. -/\ndef succMod {L : ℕ} (i : Fin L) : Fin L :=\n  ⟨(i.val + 1) % L, Nat.mod_lt _ (Nat.lt_of_le_of_lt (Nat.zero_le _) i.isLt)⟩\n\n/-- Horizontal neighbour. -/\ndef right {L : ℕ} (x : Site L) : Site L := (succMod x.1, x.2)\n\n/-- Vertical neighbour. -/\ndef up {L : ℕ} (x : Site L) : Site L := (x.1, succMod x.2)\n\n/-- Spin-2 `S^z = diag(2,1,0,-1,-2)`. -/\ndef Sz : Matrix (Fin 5) (Fin 5) ℂ := Matrix.diagonal ![2, 1, 0, -1, -2]\n\n/-- Spin-2 raising operator, `S⁺|m⟩ = √(6 - m(m+1)) |m+1⟩`. -/\ndef Splus : Matrix (Fin 5) (Fin 5) ℂ :=\n  Matrix.of ![![0, 2, 0, 0, 0],\n              ![0, 0, (Real.sqrt 6 : ℂ), 0, 0],\n              ![0, 0, 0, (Real.sqrt 6 : ℂ), 0],\n              ![0, 0, 0, 0, 2],\n              ![0, 0, 0, 0, 0]]\n\n/-- Spin-2 lowering operator `S⁻ = (S⁺)ᵀ` (real entries). -/\ndef Sminus : Matrix (Fin 5) (Fin 5) ℂ := Splus.transpose\n\n/-- Kronecker product of two single-site operators. -/\ndef kron2 (A B : Matrix (Fin 5) (Fin 5) ℂ) : Matrix (Fin 5 × Fin 5) (Fin 5 × Fin 5) ℂ :=\n  Matrix.of fun p q => A p.1 q.1 * B p.2 q.2\n\n/-- `S₁·S₂ = Sz⊗Sz + ½ (S⁺⊗S⁻ + S⁻⊗S⁺)`. -/\ndef SdotS : Matrix (Fin 5 × Fin 5) (Fin 5 × Fin 5) ℂ :=\n  kron2 Sz Sz + (1 / 2 : ℂ) • (kron2 Splus Sminus + kron2 Sminus Splus)\n\n/-- Two-site Casimir `(S₁ + S₂)² = 12 + 2 S₁·S₂`, spectrum `{0, 2, 6, 12, 20}`. -/\ndef casimir : Matrix (Fin 5 × Fin 5) (Fin 5 × Fin 5) ℂ :=\n  (12 : ℂ) • (1 : Matrix (Fin 5 × Fin 5) (Fin 5 × Fin 5) ℂ) + (2 : ℂ) • SdotS\n\n/-- Orthogonal projection onto total spin 4 (`casimir = 20`). -/\ndef P4 : Matrix (Fin 5 × Fin 5) (Fin 5 × Fin 5) ℂ :=\n  (1 / 40320 : ℂ) •\n    (casimir * (casimir - (2 : ℂ) • (1 : Matrix (Fin 5 × Fin 5) (Fin 5 × Fin 5) ℂ)) *\n      (casimir - (6 : ℂ) • (1 : Matrix (Fin 5 × Fin 5) (Fin 5 × Fin 5) ℂ)) *\n      (casimir - (12 : ℂ) • (1 : Matrix (Fin 5 × Fin 5) (Fin 5 × Fin 5) ℂ)))\n\n/-- `P4` acting on the sites `x, y` of the torus (identity elsewhere). -/\ndef edgeOp {L : ℕ} (x y : Site L) : Matrix (Config L) (Config L) ℂ :=\n  Matrix.of fun σ τ : Config L =>\n    if τ = Function.update (Function.update σ x (τ x)) y (τ y) then\n      P4 (σ x, σ y) (τ x, τ y)\n    else 0\n\n/-- The spin-2 AKLT Hamiltonian on the `L × L` torus: one `P4` per nearest-neighbour edge. -/\ndef H (L : ℕ) : Matrix (Config L) (Config L) ℂ :=\n  ∑ x : Site L, (edgeOp x (right x) + edgeOp x (up x))\n\n/-- Uniform spectral gap: some `γ > 0` such that, for every `L ≥ 3`, every eigenvalue of `H L`\nis `0` or has real part at least `γ` (all eigenvalues are real since `H L` is Hermitian). -/\ndef Claim : Prop :=\n  ∃ γ : ℝ, 0 < γ ∧ ∀ L : ℕ, 3 ≤ L →\n    ∀ (μ : ℂ) (v : Config L → ℂ), v ≠ 0 → (H L).mulVec v = μ • v → μ = 0 ∨ γ ≤ μ.re\n\nend\nend OpenProblems.QEDM116\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M117",
+  "review_id": "R3-H13",
+  "title": "An exponential improvement of the diagonal Ramsey lower bound",
+  "area": "Combinatorics",
+  "difficulty": 8.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Erdős (1947 bound and question); Spencer (1975)",
+  "results": null,
+  "premise_risks": [
+   "Extremely famous and hard: low novelty, may be judged a famous problem stated directly",
+   "Not a person-named conjecture (Erdős offered a prize for the limit of R(k)^{1/k}, a stronger question)",
+   "Context only: refereed status of Ma–Shen–Xie (arXiv 2025, covered by Quanta 2026) not verified; 2605.25843 is an unrefereed 2026 preprint"
+  ],
+  "plain": "The Ramsey number R(k) is the least N such that every red/blue colouring of the edges of the complete graph K_N contains a one-coloured K_k. Erdos's 1947 random-colouring argument gives R(k) > (sqrt 2)^k, and in nearly 80 years only the constant factor in front has improved. Is there a fixed eps > 0 with R(k) > (sqrt 2 + eps)^k for all large k?",
+  "math": "Prove that there exists $\\varepsilon>0$ such that $R(k,k)\\ge(\\sqrt2+\\varepsilon)^k$ for all sufficiently large $k$; equivalently, for every large $k$ there is a graph on $N\\ge(\\sqrt2+\\varepsilon)^k$ vertices with no clique and no independent set of size $k$. (Best known: $R(k,k)\\ge(1+o(1))\\frac{\\sqrt2}{e}\\,k\\,2^{k/2}$, Spencer 1975.)",
+  "novelty": 1,
+  "importance": 9,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2507.12926",
+   "https://arxiv.org/abs/2605.25843",
+   "https://arxiv.org/abs/2601.05221",
+   "https://annals.math.princeton.edu/2026/203-3/p04",
+   "https://arxiv.org/abs/2303.09521"
+  ],
+  "lean": "import Mathlib\n/-! QED-M117: An exponential improvement of the diagonal Ramsey lower bound\nThe Ramsey number R(k) is the least N such that every red/blue colouring of the edges of the complete graph K_N contains a one-coloured K_k. Erdos's 1947 random-colouring argument gives R(k) > (sqrt 2)^k, and in nearly 80 years only the constant factor in front has improved. Is there a fixed eps > 0 with R(k) > (sqrt 2 + eps)^k for all large k?\nInformal statement: Prove that there exists $\\varepsilon>0$ such that $R(k,k)\\ge(\\sqrt2+\\varepsilon)^k$ for all sufficiently large $k$; equivalently, for every large $k$ there is a graph on $N\\ge(\\sqrt2+\\varepsilon)^k$ vertices with no clique and no independent set of size $k$. (Best known: $R(k,k)\\ge(1+o(1))\\frac{\\sqrt2}{e}\\,k\\,2^{k/2}$, Spencer 1975.)\nFormalization notes:\n* We use the graph form: a red/blue colouring of `K_N` is a simple graph `G` on `Fin N`\n  (red = edge of `G`); a monochromatic `K_k` is a `k`-clique of `G` or of its complement `Gᶜ`.\n  Mathlib's `SimpleGraph.CliqueFree k` says there is no `k`-clique, so a graph on `Fin N` with\n  `G.CliqueFree k ∧ Gᶜ.CliqueFree k` witnesses `R(k,k) > N`.\n* `Claim`: there is `ε > 0` such that for all sufficiently large `k` such a graph exists on\n  `N ≥ (√2 + ε)^k` vertices. This gives `R(k,k) > (√2+ε)^k`; conversely `R(k,k) ≥ (√2+ε)^k`\n  for all large `k` gives `Claim` with `ε/2` in place of `ε` (take `N = R(k,k) - 1`), so the\n  two forms are equivalent. `¬Claim` means: for every `ε > 0`, `R(k,k) < (√2+ε)^k + 1` for\n  infinitely many `k`, i.e. `liminf R(k,k)^{1/k} ≤ √2`.\n-/\nnamespace OpenProblems.QEDM117\nnoncomputable section\nopen Filter\n\ndef Claim : Prop :=\n  ∃ ε : ℝ, 0 < ε ∧ ∀ᶠ k : ℕ in atTop, ∃ N : ℕ, (Real.sqrt 2 + ε) ^ k ≤ (N : ℝ) ∧\n    ∃ G : SimpleGraph (Fin N), G.CliqueFree k ∧ Gᶜ.CliqueFree k\n\nend\nend OpenProblems.QEDM117\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M118",
+  "review_id": "R3-H24",
+  "title": "Exponentially beat the 2^{-n} sphere-packing lower bound",
+  "area": "Geometry",
+  "difficulty": 9.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Minkowski; Klartag; Kabatiansky–Levenshtein",
+  "results": null,
+  "premise_risks": [],
+  "plain": "In high dimension n the best sphere packings known have density only about n²·2^{-n} (up to log factors), barely above the trivial 2^{-n} from greedy/saturated packings, while the best upper bound is about 2^{-0.599n}. Is there a constant c>1 with packings of density at least c^n·2^{-n} in all large dimensions?",
+  "math": "Let $\\Delta_n$ be the supremum of upper densities of packings of congruent balls in $\\mathbb{R}^n$. Prove or disprove: there exist $c>1$ and $N$ such that $\\Delta_n\\ge c^n2^{-n}$ for all $n\\ge N$.",
+  "novelty": 1,
+  "importance": 9,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2610.12619",
+   "https://arxiv.org/abs/2312.10026",
+   "https://arxiv.org/abs/2606.13313",
+   "https://arxiv.org/abs/2608.00920",
+   "https://arxiv.org/abs/math/0508381"
+  ],
+  "lean": "import Mathlib\n/-! QED-M118: Exponentially beat Minkowski's sphere packing lower bound\nIn high dimension n the best sphere packings known have density only about n²·2^{-n} (up to log\nfactors), barely above the trivial 2^{-n} from greedy/saturated packings, while the best upper bound\nis about 2^{-0.599n}. Is there a constant c>1 with packings of density at least c^n·2^{-n} in all\nlarge dimensions?\nInformal statement: Let $\\Delta_n$ be the supremum of upper densities of packings of congruent balls\nin $\\mathbb{R}^n$. Prove or disprove: there exist $c>1$ and $N$ such that $\\Delta_n\\ge c^n2^{-n}$ for\nall $n\\ge N$.\nFormalization notes:\n* Space: `EuclideanSpace ℝ (Fin n)` with its `volume` (Lebesgue measure) and Euclidean metric.\n  The definitions follow the packing-density definitions of QED-E040, specialised to balls.\n* Packing: congruent copies of the closed unit ball are exactly its translates (the ball is\n  invariant under orthogonal maps), so a packing is a sequence of centres `x : ℕ → E` with\n  `dist (x i) (x j) ≥ 2` for `i ≠ j`, i.e. the balls have pairwise disjoint interiors (they may\n  touch). Indexing by ℕ loses nothing: a ball packing is countable, and finite packings have\n  density 0. The radius 1 is no loss since density is scale-invariant.\n* Density: upper density = limsup over R → ∞ of vol(⋃ balls ∩ B(0,R)) / vol(B(0,R)), computed in\n  `ℝ≥0∞` (numerator ≤ denominator < ∞, denominator > 0 for R > 0 and n ≥ 1). Δ_n is the supremum\n  over packings (the standard definition, as in Rogers / Conway–Sloane; limsup vs lim and centring\n  at the origin do not change the supremum).\n* `Claim` = ∃ c > 1, ∃ N, ∀ n ≥ N, Δ_n ≥ (c/2)^n. Since Δ_n is a supremum, this is equivalent (after\n  shrinking c) to the existence of individual packings of density ≥ c^n 2^{-n}. Proving `¬Claim` =\n  for every c > 1 there are infinitely many n with Δ_n < c^n 2^{-n}, i.e. no exponential improvement\n  over 2^{-n} holds in all large dimensions.\n-/\nnamespace OpenProblems.QEDM118\nnoncomputable section\nopen scoped ENNReal\n\n/-- Ambient Euclidean space `ℝⁿ`. -/\nabbrev E (n : ℕ) : Type := EuclideanSpace ℝ (Fin n)\n\n/-- A packing of unit balls with centres `x i`: distinct centres are at distance at least 2. -/\ndef IsPacking {n : ℕ} (x : ℕ → E n) : Prop :=\n  ∀ i j : ℕ, i ≠ j → 2 ≤ dist (x i) (x j)\n\n/-- Fraction of the ball of radius `R` about the origin covered by the packing. -/\ndef coveredFraction {n : ℕ} (x : ℕ → E n) (R : ℝ) : ℝ≥0∞ :=\n  MeasureTheory.volume ((⋃ i : ℕ, Metric.closedBall (x i) 1) ∩ Metric.ball (0 : E n) R) /\n    MeasureTheory.volume (Metric.ball (0 : E n) R)\n\n/-- Upper density of a packing: `limsup_{R → ∞}` of the covered fraction. -/\ndef upperDensity {n : ℕ} (x : ℕ → E n) : ℝ≥0∞ :=\n  Filter.limsup (fun R : ℝ => coveredFraction x R) Filter.atTop\n\n/-- Sphere packing density `Δ_n` of `ℝⁿ`. -/\ndef packingDensity (n : ℕ) : ℝ≥0∞ :=\n  ⨆ (x : ℕ → E n) (_ : IsPacking x), upperDensity x\n\ndef Claim : Prop :=\n  ∃ c : ℝ, 1 < c ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n → ENNReal.ofReal ((c / 2) ^ n) ≤ packingDensity n\n\nend\nend OpenProblems.QEDM118\n",
+  "set": "main"
  }
 ]

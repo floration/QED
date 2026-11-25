@@ -1,0 +1,25 @@
+{
+ "id": "QED-E131",
+ "set": "extended",
+ "title": "Optimal sphere packing in dimension 4",
+ "area": "Geometry",
+ "difficulty": 8.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical; Conway–Sloane",
+ "premise_risks": [
+  "Unrefereed 2026 claimed proofs (preprints.org 202606.0856; arXiv:2609.25120) — verify status"
+ ],
+ "plain": "What is the densest way to pack equal balls in 4-dimensional space? The D4 lattice packing (density π²/16) is believed optimal and has been known to be the best lattice packing since 1873, but denser non-lattice packings have never been ruled out. Prove that no packing beats π²/16.",
+ "math": "Let $\\Delta_4$ be the supremum, over all packings of congruent open balls in $\\mathbb{R}^4$, of the upper density $\\limsup_{R\\to\\infty}\\mathrm{vol}(\\bigcup B\\cap B(0,R))/\\mathrm{vol}(B(0,R))$. Prove $\\Delta_4=\\pi^2/16$, the density of the $D_4$ lattice packing.",
+ "novelty": 1,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.preprints.org/manuscript/202606.0856",
+  "https://www.preprints.org/manuscript/202606.0856/v1",
+  "https://arxiv.org/abs/2609.25120",
+  "https://arxiv.org/abs/1712.04099"
+ ]
+}

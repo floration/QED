@@ -1,0 +1,20 @@
+{
+ "id": "QED-E132",
+ "set": "extended",
+ "title": "Optimal sphere packing in dimension 5, 6 or 7",
+ "area": "Geometry",
+ "difficulty": 8.5,
+ "grade": "C",
+ "provenance": "Curated",
+ "credit": "Classical",
+ "plain": "In dimensions 5, 6 and 7 the densest known ball packings come from the lattices D5, E6 and E7, which are known to be the best lattice packings. Prove that at least one of them is optimal among all packings.",
+ "math": "Let $\\Delta_n$ be the supremum of upper densities of packings of congruent balls in $\\mathbb{R}^n$. Prove that at least one of $\\Delta_5=\\pi^2/(15\\sqrt2)$ (density of $D_5$), $\\Delta_6=\\pi^3/(48\\sqrt3)$ (density of $E_6$), $\\Delta_7=\\pi^3/105$ (density of $E_7$) holds.",
+ "novelty": 1,
+ "importance": 8,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1712.04099",
+  "https://www.ams.org/notices/201602/rnoti-p102.pdf"
+ ]
+}

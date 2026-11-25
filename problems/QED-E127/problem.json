@@ -1,0 +1,28 @@
+{
+ "id": "QED-E127",
+ "set": "extended",
+ "title": "Two colours, sums of at most two: does every solution compute the halting problem?",
+ "area": "Logic & computability",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Hindman–Leader–Strauss (2003) question; Dzhafarov, Jockusch, Solomon, Westrick; Carlucci, Kołodziejczyk, Lepore, Zdanowski.",
+ "premise_risks": [
+  "The computable formulation is slightly different from the RCA0 implication; a positive answer that relativizes gives HT^{<=2}_2 -> ACA0, a negative answer alone does not separate them.",
+  "Check Bompard–Liu–Patey and any 2025-2026 work for an unpublicized resolution."
+ ],
+ "plain": "Hindman's theorem says that for any finite colouring of the positive integers there is an infinite set H all of whose finite sums have one colour. Restrict this to sums of one or two distinct elements. A computable 4-colouring is known to force every such H to compute the halting problem, but with only 2 colours (and no extra 'apartness' condition) nobody knows. Decide whether some computable 2-colouring forces every solution to compute the halting problem.",
+ "math": "For $H\\subseteq\\mathbb N_{>0}$ let $FS^{\\le2}(H)=H\\cup\\{x+y:x,y\\in H,\\ x\\ne y\\}$. Decide whether there exists a computable $c:\\mathbb N_{>0}\\to\\{0,1\\}$ such that every infinite $H\\subseteq\\mathbb N_{>0}$ on which $FS^{\\le2}(H)$ is $c$-monochromatic satisfies $\\emptyset'\\le_T H$. Either answer is a solution. (A relativizable positive answer gives $\\mathsf{RCA}_0\\vdash\\mathsf{HT}^{\\le2}_2\\to\\mathsf{ACA}_0$.)",
+ "novelty": 3,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1603.08249",
+  "https://arxiv.org/abs/1701.06095",
+  "https://arxiv.org/abs/2207.08554",
+  "https://link.springer.com/article/10.1007/s00153-023-00901-6",
+  "https://arxiv.org/abs/2607.17666",
+  "https://arxiv.org/abs/1804.09809"
+ ]
+}

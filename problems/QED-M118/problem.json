@@ -1,0 +1,23 @@
+{
+ "id": "QED-M118",
+ "set": "main",
+ "title": "Exponentially beat the 2^{-n} sphere-packing lower bound",
+ "area": "Geometry",
+ "difficulty": 9.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Minkowski; Klartag; Kabatiansky–Levenshtein",
+ "plain": "In high dimension n the best sphere packings known have density only about n²·2^{-n} (up to log factors), barely above the trivial 2^{-n} from greedy/saturated packings, while the best upper bound is about 2^{-0.599n}. Is there a constant c>1 with packings of density at least c^n·2^{-n} in all large dimensions?",
+ "math": "Let $\\Delta_n$ be the supremum of upper densities of packings of congruent balls in $\\mathbb{R}^n$. Prove or disprove: there exist $c>1$ and $N$ such that $\\Delta_n\\ge c^n2^{-n}$ for all $n\\ge N$.",
+ "novelty": 1,
+ "importance": 9,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2610.12619",
+  "https://arxiv.org/abs/2312.10026",
+  "https://arxiv.org/abs/2606.13313",
+  "https://arxiv.org/abs/2608.00920",
+  "https://arxiv.org/abs/math/0508381"
+ ]
+}

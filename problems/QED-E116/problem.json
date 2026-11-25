@@ -1,0 +1,27 @@
+{
+ "id": "QED-E116",
+ "set": "extended",
+ "title": "Square-lattice polygon counts satisfy no polynomial recurrence",
+ "area": "Mathematical physics",
+ "difficulty": 8.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Guttmann-Enting solvability criterion; open question recorded by Rechnitzer (2006).",
+ "premise_risks": [
+  "May be very hard (essentially requires structural control of an unsolved model)",
+  "Formalizing 'polygon modulo translation' needs care (cyclic, unoriented, rooted at lexicographically least vertex)"
+ ],
+ "plain": "Let p_n count closed self-avoiding loops of length 2n on the square grid, up to translation (p_2 = 1, p_3 = 2, p_4 = 7, p_5 = 28, ...). Many solved lattice models have counting sequences that obey a linear recurrence with polynomial coefficients (their generating function is 'D-finite'). For square-lattice polygons it is believed that no such recurrence exists, reflecting that the model has no exact solution of this kind. Prove it.",
+ "math": "Let $p_n$ be the number of self-avoiding polygons (unrooted, unoriented closed nearest-neighbour cycles) of perimeter $2n$ on $\\mathbb Z^2$, counted modulo translation, so $p_1=0$, $p_2=1,p_3=2,p_4=7$. Prove that there are no $k\\ge0$ and polynomials $Q_0,\\dots,Q_k\\in\\mathbb Q[x]$, not all zero, with $\\sum_{i=0}^k Q_i(n)\\,p_{n+i}=0$ for all $n\\ge1$. Equivalently, $P(x)=\\sum_n p_nx^n$ is not D-finite.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/math/0406450",
+  "https://personal.math.ubc.ca/~andrewr/pubs/sdf_final.pdf",
+  "https://arxiv.org/pdf/0809.5232",
+  "https://arxiv.org/pdf/cond-mat/0202339",
+  "https://arxiv.org/pdf/1212.3448"
+ ]
+}

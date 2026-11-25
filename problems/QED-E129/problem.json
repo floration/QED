@@ -1,0 +1,28 @@
+{
+ "id": "QED-E129",
+ "set": "extended",
+ "title": "The centred maximal function diminishes variation",
+ "area": "Analysis",
+ "difficulty": 3.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Question raised in the regularity-of-maximal-functions literature (Aldaz-Perez Lazaro; Kurka 2015; Carneiro survey 2019); not a named conjecture.",
+ "premise_risks": [
+  "Continuous/discrete equivalence is proved in 2407.06734 only for the step-function class; state both versions explicitly rather than claiming equivalence in general",
+  "Var(f) must be the essential (normalized) variation in the continuous version"
+ ],
+ "plain": "Replace a function on the real line by its centred maximal average: at each point take the largest average of |f| over intervals centred there. The total variation of the new function should be no larger than that of f. This is known for the uncentred maximal function and, for the centred one, for indicator functions and special step functions; for general f the best proven bound allows growth by a factor 240,004.",
+ "math": "For locally integrable $f:\\mathbb{R}\\to\\mathbb{R}$ let $Mf(x)=\\sup_{r>0}\\frac{1}{2r}\\int_{x-r}^{x+r}|f(y)|\\,dy$. Prove or disprove: for every $f$ of bounded variation, $\\operatorname{Var}(Mf)\\le\\operatorname{Var}(f)$, where $\\operatorname{Var}(f)$ is the essential variation (variation of the best normalized representative) and $\\operatorname{Var}(Mf)$ is the pointwise variation of the everywhere-defined function $Mf$. Discrete companion (also open; a separate statement, not part of the main claim): for finitely supported $f:\\mathbb{Z}\\to\\mathbb{R}$ with $Mf(n)=\\sup_{r\\in\\mathbb{N}_0}\\frac{1}{2r+1}\\sum_{|k|\\le r}|f(n+k)|$, prove $\\sum_{n}|Mf(n+1)-Mf(n)|\\le\\sum_n|f(n+1)-f(n)|$. The constant 1 cannot be improved.",
+ "novelty": 3,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2610.18544",
+  "https://arxiv.org/abs/2107.12404",
+  "https://arxiv.org/abs/1210.0496",
+  "https://arxiv.org/abs/2407.06734",
+  "https://arxiv.org/abs/1512.04112",
+  "https://arxiv.org/abs/1703.00362"
+ ]
+}

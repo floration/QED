@@ -1,0 +1,28 @@
+{
+ "id": "QED-E114",
+ "set": "extended",
+ "title": "Planar self-avoiding walk spreads at least diffusively",
+ "area": "Probability",
+ "difficulty": 7.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Madras & Slade, The Self-Avoiding Walk (1993); Bauerschmidt, Duminil-Copin, Goodman, Slade, Lectures on Self-Avoiding Walks (2012), Sec. 1.5.2.",
+ "premise_risks": [
+  "Schmidt-Sellke (Feb 2026, unrefereed) technique for self-repelling walks might extend; check before posting",
+  "Low novelty: well-known open problem among SAW specialists"
+ ],
+ "plain": "Pick one of the self-avoiding n-step walks on the square grid from the origin uniformly at random, and let R_n^2 be the average squared distance of its endpoint from the origin. Intuition says avoiding yourself only pushes you outward, so R_n^2 should be at least of order n, the value for ordinary random walk; physicists expect n^{3/2}. Yet nobody can prove even R_n^2 >= c n for some c > 0: the best proven lower bound is of order n^{2/3}.",
+ "math": "Let $\\mathrm{SAW}_n$ be the set of $n$-step self-avoiding walks on $\\mathbb Z^2$ starting at $0$ and $\\langle|\\omega(n)|^2\\rangle_n=|\\mathrm{SAW}_n|^{-1}\\sum_{\\omega\\in\\mathrm{SAW}_n}\\|\\omega_n\\|_2^2$. Prove $\\liminf_{n\\to\\infty}\\langle|\\omega(n)|^2\\rangle_n/n>0$, equivalently: there is $c>0$ with $\\langle|\\omega(n)|^2\\rangle_n\\ge c\\,n$ for all $n\\ge1$.",
+ "novelty": 2,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/1206.2092",
+  "https://www.cambridge.org/core/journals/canadian-mathematical-bulletin/article/lower-bound-for-the-endtoend-distance-of-the-selfavoiding-walk/20FEE9753A890F944CA297F7C2C32354",
+  "https://arxiv.org/pdf/1205.0401",
+  "https://arxiv.org/abs/2602.14497",
+  "https://arxiv.org/pdf/2610.40520",
+  "https://arxiv.org/pdf/2207.08433"
+ ]
+}

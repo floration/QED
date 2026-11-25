@@ -1,0 +1,26 @@
+{
+ "id": "QED-E120",
+ "set": "extended",
+ "title": "Does ex(n, K_{4,4}) grow faster than n^{5/3}?",
+ "area": "Combinatorics",
+ "difficulty": 7.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Erdős (question as posed in Chung–Graham's Erdős problems collection); Zarankiewicz problem background",
+ "premise_risks": [
+  "Sits inside the Zarankiewicz problem (person-named); the specific K_{4,4} question is an unnamed sub-question",
+  "Very hard; partial progress may come only for K_{4,6} first"
+ ],
+ "plain": "How many edges can a graph on n vertices have if it contains no complete bipartite graph K_{4,4}? The general upper bound is of order n^{7/4}. The best known constructions give only order n^{5/3}, which is already achieved by graphs that avoid the smaller K_{3,3}. Can one do better than a constant times n^{5/3}?",
+ "math": "Let $\\mathrm{ex}(n,K_{4,4})$ be the maximum number of edges in a $K_{4,4}$-free graph on $n$ vertices. Known: $c\\,n^{5/3}\\le\\mathrm{ex}(n,K_{4,4})\\le C\\,n^{7/4}$. Decide whether $\\mathrm{ex}(n,K_{4,4})=O(n^{5/3})$, i.e. whether $\\limsup_n \\mathrm{ex}(n,K_{4,4})/n^{5/3}<\\infty$. (Stronger target: $\\mathrm{ex}(n,K_{4,4})=\\Theta(n^{7/4})$.)",
+ "novelty": 2,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://fanchung.ucsd.edu/erdosprb/erdos/newproblems/TuranK44.html",
+  "https://arxiv.org/abs/1607.01141",
+  "https://arxiv.org/abs/1908.05190",
+  "https://arxiv.org/abs/1306.5167"
+ ]
+}

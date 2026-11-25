@@ -1,0 +1,27 @@
+{
+ "id": "QED-E128",
+ "set": "extended",
+ "title": "Only 2^{O(n^2)} triangulated 3-spheres on n vertices?",
+ "area": "Topology",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Extension",
+ "credit": "Gap stated by Kalai (1988), Pfeifle–Ziegler (2004), Nevo–Wilson (2013), Nevo–Santos–Wilson (2016).",
+ "premise_risks": [
+  "Closing this specific log factor is a natural open gap but not singled out as a numbered open problem in the sources; Nevo–Santos–Wilson call their lower bound 'close to' the upper bound.",
+  "Durhuus–Pavelka (Nov 2026) is unrefereed; used only for context on the facet version."
+ ],
+ "plain": "Count the triangulations of the 3-dimensional sphere on n labelled vertices. Constructions give at least 2^{cn^2} of them, while the only upper bound, from counting all possible sets of tetrahedra, is 2^{Cn^2 log n}. Decide which is the truth: is the count at most 2^{Cn^2}, or does the log n factor really occur?",
+ "math": "Let $s(n)$ be the number of simplicial complexes $K$ on vertex set $[n]$ (every vertex used) with $|K|\\cong S^3$. Known: $2^{\\Omega(n^2)}\\le s(n)\\le 2^{O(n^2\\log n)}$. Decide whether $\\log_2 s(n)=O(n^2)$ (i.e. $\\exists C\\ \\forall n:\\ s(n)\\le 2^{Cn^2}$) or $\\log_2 s(n)/n^2\\to\\infty$ along some subsequence.",
+ "novelty": 3,
+ "importance": 6,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1311.1641",
+  "https://arxiv.org/abs/1408.3501",
+  "https://arxiv.org/abs/math/0212004",
+  "https://arxiv.org/abs/2611.16518",
+  "https://arxiv.org/pdf/2104.04476"
+ ]
+}

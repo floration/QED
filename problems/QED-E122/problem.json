@@ -1,0 +1,26 @@
+{
+ "id": "QED-E122",
+ "set": "extended",
+ "title": "The domination game 3/5 bound for all isolate-free graphs",
+ "area": "Games",
+ "difficulty": 5.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Kinnersley, West and Zamani (2013); Brešar, Klavžar and Rall (domination game)",
+ "premise_risks": [
+  "Is the full '3/5-conjecture' (named by a fraction, not a person)",
+  "Forest case rests partly on an unrefereed long preprint; irrelevant to the general claim"
+ ],
+ "plain": "In the domination game on a graph, Dominator and Staller take turns choosing vertices. Each chosen vertex must dominate (be, or be adjacent to) at least one vertex not yet dominated, and the game ends when every vertex is dominated. Dominator wants the game to be short and Staller wants it long. With Dominator moving first and optimal play, does the game always end within 3n/5 moves on an n-vertex graph with no isolated vertices?",
+ "math": "For a finite graph $G$ on $n$ vertices with no isolated vertex, let $\\gamma_g(G)$ be the number of moves under optimal play: players alternately choose a vertex $v$ with $N[v]\\not\\subseteq N[S]$, where $S$ is the set of vertices chosen so far; Dominator moves first and minimizes the length, Staller maximizes it, and the game ends when $N[S]=V(G)$. Prove or disprove $\\gamma_g(G)\\le 3n/5$. Best known: $\\gamma_g(G)\\le 5n/8$.",
+ "novelty": 3,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2002.00105",
+  "https://www.math.uri.edu/~billk/pubs/gamedom_mindeg2.pdf",
+  "https://arxiv.org/abs/1603.01181",
+  "https://arxiv.org/abs/1406.7372"
+ ]
+}
