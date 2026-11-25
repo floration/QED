@@ -1,0 +1,27 @@
+{
+ "id": "QED-E212",
+ "set": "extended",
+ "title": "Every sextic Salem number has an eventually periodic expansion of 1",
+ "area": "Dynamics",
+ "difficulty": 7.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Question for degree 6 raised and heuristically supported by D. W. Boyd, Math. Comp. 1996; part of the general K. Schmidt (1980) question whether all Salem numbers are Parry numbers.",
+ "premise_risks": [
+  "Truth uncertain: heuristics favour 'yes' but only probabilistically; a single non-Parry sextic Salem number would refute it (that would also be a major result)",
+  "Sub-question of the person-named Schmidt conjecture (all Salem numbers); the degree-6 restriction is an unnamed partial question"
+ ],
+ "plain": "For beta > 1, the map T(x) = beta x - floor(beta x) gives greedy base-beta digits; beta is a Parry number if the T-orbit of 1 is finite. A Salem number is an algebraic integer beta > 1 whose other conjugates lie in the closed unit disc, at least one on the unit circle. Boyd proved every degree-4 Salem number is Parry. Prove the same for degree 6.",
+ "math": "Let $\\beta>1$ be a Salem number of degree $6$ (an algebraic integer with minimal polynomial of degree 6 whose other roots satisfy $|z|\\le1$, at least one with $|z|=1$), and $T_\\beta(x)=\\beta x-\\lfloor\\beta x\\rfloor$ on $[0,1)$. Prove that $\\{T_\\beta^{\\,n}(\\beta-\\lfloor\\beta\\rfloor):n\\ge0\\}$ is finite. (First test case: the root $>1$ of $x^6-3x^5-x^4-7x^3-x^2-3x+1$, whose orbit length exceeds $7.7\\times10^{10}$ if finite.)",
+ "novelty": 3,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.ams.org/journals/mcom/1996-65-214/S0025-5718-96-00700-4",
+  "https://arxiv.org/abs/1912.10386",
+  "https://arxiv.org/abs/1408.0195",
+  "https://arxiv.org/abs/2504.10787",
+  "https://arxiv.org/abs/2206.06675"
+ ]
+}

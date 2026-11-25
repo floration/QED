@@ -1,0 +1,25 @@
+{
+ "id": "QED-E211",
+ "set": "extended",
+ "title": "Two consecutive 1s infinitely often in the binary expansion of √2",
+ "area": "Number theory",
+ "difficulty": 6.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Stated open by H. Kaneko (J. Aust. Math. Soc. 2010) and B. Adamczewski - N. Rampersad (Proc. AMS 2008); cf. Y. Bugeaud, 'Distribution modulo one and Diophantine approximation'.",
+ "premise_risks": [
+  "A weak sub-question of the normality of √2 (famous); but it is the explicit unknown stated in refereed papers, not a disguise",
+  "Possibly provable by a clever Diophantine argument specific to quadratics - would still be a notable result"
+ ],
+ "plain": "Write √2 in binary: 1.0110101000001001111... Every irrational number has infinitely many 0s, 1s, '01's and '10's in its binary expansion, but nothing known forces '11' to appear infinitely often. Prove that the block 11 occurs infinitely often in the binary expansion of √2.",
+ "math": "Let $b_n=\\lfloor 2^n\\sqrt2\\rfloor \\bmod 2$. Prove that $\\{n\\ge0: b_n=b_{n+1}=1\\}$ is infinite; equivalently, no tail of the binary expansion of $\\sqrt2$ avoids the block $11$.",
+ "novelty": 3,
+ "importance": 7,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.cambridge.org/core/journals/journal-of-the-australian-mathematical-society/article/on-the-binary-digits-of-algebraic-numbers/F8E0A1D687B54F0FB1F306249CD9F268",
+  "https://arxiv.org/pdf/1711.01722",
+  "https://arxiv.org/pdf/0908.4034"
+ ]
+}

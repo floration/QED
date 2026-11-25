@@ -1,0 +1,28 @@
+{
+ "id": "QED-E192",
+ "set": "extended",
+ "title": "Hard squares at activity -1: free-strip transfer-matrix eigenvalues are roots of unity",
+ "area": "Mathematical physics",
+ "difficulty": 4.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Fendley, Schoutens, van Eerten (2005); restated as open by Bousquet-Mélou, Linusson, Nevo (2008)",
+ "premise_risks": [
+  "Naming: the source is often cited as 'the conjecture of Fendley, Schoutens and van Eerten'. It is not a standard eponymous name, but the scorer may treat it as person-named. Mitigation: title it by content.",
+  "An unpublished resolution may exist in a thesis (M. Assis 2014 thesis not checked) or in the omega-institute auto-proof effort (open, unreviewed, preregistration only)",
+  "Direction convention: (O_K)_{s,t} with sign on t vs on s gives similar matrices (conjugate by diag signs and transpose), so the claim is robust"
+ ],
+ "plain": "Take a row of K sites. A row state is a set of sites with no two neighbours occupied (there are Fibonacci-many). Let O_K be the matrix with entry (-1)^{|t|} from state s to state t when s and t share no occupied site, and 0 otherwise: the transfer matrix of the hard-square lattice gas at activity -1 on a strip with free side boundaries. Show that every eigenvalue of O_K is a root of unity for every K, i.e. its characteristic polynomial is a product of cyclotomic polynomials.",
+ "math": "For $K\\ge1$ let $\\mathcal S_K=\\{s\\subseteq\\{1,\\dots,K\\}: s\\text{ has no two consecutive elements}\\}$ and $O_K\\in\\mathbb Z^{\\mathcal S_K\\times\\mathcal S_K}$, $(O_K)_{s,t}=(-1)^{|t|}[s\\cap t=\\emptyset]$. Prove that for every $K\\ge1$ every root of $\\det(xI-O_K)$ is a root of unity (equivalently, by Kronecker, all eigenvalues have modulus $1$). Note: $O_K$ itself need not have finite order (Jordan blocks occur, e.g. $K=4$), so the claim is about the spectrum only.",
+ "novelty": 3,
+ "importance": 4,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/cond-mat/0408497",
+  "https://arxiv.org/abs/math/0701890",
+  "https://arxiv.org/abs/0709.4324",
+  "https://arxiv.org/abs/0812.1165",
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v13i1r67"
+ ]
+}

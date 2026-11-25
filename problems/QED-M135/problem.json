@@ -1,0 +1,27 @@
+{
+ "id": "QED-M135",
+ "set": "main",
+ "title": "Is the Shannon capacity of a graph computable?",
+ "area": "Information theory",
+ "difficulty": 9.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Alon-Lubetzky (2006); Boche-Deppe (2020)",
+ "premise_risks": [
+  "Phrasing as 'decide' - both answers would be major; scorer may see it as famous/very hard"
+ ],
+ "plain": "The Shannon capacity Theta(G) of a finite graph is the limit of alpha(G^k)^{1/k}, where alpha is the independence number of the k-th strong power. Every alpha(G^k) is computable, so one can list ever better lower bounds, but no algorithm is known that produces upper bounds converging to Theta(G). Decide whether some algorithm, given G and a rational q, halts exactly when Theta(G) < q (equivalently, whether Theta is a computable function).",
+ "math": "Encode finite simple graphs and rationals as natural numbers and let $\\Theta(G)=\\sup_k\\alpha(G^{\\boxtimes k})^{1/k}$. Determine whether $U=\\{(G,q):\\Theta(G)<q\\}$ is recursively enumerable. (Since $\\{(G,q):\\Theta(G)>q\\}$ is r.e., $U$ is r.e. iff $G\\mapsto\\Theta(G)$ is a computable real-valued function.) A weaker open subquestion: is $\\Theta(G)$ a computable real for every $G$ (e.g. $G=C_7$)?",
+ "novelty": 3,
+ "importance": 7,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2001.11442",
+  "https://arxiv.org/abs/2010.06873",
+  "https://arxiv.org/abs/1807.00169",
+  "https://arxiv.org/abs/2509.24600",
+  "https://arxiv.org/abs/2512.05357",
+  "https://arxiv.org/abs/cs/0608021"
+ ]
+}

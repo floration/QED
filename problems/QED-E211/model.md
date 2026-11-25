@@ -1,0 +1,50 @@
+# QED-E211 — Two consecutive 1s infinitely often in the binary expansion of √2
+
+You are an AI model helping someone attack this open problem. Read all of this before working.
+
+## The problem
+Extended set · Grade A · QED Curated · Number theory
+
+**Plain words:** Write √2 in binary: 1.0110101000001001111... Every irrational number has infinitely many 0s, 1s, '01's and '10's in its binary expansion, but nothing known forces '11' to appear infinitely often. Prove that the block 11 occurs infinitely often in the binary expansion of √2.
+
+**Math:** Let $b_n=\lfloor 2^n\sqrt2\rfloor \bmod 2$. Prove that $\{n\ge0: b_n=b_{n+1}=1\}$ is infinite; equivalently, no tail of the binary expansion of $\sqrt2$ avoids the block $11$.
+
+**Credit:** Stated open by H. Kaneko (J. Aust. Math. Soc. 2010) and B. Adamczewski - N. Rampersad (Proc. AMS 2008); cf. Y. Bugeaud, 'Distribution modulo one and Diophantine approximation'.
+
+**Rests on recent unrefereed work. Check these premises first:**
+- A weak sub-question of the normality of √2 (famous); but it is the explicit unknown stated in refereed papers, not a disguise
+- Possibly provable by a clever Diophantine argument specific to quadratics - would still be a notable result
+
+**References:**
+- https://www.cambridge.org/core/journals/journal-of-the-australian-mathematical-society/article/on-the-binary-digits-of-algebraic-numbers/F8E0A1D687B54F0FB1F306249CD9F268
+- https://arxiv.org/pdf/1711.01722
+- https://arxiv.org/pdf/0908.4034
+
+Difficulty estimate: 6.0/10 (calibrated: Collatz ≈ 5.5, twin primes ≈ 5.0). It is believed open; do not assume a quick answer exists, and say so plainly if you cannot make progress. Never present a heuristic, numerical evidence, or a partial result as a solution.
+
+## What counts as an answer
+Either a proof of `OpenProblems.QEDE211.Claim` or a proof of `¬ OpenProblems.QEDE211.Claim` (a disproof), in Lean 4 + Mathlib, using the exact statement in `problems/QED-E211/Statement.lean`. Read its "Formalization notes" first. If that file still says `def Claim : Prop := sorry`, the problem must first be formalized (see CONTRIBUTING.md); a faithful formalization is itself a welcome contribution.
+
+If you think the Lean statement does not match the informal problem (it is trivially true or false, or it says something else), report that in an issue instead of exploiting it: such solutions are not credited.
+
+## How to submit
+0. First time? Solve a test problem (QED-Q1, the 2-line one, at minimum) and submit it, to confirm your Lean setup and the submission pipeline work before spending effort here. Skip this step if this IS a test problem.
+1. Claim it (optional but encouraged): open an issue titled `Claim QED-E211` at https://github.com/floration/qed/issues/new?template=claim.yml. Comment on it at least once a week or the claim lapses.
+2. Add `solutions/QED-E211/<github-username>/Solution.lean`:
+```lean
+import Mathlib
+-- do NOT redefine Claim: CI prepends problems/QED-E211/Statement.lean to your file
+theorem solution : OpenProblems.QEDE211.Claim := by   -- or ¬ OpenProblems.QEDE211.Claim
+  ...
+```
+   Large proofs may add more `.lean` files (subfolders allowed) next to Solution.lean; CI concatenates them in path order before Solution.lean. Don't import them.
+3. Add `solutions/QED-E211/<github-username>/meta.json`: `{"model": "<AI model used, or none>", "kind": "proof" | "disproof"}`. Optionally a `README.md` explaining the idea.
+4. Open a pull request. CI checks: it compiles, no `sorry`/`admit`/new `axiom`/`set_option` tricks, and `#print axioms solution` shows only `propext`, `Classical.choice`, `Quot.sound`.
+
+## Scoring
+Size = number of non-blank, non-comment lines of `Solution.lean` excluding `import` lines (helper lemmas count). First verified solution is credited permanently; any later, strictly smaller verified solution becomes the "smallest solution".
+
+## Rules for you, the model
+- Do not modify `Statement.lean` in a solution PR.
+- Be honest about uncertainty; if a step is unproven, leave it out rather than sneak in `sorry`.
+- Test locally: `lake exe cache get && lake env lean solutions/QED-E211/<user>/Solution.lean`.

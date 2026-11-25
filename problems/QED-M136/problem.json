@@ -1,0 +1,28 @@
+{
+ "id": "QED-M136",
+ "set": "main",
+ "title": "The MDS conjecture over fields of odd characteristic",
+ "area": "Combinatorics",
+ "difficulty": 3.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "MDS conjecture (Segre 1955 problem as reformulated in coding theory); progress by Ball, Ball–De Beule, X. Fan (2026).",
+ "premise_risks": [
+  "Relies on unrefereed Oct 2026 preprints (Fan; Chen–Huang) for the current boundary; these do not change the statement, only the framing",
+  "Very active area: the remaining window may be closed soon",
+  "Historically associated with Segre, but the problem's standard name is not a person's"
+ ],
+ "plain": "An arc in F_q^k is a set of vectors in which every k of them are linearly independent. Arcs are the same thing as linear MDS codes, the codes that meet the Singleton bound, and Reed-Solomon codes give arcs of size q+1. Show that q+1 is always the maximum when q is odd and 2 ≤ k ≤ q. This is known when q is prime (Ball 2012). A 2026 preprint claims it for all k outside a middle window of roughly q/(2p−3) dimensions, where p is the characteristic; the smallest open case would then be q=27 with 12 ≤ k ≤ 17.",
+ "math": "Let $q$ be an odd prime power and $2\\le k\\le q$. Prove that if $S\\subseteq\\mathbb{F}_q^k$ is a set of vectors such that every $k$ distinct elements of $S$ are linearly independent, then $|S|\\le q+1$.",
+ "novelty": 2,
+ "importance": 8,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2610.03740",
+  "https://arxiv.org/abs/2610.28208",
+  "https://arxiv.org/pdf/1908.10772",
+  "https://arxiv.org/pdf/1511.03623",
+  "https://mathworld.wolfram.com/MDSConjecture.html"
+ ]
+}

@@ -2641,5 +2641,157 @@
   ],
   "lean": "import Mathlib\n/-! QED-M131: Is the 4-sphere algorithmically recognizable?\nA triangulated 4-dimensional shape can be given as a finite list of 5-element vertex sets. Is there\nan algorithm that decides whether such a list describes the piecewise-linear 4-sphere? The question\nis solved (yes) in dimension 3 and known to be undecidable in every dimension 5 and above;\ndimension 4 is the single open case.\nInformal statement: A bistellar move on a finite pure 4-dimensional simplicial complex K (vertices\nin ℕ, given by facets) replaces A * ∂B by ∂A * B, where A ∩ B = ∅, |A ∪ B| = 6, |A|, |B| ≥ 1,\nA ∈ K, lk_K(A) = ∂B and B ∉ K (for |B| = 1: a fresh vertex). Let 𝒮 be the set of finite complexes\nisomorphic to one obtained from ∂Δ⁵ by finitely many bistellar moves; by Pachner's theorem these\nare exactly the combinatorial triangulations of the PL 4-sphere. Decide whether 𝒮 is a decidable\nset. Board claim (either direction accepted): give an algorithm deciding membership in 𝒮, or prove\nthat none exists.\nFormalization notes:\n* A complex is its set of facets `K : Finset (Finset ℕ)`; its faces are all subsets of facets\n  (`IsFace`, including ∅). Complexes reachable from ∂Δ⁵ always have all facets of size 5.\n* Link: `τ ∈ lk_K(A)` iff `τ ∩ A = ∅` and `τ ∪ A` is a face. `lk_K(A) = ∂B` is stated as: for\n  every finset τ, (τ ∩ A = ∅ ∧ τ ∪ A face) ↔ τ ⊊ B. (For |B| = 1 this says A is a facet.)\n* Move (`BistellarStep K K'`): A, B disjoint, |A|,|B| ≥ 1, |A ∪ B| = 6, A a face, link\n  condition, B not a face of K. Given the link condition the facets of K containing A are exactly\n  A ∪ (B∖{b}); they are removed and replaced by (A∖{a}) ∪ B for a ∈ A. The condition \"B not a face\"\n  is the standard requirement; for |B| = 1 it says exactly that the new vertex is fresh, and it\n  guarantees the new facets are not already present. This is Pachner's set of bistellar moves.\n* ∂Δ⁵ = all 5-subsets of {0,…,5}. Isomorphism = relabelling vertices by a permutation of ℕ.\n  `InS K` := K is isomorphic to a complex reachable from ∂Δ⁵ by finitely many moves\n  (`Relation.ReflTransGen`).\n* Inputs to an algorithm are codes `List (List ℕ)` (a list of vertex lists; `decodeComplex`\n  turns each into a finset and the list into a finset of facets), which carry Mathlib's\n  `Primcodable` structure; every finite complex has a code, and the decoded set is computable from\n  the code, so decidability of `InS` on codes is the same as decidability of 𝒮.\n* Claim := `ComputablePred (fun c => InS (decodeComplex c))` (Mathlib's notion of a decidable\n  predicate on a `Primcodable` type, i.e. a partial-recursive total decision procedure).\n  Proving `Claim` = 4-sphere recognition is decidable; `¬Claim` = it is undecidable. Both are\n  accepted.\n-/\nnamespace OpenProblems.QEDM131\nnoncomputable section\n\n/-- `σ` is a face of the complex with facet set `K`. -/\ndef IsFace (K : Finset (Finset ℕ)) (σ : Finset ℕ) : Prop :=\n  ∃ F ∈ K, σ ⊆ F\n\n/-- The bistellar move with parameters `A`, `B` turns `K` into `K'`. -/\ndef BistellarMove (K : Finset (Finset ℕ)) (A B : Finset ℕ) (K' : Finset (Finset ℕ)) : Prop :=\n  Disjoint A B ∧ A.Nonempty ∧ B.Nonempty ∧ (A ∪ B).card = 6 ∧ IsFace K A ∧\n    (∀ τ : Finset ℕ, (Disjoint τ A ∧ IsFace K (τ ∪ A)) ↔ τ ⊂ B) ∧\n    ¬ IsFace K B ∧\n    K' = K.filter (fun F => ¬ A ⊆ F) ∪ A.image (fun a => (A.erase a) ∪ B)\n\n/-- One bistellar move. -/\ndef BistellarStep (K K' : Finset (Finset ℕ)) : Prop :=\n  ∃ A B : Finset ℕ, BistellarMove K A B K'\n\n/-- The boundary of the 5-simplex on vertices `{0,…,5}`. -/\ndef boundarySimplex5 : Finset (Finset ℕ) :=\n  (Finset.range 6).powersetCard 5\n\n/-- Two facet sets are isomorphic: related by a relabelling of the vertices. -/\ndef ComplexIso (L K : Finset (Finset ℕ)) : Prop :=\n  ∃ e : Equiv.Perm ℕ, K = L.image (fun F => F.map e.toEmbedding)\n\n/-- `K` is a combinatorial triangulation of the PL 4-sphere (Pachner): isomorphic to a complex\nreachable from `∂Δ⁵` by bistellar moves. -/\ndef InS (K : Finset (Finset ℕ)) : Prop :=\n  ∃ L : Finset (Finset ℕ), Relation.ReflTransGen BistellarStep boundarySimplex5 L ∧ ComplexIso L K\n\n/-- Decoding an input: a list of vertex lists, read as a set of facets. -/\ndef decodeComplex (c : List (List ℕ)) : Finset (Finset ℕ) :=\n  (c.map List.toFinset).toFinset\n\ndef Claim : Prop :=\n  ComputablePred (fun c : List (List ℕ) => InS (decodeComplex c))\n\nend\nend OpenProblems.QEDM131\n",
   "set": "main"
+ },
+ {
+  "id": "QED-M132",
+  "review_id": "R6-L03",
+  "title": "The 4/3 integrality gap of the subtour LP for metric TSP",
+  "area": "Combinatorics",
+  "difficulty": 4.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Folklore '4/3 conjecture' (Goemans 1995; Williamson 1990s); statement source: Karlin–Klein–Oveis Gharan 2022; Cook–Hougardy–Petrich 2026.",
+  "results": null,
+  "premise_risks": [
+   "Very famous problem (low novelty, high importance)",
+   "Cook–Hougardy–Petrich computations are an unrefereed 2026 preprint (only used as supporting evidence)"
+  ],
+  "plain": "Take n cities with distances that satisfy the triangle inequality. The subtour LP relaxes 'pick a tour' to 'put fractional weights on the roads so every city has total weight 2, and every split of the cities into two groups is crossed by total weight at least 2'. Is the cheapest tour always at most 4/3 times the cheapest fractional solution? Known examples show 4/3 cannot be lowered; the best proven factor is only slightly below 3/2.",
+  "math": "Let $n\\ge3$ and let $c:\\binom{[n]}{2}\\to\\mathbb R_{\\ge0}$ satisfy $c_{uw}\\le c_{uv}+c_{vw}$. Let $x\\in\\mathbb R_{\\ge0}^{\\binom{[n]}{2}}$ satisfy $x(\\delta(v))=2$ for all $v\\in[n]$ and $x(\\delta(S))\\ge2$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove that some Hamiltonian cycle $H$ on $[n]$ has $c(H)\\le\\frac43\\sum_e c_ex_e$. (Equivalently: the integrality ratio of the subtour/Held--Karp relaxation of metric TSP equals $4/3$; the lower bound $4/3$ is known.)",
+  "novelty": 1,
+  "importance": 9,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2105.10043",
+   "https://arxiv.org/abs/2603.12995",
+   "https://arxiv.org/abs/2507.07003"
+  ],
+  "lean": "import Mathlib\n/-! QED-M132: The 4/3 integrality gap of the subtour LP for metric TSP\nTake n cities with distances that satisfy the triangle inequality. The subtour LP relaxes 'pick a tour' to 'put fractional weights on the roads so every city has total weight 2, and every split of the cities into two groups is crossed by total weight at least 2'. Is the cheapest tour always at most 4/3 times the cheapest fractional solution? Known examples show 4/3 cannot be lowered; the best proven factor is only slightly below 3/2.\nInformal statement: Let $n\\ge3$ and let $c:\\binom{[n]}{2}\\to\\mathbb R_{\\ge0}$ satisfy $c_{uw}\\le c_{uv}+c_{vw}$. Let $x\\in\\mathbb R_{\\ge0}^{\\binom{[n]}{2}}$ satisfy $x(\\delta(v))=2$ for all $v\\in[n]$ and $x(\\delta(S))\\ge2$ for all $\\emptyset\\ne S\\subsetneq[n]$. Prove that some Hamiltonian cycle $H$ on $[n]$ has $c(H)\\le\\frac43\\sum_e c_ex_e$. (Equivalently: the integrality ratio of the subtour/Held--Karp relaxation of metric TSP equals $4/3$; the lower bound $4/3$ is known.)\nFormalization notes: Cities are `Fin n`. An undirected edge {i,j} (i ≠ j) is represented by\nthe ordered pairs (i,j) and (j,i); costs `c` and LP values `x` are functions `Fin n → Fin n → ℝ`\nrequired to be symmetric, so `c i j = c j i` is the cost of edge {i,j} and `x i j = x j i` its\nLP weight. Diagonal entries play no role in the LP (all sums below skip i = j) except that\nwe ask `c i i = 0` so that the triangle inequality may be stated for all triples; any metric on\nthe edges extends this way, so no instance is lost.\n* metric: `c ≥ 0`, symmetric, `c i i = 0`, `c u w ≤ c u v + c v w` for all u v w.\n* subtour LP feasibility: `x ≥ 0`, symmetric, degree constraint `∑_{j ≠ v} x v j = 2` for every v,\n  cut constraint `∑_{i ∈ S} ∑_{j ∉ S} x i j ≥ 2` for every nonempty proper S (each crossing edge is\n  counted once, since i ∈ S, j ∉ S fixes its orientation).\n* LP objective: `∑_{i<j} c i j * x i j` (each undirected edge once).\n* Hamiltonian cycle: a cyclic permutation σ of `Fin n` whose support is everything; its tour cost is\n  `∑_v c v (σ v)`, each edge of the cycle counted once (n ≥ 3, so σ v ≠ v and the n edges\n  {v, σ v} are distinct).\nClaim says: for every n ≥ 3, every metric c and every feasible x, the optimal tour costs at most\n4/3 times the LP value of x (in particular of the LP optimum). This is exactly \"integrality gap ≤ 4/3\".\nProving ¬Claim means exhibiting a metric instance and feasible x with every tour > (4/3)·c(x).\n-/\nnamespace OpenProblems.QEDM132\nnoncomputable section\n\n/-- `c` is a metric (semimetric with zero diagonal) on `Fin n`. -/\ndef IsMetricCost (n : ℕ) (c : Fin n → Fin n → ℝ) : Prop :=\n  (∀ i j : Fin n, 0 ≤ c i j) ∧ (∀ i j : Fin n, c i j = c j i) ∧ (∀ i : Fin n, c i i = 0) ∧\n    ∀ u v w : Fin n, c u w ≤ c u v + c v w\n\n/-- `x` is a feasible point of the subtour (Held–Karp) LP on the complete graph on `Fin n`. -/\ndef SubtourFeasible (n : ℕ) (x : Fin n → Fin n → ℝ) : Prop :=\n  (∀ i j : Fin n, 0 ≤ x i j) ∧ (∀ i j : Fin n, x i j = x j i) ∧\n    (∀ v : Fin n, ∑ j ∈ (Finset.univ.filter fun j : Fin n => j ≠ v), x v j = 2) ∧\n    ∀ S : Finset (Fin n), S.Nonempty → S ≠ Finset.univ →\n      2 ≤ ∑ i ∈ S, ∑ j ∈ Sᶜ, x i j\n\n/-- LP objective: each undirected edge `{i,j}` counted once, via `i < j`. -/\ndef lpCost (n : ℕ) (c x : Fin n → Fin n → ℝ) : ℝ :=\n  ∑ i : Fin n, ∑ j ∈ (Finset.univ.filter fun j : Fin n => i < j), c i j * x i j\n\n/-- A Hamiltonian cycle on `Fin n`: a single cycle permutation moving every vertex. -/\ndef IsHamCycle (n : ℕ) (σ : Equiv.Perm (Fin n)) : Prop :=\n  σ.IsCycle ∧ σ.support = Finset.univ\n\n/-- Cost of the tour `v → σ v`. -/\ndef tourCost (n : ℕ) (c : Fin n → Fin n → ℝ) (σ : Equiv.Perm (Fin n)) : ℝ :=\n  ∑ v : Fin n, c v (σ v)\n\ndef Claim : Prop :=\n  ∀ n : ℕ, 3 ≤ n → ∀ c : Fin n → Fin n → ℝ, IsMetricCost n c →\n    ∀ x : Fin n → Fin n → ℝ, SubtourFeasible n x →\n      ∃ σ : Equiv.Perm (Fin n), IsHamCycle n σ ∧ tourCost n c σ ≤ (4 / 3 : ℝ) * lpCost n c x\n\nend\nend OpenProblems.QEDM132\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M133",
+  "review_id": "R6-L05",
+  "title": "Polynomial-size linear extended formulations for stable set polytopes of perfect graphs",
+  "area": "Combinatorics",
+  "difficulty": 4.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Question going back to Yannakakis (1991); restated in Aprile–Faenza (2018), Hu–Laurent (2017), Fiorini et al.",
+  "results": null,
+  "premise_risks": [
+   "Sometimes cited as 'Yannakakis' question' (but not a named conjecture; the statement itself is a plain question)",
+   "Could be resolved negatively by a communication-complexity lower bound for CIS on perfect graphs; checked none known as of 2026"
+  ],
+  "plain": "For a perfect graph, the convex hull of its independent sets is cut out by the inequalities 'each clique contains at most one chosen vertex', and maximum-weight independent set is solvable in polynomial time, but only via semidefinite programming. Is this polytope always the projection of a polytope with polynomially many facets, i.e. does it have a polynomial-size linear program? The best upper bound is n^{O(log n)}, and lower bounds are barely superlinear.",
+  "math": "For a graph $G$ on $[n]$ let $M_G$ have rows indexed by cliques $K$, columns by stable sets $S$, entries $M_G(K,S)=1-|K\\cap S|\\ (\\ge0)$. Determine whether there is a constant $C$ such that $\\operatorname{rank}_+(M_G)\\le n^C$ for every perfect graph $G$ on $n\\ge2$ vertices. (By Yannakakis' theorem and $\\mathrm{STAB}(G)=\\mathrm{QSTAB}(G)$, $\\operatorname{rank}_+(M_G)$ equals the linear extension complexity of $\\mathrm{STAB}(G)$ up to an additive $O(n)$.) Known: $\\operatorname{rank}_+(M_G)\\le n^{O(\\log n)}$.",
+  "novelty": 2,
+  "importance": 8,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/1706.05496",
+   "https://arxiv.org/abs/1811.08529",
+   "https://arxiv.org/abs/1702.08741",
+   "https://eccc.weizmann.ac.il/report/2015/012/download"
+  ],
+  "lean": "import Mathlib\n/-! QED-M133: Polynomial-size linear extended formulations for stable set polytopes of perfect graphs\nFor a perfect graph, the convex hull of its independent sets is cut out by the inequalities 'each clique contains at most one chosen vertex', and maximum-weight independent set is solvable in polynomial time, but only via semidefinite programming. Is this polytope always the projection of a polytope with polynomially many facets, i.e. does it have a polynomial-size linear program? The best upper bound is n^{O(log n)}, and lower bounds are barely superlinear.\nInformal statement: For a graph $G$ on $[n]$ let $M_G$ have rows indexed by cliques $K$, columns by stable sets $S$, entries $M_G(K,S)=1-|K\\cap S|\\ (\\ge0)$. Determine whether there is a constant $C$ such that $\\operatorname{rank}_+(M_G)\\le n^C$ for every perfect graph $G$ on $n\\ge2$ vertices. (By Yannakakis' theorem and $\\mathrm{STAB}(G)=\\mathrm{QSTAB}(G)$, $\\operatorname{rank}_+(M_G)$ equals the linear extension complexity of $\\mathrm{STAB}(G)$ up to an additive $O(n)$.) Known: $\\operatorname{rank}_+(M_G)\\le n^{O(\\log n)}$.\nFormalization notes:\n* Graphs are `SimpleGraph (Fin n)`; all notions are isomorphism-invariant.\n* Cliques and stable sets are `Finset (Fin n)` with the obvious pairwise conditions (written out\n  by hand; the empty set and singletons count, as in the informal statement; including the\n  empty clique row (all ones) or non-maximal cliques changes rank₊ by at most n+1, since a\n  non-maximal clique row is a maximal clique row plus nonnegativity slacks).\n* Perfect: for every vertex subset s, the induced graph on s has a proper colouring with k\n  colours where k is the size of some clique inside s (colours are naturals < k on s; values\n  off s are irrelevant, so s = ∅ is satisfied with the empty clique). Since every colouring needs at least as\n  many colours as any clique, this says exactly χ(G[s]) = ω(G[s]) for all s, i.e. G is perfect.\n* Nonnegative rank ≤ r: there are nonnegative real matrices U (cliques × r) and V (r × stable\n  sets) with M_G(K,S) = Σᵢ U(K,i) V(i,S) for all cliques K and stable sets S. U and V are given\n  on all finsets; only their values on cliques / stable sets matter.\n* Claim: ∃ C, every perfect graph on n ≥ 2 vertices has rank₊(M_G) ≤ n^C, i.e. stable set\n  polytopes of perfect graphs have polynomial linear extension complexity. ¬Claim: for every C\n  some perfect graph has rank₊(M_G) > n^C (superpolynomial lower bound). The trivial\n  factorisation has r = number of stable sets (exponential), so neither side is trivial.\n-/\nnamespace OpenProblems.QEDM133\nnoncomputable section\n\n/-- `K` is a clique of `G`. -/\ndef IsCliqueF {n : ℕ} (G : SimpleGraph (Fin n)) (K : Finset (Fin n)) : Prop :=\n  ∀ x ∈ K, ∀ y ∈ K, x ≠ y → G.Adj x y\n\n/-- `S` is a stable (independent) set of `G`. -/\ndef IsStableF {n : ℕ} (G : SimpleGraph (Fin n)) (S : Finset (Fin n)) : Prop :=\n  ∀ x ∈ S, ∀ y ∈ S, ¬ G.Adj x y\n\n/-- `G` is perfect: every induced subgraph `G[s]` can be properly coloured with as many colours\nas the size of some clique contained in `s` (equivalently χ(G[s]) = ω(G[s])). -/\ndef IsPerfect {n : ℕ} (G : SimpleGraph (Fin n)) : Prop :=\n  ∀ s : Finset (Fin n), ∃ K : Finset (Fin n), K ⊆ s ∧ IsCliqueF G K ∧\n    ∃ c : Fin n → ℕ, (∀ x ∈ s, c x < K.card) ∧\n      ∀ x ∈ s, ∀ y ∈ s, G.Adj x y → c x ≠ c y\n\n/-- The clique/stable-set slack matrix `M_G(K,S) = 1 - |K ∩ S|`. -/\ndef slack {n : ℕ} (K S : Finset (Fin n)) : ℝ := 1 - ((K ∩ S).card : ℝ)\n\n/-- `rank₊(M_G) ≤ r`. -/\ndef NonnegRankLE {n : ℕ} (G : SimpleGraph (Fin n)) (r : ℕ) : Prop :=\n  ∃ U : Finset (Fin n) → Fin r → ℝ, ∃ V : Fin r → Finset (Fin n) → ℝ,\n    (∀ K : Finset (Fin n), ∀ i : Fin r, 0 ≤ U K i) ∧\n    (∀ i : Fin r, ∀ S : Finset (Fin n), 0 ≤ V i S) ∧\n    ∀ K S : Finset (Fin n), IsCliqueF G K → IsStableF G S →\n      slack K S = ∑ i : Fin r, U K i * V i S\n\n/-- Stable set polytopes of perfect graphs have polynomial-size linear extended formulations. -/\ndef Claim : Prop :=\n  ∃ C : ℕ, ∀ n : ℕ, 2 ≤ n → ∀ G : SimpleGraph (Fin n), IsPerfect G →\n    ∃ r : ℕ, r ≤ n ^ C ∧ NonnegRankLE G r\n\nend\nend OpenProblems.QEDM133\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M134",
+  "review_id": "R6-L08",
+  "title": "Binary codes near distance 1/2: remove the logarithm",
+  "area": "Coding theory",
+  "difficulty": 8.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Classical (MRRW 1977 gap); eps-biased formulation Alon et al. (1992)",
+  "results": null,
+  "premise_risks": [
+   "2026 MRRW improvements (OpenAI ch.2, Alrabiah-Guruswami, honeycomb arXiv:2608.20287 unrefereed) - checked numerically that kappa_H keeps the eps^2 log(1/eps) order, but the honeycomb bound's near-1/2 behaviour was not analysed in its abstract",
+   "Close to the belief that GV is tight (sometimes attributed to Goppa); this claim is strictly weaker"
+  ],
+  "plain": "Let A(n,d) be the largest number of binary strings of length n that pairwise differ in at least d positions. When d=(1/2-eps)n, random codes give about 2^{(2/ln 2) eps^2 n} strings, but the best upper bounds (the 1977 linear-programming bound and its 2026 refinements) give only 2^{O(eps^2 log(1/eps)) n}. Show that the logarithm is not needed: the rate is at most a constant times eps^2.",
+  "math": "Let $A_2(n,d)=\\max\\{|C|:C\\subseteq\\{0,1\\}^n,\\ d_H(x,y)\\ge d\\ \\forall x\\ne y\\in C\\}$. Prove that there is an absolute constant $K$ such that for every $\\varepsilon\\in(0,1/4]$, $\\limsup_{n\\to\\infty}\\frac1n\\log_2A_2\\!\\left(n,\\lceil(\\tfrac12-\\varepsilon)n\\rceil\\right)\\le K\\varepsilon^2$.",
+  "novelty": 2,
+  "importance": 8,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://drops.dagstuhl.de/storage/00lipics/lipics-vol383-ccc2026/LIPIcs.CCC.2026.21/LIPIcs.CCC.2026.21.pdf",
+   "https://eccc.weizmann.ac.il/report/2017/041/",
+   "https://arxiv.org/abs/2608.20287",
+   "https://arxiv.org/abs/2303.16619"
+  ],
+  "lean": "import Mathlib\n/-! QED-M134: Binary codes near distance 1/2: remove the logarithm\nLet A(n,d) be the largest number of binary strings of length n that pairwise differ in at least d positions. When d=(1/2-eps)n, random codes give about 2^{(2/ln 2) eps^2 n} strings, but the best upper bounds (the 1977 linear-programming bound and its 2026 refinements) give only 2^{O(eps^2 log(1/eps)) n}. Show that the logarithm is not needed: the rate is at most a constant times eps^2.\nInformal statement: Let $A_2(n,d)=\\max\\{|C|:C\\subseteq\\{0,1\\}^n,\\ d_H(x,y)\\ge d\\ \\forall x\\ne y\\in C\\}$. Prove that there is an absolute constant $K$ such that for every $\\varepsilon\\in(0,1/4]$, $\\limsup_{n\\to\\infty}\\frac1n\\log_2A_2\\!\\left(n,\\lceil(\\tfrac12-\\varepsilon)n\\rceil\\right)\\le K\\varepsilon^2$.\nFormalization notes: Words are `Fin n → Bool`, distance is Mathlib's `hammingDist`. `A2 n d` is the maximum\ncardinality over all codes (finsets of words) whose distinct elements are at Hamming distance ≥ d, computed as\nthe `sup` of `card` over the finite filtered family (the empty code is always admissible, so this is a genuine\nmaximum; A2 n d ≥ 1). The limsup inequality limsup (1/n) log₂ A2 ≤ Kε² is stated in the equivalent\nlimsup-free form: for every η > 0, eventually A2 n ⌈(1/2-ε)n⌉ ≤ 2^{(Kε²+η)n} (real power). K is quantified\nbefore ε (absolute constant). Non-vacuity: Gilbert–Varshamov forces K ≥ 2/ln 2, and MRRW-type bounds give only\nO(ε² log(1/ε)), so the claim is not implied by known bounds and a large K does not trivialize it (it must hold\nuniformly as ε → 0). Claim true removes the log factor; ¬Claim says that for every K some ε ∈ (0,1/4] has\nlimsup rate > Kε².\n-/\nnamespace OpenProblems.QEDM134\nnoncomputable section\n\n/-- Maximum size of a binary code of length `n` with minimum Hamming distance at least `d`. -/\ndef A2 (n d : ℕ) : ℕ :=\n  ((Finset.univ : Finset (Finset (Fin n → Bool))).filter\n      (fun C => ∀ x ∈ C, ∀ y ∈ C, x ≠ y → d ≤ hammingDist x y)).sup Finset.card\n\ndef Claim : Prop :=\n  ∃ K : ℝ, ∀ ε : ℝ, 0 < ε → ε ≤ 1 / 4 → ∀ η : ℝ, 0 < η →\n    ∀ᶠ n : ℕ in Filter.atTop,\n      (A2 n ⌈(1 / 2 - ε) * (n : ℝ)⌉₊ : ℝ) ≤ (2 : ℝ) ^ ((K * ε ^ 2 + η) * (n : ℝ))\n\nend\nend OpenProblems.QEDM134\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M135",
+  "review_id": "R6-L10",
+  "title": "Is the Shannon capacity of a graph computable?",
+  "area": "Information theory",
+  "difficulty": 9.0,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "Alon-Lubetzky (2006); Boche-Deppe (2020)",
+  "results": null,
+  "premise_risks": [
+   "Phrasing as 'decide' - both answers would be major; scorer may see it as famous/very hard"
+  ],
+  "plain": "The Shannon capacity Theta(G) of a finite graph is the limit of alpha(G^k)^{1/k}, where alpha is the independence number of the k-th strong power. Every alpha(G^k) is computable, so one can list ever better lower bounds, but no algorithm is known that produces upper bounds converging to Theta(G). Decide whether some algorithm, given G and a rational q, halts exactly when Theta(G) < q (equivalently, whether Theta is a computable function).",
+  "math": "Encode finite simple graphs and rationals as natural numbers and let $\\Theta(G)=\\sup_k\\alpha(G^{\\boxtimes k})^{1/k}$. Determine whether $U=\\{(G,q):\\Theta(G)<q\\}$ is recursively enumerable. (Since $\\{(G,q):\\Theta(G)>q\\}$ is r.e., $U$ is r.e. iff $G\\mapsto\\Theta(G)$ is a computable real-valued function.) A weaker open subquestion: is $\\Theta(G)$ a computable real for every $G$ (e.g. $G=C_7$)?",
+  "novelty": 3,
+  "importance": 7,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2001.11442",
+   "https://arxiv.org/abs/2010.06873",
+   "https://arxiv.org/abs/1807.00169",
+   "https://arxiv.org/abs/2509.24600",
+   "https://arxiv.org/abs/2512.05357",
+   "https://arxiv.org/abs/cs/0608021"
+  ],
+  "lean": "import Mathlib\n/-! QED-M135: Is the Shannon capacity of a graph computable?\nThe Shannon capacity Θ(G) of a finite graph is the limit of α(G^k)^{1/k}, where α is the independence number of\nthe k-th strong power. Every α(G^k) is computable, so one can list ever better lower bounds, but no algorithm is\nknown that produces upper bounds converging to Θ(G). Decide whether some algorithm, given G and a rational q, halts\nexactly when Θ(G) < q (equivalently, whether Θ is a computable function).\nInformal statement: Encode finite simple graphs and rationals as natural numbers and let\n$\\Theta(G)=\\sup_k\\alpha(G^{\\boxtimes k})^{1/k}$. Determine whether $U=\\{(G,q):\\Theta(G)<q\\}$ is recursively\nenumerable. (Since $\\{(G,q):\\Theta(G)>q\\}$ is r.e., $U$ is r.e. iff $G\\mapsto\\Theta(G)$ is a computable\nreal-valued function.)\nFormalization notes: A graph code is (n, l) : ℕ × List (ℕ × ℕ); it denotes the simple graph on Fin n in which\nu ~ v iff u ≠ v and (u, v) or (v, u) occurs in l (pairs with an entry ≥ n are ignored). Every finite simple graph\narises (up to isomorphism; Θ is an isomorphism invariant). A rational threshold is a code (a, b) : ℕ × ℕ denoting\na/(b+1); negative thresholds are omitted since Θ ≥ 0 makes Θ < q false for them (a computable, trivial part). The\nk-th strong power G^⊠k has vertex set Fin k → Fin n, with σ ~ τ iff σ ≠ τ and for every coordinate i, σ i = τ i or\nσ i ~ τ i. α is the maximum size of an independent finset (a set of ℕ bounded by the number of vertices, so sSup is\nthe true maximum). Θ(G) = sup_{k ≥ 1} α(G^⊠k)^{1/k} (real rpow), which equals the limit by Fekete's lemma\n(supermultiplicativity); the family is bounded by n so the iSup is the true supremum. \"r.e.\" is Mathlib's `REPred`\n(the predicate is the domain of a partial recursive function) on the Primcodable type of codes.\n`Claim` = U is r.e. (equivalently Θ is computable). `¬Claim` = U is not r.e. (Θ is not computable). The weaker\nsubquestion (is Θ(C₇) a computable real?) is not encoded.\n-/\nnamespace OpenProblems.QEDM135\n\nnoncomputable section\n\nopen Classical\n\n/-- The graph on Fin n coded by an edge list: u ~ v iff u ≠ v and (u, v) or (v, u) occurs in the list. -/\ndef toGraph (c : ℕ × List (ℕ × ℕ)) : SimpleGraph (Fin c.1) :=\n  SimpleGraph.fromRel fun u v : Fin c.1 => ((u : ℕ), (v : ℕ)) ∈ c.2\n\n/-- The k-th strong power G^⊠k on Fin k → V: σ ~ τ iff σ ≠ τ and each coordinate is equal or adjacent\n(the relation is already symmetric, so `fromRel` adds nothing beyond σ ≠ τ). -/\ndef strongPow {V : Type} (G : SimpleGraph V) (k : ℕ) : SimpleGraph (Fin k → V) :=\n  SimpleGraph.fromRel fun σ τ : Fin k → V => ∀ i : Fin k, σ i = τ i ∨ G.Adj (σ i) (τ i)\n\n/-- Independence number: the largest size of a finset with no two adjacent elements. -/\ndef indepNum {V : Type} (G : SimpleGraph V) : ℕ :=\n  sSup {m : ℕ | ∃ s : Finset V, s.card = m ∧ ∀ a ∈ s, ∀ b ∈ s, ¬ G.Adj a b}\n\n/-- Shannon capacity Θ(G) = sup_{k≥1} α(G^⊠k)^{1/k}. -/\ndef shannonCap {V : Type} (G : SimpleGraph V) : ℝ :=\n  ⨆ k : ℕ, ((indepNum (strongPow G (k + 1)) : ℕ) : ℝ) ^ ((1 : ℝ) / ((k : ℝ) + 1))\n\n/-- The nonnegative rational a/(b+1). -/\ndef qOf (p : ℕ × ℕ) : ℝ := (p.1 : ℝ) / ((p.2 : ℝ) + 1)\n\ndef Claim : Prop :=\n  REPred (fun p : (ℕ × List (ℕ × ℕ)) × (ℕ × ℕ) => shannonCap (toGraph p.1) < qOf p.2)\n\nend\n\nend OpenProblems.QEDM135\n",
+  "set": "main"
+ },
+ {
+  "id": "QED-M136",
+  "review_id": "R6-L32",
+  "title": "The MDS conjecture over fields of odd characteristic",
+  "area": "Combinatorics",
+  "difficulty": 3.5,
+  "grade": "A",
+  "provenance": "Curated",
+  "credit": "MDS conjecture (Segre 1955 problem as reformulated in coding theory); progress by Ball, Ball–De Beule, X. Fan (2026).",
+  "results": null,
+  "premise_risks": [
+   "Relies on unrefereed Oct 2026 preprints (Fan; Chen–Huang) for the current boundary; these do not change the statement, only the framing",
+   "Very active area: the remaining window may be closed soon",
+   "Historically associated with Segre, but the problem's standard name is not a person's"
+  ],
+  "plain": "An arc in F_q^k is a set of vectors in which every k of them are linearly independent. Arcs are the same thing as linear MDS codes, the codes that meet the Singleton bound, and Reed-Solomon codes give arcs of size q+1. Show that q+1 is always the maximum when q is odd and 2 ≤ k ≤ q. This is known when q is prime (Ball 2012). A 2026 preprint claims it for all k outside a middle window of roughly q/(2p−3) dimensions, where p is the characteristic; the smallest open case would then be q=27 with 12 ≤ k ≤ 17.",
+  "math": "Let $q$ be an odd prime power and $2\\le k\\le q$. Prove that if $S\\subseteq\\mathbb{F}_q^k$ is a set of vectors such that every $k$ distinct elements of $S$ are linearly independent, then $|S|\\le q+1$.",
+  "novelty": 2,
+  "importance": 8,
+  "value": 7,
+  "formal_status": "formalized",
+  "lean_gap": null,
+  "refs": [
+   "https://arxiv.org/abs/2610.03740",
+   "https://arxiv.org/abs/2610.28208",
+   "https://arxiv.org/pdf/1908.10772",
+   "https://arxiv.org/pdf/1511.03623",
+   "https://mathworld.wolfram.com/MDSConjecture.html"
+  ],
+  "lean": "import Mathlib\n/-! QED-M136: The MDS conjecture over fields of odd characteristic\nAn arc in F_q^k is a set of vectors in which every k of them are linearly independent. Arcs are the same thing as linear MDS codes, the codes that meet the Singleton bound, and Reed-Solomon codes give arcs of size q+1. Show that q+1 is always the maximum when q is odd and 2 ≤ k ≤ q. This is known when q is prime (Ball 2012). A 2026 preprint claims it for all k outside a middle window of roughly q/(2p−3) dimensions, where p is the characteristic; the smallest open case would then be q=27 with 12 ≤ k ≤ 17.\nInformal statement: Let $q$ be an odd prime power and $2\\le k\\le q$. Prove that if $S\\subseteq\\mathbb{F}_q^k$ is a set of vectors such that every $k$ distinct elements of $S$ are linearly independent, then $|S|\\le q+1$.\nFormalization notes: F ranges over all finite fields (`Field F`, `Fintype F`) of odd cardinality\nq (odd q is the same as odd characteristic; every odd prime power is realized). Vectors in F_q^k\nare `Fin k → F`; S is a `Finset`. \"Every k distinct elements are linearly independent\" is: for\nevery sub-finset T ⊆ S with |T| = k, the family of elements of T (indexed by the subtype of T)\nis `LinearIndependent F`. This is the standard notion of an arc (equivalently, the columns of a\ngenerator matrix of a linear [|S|, k] MDS code; duplicate columns cannot occur since S is a set,\nand a repeated vector would make some k-subset dependent anyway). Claim: every such arc has at\nmost q+1 elements whenever 2 ≤ k ≤ q. ¬Claim means an arc of size q+2 in some F_q^k with q odd\nand 2 ≤ k ≤ q.\n-/\nnamespace OpenProblems.QEDM136\nnoncomputable section\n\n/-- `S ⊆ F^k` is an arc: every `k` distinct elements are linearly independent. -/\ndef IsArc {F : Type} [Field F] (k : ℕ) (S : Finset (Fin k → F)) : Prop :=\n  ∀ T : Finset (Fin k → F), T ⊆ S → T.card = k →\n    LinearIndependent F (fun v : {x // x ∈ T} => (v.1 : Fin k → F))\n\ndef Claim : Prop :=\n  ∀ (F : Type) [Field F] [Fintype F], Odd (Fintype.card F) →\n    ∀ k : ℕ, 2 ≤ k → k ≤ Fintype.card F →\n      ∀ S : Finset (Fin k → F), IsArc k S → S.card ≤ Fintype.card F + 1\n\nend\nend OpenProblems.QEDM136\n",
+  "set": "main"
  }
 ]

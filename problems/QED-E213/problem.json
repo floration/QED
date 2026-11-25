@@ -1,0 +1,26 @@
+{
+ "id": "QED-E213",
+ "set": "extended",
+ "title": "Half of the binary digits of Champernowne's constant are 1",
+ "area": "Number theory",
+ "difficulty": 6.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Open question recorded by V. Becher and N. Graus; constant due to D. G. Champernowne (1933).",
+ "premise_risks": [
+  "Numerical frequency at 3×10^5 bits is 0.4978, slightly below 1/2; convergence may be very slow (or, in principle, the claim false) - the problem is honest either way, but a disproof would be extremely surprising",
+  "Low novelty: normality of classical constants in other bases is a well-known folklore question"
+ ],
+ "plain": "Champernowne's constant C = 0.123456789101112... (write the positive integers one after another in decimal) was proved normal in base 10 in 1933: every block of decimal digits appears with the expected frequency. Nothing is known about its expansion in bases that are not powers of 10. Prove the first instance: in the binary expansion of C, the proportion of 1s among the first N digits tends to 1/2.",
+ "math": "Let $C=\\sum_{k\\ge1}d_k10^{-k}$ where $d_1d_2d_3\\ldots=123456789101112\\ldots$ is the concatenation of the decimal representations of $1,2,3,\\ldots$, and let $b_n=\\lfloor 2^nC\\rfloor\\bmod 2$ for $n\\ge1$. Prove that $\\lim_{N\\to\\infty}\\frac1N\\#\\{1\\le n\\le N:\\ b_n=1\\}=\\frac12$.",
+ "novelty": 4,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://staff.dc.uba.ar/becher/papers/champ.pdf",
+  "https://cecm-wayback.dcr.sfu.ca/~pborwein/PAPERS/P211.pdf",
+  "https://en.wikipedia.org/wiki/Champernowne_constant",
+  "https://arxiv.org/abs/1710.09313"
+ ]
+}

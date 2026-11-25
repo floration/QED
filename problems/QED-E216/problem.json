@@ -1,0 +1,24 @@
+{
+ "id": "QED-E216",
+ "set": "extended",
+ "title": "A biplane with more than 13 points per block",
+ "area": "Combinatorics",
+ "difficulty": 4.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Classical open problem on biplanes (Hussain 1945, Cameron 1973 survey 'Biplanes'); smallest open case per Alavi–Daneshkhah–Praeger and Crnković et al.",
+ "premise_risks": [
+  "Disjunction risk: posed as an existence question whose positive answer needs one example and negative answer would need infinitely many cases; the board may prefer the single case (121,16,2) — offer that as the headline formalization",
+  "Related in spirit to pending J14 (projective plane order 12) and E023 (S(2,6,51)) but different parameters and family"
+ ],
+ "plain": "A biplane is a family of v blocks, each a k-element subset of a v-point set, such that every two blocks share exactly two points (equivalently every two points lie in exactly two blocks). Only sixteen nontrivial biplanes are known, all with k ≤ 13. Is there a biplane with larger blocks? The smallest open case is v = 121, k = 16.",
+ "math": "Does there exist a symmetric $2$-$(v,k,2)$ design with $k\\ge14$, i.e. $v$ distinct $k$-subsets of a $v$-set with $k(k-1)=2(v-1)$, $k\\ge14$, any two of which meet in exactly $2$ points? (Bruck–Ryser–Chowla excludes $k=14,15$; the first open case is $(v,k)=(121,16)$.)",
+ "novelty": 2,
+ "importance": 5,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2010.12944",
+  "https://arxiv.org/pdf/2004.04535"
+ ]
+}

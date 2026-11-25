@@ -1,0 +1,28 @@
+{
+ "id": "QED-E204",
+ "set": "extended",
+ "title": "Solve x^2 + y^5 = z^7, the smallest open generalized Fermat equation",
+ "area": "Number theory",
+ "difficulty": 3.5,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Sub-case of the generalized Fermat (Fermat–Catalan) problem; identification of (2,5,7) as smallest open case from Grechuk et al. survey arXiv:2412.11933",
+ "premise_risks": [
+  "Unrefereed IUT-based claim (Zhou, arXiv:2510.05448) may list (2,5,7) among 'solved' signatures; not accepted",
+  "Survey's 'smallest sum' claim as of Dec 2024/2025 versions; a 2026 solution could exist unnoticed (searched, none found)",
+  "Possible overlap with archived board item N-281 'A mixed Fermat equation' (content unknown)"
+ ],
+ "plain": "Equations x^p + y^q = z^r with 1/p+1/q+1/r < 1 are expected to have only finitely many solutions in coprime integers, and many individual exponent triples have been solved. A 2024 survey identifies (2,5,7) as the unsolved triple with the smallest exponent sum. Show that x^2 + y^5 = z^7 has no solution in nonzero coprime integers.",
+ "math": "Prove that there are no $x,y,z\\in\\mathbb Z$ with $xyz\\neq0$, $\\gcd(x,y,z)=1$ and $x^2+y^5=z^7$. (Since 5 and 7 are odd and signs are allowed, this covers every arrangement of the exponents, e.g. $x^5+y^7=z^2$.)",
+ "novelty": 3,
+ "importance": 5,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/pdf/2412.11933v1",
+  "https://arxiv.org/pdf/2609.26996",
+  "https://arxiv.org/pdf/2512.04936",
+  "https://arxiv.org/abs/2503.14510",
+  "https://arxiv.org/pdf/1506.02860"
+ ]
+}

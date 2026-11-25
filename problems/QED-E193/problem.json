@@ -1,0 +1,27 @@
+{
+ "id": "QED-E193",
+ "set": "extended",
+ "title": "Do hexagonal and cubic ice have the same residual entropy?",
+ "area": "Mathematical physics",
+ "difficulty": 5.5,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Question going back to Onsager/Nagle (1960s); restated as open in arXiv:2404.13897, 2511.22477 and 2608.07613",
+ "premise_risks": [
+  "The claimed direction (equality) could be false: a rigorous strict inequality would refute the Claim, though it would still resolve the question. The scorer may want it phrased as 'decide'.",
+  "Chen-Ran 2608.07613 (unrefereed, 2026) supplies only side bounds and is not needed for the premise. The premise W_h >= W_c rests on Onsager/Nagle 1966 plus the 2024 PRB.",
+  "Defining the periodic lonsdaleite quotients in Lean needs care (even number of layers, consistent registry). The limit's independence of the torus shape is standard but must either be assumed in the statement or proved."
+ ],
+ "plain": "In ice, each oxygen sits at a vertex of a 4-regular crystal lattice and the hydrogens obey the ice rule: two bonds point in and two point out at every vertex. Counting such configurations is counting Eulerian orientations of the lattice. Hexagonal ice (Ih, the lonsdaleite net) and cubic ice (Ic, the diamond net) are two different stackings of the same puckered layers and look identical locally. Onsager proved that hexagonal ice has at least as many configurations per molecule as cubic ice. Are the two per-vertex growth constants exactly equal?",
+ "math": "Same as M, with the clarification that D_m, H_m are treated as multigraph quotients (parallel edges only for m=1) and EO counts orientations with in-degree 2 at every vertex; Claim asserts both limits exist and coincide (W_h = W_c).",
+ "novelty": 3,
+ "importance": 5,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2511.22477",
+  "https://arxiv.org/abs/2404.13897",
+  "https://arxiv.org/pdf/math/9810155",
+  "https://arxiv.org/pdf/2409.04989"
+ ]
+}

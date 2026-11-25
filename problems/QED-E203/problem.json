@@ -1,0 +1,27 @@
+{
+ "id": "QED-E203",
+ "set": "extended",
+ "title": "Does a triangle with integer sides, medians and area exist?",
+ "area": "Number theory",
+ "difficulty": 6.0,
+ "grade": "B",
+ "provenance": "Curated",
+ "credit": "Classical (Euler's work on rational medians; perfect-triangle problem listed in Guy, Unsolved Problems in Number Theory); Buchholz, Rathbun, Hone",
+ "premise_risks": [
+  "Unrefereed non-existence claim arXiv:2111.05118 (Shihaliev, revised through 2026) - not accepted, but scorer should know",
+  "Answer may be a computer find; but decades of searches suggest none exists"
+ ],
+ "plain": "Is there a triangle whose three sides, three medians (segments from a vertex to the midpoint of the opposite side) and area are all integers? Triangles with integer sides and area (Heron triangles) are plentiful, triangles with integer sides and integer medians exist, and there are infinitely many Heron triangles with two integer medians, but no triangle with all seven quantities integral has ever been found.",
+ "math": "Decide whether there exist positive integers $a,b,c,m_a,m_b,m_c,A$ with $a<b+c,\\ b<a+c,\\ c<a+b$, $4m_a^2=2b^2+2c^2-a^2$, $4m_b^2=2a^2+2c^2-b^2$, $4m_c^2=2a^2+2b^2-c^2$ and $16A^2=(a+b+c)(-a+b+c)(a-b+c)(a+b-c)$. (Equivalently, by scaling: a non-degenerate triangle with rational sides, medians and area.)",
+ "novelty": 2,
+ "importance": 4,
+ "value": 5,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/2401.05581",
+  "https://arxiv.org/abs/2107.03197",
+  "https://arxiv.org/abs/1910.06888",
+  "https://arxiv.org/abs/2111.05118",
+  "https://arxiv.org/html/2605.22458v1"
+ ]
+}

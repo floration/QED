@@ -1,0 +1,26 @@
+{
+ "id": "QED-E205",
+ "set": "extended",
+ "title": "A rational Diophantine septuple",
+ "area": "Number theory",
+ "difficulty": 5.0,
+ "grade": "A",
+ "provenance": "Curated",
+ "credit": "Classical (Diophantus, Fermat, Euler); modern formulation and record constructions by Dujella, Gibbs, Kazalicki, Mikić, Szikszai",
+ "premise_risks": [
+  "Listed on Epoch FrontierMath Open Problems, so actively targeted by AI search efforts; could be found by computation",
+  "Expected answer unknown; if no septuple exists, a proof is far beyond current methods (needs bounds on rational points of general-type varieties)"
+ ],
+ "plain": "A rational Diophantine m-tuple is a set of m distinct nonzero rational numbers such that the product of any two of them, plus 1, is a square of a rational number. Infinitely many such sets of size 6 are known, but nobody knows whether a set of size 7 exists. Find one, or prove that none exists.",
+ "math": "Decide whether there exist seven distinct $a_1,\\dots,a_7\\in\\mathbb Q\\setminus\\{0\\}$ such that $a_ia_j+1$ is the square of a rational number for all $1\\le i<j\\le7$.",
+ "novelty": 2,
+ "importance": 5,
+ "value": 7,
+ "formal_status": "formalized",
+ "refs": [
+  "https://arxiv.org/abs/1507.00569",
+  "https://arxiv.org/pdf/2403.17959",
+  "https://arxiv.org/pdf/2604.08729",
+  "https://epoch.ai/frontiermath/open-problems/diophantine-septuple"
+ ]
+}

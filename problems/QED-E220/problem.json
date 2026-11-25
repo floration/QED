@@ -1,0 +1,25 @@
+{
+ "id": "QED-E220",
+ "set": "extended",
+ "title": "Is there a cubic graph of girth 13 with fewer than 272 vertices?",
+ "area": "Graph theory",
+ "difficulty": 3.0,
+ "grade": "C",
+ "provenance": "Curated",
+ "credit": "Cage problem (Tutte 1947); bounds from McKay–Myrvold–Nadon (1998) and the Exoo–Jajcay dynamic survey.",
+ "premise_risks": [
+  "Largely computational; could be seen as a 'pure large computation' (rule 5) though it is a recognized open problem with refereed bounds",
+  "Upper-bound constructions for neighbouring girths moved in Nov 2026; 272 may be beaten soon by search"
+ ],
+ "plain": "A (3,g)-cage is a smallest 3-regular graph with no cycle shorter than g. Cubic cages are known for every girth up to 12. For girth 13 the best known graph has 272 vertices, while exhaustive computer searches only show that at least 202 vertices are needed. Is there a 3-regular graph of girth at least 13 on fewer than 272 vertices?",
+ "math": "Does there exist a $3$-regular simple graph $G$ with $|V(G)|<272$ and girth at least $13$? Equivalently (by strict monotonicity $n(3,g)<n(3,g+1)$), is $n(3,13)<272$, given the known bounds $202\\le n(3,13)\\le272$?",
+ "novelty": 2,
+ "importance": 4,
+ "value": 6,
+ "formal_status": "formalized",
+ "refs": [
+  "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v33i1p54/pdf",
+  "https://arxiv.org/abs/2511.07247",
+  "https://arxiv.org/abs/2611.09000"
+ ]
+}
