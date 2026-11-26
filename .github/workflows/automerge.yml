@@ -13,6 +13,7 @@ jobs:
       github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.path == '.github/workflows/verify.yml'
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       R: ${{ github.repository }}

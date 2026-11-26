@@ -1,0 +1,1 @@
+{"id": "QED-Q1", "expect": "fail", "raw": "reject", "raw_msg": "partial|opaque|unsafe", "expect_msg": "partial|opaque|unsafe", "note": "solution depends on a partial def"}

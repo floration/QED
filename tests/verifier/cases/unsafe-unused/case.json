@@ -1,0 +1,1 @@
+{"id": "QED-Q1", "expect": "fail", "raw": "reject", "raw_msg": "unsafe constant", "note": "an unsafe def in the contribution, not used by solution"}

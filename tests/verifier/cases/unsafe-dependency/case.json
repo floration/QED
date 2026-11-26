@@ -1,0 +1,1 @@
+{"id": "QED-Q1", "expect": "fail", "raw": "fail", "raw_msg": "unsafe", "note": "solution uses an unsafe def (the Lean kernel already refuses it)"}

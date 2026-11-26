@@ -1,0 +1,1 @@
+{"id": "QED-Q1", "expect": "fail", "timeout": 45, "expect_msg": "timed out", "note": "compile-time DoS: must be stopped by the wall-clock limit (45 s here, 2400 s in production)"}

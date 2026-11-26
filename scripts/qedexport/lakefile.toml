@@ -1,0 +1,14 @@
+# Exporter used by the verify workflow (see scripts/check.py). Pinned lean4export source; the toolchain is
+# always the repository's own lean-toolchain (CI copies it here before `lake build`).
+name = "qedexport"
+defaultTargets = ["qedexport"]
+
+[[require]]
+name = "lean4export"
+git = "https://github.com/leanprover/lean4export"
+rev = "df81913eee5519d5a88ae5b0fd701b5298cc29ab"
+
+[[lean_exe]]
+name = "qedexport"
+root = "QedExport"
+supportInterpreter = true

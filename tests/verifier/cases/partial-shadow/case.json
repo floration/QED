@@ -1,0 +1,1 @@
+{"id": "QED-Q1", "partial": true, "expect": "fail", "expect_msg": "shadows", "raw": "reject", "raw_msg": "shadows", "note": "partial work that shadows the statement from another namespace"}
