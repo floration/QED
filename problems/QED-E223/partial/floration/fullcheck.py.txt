@@ -1,0 +1,33 @@
+import sys
+from gadget import build
+h,k=int(sys.argv[1]),int(sys.argv[2])
+P,lab,n,p,h=build(h,k); N=n*n
+sid={s:i for i,s in enumerate(sorted(set(P.values())))}   # alpha=0 symbols -> beta
+def val(R,C):
+  b,o=divmod(R,n); t,q=divmod(C,n)
+  if o==0 and t==0: return None if (b,q) in lab else sid[P[(b,q)]]   # symbol (0,beta) -> beta
+  return ((o+t)%n)*n+(b+q)%n
+rows=[set() for _ in range(N)]; cols=[set() for _ in range(N)]; boxes=[set() for _ in range(N)]
+ok=True; blank=[]
+for R in range(N):
+  for C in range(N):
+    v=val(R,C)
+    if v is None: blank.append((R,C)); continue
+    bx=(R//n)*n+C//n
+    if v in rows[R] or v in cols[C] or v in boxes[bx]: ok=False
+    rows[R].add(v); cols[C].add(v); boxes[bx].add(v)
+print("givens are a valid partial Sudoku:",ok, " blanks:",len(blank))
+full=set(range(N)); inv={i:s for s,i in sid.items()}
+allowed_ok=True
+for (R,C) in blank:
+  a={inv[x] for x in full-rows[R]-cols[C]-boxes[(R//n)*n+C//n]}
+  if a!=set(lab[(R//n,C%n)]): allowed_ok=False
+print("each blank allows exactly its designed symbols:",allowed_ok)
+# groups per unit/symbol among blanks == PHP lines (boxes included)
+lines=set([frozenset((i,j) for j in range(h)) for i in range(p)]+[frozenset((i,j) for i in range(p)) for j in range(h)])
+from collections import defaultdict
+G=defaultdict(list)
+for (R,C) in blank:
+  for s,pv in lab[(R//n,C%n)].items():
+    for u in (('r',R),('c',C),('b',(R//n)*n+C//n)): G[(u,s)].append(pv)
+print("every row/col/box-symbol group is one PHP line:",all(len(g)==len(set(g)) and frozenset(g) in lines for g in G.values()))

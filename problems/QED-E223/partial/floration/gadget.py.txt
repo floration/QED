@@ -1,0 +1,76 @@
+# QED-E223 gadget, general form: PHP(p=h+2 pigeons, h holes), h odd >= 7, L=4h+4, n=L+k (0<=k<=7).
+# Builds the order-n partial Latin square S0 (rows = bands, cols = stack-0 offsets) and the PHP labels.
+def build(h,k):
+  p=h+2; L=2*p+2*h; i2=pow(2,-1,p)
+  E=[e for e in range(p) if e not in (1,p-1)]; f={e:t for t,e in enumerate(E)}   # E -> Z_h
+  off={'A':0,'B':p,'A2':p+h,'B2':2*p+h}; sz={'A':p,'B':h,'A2':p,'B2':h}
+  coff={'C':0,'D':h,'C2':h+p,'D2':2*h+p}; csz={'C':h,'D':p,'C2':h,'D2':p}
+  P={}; lab={}
+  def put(rb,cb,g):
+    for a in range(sz[rb]):
+      for c in range(csz[cb]):
+        v=g(a,c)
+        if v is not None: P[(off[rb]+a,coff[cb]+c)]=v
+  put('B','C2',lambda k_,c:('X',(k_+c)%h))
+  put('B2','C',lambda k_,c:('Z',(k_+c)%h))
+  put('B','D2',lambda k_,d:('Y2',(k_+d)%p))
+  put('B2','D',lambda k_,d:('Y',(k_+d)%p))
+  put('A','C2',lambda a,c:('Y',(a+c)%p))
+  put('A2','C',lambda a,c:('Y2',(a+c)%p))
+  put('A','D',lambda a,d:('Y2',(a+d)%p))
+  def band(a,d,S1,S2):   # row a: (a,a+1)->S1[a-1], (a,a-1)->S1[a-2], else S2[f(d-a)]
+    e=(d-a)%p
+    return (S1,(a-1)%p) if e==1 else (S1,(a-2)%p) if e==p-1 else (S2,f[e])
+  put('A','D2',lambda a,d:band(a,d,'Y','Z'))
+  put('A2','D',lambda a,d:band(a,d,'Y','X'))
+  put('A2','D2',lambda a,d:band(a,d,'Y2','Y') if (d-a)%p in (1,p-1) else ('Y',((a+d-3)*i2)%p))
+  # PHP labels on region cells: symbol -> (pigeon, hole)
+  for i in range(p):
+    for j in range(h):
+      lab[(off['A']+i,coff['C']+j)]={('X',s):(i,(j+s)%h) for s in range(h)}
+      lab[(off['A2']+i,coff['C2']+j)]={('Z',s):(i,(j+s)%h) for s in range(h)}
+  for kk in range(h):
+    for j in range(h):
+      lab[(off['B']+kk,coff['C']+j)]={('Y',i):(i,(kk+j)%h) for i in range(p)}
+      lab[(off['B2']+kk,coff['C2']+j)]={('Y2',i):(i,(kk+j)%h) for i in range(p)}
+    for i in range(p):
+      lab[(off['B']+kk,coff['D']+i)]={('Z',s):(i,(kk+s)%h) for s in range(h)}
+      lab[(off['B2']+kk,coff['D2']+i)]={('X',s):(i,(kk+s)%h) for s in range(h)}
+  # k disjoint transversals, shift t: B->C' , B'->C , A->D , A'->D' (Lambda cells with d-a = E[t])
+  for t in range(k):
+    T=[]
+    T+=[(off['B']+x,coff['C2']+(x+t)%h) for x in range(h)]
+    T+=[(off['B2']+x,coff['C']+(x+t)%h) for x in range(h)]
+    T+=[(off['A']+a,coff['D']+(a+t)%p) for a in range(p)]
+    T+=[(off['A2']+a,coff['D2']+(a+E[t])%p) for a in range(p)]
+    w=('W',t)
+    for (r,c) in T:
+      s=P[(r,c)]; P[(r,c)]=w; P[(r,L+t)]=s; P[(L+t,c)]=s
+  for t in range(k):
+    for u in range(k): P[(L+t,L+u)]=('W',(t+u)%k)
+  return P,lab,L+k,p,h
+def check(h,k):
+  P,lab,n,p,h=build(h,k)
+  ok=(len(P)+len(lab)==n*n) and not(set(P)&set(lab))
+  syms=set(P.values()); ok&=len(syms)==n
+  rows=[[P[(r,c)] for c in range(n) if (r,c) in P] for r in range(n)]
+  cols=[[P[(r,c)] for r in range(n) if (r,c) in P] for c in range(n)]
+  ok&=all(len(x)==len(set(x)) for x in rows+cols)
+  rm=[syms-set(x) for x in rows]; cm=[syms-set(x) for x in cols]
+  ok&=all(len(rm[r])==sum((r,c) in lab for c in range(n)) for r in range(n))
+  ok&=all(len(cm[c])==sum((r,c) in lab for r in range(n)) for c in range(n))
+  ok&=all(rm[r]&cm[c]==set(d) for (r,c),d in lab.items())
+  lines=set([frozenset((i,j) for j in range(h)) for i in range(p)]+[frozenset((i,j) for i in range(p)) for j in range(h)])
+  ok&=all(len(set(d.values()))==len(d) and frozenset(d.values()) in lines for d in lab.values())
+  for r in range(n):
+    for s in rm[r]:
+      g=[lab[(r,c)][s] for c in range(n) if (r,c) in lab and s in lab[(r,c)]]
+      ok&=len(g)==len(set(g)) and frozenset(g) in lines
+  for c in range(n):
+    for s in cm[c]:
+      g=[lab[(r,c)][s] for r in range(n) if (r,c) in lab and s in lab[(r,c)]]
+      ok&=len(g)==len(set(g)) and frozenset(g) in lines
+  return ok
+if __name__=="__main__":
+  for h in (7,9,11):
+    print(h,[check(h,k) for k in range(8)])
