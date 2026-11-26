@@ -2846,15 +2846,17 @@ variable (env : Fin 7 → ℕ)
 @[simp] lemma ev_div (a b : E7) : (Exp.div a b).eval env = a.eval env / b.eval env := rfl
 @[simp] lemma ev_mod (a b : E7) : (Exp.mod a b).eval env = a.eval env % b.eval env := rfl
 @[simp] lemma ev_ite (c a b : E7) :
-    (Exp.ite c a b).eval env = if c.eval env = 0 then a.eval env else b.eval env := rfl
+    (Exp.ite c a b).eval env = if c.eval env = 0 then a.eval env else b.eval env := Exp.eval_ite env c a b
 @[simp] lemma ev_lt (a b x y : E7) :
     (lt a b x y).eval env = if a.eval env < b.eval env then x.eval env else y.eval env := by
+  rw [lt, Exp.eval_ite]
   show (if a.eval env + 1 - b.eval env = 0 then x.eval env else y.eval env) = _
   by_cases h : a.eval env < b.eval env
   · rw [if_pos (by omega), if_pos h]
   · rw [if_neg (by omega), if_neg h]
 @[simp] lemma ev_eq (a b x y : E7) :
     (eq a b x y).eval env = if a.eval env = b.eval env then x.eval env else y.eval env := by
+  rw [eq, Exp.eval_ite]
   show (if a.eval env - b.eval env + (b.eval env - a.eval env) = 0 then x.eval env else y.eval env) = _
   by_cases h : a.eval env = b.eval env
   · rw [if_pos (by omega), if_pos h]
@@ -2900,6 +2902,7 @@ variable (env : Fin 7 → ℕ)
   simp only [ET_E, ev_eq, ev_k, ev_add, ET]
   by_cases h : Exp.eval env t = 0 <;> simp [h]
 @[simp] lemma ev_half (p m : E7) : (half_E p m).eval env = half (p.eval env) (m.eval env) := by
+  rw [half_E, Exp.eval_ite]
   show (if m.eval env % 2 = 0 then m.eval env / 2 else (m.eval env + p.eval env) / 2) = _
   rfl
 @[simp] lemma ev_band (p a d S1 S2 : E7) :

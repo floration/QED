@@ -13,13 +13,23 @@ namespace QEDTM
 
 variable {R : ℕ}
 
-inductive Prog (R : ℕ) where
-  | inc (r : Fin R)
-  | dec (r : Fin R)
-  | out (b : Bool)
-  | seq (p q : Prog R)
-  | loop (r : Fin R) (body : Prog R)
-  | ite (r : Fin R) (z nz : Prog R)
+/-- Node kinds of programs: `inc`, `dec`, `out`, `seq`, `loop`, `ite`. -/
+def ProgTag (R : ℕ) := Fin R ⊕ Fin R ⊕ Bool ⊕ Unit ⊕ Fin R ⊕ Fin R
+
+/-- Programs, as binary trees of node kinds (children unused by leaves are ignored). -/
+def Prog (R : ℕ) := BinaryTree (ProgTag R)
+
+@[reducible, match_pattern] def Prog.inc (r : Fin R) : Prog R := BinaryTree.node (Sum.inl r) .nil .nil
+@[reducible, match_pattern] def Prog.dec (r : Fin R) : Prog R :=
+  BinaryTree.node (Sum.inr (Sum.inl r)) .nil .nil
+@[reducible, match_pattern] def Prog.out (b : Bool) : Prog R :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inl b))) .nil .nil
+@[reducible, match_pattern] def Prog.seq (p q : Prog R) : Prog R :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inl ())))) p q
+@[reducible, match_pattern] def Prog.loop (r : Fin R) (body : Prog R) : Prog R :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inl r))))) body .nil
+@[reducible, match_pattern] def Prog.ite (r : Fin R) (z nz : Prog R) : Prog R :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr r))))) z nz
 
 /-- Machine state: register values and emitted bits (oldest first). -/
 @[ext] structure St (R : ℕ) where
@@ -44,34 +54,39 @@ inductive Run : Prog R → St R → St R → ℕ → Prop
 
 /-! ### Flat code -/
 
-inductive Ins (R : ℕ) where
-  | inc (r : Fin R) (j : ℕ)
-  | dec (r : Fin R) (j : ℕ)
-  | out (b : Bool) (j : ℕ)
-  | jz (r : Fin R) (j₁ j₂ : ℕ)
-  | halt
+/-- Flat instructions: `inc r j`, `dec r j`, `out b j`, `jz r j₁ j₂`, `halt`. -/
+def Ins (R : ℕ) := (Fin R × ℕ) ⊕ (Fin R × ℕ) ⊕ (Bool × ℕ) ⊕ (Fin R × ℕ × ℕ) ⊕ Unit
+
+@[reducible, match_pattern] def Ins.inc (r : Fin R) (j : ℕ) : Ins R := Sum.inl (r, j)
+@[reducible, match_pattern] def Ins.dec (r : Fin R) (j : ℕ) : Ins R := Sum.inr (Sum.inl (r, j))
+@[reducible, match_pattern] def Ins.out (b : Bool) (j : ℕ) : Ins R := Sum.inr (Sum.inr (Sum.inl (b, j)))
+@[reducible, match_pattern] def Ins.jz (r : Fin R) (j₁ j₂ : ℕ) : Ins R :=
+  Sum.inr (Sum.inr (Sum.inr (Sum.inl (r, j₁, j₂))))
+@[reducible, match_pattern] def Ins.halt : Ins R := Sum.inr (Sum.inr (Sum.inr (Sum.inr ())))
 
 noncomputable def Prog.size : Prog R → ℕ
-  | .inc _ | .dec _ | .out _ => 1
+  | .nil => 1
+  | .node (Sum.inl _) _ _ | .node (Sum.inr (Sum.inl _)) _ _ | .node (Sum.inr (Sum.inr (Sum.inl _))) _ _ => 1
   | .seq p q => p.size + q.size
-  | .loop _ b => b.size + 1
+  | .node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inl _))))) b _ => Prog.size b + 1
   | .ite _ z nz => z.size + nz.size + 1
 
 /-- Code of `p` placed at address `a`, exiting to `e`. -/
 noncomputable def Prog.compile : Prog R → ℕ → ℕ → List (Ins R)
-  | .inc r, _, e => [.inc r e]
-  | .dec r, _, e => [.dec r e]
-  | .out b, _, e => [.out b e]
+  | .nil, _, _ => [.halt]
+  | .node (Sum.inl r) _ _, _, e => [.inc r e]
+  | .node (Sum.inr (Sum.inl r)) _ _, _, e => [.dec r e]
+  | .node (Sum.inr (Sum.inr (Sum.inl b))) _ _, _, e => [.out b e]
   | .seq p q, a, e => p.compile a (a + p.size) ++ q.compile (a + p.size) e
-  | .loop r b, a, e => .jz r e (a + 1) :: b.compile (a + 1) a
+  | .node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inl r))))) b _, a, e => .jz r e (a + 1) :: Prog.compile b (a + 1) a
   | .ite r z nz, a, e => .jz r (a + 1) (a + 1 + z.size) :: (z.compile (a + 1) e ++ nz.compile (a + 1 + z.size) e)
 
 lemma Prog.length_compile (p : Prog R) (a e : ℕ) : (p.compile a e).length = p.size := by
   induction p generalizing a e with
-  | inc | dec | out => rfl
-  | seq p q ihp ihq => simp [compile, size, ihp, ihq]
-  | loop r b ih => simp [compile, size, ih]
-  | ite r z nz ihz ihnz => simp [compile, size, ihz, ihnz]
+  | nil => rfl
+  | node t l r ihl ihr =>
+    rcases t with _ | _ | _ | _ | _ | _
+    all_goals first | rfl | simp [compile, size, ihl, ihr]
 
 /-- One instruction. -/
 def stepIns : Ins R → St R → Option (ℕ × St R)
@@ -533,48 +548,74 @@ namespace QEDTM
 
 open Function
 
-/-- Expressions over `V` variables. `ite c a b` is `if c = 0 then a else b`. -/
-inductive Exp (V : ℕ) where
-  | var (i : Fin V)
-  | const (c : ℕ)
-  | add (a b : Exp V)
-  | sub (a b : Exp V)
-  | mul (a b : Exp V)
-  | div (a b : Exp V)
-  | mod (a b : Exp V)
-  | ite (c a b : Exp V)
+/-- Node kinds: `var`, `const`, `add`, `sub`, `mul`, `div`, `mod`, `ifz`. -/
+def ExpTag (V : ℕ) := Fin V ⊕ ℕ ⊕ Unit ⊕ Unit ⊕ Unit ⊕ Unit ⊕ Unit ⊕ Unit ⊕ Unit
+
+/-- Expressions as binary trees of node kinds (children unused by leaves are ignored; `nil` is `0`).
+`ifz c a` is `if c = 0 then a else 0`. -/
+def Exp (V : ℕ) := BinaryTree (ExpTag V)
 
 variable {V : ℕ}
 
+@[reducible, match_pattern] def Exp.var (i : Fin V) : Exp V := BinaryTree.node (Sum.inl i) .nil .nil
+@[reducible, match_pattern] def Exp.const (c : ℕ) : Exp V := BinaryTree.node (Sum.inr (Sum.inl c)) .nil .nil
+@[reducible, match_pattern] def Exp.add (a b : Exp V) : Exp V :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inl ()))) a b
+@[reducible, match_pattern] def Exp.sub (a b : Exp V) : Exp V :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inl ())))) a b
+@[reducible, match_pattern] def Exp.mul (a b : Exp V) : Exp V :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inl ()))))) a b
+@[reducible, match_pattern] def Exp.div (a b : Exp V) : Exp V :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inl ())))))) a b
+@[reducible, match_pattern] def Exp.mod (a b : Exp V) : Exp V :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inl ()))))))) a b
+@[reducible, match_pattern] def Exp.ifz (c a : Exp V) : Exp V :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inl ())))))))) c a
+@[reducible, match_pattern] def Exp.ifnz (c a : Exp V) : Exp V :=
+  BinaryTree.node (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr ())))))))) c a
+
 noncomputable def Exp.eval (env : Fin V → ℕ) : Exp V → ℕ
-  | .var i => env i
-  | .const c => c
+  | .nil => 0
+  | .node (Sum.inl i) _ _ => env i
+  | .node (Sum.inr (Sum.inl c)) _ _ => c
   | .add a b => a.eval env + b.eval env
   | .sub a b => a.eval env - b.eval env
   | .mul a b => a.eval env * b.eval env
   | .div a b => a.eval env / b.eval env
   | .mod a b => a.eval env % b.eval env
-  | .ite c a b => if c.eval env = 0 then a.eval env else b.eval env
+  | .ifz c a => if c.eval env = 0 then a.eval env else 0
+  | .ifnz c a => if c.eval env = 0 then 0 else a.eval env
 
 /-- Scratch depth used. -/
 noncomputable def Exp.need : Exp V → ℕ
-  | .var _ => 1
-  | .const _ => 0
+  | .nil => 0
+  | .node (Sum.inl _) _ _ => 1
+  | .node (Sum.inr (Sum.inl _)) _ _ => 0
   | .add a b | .sub a b => max a.need (b.need + 1)
   | .mul a b => max (a.need + 2) (b.need + 2) + 1
   | .div a b | .mod a b => max (a.need + 6) (b.need + 6)
-  | .ite c a b => max (c.need + 1) (max (a.need + 1) (b.need + 1))
+  | .ifz c a | .ifnz c a => max (c.need + 1) (a.need + 1)
 
 /-- Time bound. -/
 noncomputable def Exp.tb (env : Fin V → ℕ) : Exp V → ℕ
-  | .var i => 7 * env i + 2
-  | .const c => c + 1
+  | .nil => 1
+  | .node (Sum.inl i) _ _ => 7 * env i + 2
+  | .node (Sum.inr (Sum.inl c)) _ _ => c + 1
   | .add a b => a.tb env + b.tb env + 3 * b.eval env + 1
   | .sub a b => a.tb env + b.tb env + 3 * b.eval env + 1
   | .mul a b => a.tb env + b.tb env + a.eval env * (7 * b.eval env + 4) + 2 * b.eval env + 3
   | .div a b | .mod a b =>
       a.tb env + b.tb env + a.eval env * (9 * b.eval env + 12) + 30 * b.eval env + 3 * a.eval env + 40
-  | .ite c a b => c.tb env + a.tb env + b.tb env + 2 * c.eval env + 3
+  | .ifz c a | .ifnz c a => c.tb env + a.tb env + 2 * c.eval env + 3
+
+/-- `if c = 0 then a else b`. -/
+def Exp.ite (c a b : Exp V) : Exp V := .add (.ifz c a) (.ifnz c b)
+
+lemma Exp.eval_ite (env : Fin V → ℕ) (c a b : Exp V) :
+    (Exp.ite c a b).eval env = if c.eval env = 0 then a.eval env else b.eval env := by
+  unfold Exp.ite
+  simp only [Exp.eval]
+  split_ifs <;> omega
 
 /-! Register layout: `0` input, `1 … V` variables, `V+1 … V+D` scratch. -/
 
@@ -618,8 +659,9 @@ lemma run_skip {R : ℕ} (t : Fin R) (s : St R) : Run (mSkip t) s s 2 := by
 variable (D) in
 /-- Compile `e` into scratch register `tg` using scratch levels `≥ d`. -/
 noncomputable def cE : Exp V → ℕ → ℕ → Prog (Rg V D)
-  | .var i, tg, d => mCopy (vreg D i) (sreg D tg) (sreg D d)
-  | .const c, tg, _ => mIncs (sreg D tg) c
+  | .nil, tg, _ => mIncs (sreg D tg) 0
+  | .node (Sum.inl i) _ _, tg, d => mCopy (vreg D i) (sreg D tg) (sreg D d)
+  | .node (Sum.inr (Sum.inl c)) _ _, tg, _ => mIncs (sreg D tg) c
   | .add a b, tg, d => .seq (cE a tg d) (.seq (cE b d (d + 1)) (mMove (sreg D d) (sreg D tg)))
   | .sub a b, tg, d => .seq (cE a tg d) (.seq (cE b d (d + 1))
       (.loop (sreg D d) (.seq (.dec (sreg D d)) (.dec (sreg D tg)))))
@@ -636,8 +678,10 @@ noncomputable def cE : Exp V → ℕ → ℕ → Prog (Rg V D)
         (.ite (sreg D (d + 1)) (mMove (sreg D d) (sreg D tg))
           (.seq (divCore (sreg D d) (sreg D (d + 1)) (sreg D (d + 2)) (sreg D (d + 3)) (sreg D (d + 4))
             (sreg D (d + 5))) (.seq (mMove (sreg D (d + 3)) (sreg D tg)) (mClear (sreg D (d + 5)))))))
-  | .ite c a b, tg, d => .seq (cE c d (d + 1))
-      (.ite (sreg D d) (cE a tg (d + 1)) (.seq (mClear (sreg D d)) (cE b tg (d + 1))))
+  | .ifz c a, tg, d => .seq (cE c d (d + 1))
+      (.ite (sreg D d) (cE a tg (d + 1)) (mClear (sreg D d)))
+  | .ifnz c a, tg, d => .seq (cE c d (d + 1))
+      (.ite (sreg D d) (mSkip (sreg D d)) (.seq (mClear (sreg D d)) (cE a tg (d + 1))))
 
 /-- Variable values read from the variable registers. -/
 def envOf (s : St (Rg V D)) : Fin V → ℕ := fun i => s.reg (vreg D i)
@@ -652,7 +696,7 @@ def Spec (e : Exp V) : Prop := ∀ (tg d : ℕ), tg < d → d + e.need ≤ D →
     ∃ t ≤ e.tb (envOf s), Run (cE D e tg d) s
       ⟨update s.reg (sreg D tg) (e.eval (envOf s)), s.out⟩ t
 
-lemma spec_var (i : Fin V) : Spec (D := D) (.var i) := by
+lemma spec_var (i : Fin V) (l r : Exp V) : Spec (D := D) (BinaryTree.node (Sum.inl i) l r : Exp V) := by
   intro tg d htg hD s h0 hs
   have hdD : d < D := by simp [Exp.need] at hD; omega
   have h := run_copy (vreg D i) (sreg D tg) (sreg D d) (sreg_ne_vreg (by omega) i).symm
@@ -660,9 +704,14 @@ lemma spec_var (i : Fin V) : Spec (D := D) (.var i) := by
   refine ⟨_, le_refl _, ?_⟩
   simpa [cE, Exp.eval, Exp.tb, envOf, h0] using h
 
-lemma spec_const (c : ℕ) : Spec (V := V) (D := D) (.const c) := by
+lemma spec_const (c : ℕ) (l r : Exp V) :
+    Spec (V := V) (D := D) (BinaryTree.node (Sum.inr (Sum.inl c)) l r : Exp V) := by
   intro tg d htg hD s h0 hs
   exact ⟨_, le_refl _, by simpa [cE, Exp.eval, Exp.tb] using run_incs (sreg D tg) c s h0⟩
+
+lemma spec_nil : Spec (V := V) (D := D) (BinaryTree.nil : Exp V) := by
+  intro tg d htg hD s h0 hs
+  exact ⟨_, le_refl _, by simpa [cE, Exp.eval, Exp.tb] using run_incs (sreg D tg) 0 s h0⟩
 
 lemma spec_add {a b : Exp V} (iha : Spec (D := D) a) (ihb : Spec (D := D) b) : Spec (D := D) (.add a b) := by
   intro tg d htg hD s h0 hs
@@ -968,12 +1017,11 @@ lemma spec_mod {a b : Exp V} (iha : Spec (D := D) a) (ihb : Spec (D := D) b) : S
       have hd : A / B ≤ A := Nat.div_le_self _ _
       simp only [Exp.tb]; nlinarith
 
-lemma spec_ite {c a b : Exp V} (ihc : Spec (D := D) c) (iha : Spec (D := D) a) (ihb : Spec (D := D) b) : Spec (D := D) (.ite c a b) := by
+lemma spec_ifz {c a : Exp V} (ihc : Spec (D := D) c) (iha : Spec (D := D) a) : Spec (D := D) (.ifz c a) := by
   intro tg d htg hD s h0 hs
   simp only [Exp.need] at hD
-  have := le_max_left (c.need + 1) (max (a.need + 1) (b.need + 1))
-  have := le_max_right (c.need + 1) (max (a.need + 1) (b.need + 1))
-  have := le_max_left (a.need + 1) (b.need + 1); have := le_max_right (a.need + 1) (b.need + 1)
+  have := le_max_left (c.need + 1) (a.need + 1)
+  have := le_max_right (c.need + 1) (a.need + 1)
   have hdD : d < D := by omega
   have htD : tg < D := by omega
   have z0 := hs d le_rfl hdD
@@ -987,9 +1035,46 @@ lemma spec_ite {c a b : Exp V} (ihc : Spec (D := D) c) (iha : Spec (D := D) a) (
     obtain ⟨t2, ht2, r2⟩ := iha tg (d + 1) (by omega) (by omega) s h0 (fun j hj hjD => hs j (by omega) hjD)
     rw [hs1] at r1
     have hfin : (⟨update s.reg (sreg D tg) (a.eval (envOf s)), s.out⟩ : St (Rg V D)) =
-        ⟨update s.reg (sreg D tg) ((c.ite a b).eval (envOf s)), s.out⟩ := by
+        ⟨update s.reg (sreg D tg) ((Exp.ifz c a).eval (envOf s)), s.out⟩ := by
       simp only [Exp.eval]; rw [if_pos hC]
     rw [hfin] at r2
+    refine ⟨_, ?_, Run.seq r1 (Run.iteZ z0 r2)⟩
+    simp only [Exp.tb]; omega
+  · have r2 := run_clear (sreg D d) ⟨update s.reg (sreg D d) C, s.out⟩
+    have hs2 : (⟨update (update s.reg (sreg D d) C) (sreg D d) 0, s.out⟩ : St (Rg V D)) =
+        ⟨update s.reg (sreg D tg) ((Exp.ifz c a).eval (envOf s)), s.out⟩ := by
+      simp only [Exp.eval]; rw [if_neg hC]
+      ext1
+      · funext x; simp only [update_apply]; split_ifs with h h' <;> simp_all
+      · rfl
+    simp only [update_self] at r2
+    rw [hs2] at r2
+    refine ⟨_, ?_, Run.seq r1 (Run.iteS (by simpa using hC) r2)⟩
+    simp only [Exp.tb]; omega
+
+lemma spec_ifnz {c a : Exp V} (ihc : Spec (D := D) c) (iha : Spec (D := D) a) : Spec (D := D) (.ifnz c a) := by
+  intro tg d htg hD s h0 hs
+  simp only [Exp.need] at hD
+  have := le_max_left (c.need + 1) (a.need + 1)
+  have := le_max_right (c.need + 1) (a.need + 1)
+  have hdD : d < D := by omega
+  have htD : tg < D := by omega
+  have z0 := hs d le_rfl hdD
+  obtain ⟨t1, ht1, r1⟩ := ihc d (d + 1) (by omega) (by omega) s z0 (fun j hj hjD => hs j (by omega) hjD)
+  set C := c.eval (envOf s)
+  by_cases hC : C = 0
+  · have hs1 : (⟨update s.reg (sreg D d) C, s.out⟩ : St (Rg V D)) = s := by
+      ext1
+      · funext x; simp only [update_apply, hC]; split_ifs with h <;> simp_all
+      · rfl
+    rw [hs1] at r1
+    have hfin : s = ⟨update s.reg (sreg D tg) ((Exp.ifnz c a).eval (envOf s)), s.out⟩ := by
+      simp only [Exp.eval]; rw [if_pos hC]
+      ext1
+      · funext x; simp only [update_apply]; split_ifs with h <;> simp_all
+      · rfl
+    have r2 : Run (mSkip (sreg D d)) s ⟨update s.reg (sreg D tg) ((Exp.ifnz c a).eval (envOf s)), s.out⟩ 2 := by
+      rw [← hfin]; exact run_skip _ s
     refine ⟨_, ?_, Run.seq r1 (Run.iteZ z0 r2)⟩
     simp only [Exp.tb]; omega
   · have r2 := run_clear (sreg D d) ⟨update s.reg (sreg D d) C, s.out⟩
@@ -999,9 +1084,9 @@ lemma spec_ite {c a b : Exp V} (ihc : Spec (D := D) c) (iha : Spec (D := D) a) (
       · rfl
     simp only [update_self] at r2
     rw [hs2] at r2
-    obtain ⟨t3, ht3, r3⟩ := ihb tg (d + 1) (by omega) (by omega) s h0 (fun j hj hjD => hs j (by omega) hjD)
-    have hfin : (⟨update s.reg (sreg D tg) (b.eval (envOf s)), s.out⟩ : St (Rg V D)) =
-        ⟨update s.reg (sreg D tg) ((c.ite a b).eval (envOf s)), s.out⟩ := by
+    obtain ⟨t3, ht3, r3⟩ := iha tg (d + 1) (by omega) (by omega) s h0 (fun j hj hjD => hs j (by omega) hjD)
+    have hfin : (⟨update s.reg (sreg D tg) (a.eval (envOf s)), s.out⟩ : St (Rg V D)) =
+        ⟨update s.reg (sreg D tg) ((Exp.ifnz c a).eval (envOf s)), s.out⟩ := by
       simp only [Exp.eval]; rw [if_neg hC]
     rw [hfin] at r3
     refine ⟨_, ?_, Run.seq r1 (Run.iteS (by simpa using hC) (Run.seq r2 r3))⟩
@@ -1010,14 +1095,18 @@ lemma spec_ite {c a b : Exp V} (ihc : Spec (D := D) c) (iha : Spec (D := D) a) (
 /-- Correctness of the expression compiler. -/
 theorem cE_spec (e : Exp V) : Spec (D := D) e := by
   induction e with
-  | var i => exact spec_var i
-  | const c => exact spec_const c
-  | add a b iha ihb => exact spec_add iha ihb
-  | sub a b iha ihb => exact spec_sub iha ihb
-  | mul a b iha ihb => exact spec_mul iha ihb
-  | div a b iha ihb => exact spec_div iha ihb
-  | mod a b iha ihb => exact spec_mod iha ihb
-  | ite c a b ihc iha ihb => exact spec_ite ihc iha ihb
+  | nil => exact spec_nil
+  | node t l r ihl ihr =>
+    rcases t with i | c | ⟨⟩ | ⟨⟩ | ⟨⟩ | ⟨⟩ | ⟨⟩ | ⟨⟩ | ⟨⟩
+    · exact spec_var i l r
+    · exact spec_const c l r
+    · exact spec_add ihl ihr
+    · exact spec_sub ihl ihr
+    · exact spec_mul ihl ihr
+    · exact spec_div ihl ihr
+    · exact spec_mod ihl ihr
+    · exact spec_ifz ihl ihr
+    · exact spec_ifnz ihl ihr
 
 end QEDTM
 
@@ -1035,12 +1124,13 @@ variable {V : ℕ}
 
 /-- Exponent bound: with all variables `≤ N` and `X = N + 2`, both value and time are `≤ X ^ bnd`. -/
 noncomputable def Exp.bnd : Exp V → ℕ
-  | .var _ => 3
-  | .const c => c + 1
+  | .nil => 1
+  | .node (Sum.inl _) _ _ => 3
+  | .node (Sum.inr (Sum.inl c)) _ _ => c + 1
   | .add a b | .sub a b => max a.bnd b.bnd + 3
   | .mul a b => a.bnd + b.bnd + 5
   | .div a b | .mod a b => a.bnd + b.bnd + 7
-  | .ite c a b => max c.bnd (max a.bnd b.bnd) + 3
+  | .ifz c a | .ifnz c a => max c.bnd a.bnd + 3
 
 lemma le_pow_self_of_two {X : ℕ} (hX : 2 ≤ X) (c : ℕ) : c + 1 ≤ X ^ (c + 1) := by
   calc c + 1 ≤ 2 ^ (c + 1) := Nat.lt_two_pow_self.le.trans' (by omega)
@@ -1060,70 +1150,111 @@ theorem Exp.bound (e : Exp V) (env : Fin V → ℕ) (N : ℕ) (henv : ∀ i, env
   have hX : 2 ≤ N + 2 := by omega
   set X := N + 2
   induction e with
-  | var i =>
-    have := henv i
+  | nil =>
     simp only [eval, tb, bnd]
-    have h3 : X ^ 3 = X * X * X := by ring
-    have hXN : X = N + 2 := rfl
-    have hXX : (X * X) * 2 ≤ (X * X) * X := Nat.mul_le_mul_left (X * X) hX
-    have hsq : X * X = N * N + 4 * N + 4 := by rw [hXN]; ring
-    rw [h3]
-    constructor <;> omega
-  | const c =>
-    simp only [eval, tb, bnd]
-    exact ⟨(Nat.le_succ c).trans (le_pow_self_of_two hX c), le_pow_self_of_two hX c⟩
-  | add a b iha ihb | sub a b iha ihb =>
-    obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
-    simp only [eval, tb, bnd]
-    have ha := pow_mono' hX (le_max_left a.bnd b.bnd)
-    have hb := pow_mono' hX (le_max_right a.bnd b.bnd)
-    have k2 := mul_pow_le hX 6 (max a.bnd b.bnd) 3 (by norm_num)
-    have : 1 ≤ X ^ (max a.bnd b.bnd) := Nat.one_le_pow _ _ (by omega)
-    constructor <;> omega
-  | mul a b iha ihb =>
-    obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
-    simp only [eval, tb, bnd]
-    have p1 : 1 ≤ X ^ a.bnd := Nat.one_le_pow _ _ (by omega)
-    have p2 : 1 ≤ X ^ b.bnd := Nat.one_le_pow _ _ (by omega)
-    have hab : a.eval env * b.eval env ≤ X ^ a.bnd * X ^ b.bnd := Nat.mul_le_mul ea eb
-    have hab2 : a.eval env * (7 * b.eval env + 4) ≤ X ^ a.bnd * (11 * X ^ b.bnd) :=
-      Nat.mul_le_mul ea (by omega)
-    have h5 : 32 ≤ X ^ 5 := by
-      calc 32 = 2 ^ 5 := by norm_num
-        _ ≤ X ^ 5 := Nat.pow_le_pow_left hX 5
-    have e5 : X ^ (a.bnd + b.bnd + 5) = X ^ a.bnd * X ^ b.bnd * X ^ 5 := by rw [pow_add, pow_add]
-    rw [e5]
-    have q1 : X ^ a.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_right _ p2
-    have q2 : X ^ b.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_left _ p1
-    constructor <;> nlinarith
-  | div a b iha ihb | mod a b iha ihb =>
-    obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
-    simp only [eval, tb, bnd]
-    have p1 : 1 ≤ X ^ a.bnd := Nat.one_le_pow _ _ (by omega)
-    have p2 : 1 ≤ X ^ b.bnd := Nat.one_le_pow _ _ (by omega)
-    have hab2 : a.eval env * (9 * b.eval env + 12) ≤ X ^ a.bnd * (21 * X ^ b.bnd) :=
-      Nat.mul_le_mul ea (by omega)
-    have h7 : 128 ≤ X ^ 7 := by
-      calc 128 = 2 ^ 7 := by norm_num
-        _ ≤ X ^ 7 := Nat.pow_le_pow_left hX 7
-    have e7 : X ^ (a.bnd + b.bnd + 7) = X ^ a.bnd * X ^ b.bnd * X ^ 7 := by rw [pow_add, pow_add]
-    rw [e7]
-    have q1 : X ^ a.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_right _ p2
-    have q2 : X ^ b.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_left _ p1
-    have d1 : a.eval env / b.eval env ≤ a.eval env := Nat.div_le_self _ _
-    have d2 : a.eval env % b.eval env ≤ a.eval env := Nat.mod_le _ _
-    constructor <;> nlinarith
-  | ite c a b ihc iha ihb =>
-    obtain ⟨ec, tc⟩ := ihc; obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
-    simp only [eval, tb, bnd]
-    have hc := pow_mono' hX (le_max_left c.bnd (max a.bnd b.bnd))
-    have ha := pow_mono' hX ((le_max_left a.bnd b.bnd).trans (le_max_right c.bnd _))
-    have hb := pow_mono' hX ((le_max_right a.bnd b.bnd).trans (le_max_right c.bnd _))
-    have k2 := mul_pow_le hX 8 (max c.bnd (max a.bnd b.bnd)) 3 (by norm_num)
-    have : 1 ≤ X ^ (max c.bnd (max a.bnd b.bnd)) := Nat.one_le_pow _ _ (by omega)
-    constructor
-    · split_ifs <;> omega
-    · omega
+    exact ⟨Nat.zero_le _, by simpa using le_pow_self_of_two hX 0⟩
+  | node t a0 b0 iha ihb =>
+    set a : Exp V := a0
+    set b : Exp V := b0
+    rcases t with i | c | ⟨⟩ | ⟨⟩ | ⟨⟩ | ⟨⟩ | ⟨⟩ | ⟨⟩ | ⟨⟩
+    ·
+      have := henv i
+      simp only [eval, tb, bnd]
+      have h3 : X ^ 3 = X * X * X := by ring
+      have hXN : X = N + 2 := rfl
+      have hXX : (X * X) * 2 ≤ (X * X) * X := Nat.mul_le_mul_left (X * X) hX
+      have hsq : X * X = N * N + 4 * N + 4 := by rw [hXN]; ring
+      rw [h3]
+      constructor <;> omega
+    ·
+      simp only [eval, tb, bnd]
+      exact ⟨(Nat.le_succ c).trans (le_pow_self_of_two hX c), le_pow_self_of_two hX c⟩
+    ·
+      obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
+      simp only [eval, tb, bnd]
+      have ha := pow_mono' hX (le_max_left a.bnd b.bnd)
+      have hb := pow_mono' hX (le_max_right a.bnd b.bnd)
+      have k2 := mul_pow_le hX 6 (max a.bnd b.bnd) 3 (by norm_num)
+      have : 1 ≤ X ^ (max a.bnd b.bnd) := Nat.one_le_pow _ _ (by omega)
+      constructor <;> omega
+    ·
+      obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
+      simp only [eval, tb, bnd]
+      have ha := pow_mono' hX (le_max_left a.bnd b.bnd)
+      have hb := pow_mono' hX (le_max_right a.bnd b.bnd)
+      have k2 := mul_pow_le hX 6 (max a.bnd b.bnd) 3 (by norm_num)
+      have : 1 ≤ X ^ (max a.bnd b.bnd) := Nat.one_le_pow _ _ (by omega)
+      constructor <;> omega
+    ·
+      obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
+      simp only [eval, tb, bnd]
+      have p1 : 1 ≤ X ^ a.bnd := Nat.one_le_pow _ _ (by omega)
+      have p2 : 1 ≤ X ^ b.bnd := Nat.one_le_pow _ _ (by omega)
+      have hab : a.eval env * b.eval env ≤ X ^ a.bnd * X ^ b.bnd := Nat.mul_le_mul ea eb
+      have hab2 : a.eval env * (7 * b.eval env + 4) ≤ X ^ a.bnd * (11 * X ^ b.bnd) :=
+        Nat.mul_le_mul ea (by omega)
+      have h5 : 32 ≤ X ^ 5 := by
+        calc 32 = 2 ^ 5 := by norm_num
+          _ ≤ X ^ 5 := Nat.pow_le_pow_left hX 5
+      have e5 : X ^ (a.bnd + b.bnd + 5) = X ^ a.bnd * X ^ b.bnd * X ^ 5 := by rw [pow_add, pow_add]
+      rw [e5]
+      have q1 : X ^ a.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_right _ p2
+      have q2 : X ^ b.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_left _ p1
+      constructor <;> nlinarith
+    ·
+      obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
+      simp only [eval, tb, bnd]
+      have p1 : 1 ≤ X ^ a.bnd := Nat.one_le_pow _ _ (by omega)
+      have p2 : 1 ≤ X ^ b.bnd := Nat.one_le_pow _ _ (by omega)
+      have hab2 : a.eval env * (9 * b.eval env + 12) ≤ X ^ a.bnd * (21 * X ^ b.bnd) :=
+        Nat.mul_le_mul ea (by omega)
+      have h7 : 128 ≤ X ^ 7 := by
+        calc 128 = 2 ^ 7 := by norm_num
+          _ ≤ X ^ 7 := Nat.pow_le_pow_left hX 7
+      have e7 : X ^ (a.bnd + b.bnd + 7) = X ^ a.bnd * X ^ b.bnd * X ^ 7 := by rw [pow_add, pow_add]
+      rw [e7]
+      have q1 : X ^ a.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_right _ p2
+      have q2 : X ^ b.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_left _ p1
+      have d1 : a.eval env / b.eval env ≤ a.eval env := Nat.div_le_self _ _
+      have d2 : a.eval env % b.eval env ≤ a.eval env := Nat.mod_le _ _
+      constructor <;> nlinarith
+    ·
+      obtain ⟨ea, ta⟩ := iha; obtain ⟨eb, tb'⟩ := ihb
+      simp only [eval, tb, bnd]
+      have p1 : 1 ≤ X ^ a.bnd := Nat.one_le_pow _ _ (by omega)
+      have p2 : 1 ≤ X ^ b.bnd := Nat.one_le_pow _ _ (by omega)
+      have hab2 : a.eval env * (9 * b.eval env + 12) ≤ X ^ a.bnd * (21 * X ^ b.bnd) :=
+        Nat.mul_le_mul ea (by omega)
+      have h7 : 128 ≤ X ^ 7 := by
+        calc 128 = 2 ^ 7 := by norm_num
+          _ ≤ X ^ 7 := Nat.pow_le_pow_left hX 7
+      have e7 : X ^ (a.bnd + b.bnd + 7) = X ^ a.bnd * X ^ b.bnd * X ^ 7 := by rw [pow_add, pow_add]
+      rw [e7]
+      have q1 : X ^ a.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_right _ p2
+      have q2 : X ^ b.bnd ≤ X ^ a.bnd * X ^ b.bnd := Nat.le_mul_of_pos_left _ p1
+      have d1 : a.eval env / b.eval env ≤ a.eval env := Nat.div_le_self _ _
+      have d2 : a.eval env % b.eval env ≤ a.eval env := Nat.mod_le _ _
+      constructor <;> nlinarith
+    ·
+      obtain ⟨ec, tc⟩ := iha; obtain ⟨ea, ta⟩ := ihb
+      simp only [eval, tb, bnd]
+      have hc := pow_mono' hX (le_max_left a.bnd b.bnd)
+      have ha := pow_mono' hX (le_max_right a.bnd b.bnd)
+      have k2 := mul_pow_le hX 8 (max a.bnd b.bnd) 3 (by norm_num)
+      have : 1 ≤ X ^ (max a.bnd b.bnd) := Nat.one_le_pow _ _ (by omega)
+      constructor
+      · split_ifs <;> omega
+      · omega
+    ·
+      obtain ⟨ec, tc⟩ := iha; obtain ⟨ea, ta⟩ := ihb
+      simp only [eval, tb, bnd]
+      have hc := pow_mono' hX (le_max_left a.bnd b.bnd)
+      have ha := pow_mono' hX (le_max_right a.bnd b.bnd)
+      have k2 := mul_pow_le hX 8 (max a.bnd b.bnd) 3 (by norm_num)
+      have : 1 ≤ X ^ (max a.bnd b.bnd) := Nat.one_le_pow _ _ (by omega)
+      constructor
+      · split_ifs <;> omega
+      · omega
 
 end QEDTM
 
@@ -1148,32 +1279,32 @@ def Ins.TLe (B : ℕ) : Ins R → Prop
   | .halt => True
 
 lemma Ins.TLe.mono {B B' : ℕ} {x : Ins R} (h : x.TLe B) (hB : B ≤ B') : x.TLe B' := by
-  cases x <;> simp_all [Ins.TLe] <;> omega
+  rcases x with ⟨_, _⟩ | ⟨_, _⟩ | ⟨_, _⟩ | ⟨_, _, _⟩ | _ <;> simp_all [Ins.TLe] <;> omega
 
 lemma compile_tle (p : Prog R) : ∀ a e, ∀ x ∈ p.compile a e, x.TLe (max e (a + p.size)) := by
   induction p with
-  | inc r => intro a e x hx; simp [Prog.compile] at hx; subst hx; simp [Ins.TLe]
-  | dec r => intro a e x hx; simp [Prog.compile] at hx; subst hx; simp [Ins.TLe]
-  | out b => intro a e x hx; simp [Prog.compile] at hx; subst hx; simp [Ins.TLe]
-  | seq p q ihp ihq =>
-    intro a e x hx
-    simp only [Prog.compile, List.mem_append] at hx
-    rcases hx with hx | hx
-    · exact (ihp _ _ x hx).mono (by simp [Prog.size] <;> omega)
-    · exact (ihq _ _ x hx).mono (by simp [Prog.size] <;> omega)
-  | loop r b ih =>
-    intro a e x hx
-    simp only [Prog.compile, List.mem_cons] at hx
-    rcases hx with rfl | hx
-    · simp [Ins.TLe, Prog.size] <;> omega
-    · exact (ih _ _ x hx).mono (by simp [Prog.size] <;> omega)
-  | ite r z nz ihz ihnz =>
-    intro a e x hx
-    simp only [Prog.compile, List.mem_cons, List.mem_append] at hx
-    rcases hx with rfl | hx | hx
-    · simp [Ins.TLe, Prog.size] <;> omega
-    · exact (ihz _ _ x hx).mono (by simp [Prog.size] <;> omega)
-    · exact (ihnz _ _ x hx).mono (by simp [Prog.size] <;> omega)
+  | nil => intro a e x hx; simp [Prog.compile] at hx; subst hx; simp [Ins.TLe]
+  | node t l rr ihl ihr =>
+    rcases t with r | r | b | u | r | r
+    · intro a e x hx; simp [Prog.compile] at hx; subst hx; simp [Ins.TLe]
+    · intro a e x hx; simp [Prog.compile] at hx; subst hx; simp [Ins.TLe]
+    · intro a e x hx; simp [Prog.compile] at hx; subst hx; simp [Ins.TLe]
+    · intro a e x hx
+      simp only [Prog.compile, List.mem_append] at hx
+      rcases hx with hx | hx
+      · exact (ihl _ _ x hx).mono (by simp [Prog.size] <;> omega)
+      · exact (ihr _ _ x hx).mono (by simp [Prog.size] <;> omega)
+    · intro a e x hx
+      simp only [Prog.compile, List.mem_cons] at hx
+      rcases hx with rfl | hx
+      · simp [Ins.TLe, Prog.size] <;> omega
+      · exact (ihl _ _ x hx).mono (by simp [Prog.size] <;> omega)
+    · intro a e x hx
+      simp only [Prog.compile, List.mem_cons, List.mem_append] at hx
+      rcases hx with rfl | hx | hx
+      · simp [Ins.TLe, Prog.size] <;> omega
+      · exact (ihl _ _ x hx).mono (by simp [Prog.size] <;> omega)
+      · exact (ihr _ _ x hx).mono (by simp [Prog.size] <;> omega)
 
 /-- Label of an address. -/
 def lab (m j : ℕ) : Fin (m + 1) := ⟨j % (m + 1), Nat.mod_lt _ (by omega)⟩
@@ -1237,12 +1368,12 @@ lemma sim_step (hcode : ∀ x ∈ code, x.TLe code.length)
     simp only [TM2.step, Mprog, hlab]
   rw [key]
   unfold fstep at hst
-  cases hx : code.getD pc .halt with
-  | inc r j =>
+  rcases hx : code.getD pc .halt with ⟨r, j⟩ | ⟨r, j⟩ | ⟨b, j⟩ | ⟨r, j₁, j₂⟩ | ⟨⟩
+  ·
     simp only [hx, stepIns, Option.some.injEq, Prod.mk.injEq] at hst
     obtain ⟨rfl, rfl⟩ := hst
     have hj : j ≤ code.length := by
-      have := hcode _ (hmem _ hx (by simp)); simpa [Ins.TLe] using this
+      have := hcode _ (hmem _ hx (fun h => by cases h)); simpa [Ins.TLe] using this
     refine ⟨_, rfl, hj, ?_, ?_, ?_, ?_⟩
     · simp [insStmt]
     · simp [insStmt]
@@ -1251,11 +1382,11 @@ lemma sim_step (hcode : ∀ x ∈ code, x.TLe code.length)
       · subst h; simp [insStmt, St.inc, hreg]
       · simp [insStmt, St.inc, update_apply, h, hreg]
     · simp [insStmt, TM2.stepAux, St.inc, update_apply, hout]
-  | dec r j =>
+  ·
     simp only [hx, stepIns, Option.some.injEq, Prod.mk.injEq] at hst
     obtain ⟨rfl, rfl⟩ := hst
     have hj : j ≤ code.length := by
-      have := hcode _ (hmem _ hx (by simp)); simpa [Ins.TLe] using this
+      have := hcode _ (hmem _ hx (fun h => by cases h)); simpa [Ins.TLe] using this
     refine ⟨_, rfl, hj, ?_, ?_, ?_, ?_⟩
     · simp [insStmt]
     · simp [insStmt]
@@ -1264,21 +1395,21 @@ lemma sim_step (hcode : ∀ x ∈ code, x.TLe code.length)
       · subst h; simp [insStmt, St.dec, hreg]
       · simp [insStmt, St.dec, update_apply, h, hreg]
     · simp [insStmt, TM2.stepAux, St.dec, update_apply, hout]
-  | out b j =>
+  ·
     simp only [hx, stepIns, Option.some.injEq, Prod.mk.injEq] at hst
     obtain ⟨rfl, rfl⟩ := hst
     have hj : j ≤ code.length := by
-      have := hcode _ (hmem _ hx (by simp)); simpa [Ins.TLe] using this
+      have := hcode _ (hmem _ hx (fun h => by cases h)); simpa [Ins.TLe] using this
     refine ⟨_, rfl, hj, ?_, ?_, ?_, ?_⟩
     · simp [insStmt]
     · simp [insStmt]
     · intro r'
       simp [insStmt, TM2.stepAux, St.emit, update_apply, hreg]
     · simp [insStmt, TM2.stepAux, St.emit, update_apply, hout]
-  | jz r j₁ j₂ =>
+  ·
     simp only [hx, stepIns, Option.some.injEq, Prod.mk.injEq] at hst
     obtain ⟨rfl, rfl⟩ := hst
-    have hj := hcode _ (hmem _ hx (by simp))
+    have hj := hcode _ (hmem _ hx (fun h => by cases h))
     simp only [Ins.TLe] at hj
     by_cases hz : s.reg r = 0
     · have hnil : S (some r) = [] := List.eq_nil_of_length_eq_zero ((hreg r).trans hz)
@@ -1296,7 +1427,7 @@ lemma sim_step (hcode : ∀ x ∈ code, x.TLe code.length)
       · simp [insStmt, hys]
       · intro r'; simp [insStmt, hys, hreg]
       · simp [insStmt, hys, hout]
-  | halt =>
+  ·
     rw [List.getD_eq_getElem?_getD] at hx
     simp [hx, stepIns] at hst
 
