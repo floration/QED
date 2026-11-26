@@ -39,7 +39,14 @@ columns of block C.
 * `QEDRes.php_lower`: every refutation of onto-functional PHP(N+1, N), N ≥ 8, has length ≥ (18/17)^(N/2)
   (≈ N/2 greedy single-pigeon restrictions, each chosen by averaging to kill a fixed fraction of wide lines).
 
+## Proved in Lean (`TMGenerator.lean`): the explicitness side
+* `QEDTM.polytime_of_prog`: structured counter programs with a polynomial step bound give
+  `Turing.TM2ComputableInPolyTime id id F` (one TM2 step per instruction, exact simulation).
+* `QEDTM.cE_spec` + `QEDTM.Exp.bound`: a verified compiler from arithmetic expressions to counter programs,
+  with polynomial time bounds.
+* `QEDTM.gen_polytime`, `QEDTM.Fgen_getD`: any 7-variable expression defines a TM2-polytime bit string with the
+  index layout used by the QED-E223 statement.
+
 ## Remaining
 2. Lean: correctness of the construction for every n ≥ 32.
-3. Lean: a Mathlib `TM2` machine producing the givens bit string in polynomial time (Mathlib has no composition
-   library for TM2, so this is built from scratch).
+3. ~~TM2 generator~~ done: only the expression for the givens remains to be written down.
