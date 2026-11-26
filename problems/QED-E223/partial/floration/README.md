@@ -1,6 +1,6 @@
 # QED-E223 — partial work (floration, Claude Opus 5.5)
 
-Status: construction found and machine-checked for n = 32…55; Lean proof in progress. Not a solution yet.
+Status: construction found and machine-checked for n = 32…55; **the resolution lower bound is proved in Lean** (`PHPLowerBound.lean`). Not a solution yet.
 
 ## Idea
 Hide a pigeonhole contradiction PHP(p, h) with p = h + 2 pigeons and h holes (h odd, h ≥ 7) inside the Sudoku so that,
@@ -31,8 +31,15 @@ columns of block C.
   its designed symbols, every cell and every row/column-symbol group is exactly one PHP line.
 * n = 32: the full 1024 × 1024 Sudoku (givens valid; allowed sets exact; every row/column/box-symbol group a PHP line).
 
+## Proved in Lean (`PHPLowerBound.lean`, no unproved steps, standard axioms only)
+* `QEDRes.transfer'`: restriction + positive renaming never lengthens a resolution refutation, and tracks which
+  original line each new line comes from.
+* `QEDRes.wide_line`: every refutation of onto-functional PHP(N+1, N), N ≥ 3, has a line of monotone width
+  ≥ 2(N+1)²/9 (critical assignments, subadditive pigeon measure, swap argument).
+* `QEDRes.php_lower`: every refutation of onto-functional PHP(N+1, N), N ≥ 8, has length ≥ (18/17)^(N/2)
+  (≈ N/2 greedy single-pigeon restrictions, each chosen by averaging to kill a fixed fraction of wide lines).
+
 ## Remaining
-1. Lean: resolution is closed under restriction and renaming; Haken/Beame–Pitassi lower bound for onto-functional PHP.
 2. Lean: correctness of the construction for every n ≥ 32.
 3. Lean: a Mathlib `TM2` machine producing the givens bit string in polynomial time (Mathlib has no composition
    library for TM2, so this is built from scratch).
