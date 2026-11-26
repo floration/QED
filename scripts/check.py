@@ -182,10 +182,12 @@ if all(part):
             export_module(dn, 'QEDPartial', os.path.join(BUILD, f'partial-{i}.ndjson'))
         if stage == 'compile': done(dict(res, stage='compiled; not yet verified'), 0)
         untrusted = WORK
+    axioms, checked, new = set(), 0, 0
     for i, f in enumerate(leans):
-        trusted_check(os.path.join(untrusted or '', 'qedbuild', f'partial-{i}.ndjson'), stmt_txt,
-                      f'OpenProblems.{ns}.Claim', 'partial', f'partial-{i}')
-    done(res, 0)
+        r = trusted_check(os.path.join(untrusted or '', 'qedbuild', f'partial-{i}.ndjson'), stmt_txt,
+                          f'OpenProblems.{ns}.Claim', 'partial', f'partial-{i}')
+        axioms |= set(r.get('axioms', [])); checked += r.get('decls', 0); new += r.get('new', 0)
+    done(dict(res, axioms=sorted(axioms), checked_decls=checked, new_decls=new), 0)
 
 # ---------- full solution ----------
 if not all(sol):
