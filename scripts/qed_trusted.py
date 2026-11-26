@@ -235,9 +235,11 @@ class Export:
         keys(d, *spec)
         parts = [kind, self.name_h[self.nm(d['name'])], [self.name_h[x] for x in self.nlist(d['levelParams'])], self.ex(d['type'])]
         unsafe = False; info = {}
+        fields = {'_kind': H(kind), 'name': parts[1], 'levelParams': H(parts[2]), 'type': parts[3]}
         for k in sorted(d):
             if k in ('name', 'levelParams', 'type'): continue
             v = d[k]
+            fields[k] = len(parts)   # index of this field's first part; turned into a hash below
             if k == 'value': parts += [k, self.ex(v)]
             elif k in ('all', 'ctors'): parts += [k, [self.name_h[x] for x in self.nlist(v)]]
             elif k in ('induct',): parts += [k, self.name_h[self.nm(v)]]
@@ -268,9 +270,13 @@ class Export:
                     if not is_nat(r['nfields']): raise Reject('bad rule')
                     rs.append([self.name_h[self.nm(r['ctor'])], r['nfields'], self.ex(r['rhs'])])
                 parts += [k, rs]
+        starts = sorted((i, k) for k, i in fields.items() if isinstance(i, int))
+        for j, (i, k) in enumerate(starts):
+            end = starts[j + 1][0] if j + 1 < len(starts) else len(parts)
+            fields[k] = H(*parts[i:end])
         name = self.names[d['name']][1:]      # key: exact name components
         if name in self.decls: raise Reject(f"declaration {self.name_str(d['name'])} appears twice")
-        self.decls[name] = dict(kind=kind, hash=H(*parts), unsafe=unsafe, safety=info.get('safety'),
+        self.decls[name] = dict(kind=kind, hash=H(*parts), unsafe=unsafe, fields=fields, safety=info.get('safety'),
                                 nlp=len(d['levelParams']), type=self.ex(d['type']))
         self.order.append(name)
 
@@ -321,7 +327,10 @@ def verify(a):
     for n in u.order:
         d = u.decls[n]
         if n in o.decls:
-            if d['hash'] != o.decls[n]['hash']: raise Reject(f'{show(n)} differs from the official declaration')
+            if d['hash'] != o.decls[n]['hash']:
+                fu, fo = d['fields'], o.decls[n]['fields']
+                diff = sorted(k for k in set(fu) | set(fo) if fu.get(k) != fo.get(k))
+                raise Reject(f"{show(n)} ({d['kind']}) differs from the official declaration in: {', '.join(diff)}")
             if d['unsafe'] or d['safety'] == 'partial': raise Reject(f'depends on unsafe/partial declaration {show(n)}')
             continue
         new.append(n)
@@ -353,7 +362,7 @@ def verify(a):
                'permitted_axioms': sorted(STD_AXIOMS), 'unpermitted_axiom_hard_error': True,
                'nat_extension': True, 'string_extension': True,
                'num_threads': int(os.environ.get('QED_NANODA_THREADS', '2')),
-               'stack_size_bytes': 512 * 1024 * 1024, 'print_success_message': True}, open(cfg, 'w'))
+               'stack_size_bytes': 512 * 1024 * 1024, 'print_success_message': True, 'print_axioms': False}, open(cfg, 'w'))
     code, out = run([a['nanoda'], cfg], t_nanoda, limit_as=int(os.environ.get('QED_NANODA_MEM', str(12 * 1024 ** 3))))
     if code != 0 or 'with no errors' not in out:
         raise Reject('independent kernel (nanoda) rejected the export:\n' + out[-2000:])
