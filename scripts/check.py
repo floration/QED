@@ -1,6 +1,6 @@
 """CI check for a contribution PR.
 
-Usage: python3 -I scripts/check.py [--stage=all|compile|verify] [--olean=PATH] [--files-from=NUL_SEPARATED_FILE | <changed files...>]
+Usage: python3 -I scripts/check.py [--stage=all|compile|verify] [--untrusted=DIR] [--files-from=NUL_SEPARATED_FILE | <changed files...>]
 Writes check_result.json. Exit 1 on failure. Fails closed: anything not recognised is rejected.
 
 A PR is classified ONLY by the files it changes (never by branch name):
@@ -9,14 +9,19 @@ A PR is classified ONLY by the files it changes (never by branch name):
 Anything else (statements, data, scripts, workflows, mixed PRs) is rejected here and needs a maintainer.
 
 Stages (CI runs them in two separate jobs, see .github/workflows/verify.yml):
-  compile : UNTRUSTED. Classifies the PR, applies the text filters, and compiles
-            <official statement> ++ <contribution> into qedbuild/QEDSol.olean (or checks partial work).
-  verify  : TRUSTED, on a fresh runner that never elaborates contributor Lean. Re-classifies the PR,
-            compiles the official statement alone into QEDStmt.olean, and runs scripts/qed_verify.lean,
-            which loads QEDSol.olean as data, replays every new declaration through the kernel, and checks
-            the root-level constant `solution` has type exactly `Claim` / `¬ Claim` with standard axioms only.
-  all     : both, in one process (for local use)."""
-import sys, os, re, json, subprocess, shutil, secrets, unicodedata
+  compile : UNTRUSTED. Classifies the PR, applies the text filters, compiles
+            <official statement> ++ <contribution> and exports the resulting module as text
+            (qedbuild/QEDSol.ndjson, or qedbuild/partial-<n>.ndjson per partial-work .lean file) with the
+            pinned exporter (scripts/qedexport). Only these text files leave the job.
+  verify  : TRUSTED, on a fresh runner. Re-classifies the PR and hands each export to scripts/qed_trusted.py,
+            which never loads anything from the untrusted job into Lean: it compiles the official statement
+            itself, compares the export with the official declarations and checks it with an independent
+            kernel (nanoda).
+  all     : both, in one process (for local use).
+
+Environment: PR_AUTHOR, BASE_REF; optional QED_WORKDIR (default .), QED_LEAN_TIMEOUT (s, default 2400),
+QED_LEAN_PATH, QED_EXPORTER, QED_NANODA."""
+import sys, os, re, json, subprocess, shutil, signal, unicodedata
 
 ID = r'(?:QED-[ME]\d{3}|QED-Q\d|N-000)'
 USER = r'[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})'
@@ -24,9 +29,13 @@ LEANPATH = r'(?:[A-Za-z0-9][A-Za-z0-9_-]*/)*[A-Za-z0-9][A-Za-z0-9_.-]*\.lean'
 SOL = re.compile(rf'solutions/({ID})/({USER})/(meta\.json|README\.md|{LEANPATH})')
 PART = re.compile(rf'problems/({ID})/partial/({USER})/([A-Za-z0-9._-]+\.(?:md|txt|lean))')
 MAX_PARTIAL_BYTES = 5_000_000
-BUILD = 'qedbuild'          # untrusted compile output (uploaded as an artifact by the compile job)
-TRUSTED = 'qedtrusted'      # verify-stage working dir
-VERIFIER = 'scripts/qed_verify.lean'
+WORK = os.environ.get('QED_WORKDIR', '.')
+BUILD = os.path.join(WORK, 'qedbuild')       # untrusted compile output (its *.ndjson are uploaded as an artifact)
+TRUSTED = os.path.join(WORK, 'qedtrusted')   # verify-stage working dir
+TRUSTED_CHECKER = 'scripts/qed_trusted.py'
+EXPORTER = os.environ.get('QED_EXPORTER', 'scripts/qedexport/.lake/build/bin/qedexport')
+NANODA = os.environ.get('QED_NANODA', 'nanoda_bin')
+LEAN_TIMEOUT = int(os.environ.get('QED_LEAN_TIMEOUT', '2400'))
 
 # Metaprogramming / escape hatches. The structural verifier does not rely on these filters for soundness,
 # but they keep contributor code from running arbitrary code at compile time (defence in depth).
@@ -42,14 +51,15 @@ SOLUTION_ONLY = [r'\bsorry\b', r'\bsorryAx\b', r'\badmit\b', r'\bnative_decide\b
                  r'\bdef Claim\b', r'\bnamespace OpenProblems\b']
 
 def done(res, code):
-    json.dump(res, open('check_result.json', 'w')); print(('OK ' if code == 0 else 'FAIL: ') + json.dumps(res)); sys.exit(code)
+    os.makedirs(WORK, exist_ok=True)
+    json.dump(res, open(os.path.join(WORK, 'check_result.json'), 'w')); print(('OK ' if code == 0 else 'FAIL: ') + json.dumps(res)); sys.exit(code)
 def fail(msg): done({'ok': False, 'error': msg}, 1)
 
 # ---------- arguments ----------
-stage, olean_in, files = 'all', None, []
+stage, untrusted, files = 'all', None, []
 for a in sys.argv[1:]:
     if a.startswith('--stage='): stage = a.split('=', 1)[1]
-    elif a.startswith('--olean='): olean_in = a.split('=', 1)[1]
+    elif a.startswith('--untrusted='): untrusted = a.split('=', 1)[1]
     elif a.startswith('--files-from='): files += [f for f in open(a.split('=', 1)[1], 'rb').read().decode('utf-8', 'strict').split('\0') if f]
     else: files.append(a)
 if stage not in ('all', 'compile', 'verify'): fail(f'unknown stage {stage}')
@@ -64,28 +74,58 @@ def base_file(path):
         return r.stdout if r.returncode == 0 else None
     return open(path).read() if os.path.exists(path) else None
 
-_LP = None
+def run(args, timeout=LEAN_TIMEOUT, env=None, stdout=None):
+    """Run a command in its own process group with a hard wall-clock limit; on timeout kill the group and fail."""
+    p = subprocess.Popen(args, stdout=stdout if stdout is not None else subprocess.PIPE,
+                         stderr=subprocess.PIPE if stdout is not None else subprocess.STDOUT,
+                         text=True, env=env, start_new_session=True)
+    try:
+        out, err = p.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        os.killpg(p.pid, signal.SIGKILL); p.communicate()
+        fail(f'{os.path.basename(args[0])} timed out after {timeout} s (wall-clock limit); the contribution is too slow to check')
+    except OSError as e:
+        fail(f'could not run {args[0]}: {e}')
+    return p.returncode, (out or '') + (err or '')
+
+_LP = os.environ.get('QED_LEAN_PATH')
 def lean_path():
     global _LP
     if _LP is None:
-        try: r = subprocess.run(['lake', 'env', 'printenv', 'LEAN_PATH'], capture_output=True, text=True, timeout=600)
-        except (OSError, subprocess.TimeoutExpired) as e: fail(f'could not run lake: {e}')
-        if r.returncode != 0: fail('could not determine LEAN_PATH:\n' + r.stderr[-2000:])
-        _LP = r.stdout.strip()
+        code, out = run(['lake', 'env', 'printenv', 'LEAN_PATH'], timeout=600)
+        if code != 0: fail('could not determine LEAN_PATH:\n' + out[-2000:])
+        _LP = out.strip()
     return _LP
-def lean(args, extra_path=None, timeout=3600):
-    env = dict(os.environ, LEAN_PATH=(os.path.abspath(extra_path) + os.pathsep if extra_path else '') + lean_path())
-    try: r = subprocess.run(['lean'] + args, capture_output=True, text=True, timeout=timeout, env=env)
-    except subprocess.TimeoutExpired: fail(f'Lean timed out after {timeout} s')
-    except OSError as e: fail(f'could not run lean: {e}')
-    return r.returncode, r.stdout + r.stderr
+def lean_env(extra):
+    return dict(os.environ, LEAN_PATH=os.path.abspath(extra) + os.pathsep + lean_path())
 def has_error(out):
     return re.search(r'(^|\n)[^\n]*:\d+:\d+: error', out) is not None or 'error:' in out
 def compile_module(dirname, modname, text):
     os.makedirs(dirname, exist_ok=True)
     src = os.path.join(dirname, modname + '.lean')
     open(src, 'w').write(text)
-    return lean([f'--root={dirname}', src, '-o', os.path.join(dirname, modname + '.olean')])
+    return run(['lean', f'--root={dirname}', src, '-o', os.path.join(dirname, modname + '.olean')], env=lean_env(dirname))
+def export_module(dirname, modname, out_path):
+    """UNTRUSTED: export the compiled module (and its dependencies) as NDJSON text."""
+    with open(out_path, 'w') as f:
+        code, err = run([EXPORTER, 'module', modname], env=lean_env(dirname), stdout=f)
+    if code != 0: fail('export of the compiled contribution failed:\n' + err[-2000:])
+def trusted_check(export_path, stmt_text, claim, kind, tag):
+    """TRUSTED: scripts/qed_trusted.py (from the base branch) checks one export."""
+    if not os.path.isfile(export_path) or os.path.islink(export_path): fail('No exported contribution to verify')
+    wd = os.path.join(TRUSTED, tag); shutil.rmtree(wd, ignore_errors=True); os.makedirs(wd)
+    open(os.path.join(wd, 'statement.lean'), 'w').write(stmt_text)
+    checker = base_file(TRUSTED_CHECKER)
+    if checker is None: fail(f'{TRUSTED_CHECKER} missing on the base branch')
+    cpath = os.path.join(TRUSTED, 'qed_trusted.py'); open(cpath, 'w').write(checker)
+    res_path = os.path.join(wd, 'result.json')
+    run([sys.executable, '-I', cpath, f'--export={export_path}', f'--statement={wd}/statement.lean', f'--claim={claim}',
+         f'--kind={kind}', f'--workdir={wd}/work', f'--result={res_path}', f'--lean-path={lean_path()}',
+         f'--exporter={os.path.abspath(EXPORTER)}', f'--nanoda={NANODA}'], timeout=2 * LEAN_TIMEOUT + 600)
+    try: res = json.load(open(res_path))
+    except Exception: fail('trusted checker produced no result')
+    if not res.get('ok'): fail('Verification failed: ' + str(res.get('error')))
+    return res
 
 def bad_chars(text):
     """Invisible / bidi / control characters have no place in a proof and only serve to mislead reviewers."""
@@ -125,19 +165,29 @@ if all(part):
         if os.path.getsize(f) > MAX_PARTIAL_BYTES: fail(f'{f} is larger than {MAX_PARTIAL_BYTES} bytes')
     stmt_txt = base_file(f'problems/{pid}/Statement.lean')
     if stmt_txt is None: fail(f'Unknown problem {pid}')
-    leans = [f for f in files if f.endswith('.lean')]
+    leans = sorted(f for f in files if f.endswith('.lean'))
     for f in leans:
         body = re.sub(r'(?m)^import .*$', '', open(f).read())
-        scan(f, body, META)
-    if stage == 'verify':   # partial work has no proof obligation; it was compiled in the compile stage
-        done({'ok': True, 'kind': 'partial', 'id': pid, 'user': user, 'files': files}, 0)
-    for f in leans:
-        # Partial Lean may use `sorry`, but must compile against the official statement.
-        body = re.sub(r'(?m)^import .*$', '', open(f).read())
+        scan(f, body, META + SOLUTION_ONLY)
+    ns = pid.replace('-', '')
+    res = {'ok': True, 'kind': 'partial', 'id': pid, 'user': user, 'files': files}
+    if stage in ('all', 'compile'):
+        # UNTRUSTED: each .lean file must compile against the official statement (no sorry, no axioms).
         shutil.rmtree(BUILD, ignore_errors=True)
-        code, out = compile_module(BUILD, 'QEDPartial', stmt_txt + '\n' + body + '\n')
-        if code != 0 or has_error(out): fail(f'Lean error in {f}:\n' + out[-3000:])
-    done({'ok': True, 'kind': 'partial', 'id': pid, 'user': user, 'files': files}, 0)
+        for i, f in enumerate(leans):
+            body = re.sub(r'(?m)^import .*$', '', open(f).read())
+            dn = os.path.join(BUILD, f'p{i}')
+            code, out = compile_module(dn, 'QEDPartial', stmt_txt + '\n' + body + '\n')
+            if code != 0 or has_error(out): fail(f'Lean error in {f}:\n' + out[-3000:])
+            export_module(dn, 'QEDPartial', os.path.join(BUILD, f'partial-{i}.ndjson'))
+        if stage == 'compile': done(dict(res, stage='compiled; not yet verified'), 0)
+        untrusted = WORK
+    axioms, checked, new = set(), 0, 0
+    for i, f in enumerate(leans):
+        r = trusted_check(os.path.join(untrusted or '', 'qedbuild', f'partial-{i}.ndjson'), stmt_txt,
+                          f'OpenProblems.{ns}.Claim', 'partial', f'partial-{i}')
+        axioms |= set(r.get('axioms', [])); checked += r.get('decls', 0); new += r.get('new', 0)
+    done(dict(res, axioms=sorted(axioms), checked_decls=checked, new_decls=new), 0)
 
 # ---------- full solution ----------
 if not all(sol):
@@ -175,21 +225,10 @@ if stage in ('all', 'compile'):
     code, out = compile_module(BUILD, 'QEDSol', stmt + '\n' + body + '\n')
     if code != 0 or has_error(out): fail('Lean error:\n' + out[-3000:])
     if not os.path.isfile(f'{BUILD}/QEDSol.olean'): fail('Lean produced no .olean')
+    export_module(BUILD, 'QEDSol', f'{BUILD}/QEDSol.ndjson')
     if stage == 'compile': done(dict(result, stage='compiled; not yet verified'), 0)
-    olean_in = f'{BUILD}/QEDSol.olean'
+    untrusted = WORK
 
-# TRUSTED step (in CI: a separate job on a fresh runner that never elaborates contributor Lean).
-if not olean_in or not os.path.isfile(olean_in) or os.path.islink(olean_in): fail('No compiled solution (.olean) to verify')
-shutil.rmtree(TRUSTED, ignore_errors=True); os.makedirs(TRUSTED)
-code, out = compile_module(TRUSTED, 'QEDStmt', stmt + '\n')
-if code != 0 or has_error(out): fail('Official statement does not compile:\n' + out[-3000:])
-shutil.copyfile(olean_in, f'{TRUSTED}/QEDSol.olean')
-verifier = base_file(VERIFIER)
-if verifier is None: fail(f'{VERIFIER} missing on the base branch')
-open(f'{TRUSTED}/qed_verify.lean', 'w').write(verifier)
-nonce = secrets.token_hex(16)
-code, out = lean(['--run', f'{TRUSTED}/qed_verify.lean', nonce, 'QEDStmt', 'QEDSol', claim, meta['kind']], extra_path=TRUSTED)
-m = re.search(rf'(?m)^QED-VERIFY {nonce} OK ?(.*)$', out)
-if code != 0 or not m: fail(f'Verification failed (exit code {code}):\n' + out[-3000:])
-axioms = sorted(a.strip() for a in m.group(1).split(',') if a.strip())
-done(dict(result, axioms=axioms), 0)
+# TRUSTED step (in CI: a separate job on a fresh runner; only the text export crosses over).
+res = trusted_check(os.path.join(untrusted or '', 'qedbuild', 'QEDSol.ndjson'), stmt, claim, meta['kind'], 'solution')
+done(dict(result, axioms=res.get('axioms', []), checked_decls=res.get('decls'), new_decls=res.get('new')), 0)

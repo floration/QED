@@ -3,10 +3,12 @@ name: verify-solution
 # a PR is classified by the files it changes, never by its branch name.
 #
 # Two jobs on two runners:
-#   compile (untrusted) elaborates the contributor's Lean and hands over only an .olean;
-#   verify  (trusted) never elaborates contributor Lean: it loads that .olean as data, replays every new
-#           declaration through the kernel, and checks `solution` against the official statement it
-#           compiles itself (scripts/qed_verify.lean). auto-merge-verified needs BOTH jobs to succeed.
+#   compile (untrusted) elaborates the contributor's Lean and hands over ONLY a text export of the compiled
+#           module (lean4export NDJSON), never an .olean or anything else Lean would load;
+#   verify  (trusted) never elaborates contributor Lean and never loads anything from the compile job into
+#           Lean. It compiles the official statement itself, compares the export with the official
+#           declarations and checks it with an independent kernel (nanoda) -- scripts/qed_trusted.py.
+# auto-merge-verified needs BOTH jobs to succeed. The ruleset's required check is the job named `verify`.
 on:
   pull_request:
     paths: ["solutions/**", "problems/*/partial/**"]
@@ -27,13 +29,9 @@ jobs:
       - name: List changed files (NUL-separated; never interpolated into a script)
         env: { BASE_REF: "${{ github.base_ref }}" }
         run: git diff -z --name-only "origin/$BASE_REF...HEAD" > "$RUNNER_TEMP/changed"
-      - name: Install Lean and the pinned Mathlib cache
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
-          echo "$HOME/.elan/bin" >> $GITHUB_PATH
-          export PATH="$HOME/.elan/bin:$PATH"
-          if [ -f lake-manifest.json ]; then lake exe cache get; else lake update && lake exe cache get; fi
-      - name: Check and compile contribution (untrusted)
+      - name: Install Lean, the pinned Mathlib cache and the pinned exporter
+        run: bash scripts/ci_setup.sh
+      - name: Check, compile and export contribution (untrusted)
         env:
           PR_AUTHOR: "${{ github.event.pull_request.user.login }}"
           BASE_REF: "${{ github.base_ref }}"
@@ -44,13 +42,13 @@ jobs:
           name: compile-output
           if-no-files-found: ignore
           path: |
-            qedbuild/QEDSol.olean
+            qedbuild/*.ndjson
             check_result.json
 
   verify:
     needs: compile
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0, persist-credentials: false }
@@ -65,17 +63,13 @@ jobs:
         run: git diff -z --name-only "origin/$BASE_REF...HEAD" > "$RUNNER_TEMP/changed"
       - uses: actions/download-artifact@v4
         with: { name: compile-output, path: "${{ runner.temp }}/untrusted" }
-      - name: Install Lean and the pinned Mathlib cache
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
-          echo "$HOME/.elan/bin" >> $GITHUB_PATH
-          export PATH="$HOME/.elan/bin:$PATH"
-          if [ -f lake-manifest.json ]; then lake exe cache get; else lake update && lake exe cache get; fi
-      - name: Verify the compiled solution against the official statement (trusted)
+      - name: Install Lean, the pinned Mathlib cache, the pinned exporter and the pinned independent kernel
+        run: bash scripts/ci_setup.sh --nanoda
+      - name: Verify the exported solution against the official statement (trusted)
         env:
           PR_AUTHOR: "${{ github.event.pull_request.user.login }}"
           BASE_REF: "${{ github.base_ref }}"
-        run: python3 -I scripts/check.py --stage=verify --olean="$RUNNER_TEMP/untrusted/qedbuild/QEDSol.olean" --files-from="$RUNNER_TEMP/changed"
+        run: python3 -I scripts/check.py --stage=verify --untrusted="$RUNNER_TEMP/untrusted" --files-from="$RUNNER_TEMP/changed"
       - if: always()
         uses: actions/upload-artifact@v4
         with: { name: check_result, path: check_result.json }
