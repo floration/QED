@@ -1,3 +1,6 @@
+noncomputable section
+
+
 /-!
 # A structured counter language compiled to Mathlib `FinTM2`
 
@@ -48,14 +51,14 @@ inductive Ins (R : ℕ) where
   | jz (r : Fin R) (j₁ j₂ : ℕ)
   | halt
 
-def Prog.size : Prog R → ℕ
+noncomputable def Prog.size : Prog R → ℕ
   | .inc _ | .dec _ | .out _ => 1
   | .seq p q => p.size + q.size
   | .loop _ b => b.size + 1
   | .ite _ z nz => z.size + nz.size + 1
 
 /-- Code of `p` placed at address `a`, exiting to `e`. -/
-def Prog.compile : Prog R → ℕ → ℕ → List (Ins R)
+noncomputable def Prog.compile : Prog R → ℕ → ℕ → List (Ins R)
   | .inc r, _, e => [.inc r e]
   | .dec r, _, e => [.dec r e]
   | .out b, _, e => [.out b e]
@@ -83,7 +86,7 @@ def fstep (code : List (Ins R)) (c : ℕ × St R) : Option (ℕ × St R) :=
   stepIns (code.getD c.1 .halt) c.2
 
 /-- `n` iterations of the flat step (on `Option`). -/
-def fiter (code : List (Ins R)) : ℕ → Option (ℕ × St R) → Option (ℕ × St R)
+noncomputable def fiter (code : List (Ins R)) : ℕ → Option (ℕ × St R) → Option (ℕ × St R)
   | 0, c => c
   | n + 1, c => fiter code n (c.bind (fstep code))
 
@@ -182,6 +185,11 @@ theorem compile_run {p : Prog R} {s s' : St R} {t : ℕ} (h : Run p s s' t) :
 
 end QEDTM
 
+end
+
+
+noncomputable section
+
 
 /-! # Register macros with exact specifications -/
 
@@ -204,7 +212,7 @@ def mMove2 (a b c : Fin R) : Prog R := .loop a (.seq (.dec a) (.seq (.inc b) (.i
 def mCopy (a b t : Fin R) : Prog R := .seq (mMove2 a b t) (mMove t a)
 
 /-- `incs r c`: `r := c` (for `r = 0`). -/
-def mIncs (r : Fin R) : ℕ → Prog R
+noncomputable def mIncs (r : Fin R) : ℕ → Prog R
   | 0 => mClear r
   | c + 1 => .seq (mIncs r c) (.inc r)
 
@@ -513,6 +521,11 @@ lemma run_divcore (x m c r t q : Fin R) (hxm : x ≠ m) (hxc : x ≠ c) (hxr : x
 
 end QEDTM
 
+end
+
+
+noncomputable section
+
 
 /-! # Arithmetic expressions compiled to the counter language -/
 
@@ -533,7 +546,7 @@ inductive Exp (V : ℕ) where
 
 variable {V : ℕ}
 
-def Exp.eval (env : Fin V → ℕ) : Exp V → ℕ
+noncomputable def Exp.eval (env : Fin V → ℕ) : Exp V → ℕ
   | .var i => env i
   | .const c => c
   | .add a b => a.eval env + b.eval env
@@ -544,7 +557,7 @@ def Exp.eval (env : Fin V → ℕ) : Exp V → ℕ
   | .ite c a b => if c.eval env = 0 then a.eval env else b.eval env
 
 /-- Scratch depth used. -/
-def Exp.need : Exp V → ℕ
+noncomputable def Exp.need : Exp V → ℕ
   | .var _ => 1
   | .const _ => 0
   | .add a b | .sub a b => max a.need (b.need + 1)
@@ -553,7 +566,7 @@ def Exp.need : Exp V → ℕ
   | .ite c a b => max (c.need + 1) (max (a.need + 1) (b.need + 1))
 
 /-- Time bound. -/
-def Exp.tb (env : Fin V → ℕ) : Exp V → ℕ
+noncomputable def Exp.tb (env : Fin V → ℕ) : Exp V → ℕ
   | .var i => 7 * env i + 2
   | .const c => c + 1
   | .add a b => a.tb env + b.tb env + 3 * b.eval env + 1
@@ -604,7 +617,7 @@ lemma run_skip {R : ℕ} (t : Fin R) (s : St R) : Run (mSkip t) s s 2 := by
 
 variable (D) in
 /-- Compile `e` into scratch register `tg` using scratch levels `≥ d`. -/
-def cE : Exp V → ℕ → ℕ → Prog (Rg V D)
+noncomputable def cE : Exp V → ℕ → ℕ → Prog (Rg V D)
   | .var i, tg, d => mCopy (vreg D i) (sreg D tg) (sreg D d)
   | .const c, tg, _ => mIncs (sreg D tg) c
   | .add a b, tg, d => .seq (cE a tg d) (.seq (cE b d (d + 1)) (mMove (sreg D d) (sreg D tg)))
@@ -1008,6 +1021,11 @@ theorem cE_spec (e : Exp V) : Spec (D := D) e := by
 
 end QEDTM
 
+end
+
+
+noncomputable section
+
 
 /-! # Polynomial bounds for expression values and running time -/
 
@@ -1016,7 +1034,7 @@ namespace QEDTM
 variable {V : ℕ}
 
 /-- Exponent bound: with all variables `≤ N` and `X = N + 2`, both value and time are `≤ X ^ bnd`. -/
-def Exp.bnd : Exp V → ℕ
+noncomputable def Exp.bnd : Exp V → ℕ
   | .var _ => 3
   | .const c => c + 1
   | .add a b | .sub a b => max a.bnd b.bnd + 3
@@ -1108,6 +1126,11 @@ theorem Exp.bound (e : Exp V) (env : Fin V → ℕ) (N : ℕ) (henv : ∀ i, env
     · omega
 
 end QEDTM
+
+end
+
+
+noncomputable section
 
 
 /-! # From counter programs to Mathlib `TM2ComputableInPolyTime` -/
@@ -1380,6 +1403,11 @@ theorem polytime_of_prog (P : Prog R) (F : List Bool → List Bool) (T : Polynom
 
 end QEDTM
 
+end
+
+
+noncomputable section
+
 
 /-! # The generator: six nested digit loops around one compiled expression -/
 
@@ -1421,7 +1449,7 @@ variable (e : Exp 7)
 def inner : Prog (Rg 7 D) :=
   .seq (cE D e 0 1) (.ite (sreg D 0) (.out false) (.seq (.out true) (mClear (sreg D 0))))
 
-def lev : ℕ → Prog (Rg 7 D)
+noncomputable def lev : ℕ → Prog (Rg 7 D)
   | 0 => inner D e
   | j + 1 => .seq (mCopy (nReg D) (vreg D (dv j)) (sreg D 1))
       (.loop (vreg D (dv j)) (.seq (.dec (vreg D (dv j))) (lev j)))
@@ -1429,12 +1457,12 @@ def lev : ℕ → Prog (Rg 7 D)
 def gen : Prog (Rg 7 D) := .seq (mMove (inReg D) (nReg D)) (.seq (lev D e 6) (mClear (nReg D)))
 
 /-- The emitted bits of level `j` for register file `ρ`. -/
-def outL : ℕ → (Fin (Rg 7 D) → ℕ) → List Bool
+noncomputable def outL : ℕ → (Fin (Rg 7 D) → ℕ) → List Bool
   | 0, ρ => [decide (e.eval (fun i => ρ (vreg D i)) ≠ 0)]
   | j + 1, ρ => (List.range (ρ (nReg D))).reverse.flatMap (fun v => outL j (update ρ (vreg D (dv j)) v))
 
 /-- Time bound for level `j` with `n = ρ N`. -/
-def Tl (n : ℕ) : ℕ → ℕ
+noncomputable def Tl (n : ℕ) : ℕ → ℕ
   | 0 => 3 * (n + 2) ^ e.bnd + 4
   | j + 1 => 7 * n + 3 + n * (Tl n j + 2)
 
@@ -1637,12 +1665,12 @@ lemma outL_length (n : ℕ) : ∀ j (ρ : Fin (Rg 7 D) → ℕ), ρ (nReg D) = n
     simp [this, List.sum_replicate, pow_succ, Nat.mul_comm]
 
 /-- Index of a digit tuple. -/
-def idx (n : ℕ) (u : ℕ → ℕ) : ℕ → ℕ
+noncomputable def idx (n : ℕ) (u : ℕ → ℕ) : ℕ → ℕ
   | 0 => 0
   | j + 1 => u j * n ^ j + idx n u j
 
 /-- Register file after setting the inner `j` digits. -/
-def upd (u : ℕ → ℕ) : ℕ → (Fin (Rg 7 D) → ℕ) → (Fin (Rg 7 D) → ℕ)
+noncomputable def upd (u : ℕ → ℕ) : ℕ → (Fin (Rg 7 D) → ℕ) → (Fin (Rg 7 D) → ℕ)
   | 0, ρ => ρ
   | j + 1, ρ => upd u j (update ρ (vreg D (dv j)) (u j))
 
@@ -1702,3 +1730,5 @@ theorem Fgen_getD (n b o t q a c : ℕ) (hb : b < n) (ho : o < n) (ht : t < n) (
   fin_cases i <;> simp [envD, upd, u, ρ0, update_apply, vreg, nReg, dv, Fin.ext_iff]
 
 end QEDTM
+
+end
