@@ -205,11 +205,15 @@ class Export:
         if t in ('lam', 'forallE'):
             keys(v, ['name', 'type', 'body', 'binderInfo'])
             if v['binderInfo'] not in BINDERS: raise Reject('bad binder info')
-            return H(t, self.name_h[self.nm(v['name'])], v['binderInfo'], self.ex(v['type']), self.ex(v['body']))
+            self.nm(v['name'])
+            # Binder names and binder info are not part of the hash: lean4export shares expressions up to
+            # `Expr.eqv`, which ignores them, and the kernel ignores them too.
+            return H(t, self.ex(v['type']), self.ex(v['body']))
         if t == 'letE':
             keys(v, ['name', 'type', 'value', 'body', 'nondep'])
             if not is_bool(v['nondep']): raise Reject('bad let')
-            return H('let', self.name_h[self.nm(v['name'])], self.ex(v['type']), self.ex(v['value']), self.ex(v['body']), v['nondep'])
+            self.nm(v['name'])
+            return H('let', self.ex(v['type']), self.ex(v['value']), self.ex(v['body']))
         if t == 'proj':
             keys(v, ['typeName', 'idx', 'struct'])
             if not is_nat(v['idx']): raise Reject('bad proj')

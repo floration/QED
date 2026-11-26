@@ -1,1 +1,1 @@
-{"id": "QED-Q1", "expect": "fail", "timeout": 45, "expect_msg": "timed out", "note": "compile-time DoS: must be stopped by the wall-clock limit (45 s here, 2400 s in production)"}
+{"id": "QED-Q1", "expect": "fail", "timeout": 45, "expect_msg": "timed out", "generate": {"line": "example : Nat.Prime 1000003 := by norm_num", "count": 15000}, "note": "compile-time DoS (15000 slow proofs, minutes of work): must be stopped by the wall-clock limit (45 s here, 2400 s in production)"}

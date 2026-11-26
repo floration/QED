@@ -100,6 +100,11 @@ def install(c):
     for f in c['files']:
         os.makedirs(os.path.dirname(os.path.join(d, f)), exist_ok=True)
         shutil.copyfile(os.path.join(c['dir'], f), os.path.join(d, f))
+    g = c.get('generate')
+    if g:   # e.g. a huge solution that would bloat the repository: prepend generated lines to Solution.lean
+        sp = os.path.join(d, 'Solution.lean')
+        body = open(sp).read()
+        open(sp, 'w').write(''.join(g['line'] + '\n' for _ in range(int(g['count']))) + body)
     return [f'{base}/{f}' for f in c['files']]
 
 
