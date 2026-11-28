@@ -1,0 +1,35 @@
+name: p2m-port
+# Compile every QED statement in Prove2Me's default environment (Lean v4.33.1, Mathlib 0df444a).
+on:
+  workflow_dispatch:
+  push: { branches: [p2m-port] }
+permissions: { contents: read }
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Export and set up the Prove2Me project
+        run: |
+          mkdir -p ../w && cp scripts/p2m/lakefile.lean scripts/p2m/lean-toolchain ../w/
+          python3 scripts/p2m_export.py ../w
+          cd ../w && lake update && lake exe cache get
+      - name: Compile every definition file
+        run: |
+          cd ../w
+          ls Definitions/*.lean | xargs -P 4 -I{} sh -c 'if timeout 600 lake env lean -DautoImplicit=false {} > {}.log 2>&1; then echo "OK {}"; else echo "FAIL {}"; fi' | sort > results.txt
+          grep -c '^OK' results.txt || true; grep '^FAIL' results.txt || true
+          for f in $(grep '^FAIL' results.txt | cut -d' ' -f2); do echo "=== $f"; grep -m 8 'error' $f.log; done
+      - name: Build the module layout for passing problems (Definitions + Theorems)
+        run: |
+          cd ../w
+          for f in $(grep '^FAIL' results.txt | cut -d' ' -f2); do b=$(basename $f .lean); rm -f $f Theorems/Thm_OpenProblems_QED${b#Def_QED_}_claim.lean; done
+          lake build Theorems 2>&1 | tail -20
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: p2m-port, path: "../w/results.txt\n../w/Definitions/*.log" }
