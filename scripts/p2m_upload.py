@@ -20,8 +20,7 @@ OURS=open(os.path.join(R,'lean-toolchain')).read().strip()
 ENVS=[] if dry else A.get('/environments')['environments']
 for e in ENVS: print('prove2me env:',e['toolchain'],e['mathlib_rev'],'(default)' if e.get('is_default') else '')
 ENV=next((e['mathlib_rev'] for e in ENVS if e['toolchain']==OURS),None)
-if not dry and ENV is None and '--any-env' not in sys.argv:
-    sys.exit(f'No Prove2Me environment matches {OURS} yet; not uploading (pass --any-env to use their default).')
+if not dry and ENV is None: print(f'No Prove2Me environment matches {OURS}; using their default (Prove2Me migrates environments later).')
 def field_ids(area):
     for q in AREA.get(area,[area.lower()]):
         for f in FIELDS:
