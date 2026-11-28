@@ -28,6 +28,3 @@ jobs:
           ! grep -q '^FAIL' results.txt
       - name: Smoke-test the Theorems module layout
         run: cd ../w && lake build Theorems.Thm_OpenProblems_QEDM004_claim Theorems.Thm_OpenProblems_QEDE037_claim 2>&1 | tail -5
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with: { name: p2m-port, path: "../w/results.txt\n../w/Definitions/*.log" }

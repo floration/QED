@@ -15,6 +15,13 @@ AREA={'Combinatorics':['combinatorics'],'Number theory':['number theory','number
  'Logic & computability':['logic','computability'],'PDE':['pde','partial differential'],'Probability':['probability'],'Mathematical physics':['physics'],
  'Topology':['topology'],'Coding & information theory':['information','coding'],'Games':['game','combinatorics']}
 FIELDS=[] if dry else A.get('/fields?limit=200&sort=popular')['fields']
+# Target the Prove2Me environment whose Lean toolchain matches QED's, so proofs transfer verbatim.
+OURS=open(os.path.join(R,'lean-toolchain')).read().strip()
+ENVS=[] if dry else A.get('/environments')['environments']
+for e in ENVS: print('prove2me env:',e['toolchain'],e['mathlib_rev'],'(default)' if e.get('is_default') else '')
+ENV=next((e['mathlib_rev'] for e in ENVS if e['toolchain']==OURS),None)
+if not dry and ENV is None and '--any-env' not in sys.argv:
+    sys.exit(f'No Prove2Me environment matches {OURS} yet; not uploading (pass --any-env to use their default).')
 def field_ids(area):
     for q in AREA.get(area,[area.lower()]):
         for f in FIELDS:
@@ -40,7 +47,7 @@ done=0
 for i in ids:
     if i in existing: print('skip',i,'(proposal exists)'); continue
     p=D[i]; x=PAY[i]; d=x['definition_name']
-    prop=dict(name=f'{i}: {p["title"]}'[:200],description=description(p),mission_type='OpenProblem',field_ids=field_ids(p['area']))
+    prop=dict(**({'env':ENV} if ENV else {}),name=f'{i}: {p["title"]}'[:200],description=description(p),mission_type='OpenProblem',field_ids=field_ids(p['area']))
     defi=dict(kind='definition',definition_name=d,definition_title=f'{i} statement definitions',definition=x['definition'],
               natural_language_statement=f'Definitions for the QED problem {i}, ending with the proposition `Claim`.\n\n{esc(p["math"])}',
               source=f'QED open problem {i}, https://floration.github.io/QED/#{i}',tags=['qed',p['area'].lower()])

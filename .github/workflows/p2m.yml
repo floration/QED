@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - if: ${{ env.P2M_API_KEY == '' }}
         run: echo "::warning::P2M_API_KEY secret is not set; nothing to do." && exit 0
+      - if: ${{ env.P2M_API_KEY != '' && inputs.upload == '' }}
+        run: python3 -c "import sys;sys.path.insert(0,'scripts');import p2m_api as A;[print(e) for e in A.get('/environments')['environments']]"
       - if: ${{ env.P2M_API_KEY != '' && inputs.upload != '' }}
         run: python3 scripts/p2m_upload.py "${{ inputs.upload }}"
       - if: ${{ env.P2M_API_KEY != '' }}
