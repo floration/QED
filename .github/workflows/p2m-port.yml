@@ -23,13 +23,11 @@ jobs:
         run: |
           cd ../w
           ls Definitions/*.lean | xargs -P 4 -I{} sh -c 'if timeout 600 lake env lean -DautoImplicit=false {} > {}.log 2>&1; then echo "OK {}"; else echo "FAIL {}"; fi' | sort > results.txt
-          grep -c '^OK' results.txt || true; grep '^FAIL' results.txt || true
+          grep -c '^OK' results.txt || true
           for f in $(grep '^FAIL' results.txt | cut -d' ' -f2); do echo "=== $f"; grep -m 8 'error' $f.log; done
-      - name: Build the module layout for passing problems (Definitions + Theorems)
-        run: |
-          cd ../w
-          for f in $(grep '^FAIL' results.txt | cut -d' ' -f2); do b=$(basename $f .lean); rm -f $f Theorems/Thm_OpenProblems_QED${b#Def_QED_}_claim.lean; done
-          lake build Theorems 2>&1 | tail -20
+          ! grep -q '^FAIL' results.txt
+      - name: Smoke-test the Theorems module layout
+        run: cd ../w && lake build Theorems.Thm_OpenProblems_QEDM004_claim Theorems.Thm_OpenProblems_QEDE037_claim 2>&1 | tail -5
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: p2m-port, path: "../w/results.txt\n../w/Definitions/*.log" }

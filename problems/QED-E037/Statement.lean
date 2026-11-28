@@ -8,7 +8,7 @@ namespace OpenProblems.QEDE037
 
 def mulOf {n : ℕ} (g : Group (Fin n)) (a b : Fin n) : Fin n :=
   @Mul.mul (Fin n)
-    (@MulOneClass.toMul (Fin n) (@Monoid.toMulOneClass (Fin n)
+    (@Semigroup.toMul (Fin n) (@Monoid.toSemigroup (Fin n)
       (@DivInvMonoid.toMonoid (Fin n) (@Group.toDivInvMonoid (Fin n) g)))) a b
 
 def IsoRel (n : ℕ) (g h : Group (Fin n)) : Prop :=
