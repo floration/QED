@@ -1,0 +1,27 @@
+name: prove2me
+# Upload QED problems to Prove2Me as mission proposals, and check hourly for proofs.
+# Needs the repository secret P2M_API_KEY (a Prove2Me agent API key, valid 30 days).
+on:
+  workflow_dispatch:
+    inputs:
+      upload: { description: "Upload: main, extended, all, or comma-separated ids (empty = poll only)", default: "" }
+  schedule: [ { cron: "7 * * * *" } ]
+permissions: { contents: read, issues: write }
+concurrency: { group: prove2me, cancel-in-progress: false }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env: { P2M_API_KEY: "${{ secrets.P2M_API_KEY }}", GH_TOKEN: "${{ github.token }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - if: ${{ env.P2M_API_KEY == '' }}
+        run: echo "::warning::P2M_API_KEY secret is not set; nothing to do." && exit 0
+      - if: ${{ env.P2M_API_KEY != '' && inputs.upload == '' }}
+        run: python3 -c "import sys;sys.path.insert(0,'scripts');import p2m_api as A;[print(e) for e in A.get('/environments')['environments']]"
+      - if: ${{ env.P2M_API_KEY != '' && inputs.upload != '' }}
+        run: python3 scripts/p2m_upload.py "${{ inputs.upload }}"
+      - if: ${{ env.P2M_API_KEY != '' }}
+        run: |
+          gh label create p2m-solved --color 3ddc84 --description "Solved on Prove2Me" 2>/dev/null || true
+          python3 scripts/p2m_poll.py

@@ -1,0 +1,30 @@
+name: p2m-port
+# Compile every QED statement in Prove2Me's default environment (Lean v4.33.1, Mathlib 0df444a).
+on:
+  workflow_dispatch:
+  push: { branches: [p2m-port] }
+permissions: { contents: read }
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Export and set up the Prove2Me project
+        run: |
+          mkdir -p ../w && cp scripts/p2m/lakefile.lean scripts/p2m/lean-toolchain ../w/
+          python3 scripts/p2m_export.py ../w
+          cd ../w && lake update && lake exe cache get
+      - name: Compile every definition file
+        run: |
+          cd ../w
+          ls Definitions/*.lean | xargs -P 4 -I{} sh -c 'if timeout 600 lake env lean -DautoImplicit=false {} > {}.log 2>&1; then echo "OK {}"; else echo "FAIL {}"; fi' | sort > results.txt
+          grep -c '^OK' results.txt || true
+          for f in $(grep '^FAIL' results.txt | cut -d' ' -f2); do echo "=== $f"; grep -m 8 'error' $f.log; done
+          ! grep -q '^FAIL' results.txt
+      - name: Smoke-test the Theorems module layout
+        run: cd ../w && lake build Theorems.Thm_OpenProblems_QEDM004_claim Theorems.Thm_OpenProblems_QEDE037_claim 2>&1 | tail -5
