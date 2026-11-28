@@ -11,7 +11,7 @@ concurrency: { group: prove2me, cancel-in-progress: false }
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     env: { P2M_API_KEY: "${{ secrets.P2M_API_KEY }}", GH_TOKEN: "${{ github.token }}" }
     steps:
       - uses: actions/checkout@v4
